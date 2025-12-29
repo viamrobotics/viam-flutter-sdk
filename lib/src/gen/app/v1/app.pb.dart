@@ -12099,6 +12099,8 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     $core.String? firstRun,
     $core.String? markdownDescription,
     $core.Iterable<App>? apps,
+    ModuleSourceType? sourceType,
+    ModuleLanguage? language,
   }) {
     final $result = create();
     if (models != null) {
@@ -12119,6 +12121,12 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (sourceType != null) {
+      $result.sourceType = sourceType;
+    }
+    if (language != null) {
+      $result.language = language;
+    }
     return $result;
   }
   ModuleMetadata._() : super();
@@ -12132,6 +12140,8 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'firstRun')
     ..aOS(5, _omitFieldNames ? '' : 'markdownDescription')
     ..pc<App>(6, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..e<ModuleSourceType>(7, _omitFieldNames ? '' : 'sourceType', $pb.PbFieldType.OE, defaultOrMaker: ModuleSourceType.MODULE_SOURCE_TYPE_UNSPECIFIED, valueOf: ModuleSourceType.valueOf, enumValues: ModuleSourceType.values)
+    ..e<ModuleLanguage>(8, _omitFieldNames ? '' : 'language', $pb.PbFieldType.OE, defaultOrMaker: ModuleLanguage.MODULE_LANGUAGE_UNSPECIFIED, valueOf: ModuleLanguage.valueOf, enumValues: ModuleLanguage.values)
     ..hasRequiredFields = false
   ;
 
@@ -12198,6 +12208,26 @@ class ModuleMetadata extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(6)
   $core.List<App> get apps => $_getList(5);
+
+  /// Determines the type of module, either a registry module or an inline module.
+  @$pb.TagNumber(7)
+  ModuleSourceType get sourceType => $_getN(6);
+  @$pb.TagNumber(7)
+  set sourceType(ModuleSourceType v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasSourceType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSourceType() => clearField(7);
+
+  /// Specifies the language that the module is written in.
+  @$pb.TagNumber(8)
+  ModuleLanguage get language => $_getN(7);
+  @$pb.TagNumber(8)
+  set language(ModuleLanguage v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasLanguage() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLanguage() => clearField(8);
 }
 
 class MLModelMetadata extends $pb.GeneratedMessage {
@@ -13201,6 +13231,8 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     $core.String? pageToken,
     $core.Iterable<$core.String>? publicNamespaces,
     $core.bool? includeMarkdownDocumentation,
+    $core.Iterable<ModuleSourceType>? moduleSourceTypes,
+    $core.Iterable<ModuleLanguage>? moduleLanguages,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -13230,6 +13262,12 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     if (includeMarkdownDocumentation != null) {
       $result.includeMarkdownDocumentation = includeMarkdownDocumentation;
     }
+    if (moduleSourceTypes != null) {
+      $result.moduleSourceTypes.addAll(moduleSourceTypes);
+    }
+    if (moduleLanguages != null) {
+      $result.moduleLanguages.addAll(moduleLanguages);
+    }
     return $result;
   }
   ListRegistryItemsRequest._() : super();
@@ -13246,6 +13284,8 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'pageToken')
     ..pPS(8, _omitFieldNames ? '' : 'publicNamespaces')
     ..aOB(9, _omitFieldNames ? '' : 'includeMarkdownDocumentation')
+    ..pc<ModuleSourceType>(10, _omitFieldNames ? '' : 'moduleSourceTypes', $pb.PbFieldType.KE, valueOf: ModuleSourceType.valueOf, enumValues: ModuleSourceType.values, defaultEnumValue: ModuleSourceType.MODULE_SOURCE_TYPE_UNSPECIFIED)
+    ..pc<ModuleLanguage>(11, _omitFieldNames ? '' : 'moduleLanguages', $pb.PbFieldType.KE, valueOf: ModuleLanguage.valueOf, enumValues: ModuleLanguage.values, defaultEnumValue: ModuleLanguage.MODULE_LANGUAGE_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
 
@@ -13322,6 +13362,12 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
   $core.bool hasIncludeMarkdownDocumentation() => $_has(8);
   @$pb.TagNumber(9)
   void clearIncludeMarkdownDocumentation() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<ModuleSourceType> get moduleSourceTypes => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $core.List<ModuleLanguage> get moduleLanguages => $_getList(10);
 }
 
 class ListRegistryItemsResponse extends $pb.GeneratedMessage {
@@ -14133,6 +14179,8 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
     $core.Iterable<Model>? models,
     $core.String? entrypoint,
     $core.Iterable<App>? apps,
+    ModuleSourceType? sourceType,
+    ModuleLanguage? language,
   }) {
     final $result = create();
     if (models != null) {
@@ -14144,6 +14192,12 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (sourceType != null) {
+      $result.sourceType = sourceType;
+    }
+    if (language != null) {
+      $result.language = language;
+    }
     return $result;
   }
   UpdateModuleMetadata._() : super();
@@ -14154,6 +14208,8 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
     ..pc<Model>(1, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
     ..aOS(2, _omitFieldNames ? '' : 'entrypoint')
     ..pc<App>(3, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..e<ModuleSourceType>(4, _omitFieldNames ? '' : 'sourceType', $pb.PbFieldType.OE, defaultOrMaker: ModuleSourceType.MODULE_SOURCE_TYPE_UNSPECIFIED, valueOf: ModuleSourceType.valueOf, enumValues: ModuleSourceType.values)
+    ..e<ModuleLanguage>(5, _omitFieldNames ? '' : 'language', $pb.PbFieldType.OE, defaultOrMaker: ModuleLanguage.MODULE_LANGUAGE_UNSPECIFIED, valueOf: ModuleLanguage.valueOf, enumValues: ModuleLanguage.values)
     ..hasRequiredFields = false
   ;
 
@@ -14195,6 +14251,26 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(3)
   $core.List<App> get apps => $_getList(2);
+
+  /// Determines where the source code of module is managed, either externally or hosted by viam.
+  @$pb.TagNumber(4)
+  ModuleSourceType get sourceType => $_getN(3);
+  @$pb.TagNumber(4)
+  set sourceType(ModuleSourceType v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSourceType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceType() => clearField(4);
+
+  /// The language the module is written in
+  @$pb.TagNumber(5)
+  ModuleLanguage get language => $_getN(4);
+  @$pb.TagNumber(5)
+  set language(ModuleLanguage v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLanguage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLanguage() => clearField(5);
 }
 
 class UpdateMLModelMetadata extends $pb.GeneratedMessage {
