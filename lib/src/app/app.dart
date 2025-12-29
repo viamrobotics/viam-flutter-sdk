@@ -4,10 +4,13 @@ import 'package:fixnum/fixnum.dart';
 
 import '../../protos/app/packages.dart';
 import '../gen/app/v1/app.pbgrpc.dart';
+import '../gen/app/v1/app.pbenum.dart' show ModuleSourceType, ModuleLanguage;
 import '../gen/common/v1/common.pb.dart';
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../utils.dart';
 import 'permissions.dart';
+
+export '../gen/app/v1/app.pbenum.dart' show ModuleSourceType, ModuleLanguage;
 
 typedef RobotPartLogPage = GetRobotPartLogsResponse;
 
@@ -677,11 +680,13 @@ class AppClient {
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<RegistryItem>> listRegistryItems(
       List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses,
-      {String? organizationId, String? searchTerm, String? pageToken}) async {
+      {String? organizationId, String? searchTerm, String? pageToken, List<ModuleSourceType>? moduleSourceTypes, List<ModuleLanguage>? moduleLanguages}) async {
     final request = ListRegistryItemsRequest(types: types, visibilities: visibilities, platforms: platforms, statuses: statuses)
       ..organizationId = organizationId ?? ''
       ..searchTerm = searchTerm ?? ''
       ..pageToken = pageToken ?? '';
+    if (moduleSourceTypes != null) request.moduleSourceTypes.addAll(moduleSourceTypes);
+    if (moduleLanguages != null) request.moduleLanguages.addAll(moduleLanguages);
     final ListRegistryItemsResponse response = await _client.listRegistryItems(request);
     return response.items;
   }
@@ -708,13 +713,16 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<String> updateModule(
-      String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint) async {
+      String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint,
+      {ModuleSourceType? sourceType, ModuleLanguage? language}) async {
     final request = UpdateModuleRequest(models: models)
       ..moduleId = moduleId
       ..visibility = visibility
       ..url = url
       ..description = description
       ..entrypoint = entrypoint;
+    if (sourceType != null) request.sourceType = sourceType;
+    if (language != null) request.language = language;
     final UpdateModuleResponse response = await _client.updateModule(request);
     return response.url;
   }

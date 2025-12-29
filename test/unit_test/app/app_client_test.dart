@@ -10,6 +10,7 @@ import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/src/gen/app/v1/app.pbenum.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
@@ -710,10 +711,29 @@ void main() {
           ..name = 'name'
           ..type = PackageType.PACKAGE_TYPE_UNSPECIFIED
       ];
-      when(serviceClient.listRegistryItems(any))
-          .thenAnswer((_) => MockResponseFuture.value(ListRegistryItemsResponse()..items.addAll(expected)));
-      final response = await appClient.listRegistryItems([PackageType.PACKAGE_TYPE_UNSPECIFIED], [Visibility.VISIBILITY_UNSPECIFIED],
-          ['platforms'], [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED]);
+      when(serviceClient.listRegistryItems(argThat(
+        isA<ListRegistryItemsRequest>()
+            .having((req) => req.types, 'types', [PackageType.PACKAGE_TYPE_UNSPECIFIED])
+            .having((req) => req.visibilities, 'visibilities', [Visibility.VISIBILITY_UNSPECIFIED])
+            .having((req) => req.platforms, 'platforms', ['platforms'])
+            .having((req) => req.statuses, 'statuses', [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED])
+            .having((req) => req.organizationId, 'organizationId', 'orgId')
+            .having((req) => req.searchTerm, 'searchTerm', 'term')
+            .having((req) => req.pageToken, 'pageToken', 'token')
+            .having((req) => req.moduleSourceTypes, 'moduleSourceTypes', [ModuleSourceType.MODULE_SOURCE_TYPE_EXTERNAL])
+            .having((req) => req.moduleLanguages, 'moduleLanguages', [ModuleLanguage.MODULE_LANGUAGE_PYTHON]),
+      ))).thenAnswer((_) => MockResponseFuture.value(ListRegistryItemsResponse()..items.addAll(expected)));
+      final response = await appClient.listRegistryItems(
+          [PackageType.PACKAGE_TYPE_UNSPECIFIED],
+          [Visibility.VISIBILITY_UNSPECIFIED],
+          ['platforms'],
+          [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED],
+          organizationId: 'orgId',
+          searchTerm: 'term',
+          pageToken: 'token',
+          moduleSourceTypes: [ModuleSourceType.MODULE_SOURCE_TYPE_EXTERNAL],
+          moduleLanguages: [ModuleLanguage.MODULE_LANGUAGE_PYTHON],
+      );
       expect(response, equals(expected));
     });
 
@@ -735,9 +755,20 @@ void main() {
 
     test('updateModule', () async {
       const expected = 'url';
-      when(serviceClient.updateModule(any)).thenAnswer((_) => MockResponseFuture.value(UpdateModuleResponse()..url = expected));
+      when(serviceClient.updateModule(argThat(
+        isA<UpdateModuleRequest>()
+            .having((req) => req.moduleId, 'moduleId', 'moduleId')
+            .having((req) => req.visibility, 'visibility', Visibility.VISIBILITY_UNSPECIFIED)
+            .having((req) => req.url, 'url', 'url')
+            .having((req) => req.description, 'description', 'description')
+            .having((req) => req.models, 'models', [Model()])
+            .having((req) => req.entrypoint, 'entrypoint', 'entrypoint')
+            .having((req) => req.sourceType, 'sourceType', ModuleSourceType.MODULE_SOURCE_TYPE_EXTERNAL)
+            .having((req) => req.language, 'language', ModuleLanguage.MODULE_LANGUAGE_PYTHON),
+      ))).thenAnswer((_) => MockResponseFuture.value(UpdateModuleResponse()..url = expected));
       final response =
-          await appClient.updateModule('moduleId', Visibility.VISIBILITY_UNSPECIFIED, 'url', 'description', [Model()], 'entrypoint');
+          await appClient.updateModule('moduleId', Visibility.VISIBILITY_UNSPECIFIED, 'url', 'description', [Model()], 'entrypoint',
+              sourceType: ModuleSourceType.MODULE_SOURCE_TYPE_EXTERNAL, language: ModuleLanguage.MODULE_LANGUAGE_PYTHON);
       expect(response, equals(expected));
     });
 

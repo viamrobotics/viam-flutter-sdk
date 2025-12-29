@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import '../gen/provisioning/v1/provisioning.pb.dart' show APIKey;
 import '../gen/provisioning/v1/provisioning.pbgrpc.dart';
 
 /// {@category Viam SDK}
@@ -30,15 +31,16 @@ class ProvisioningClient {
 
   /// Set the Viam credentials of the smart machine, so it can connect to the Cloud.
   ///
-  /// [id] is the RobotPart id
-  /// [secret] is the RobotPart secret
+  /// [apiKeyId] is the RobotPart id
+  /// [apiKeySecret] is the RobotPart secret
   /// [appAddress] is the cloud address that the robot will authenticate against
   Future<void> setSmartMachineCredentials({
-    required String id,
-    required String secret,
+    required String apiKeyId,
+    required String apiKeySecret,
     String appAddress = 'https://app.viam.com:443',
   }) async {
-    final cloud = CloudConfig(id: id, secret: secret, appAddress: appAddress);
+    final apiKey = APIKey(id: apiKeyId, key: apiKeySecret);
+    final cloud = CloudConfig(apiKey: apiKey, appAddress: appAddress);
     final request = SetSmartMachineCredentialsRequest(cloud: cloud);
     await _client.setSmartMachineCredentials(request);
   }
