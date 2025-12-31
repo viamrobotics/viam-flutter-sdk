@@ -132,6 +132,35 @@ const StartReloadBuildResponse$json = {
 final $typed_data.Uint8List startReloadBuildResponseDescriptor = $convert.base64Decode(
     'ChhTdGFydFJlbG9hZEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aWxkSWQ=');
 
+@$core.Deprecated('Use startPackageBuildRequestDescriptor instead')
+const StartPackageBuildRequest$json = {
+  '1': 'StartPackageBuildRequest',
+  '2': [
+    {'1': 'module_id', '3': 1, '4': 1, '5': 9, '10': 'moduleId'},
+    {'1': 'package_version', '3': 2, '4': 1, '5': 9, '10': 'packageVersion'},
+    {'1': 'module_version', '3': 3, '4': 1, '5': 9, '10': 'moduleVersion'},
+    {'1': 'platforms', '3': 4, '4': 3, '5': 9, '10': 'platforms'},
+  ],
+};
+
+/// Descriptor for `StartPackageBuildRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startPackageBuildRequestDescriptor = $convert.base64Decode(
+    'ChhTdGFydFBhY2thZ2VCdWlsZFJlcXVlc3QSGwoJbW9kdWxlX2lkGAEgASgJUghtb2R1bGVJZB'
+    'InCg9wYWNrYWdlX3ZlcnNpb24YAiABKAlSDnBhY2thZ2VWZXJzaW9uEiUKDm1vZHVsZV92ZXJz'
+    'aW9uGAMgASgJUg1tb2R1bGVWZXJzaW9uEhwKCXBsYXRmb3JtcxgEIAMoCVIJcGxhdGZvcm1z');
+
+@$core.Deprecated('Use startPackageBuildResponseDescriptor instead')
+const StartPackageBuildResponse$json = {
+  '1': 'StartPackageBuildResponse',
+  '2': [
+    {'1': 'build_id', '3': 1, '4': 1, '5': 9, '10': 'buildId'},
+  ],
+};
+
+/// Descriptor for `StartPackageBuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startPackageBuildResponseDescriptor = $convert.base64Decode(
+    'ChlTdGFydFBhY2thZ2VCdWlsZFJlc3BvbnNlEhkKCGJ1aWxkX2lkGAEgASgJUgdidWlsZElk');
+
 @$core.Deprecated('Use getLogsResponseDescriptor instead')
 const GetLogsResponse$json = {
   '1': 'GetLogsResponse',
