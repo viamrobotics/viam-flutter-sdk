@@ -21,22 +21,18 @@ class StreamScreen extends StatefulWidget {
 
 class _StreamScreenState extends State<StreamScreen> {
   // Single frame
-  ByteData? imageBytes;
   bool _imgLoaded = false;
+  ViamImage? image;
 
   void _getImage() {
     setState(() {
       _imgLoaded = false;
     });
-    final imageFut = widget.camera.image();
+    final imageFut = widget.camera.getImages();
     imageFut.then((value) {
-      final convertFut = convertImageToFlutterUi(value.image ?? img.Image.empty());
-      convertFut.then((value) {
-        final pngFut = value.toByteData(format: ui.ImageByteFormat.png);
-        pngFut.then((value) => setState(() {
-              imageBytes = value;
-              _imgLoaded = true;
-            }));
+      setState(() {
+        image = value.images[0].image;
+        _imgLoaded = true;
       });
     });
   }
@@ -82,7 +78,7 @@ class _StreamScreenState extends State<StreamScreen> {
             const SizedBox(height: 16),
             ViamCameraStreamView(camera: widget.camera, streamClient: widget.client),
             const SizedBox(height: 16),
-            if (_imgLoaded) Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3),
+            if (_imgLoaded) Image.memory(Uint8List.fromList(image!.raw), scale: 3),
             const SizedBox(height: 16),
             ElevatedButton(
               child: const Text('Get image'),

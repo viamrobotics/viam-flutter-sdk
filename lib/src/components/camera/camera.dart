@@ -56,15 +56,6 @@ typedef CameraProperties = GetPropertiesResponse;
 abstract class Camera extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'camera');
 
-  /// Get the next image from the camera.
-  ///
-  /// ```
-  /// var nextImage = await myCamera.image();
-  /// ```
-  ///
-  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getimage).
-  Future<ViamImage> image({MimeType? mimeType, Map<String, dynamic>? extra});
-
   /// Get the next point cloud from the camera.
   ///
   /// ```
@@ -101,10 +92,8 @@ abstract class Camera extends Resource {
   /// @param filterSourceNames - A list of source names to filter the images by.
   ///                           If empty or undefined, all images will be returned.
   /// @param extra - Extra parameters to pass to the camera.
-  Future<GetImagesResult> getImages({
-    List<String>? filterSourceNames,
-    Map<String, dynamic>? extra,
-  });
+  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getimages).
+  Future<GetImagesResult> getImages({List<String>? filterSourceNames, Map<String, dynamic>? extra});
 
   /// Get the [common_pb.ResourceName] for this [Camera] with the given [name]
   ///
