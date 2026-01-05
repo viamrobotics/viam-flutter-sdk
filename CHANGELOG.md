@@ -1,14 +1,18 @@
 # Changelog
 
-## [v0.14.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.14.0) (2025-12-29)
+## [v0.15.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.15.0) (2026-01-05)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.13.1...v0.14.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.14.0...v0.15.0)
 
 **Merged pull requests:**
 
+- v0.14.0 [\#477](https://github.com/viamrobotics/viam-flutter-sdk/pull/477) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Bump hotspot provisioning widget version to 0.0.29 [\#475](https://github.com/viamrobotics/viam-flutter-sdk/pull/475) ([jckras](https://github.com/jckras))
 - Automated Protos Update [\#473](https://github.com/viamrobotics/viam-flutter-sdk/pull/473) ([viambot](https://github.com/viambot))
 - Automated Protos Update [\#471](https://github.com/viamrobotics/viam-flutter-sdk/pull/471) ([viambot](https://github.com/viambot))
+- \[APP-14734\] Add input controller to flutter sdk [\#470](https://github.com/viamrobotics/viam-flutter-sdk/pull/470) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#469](https://github.com/viamrobotics/viam-flutter-sdk/pull/469) ([viambot](https://github.com/viambot))
+- \[RSDK-11730\] Remove GetImage, Format & RenderFrame from Flutter SDK [\#468](https://github.com/viamrobotics/viam-flutter-sdk/pull/468) ([martha-johnston](https://github.com/martha-johnston))
 - \[APP-14633\] Add encoder to flutter sdk [\#467](https://github.com/viamrobotics/viam-flutter-sdk/pull/467) ([martha-johnston](https://github.com/martha-johnston))
 - v0.13.1 [\#466](https://github.com/viamrobotics/viam-flutter-sdk/pull/466) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-12681: GetGeometries and GetKinematics to Gantry \(+ Arm\) [\#465](https://github.com/viamrobotics/viam-flutter-sdk/pull/465) ([allisonschiang](https://github.com/allisonschiang))
@@ -177,6 +181,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.14.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.14.0) (2025-12-29)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.13.1...v0.14.0)
 
 ## [v0.13.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.13.1) (2025-12-16)
 
