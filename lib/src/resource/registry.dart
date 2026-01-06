@@ -1,41 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../components/arm/arm.dart';
-import '../components/arm/client.dart';
-import '../components/audio_in/audio_in.dart';
-import '../components/audio_in/client.dart';
-import '../components/audio_out/audio_out.dart';
-import '../components/audio_out/client.dart';
-import '../components/base/base.dart';
-import '../components/base/client.dart';
-import '../components/board/board.dart';
-import '../components/board/client.dart';
-import '../components/button/button.dart';
-import '../components/button/client.dart';
-import '../components/camera/camera.dart';
-import '../components/camera/client.dart';
-import '../components/gantry/client.dart';
-import '../components/gantry/gantry.dart';
-import '../components/generic/client.dart';
-import '../components/generic/generic.dart';
-import '../components/gripper/client.dart';
-import '../components/gripper/gripper.dart';
-import '../components/motor/client.dart';
-import '../components/motor/motor.dart';
-import '../components/movement_sensor/client.dart';
-import '../components/movement_sensor/movement_sensor.dart';
-import '../components/power_sensor/client.dart';
-import '../components/power_sensor/power_sensor.dart';
-import '../components/sensor/client.dart';
-import '../components/sensor/sensor.dart';
-import '../components/servo/client.dart';
-import '../components/servo/servo.dart';
-import '../components/switch/client.dart';
-import '../components/switch/switch.dart';
-import '../resource/base.dart';
-import '../services/discovery.dart';
-import '../services/generic.dart';
-import '../services/vision.dart';
+import '../../viam_sdk.dart';
 
 /// {@category Viam SDK}
 /// An object representing a resource to be registered.
@@ -73,9 +38,11 @@ class Registry {
     registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
     registerSubtype(ResourceRegistration(Button.subtype, (name, channel) => ButtonClient(name, channel)));
     registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
+    registerSubtype(ResourceRegistration(Encoder.subtype, (name, channel) => EncoderClient(name, channel)));
     registerSubtype(ResourceRegistration(Gantry.subtype, (name, channel) => GantryClient(name, channel)));
     registerSubtype(ResourceRegistration(Generic.subtype, (name, channel) => GenericClient(name, channel)));
     registerSubtype(ResourceRegistration(Gripper.subtype, (name, channel) => GripperClient(name, channel)));
+    registerSubtype(ResourceRegistration(InputController.subtype, (name, channel) => InputControllerClient(name, channel)));
     registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
     registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
     registerSubtype(ResourceRegistration(PowerSensor.subtype, (name, channel) => PowerSensorClient(name, channel)));
