@@ -11,7 +11,6 @@ export 'src/app/robot.dart';
 /// Components
 export 'src/components/arm/arm.dart';
 export 'src/components/arm/client.dart';
-export 'src/media/audio.dart';
 export 'src/components/audio_in/audio_in.dart';
 export 'src/components/audio_in/client.dart';
 export 'src/components/audio_out/audio_out.dart';
@@ -24,12 +23,16 @@ export 'src/components/button/button.dart';
 export 'src/components/button/client.dart';
 export 'src/components/camera/camera.dart';
 export 'src/components/camera/client.dart';
+export 'src/components/encoder/client.dart';
+export 'src/components/encoder/encoder.dart';
 export 'src/components/gantry/client.dart';
 export 'src/components/gantry/gantry.dart';
 export 'src/components/generic/client.dart';
 export 'src/components/generic/generic.dart';
 export 'src/components/gripper/client.dart';
 export 'src/components/gripper/gripper.dart';
+export 'src/components/input_controller/client.dart';
+export 'src/components/input_controller/input_controller.dart';
 export 'src/components/motor/client.dart';
 export 'src/components/motor/motor.dart';
 export 'src/components/movement_sensor/client.dart';
@@ -47,6 +50,7 @@ export 'src/components/switch/switch.dart';
 export 'src/gen/common/v1/common.pb.dart'
     show ResourceName, Pose, Orientation, PoseInFrame, Vector3, GeoPoint, DoCommandRequest, DoCommandResponse;
 export 'src/gen/provisioning/v1/provisioning.pb.dart';
+export 'src/media/audio.dart';
 
 /// Media & Streams
 export 'src/media/image.dart';
