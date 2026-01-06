@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the registerControlCallback method from the InputControllerClient class, for the Dart programming language.">
+  <title>registerControlCallback method - InputControllerClient class - viam_sdk library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
+    <li><a href="../../viam_sdk/InputControllerClient-class.html">InputControllerClient</a></li>
+    <li class="self-crumb">registerControlCallback method</li>
+  </ol>
+  <div class="self-name">registerControlCallback</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="viam_sdk&#47;InputControllerClient-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">registerControlCallback</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">registerControlCallback</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="registerControlCallback-param-control"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">control</span>, </span></li>
+<li><span class="parameter" id="registerControlCallback-param-triggers"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">triggers</span>, </span></li>
+<li><span class="parameter" id="registerControlCallback-param-callback"><span class="type-annotation">void</span> <span class="parameter-name">callback</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation"><a href="../../viam_protos.component.input_controller/Event-class.html">Event</a></span></span></li>
+</ol>)?, {</span></li>
+<li><span class="parameter" id="registerControlCallback-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
+</ol>})
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Register a callback function to be called when control events occur.</p>
+<p><code>control</code> is the name of the control (e.g., "ButtonSouth", "AbsoluteX").
+<code>triggers</code> is a list of event types to listen for (e.g., <code>"ButtonPress", "ButtonRelease"</code>).
+If "ButtonChange" is included, it will register callbacks for both "ButtonPress" and "ButtonRelease".
+<code>callback</code> is the function to call when matching events occur. If null, the callbacks for those triggers will be unregistered.</p>
+<pre class="language-dart"><code>await myInputController.registerControlCallback(
+  "ButtonSouth",
+  ["ButtonPress", "ButtonRelease"],
+  (Event event) {
+    print('Control event: ${event.control}, value: ${event.value}');
+  },
+);
+</code></pre>
+<p>For more information, see <a href="https://docs.viam.com/dev/reference/apis/components/input-controller/">InputController component</a>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Future&lt;void&gt; registerControlCallback(String control, List&lt;String&gt; triggers, void Function(Event)? callback,
+    {Map&lt;String, dynamic&gt;? extra}) async {
+  if (extra != null) {
+    _extra = extra.toStruct();
+  }
+
+  if (!_callbacks.containsKey(control)) {
+    _callbacks[control] = {};
+  }
+
+  for (final trigger in triggers) {
+    if (trigger == &#39;ButtonChange&#39;) {
+      _callbacks[control]![&#39;ButtonPress&#39;] = callback;
+      _callbacks[control]![&#39;ButtonRelease&#39;] = callback;
+    } else {
+      _callbacks[control]![trigger] = callback;
+    }
+  }
+
+  if (_streamRunning) {
+    _streamNeedsReconnect = true;
+    await _streamSubscription?.cancel();
+    _streamSubscription = null;
+  } else {
+    _streamRunning = true;
+    _connectStream();
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/InputControllerClient-class.html">InputControllerClient</a></li>
+    <li class="self-crumb">registerControlCallback method</li>
+</ol>
+
+    <h5>InputControllerClient class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    viam_sdk
+      0.15.0
+  </span>
+  
+</footer>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
