@@ -719,6 +719,7 @@ class UploadMetadata extends $pb.GeneratedMessage {
     $core.String? fileExtension,
     $core.Iterable<$core.String>? tags,
     $core.Iterable<$core.String>? datasetIds,
+    $core.String? mimeType,
   }) {
     final $result = create();
     if (partId != null) {
@@ -751,6 +752,9 @@ class UploadMetadata extends $pb.GeneratedMessage {
     if (datasetIds != null) {
       $result.datasetIds.addAll(datasetIds);
     }
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
     return $result;
   }
   UploadMetadata._() : super();
@@ -768,6 +772,7 @@ class UploadMetadata extends $pb.GeneratedMessage {
     ..aOS(9, _omitFieldNames ? '' : 'fileExtension')
     ..pPS(10, _omitFieldNames ? '' : 'tags')
     ..pPS(12, _omitFieldNames ? '' : 'datasetIds')
+    ..aOS(13, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
   ;
 
@@ -863,6 +868,15 @@ class UploadMetadata extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(12)
   $core.List<$core.String> get datasetIds => $_getList(9);
+
+  @$pb.TagNumber(13)
+  $core.String get mimeType => $_getSZ(10);
+  @$pb.TagNumber(13)
+  set mimeType($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasMimeType() => $_has(10);
+  @$pb.TagNumber(13)
+  void clearMimeType() => clearField(13);
 }
 
 /// CaptureInterval specifies the start and end times of the data capture.
