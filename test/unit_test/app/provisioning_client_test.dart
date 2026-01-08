@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/provisioning/provisioning.dart';
 import 'package:viam_sdk/src/app/provisioning.dart';
+import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pb.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
@@ -32,8 +33,20 @@ void main() {
 
     test('setSmartMachineCredentials', () async {
       final expected = SetSmartMachineCredentialsResponse();
-      when(serviceClient.setSmartMachineCredentials(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      await provisioningClient.setSmartMachineCredentials(id: 'fake-id', secret: 'fake-secret');
+      when(serviceClient.setSmartMachineCredentials(argThat(
+        isA<SetSmartMachineCredentialsRequest>()
+            .having((req) => req.cloud.id, 'cloud.id', 'fake-id')
+            .having((req) => req.cloud.secret, 'cloud.secret', 'fake-secret')
+            .having((req) => req.cloud.appAddress, 'cloud.appAddress', 'https://app.viam.com:443')
+            .having((req) => req.cloud.apiKey.id, 'cloud.apiKey.id', 'fake-api-key-id')
+            .having((req) => req.cloud.apiKey.key, 'cloud.apiKey.key', 'fake-api-key-key'),
+      ))).thenAnswer((_) => MockResponseFuture.value(expected));
+      await provisioningClient.setSmartMachineCredentials(
+        id: 'fake-id',
+        secret: 'fake-secret',
+        apiKeyId: 'fake-api-key-id',
+        apiKeyKey: 'fake-api-key-key',
+      );
       verify(serviceClient.setSmartMachineCredentials(any)).called(1);
     });
 

@@ -248,8 +248,6 @@ class DataClient {
   /// Obtain unified tabular data and metadata, queried with SQL.
   ///
   /// ```
-  /// // List<Map<String, dynamic>>? _responseData;
-  ///
   ///  _viam = await Viam.withApiKey(
   ///      dotenv.env['API_KEY_ID'] ?? '',
   ///      dotenv.env['API_KEY'] ?? ''
@@ -298,7 +296,7 @@ class DataClient {
   ///    sqlQuery
   ///  });
   ///
-  ///  final limit = BsonCodec.serialize({"\$limit": 1});
+  ///  final limit = BsonCodec.serialize({"$limit": 1});
   ///
   ///  final pipeline = [query.byteList, sort.byteList, limit.byteList];
   ///  _responseData = await dataClient.tabularDataByMql(
@@ -1035,7 +1033,8 @@ class DataClient {
       ..fileName = fileName ?? DateTime.now().toIso8601String()
       ..fileExtension = '.${image.mimeType.type}'
       ..datasetIds.addAll(datasetIds)
-      ..tags.addAll(tags);
+      ..tags.addAll(tags)
+      ..mimeType = image.mimeType.mimeSubtype;
     if (componentType != null) metadata.componentType = componentType;
     if (componentName != null) metadata.componentName = componentName;
     if (methodName != null) metadata.methodName = methodName;
@@ -1127,7 +1126,8 @@ class DataClient {
       ..fileName = fileName ?? fName
       ..fileExtension = ext
       ..datasetIds.addAll(datasetIds)
-      ..tags.addAll(tags);
+      ..tags.addAll(tags)
+      ..mimeType = ext.isNotEmpty ? ext.substring(1) : ''; // Remove leading dot if present
     if (componentType != null) metadata.componentType = componentType;
     if (componentName != null) metadata.componentName = componentName;
     if (methodName != null) metadata.methodName = methodName;
@@ -1207,7 +1207,8 @@ class DataClient {
       ..methodName = methodName ?? ''
       ..type = DataType.DATA_TYPE_BINARY_SENSOR
       ..datasetIds.addAll(datasetIds)
-      ..tags.addAll(tags);
+      ..tags.addAll(tags)
+      ..mimeType = fileExtension.isNotEmpty && fileExtension[0] == '.' ? fileExtension.substring(1) : fileExtension; // Remove leading dot if present
     if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
       metadata.fileExtension = '';
@@ -1407,7 +1408,8 @@ class DataClient {
       ..methodName = methodName ?? ''
       ..type = DataType.DATA_TYPE_BINARY_SENSOR
       ..datasetIds.addAll(datasetIds)
-      ..tags.addAll(tags);
+      ..tags.addAll(tags)
+      ..mimeType = fileExtension.isNotEmpty && fileExtension[0] == '.' ? fileExtension.substring(1) : fileExtension; // Remove leading dot if present
     if (methodParameters != null) uploadMetadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
       uploadMetadata.fileExtension = '';

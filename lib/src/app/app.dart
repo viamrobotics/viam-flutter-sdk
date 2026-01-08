@@ -4,12 +4,15 @@ import 'package:fixnum/fixnum.dart';
 
 import '../../protos/app/packages.dart';
 import '../gen/app/v1/app.pbgrpc.dart';
+import '../gen/app/build/v1/build.pb.dart' as build_pb;
+import '../gen/app/build/v1/build.pbgrpc.dart' as build_grpc;
+import '../gen/app/v1/app.pbenum.dart';
 import '../gen/common/v1/common.pb.dart';
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../utils.dart';
 import 'permissions.dart';
 
-typedef RobotPartLogPage = GetRobotPartLogsResponse;
+typedef RobotPartLogPage = GetRobotLogsResponse;
 
 /// gRPC client for connecting to Viam's App Service
 ///
@@ -677,11 +680,17 @@ class AppClient {
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<RegistryItem>> listRegistryItems(
       List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses,
-      {String? organizationId, String? searchTerm, String? pageToken}) async {
+      {String? organizationId, String? searchTerm, String? pageToken, Iterable<ModuleSourceType>? moduleSourceTypes, Iterable<ModuleLanguage>? moduleLanguages}) async {
     final request = ListRegistryItemsRequest(types: types, visibilities: visibilities, platforms: platforms, statuses: statuses)
       ..organizationId = organizationId ?? ''
       ..searchTerm = searchTerm ?? ''
       ..pageToken = pageToken ?? '';
+    if (moduleSourceTypes != null) {
+      request.moduleSourceTypes.addAll(moduleSourceTypes);
+    }
+    if (moduleLanguages != null) {
+      request.moduleLanguages.addAll(moduleLanguages);
+    }
     final ListRegistryItemsResponse response = await _client.listRegistryItems(request);
     return response.items;
   }
@@ -708,13 +717,20 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<String> updateModule(
-      String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint) async {
+      String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint,
+      {ModuleSourceType? sourceType, ModuleLanguage? language}) async {
     final request = UpdateModuleRequest(models: models)
       ..moduleId = moduleId
       ..visibility = visibility
       ..url = url
       ..description = description
       ..entrypoint = entrypoint;
+    if (sourceType != null) {
+      request.sourceType = sourceType;
+    }
+    if (language != null) {
+      request.language = language;
+    }
     final UpdateModuleResponse response = await _client.updateModule(request);
     return response.url;
   }
@@ -746,6 +762,24 @@ class AppClient {
     final request = ListModulesRequest()..organizationId = organizationId ?? '';
     final ListModulesResponse response = await _client.listModules(request);
     return response.modules;
+  }
+
+  /// Start a package build for a module.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<String> startPackageBuild(
+    String moduleId,
+    String packageVersion,
+    String moduleVersion,
+    Iterable<String> platforms,
+  ) async {
+    final request = build_pb.StartPackageBuildRequest()
+      ..moduleId = moduleId
+      ..packageVersion = packageVersion
+      ..moduleVersion = moduleVersion
+      ..platforms.addAll(platforms);
+    final build_pb.StartPackageBuildResponse response = await _client.startPackageBuild(request);
+    return response.buildId;
   }
 
   /// Create an [APIKey]

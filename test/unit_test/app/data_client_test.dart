@@ -585,7 +585,8 @@ void main() {
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'fileName'
           ..datasetIds.addAll(['datasetId'])
-          ..fileExtension = '.jpeg';
+          ..fileExtension = '.jpeg'
+          ..mimeType = 'jpeg'; // ViamImage.mimeType.mimeSubtype
         await dataClient.uploadImage(image, 'partId', fileName: 'fileName', datasetIds: ['datasetId']);
         expect(syncServiceClient.metadata, expected);
 
@@ -599,7 +600,8 @@ void main() {
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'null'
           ..datasetIds.addAll(['datasetId'])
-          ..fileExtension = '';
+          ..fileExtension = ''
+          ..mimeType = ''; // inferred from empty extension
         await dataClient.uploadFile('/dev/null', 'partId', datasetIds: ['datasetId']);
         expect(syncServiceClient.metadata, expected);
 
@@ -607,10 +609,32 @@ void main() {
         expect(syncServiceClient.metadata?.fileName, equals('otherName'));
       });
 
+      test('uploadFile with extension', () async {
+        final expected = UploadMetadata()
+          ..partId = 'partId'
+          ..type = DataType.DATA_TYPE_FILE
+          ..fileName = 'myFile'
+          ..datasetIds.addAll(['datasetId'])
+          ..fileExtension = '.txt'
+          ..mimeType = 'txt';
+        await dataClient.uploadFile('/path/to/myFile.txt', 'partId', datasetIds: ['datasetId']);
+        expect(syncServiceClient.metadata, expected);
+      });
+
       test('binaryDataCaptureUpload', () async {
         final response = await dataClient.binaryDataCaptureUpload([1], 'partId', 'fileExt',
             componentType: 'type', componentName: 'name', methodName: 'name', datasetIds: ['datasetId']);
         expect(response, equals('fileId'));
+        verify(syncServiceClient.dataCaptureUpload(argThat(
+          isA<DataCaptureUploadRequest>()
+              .having((req) => req.metadata.partId, 'partId', 'partId')
+              .having((req) => req.metadata.fileExtension, 'fileExtension', '.fileExt')
+              .having((req) => req.metadata.mimeType, 'mimeType', 'fileExt')
+              .having((req) => req.metadata.componentType, 'componentType', 'type')
+              .having((req) => req.metadata.componentName, 'componentName', 'name')
+              .having((req) => req.metadata.methodName, 'methodName', 'name')
+              .having((req) => req.metadata.datasetIds, 'datasetIds', ['datasetId']),
+        ))).called(1);
       });
 
       test('tabularDataCaptureUpload', () async {
@@ -633,7 +657,8 @@ void main() {
           ..methodName = ''
           ..componentType = ''
           ..datasetIds.addAll(['datasetId'])
-          ..componentName = '';
+          ..componentName = ''
+          ..mimeType = 'txt'; // inferred from fileExtension
         await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', datasetIds: ['datasetId']);
         expect(syncServiceClient.dataCaptureMetadata, expected);
 
