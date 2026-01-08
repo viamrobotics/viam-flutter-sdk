@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import '../gen/provisioning/v1/provisioning.pb.dart';
 import '../gen/provisioning/v1/provisioning.pbgrpc.dart';
 
 /// {@category Viam SDK}
@@ -37,8 +38,13 @@ class ProvisioningClient {
     required String id,
     required String secret,
     String appAddress = 'https://app.viam.com:443',
+    String? apiKeyId,
+    String? apiKeyKey,
   }) async {
     final cloud = CloudConfig(id: id, secret: secret, appAddress: appAddress);
+    if (apiKeyId != null && apiKeyKey != null) {
+      cloud.apiKey = APIKey(id: apiKeyId, key: apiKeyKey);
+    }
     final request = SetSmartMachineCredentialsRequest(cloud: cloud);
     await _client.setSmartMachineCredentials(request);
   }

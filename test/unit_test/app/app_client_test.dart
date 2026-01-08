@@ -7,6 +7,7 @@ import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/src/app/app.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pb.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/app/build/v1/build.pb.dart' as build_pb;
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import 'package:viam_sdk/viam_sdk.dart';
@@ -710,10 +711,29 @@ void main() {
           ..name = 'name'
           ..type = PackageType.PACKAGE_TYPE_UNSPECIFIED
       ];
-      when(serviceClient.listRegistryItems(any))
-          .thenAnswer((_) => MockResponseFuture.value(ListRegistryItemsResponse()..items.addAll(expected)));
-      final response = await appClient.listRegistryItems([PackageType.PACKAGE_TYPE_UNSPECIFIED], [Visibility.VISIBILITY_UNSPECIFIED],
-          ['platforms'], [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED]);
+      when(serviceClient.listRegistryItems(argThat(
+        isA<ListRegistryItemsRequest>()
+            .having((req) => req.types, 'types', [PackageType.PACKAGE_TYPE_UNSPECIFIED])
+            .having((req) => req.visibilities, 'visibilities', [Visibility.VISIBILITY_UNSPECIFIED])
+            .having((req) => req.platforms, 'platforms', ['platforms'])
+            .having((req) => req.statuses, 'statuses', [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED])
+            .having((req) => req.organizationId, 'organizationId', 'orgId')
+            .having((req) => req.searchTerm, 'searchTerm', 'term')
+            .having((req) => req.pageToken, 'pageToken', 'token')
+            .having((req) => req.moduleSourceTypes, 'moduleSourceTypes', [ModuleSourceType.MODULE_SOURCE_TYPE_EXTERNAL])
+            .having((req) => req.moduleLanguages, 'moduleLanguages', [ModuleLanguage.MODULE_LANGUAGE_PYTHON]),
+      ))).thenAnswer((_) => MockResponseFuture.value(ListRegistryItemsResponse()..items.addAll(expected)));
+      final response = await appClient.listRegistryItems(
+        [PackageType.PACKAGE_TYPE_UNSPECIFIED],
+        [Visibility.VISIBILITY_UNSPECIFIED],
+        ['platforms'],
+        [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED],
+        organizationId: 'orgId',
+        searchTerm: 'term',
+        pageToken: 'token',
+        moduleSourceTypes: [ModuleSourceType.MODULE_SOURCE_TYPE_EXTERNAL],
+        moduleLanguages: [ModuleLanguage.MODULE_LANGUAGE_PYTHON],
+      );
       expect(response, equals(expected));
     });
 
@@ -735,9 +755,27 @@ void main() {
 
     test('updateModule', () async {
       const expected = 'url';
-      when(serviceClient.updateModule(any)).thenAnswer((_) => MockResponseFuture.value(UpdateModuleResponse()..url = expected));
-      final response =
-          await appClient.updateModule('moduleId', Visibility.VISIBILITY_UNSPECIFIED, 'url', 'description', [Model()], 'entrypoint');
+      when(serviceClient.updateModule(argThat(
+        isA<UpdateModuleRequest>()
+            .having((req) => req.moduleId, 'moduleId', 'moduleId')
+            .having((req) => req.visibility, 'visibility', Visibility.VISIBILITY_UNSPECIFIED)
+            .having((req) => req.url, 'url', 'url')
+            .having((req) => req.description, 'description', 'description')
+            .having((req) => req.models, 'models', [Model()])
+            .having((req) => req.entrypoint, 'entrypoint', 'entrypoint')
+            .having((req) => req.sourceType, 'sourceType', ModuleSourceType.MODULE_SOURCE_TYPE_VIAM_HOSTED)
+            .having((req) => req.language, 'language', ModuleLanguage.MODULE_LANGUAGE_GOLANG),
+      ))).thenAnswer((_) => MockResponseFuture.value(UpdateModuleResponse()..url = expected));
+      final response = await appClient.updateModule(
+        'moduleId',
+        Visibility.VISIBILITY_UNSPECIFIED,
+        'url',
+        'description',
+        [Model()],
+        'entrypoint',
+        sourceType: ModuleSourceType.MODULE_SOURCE_TYPE_VIAM_HOSTED,
+        language: ModuleLanguage.MODULE_LANGUAGE_GOLANG,
+      );
       expect(response, equals(expected));
     });
 
@@ -766,6 +804,20 @@ void main() {
       when(serviceClient.listModules(any)).thenAnswer((_) => MockResponseFuture.value(ListModulesResponse()..modules.addAll(expected)));
       final response = await appClient.listModules('moduleId');
       expect(response, equals(expected));
+    });
+
+    test('startPackageBuild', () async {
+      const expectedBuildId = 'buildId';
+      when(serviceClient.startPackageBuild(argThat(
+        isA<build_pb.StartPackageBuildRequest>()
+            .having((req) => req.moduleId, 'moduleId', 'moduleId')
+            .having((req) => req.packageVersion, 'packageVersion', '1.0.0')
+            .having((req) => req.moduleVersion, 'moduleVersion', '1.0.0-rc0')
+            .having((req) => req.platforms, 'platforms', ['linux/arm64']),
+      ))).thenAnswer((_) => MockResponseFuture.value(build_pb.StartPackageBuildResponse()..buildId = expectedBuildId));
+
+      final response = await appClient.startPackageBuild('moduleId', '1.0.0', '1.0.0-rc0', ['linux/arm64']);
+      expect(response, equals(expectedBuildId));
     });
 
     test('createKey', () async {
