@@ -65,6 +65,10 @@ class BuildServiceClient extends $grpc.Client {
       '/viam.app.build.v1.BuildService/StartReloadBuild',
       ($2.StartReloadBuildRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.StartReloadBuildResponse.fromBuffer(value));
+  static final _$startPackageBuild = $grpc.ClientMethod<$2.StartPackageBuildRequest, $2.StartPackageBuildResponse>(
+      '/viam.app.build.v1.BuildService/StartPackageBuild',
+      ($2.StartPackageBuildRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.StartPackageBuildResponse.fromBuffer(value));
 
   BuildServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -114,6 +118,10 @@ class BuildServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.StartReloadBuildResponse> startReloadBuild($async.Stream<$2.StartReloadBuildRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$startReloadBuild, request, options: options).single;
+  }
+
+  $grpc.ResponseFuture<$2.StartPackageBuildResponse> startPackageBuild($2.StartPackageBuildRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$startPackageBuild, request, options: options);
   }
 }
 
@@ -199,6 +207,13 @@ abstract class BuildServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.StartReloadBuildRequest.fromBuffer(value),
         ($2.StartReloadBuildResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.StartPackageBuildRequest, $2.StartPackageBuildResponse>(
+        'StartPackageBuild',
+        startPackageBuild_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.StartPackageBuildRequest.fromBuffer(value),
+        ($2.StartPackageBuildResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$2.StartBuildResponse> startBuild_Pre($grpc.ServiceCall call, $async.Future<$2.StartBuildRequest> request) async {
@@ -241,6 +256,10 @@ abstract class BuildServiceBase extends $grpc.Service {
     return unlinkOrg(call, await request);
   }
 
+  $async.Future<$2.StartPackageBuildResponse> startPackageBuild_Pre($grpc.ServiceCall call, $async.Future<$2.StartPackageBuildRequest> request) async {
+    return startPackageBuild(call, await request);
+  }
+
   $async.Future<$2.StartBuildResponse> startBuild($grpc.ServiceCall call, $2.StartBuildRequest request);
   $async.Stream<$2.GetLogsResponse> getLogs($grpc.ServiceCall call, $2.GetLogsRequest request);
   $async.Future<$2.ListJobsResponse> listJobs($grpc.ServiceCall call, $2.ListJobsRequest request);
@@ -252,4 +271,5 @@ abstract class BuildServiceBase extends $grpc.Service {
   $async.Future<$2.LinkOrgResponse> linkOrg($grpc.ServiceCall call, $2.LinkOrgRequest request);
   $async.Future<$2.UnlinkOrgResponse> unlinkOrg($grpc.ServiceCall call, $2.UnlinkOrgRequest request);
   $async.Future<$2.StartReloadBuildResponse> startReloadBuild($grpc.ServiceCall call, $async.Stream<$2.StartReloadBuildRequest> request);
+  $async.Future<$2.StartPackageBuildResponse> startPackageBuild($grpc.ServiceCall call, $2.StartPackageBuildRequest request);
 }
