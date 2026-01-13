@@ -525,14 +525,14 @@ final $typed_data.Uint8List getOrganizationNamespaceAvailabilityResponseDescript
 const FragmentImportList$json = {
   '1': 'FragmentImportList',
   '2': [
-    {'1': 'imports', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentImport', '10': 'imports'},
+    {'1': 'fragments', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentImport', '10': 'fragments'},
   ],
 };
 
 /// Descriptor for `FragmentImportList`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fragmentImportListDescriptor = $convert.base64Decode(
-    'ChJGcmFnbWVudEltcG9ydExpc3QSNQoHaW1wb3J0cxgBIAMoCzIbLnZpYW0uYXBwLnYxLkZyYW'
-    'dtZW50SW1wb3J0UgdpbXBvcnRz');
+    'ChJGcmFnbWVudEltcG9ydExpc3QSOQoJZnJhZ21lbnRzGAEgAygLMhsudmlhbS5hcHAudjEuRn'
+    'JhZ21lbnRJbXBvcnRSCWZyYWdtZW50cw==');
 
 @$core.Deprecated('Use updateOrganizationRequestDescriptor instead')
 const UpdateOrganizationRequest$json = {
@@ -543,14 +543,14 @@ const UpdateOrganizationRequest$json = {
     {'1': 'public_namespace', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'publicNamespace', '17': true},
     {'1': 'region', '3': 4, '4': 1, '5': 9, '9': 2, '10': 'region', '17': true},
     {'1': 'cid', '3': 5, '4': 1, '5': 9, '9': 3, '10': 'cid', '17': true},
-    {'1': 'fragment_imports', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.FragmentImportList', '9': 4, '10': 'fragmentImports', '17': true},
+    {'1': 'default_fragments', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.FragmentImportList', '9': 4, '10': 'defaultFragments', '17': true},
   ],
   '8': [
     {'1': '_name'},
     {'1': '_public_namespace'},
     {'1': '_region'},
     {'1': '_cid'},
-    {'1': '_fragment_imports'},
+    {'1': '_default_fragments'},
   ],
 };
 
@@ -559,10 +559,10 @@ final $typed_data.Uint8List updateOrganizationRequestDescriptor = $convert.base6
     'ChlVcGRhdGVPcmdhbml6YXRpb25SZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
     'JnYW5pemF0aW9uSWQSFwoEbmFtZRgCIAEoCUgAUgRuYW1liAEBEi4KEHB1YmxpY19uYW1lc3Bh'
     'Y2UYAyABKAlIAVIPcHVibGljTmFtZXNwYWNliAEBEhsKBnJlZ2lvbhgEIAEoCUgCUgZyZWdpb2'
-    '6IAQESFQoDY2lkGAUgASgJSANSA2NpZIgBARJPChBmcmFnbWVudF9pbXBvcnRzGAYgASgLMh8u'
-    'dmlhbS5hcHAudjEuRnJhZ21lbnRJbXBvcnRMaXN0SARSD2ZyYWdtZW50SW1wb3J0c4gBAUIHCg'
-    'VfbmFtZUITChFfcHVibGljX25hbWVzcGFjZUIJCgdfcmVnaW9uQgYKBF9jaWRCEwoRX2ZyYWdt'
-    'ZW50X2ltcG9ydHM=');
+    '6IAQESFQoDY2lkGAUgASgJSANSA2NpZIgBARJRChFkZWZhdWx0X2ZyYWdtZW50cxgGIAEoCzIf'
+    'LnZpYW0uYXBwLnYxLkZyYWdtZW50SW1wb3J0TGlzdEgEUhBkZWZhdWx0RnJhZ21lbnRziAEBQg'
+    'cKBV9uYW1lQhMKEV9wdWJsaWNfbmFtZXNwYWNlQgkKB19yZWdpb25CBgoEX2NpZEIUChJfZGVm'
+    'YXVsdF9mcmFnbWVudHM=');
 
 @$core.Deprecated('Use updateOrganizationResponseDescriptor instead')
 const UpdateOrganizationResponse$json = {

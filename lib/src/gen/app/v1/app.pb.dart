@@ -1348,11 +1348,11 @@ class GetOrganizationNamespaceAvailabilityResponse extends $pb.GeneratedMessage 
 
 class FragmentImportList extends $pb.GeneratedMessage {
   factory FragmentImportList({
-    $core.Iterable<FragmentImport>? imports,
+    $core.Iterable<FragmentImport>? fragments,
   }) {
     final $result = create();
-    if (imports != null) {
-      $result.imports.addAll(imports);
+    if (fragments != null) {
+      $result.fragments.addAll(fragments);
     }
     return $result;
   }
@@ -1361,7 +1361,7 @@ class FragmentImportList extends $pb.GeneratedMessage {
   factory FragmentImportList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentImportList', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<FragmentImport>(1, _omitFieldNames ? '' : 'imports', $pb.PbFieldType.PM, subBuilder: FragmentImport.create)
+    ..pc<FragmentImport>(1, _omitFieldNames ? '' : 'fragments', $pb.PbFieldType.PM, subBuilder: FragmentImport.create)
     ..hasRequiredFields = false
   ;
 
@@ -1387,7 +1387,7 @@ class FragmentImportList extends $pb.GeneratedMessage {
   static FragmentImportList? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<FragmentImport> get imports => $_getList(0);
+  $core.List<FragmentImport> get fragments => $_getList(0);
 }
 
 class UpdateOrganizationRequest extends $pb.GeneratedMessage {
@@ -1397,7 +1397,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     $core.String? publicNamespace,
     $core.String? region,
     $core.String? cid,
-    FragmentImportList? fragmentImports,
+    FragmentImportList? defaultFragments,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1415,8 +1415,8 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     if (cid != null) {
       $result.cid = cid;
     }
-    if (fragmentImports != null) {
-      $result.fragmentImports = fragmentImports;
+    if (defaultFragments != null) {
+      $result.defaultFragments = defaultFragments;
     }
     return $result;
   }
@@ -1430,7 +1430,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(4, _omitFieldNames ? '' : 'region')
     ..aOS(5, _omitFieldNames ? '' : 'cid')
-    ..aOM<FragmentImportList>(6, _omitFieldNames ? '' : 'fragmentImports', subBuilder: FragmentImportList.create)
+    ..aOM<FragmentImportList>(6, _omitFieldNames ? '' : 'defaultFragments', subBuilder: FragmentImportList.create)
     ..hasRequiredFields = false
   ;
 
@@ -1502,15 +1502,15 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   void clearCid() => clearField(5);
 
   @$pb.TagNumber(6)
-  FragmentImportList get fragmentImports => $_getN(5);
+  FragmentImportList get defaultFragments => $_getN(5);
   @$pb.TagNumber(6)
-  set fragmentImports(FragmentImportList v) { setField(6, v); }
+  set defaultFragments(FragmentImportList v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasFragmentImports() => $_has(5);
+  $core.bool hasDefaultFragments() => $_has(5);
   @$pb.TagNumber(6)
-  void clearFragmentImports() => clearField(6);
+  void clearDefaultFragments() => clearField(6);
   @$pb.TagNumber(6)
-  FragmentImportList ensureFragmentImports() => $_ensure(5);
+  FragmentImportList ensureDefaultFragments() => $_ensure(5);
 }
 
 class UpdateOrganizationResponse extends $pb.GeneratedMessage {
