@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $53;
-import '../../../google/protobuf/struct.pb.dart' as $51;
-import '../../../google/protobuf/timestamp.pb.dart' as $52;
+import '../../../google/protobuf/any.pb.dart' as $52;
+import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../google/protobuf/timestamp.pb.dart' as $51;
 import 'data.pbenum.dart';
 
 export 'data.pbenum.dart';
@@ -411,7 +411,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
     $core.String? componentType,
     $core.String? componentName,
     $core.String? methodName,
-    $core.Map<$core.String, $53.Any>? methodParameters,
+    $core.Map<$core.String, $52.Any>? methodParameters,
     $core.Iterable<$core.String>? tags,
     $core.String? mimeType,
   }) {
@@ -468,7 +468,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'componentType')
     ..aOS(9, _omitFieldNames ? '' : 'componentName')
     ..aOS(10, _omitFieldNames ? '' : 'methodName')
-    ..m<$core.String, $53.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'CaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $53.Any.create, valueDefaultOrMaker: $53.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
+    ..m<$core.String, $52.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'CaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $52.Any.create, valueDefaultOrMaker: $52.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
     ..pPS(12, _omitFieldNames ? '' : 'tags')
     ..aOS(13, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
@@ -577,7 +577,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
   void clearMethodName() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.Map<$core.String, $53.Any> get methodParameters => $_getMap(9);
+  $core.Map<$core.String, $52.Any> get methodParameters => $_getMap(9);
 
   @$pb.TagNumber(12)
   $core.List<$core.String> get tags => $_getList(10);
@@ -595,8 +595,8 @@ class CaptureMetadata extends $pb.GeneratedMessage {
 /// CaptureInterval describes the start and end time of the capture in this file.
 class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval({
-    $52.Timestamp? start,
-    $52.Timestamp? end,
+    $51.Timestamp? start,
+    $51.Timestamp? end,
   }) {
     final $result = create();
     if (start != null) {
@@ -612,8 +612,8 @@ class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureInterval', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$52.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $52.Timestamp.create)
-    ..aOM<$52.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $51.Timestamp.create)
+    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $51.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -639,26 +639,26 @@ class CaptureInterval extends $pb.GeneratedMessage {
   static CaptureInterval? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $52.Timestamp get start => $_getN(0);
+  $51.Timestamp get start => $_getN(0);
   @$pb.TagNumber(1)
-  set start($52.Timestamp v) { setField(1, v); }
+  set start($51.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStart() => $_has(0);
   @$pb.TagNumber(1)
   void clearStart() => clearField(1);
   @$pb.TagNumber(1)
-  $52.Timestamp ensureStart() => $_ensure(0);
+  $51.Timestamp ensureStart() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $52.Timestamp get end => $_getN(1);
+  $51.Timestamp get end => $_getN(1);
   @$pb.TagNumber(2)
-  set end($52.Timestamp v) { setField(2, v); }
+  set end($51.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEnd() => $_has(1);
   @$pb.TagNumber(2)
   void clearEnd() => clearField(2);
   @$pb.TagNumber(2)
-  $52.Timestamp ensureEnd() => $_ensure(1);
+  $51.Timestamp ensureEnd() => $_ensure(1);
 }
 
 /// TabularDataByFilterRequest requests tabular data based on filter values.
@@ -840,10 +840,10 @@ class TabularDataByFilterResponse extends $pb.GeneratedMessage {
 /// TabularData contains data and metadata associated with tabular data.
 class TabularData extends $pb.GeneratedMessage {
   factory TabularData({
-    $51.Struct? data,
+    $50.Struct? data,
     $core.int? metadataIndex,
-    $52.Timestamp? timeRequested,
-    $52.Timestamp? timeReceived,
+    $51.Timestamp? timeRequested,
+    $51.Timestamp? timeReceived,
   }) {
     final $result = create();
     if (data != null) {
@@ -865,10 +865,10 @@ class TabularData extends $pb.GeneratedMessage {
   factory TabularData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularData', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$51.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'metadataIndex', $pb.PbFieldType.OU3)
-    ..aOM<$52.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $52.Timestamp.create)
-    ..aOM<$52.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $51.Timestamp.create)
+    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $51.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -894,15 +894,15 @@ class TabularData extends $pb.GeneratedMessage {
   static TabularData? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $51.Struct get data => $_getN(0);
+  $50.Struct get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($51.Struct v) { setField(1, v); }
+  set data($50.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $51.Struct ensureData() => $_ensure(0);
+  $50.Struct ensureData() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.int get metadataIndex => $_getIZ(1);
@@ -914,26 +914,26 @@ class TabularData extends $pb.GeneratedMessage {
   void clearMetadataIndex() => clearField(2);
 
   @$pb.TagNumber(3)
-  $52.Timestamp get timeRequested => $_getN(2);
+  $51.Timestamp get timeRequested => $_getN(2);
   @$pb.TagNumber(3)
-  set timeRequested($52.Timestamp v) { setField(3, v); }
+  set timeRequested($51.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeRequested() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeRequested() => clearField(3);
   @$pb.TagNumber(3)
-  $52.Timestamp ensureTimeRequested() => $_ensure(2);
+  $51.Timestamp ensureTimeRequested() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $52.Timestamp get timeReceived => $_getN(3);
+  $51.Timestamp get timeReceived => $_getN(3);
   @$pb.TagNumber(4)
-  set timeReceived($52.Timestamp v) { setField(4, v); }
+  set timeReceived($51.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeReceived() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeReceived() => clearField(4);
   @$pb.TagNumber(4)
-  $52.Timestamp ensureTimeReceived() => $_ensure(3);
+  $51.Timestamp ensureTimeReceived() => $_ensure(3);
 }
 
 /// TabularDataBySQLRequest requests tabular data using a SQL query.
@@ -1279,7 +1279,7 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
     $core.String? resourceSubtype,
     $core.String? methodName,
     CaptureInterval? interval,
-    $51.Struct? additionalParameters,
+    $50.Struct? additionalParameters,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1312,7 +1312,7 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'resourceSubtype')
     ..aOS(4, _omitFieldNames ? '' : 'methodName')
     ..aOM<CaptureInterval>(5, _omitFieldNames ? '' : 'interval', subBuilder: CaptureInterval.create)
-    ..aOM<$51.Struct>(6, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(6, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1385,15 +1385,15 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
   CaptureInterval ensureInterval() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $51.Struct get additionalParameters => $_getN(5);
+  $50.Struct get additionalParameters => $_getN(5);
   @$pb.TagNumber(6)
-  set additionalParameters($51.Struct v) { setField(6, v); }
+  set additionalParameters($50.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasAdditionalParameters() => $_has(5);
   @$pb.TagNumber(6)
   void clearAdditionalParameters() => clearField(6);
   @$pb.TagNumber(6)
-  $51.Struct ensureAdditionalParameters() => $_ensure(5);
+  $50.Struct ensureAdditionalParameters() => $_ensure(5);
 }
 
 /// ExportTabularDataResponse provides unified tabular data and metadata for a single data point from the specified data source.
@@ -1403,15 +1403,15 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
     $core.String? resourceName,
     $core.String? resourceSubtype,
     $core.String? methodName,
-    $52.Timestamp? timeCaptured,
+    $51.Timestamp? timeCaptured,
     $core.String? organizationId,
     $core.String? locationId,
     $core.String? robotName,
     $core.String? robotId,
     $core.String? partName,
-    $51.Struct? methodParameters,
+    $50.Struct? methodParameters,
     $core.Iterable<$core.String>? tags,
-    $51.Struct? payload,
+    $50.Struct? payload,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1464,15 +1464,15 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'resourceName')
     ..aOS(3, _omitFieldNames ? '' : 'resourceSubtype')
     ..aOS(4, _omitFieldNames ? '' : 'methodName')
-    ..aOM<$52.Timestamp>(5, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $51.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'organizationId')
     ..aOS(7, _omitFieldNames ? '' : 'locationId')
     ..aOS(8, _omitFieldNames ? '' : 'robotName')
     ..aOS(9, _omitFieldNames ? '' : 'robotId')
     ..aOS(10, _omitFieldNames ? '' : 'partName')
-    ..aOM<$51.Struct>(11, _omitFieldNames ? '' : 'methodParameters', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(11, _omitFieldNames ? '' : 'methodParameters', subBuilder: $50.Struct.create)
     ..pPS(12, _omitFieldNames ? '' : 'tags')
-    ..aOM<$51.Struct>(13, _omitFieldNames ? '' : 'payload', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(13, _omitFieldNames ? '' : 'payload', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1534,15 +1534,15 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
   void clearMethodName() => clearField(4);
 
   @$pb.TagNumber(5)
-  $52.Timestamp get timeCaptured => $_getN(4);
+  $51.Timestamp get timeCaptured => $_getN(4);
   @$pb.TagNumber(5)
-  set timeCaptured($52.Timestamp v) { setField(5, v); }
+  set timeCaptured($51.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTimeCaptured() => $_has(4);
   @$pb.TagNumber(5)
   void clearTimeCaptured() => clearField(5);
   @$pb.TagNumber(5)
-  $52.Timestamp ensureTimeCaptured() => $_ensure(4);
+  $51.Timestamp ensureTimeCaptured() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.String get organizationId => $_getSZ(5);
@@ -1590,29 +1590,29 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
   void clearPartName() => clearField(10);
 
   @$pb.TagNumber(11)
-  $51.Struct get methodParameters => $_getN(10);
+  $50.Struct get methodParameters => $_getN(10);
   @$pb.TagNumber(11)
-  set methodParameters($51.Struct v) { setField(11, v); }
+  set methodParameters($50.Struct v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasMethodParameters() => $_has(10);
   @$pb.TagNumber(11)
   void clearMethodParameters() => clearField(11);
   @$pb.TagNumber(11)
-  $51.Struct ensureMethodParameters() => $_ensure(10);
+  $50.Struct ensureMethodParameters() => $_ensure(10);
 
   @$pb.TagNumber(12)
   $core.List<$core.String> get tags => $_getList(11);
 
   @$pb.TagNumber(13)
-  $51.Struct get payload => $_getN(12);
+  $50.Struct get payload => $_getN(12);
   @$pb.TagNumber(13)
-  set payload($51.Struct v) { setField(13, v); }
+  set payload($50.Struct v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasPayload() => $_has(12);
   @$pb.TagNumber(13)
   void clearPayload() => clearField(13);
   @$pb.TagNumber(13)
-  $51.Struct ensurePayload() => $_ensure(12);
+  $50.Struct ensurePayload() => $_ensure(12);
 }
 
 /// GetLatestTabularDataRequest requests the most recent tabular data captured from the specified data source.
@@ -1622,7 +1622,7 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     $core.String? resourceName,
     $core.String? methodName,
     $core.String? resourceSubtype,
-    $51.Struct? additionalParameters,
+    $50.Struct? additionalParameters,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1651,7 +1651,7 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'resourceName')
     ..aOS(3, _omitFieldNames ? '' : 'methodName')
     ..aOS(4, _omitFieldNames ? '' : 'resourceSubtype')
-    ..aOM<$51.Struct>(5, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(5, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1713,24 +1713,24 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
   void clearResourceSubtype() => clearField(4);
 
   @$pb.TagNumber(5)
-  $51.Struct get additionalParameters => $_getN(4);
+  $50.Struct get additionalParameters => $_getN(4);
   @$pb.TagNumber(5)
-  set additionalParameters($51.Struct v) { setField(5, v); }
+  set additionalParameters($50.Struct v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasAdditionalParameters() => $_has(4);
   @$pb.TagNumber(5)
   void clearAdditionalParameters() => clearField(5);
   @$pb.TagNumber(5)
-  $51.Struct ensureAdditionalParameters() => $_ensure(4);
+  $50.Struct ensureAdditionalParameters() => $_ensure(4);
 }
 
 /// GetLatestTabularDataResponse provides the data, time synced, and time captured of the most recent tabular data captured
 /// from the requested data source, as long as it was synced within the last year.
 class GetLatestTabularDataResponse extends $pb.GeneratedMessage {
   factory GetLatestTabularDataResponse({
-    $52.Timestamp? timeCaptured,
-    $52.Timestamp? timeSynced,
-    $51.Struct? payload,
+    $51.Timestamp? timeCaptured,
+    $51.Timestamp? timeSynced,
+    $50.Struct? payload,
   }) {
     final $result = create();
     if (timeCaptured != null) {
@@ -1749,9 +1749,9 @@ class GetLatestTabularDataResponse extends $pb.GeneratedMessage {
   factory GetLatestTabularDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestTabularDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$52.Timestamp>(1, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $52.Timestamp.create)
-    ..aOM<$52.Timestamp>(2, _omitFieldNames ? '' : 'timeSynced', subBuilder: $52.Timestamp.create)
-    ..aOM<$51.Struct>(3, _omitFieldNames ? '' : 'payload', subBuilder: $51.Struct.create)
+    ..aOM<$51.Timestamp>(1, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $51.Timestamp.create)
+    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'timeSynced', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Struct>(3, _omitFieldNames ? '' : 'payload', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1777,37 +1777,37 @@ class GetLatestTabularDataResponse extends $pb.GeneratedMessage {
   static GetLatestTabularDataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $52.Timestamp get timeCaptured => $_getN(0);
+  $51.Timestamp get timeCaptured => $_getN(0);
   @$pb.TagNumber(1)
-  set timeCaptured($52.Timestamp v) { setField(1, v); }
+  set timeCaptured($51.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeCaptured() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeCaptured() => clearField(1);
   @$pb.TagNumber(1)
-  $52.Timestamp ensureTimeCaptured() => $_ensure(0);
+  $51.Timestamp ensureTimeCaptured() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $52.Timestamp get timeSynced => $_getN(1);
+  $51.Timestamp get timeSynced => $_getN(1);
   @$pb.TagNumber(2)
-  set timeSynced($52.Timestamp v) { setField(2, v); }
+  set timeSynced($51.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimeSynced() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimeSynced() => clearField(2);
   @$pb.TagNumber(2)
-  $52.Timestamp ensureTimeSynced() => $_ensure(1);
+  $51.Timestamp ensureTimeSynced() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $51.Struct get payload => $_getN(2);
+  $50.Struct get payload => $_getN(2);
   @$pb.TagNumber(3)
-  set payload($51.Struct v) { setField(3, v); }
+  set payload($50.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasPayload() => $_has(2);
   @$pb.TagNumber(3)
   void clearPayload() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Struct ensurePayload() => $_ensure(2);
+  $50.Struct ensurePayload() => $_ensure(2);
 }
 
 /// BinaryData contains data and metadata associated with binary data.
@@ -2543,8 +2543,8 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $core.String? id,
     CaptureMetadata? captureMetadata,
-    $52.Timestamp? timeRequested,
-    $52.Timestamp? timeReceived,
+    $51.Timestamp? timeRequested,
+    $51.Timestamp? timeReceived,
     $core.String? fileName,
     $core.String? fileExt,
     $core.String? uri,
@@ -2593,8 +2593,8 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOM<CaptureMetadata>(2, _omitFieldNames ? '' : 'captureMetadata', subBuilder: CaptureMetadata.create)
-    ..aOM<$52.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $52.Timestamp.create)
-    ..aOM<$52.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $51.Timestamp.create)
+    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $51.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'fileName')
     ..aOS(6, _omitFieldNames ? '' : 'fileExt')
     ..aOS(7, _omitFieldNames ? '' : 'uri')
@@ -2650,26 +2650,26 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   CaptureMetadata ensureCaptureMetadata() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $52.Timestamp get timeRequested => $_getN(2);
+  $51.Timestamp get timeRequested => $_getN(2);
   @$pb.TagNumber(3)
-  set timeRequested($52.Timestamp v) { setField(3, v); }
+  set timeRequested($51.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeRequested() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeRequested() => clearField(3);
   @$pb.TagNumber(3)
-  $52.Timestamp ensureTimeRequested() => $_ensure(2);
+  $51.Timestamp ensureTimeRequested() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $52.Timestamp get timeReceived => $_getN(3);
+  $51.Timestamp get timeReceived => $_getN(3);
   @$pb.TagNumber(4)
-  set timeReceived($52.Timestamp v) { setField(4, v); }
+  set timeReceived($51.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeReceived() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeReceived() => clearField(4);
   @$pb.TagNumber(4)
-  $52.Timestamp ensureTimeReceived() => $_ensure(3);
+  $51.Timestamp ensureTimeReceived() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.String get fileName => $_getSZ(4);
@@ -5219,8 +5219,8 @@ class Query extends $pb.GeneratedMessage {
     $core.String? organizationId,
     $core.String? name,
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
-    $52.Timestamp? createdOn,
-    $52.Timestamp? updatedAt,
+    $51.Timestamp? createdOn,
+    $51.Timestamp? updatedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -5252,8 +5252,8 @@ class Query extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'organizationId')
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..p<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
-    ..aOM<$52.Timestamp>(5, _omitFieldNames ? '' : 'createdOn', subBuilder: $52.Timestamp.create)
-    ..aOM<$52.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $51.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -5309,26 +5309,26 @@ class Query extends $pb.GeneratedMessage {
   $core.List<$core.List<$core.int>> get mqlBinary => $_getList(3);
 
   @$pb.TagNumber(5)
-  $52.Timestamp get createdOn => $_getN(4);
+  $51.Timestamp get createdOn => $_getN(4);
   @$pb.TagNumber(5)
-  set createdOn($52.Timestamp v) { setField(5, v); }
+  set createdOn($51.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedOn() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedOn() => clearField(5);
   @$pb.TagNumber(5)
-  $52.Timestamp ensureCreatedOn() => $_ensure(4);
+  $51.Timestamp ensureCreatedOn() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $52.Timestamp get updatedAt => $_getN(5);
+  $51.Timestamp get updatedAt => $_getN(5);
   @$pb.TagNumber(6)
-  set updatedAt($52.Timestamp v) { setField(6, v); }
+  set updatedAt($51.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasUpdatedAt() => $_has(5);
   @$pb.TagNumber(6)
   void clearUpdatedAt() => clearField(6);
   @$pb.TagNumber(6)
-  $52.Timestamp ensureUpdatedAt() => $_ensure(5);
+  $51.Timestamp ensureUpdatedAt() => $_ensure(5);
 }
 
 /// DeleteSavedQuery deletes a saved query based on the given id.
@@ -5801,7 +5801,7 @@ class CreateBinaryDataSignedURLRequest extends $pb.GeneratedMessage {
 class CreateBinaryDataSignedURLResponse extends $pb.GeneratedMessage {
   factory CreateBinaryDataSignedURLResponse({
     $core.String? signedUrl,
-    $52.Timestamp? expiresAt,
+    $51.Timestamp? expiresAt,
   }) {
     final $result = create();
     if (signedUrl != null) {
@@ -5818,7 +5818,7 @@ class CreateBinaryDataSignedURLResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateBinaryDataSignedURLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'signedUrl')
-    ..aOM<$52.Timestamp>(2, _omitFieldNames ? '' : 'expiresAt', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'expiresAt', subBuilder: $51.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -5855,15 +5855,15 @@ class CreateBinaryDataSignedURLResponse extends $pb.GeneratedMessage {
 
   /// Expiration time of the signed URL token.
   @$pb.TagNumber(2)
-  $52.Timestamp get expiresAt => $_getN(1);
+  $51.Timestamp get expiresAt => $_getN(1);
   @$pb.TagNumber(2)
-  set expiresAt($52.Timestamp v) { setField(2, v); }
+  set expiresAt($51.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasExpiresAt() => $_has(1);
   @$pb.TagNumber(2)
   void clearExpiresAt() => clearField(2);
   @$pb.TagNumber(2)
-  $52.Timestamp ensureExpiresAt() => $_ensure(1);
+  $51.Timestamp ensureExpiresAt() => $_ensure(1);
 }
 
 

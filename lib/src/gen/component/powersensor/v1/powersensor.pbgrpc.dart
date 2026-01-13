@@ -16,24 +16,24 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import 'powersensor.pb.dart' as $32;
+import 'powersensor.pb.dart' as $31;
 
 export 'powersensor.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.powersensor.v1.PowerSensorService')
 class PowerSensorServiceClient extends $grpc.Client {
-  static final _$getVoltage = $grpc.ClientMethod<$32.GetVoltageRequest, $32.GetVoltageResponse>(
+  static final _$getVoltage = $grpc.ClientMethod<$31.GetVoltageRequest, $31.GetVoltageResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetVoltage',
-      ($32.GetVoltageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $32.GetVoltageResponse.fromBuffer(value));
-  static final _$getCurrent = $grpc.ClientMethod<$32.GetCurrentRequest, $32.GetCurrentResponse>(
+      ($31.GetVoltageRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetVoltageResponse.fromBuffer(value));
+  static final _$getCurrent = $grpc.ClientMethod<$31.GetCurrentRequest, $31.GetCurrentResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetCurrent',
-      ($32.GetCurrentRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $32.GetCurrentResponse.fromBuffer(value));
-  static final _$getPower = $grpc.ClientMethod<$32.GetPowerRequest, $32.GetPowerResponse>(
+      ($31.GetCurrentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetCurrentResponse.fromBuffer(value));
+  static final _$getPower = $grpc.ClientMethod<$31.GetPowerRequest, $31.GetPowerResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetPower',
-      ($32.GetPowerRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $32.GetPowerResponse.fromBuffer(value));
+      ($31.GetPowerRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetPowerResponse.fromBuffer(value));
   static final _$getReadings = $grpc.ClientMethod<$16.GetReadingsRequest, $16.GetReadingsResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetReadings',
       ($16.GetReadingsRequest value) => value.writeToBuffer(),
@@ -49,15 +49,15 @@ class PowerSensorServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$32.GetVoltageResponse> getVoltage($32.GetVoltageRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$31.GetVoltageResponse> getVoltage($31.GetVoltageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getVoltage, request, options: options);
   }
 
-  $grpc.ResponseFuture<$32.GetCurrentResponse> getCurrent($32.GetCurrentRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$31.GetCurrentResponse> getCurrent($31.GetCurrentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getCurrent, request, options: options);
   }
 
-  $grpc.ResponseFuture<$32.GetPowerResponse> getPower($32.GetPowerRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$31.GetPowerResponse> getPower($31.GetPowerRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPower, request, options: options);
   }
 
@@ -75,27 +75,27 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.powersensor.v1.PowerSensorService';
 
   PowerSensorServiceBase() {
-    $addMethod($grpc.ServiceMethod<$32.GetVoltageRequest, $32.GetVoltageResponse>(
+    $addMethod($grpc.ServiceMethod<$31.GetVoltageRequest, $31.GetVoltageResponse>(
         'GetVoltage',
         getVoltage_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $32.GetVoltageRequest.fromBuffer(value),
-        ($32.GetVoltageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$32.GetCurrentRequest, $32.GetCurrentResponse>(
+        ($core.List<$core.int> value) => $31.GetVoltageRequest.fromBuffer(value),
+        ($31.GetVoltageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$31.GetCurrentRequest, $31.GetCurrentResponse>(
         'GetCurrent',
         getCurrent_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $32.GetCurrentRequest.fromBuffer(value),
-        ($32.GetCurrentResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$32.GetPowerRequest, $32.GetPowerResponse>(
+        ($core.List<$core.int> value) => $31.GetCurrentRequest.fromBuffer(value),
+        ($31.GetCurrentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$31.GetPowerRequest, $31.GetPowerResponse>(
         'GetPower',
         getPower_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $32.GetPowerRequest.fromBuffer(value),
-        ($32.GetPowerResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $31.GetPowerRequest.fromBuffer(value),
+        ($31.GetPowerResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$16.GetReadingsRequest, $16.GetReadingsResponse>(
         'GetReadings',
         getReadings_Pre,
@@ -112,15 +112,15 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
         ($16.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$32.GetVoltageResponse> getVoltage_Pre($grpc.ServiceCall call, $async.Future<$32.GetVoltageRequest> request) async {
+  $async.Future<$31.GetVoltageResponse> getVoltage_Pre($grpc.ServiceCall call, $async.Future<$31.GetVoltageRequest> request) async {
     return getVoltage(call, await request);
   }
 
-  $async.Future<$32.GetCurrentResponse> getCurrent_Pre($grpc.ServiceCall call, $async.Future<$32.GetCurrentRequest> request) async {
+  $async.Future<$31.GetCurrentResponse> getCurrent_Pre($grpc.ServiceCall call, $async.Future<$31.GetCurrentRequest> request) async {
     return getCurrent(call, await request);
   }
 
-  $async.Future<$32.GetPowerResponse> getPower_Pre($grpc.ServiceCall call, $async.Future<$32.GetPowerRequest> request) async {
+  $async.Future<$31.GetPowerResponse> getPower_Pre($grpc.ServiceCall call, $async.Future<$31.GetPowerRequest> request) async {
     return getPower(call, await request);
   }
 
@@ -132,9 +132,9 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
-  $async.Future<$32.GetVoltageResponse> getVoltage($grpc.ServiceCall call, $32.GetVoltageRequest request);
-  $async.Future<$32.GetCurrentResponse> getCurrent($grpc.ServiceCall call, $32.GetCurrentRequest request);
-  $async.Future<$32.GetPowerResponse> getPower($grpc.ServiceCall call, $32.GetPowerRequest request);
+  $async.Future<$31.GetVoltageResponse> getVoltage($grpc.ServiceCall call, $31.GetVoltageRequest request);
+  $async.Future<$31.GetCurrentResponse> getCurrent($grpc.ServiceCall call, $31.GetCurrentRequest request);
+  $async.Future<$31.GetPowerResponse> getPower($grpc.ServiceCall call, $31.GetPowerRequest request);
   $async.Future<$16.GetReadingsResponse> getReadings($grpc.ServiceCall call, $16.GetReadingsRequest request);
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
 }

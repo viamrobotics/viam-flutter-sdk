@@ -16,16 +16,16 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import 'audioout.pb.dart' as $20;
+import 'audioout.pb.dart' as $18;
 
 export 'audioout.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.audioout.v1.AudioOutService')
 class AudioOutServiceClient extends $grpc.Client {
-  static final _$play = $grpc.ClientMethod<$20.PlayRequest, $20.PlayResponse>(
+  static final _$play = $grpc.ClientMethod<$18.PlayRequest, $18.PlayResponse>(
       '/viam.component.audioout.v1.AudioOutService/Play',
-      ($20.PlayRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $20.PlayResponse.fromBuffer(value));
+      ($18.PlayRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $18.PlayResponse.fromBuffer(value));
   static final _$getProperties = $grpc.ClientMethod<$16.GetPropertiesRequest, $16.GetPropertiesResponse>(
       '/viam.component.audioout.v1.AudioOutService/GetProperties',
       ($16.GetPropertiesRequest value) => value.writeToBuffer(),
@@ -45,7 +45,7 @@ class AudioOutServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$20.PlayResponse> play($20.PlayRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$18.PlayResponse> play($18.PlayRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$play, request, options: options);
   }
 
@@ -67,13 +67,13 @@ abstract class AudioOutServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.audioout.v1.AudioOutService';
 
   AudioOutServiceBase() {
-    $addMethod($grpc.ServiceMethod<$20.PlayRequest, $20.PlayResponse>(
+    $addMethod($grpc.ServiceMethod<$18.PlayRequest, $18.PlayResponse>(
         'Play',
         play_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $20.PlayRequest.fromBuffer(value),
-        ($20.PlayResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $18.PlayRequest.fromBuffer(value),
+        ($18.PlayResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$16.GetPropertiesRequest, $16.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
@@ -97,7 +97,7 @@ abstract class AudioOutServiceBase extends $grpc.Service {
         ($16.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$20.PlayResponse> play_Pre($grpc.ServiceCall call, $async.Future<$20.PlayRequest> request) async {
+  $async.Future<$18.PlayResponse> play_Pre($grpc.ServiceCall call, $async.Future<$18.PlayRequest> request) async {
     return play(call, await request);
   }
 
@@ -113,7 +113,7 @@ abstract class AudioOutServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$20.PlayResponse> play($grpc.ServiceCall call, $20.PlayRequest request);
+  $async.Future<$18.PlayResponse> play($grpc.ServiceCall call, $18.PlayRequest request);
   $async.Future<$16.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $16.GetPropertiesRequest request);
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
   $async.Future<$16.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $16.GetGeometriesRequest request);

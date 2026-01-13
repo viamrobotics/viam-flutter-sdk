@@ -93,6 +93,42 @@ class FragmentErrorType extends $pb.ProtobufEnum {
   const FragmentErrorType._($core.int v, $core.String n) : super(v, n);
 }
 
+class ModuleSourceType extends $pb.ProtobufEnum {
+  static const ModuleSourceType MODULE_SOURCE_TYPE_UNSPECIFIED = ModuleSourceType._(0, _omitEnumNames ? '' : 'MODULE_SOURCE_TYPE_UNSPECIFIED');
+  static const ModuleSourceType MODULE_SOURCE_TYPE_EXTERNAL = ModuleSourceType._(1, _omitEnumNames ? '' : 'MODULE_SOURCE_TYPE_EXTERNAL');
+  static const ModuleSourceType MODULE_SOURCE_TYPE_VIAM_HOSTED = ModuleSourceType._(2, _omitEnumNames ? '' : 'MODULE_SOURCE_TYPE_VIAM_HOSTED');
+
+  static const $core.List<ModuleSourceType> values = <ModuleSourceType> [
+    MODULE_SOURCE_TYPE_UNSPECIFIED,
+    MODULE_SOURCE_TYPE_EXTERNAL,
+    MODULE_SOURCE_TYPE_VIAM_HOSTED,
+  ];
+
+  static final $core.Map<$core.int, ModuleSourceType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ModuleSourceType? valueOf($core.int value) => _byValue[value];
+
+  const ModuleSourceType._($core.int v, $core.String n) : super(v, n);
+}
+
+class ModuleLanguage extends $pb.ProtobufEnum {
+  static const ModuleLanguage MODULE_LANGUAGE_UNSPECIFIED = ModuleLanguage._(0, _omitEnumNames ? '' : 'MODULE_LANGUAGE_UNSPECIFIED');
+  static const ModuleLanguage MODULE_LANGUAGE_GOLANG = ModuleLanguage._(1, _omitEnumNames ? '' : 'MODULE_LANGUAGE_GOLANG');
+  static const ModuleLanguage MODULE_LANGUAGE_PYTHON = ModuleLanguage._(2, _omitEnumNames ? '' : 'MODULE_LANGUAGE_PYTHON');
+  static const ModuleLanguage MODULE_LANGUAGE_CPP = ModuleLanguage._(3, _omitEnumNames ? '' : 'MODULE_LANGUAGE_CPP');
+
+  static const $core.List<ModuleLanguage> values = <ModuleLanguage> [
+    MODULE_LANGUAGE_UNSPECIFIED,
+    MODULE_LANGUAGE_GOLANG,
+    MODULE_LANGUAGE_PYTHON,
+    MODULE_LANGUAGE_CPP,
+  ];
+
+  static final $core.Map<$core.int, ModuleLanguage> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ModuleLanguage? valueOf($core.int value) => _byValue[value];
+
+  const ModuleLanguage._($core.int v, $core.String n) : super(v, n);
+}
+
 class RegistryItemStatus extends $pb.ProtobufEnum {
   static const RegistryItemStatus REGISTRY_ITEM_STATUS_UNSPECIFIED = RegistryItemStatus._(0, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_UNSPECIFIED');
   static const RegistryItemStatus REGISTRY_ITEM_STATUS_PUBLISHED = RegistryItemStatus._(1, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_PUBLISHED');

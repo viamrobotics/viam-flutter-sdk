@@ -15,7 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $51;
+import '../../../google/protobuf/struct.pb.dart' as $50;
 
 class GetAudioRequest extends $pb.GeneratedMessage {
   factory GetAudioRequest({
@@ -24,7 +24,7 @@ class GetAudioRequest extends $pb.GeneratedMessage {
     $core.String? codec,
     $core.String? requestId,
     $fixnum.Int64? previousTimestampNanoseconds,
-    $51.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -57,7 +57,7 @@ class GetAudioRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'codec')
     ..aOS(4, _omitFieldNames ? '' : 'requestId')
     ..aInt64(5, _omitFieldNames ? '' : 'previousTimestampNanoseconds')
-    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -133,15 +133,15 @@ class GetAudioRequest extends $pb.GeneratedMessage {
   void clearPreviousTimestampNanoseconds() => clearField(5);
 
   @$pb.TagNumber(99)
-  $51.Struct get extra => $_getN(5);
+  $50.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($51.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $51.Struct ensureExtra() => $_ensure(5);
+  $50.Struct ensureExtra() => $_ensure(5);
 }
 
 class GetAudioResponse extends $pb.GeneratedMessage {

@@ -16,24 +16,24 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import 'world_state_store.pb.dart' as $48;
+import 'world_state_store.pb.dart' as $47;
 
 export 'world_state_store.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.worldstatestore.v1.WorldStateStoreService')
 class WorldStateStoreServiceClient extends $grpc.Client {
-  static final _$listUUIDs = $grpc.ClientMethod<$48.ListUUIDsRequest, $48.ListUUIDsResponse>(
+  static final _$listUUIDs = $grpc.ClientMethod<$47.ListUUIDsRequest, $47.ListUUIDsResponse>(
       '/viam.service.worldstatestore.v1.WorldStateStoreService/ListUUIDs',
-      ($48.ListUUIDsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $48.ListUUIDsResponse.fromBuffer(value));
-  static final _$getTransform = $grpc.ClientMethod<$48.GetTransformRequest, $48.GetTransformResponse>(
+      ($47.ListUUIDsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $47.ListUUIDsResponse.fromBuffer(value));
+  static final _$getTransform = $grpc.ClientMethod<$47.GetTransformRequest, $47.GetTransformResponse>(
       '/viam.service.worldstatestore.v1.WorldStateStoreService/GetTransform',
-      ($48.GetTransformRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $48.GetTransformResponse.fromBuffer(value));
-  static final _$streamTransformChanges = $grpc.ClientMethod<$48.StreamTransformChangesRequest, $48.StreamTransformChangesResponse>(
+      ($47.GetTransformRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $47.GetTransformResponse.fromBuffer(value));
+  static final _$streamTransformChanges = $grpc.ClientMethod<$47.StreamTransformChangesRequest, $47.StreamTransformChangesResponse>(
       '/viam.service.worldstatestore.v1.WorldStateStoreService/StreamTransformChanges',
-      ($48.StreamTransformChangesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $48.StreamTransformChangesResponse.fromBuffer(value));
+      ($47.StreamTransformChangesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $47.StreamTransformChangesResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
       '/viam.service.worldstatestore.v1.WorldStateStoreService/DoCommand',
       ($16.DoCommandRequest value) => value.writeToBuffer(),
@@ -45,15 +45,15 @@ class WorldStateStoreServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$48.ListUUIDsResponse> listUUIDs($48.ListUUIDsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$47.ListUUIDsResponse> listUUIDs($47.ListUUIDsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listUUIDs, request, options: options);
   }
 
-  $grpc.ResponseFuture<$48.GetTransformResponse> getTransform($48.GetTransformRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$47.GetTransformResponse> getTransform($47.GetTransformRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getTransform, request, options: options);
   }
 
-  $grpc.ResponseStream<$48.StreamTransformChangesResponse> streamTransformChanges($48.StreamTransformChangesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$47.StreamTransformChangesResponse> streamTransformChanges($47.StreamTransformChangesRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$streamTransformChanges, $async.Stream.fromIterable([request]), options: options);
   }
 
@@ -67,27 +67,27 @@ abstract class WorldStateStoreServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.worldstatestore.v1.WorldStateStoreService';
 
   WorldStateStoreServiceBase() {
-    $addMethod($grpc.ServiceMethod<$48.ListUUIDsRequest, $48.ListUUIDsResponse>(
+    $addMethod($grpc.ServiceMethod<$47.ListUUIDsRequest, $47.ListUUIDsResponse>(
         'ListUUIDs',
         listUUIDs_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $48.ListUUIDsRequest.fromBuffer(value),
-        ($48.ListUUIDsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$48.GetTransformRequest, $48.GetTransformResponse>(
+        ($core.List<$core.int> value) => $47.ListUUIDsRequest.fromBuffer(value),
+        ($47.ListUUIDsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$47.GetTransformRequest, $47.GetTransformResponse>(
         'GetTransform',
         getTransform_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $48.GetTransformRequest.fromBuffer(value),
-        ($48.GetTransformResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$48.StreamTransformChangesRequest, $48.StreamTransformChangesResponse>(
+        ($core.List<$core.int> value) => $47.GetTransformRequest.fromBuffer(value),
+        ($47.GetTransformResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$47.StreamTransformChangesRequest, $47.StreamTransformChangesResponse>(
         'StreamTransformChanges',
         streamTransformChanges_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $48.StreamTransformChangesRequest.fromBuffer(value),
-        ($48.StreamTransformChangesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $47.StreamTransformChangesRequest.fromBuffer(value),
+        ($47.StreamTransformChangesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -97,15 +97,15 @@ abstract class WorldStateStoreServiceBase extends $grpc.Service {
         ($16.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$48.ListUUIDsResponse> listUUIDs_Pre($grpc.ServiceCall call, $async.Future<$48.ListUUIDsRequest> request) async {
+  $async.Future<$47.ListUUIDsResponse> listUUIDs_Pre($grpc.ServiceCall call, $async.Future<$47.ListUUIDsRequest> request) async {
     return listUUIDs(call, await request);
   }
 
-  $async.Future<$48.GetTransformResponse> getTransform_Pre($grpc.ServiceCall call, $async.Future<$48.GetTransformRequest> request) async {
+  $async.Future<$47.GetTransformResponse> getTransform_Pre($grpc.ServiceCall call, $async.Future<$47.GetTransformRequest> request) async {
     return getTransform(call, await request);
   }
 
-  $async.Stream<$48.StreamTransformChangesResponse> streamTransformChanges_Pre($grpc.ServiceCall call, $async.Future<$48.StreamTransformChangesRequest> request) async* {
+  $async.Stream<$47.StreamTransformChangesResponse> streamTransformChanges_Pre($grpc.ServiceCall call, $async.Future<$47.StreamTransformChangesRequest> request) async* {
     yield* streamTransformChanges(call, await request);
   }
 
@@ -113,8 +113,8 @@ abstract class WorldStateStoreServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
-  $async.Future<$48.ListUUIDsResponse> listUUIDs($grpc.ServiceCall call, $48.ListUUIDsRequest request);
-  $async.Future<$48.GetTransformResponse> getTransform($grpc.ServiceCall call, $48.GetTransformRequest request);
-  $async.Stream<$48.StreamTransformChangesResponse> streamTransformChanges($grpc.ServiceCall call, $48.StreamTransformChangesRequest request);
+  $async.Future<$47.ListUUIDsResponse> listUUIDs($grpc.ServiceCall call, $47.ListUUIDsRequest request);
+  $async.Future<$47.GetTransformResponse> getTransform($grpc.ServiceCall call, $47.GetTransformRequest request);
+  $async.Stream<$47.StreamTransformChangesResponse> streamTransformChanges($grpc.ServiceCall call, $47.StreamTransformChangesRequest request);
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
 }

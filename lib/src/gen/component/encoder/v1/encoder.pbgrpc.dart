@@ -16,24 +16,24 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import 'encoder.pb.dart' as $25;
+import 'encoder.pb.dart' as $24;
 
 export 'encoder.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.encoder.v1.EncoderService')
 class EncoderServiceClient extends $grpc.Client {
-  static final _$getPosition = $grpc.ClientMethod<$25.GetPositionRequest, $25.GetPositionResponse>(
+  static final _$getPosition = $grpc.ClientMethod<$24.GetPositionRequest, $24.GetPositionResponse>(
       '/viam.component.encoder.v1.EncoderService/GetPosition',
-      ($25.GetPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $25.GetPositionResponse.fromBuffer(value));
-  static final _$resetPosition = $grpc.ClientMethod<$25.ResetPositionRequest, $25.ResetPositionResponse>(
+      ($24.GetPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetPositionResponse.fromBuffer(value));
+  static final _$resetPosition = $grpc.ClientMethod<$24.ResetPositionRequest, $24.ResetPositionResponse>(
       '/viam.component.encoder.v1.EncoderService/ResetPosition',
-      ($25.ResetPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $25.ResetPositionResponse.fromBuffer(value));
-  static final _$getProperties = $grpc.ClientMethod<$25.GetPropertiesRequest, $25.GetPropertiesResponse>(
+      ($24.ResetPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.ResetPositionResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$24.GetPropertiesRequest, $24.GetPropertiesResponse>(
       '/viam.component.encoder.v1.EncoderService/GetProperties',
-      ($25.GetPropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $25.GetPropertiesResponse.fromBuffer(value));
+      ($24.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetPropertiesResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
       '/viam.component.encoder.v1.EncoderService/DoCommand',
       ($16.DoCommandRequest value) => value.writeToBuffer(),
@@ -49,15 +49,15 @@ class EncoderServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$25.GetPositionResponse> getPosition($25.GetPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetPositionResponse> getPosition($24.GetPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$25.ResetPositionResponse> resetPosition($25.ResetPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.ResetPositionResponse> resetPosition($24.ResetPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$resetPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$25.GetPropertiesResponse> getProperties($25.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetPropertiesResponse> getProperties($24.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 
@@ -75,27 +75,27 @@ abstract class EncoderServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.encoder.v1.EncoderService';
 
   EncoderServiceBase() {
-    $addMethod($grpc.ServiceMethod<$25.GetPositionRequest, $25.GetPositionResponse>(
+    $addMethod($grpc.ServiceMethod<$24.GetPositionRequest, $24.GetPositionResponse>(
         'GetPosition',
         getPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $25.GetPositionRequest.fromBuffer(value),
-        ($25.GetPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$25.ResetPositionRequest, $25.ResetPositionResponse>(
+        ($core.List<$core.int> value) => $24.GetPositionRequest.fromBuffer(value),
+        ($24.GetPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.ResetPositionRequest, $24.ResetPositionResponse>(
         'ResetPosition',
         resetPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $25.ResetPositionRequest.fromBuffer(value),
-        ($25.ResetPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$25.GetPropertiesRequest, $25.GetPropertiesResponse>(
+        ($core.List<$core.int> value) => $24.ResetPositionRequest.fromBuffer(value),
+        ($24.ResetPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetPropertiesRequest, $24.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $25.GetPropertiesRequest.fromBuffer(value),
-        ($25.GetPropertiesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $24.GetPropertiesRequest.fromBuffer(value),
+        ($24.GetPropertiesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -112,15 +112,15 @@ abstract class EncoderServiceBase extends $grpc.Service {
         ($16.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$25.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$25.GetPositionRequest> request) async {
+  $async.Future<$24.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$24.GetPositionRequest> request) async {
     return getPosition(call, await request);
   }
 
-  $async.Future<$25.ResetPositionResponse> resetPosition_Pre($grpc.ServiceCall call, $async.Future<$25.ResetPositionRequest> request) async {
+  $async.Future<$24.ResetPositionResponse> resetPosition_Pre($grpc.ServiceCall call, $async.Future<$24.ResetPositionRequest> request) async {
     return resetPosition(call, await request);
   }
 
-  $async.Future<$25.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$25.GetPropertiesRequest> request) async {
+  $async.Future<$24.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$24.GetPropertiesRequest> request) async {
     return getProperties(call, await request);
   }
 
@@ -132,9 +132,9 @@ abstract class EncoderServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$25.GetPositionResponse> getPosition($grpc.ServiceCall call, $25.GetPositionRequest request);
-  $async.Future<$25.ResetPositionResponse> resetPosition($grpc.ServiceCall call, $25.ResetPositionRequest request);
-  $async.Future<$25.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $25.GetPropertiesRequest request);
+  $async.Future<$24.GetPositionResponse> getPosition($grpc.ServiceCall call, $24.GetPositionRequest request);
+  $async.Future<$24.ResetPositionResponse> resetPosition($grpc.ServiceCall call, $24.ResetPositionRequest request);
+  $async.Future<$24.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $24.GetPropertiesRequest request);
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
   $async.Future<$16.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $16.GetGeometriesRequest request);
 }
