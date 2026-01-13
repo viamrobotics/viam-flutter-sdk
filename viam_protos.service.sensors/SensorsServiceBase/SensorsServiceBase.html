@@ -63,20 +63,20 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">SensorsServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$43.GetSensorsRequest, $43.GetSensorsResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$42.GetSensorsRequest, $42.GetSensorsResponse&gt;(
       &#39;GetSensors&#39;,
       getSensors_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $43.GetSensorsRequest.fromBuffer(value),
-      ($43.GetSensorsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$43.GetReadingsRequest, $43.GetReadingsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $42.GetSensorsRequest.fromBuffer(value),
+      ($42.GetSensorsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$42.GetReadingsRequest, $42.GetReadingsResponse&gt;(
       &#39;GetReadings&#39;,
       getReadings_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $43.GetReadingsRequest.fromBuffer(value),
-      ($43.GetReadingsResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $42.GetReadingsRequest.fromBuffer(value),
+      ($42.GetReadingsResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,

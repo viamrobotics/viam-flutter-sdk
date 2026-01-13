@@ -57,6 +57,7 @@
       <span class="name ">CloudConfig</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span></li>
 <li><span class="parameter" id="-param-secret"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">secret</span>, </span></li>
 <li><span class="parameter" id="-param-appAddress"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">appAddress</span>, </span></li>
+<li><span class="parameter" id="-param-apiKey"><span class="type-annotation"><a href="../../viam_sdk/APIKey-class.html">APIKey</a>?</span> <span class="parameter-name">apiKey</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,6 +70,7 @@
   $core.String? id,
   $core.String? secret,
   $core.String? appAddress,
+  APIKey? apiKey,
 }) {
   final $result = create();
   if (id != null) {
@@ -79,6 +81,9 @@
   }
   if (appAddress != null) {
     $result.appAddress = appAddress;
+  }
+  if (apiKey != null) {
+    $result.apiKey = apiKey;
   }
   return $result;
 }</code></pre>

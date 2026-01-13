@@ -63,41 +63,41 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">GripperServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$27.OpenRequest, $27.OpenResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$26.OpenRequest, $26.OpenResponse&gt;(
       &#39;Open&#39;,
       open_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $27.OpenRequest.fromBuffer(value),
-      ($27.OpenResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$27.GrabRequest, $27.GrabResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $26.OpenRequest.fromBuffer(value),
+      ($26.OpenResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$26.GrabRequest, $26.GrabResponse&gt;(
       &#39;Grab&#39;,
       grab_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $27.GrabRequest.fromBuffer(value),
-      ($27.GrabResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$27.StopRequest, $27.StopResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $26.GrabRequest.fromBuffer(value),
+      ($26.GrabResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$26.StopRequest, $26.StopResponse&gt;(
       &#39;Stop&#39;,
       stop_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $27.StopRequest.fromBuffer(value),
-      ($27.StopResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$27.IsMovingRequest, $27.IsMovingResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $26.StopRequest.fromBuffer(value),
+      ($26.StopResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$26.IsMovingRequest, $26.IsMovingResponse&gt;(
       &#39;IsMoving&#39;,
       isMoving_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $27.IsMovingRequest.fromBuffer(value),
-      ($27.IsMovingResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$27.IsHoldingSomethingRequest, $27.IsHoldingSomethingResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $26.IsMovingRequest.fromBuffer(value),
+      ($26.IsMovingResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$26.IsHoldingSomethingRequest, $26.IsHoldingSomethingResponse&gt;(
       &#39;IsHoldingSomething&#39;,
       isHoldingSomething_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $27.IsHoldingSomethingRequest.fromBuffer(value),
-      ($27.IsHoldingSomethingResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $26.IsHoldingSomethingRequest.fromBuffer(value),
+      ($26.IsHoldingSomethingResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,

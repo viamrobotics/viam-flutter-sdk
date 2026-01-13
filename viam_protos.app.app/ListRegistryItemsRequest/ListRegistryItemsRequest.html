@@ -63,6 +63,8 @@
 <li><span class="parameter" id="-param-pageToken"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">pageToken</span>, </span></li>
 <li><span class="parameter" id="-param-publicNamespaces"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">publicNamespaces</span>, </span></li>
 <li><span class="parameter" id="-param-includeMarkdownDocumentation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">includeMarkdownDocumentation</span>, </span></li>
+<li><span class="parameter" id="-param-moduleSourceTypes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/ModuleSourceType-class.html">ModuleSourceType</a></span>&gt;</span>?</span> <span class="parameter-name">moduleSourceTypes</span>, </span></li>
+<li><span class="parameter" id="-param-moduleLanguages"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/ModuleLanguage-class.html">ModuleLanguage</a></span>&gt;</span>?</span> <span class="parameter-name">moduleLanguages</span>, </span></li>
 </ol>})
     </section>
     
@@ -81,6 +83,8 @@
   $core.String? pageToken,
   $core.Iterable&lt;$core.String&gt;? publicNamespaces,
   $core.bool? includeMarkdownDocumentation,
+  $core.Iterable&lt;ModuleSourceType&gt;? moduleSourceTypes,
+  $core.Iterable&lt;ModuleLanguage&gt;? moduleLanguages,
 }) {
   final $result = create();
   if (organizationId != null) {
@@ -109,6 +113,12 @@
   }
   if (includeMarkdownDocumentation != null) {
     $result.includeMarkdownDocumentation = includeMarkdownDocumentation;
+  }
+  if (moduleSourceTypes != null) {
+    $result.moduleSourceTypes.addAll(moduleSourceTypes);
+  }
+  if (moduleLanguages != null) {
+    $result.moduleLanguages.addAll(moduleLanguages);
   }
   return $result;
 }</code></pre>
