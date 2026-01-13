@@ -9,7 +9,7 @@ import 'package:viam_sdk/src/gen/app/v1/app.pb.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/viam_sdk.dart' hide APIKey;
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
