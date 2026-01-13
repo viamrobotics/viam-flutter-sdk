@@ -13,14 +13,14 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../common/v1/common.pb.dart' as $55;
+import '../../common/v1/common.pb.dart' as $54;
 
 /// Resource information.
 class Resource extends $pb.GeneratedMessage {
   factory Resource({
-    $core.Iterable<$55.KeyValue>? attributes,
+    $core.Iterable<$54.KeyValue>? attributes,
     $core.int? droppedAttributesCount,
-    $core.Iterable<$55.EntityRef>? entityRefs,
+    $core.Iterable<$54.EntityRef>? entityRefs,
   }) {
     final $result = create();
     if (attributes != null) {
@@ -39,9 +39,9 @@ class Resource extends $pb.GeneratedMessage {
   factory Resource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resource', package: const $pb.PackageName(_omitMessageNames ? '' : 'opentelemetry.proto.resource.v1'), createEmptyInstance: create)
-    ..pc<$55.KeyValue>(1, _omitFieldNames ? '' : 'attributes', $pb.PbFieldType.PM, subBuilder: $55.KeyValue.create)
+    ..pc<$54.KeyValue>(1, _omitFieldNames ? '' : 'attributes', $pb.PbFieldType.PM, subBuilder: $54.KeyValue.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'droppedAttributesCount', $pb.PbFieldType.OU3)
-    ..pc<$55.EntityRef>(3, _omitFieldNames ? '' : 'entityRefs', $pb.PbFieldType.PM, subBuilder: $55.EntityRef.create)
+    ..pc<$54.EntityRef>(3, _omitFieldNames ? '' : 'entityRefs', $pb.PbFieldType.PM, subBuilder: $54.EntityRef.create)
     ..hasRequiredFields = false
   ;
 
@@ -71,7 +71,7 @@ class Resource extends $pb.GeneratedMessage {
   /// attribute with the same key).
   /// The behavior of software that receives duplicated keys can be unpredictable.
   @$pb.TagNumber(1)
-  $core.List<$55.KeyValue> get attributes => $_getList(0);
+  $core.List<$54.KeyValue> get attributes => $_getList(0);
 
   /// The number of dropped attributes. If the value is 0, then
   /// no attributes were dropped.
@@ -90,7 +90,7 @@ class Resource extends $pb.GeneratedMessage {
   ///
   ///  Status: [Development]
   @$pb.TagNumber(3)
-  $core.List<$55.EntityRef> get entityRefs => $_getList(2);
+  $core.List<$54.EntityRef> get entityRefs => $_getList(2);
 }
 
 

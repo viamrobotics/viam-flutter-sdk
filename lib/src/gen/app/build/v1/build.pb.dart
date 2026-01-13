@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $52;
+import '../../../google/protobuf/timestamp.pb.dart' as $51;
 import '../../packages/v1/packages.pb.dart' as $1;
 import 'build.pbenum.dart';
 
@@ -483,6 +483,146 @@ class StartReloadBuildResponse extends $pb.GeneratedMessage {
   void clearBuildId() => clearField(1);
 }
 
+class StartPackageBuildRequest extends $pb.GeneratedMessage {
+  factory StartPackageBuildRequest({
+    $core.String? moduleId,
+    $core.String? packageVersion,
+    $core.String? moduleVersion,
+    $core.Iterable<$core.String>? platforms,
+  }) {
+    final $result = create();
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (packageVersion != null) {
+      $result.packageVersion = packageVersion;
+    }
+    if (moduleVersion != null) {
+      $result.moduleVersion = moduleVersion;
+    }
+    if (platforms != null) {
+      $result.platforms.addAll(platforms);
+    }
+    return $result;
+  }
+  StartPackageBuildRequest._() : super();
+  factory StartPackageBuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StartPackageBuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartPackageBuildRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(2, _omitFieldNames ? '' : 'packageVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'moduleVersion')
+    ..pPS(4, _omitFieldNames ? '' : 'platforms')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StartPackageBuildRequest clone() => StartPackageBuildRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StartPackageBuildRequest copyWith(void Function(StartPackageBuildRequest) updates) => super.copyWith((message) => updates(message as StartPackageBuildRequest)) as StartPackageBuildRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartPackageBuildRequest create() => StartPackageBuildRequest._();
+  StartPackageBuildRequest createEmptyInstance() => create();
+  static $pb.PbList<StartPackageBuildRequest> createRepeated() => $pb.PbList<StartPackageBuildRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StartPackageBuildRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartPackageBuildRequest>(create);
+  static StartPackageBuildRequest? _defaultInstance;
+
+  /// module_id to build for
+  @$pb.TagNumber(1)
+  $core.String get moduleId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set moduleId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasModuleId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModuleId() => clearField(1);
+
+  /// the version of source code to build for
+  @$pb.TagNumber(2)
+  $core.String get packageVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set packageVersion($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPackageVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPackageVersion() => clearField(2);
+
+  /// version of the module to publish to the registry. must be valid semver2.0 string (ex: 1.2.3-rc0)
+  @$pb.TagNumber(3)
+  $core.String get moduleVersion => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set moduleVersion($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasModuleVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearModuleVersion() => clearField(3);
+
+  /// specify the platforms to build for (ex: linux/arm64)
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get platforms => $_getList(3);
+}
+
+class StartPackageBuildResponse extends $pb.GeneratedMessage {
+  factory StartPackageBuildResponse({
+    $core.String? buildId,
+  }) {
+    final $result = create();
+    if (buildId != null) {
+      $result.buildId = buildId;
+    }
+    return $result;
+  }
+  StartPackageBuildResponse._() : super();
+  factory StartPackageBuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StartPackageBuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartPackageBuildResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'buildId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StartPackageBuildResponse clone() => StartPackageBuildResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StartPackageBuildResponse copyWith(void Function(StartPackageBuildResponse) updates) => super.copyWith((message) => updates(message as StartPackageBuildResponse)) as StartPackageBuildResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartPackageBuildResponse create() => StartPackageBuildResponse._();
+  StartPackageBuildResponse createEmptyInstance() => create();
+  static $pb.PbList<StartPackageBuildResponse> createRepeated() => $pb.PbList<StartPackageBuildResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StartPackageBuildResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartPackageBuildResponse>(create);
+  static StartPackageBuildResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get buildId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set buildId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBuildId() => clearField(1);
+}
+
 /// GetLogsResponse is a streaming endpoint that may have multiple messages that belong
 /// to the same build_step if there are too many bytes to fit into a single gRPC
 /// response.
@@ -557,8 +697,8 @@ class JobInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? version,
     JobStatus? status,
-    $52.Timestamp? startTime,
-    $52.Timestamp? endTime,
+    $51.Timestamp? startTime,
+    $51.Timestamp? endTime,
     $core.String? buildStep,
   }) {
     final $result = create();
@@ -594,8 +734,8 @@ class JobInfo extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'platform')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..e<JobStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: JobStatus.JOB_STATUS_UNSPECIFIED, valueOf: JobStatus.valueOf, enumValues: JobStatus.values)
-    ..aOM<$52.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $52.Timestamp.create)
-    ..aOM<$52.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $51.Timestamp.create)
+    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $51.Timestamp.create)
     ..aOS(7, _omitFieldNames ? '' : 'buildStep')
     ..hasRequiredFields = false
   ;
@@ -658,26 +798,26 @@ class JobInfo extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $52.Timestamp get startTime => $_getN(4);
+  $51.Timestamp get startTime => $_getN(4);
   @$pb.TagNumber(5)
-  set startTime($52.Timestamp v) { setField(5, v); }
+  set startTime($51.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $52.Timestamp ensureStartTime() => $_ensure(4);
+  $51.Timestamp ensureStartTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $52.Timestamp get endTime => $_getN(5);
+  $51.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($52.Timestamp v) { setField(6, v); }
+  set endTime($51.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $52.Timestamp ensureEndTime() => $_ensure(5);
+  $51.Timestamp ensureEndTime() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get buildStep => $_getSZ(6);

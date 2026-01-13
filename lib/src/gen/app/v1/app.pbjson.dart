@@ -85,6 +85,39 @@ final $typed_data.Uint8List fragmentErrorTypeDescriptor = $convert.base64Decode(
     'WVBFX05FU1RJTkdfTElNSVRfRVhDRUVERUQQAhIoCiRGUkFHTUVOVF9FUlJPUl9UWVBFX0NISU'
     'xEX0lEX0lOVkFMSUQQAxImCiJGUkFHTUVOVF9FUlJPUl9UWVBFX0NZQ0xFX0RFVEVDVEVEEAQ=');
 
+@$core.Deprecated('Use moduleSourceTypeDescriptor instead')
+const ModuleSourceType$json = {
+  '1': 'ModuleSourceType',
+  '2': [
+    {'1': 'MODULE_SOURCE_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'MODULE_SOURCE_TYPE_EXTERNAL', '2': 1},
+    {'1': 'MODULE_SOURCE_TYPE_VIAM_HOSTED', '2': 2},
+  ],
+};
+
+/// Descriptor for `ModuleSourceType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List moduleSourceTypeDescriptor = $convert.base64Decode(
+    'ChBNb2R1bGVTb3VyY2VUeXBlEiIKHk1PRFVMRV9TT1VSQ0VfVFlQRV9VTlNQRUNJRklFRBAAEh'
+    '8KG01PRFVMRV9TT1VSQ0VfVFlQRV9FWFRFUk5BTBABEiIKHk1PRFVMRV9TT1VSQ0VfVFlQRV9W'
+    'SUFNX0hPU1RFRBAC');
+
+@$core.Deprecated('Use moduleLanguageDescriptor instead')
+const ModuleLanguage$json = {
+  '1': 'ModuleLanguage',
+  '2': [
+    {'1': 'MODULE_LANGUAGE_UNSPECIFIED', '2': 0},
+    {'1': 'MODULE_LANGUAGE_GOLANG', '2': 1},
+    {'1': 'MODULE_LANGUAGE_PYTHON', '2': 2},
+    {'1': 'MODULE_LANGUAGE_CPP', '2': 3},
+  ],
+};
+
+/// Descriptor for `ModuleLanguage`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List moduleLanguageDescriptor = $convert.base64Decode(
+    'Cg5Nb2R1bGVMYW5ndWFnZRIfChtNT0RVTEVfTEFOR1VBR0VfVU5TUEVDSUZJRUQQABIaChZNT0'
+    'RVTEVfTEFOR1VBR0VfR09MQU5HEAESGgoWTU9EVUxFX0xBTkdVQUdFX1BZVEhPThACEhcKE01P'
+    'RFVMRV9MQU5HVUFHRV9DUFAQAw==');
+
 @$core.Deprecated('Use registryItemStatusDescriptor instead')
 const RegistryItemStatus$json = {
   '1': 'RegistryItemStatus',
@@ -3088,10 +3121,14 @@ const ModuleMetadata$json = {
     {'1': 'first_run', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
     {'1': 'markdown_description', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
     {'1': 'apps', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
+    {'1': 'source_type', '3': 7, '4': 1, '5': 14, '6': '.viam.app.v1.ModuleSourceType', '9': 2, '10': 'sourceType', '17': true},
+    {'1': 'language', '3': 8, '4': 1, '5': 14, '6': '.viam.app.v1.ModuleLanguage', '9': 3, '10': 'language', '17': true},
   ],
   '8': [
     {'1': '_first_run'},
     {'1': '_markdown_description'},
+    {'1': '_source_type'},
+    {'1': '_language'},
   ],
 };
 
@@ -3101,8 +3138,11 @@ final $typed_data.Uint8List moduleMetadataDescriptor = $convert.base64Decode(
     '9kZWxzEjYKCHZlcnNpb25zGAIgAygLMhoudmlhbS5hcHAudjEuTW9kdWxlVmVyc2lvblIIdmVy'
     'c2lvbnMSHgoKZW50cnlwb2ludBgDIAEoCVIKZW50cnlwb2ludBIgCglmaXJzdF9ydW4YBCABKA'
     'lIAFIIZmlyc3RSdW6IAQESNgoUbWFya2Rvd25fZGVzY3JpcHRpb24YBSABKAlIAVITbWFya2Rv'
-    'd25EZXNjcmlwdGlvbogBARIkCgRhcHBzGAYgAygLMhAudmlhbS5hcHAudjEuQXBwUgRhcHBzQg'
-    'wKCl9maXJzdF9ydW5CFwoVX21hcmtkb3duX2Rlc2NyaXB0aW9u');
+    'd25EZXNjcmlwdGlvbogBARIkCgRhcHBzGAYgAygLMhAudmlhbS5hcHAudjEuQXBwUgRhcHBzEk'
+    'MKC3NvdXJjZV90eXBlGAcgASgOMh0udmlhbS5hcHAudjEuTW9kdWxlU291cmNlVHlwZUgCUgpz'
+    'b3VyY2VUeXBliAEBEjwKCGxhbmd1YWdlGAggASgOMhsudmlhbS5hcHAudjEuTW9kdWxlTGFuZ3'
+    'VhZ2VIA1IIbGFuZ3VhZ2WIAQFCDAoKX2ZpcnN0X3J1bkIXChVfbWFya2Rvd25fZGVzY3JpcHRp'
+    'b25CDgoMX3NvdXJjZV90eXBlQgsKCV9sYW5ndWFnZQ==');
 
 @$core.Deprecated('Use mLModelMetadataDescriptor instead')
 const MLModelMetadata$json = {
@@ -3318,6 +3358,8 @@ const ListRegistryItemsRequest$json = {
     {'1': 'page_token', '3': 7, '4': 1, '5': 9, '9': 2, '10': 'pageToken', '17': true},
     {'1': 'public_namespaces', '3': 8, '4': 3, '5': 9, '10': 'publicNamespaces'},
     {'1': 'include_markdown_documentation', '3': 9, '4': 1, '5': 8, '9': 3, '10': 'includeMarkdownDocumentation', '17': true},
+    {'1': 'module_source_types', '3': 10, '4': 3, '5': 14, '6': '.viam.app.v1.ModuleSourceType', '10': 'moduleSourceTypes'},
+    {'1': 'module_languages', '3': 11, '4': 3, '5': 14, '6': '.viam.app.v1.ModuleLanguage', '10': 'moduleLanguages'},
   ],
   '8': [
     {'1': '_organization_id'},
@@ -3337,9 +3379,11 @@ final $typed_data.Uint8List listRegistryItemsRequestDescriptor = $convert.base64
     'VzZXMSJAoLc2VhcmNoX3Rlcm0YBiABKAlIAVIKc2VhcmNoVGVybYgBARIiCgpwYWdlX3Rva2Vu'
     'GAcgASgJSAJSCXBhZ2VUb2tlbogBARIrChFwdWJsaWNfbmFtZXNwYWNlcxgIIAMoCVIQcHVibG'
     'ljTmFtZXNwYWNlcxJJCh5pbmNsdWRlX21hcmtkb3duX2RvY3VtZW50YXRpb24YCSABKAhIA1Ic'
-    'aW5jbHVkZU1hcmtkb3duRG9jdW1lbnRhdGlvbogBAUISChBfb3JnYW5pemF0aW9uX2lkQg4KDF'
-    '9zZWFyY2hfdGVybUINCgtfcGFnZV90b2tlbkIhCh9faW5jbHVkZV9tYXJrZG93bl9kb2N1bWVu'
-    'dGF0aW9u');
+    'aW5jbHVkZU1hcmtkb3duRG9jdW1lbnRhdGlvbogBARJNChNtb2R1bGVfc291cmNlX3R5cGVzGA'
+    'ogAygOMh0udmlhbS5hcHAudjEuTW9kdWxlU291cmNlVHlwZVIRbW9kdWxlU291cmNlVHlwZXMS'
+    'RgoQbW9kdWxlX2xhbmd1YWdlcxgLIAMoDjIbLnZpYW0uYXBwLnYxLk1vZHVsZUxhbmd1YWdlUg'
+    '9tb2R1bGVMYW5ndWFnZXNCEgoQX29yZ2FuaXphdGlvbl9pZEIOCgxfc2VhcmNoX3Rlcm1CDQoL'
+    'X3BhZ2VfdG9rZW5CIQofX2luY2x1ZGVfbWFya2Rvd25fZG9jdW1lbnRhdGlvbg==');
 
 @$core.Deprecated('Use listRegistryItemsResponseDescriptor instead')
 const ListRegistryItemsResponse$json = {
@@ -3527,6 +3571,12 @@ const UpdateModuleMetadata$json = {
     {'1': 'models', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 2, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'apps', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
+    {'1': 'source_type', '3': 4, '4': 1, '5': 14, '6': '.viam.app.v1.ModuleSourceType', '9': 0, '10': 'sourceType', '17': true},
+    {'1': 'language', '3': 5, '4': 1, '5': 14, '6': '.viam.app.v1.ModuleLanguage', '9': 1, '10': 'language', '17': true},
+  ],
+  '8': [
+    {'1': '_source_type'},
+    {'1': '_language'},
   ],
 };
 
@@ -3534,7 +3584,10 @@ const UpdateModuleMetadata$json = {
 final $typed_data.Uint8List updateModuleMetadataDescriptor = $convert.base64Decode(
     'ChRVcGRhdGVNb2R1bGVNZXRhZGF0YRIqCgZtb2RlbHMYASADKAsyEi52aWFtLmFwcC52MS5Nb2'
     'RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYAiABKAlSCmVudHJ5cG9pbnQSJAoEYXBwcxgDIAMo'
-    'CzIQLnZpYW0uYXBwLnYxLkFwcFIEYXBwcw==');
+    'CzIQLnZpYW0uYXBwLnYxLkFwcFIEYXBwcxJDCgtzb3VyY2VfdHlwZRgEIAEoDjIdLnZpYW0uYX'
+    'BwLnYxLk1vZHVsZVNvdXJjZVR5cGVIAFIKc291cmNlVHlwZYgBARI8CghsYW5ndWFnZRgFIAEo'
+    'DjIbLnZpYW0uYXBwLnYxLk1vZHVsZUxhbmd1YWdlSAFSCGxhbmd1YWdliAEBQg4KDF9zb3VyY2'
+    'VfdHlwZUILCglfbGFuZ3VhZ2U=');
 
 @$core.Deprecated('Use updateMLModelMetadataDescriptor instead')
 const UpdateMLModelMetadata$json = {

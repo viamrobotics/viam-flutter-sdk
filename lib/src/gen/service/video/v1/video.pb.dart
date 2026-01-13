@@ -13,18 +13,18 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $51;
-import '../../../google/protobuf/timestamp.pb.dart' as $52;
+import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../google/protobuf/timestamp.pb.dart' as $51;
 
 class GetVideoRequest extends $pb.GeneratedMessage {
   factory GetVideoRequest({
     $core.String? name,
-    $52.Timestamp? startTimestamp,
-    $52.Timestamp? endTimestamp,
+    $51.Timestamp? startTimestamp,
+    $51.Timestamp? endTimestamp,
     $core.String? videoCodec,
     $core.String? videoContainer,
     $core.String? requestId,
-    $51.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -56,12 +56,12 @@ class GetVideoRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.video.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$52.Timestamp>(2, _omitFieldNames ? '' : 'startTimestamp', subBuilder: $52.Timestamp.create)
-    ..aOM<$52.Timestamp>(3, _omitFieldNames ? '' : 'endTimestamp', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'startTimestamp', subBuilder: $51.Timestamp.create)
+    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'endTimestamp', subBuilder: $51.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'videoCodec')
     ..aOS(5, _omitFieldNames ? '' : 'videoContainer')
     ..aOS(6, _omitFieldNames ? '' : 'requestId')
-    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -98,27 +98,27 @@ class GetVideoRequest extends $pb.GeneratedMessage {
 
   /// Start time for the video retrieval
   @$pb.TagNumber(2)
-  $52.Timestamp get startTimestamp => $_getN(1);
+  $51.Timestamp get startTimestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set startTimestamp($52.Timestamp v) { setField(2, v); }
+  set startTimestamp($51.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStartTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearStartTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $52.Timestamp ensureStartTimestamp() => $_ensure(1);
+  $51.Timestamp ensureStartTimestamp() => $_ensure(1);
 
   /// End time for the video retrieval
   @$pb.TagNumber(3)
-  $52.Timestamp get endTimestamp => $_getN(2);
+  $51.Timestamp get endTimestamp => $_getN(2);
   @$pb.TagNumber(3)
-  set endTimestamp($52.Timestamp v) { setField(3, v); }
+  set endTimestamp($51.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEndTimestamp() => $_has(2);
   @$pb.TagNumber(3)
   void clearEndTimestamp() => clearField(3);
   @$pb.TagNumber(3)
-  $52.Timestamp ensureEndTimestamp() => $_ensure(2);
+  $51.Timestamp ensureEndTimestamp() => $_ensure(2);
 
   /// Codec for the video retrieval (e.g., "h264", "h265")
   @$pb.TagNumber(4)
@@ -152,15 +152,15 @@ class GetVideoRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $51.Struct get extra => $_getN(6);
+  $50.Struct get extra => $_getN(6);
   @$pb.TagNumber(99)
-  set extra($51.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(6);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $51.Struct ensureExtra() => $_ensure(6);
+  $50.Struct ensureExtra() => $_ensure(6);
 }
 
 class GetVideoResponse extends $pb.GeneratedMessage {

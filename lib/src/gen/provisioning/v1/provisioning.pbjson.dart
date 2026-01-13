@@ -173,11 +173,26 @@ const CloudConfig$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'secret', '3': 2, '4': 1, '5': 9, '10': 'secret'},
     {'1': 'app_address', '3': 3, '4': 1, '5': 9, '10': 'appAddress'},
+    {'1': 'api_key', '3': 4, '4': 1, '5': 11, '6': '.viam.provisioning.v1.APIKey', '10': 'apiKey'},
   ],
 };
 
 /// Descriptor for `CloudConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List cloudConfigDescriptor = $convert.base64Decode(
     'CgtDbG91ZENvbmZpZxIOCgJpZBgBIAEoCVICaWQSFgoGc2VjcmV0GAIgASgJUgZzZWNyZXQSHw'
-    'oLYXBwX2FkZHJlc3MYAyABKAlSCmFwcEFkZHJlc3M=');
+    'oLYXBwX2FkZHJlc3MYAyABKAlSCmFwcEFkZHJlc3MSNQoHYXBpX2tleRgEIAEoCzIcLnZpYW0u'
+    'cHJvdmlzaW9uaW5nLnYxLkFQSUtleVIGYXBpS2V5');
+
+@$core.Deprecated('Use aPIKeyDescriptor instead')
+const APIKey$json = {
+  '1': 'APIKey',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'key', '3': 2, '4': 1, '5': 9, '10': 'key'},
+  ],
+};
+
+/// Descriptor for `APIKey`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List aPIKeyDescriptor = $convert.base64Decode(
+    'CgZBUElLZXkSDgoCaWQYASABKAlSAmlkEhAKA2tleRgCIAEoCVIDa2V5');
 

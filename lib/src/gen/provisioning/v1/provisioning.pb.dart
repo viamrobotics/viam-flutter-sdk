@@ -701,6 +701,7 @@ class CloudConfig extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? secret,
     $core.String? appAddress,
+    APIKey? apiKey,
   }) {
     final $result = create();
     if (id != null) {
@@ -712,6 +713,9 @@ class CloudConfig extends $pb.GeneratedMessage {
     if (appAddress != null) {
       $result.appAddress = appAddress;
     }
+    if (apiKey != null) {
+      $result.apiKey = apiKey;
+    }
     return $result;
   }
   CloudConfig._() : super();
@@ -722,6 +726,7 @@ class CloudConfig extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'secret')
     ..aOS(3, _omitFieldNames ? '' : 'appAddress')
+    ..aOM<APIKey>(4, _omitFieldNames ? '' : 'apiKey', subBuilder: APIKey.create)
     ..hasRequiredFields = false
   ;
 
@@ -774,6 +779,81 @@ class CloudConfig extends $pb.GeneratedMessage {
   $core.bool hasAppAddress() => $_has(2);
   @$pb.TagNumber(3)
   void clearAppAddress() => clearField(3);
+
+  @$pb.TagNumber(4)
+  APIKey get apiKey => $_getN(3);
+  @$pb.TagNumber(4)
+  set apiKey(APIKey v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasApiKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearApiKey() => clearField(4);
+  @$pb.TagNumber(4)
+  APIKey ensureApiKey() => $_ensure(3);
+}
+
+class APIKey extends $pb.GeneratedMessage {
+  factory APIKey({
+    $core.String? id,
+    $core.String? key,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (key != null) {
+      $result.key = key;
+    }
+    return $result;
+  }
+  APIKey._() : super();
+  factory APIKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory APIKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'APIKey', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.provisioning.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'key')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  APIKey clone() => APIKey()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  APIKey copyWith(void Function(APIKey) updates) => super.copyWith((message) => updates(message as APIKey)) as APIKey;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static APIKey create() => APIKey._();
+  APIKey createEmptyInstance() => create();
+  static $pb.PbList<APIKey> createRepeated() => $pb.PbList<APIKey>();
+  @$core.pragma('dart2js:noInline')
+  static APIKey getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<APIKey>(create);
+  static APIKey? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get key => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set key($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKey() => clearField(2);
 }
 
 

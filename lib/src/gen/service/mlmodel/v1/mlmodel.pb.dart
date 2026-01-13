@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $51;
+import '../../../google/protobuf/struct.pb.dart' as $50;
 import 'mlmodel.pbenum.dart';
 
 export 'mlmodel.pbenum.dart';
@@ -23,7 +23,7 @@ class InferRequest extends $pb.GeneratedMessage {
   factory InferRequest({
     $core.String? name,
     FlatTensors? inputTensors,
-    $51.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -44,7 +44,7 @@ class InferRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InferRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.mlmodel.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<FlatTensors>(3, _omitFieldNames ? '' : 'inputTensors', subBuilder: FlatTensors.create)
-    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -93,15 +93,15 @@ class InferRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $51.Struct get extra => $_getN(2);
+  $50.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($51.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $51.Struct ensureExtra() => $_ensure(2);
+  $50.Struct ensureExtra() => $_ensure(2);
 }
 
 class InferResponse extends $pb.GeneratedMessage {
@@ -160,7 +160,7 @@ class InferResponse extends $pb.GeneratedMessage {
 class MetadataRequest extends $pb.GeneratedMessage {
   factory MetadataRequest({
     $core.String? name,
-    $51.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -177,7 +177,7 @@ class MetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.mlmodel.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -214,15 +214,15 @@ class MetadataRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $51.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($51.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $51.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class MetadataResponse extends $pb.GeneratedMessage {
@@ -384,7 +384,7 @@ class TensorInfo extends $pb.GeneratedMessage {
     $core.String? dataType,
     $core.Iterable<$core.int>? shape,
     $core.Iterable<File>? associatedFiles,
-    $51.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -417,7 +417,7 @@ class TensorInfo extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'dataType')
     ..p<$core.int>(4, _omitFieldNames ? '' : 'shape', $pb.PbFieldType.K3)
     ..pc<File>(5, _omitFieldNames ? '' : 'associatedFiles', $pb.PbFieldType.PM, subBuilder: File.create)
-    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -482,15 +482,15 @@ class TensorInfo extends $pb.GeneratedMessage {
 
   /// anything else you want to say
   @$pb.TagNumber(99)
-  $51.Struct get extra => $_getN(5);
+  $50.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($51.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $51.Struct ensureExtra() => $_ensure(5);
+  $50.Struct ensureExtra() => $_ensure(5);
 }
 
 class File extends $pb.GeneratedMessage {
