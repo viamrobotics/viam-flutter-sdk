@@ -1,11 +1,13 @@
 # Changelog
 
-## [v0.15.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.15.0) (2026-01-05)
+## [v0.15.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.15.1) (2026-01-06)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.14.0...v0.15.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.15.0...v0.15.1)
 
 **Merged pull requests:**
 
+- Add encoder and input controller to resource manager [\#479](https://github.com/viamrobotics/viam-flutter-sdk/pull/479) ([martha-johnston](https://github.com/martha-johnston))
+- v0.15.0 [\#478](https://github.com/viamrobotics/viam-flutter-sdk/pull/478) ([github-actions[bot]](https://github.com/apps/github-actions))
 - v0.14.0 [\#477](https://github.com/viamrobotics/viam-flutter-sdk/pull/477) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Bump hotspot provisioning widget version to 0.0.29 [\#475](https://github.com/viamrobotics/viam-flutter-sdk/pull/475) ([jckras](https://github.com/jckras))
 - Automated Protos Update [\#473](https://github.com/viamrobotics/viam-flutter-sdk/pull/473) ([viambot](https://github.com/viambot))
@@ -181,6 +183,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.15.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.15.0) (2026-01-05)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.14.0...v0.15.0)
 
 ## [v0.14.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.14.0) (2025-12-29)
 
