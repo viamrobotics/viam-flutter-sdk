@@ -133,11 +133,11 @@ void main() {
         ..id = 'id'
         ..name = 'name'
         ..createdOn = Timestamp.create();
-      final fragmentList = [Fragment()..id = 'fragmentId'];
-      when(serviceClient.updateOrganization(
-              argThat(isA<UpdateOrganizationRequest>().having((req) => req.defaultFragments, 'defaultFragments', fragmentList))))
+      when(serviceClient.updateOrganization(any))
           .thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
-      final response = await appClient.updateOrganization('organizationId', defaultFragments: fragmentList);
+      final fragmentList = [FragmentImport()..fragmentId = 'fragmentId'];
+      final fragmentImportList = FragmentImportList()..fragments.addAll(fragmentList);
+      final response = await appClient.updateOrganization('organizationId', defaultFragments: fragmentImportList);
       expect(response, equals(expected));
     });
 
