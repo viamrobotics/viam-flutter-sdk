@@ -134,8 +134,8 @@ void main() {
         ..name = 'name'
         ..createdOn = Timestamp.create();
       final fragmentList = [Fragment()..id = 'fragmentId'];
-      when(serviceClient.updateOrganization(argThat(
-              isA<UpdateOrganizationRequest>().having((req) => req.defaultFragments, 'defaultFragments', fragmentList))))
+      when(serviceClient.updateOrganization(
+              argThat(isA<UpdateOrganizationRequest>().having((req) => req.defaultFragments, 'defaultFragments', fragmentList))))
           .thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
       final response = await appClient.updateOrganization('organizationId', defaultFragments: fragmentList);
       expect(response, equals(expected));
@@ -356,16 +356,16 @@ void main() {
       final endTime = now;
 
       when(serviceClient.getRobotPartLogs(argThat(
-            isA<GetRobotPartLogsRequest>()
-                .having((req) => req.id, 'id', 'robotPart')
-                .having((req) => req.filter, 'filter', 'myFilter')
-                .having((req) => req.pageToken, 'pageToken', 'myPageToken')
-                .having((req) => req.levels, 'levels', equals(['info', 'warn']))
-                .having((req) => req.limit, 'limit', Int64(10))
-                .having((req) => req.start, 'start', Timestamp.fromDateTime(startTime))
-                .having((req) => req.end, 'end', Timestamp.fromDateTime(endTime))
-                .having((req) => req.source, 'source', 'mySource'),
-          ))).thenAnswer((_) => MockResponseFuture.value(expected));
+        isA<GetRobotPartLogsRequest>()
+            .having((req) => req.id, 'id', 'robotPart')
+            .having((req) => req.filter, 'filter', 'myFilter')
+            .having((req) => req.pageToken, 'pageToken', 'myPageToken')
+            .having((req) => req.levels, 'levels', equals(['info', 'warn']))
+            .having((req) => req.limit, 'limit', Int64(10))
+            .having((req) => req.start, 'start', Timestamp.fromDateTime(startTime))
+            .having((req) => req.end, 'end', Timestamp.fromDateTime(endTime))
+            .having((req) => req.source, 'source', 'mySource'),
+      ))).thenAnswer((_) => MockResponseFuture.value(expected));
 
       final response = await appClient.getLogs(
         'robotPart',
