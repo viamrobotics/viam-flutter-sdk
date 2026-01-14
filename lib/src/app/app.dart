@@ -97,12 +97,15 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Organization> updateOrganization(String organizationId,
-      {String? name, String? publicNamespace, String? region, String? cid}) async {
+      {String? name, String? publicNamespace, String? region, String? cid, FragmentImportList? defaultFragments}) async {
     final request = UpdateOrganizationRequest()..organizationId = organizationId;
     if (name != null) request.name = name;
     if (publicNamespace != null) request.publicNamespace = publicNamespace;
     if (region != null) request.region = region;
     if (cid != null) request.cid = cid;
+    if (defaultFragments != null) {
+      request.defaultFragments = defaultFragments;
+    }
     final UpdateOrganizationResponse response = await _client.updateOrganization(request);
     return response.organization;
   }

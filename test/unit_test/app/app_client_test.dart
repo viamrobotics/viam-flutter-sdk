@@ -135,7 +135,9 @@ void main() {
         ..createdOn = Timestamp.create();
       when(serviceClient.updateOrganization(any))
           .thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
-      final response = await appClient.updateOrganization('organizationId');
+      final fragmentList = [FragmentImport()..fragmentId = 'fragmentId'];
+      final fragmentImportList = FragmentImportList()..fragments.addAll(fragmentList);
+      final response = await appClient.updateOrganization('organizationId', defaultFragments: fragmentImportList);
       expect(response, equals(expected));
     });
 
