@@ -19,6 +19,7 @@ class FakeArm extends Arm {
   Map<String, dynamic>? extra;
   Map<String, Mesh> arm3DModels = {};
   Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
+  Map<String, Mesh> armMeshesByUrdfFilepath = {};
   List<Geometry> armGeometries = [
     Geometry()
       ..box = (RectangularPrism()
@@ -90,7 +91,7 @@ class FakeArm extends Arm {
   @override
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return armKinematics;
+    return Kinematics(armKinematics.format, armKinematics.raw, meshesByUrdfFilepath: armMeshesByUrdfFilepath);
   }
 }
 
@@ -176,9 +177,12 @@ void main() {
     });
 
     test('getKinematics', () async {
+      final expectedMeshes = {'mesh1.stl': Mesh()..contentType = 'stl'..mesh = [1,2,3]};
+      arm.armMeshesByUrdfFilepath = expectedMeshes;
       final kinematics = await arm.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
+      expect(kinematics.meshesByUrdfFilepath, expectedMeshes);
     });
   });
 
@@ -309,10 +313,13 @@ void main() {
 
       test('getKinematics', () async {
         final client = ArmServiceClient(channel);
+        final expectedMeshes = {'mesh1.stl': Mesh()..contentType = 'stl'..mesh = [1,2,3]};
+        arm.armMeshesByUrdfFilepath = expectedMeshes;
         final request = GetKinematicsRequest()..name = name;
         final response = await client.getKinematics(request);
         expect(response.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(response.kinematicsData, [1, 2, 3]);
+        expect(response.meshesByUrdfFilepath, expectedMeshes);
       });
 
       test('getGeometries', () async {
@@ -400,9 +407,12 @@ void main() {
     });
     test('getKinematics', () async {
       final client = ArmClient(name, channel);
+      final expectedMeshes = {'mesh1.stl': Mesh()..contentType = 'stl'..mesh = [1,2,3]};
+      arm.armMeshesByUrdfFilepath = expectedMeshes;
       final kinematics = await client.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
+      expect(kinematics.meshesByUrdfFilepath, expectedMeshes);
     });
 
     test('getGeometries', () async {

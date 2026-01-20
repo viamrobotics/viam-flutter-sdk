@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:collection/collection.dart';
 import 'package:flutter/services.dart';
 
 import '../../../viam_sdk.dart';
@@ -165,4 +166,37 @@ abstract class Arm extends Resource {
 
     return maxReach;
   }
+}
+
+
+/// Kinematics represents the kinematics of a component.
+class Kinematics {
+  final KinematicsFileFormat format;
+  final List<int> raw;
+  final Map<String, Mesh> meshesByUrdfFilepath;
+
+  const Kinematics(this.format, this.raw, {this.meshesByUrdfFilepath = const {}});
+
+  factory Kinematics.fromProto(GetKinematicsResponse proto) {
+    return Kinematics(proto.format, proto.kinematicsData, meshesByUrdfFilepath: proto.meshesByUrdfFilepath);
+  }
+
+  GetKinematicsResponse toProto() {
+    return GetKinematicsResponse()
+      ..format = format
+      ..kinematicsData = raw
+      ..meshesByUrdfFilepath.addAll(meshesByUrdfFilepath);
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Kinematics &&
+          runtimeType == other.runtimeType &&
+          format == other.format &&
+          listEquals(raw, other.raw) &&
+          mapEquals(meshesByUrdfFilepath, other.meshesByUrdfFilepath);
+
+  @override
+  int get hashCode => format.hashCode ^ listHash(raw) ^ mapHash(meshesByUrdfFilepath);
 }

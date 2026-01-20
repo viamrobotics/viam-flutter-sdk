@@ -90,7 +90,8 @@ class ArmService extends ArmServiceBase {
     final response = await arm.getKinematics(extra: request.extra.toMap());
     return GetKinematicsResponse()
       ..format = response.format
-      ..kinematicsData = response.raw;
+      ..kinematicsData = response.raw
+      ..meshesByUrdfFilepath.addAll(response.meshesByUrdfFilepath);
   }
 
   @override
