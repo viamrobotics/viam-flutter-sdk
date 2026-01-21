@@ -40,10 +40,7 @@ class CameraClient extends Camera with RPCDebugLoggerMixin implements ResourceRP
   }
 
   @override
-  Future<GetImagesResult> getImages({
-    List<String>? filterSourceNames,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<GetImagesResult> getImages({List<String>? filterSourceNames, Map<String, dynamic>? extra}) async {
     final request = GetImagesRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
@@ -55,26 +52,19 @@ class CameraClient extends Camera with RPCDebugLoggerMixin implements ResourceRP
     final response = await client.getImages(request, options: callOptions);
 
     final images = response.images.map((image) {
-      final mimeType =
-          image.hasMimeType() && image.mimeType.isNotEmpty ? MimeType.fromString(image.mimeType) : MimeType.unsupported('unspecified');
+      final mimeType = image.hasMimeType() && image.mimeType.isNotEmpty
+          ? MimeType.fromString(image.mimeType)
+          : MimeType.unsupported('unspecified');
       final viamImage = ViamImage(image.image, mimeType);
-      return NamedImage(
-        sourceName: image.sourceName,
-        image: viamImage,
-      );
+      return NamedImage(sourceName: image.sourceName, image: viamImage);
     }).toList();
 
     ResponseMetadata? nativeMetadata;
     if (response.hasResponseMetadata()) {
-      nativeMetadata = ResponseMetadata(
-        capturedAt: response.responseMetadata.capturedAt.toDateTime(),
-      );
+      nativeMetadata = ResponseMetadata(capturedAt: response.responseMetadata.capturedAt.toDateTime());
     }
 
-    return GetImagesResult(
-      images: images,
-      metadata: nativeMetadata,
-    );
+    return GetImagesResult(images: images, metadata: nativeMetadata);
   }
 
   @override

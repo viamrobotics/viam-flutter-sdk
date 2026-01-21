@@ -26,11 +26,7 @@ class FakeAudioOut extends AudioOut {
   }
 
   @override
-  Future<PlayResponse> play({
-    required Uint8List audioData,
-    required AudioInfo audioInfo,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<PlayResponse> play({required Uint8List audioData, required AudioInfo audioInfo, Map<String, dynamic>? extra}) async {
     this.audioData = audioData;
     this.audioInfo = audioInfo;
     this.extra = extra;
@@ -61,11 +57,7 @@ void main() {
         ..sampleRateHz = 44100;
       final extra = {'foo': 'bar'};
 
-      final result = await audioOut.play(
-        audioData: audioData,
-        audioInfo: audioInfo,
-        extra: extra,
-      );
+      final result = await audioOut.play(audioData: audioData, audioInfo: audioInfo, extra: extra);
 
       expect(result, isA<PlayResponse>());
       expect(audioOut.audioData, audioData);
@@ -77,10 +69,7 @@ void main() {
       final audioData = Uint8List.fromList([10, 20, 30]);
       final audioInfo = AudioInfo()..codec = AudioCodec.pcm16;
 
-      await audioOut.play(
-        audioData: audioData,
-        audioInfo: audioInfo,
-      );
+      await audioOut.play(audioData: audioData, audioInfo: audioInfo);
 
       expect(audioOut.audioData, audioData);
       expect(audioOut.audioInfo, audioInfo);
@@ -120,7 +109,11 @@ void main() {
       final ResourceManager manager = ResourceManager();
       manager.register(AudioOut.getResourceName(name), audioOut);
       service = AudioOutService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: port,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
       server = Server.create(services: [service]);
       await server.serve(port: port);
     });
@@ -140,11 +133,13 @@ void main() {
         final extra = {'key': 'value'};
 
         final client = AudioOutServiceClient(channel);
-        final result = await client.play(PlayRequest()
-          ..name = name
-          ..audioData = audioData
-          ..audioInfo = audioInfo
-          ..extra = extra.toStruct());
+        final result = await client.play(
+          PlayRequest()
+            ..name = name
+            ..audioData = audioData
+            ..audioInfo = audioInfo
+            ..extra = extra.toStruct(),
+        );
 
         expect(result, isA<PlayResponse>());
         expect(audioOut.audioData, audioData);
@@ -163,18 +158,22 @@ void main() {
       test('getProperties with extra', () async {
         final extra = {'test': 'data'};
         final client = AudioOutServiceClient(channel);
-        await client.getProperties(GetPropertiesRequest()
-          ..name = name
-          ..extra = extra.toStruct());
+        await client.getProperties(
+          GetPropertiesRequest()
+            ..name = name
+            ..extra = extra.toStruct(),
+        );
         expect(audioOut.propertiesExtra, extra);
       });
 
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
         final client = AudioOutServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
     });
@@ -189,11 +188,7 @@ void main() {
         final extra = {'param': 'test'};
 
         final client = AudioOutClient(name, channel);
-        final result = await client.play(
-          audioData: audioData,
-          audioInfo: audioInfo,
-          extra: extra,
-        );
+        final result = await client.play(audioData: audioData, audioInfo: audioInfo, extra: extra);
 
         expect(result, isA<PlayResponse>());
         expect(audioOut.audioData, audioData);

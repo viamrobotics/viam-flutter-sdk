@@ -27,17 +27,17 @@ class AudioInService extends AudioInServiceBase {
 
     return audioIn
         .getAudio(
-      codec: request.codec,
-      durationSeconds: request.hasDurationSeconds() ? request.durationSeconds : null,
-      previousTimestampNanoseconds: request.hasPreviousTimestampNanoseconds() ? request.previousTimestampNanoseconds : null,
-      extra: request.hasExtra() ? request.extra.toMap() : null,
-    )
+          codec: request.codec,
+          durationSeconds: request.hasDurationSeconds() ? request.durationSeconds : null,
+          previousTimestampNanoseconds: request.hasPreviousTimestampNanoseconds() ? request.previousTimestampNanoseconds : null,
+          extra: request.hasExtra() ? request.extra.toMap() : null,
+        )
         .map((response) {
-      if (requestId.isNotEmpty) {
-        response.requestId = requestId;
-      }
-      return response;
-    });
+          if (requestId.isNotEmpty) {
+            response.requestId = requestId;
+          }
+          return response;
+        });
   }
 
   @override

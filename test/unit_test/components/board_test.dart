@@ -213,7 +213,11 @@ void main() {
       service = BoardService(manager);
       server = Server.create(services: [service]);
       await serveServerAtUnusedPort(server);
-      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: server.port!,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
     });
 
     tearDown(() async {
@@ -224,9 +228,11 @@ void main() {
     group('Board Service Tests', () {
       test('analogReaderValue', () async {
         final client = BoardServiceClient(channel);
-        final response = await client.readAnalogReader(ReadAnalogReaderRequest()
-          ..boardName = name
-          ..analogReaderName = '1');
+        final response = await client.readAnalogReader(
+          ReadAnalogReaderRequest()
+            ..boardName = name
+            ..analogReaderName = '1',
+        );
         expect(response, expectedAnalog);
       });
 
@@ -234,9 +240,11 @@ void main() {
         final client = BoardServiceClient(channel);
         const expected = 0;
 
-        final response = await client.getDigitalInterruptValue(GetDigitalInterruptValueRequest()
-          ..boardName = name
-          ..digitalInterruptName = '1');
+        final response = await client.getDigitalInterruptValue(
+          GetDigitalInterruptValueRequest()
+            ..boardName = name
+            ..digitalInterruptName = '1',
+        );
         expect(response.value.toInt(), expected);
       });
 
@@ -267,9 +275,11 @@ void main() {
         final client = BoardServiceClient(channel);
         const expected = false;
 
-        final response = await client.getGPIO(GetGPIORequest()
-          ..name = name
-          ..pin = 'pin');
+        final response = await client.getGPIO(
+          GetGPIORequest()
+            ..name = name
+            ..pin = 'pin',
+        );
         expect(response.high, expected);
       });
 
@@ -277,9 +287,11 @@ void main() {
         final client = BoardServiceClient(channel);
         const expected = 0.0;
 
-        final response = await client.pWM(PWMRequest()
-          ..name = name
-          ..pin = 'pin');
+        final response = await client.pWM(
+          PWMRequest()
+            ..name = name
+            ..pin = 'pin',
+        );
         expect(response.dutyCyclePct, expected);
       });
 
@@ -287,58 +299,70 @@ void main() {
         final client = BoardServiceClient(channel);
         const expected = 0;
 
-        final response = await client.pWMFrequency(PWMFrequencyRequest()
-          ..name = name
-          ..pin = 'pin');
+        final response = await client.pWMFrequency(
+          PWMFrequencyRequest()
+            ..name = name
+            ..pin = 'pin',
+        );
         expect(response.frequencyHz.toInt(), expected);
       });
 
       test('setGpioState', () async {
         final client = BoardServiceClient(channel);
         expect(await board.gpio('pin'), false);
-        await client.setGPIO(SetGPIORequest()
-          ..name = name
-          ..pin = 'pin'
-          ..high = true);
+        await client.setGPIO(
+          SetGPIORequest()
+            ..name = name
+            ..pin = 'pin'
+            ..high = true,
+        );
         expect(await board.gpio('pin'), true);
       });
 
       test('setPowerMode', () async {
         final client = BoardServiceClient(channel);
         expect(board.powerMode, PowerMode.POWER_MODE_NORMAL);
-        await client.setPowerMode(SetPowerModeRequest()
-          ..name = name
-          ..powerMode = PowerMode.POWER_MODE_OFFLINE_DEEP);
+        await client.setPowerMode(
+          SetPowerModeRequest()
+            ..name = name
+            ..powerMode = PowerMode.POWER_MODE_OFFLINE_DEEP,
+        );
         expect(board.powerMode, PowerMode.POWER_MODE_OFFLINE_DEEP);
       });
 
       test('setPwm', () async {
         final client = BoardServiceClient(channel);
         expect(await board.pwm('pin'), 0.0);
-        await client.setPWM(SetPWMRequest()
-          ..name = name
-          ..pin = 'pin'
-          ..dutyCyclePct = 1.0);
+        await client.setPWM(
+          SetPWMRequest()
+            ..name = name
+            ..pin = 'pin'
+            ..dutyCyclePct = 1.0,
+        );
         expect(await board.pwm('pin'), 1.0);
       });
 
       test('setPwmFrequency', () async {
         final client = BoardServiceClient(channel);
         expect(await board.pwmFrequency('pin'), 0);
-        await client.setPWMFrequency(SetPWMFrequencyRequest()
-          ..name = name
-          ..pin = 'pin'
-          ..frequencyHz = Int64(1));
+        await client.setPWMFrequency(
+          SetPWMFrequencyRequest()
+            ..name = name
+            ..pin = 'pin'
+            ..frequencyHz = Int64(1),
+        );
         expect(await board.pwmFrequency('pin'), 1);
       });
 
       test('writeAnalog', () async {
         final client = BoardServiceClient(channel);
         expect(board.analogMap['pin'], 0);
-        await client.writeAnalog(WriteAnalogRequest()
-          ..name = name
-          ..pin = 'pin'
-          ..value = 4);
+        await client.writeAnalog(
+          WriteAnalogRequest()
+            ..name = name
+            ..pin = 'pin'
+            ..value = 4,
+        );
         expect(board.analogMap['pin'], 4);
       });
 
@@ -346,9 +370,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = BoardServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -356,10 +382,12 @@ void main() {
         final client = BoardServiceClient(channel);
         expect(board.extra, null);
 
-        await client.getGPIO(GetGPIORequest()
-          ..name = name
-          ..pin = 'pin'
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.getGPIO(
+          GetGPIORequest()
+            ..name = name
+            ..pin = 'pin'
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(board.extra, {'foo': 'bar'});
       });
     });

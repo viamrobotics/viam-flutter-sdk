@@ -208,7 +208,11 @@ void main() {
       service = MotorService(manager);
       server = Server.create(services: [service]);
       await serveServerAtUnusedPort(server);
-      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: server.port!,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
     });
 
     tearDown(() async {
@@ -301,9 +305,11 @@ void main() {
         final request = StopRequest()..name = name;
         expect(await motor.isMoving(), false);
 
-        await client.setPower(SetPowerRequest()
-          ..name = name
-          ..powerPct = 1);
+        await client.setPower(
+          SetPowerRequest()
+            ..name = name
+            ..powerPct = 1,
+        );
         expect(await motor.isMoving(), true);
 
         await client.stop(request);
@@ -316,9 +322,11 @@ void main() {
         expect(firstResponse.isOn, false);
         expect(firstResponse.powerPct, 0);
 
-        await client.setPower(SetPowerRequest()
-          ..name = name
-          ..powerPct = 1);
+        await client.setPower(
+          SetPowerRequest()
+            ..name = name
+            ..powerPct = 1,
+        );
         final secondResponse = await client.isPowered(IsPoweredRequest()..name = name);
         expect(secondResponse.isOn, true);
         expect(secondResponse.powerPct, 1);
@@ -331,9 +339,11 @@ void main() {
         final firstResponse = await client.isMoving(request);
         expect(firstResponse.isMoving, false);
 
-        await client.setPower(SetPowerRequest()
-          ..name = name
-          ..powerPct = 1);
+        await client.setPower(
+          SetPowerRequest()
+            ..name = name
+            ..powerPct = 1,
+        );
         final secondResponse = await client.isMoving(request);
         expect(secondResponse.isMoving, true);
 
@@ -346,9 +356,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = MotorServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -356,9 +368,11 @@ void main() {
         expect(motor.extra, null);
 
         final client = MotorServiceClient(channel);
-        await client.stop(StopRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.stop(
+          StopRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(motor.extra, {'foo': 'bar'});
       });
     });

@@ -124,11 +124,12 @@ class BoardClient extends Board with RPCDebugLoggerMixin implements ResourceRPCC
   @override
   Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) {
     final response = client.streamTicks(
-        StreamTicksRequest()
-          ..name = name
-          ..pinNames.addAll(interrupts)
-          ..extra = extra?.toStruct() ?? Struct(),
-        options: callOptions);
+      StreamTicksRequest()
+        ..name = name
+        ..pinNames.addAll(interrupts)
+        ..extra = extra?.toStruct() ?? Struct(),
+      options: callOptions,
+    );
 
     final stream = response.map((resp) => Tick(pinName: resp.pinName, high: resp.high, time: resp.time));
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());

@@ -177,7 +177,11 @@ void main() {
     });
 
     test('getKinematics', () async {
-      final expectedMeshes = {'mesh1.stl': Mesh()..contentType = 'stl'..mesh = [1,2,3]};
+      final expectedMeshes = {
+        'mesh1.stl': Mesh()
+          ..contentType = 'stl'
+          ..mesh = [1, 2, 3],
+      };
       arm.armMeshesByUrdfFilepath = expectedMeshes;
       final kinematics = await arm.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
@@ -313,7 +317,11 @@ void main() {
 
       test('getKinematics', () async {
         final client = ArmServiceClient(channel);
-        final expectedMeshes = {'mesh1.stl': Mesh()..contentType = 'stl'..mesh = [1,2,3]};
+        final expectedMeshes = {
+          'mesh1.stl': Mesh()
+            ..contentType = 'stl'
+            ..mesh = [1, 2, 3],
+        };
         arm.armMeshesByUrdfFilepath = expectedMeshes;
         final request = GetKinematicsRequest()..name = name;
         final response = await client.getKinematics(request);
@@ -407,7 +415,11 @@ void main() {
     });
     test('getKinematics', () async {
       final client = ArmClient(name, channel);
-      final expectedMeshes = {'mesh1.stl': Mesh()..contentType = 'stl'..mesh = [1,2,3]};
+      final expectedMeshes = {
+        'mesh1.stl': Mesh()
+          ..contentType = 'stl'
+          ..mesh = [1, 2, 3],
+      };
       arm.armMeshesByUrdfFilepath = expectedMeshes;
       final kinematics = await client.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);

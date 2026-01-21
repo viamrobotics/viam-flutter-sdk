@@ -19,15 +19,17 @@ void main() {
     test('submitTrainingJob', () async {
       const expected = 'jobId';
       when(serviceClient.submitTrainingJob(any)).thenAnswer((_) => MockResponseFuture.value(SubmitTrainingJobResponse()..id = expected));
-      final response =
-          await mlTrainingClient.submitTrainingJob('orgId', 'datasetId', 'name', 'version', ModelType.MODEL_TYPE_UNSPECIFIED, ['tags']);
+      final response = await mlTrainingClient.submitTrainingJob('orgId', 'datasetId', 'name', 'version', ModelType.MODEL_TYPE_UNSPECIFIED, [
+        'tags',
+      ]);
       expect(response, equals(expected));
     });
 
     test('submitCustomTrainingJob', () async {
       const expected = 'jobId';
-      when(serviceClient.submitCustomTrainingJob(any))
-          .thenAnswer((_) => MockResponseFuture.value(SubmitCustomTrainingJobResponse()..id = expected));
+      when(
+        serviceClient.submitCustomTrainingJob(any),
+      ).thenAnswer((_) => MockResponseFuture.value(SubmitCustomTrainingJobResponse()..id = expected));
       final response = await mlTrainingClient.submitCustomTrainingJob('orgId', 'datasetId', 'name', 'version', 'itemId');
       expect(response, equals(expected));
     });
@@ -51,10 +53,11 @@ void main() {
           ..datasetId = 'datasetId'
           ..tags.add('tag')
           ..organizationId = 'orgId'
-          ..modelVersion = 'version'
+          ..modelVersion = 'version',
       ];
-      when(serviceClient.listTrainingJobs(any))
-          .thenAnswer((_) => MockResponseFuture.value(ListTrainingJobsResponse()..jobs.addAll(expected)));
+      when(
+        serviceClient.listTrainingJobs(any),
+      ).thenAnswer((_) => MockResponseFuture.value(ListTrainingJobsResponse()..jobs.addAll(expected)));
       final response = await mlTrainingClient.listTrainingJobs('orgId');
       expect(response, equals(expected));
     });

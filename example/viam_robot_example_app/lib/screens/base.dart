@@ -12,15 +12,9 @@ class BaseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Remote Control'),
-      ),
+      appBar: AppBar(title: const Text('Remote Control')),
       body: Center(
-        child: ViamBaseWidget(
-          base: base,
-          cameras: cameras,
-          robotClient: robot,
-        ),
+        child: ViamBaseWidget(base: base, cameras: cameras, robotClient: robot),
       ),
     );
   }

@@ -17,14 +17,15 @@ class CameraScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(camera.name)),
-        body: Center(
-          // The ViamCameraStreamView widget was provided by the Viam SDK.
-          // It's a simple widget that takes in the Camera and StreamClient,
-          // and provides a live WebRTC streaming view.
-          // You can do with it what you wish, such as wrapping it in a container,
-          // changing its size, etc. It functions as a normal widget.
-          child: ViamCameraStreamView(camera: camera, streamClient: stream),
-        ));
+      appBar: AppBar(title: Text(camera.name)),
+      body: Center(
+        // The ViamCameraStreamView widget was provided by the Viam SDK.
+        // It's a simple widget that takes in the Camera and StreamClient,
+        // and provides a live WebRTC streaming view.
+        // You can do with it what you wish, such as wrapping it in a container,
+        // changing its size, etc. It functions as a normal widget.
+        child: ViamCameraStreamView(camera: camera, streamClient: stream),
+      ),
+    );
   }
 }

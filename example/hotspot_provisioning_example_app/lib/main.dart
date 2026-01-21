@@ -11,11 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Hotspot Provisioning',
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      home: StartScreen(),
-    );
+    return MaterialApp(title: 'Hotspot Provisioning', theme: lightTheme, darkTheme: darkTheme, home: StartScreen());
   }
 }

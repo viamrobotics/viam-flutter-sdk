@@ -12,15 +12,9 @@ class GripperScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Gripper ${gripper.name} Control'),
-      ),
+      appBar: AppBar(title: Text('Gripper ${gripper.name} Control')),
       body: Center(
-        child: ViamGripperWidget(
-          gripper: gripper,
-          cameras: cameras,
-          robotClient: robot,
-        ),
+        child: ViamGripperWidget(gripper: gripper, cameras: cameras, robotClient: robot),
       ),
     );
   }

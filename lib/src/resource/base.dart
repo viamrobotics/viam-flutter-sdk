@@ -38,10 +38,7 @@ class Subtype {
   /// // Example, creating a Sensor from a resource named "mySensor":
   /// var mySensor = Sensor.fromResourceName('mySensor');
   /// ```
-  Subtype.fromResourceName(ResourceName name)
-      : namespace = name.namespace,
-        resourceType = name.type,
-        resourceSubtype = name.subtype;
+  Subtype.fromResourceName(ResourceName name) : namespace = name.namespace, resourceType = name.type, resourceSubtype = name.subtype;
 
   /// Get a [ResourceName] from this [Subtype] and a provided [name]
   ///

@@ -66,11 +66,7 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
       setState(() {});
     });
     _streamSub.onError((error, trace) {
-      Logger().e(
-        'Encountered a stream error for camera ${widget.camera.name}',
-        error: error,
-        stackTrace: trace,
-      );
+      Logger().e('Encountered a stream error for camera ${widget.camera.name}', error: error, stackTrace: trace);
       setState(() {
         _error = error;
       });
@@ -88,22 +84,28 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
     return (_error != null)
         ? Padding(
             padding: const EdgeInsets.all(16),
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Text(
-                'Encountered a stream error for camera: ${widget.camera.name}',
-                style: Theme.of(context).textTheme.titleLarge,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              Text(_error.toString(), textAlign: TextAlign.center),
-            ]),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Encountered a stream error for camera: ${widget.camera.name}',
+                  style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 8),
+                Text(_error.toString(), textAlign: TextAlign.center),
+              ],
+            ),
           )
-        : LayoutBuilder(builder: ((context, constraints) {
-            return Container(
-              decoration: const BoxDecoration(color: Colors.black),
-              constraints: BoxConstraints(maxHeight: _height * constraints.maxWidth / _width),
-              child: RTCVideoView(_renderer),
-            );
-          }));
+        : LayoutBuilder(
+            builder: ((context, constraints) {
+              return Container(
+                decoration: const BoxDecoration(color: Colors.black),
+                constraints: BoxConstraints(maxHeight: _height * constraints.maxWidth / _width),
+                child: RTCVideoView(_renderer),
+              );
+            }),
+          );
   }
 }

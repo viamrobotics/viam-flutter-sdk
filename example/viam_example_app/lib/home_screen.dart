@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _isLoading
           ? const CircularProgressIndicator.adaptive()
           : // Build a list from the [organizations] state.
-          ListView.builder(
+            ListView.builder(
               itemCount: organizations.length,
               itemBuilder: (_, index) {
                 final org = organizations[index];
@@ -78,7 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () => _navigateToOrganization(org),
                   trailing: const Icon(Icons.chevron_right),
                 );
-              }),
+              },
+            ),
     );
   }
 }

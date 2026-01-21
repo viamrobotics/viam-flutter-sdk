@@ -78,10 +78,7 @@ class _RobotScreenState extends State<RobotScreen> {
   /// we added this convenience method to see if the resource name provided is of
   /// one of the available subtypes.
   bool _isNavigable(ResourceName rn) {
-    final availableResourceSubtypes = [
-      Camera.subtype.resourceSubtype,
-      Motor.subtype.resourceSubtype,
-    ];
+    final availableResourceSubtypes = [Camera.subtype.resourceSubtype, Motor.subtype.resourceSubtype];
     return availableResourceSubtypes.contains(rn.subtype);
   }
 
@@ -122,21 +119,23 @@ class _RobotScreenState extends State<RobotScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(widget.robot.name)),
-        body: _isLoading
-            ? const Center(child: CircularProgressIndicator.adaptive())
-            : ListView.builder(
-                itemCount: client.resourceNames.length,
-                itemBuilder: (_, index) {
-                  final resourceName = _sortedResourceNames[index];
-                  return ListTile(
-                    title: Text(resourceName.name),
-                    subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}'),
-                    // We only want to navigate to a resource if that resource is one that we implemented
-                    onTap: _isNavigable(resourceName) ? () => _navigateToResource(resourceName) : null,
-                    // Similarly, we only want to show the navigation icon if the resource is implemented
-                    trailing: _isNavigable(resourceName) ? const Icon(Icons.chevron_right) : null,
-                  );
-                }));
+      appBar: AppBar(title: Text(widget.robot.name)),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator.adaptive())
+          : ListView.builder(
+              itemCount: client.resourceNames.length,
+              itemBuilder: (_, index) {
+                final resourceName = _sortedResourceNames[index];
+                return ListTile(
+                  title: Text(resourceName.name),
+                  subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}'),
+                  // We only want to navigate to a resource if that resource is one that we implemented
+                  onTap: _isNavigable(resourceName) ? () => _navigateToResource(resourceName) : null,
+                  // Similarly, we only want to show the navigation icon if the resource is implemented
+                  trailing: _isNavigable(resourceName) ? const Icon(Icons.chevron_right) : null,
+                );
+              },
+            ),
+    );
   }
 }

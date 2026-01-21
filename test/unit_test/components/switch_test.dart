@@ -31,10 +31,7 @@ class FakeSwitch extends Switch {
 
   @override
   Future<PositionsInfo> getNumberOfPositionsWithLabels({Map<String, dynamic>? extra}) async {
-    return PositionsInfo(
-      numberOfPositions: numberOfPositions,
-      labels: labels,
-    );
+    return PositionsInfo(numberOfPositions: numberOfPositions, labels: labels);
   }
 
   @override
@@ -126,9 +123,11 @@ void main() {
     group('Switch Service Tests', () {
       test('setPosition should set the switch position to new given position', () async {
         final client = SwitchServiceClient(channel);
-        await client.setPosition(SetPositionRequest()
-          ..name = name
-          ..position = testPosition);
+        await client.setPosition(
+          SetPositionRequest()
+            ..name = name
+            ..position = testPosition,
+        );
         expect(nswitch.position, testPosition);
       });
 

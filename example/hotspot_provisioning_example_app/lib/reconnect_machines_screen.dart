@@ -122,8 +122,9 @@ class _ReconnectRobotsScreenState extends State<ReconnectRobotsScreen> {
           }
         } else {
           if (mounted) {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => OfflineScreen(onPressed: () => Navigator.of(context).pop())));
+            Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (context) => OfflineScreen(onPressed: () => Navigator.of(context).pop())));
           }
         }
       } else {
@@ -145,8 +146,10 @@ class _ReconnectRobotsScreenState extends State<ReconnectRobotsScreen> {
               itemCount: _robots.length,
               itemBuilder: (context, index) => ListTile(
                 title: Text(_robots[index].robot.name, style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
-                subtitle:
-                    Text('location: ${_robots[index].locationName}', style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
+                subtitle: Text(
+                  'location: ${_robots[index].locationName}',
+                  style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+                ),
                 trailing: _machineStatuses[_robots[index].robot.id]?.statusIcon,
                 onTap: () => _goToHotspotProvisioningFlow(context, _viam!, _robots[index].robot),
               ),

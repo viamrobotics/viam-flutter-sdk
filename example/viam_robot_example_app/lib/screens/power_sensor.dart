@@ -38,9 +38,7 @@ class PowerSensorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(resourceName.name.toUpperCase()),
-      ),
+      appBar: AppBar(title: Text(resourceName.name.toUpperCase())),
       body: Center(
         child: Column(
           children: [

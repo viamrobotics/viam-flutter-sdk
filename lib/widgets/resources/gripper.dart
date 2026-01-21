@@ -20,12 +20,7 @@ class ViamGripperWidget extends StatefulWidget {
   /// The current [RobotClient]
   final RobotClient robotClient;
 
-  const ViamGripperWidget({
-    super.key,
-    required this.gripper,
-    required this.cameras,
-    required this.robotClient,
-  });
+  const ViamGripperWidget({super.key, required this.gripper, required this.cameras, required this.robotClient});
 
   @override
   State<ViamGripperWidget> createState() => _ViamGripperWidgetState();
@@ -78,7 +73,7 @@ class _ViamGripperWidgetState extends State<ViamGripperWidget> {
           ],
         ),
         const SizedBox(height: 8),
-        Text('Gripper status: ${_isOpen ? "OPEN" : "CLOSED"}')
+        Text('Gripper status: ${_isOpen ? "OPEN" : "CLOSED"}'),
       ],
     );
   }

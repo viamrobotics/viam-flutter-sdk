@@ -8,9 +8,5 @@ class ViamGrpcOrGrpcWebChannelInternal extends GrpcWebClientChannel {
     required String grpcWebHost,
     required int grpcWebPort,
     required bool grpcWebTransportSecure,
-  }) : super.xhr(Uri(
-          host: grpcWebHost,
-          port: grpcWebPort,
-          scheme: grpcWebTransportSecure ? 'https' : 'http',
-        ));
+  }) : super.xhr(Uri(host: grpcWebHost, port: grpcWebPort, scheme: grpcWebTransportSecure ? 'https' : 'http'));
 }

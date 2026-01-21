@@ -13,15 +13,7 @@ String get _newProtoPath {
 
 /// Get a list of all proto files that we care about
 Future<Iterable<File>> _getFiles() async {
-  const protoDirs = [
-    'app',
-    'common',
-    'component',
-    'module',
-    'provisioning',
-    'robot',
-    'service',
-  ];
+  const protoDirs = ['app', 'common', 'component', 'module', 'provisioning', 'robot', 'service'];
   final List<File> files = [];
   for (final protoDir in protoDirs) {
     final dir = Directory('$_protoPath$protoDir');

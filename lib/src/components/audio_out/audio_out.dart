@@ -12,11 +12,7 @@ abstract class AudioOut extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'audio_out');
 
   /// Play audio data on this audio output device
-  Future<PlayResponse> play({
-    required Uint8List audioData,
-    required AudioInfo audioInfo,
-    Map<String, dynamic>? extra,
-  });
+  Future<PlayResponse> play({required Uint8List audioData, required AudioInfo audioInfo, Map<String, dynamic>? extra});
 
   /// Get the audio properties of this audio output device
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra});

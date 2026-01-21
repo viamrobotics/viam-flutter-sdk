@@ -1137,8 +1137,9 @@ class DataClient {
     final file = File(path);
     final reader = ChunkedStreamReader(file.openRead());
     try {
-      final fileDataStream =
-          reader.readStream(file.lengthSync()).map((event) => FileUploadRequest()..fileContents = (FileData()..data = event));
+      final fileDataStream = reader
+          .readStream(file.lengthSync())
+          .map((event) => FileUploadRequest()..fileContents = (FileData()..data = event));
       final requestStream = StreamGroup.merge([metadataStream, fileDataStream]);
       final response = await _dataSyncClient.fileUpload(requestStream);
       return response.binaryDataId;
@@ -1654,8 +1655,12 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<void> createIndex(String organizationId, IndexableCollection collectionType, Map<String, dynamic> indexSpec,
-      {String? pipelineName}) async {
+  Future<void> createIndex(
+    String organizationId,
+    IndexableCollection collectionType,
+    Map<String, dynamic> indexSpec, {
+    String? pipelineName,
+  }) async {
     final request = CreateIndexRequest()
       ..organizationId = organizationId
       ..collectionType = collectionType

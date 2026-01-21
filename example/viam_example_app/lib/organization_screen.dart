@@ -57,13 +57,16 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
   }
 
   void _navigateToLocation(Location location) {
-    Navigator.of(context).push(MaterialPageRoute(
+    Navigator.of(context).push(
+      MaterialPageRoute(
         builder: (_) => LocationScreen(
-              widget._viam,
-              location,
-              // We want to send a list of child locations, i.e. locations where the selected location is the parent.
-              locations.where((element) => element.parentLocationId == location.id).toList(),
-            )));
+          widget._viam,
+          location,
+          // We want to send a list of child locations, i.e. locations where the selected location is the parent.
+          locations.where((element) => element.parentLocationId == location.id).toList(),
+        ),
+      ),
+    );
   }
 
   @override
@@ -83,7 +86,7 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
       body: _isLoading
           ? const CircularProgressIndicator.adaptive()
           : // Build a list from the [locations] state.
-          ListView.builder(
+            ListView.builder(
               itemCount: parentLocations.length,
               itemBuilder: (_, index) {
                 final location = parentLocations[index];
@@ -92,7 +95,8 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
                   onTap: () => _navigateToLocation(location),
                   trailing: const Icon(Icons.chevron_right),
                 );
-              }),
+              },
+            ),
     );
   }
 }

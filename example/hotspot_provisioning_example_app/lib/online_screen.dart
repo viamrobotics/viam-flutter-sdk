@@ -18,10 +18,7 @@ class OnlineScreen extends StatelessWidget {
               style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
             ),
             SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: onPressed,
-              child: const Text('Done'),
-            ),
+            ElevatedButton(onPressed: onPressed, child: const Text('Done')),
           ],
         ),
       ),

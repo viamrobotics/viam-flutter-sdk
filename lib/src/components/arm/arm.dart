@@ -128,7 +128,7 @@ abstract class Arm extends Resource {
 
   /// Calculates the maximum reach of an arm by summing all link lengths.
   /// Returns the max reach in mm.
-// calculateMaxReach written with Cursor.
+  // calculateMaxReach written with Cursor.
   Future<double> calculateMaxReach(Arm arm) async {
     final kinematics = await arm.getKinematics();
     final bytes = Uint8List.fromList(kinematics.raw);
@@ -167,7 +167,6 @@ abstract class Arm extends Resource {
     return maxReach;
   }
 }
-
 
 /// Kinematics represents the kinematics of a component.
 class Kinematics {

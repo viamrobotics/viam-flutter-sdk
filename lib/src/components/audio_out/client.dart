@@ -23,11 +23,7 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
   AudioOutClient(this.name, this.channel);
 
   @override
-  Future<PlayResponse> play({
-    required Uint8List audioData,
-    required AudioInfo audioInfo,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<PlayResponse> play({required Uint8List audioData, required AudioInfo audioInfo, Map<String, dynamic>? extra}) async {
     final request = PlayRequest()
       ..name = name
       ..audioData = audioData

@@ -18,10 +18,7 @@ class OfflineScreen extends StatelessWidget {
               style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
             ),
             const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: onPressed,
-              child: const Text('Try Again'),
-            ),
+            ElevatedButton(onPressed: onPressed, child: const Text('Try Again')),
           ],
         ),
       ),

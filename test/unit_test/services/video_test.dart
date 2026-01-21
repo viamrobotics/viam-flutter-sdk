@@ -36,18 +36,16 @@ void main() {
 
       when(serviceClient.getVideo(any, options: anyNamed('options'))).thenAnswer((_) => MockResponseStream.list(expectedResponses));
 
-      final stream = client.getVideo(
-        videoCodec: 'h264',
-        videoContainer: 'mp4',
-      );
+      final stream = client.getVideo(videoCodec: 'h264', videoContainer: 'mp4');
 
       expect(
-          stream,
-          emitsInOrder([
-            predicate<GetVideoResponse>((r) => r.videoData.toString() == [1, 2, 3].toString()),
-            predicate<GetVideoResponse>((r) => r.videoData.toString() == [4, 5, 6].toString()),
-            emitsDone
-          ]));
+        stream,
+        emitsInOrder([
+          predicate<GetVideoResponse>((r) => r.videoData.toString() == [1, 2, 3].toString()),
+          predicate<GetVideoResponse>((r) => r.videoData.toString() == [4, 5, 6].toString()),
+          emitsDone,
+        ]),
+      );
     });
 
     test('getVideo with timestamps', () async {
@@ -59,12 +57,7 @@ void main() {
 
       when(serviceClient.getVideo(any, options: anyNamed('options'))).thenAnswer((_) => MockResponseStream.list(expectedResponses));
 
-      final stream = client.getVideo(
-        startTimestamp: startTime,
-        endTimestamp: endTime,
-        videoCodec: 'h265',
-        videoContainer: 'fmp4',
-      );
+      final stream = client.getVideo(startTimestamp: startTime, endTimestamp: endTime, videoCodec: 'h265', videoContainer: 'fmp4');
 
       expect(stream, emitsInOrder([predicate<GetVideoResponse>((r) => r.videoContainer == 'fmp4'), emitsDone]));
 
@@ -105,8 +98,9 @@ void main() {
 
     test('doCommand', () async {
       final expectedResult = {'status': 'ok'};
-      when(serviceClient.doCommand(any, options: anyNamed('options')))
-          .thenAnswer((_) => MockResponseFuture.value(DoCommandResponse()..result = expectedResult.toStruct()));
+      when(
+        serviceClient.doCommand(any, options: anyNamed('options')),
+      ).thenAnswer((_) => MockResponseFuture.value(DoCommandResponse()..result = expectedResult.toStruct()));
 
       final response = await client.doCommand({'action': 'test'});
 

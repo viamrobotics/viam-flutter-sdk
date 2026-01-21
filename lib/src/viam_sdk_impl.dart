@@ -30,43 +30,46 @@ class ViamImpl implements Viam {
     _appRobotClient = AppRobotClient(RobotServiceClient(_clientChannelBase));
     _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
     _dataClient = DataClient(
-        DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase), DatasetServiceClient(_clientChannelBase));
+      DataServiceClient(_clientChannelBase),
+      DataSyncServiceClient(_clientChannelBase),
+      DatasetServiceClient(_clientChannelBase),
+    );
 
-    _provisioningClient = ProvisioningClient(ProvisioningServiceClient(
-      ClientChannel(
-        '10.42.0.1',
-        port: 4772,
-        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+    _provisioningClient = ProvisioningClient(
+      ProvisioningServiceClient(
+        ClientChannel('10.42.0.1', port: 4772, options: const ChannelOptions(credentials: ChannelCredentials.insecure())),
       ),
-    ));
+    );
   }
 
   ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
-      : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
+    : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _appRobotClient = AppRobotClient(RobotServiceClient(_clientChannelBase));
     _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
     _dataClient = DataClient(
-        DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase), DatasetServiceClient(_clientChannelBase));
+      DataServiceClient(_clientChannelBase),
+      DataSyncServiceClient(_clientChannelBase),
+      DatasetServiceClient(_clientChannelBase),
+    );
 
-    _provisioningClient = ProvisioningClient(ProvisioningServiceClient(
-      ClientChannel(
-        '10.42.0.1',
-        port: 4772,
-        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+    _provisioningClient = ProvisioningClient(
+      ProvisioningServiceClient(
+        ClientChannel('10.42.0.1', port: 4772, options: const ChannelOptions(credentials: ChannelCredentials.insecure())),
       ),
-    ));
+    );
   }
 
   static Future<ViamImpl> withApiKey(String apiKeyId, String apiKey, {String serviceHost = 'app.viam.com'}) async {
     final channel = await dial(
-        serviceHost,
-        DialOptions()
-          ..authEntity = apiKeyId
-          ..credentials = Credentials.apiKey(apiKey)
-          ..attemptMdns = false
-          ..webRtcOptions = (DialWebRtcOptions()..disable = true),
-        () => '');
+      serviceHost,
+      DialOptions()
+        ..authEntity = apiKeyId
+        ..credentials = Credentials.apiKey(apiKey)
+        ..attemptMdns = false
+        ..webRtcOptions = (DialWebRtcOptions()..disable = true),
+      () => '',
+    );
     return ViamImpl._withChannel(channel);
   }
 

@@ -11,9 +11,7 @@ class BoardScreen extends StatelessWidget {
   @override
   Widget build(Object context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(resourceName.name.toUpperCase()),
-      ),
+      appBar: AppBar(title: Text(resourceName.name.toUpperCase())),
       body: Center(
         child: Column(
           children: [
@@ -23,7 +21,7 @@ class BoardScreen extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
             const SizedBox(height: 16),
-            ViamBoardWidget(board: board)
+            ViamBoardWidget(board: board),
           ],
         ),
       ),

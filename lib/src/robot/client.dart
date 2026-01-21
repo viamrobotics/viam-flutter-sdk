@@ -45,9 +45,9 @@ class RobotClientOptions {
 
   // Convenience initializer for creating options with an API key ID/API key pair
   RobotClientOptions.withApiKey(String apiKeyID, String apiKey)
-      : dialOptions = DialOptions()
-          ..credentials = Credentials.apiKey(apiKey)
-          ..authEntity = apiKeyID;
+    : dialOptions = DialOptions()
+        ..credentials = Credentials.apiKey(apiKey)
+        ..authEntity = apiKeyID;
 
   /// Convenience initializer for creating options with a robot secret
   RobotClientOptions.withRobotSecret(String robotSecret) : dialOptions = DialOptions()..credentials = Credentials.robotSecret(robotSecret);
@@ -150,7 +150,8 @@ class RobotClient {
       final resource = _manager.getResource<ResourceRPCClient>(resourceName);
       if (_channel != resource.channel) {
         _logger.d(
-            'Resetting channel for resource named ${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}');
+          'Resetting channel for resource named ${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}',
+        );
         resource.channel = _channel;
       }
     }

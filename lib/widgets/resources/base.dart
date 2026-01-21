@@ -18,12 +18,7 @@ class ViamBaseWidget extends StatefulWidget {
   /// The current [RobotClient]
   final RobotClient robotClient;
 
-  const ViamBaseWidget({
-    super.key,
-    required this.base,
-    required this.cameras,
-    required this.robotClient,
-  });
+  const ViamBaseWidget({super.key, required this.base, required this.cameras, required this.robotClient});
 
   @override
   State<ViamBaseWidget> createState() => _ViamBaseWidgetState();
@@ -54,9 +49,7 @@ class _ViamBaseWidgetState extends State<ViamBaseWidget> {
         _buildCamera(),
         Padding(
           padding: const EdgeInsets.only(bottom: 48),
-          child: Center(
-            child: ViamBaseJoystick(base: widget.base),
-          ),
+          child: Center(child: ViamBaseJoystick(base: widget.base)),
         ),
       ],
     );

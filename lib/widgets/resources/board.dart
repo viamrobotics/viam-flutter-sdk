@@ -18,11 +18,7 @@ class ViamBoardWidget extends StatefulWidget {
   /// This field determines how frequently the user wants to auto refresh the board's status readings.
   final Duration refreshInterval;
 
-  const ViamBoardWidget({
-    super.key,
-    required this.board,
-    this.refreshInterval = const Duration(seconds: 1),
-  });
+  const ViamBoardWidget({super.key, required this.board, this.refreshInterval = const Duration(seconds: 1)});
 
   @override
   State<ViamBoardWidget> createState() => _ViamBoardWidgetState();
@@ -97,49 +93,52 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
             children: [
               const Text('GPIO', style: TextStyle(fontSize: 24)),
               Container(
-                  padding: const EdgeInsets.all(8),
-                  child: Form(
-                      key: _getFormKey,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text('Get', style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextFormField(
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter a GPIO Pin';
-                              }
-                              return null;
-                            },
-                            keyboardType: TextInputType.number,
-                            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                            onChanged: (value) => setState(() {
-                              getPin = value;
-                            }),
-                            decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: 'Pin'),
-                          ),
-                          if (pinValue != '') Padding(padding: const EdgeInsets.only(top: 8), child: Text(pinValue)),
-                          Padding(
-                              padding: const EdgeInsets.only(top: 8),
-                              child: OverflowBar(spacing: 4, overflowSpacing: 4, children: [
-                                ViamButton(
-                                  onPressed: () => _getGpio('PinState'),
-                                  text: 'Get Pin State',
-                                  size: ViamButtonSizeClass.small,
-                                ),
-                                ViamButton(
-                                  onPressed: () => _getGpio('PWMDutyCycle'),
-                                  text: 'Get PWM Duty Cycle',
-                                  size: ViamButtonSizeClass.small,
-                                ),
-                                ViamButton(
-                                  onPressed: () => _getGpio('PWMFrequency'),
-                                  text: 'Get PWM Frequency',
-                                  size: ViamButtonSizeClass.small,
-                                ),
-                              ])),
-                        ],
-                      ))),
+                padding: const EdgeInsets.all(8),
+                child: Form(
+                  key: _getFormKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('Get', style: TextStyle(fontWeight: FontWeight.bold)),
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a GPIO Pin';
+                          }
+                          return null;
+                        },
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                        onChanged: (value) => setState(() {
+                          getPin = value;
+                        }),
+                        decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: 'Pin'),
+                      ),
+                      if (pinValue != '') Padding(padding: const EdgeInsets.only(top: 8), child: Text(pinValue)),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8),
+                        child: OverflowBar(
+                          spacing: 4,
+                          overflowSpacing: 4,
+                          children: [
+                            ViamButton(onPressed: () => _getGpio('PinState'), text: 'Get Pin State', size: ViamButtonSizeClass.small),
+                            ViamButton(
+                              onPressed: () => _getGpio('PWMDutyCycle'),
+                              text: 'Get PWM Duty Cycle',
+                              size: ViamButtonSizeClass.small,
+                            ),
+                            ViamButton(
+                              onPressed: () => _getGpio('PWMFrequency'),
+                              text: 'Get PWM Frequency',
+                              size: ViamButtonSizeClass.small,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               Container(
                 padding: const EdgeInsets.all(8),
                 child: Column(
@@ -147,51 +146,48 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
                   children: [
                     const Text('Set', style: TextStyle(fontWeight: FontWeight.bold)),
                     Form(
-                        key: _setFormKey,
-                        child: TextFormField(
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a GPIO Pin';
-                            }
-                            return null;
-                          },
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                          onChanged: (value) => setState(() {
-                            setPin = value;
-                          }),
-                          decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: 'Pin'),
-                        )),
+                      key: _setFormKey,
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a GPIO Pin';
+                          }
+                          return null;
+                        },
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                        onChanged: (value) => setState(() {
+                          setPin = value;
+                        }),
+                        decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: 'Pin'),
+                      ),
+                    ),
                     const SizedBox(height: 8),
                     Row(
                       children: [
                         SizedBox(
-                            width: 125,
-                            child: DropdownButton(
-                              onChanged: (value) => setState(() {
-                                high = value!;
-                              }),
-                              isExpanded: true,
-                              value: high,
-                              items: const [
-                                DropdownMenuItem(
-                                  value: true,
-                                  child: Text('High'),
-                                ),
-                                DropdownMenuItem(
-                                  value: false,
-                                  child: Text('Low'),
-                                )
-                              ],
-                            )),
+                          width: 125,
+                          child: DropdownButton(
+                            onChanged: (value) => setState(() {
+                              high = value!;
+                            }),
+                            isExpanded: true,
+                            value: high,
+                            items: const [
+                              DropdownMenuItem(value: true, child: Text('High')),
+                              DropdownMenuItem(value: false, child: Text('Low')),
+                            ],
+                          ),
+                        ),
                         Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: ViamButton(
-                              onPressed: () => _setGpio('PinState'),
-                              text: 'Set Pin State',
-                              role: ViamButtonRole.inverse,
-                              size: ViamButtonSizeClass.small,
-                            )),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: ViamButton(
+                            onPressed: () => _setGpio('PinState'),
+                            text: 'Set Pin State',
+                            role: ViamButtonRole.inverse,
+                            size: ViamButtonSizeClass.small,
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(height: 8),
@@ -232,13 +228,14 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
                           ),
                         ),
                         Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: ViamButton(
-                              onPressed: () => _setGpio('PWMDutyCycle'),
-                              text: 'Set PWM Duty Cycle',
-                              role: ViamButtonRole.inverse,
-                              size: ViamButtonSizeClass.small,
-                            )),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: ViamButton(
+                            onPressed: () => _setGpio('PWMDutyCycle'),
+                            text: 'Set PWM Duty Cycle',
+                            role: ViamButtonRole.inverse,
+                            size: ViamButtonSizeClass.small,
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(height: 8),
@@ -280,13 +277,14 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
                           ),
                         ),
                         Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: ViamButton(
-                              onPressed: () => _setGpio('PWMFrequency'),
-                              text: 'Set PWM Frequency',
-                              role: ViamButtonRole.inverse,
-                              size: ViamButtonSizeClass.small,
-                            )),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: ViamButton(
+                            onPressed: () => _setGpio('PWMFrequency'),
+                            text: 'Set PWM Frequency',
+                            role: ViamButtonRole.inverse,
+                            size: ViamButtonSizeClass.small,
+                          ),
+                        ),
                       ],
                     ),
                   ],

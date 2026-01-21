@@ -43,11 +43,12 @@ void main() {
       when(serviceClient.getInvoicePdf(any)).thenAnswer((_) => MockResponseStream.list([response]));
       final stream = billingClient.getInvoicePdf('orgId', 'id');
       expect(
-          stream,
-          emitsInOrder([
-            emits([expected]),
-            emitsDone
-          ]));
+        stream,
+        emitsInOrder([
+          emits([expected]),
+          emitsDone,
+        ]),
+      );
     });
   });
 }

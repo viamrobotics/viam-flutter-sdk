@@ -13,10 +13,7 @@ class NamedImage {
   /// ViamImage that contains the mime type and raw image data
   final ViamImage image;
 
-  NamedImage({
-    required this.sourceName,
-    required this.image,
-  });
+  NamedImage({required this.sourceName, required this.image});
 }
 
 /// {@category Viam SDK}
@@ -25,9 +22,7 @@ class ResponseMetadata {
   /// Timestamp of when the response was captured
   final DateTime capturedAt;
 
-  ResponseMetadata({
-    required this.capturedAt,
-  });
+  ResponseMetadata({required this.capturedAt});
 }
 
 /// {@category Viam SDK}
@@ -39,10 +34,7 @@ class GetImagesResult {
   /// Metadata about the response
   final ResponseMetadata? metadata;
 
-  GetImagesResult({
-    required this.images,
-    this.metadata,
-  });
+  GetImagesResult({required this.images, this.metadata});
 }
 
 /// {@category Viam SDK}

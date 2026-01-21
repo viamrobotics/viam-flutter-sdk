@@ -549,7 +549,7 @@ void main() {
         final collectionType = IndexableCollection.INDEXABLE_COLLECTION_HOT_STORE;
         final indexSpec = {
           'keys': {'field1': 1},
-          'options': {'priority': 1}
+          'options': {'priority': 1},
         };
         when(serviceClient.createIndex(any)).thenAnswer((_) => MockResponseFuture.value(CreateIndexResponse()));
         await dataClient.createIndex(orgId, collectionType, indexSpec);
@@ -608,8 +608,15 @@ void main() {
       });
 
       test('binaryDataCaptureUpload', () async {
-        final response = await dataClient.binaryDataCaptureUpload([1], 'partId', 'fileExt',
-            componentType: 'type', componentName: 'name', methodName: 'name', datasetIds: ['datasetId']);
+        final response = await dataClient.binaryDataCaptureUpload(
+          [1],
+          'partId',
+          'fileExt',
+          componentType: 'type',
+          componentName: 'name',
+          methodName: 'name',
+          datasetIds: ['datasetId'],
+        );
         expect(response, equals('fileId'));
       });
 

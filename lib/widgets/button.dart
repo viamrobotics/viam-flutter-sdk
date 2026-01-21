@@ -80,7 +80,7 @@ enum ViamButtonFillStyle {
   outline,
 
   /// The button's background should be transparent
-  ghost;
+  ghost,
 }
 
 /// The size class of the button.
@@ -148,7 +148,7 @@ enum ViamButtonVariant {
   iconLeading,
 
   /// The icon should be after the text
-  iconTrailing;
+  iconTrailing,
 }
 
 /// A button that has Viam specific styling
@@ -174,15 +174,16 @@ class ViamButton extends StatelessWidget {
   /// The size class of the button
   final ViamButtonSizeClass size;
 
-  const ViamButton(
-      {required this.onPressed,
-      required this.text,
-      super.key,
-      this.icon,
-      this.role = ViamButtonRole.primary,
-      this.style = ViamButtonFillStyle.filled,
-      this.size = ViamButtonSizeClass.medium,
-      this.variant = ViamButtonVariant.iconLeading});
+  const ViamButton({
+    required this.onPressed,
+    required this.text,
+    super.key,
+    this.icon,
+    this.role = ViamButtonRole.primary,
+    this.style = ViamButtonFillStyle.filled,
+    this.size = ViamButtonSizeClass.medium,
+    this.variant = ViamButtonVariant.iconLeading,
+  });
 
   ButtonStyle get _buttonStyle {
     final mainStyle = const ButtonStyle(splashFactory: NoSplash.splashFactory).merge(size.style);
@@ -217,19 +218,20 @@ class ViamButton extends StatelessWidget {
         outlineColor = role.foregroundColor;
       }
       return mainStyle.copyWith(
-          backgroundColor: MaterialStatePropertyAll(role.backgroundColor.withAlpha(alpha)),
-          foregroundColor: MaterialStateColor.resolveWith((states) {
-            if (states.contains(MaterialState.disabled)) {
-              return fgColor.withOpacity(0.5);
-            }
-            return fgColor;
-          }),
-          side: MaterialStateBorderSide.resolveWith((states) {
-            if (states.contains(MaterialState.disabled)) {
-              return BorderSide(color: outlineColor.withOpacity(0.25));
-            }
-            return BorderSide(color: outlineColor);
-          }));
+        backgroundColor: MaterialStatePropertyAll(role.backgroundColor.withAlpha(alpha)),
+        foregroundColor: MaterialStateColor.resolveWith((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return fgColor.withOpacity(0.5);
+          }
+          return fgColor;
+        }),
+        side: MaterialStateBorderSide.resolveWith((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return BorderSide(color: outlineColor.withOpacity(0.25));
+          }
+          return BorderSide(color: outlineColor);
+        }),
+      );
     }
     return mainStyle.copyWith(
       backgroundColor: MaterialStateColor.resolveWith((states) {
@@ -253,10 +255,7 @@ class ViamButton extends StatelessWidget {
     final iconWidget = (icon != null) ? Icon(icon, size: size.fontSize * 1.25) : const SizedBox.shrink();
     final labelWidget = (variant == ViamButtonVariant.iconOnly)
         ? const SizedBox.shrink()
-        : Text(
-            text,
-            style: TextStyle(fontWeight: (icon != null) ? FontWeight.bold : FontWeight.normal),
-          );
+        : Text(text, style: TextStyle(fontWeight: (icon != null) ? FontWeight.bold : FontWeight.normal));
     final first = (variant == ViamButtonVariant.iconTrailing) ? labelWidget : iconWidget;
     final second = (variant == ViamButtonVariant.iconTrailing) ? iconWidget : labelWidget;
     final widget = Row(mainAxisAlignment: MainAxisAlignment.center, mainAxisSize: MainAxisSize.min, children: [first, second]);
@@ -268,6 +267,9 @@ class ViamButton extends StatelessWidget {
     if (variant == ViamButtonVariant.iconOnly) {
       child = Tooltip(message: text, waitDuration: const Duration(seconds: 1), child: child);
     }
-    return Theme(data: ThemeData(primarySwatch: role.materialColor), child: child);
+    return Theme(
+      data: ThemeData(primarySwatch: role.materialColor),
+      child: child,
+    );
   }
 }

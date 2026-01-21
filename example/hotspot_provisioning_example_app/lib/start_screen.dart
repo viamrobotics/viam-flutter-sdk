@@ -8,27 +8,19 @@ class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
 
   void _goToProvisionNewMachineFlow(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => const ProvisionNewMachineScreen(promptForCredentials: false),
-    ));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProvisionNewMachineScreen(promptForCredentials: false)));
   }
 
   void _goToReconnectMachinesFlow(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => const ReconnectRobotsScreen(),
-    ));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ReconnectRobotsScreen()));
   }
 
   void _goToProvisionNewMachineWithCredInputFlow(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => const ProvisionNewMachineScreen(promptForCredentials: true),
-    ));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProvisionNewMachineScreen(promptForCredentials: true)));
   }
 
   void _goToReplaceHardwareFlow(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => const ReplaceHardwareScreen(),
-    ));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ReplaceHardwareScreen()));
   }
 
   @override
@@ -43,25 +35,16 @@ class StartScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            PrimaryButton(
-              onPressed: () => _goToProvisionNewMachineFlow(context),
-              text: 'Provision New Machine',
-            ),
+            PrimaryButton(onPressed: () => _goToProvisionNewMachineFlow(context), text: 'Provision New Machine'),
             const SizedBox(height: 16),
-            PrimaryButton(
-              onPressed: () => _goToReconnectMachinesFlow(context),
-              text: 'Reconnect Machine',
-            ),
+            PrimaryButton(onPressed: () => _goToReconnectMachinesFlow(context), text: 'Reconnect Machine'),
             const SizedBox(height: 16),
             PrimaryButton(
               onPressed: () => _goToProvisionNewMachineWithCredInputFlow(context),
               text: 'Provision New Machine with Credentials',
             ),
             const SizedBox(height: 16),
-            PrimaryButton(
-              onPressed: () => _goToReplaceHardwareFlow(context),
-              text: 'Replace Hardware',
-            ),
+            PrimaryButton(onPressed: () => _goToReplaceHardwareFlow(context), text: 'Replace Hardware'),
           ],
         ),
       ),

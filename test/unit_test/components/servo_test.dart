@@ -135,9 +135,11 @@ void main() {
     group('Servo Service Tests', () {
       test('move should move the servo to new given position', () async {
         final client = ServoServiceClient(channel);
-        await client.move(MoveRequest()
-          ..name = name
-          ..angleDeg = testPosition);
+        await client.move(
+          MoveRequest()
+            ..name = name
+            ..angleDeg = testPosition,
+        );
         expect(servo.angle, testPosition);
       });
 

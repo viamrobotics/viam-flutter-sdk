@@ -46,26 +46,29 @@ class SessionsClient implements ResourceRPCClient {
     try {
       final future = client.startSession(request);
 
-      future.then((response) {
-        _supported = true;
-        _currentId = response.id;
+      future.then(
+        (response) {
+          _supported = true;
+          _currentId = response.id;
 
-        // We send heartbeats slightly faster than the interval window to
-        // ensure that we don't fall outside of it and expire the session.
-        _heartbeatInterval = Duration(
-          seconds: response.heartbeatWindow.seconds.toInt() ~/ 1.8,
-          microseconds: response.heartbeatWindow.nanos ~/ 1.8,
-        );
+          // We send heartbeats slightly faster than the interval window to
+          // ensure that we don't fall outside of it and expire the session.
+          _heartbeatInterval = Duration(
+            seconds: response.heartbeatWindow.seconds.toInt() ~/ 1.8,
+            microseconds: response.heartbeatWindow.nanos ~/ 1.8,
+          );
 
-        return _currentId;
-      }, onError: (error, _) {
-        if (error is GrpcError && error.code == Code.UNIMPLEMENTED.value) {
-          _supported = false;
-        } else {
-          _logger.e('Error starting session: $error');
-        }
-        return '';
-      });
+          return _currentId;
+        },
+        onError: (error, _) {
+          if (error is GrpcError && error.code == Code.UNIMPLEMENTED.value) {
+            _supported = false;
+          } else {
+            _logger.e('Error starting session: $error');
+          }
+          return '';
+        },
+      );
     } catch (e) {
       _logger.e('Error starting session: $e');
       reset();
@@ -123,13 +126,11 @@ class SessionsClient implements ResourceRPCClient {
   Future<void> _applyHeartbeatMonitoredMethods() async {
     final reflectClient = ServerReflectionClient(channel);
     final request = ServerReflectionRequest(host: _host, listServices: '');
-    final responseStream = reflectClient.serverReflectionInfo(
-      Stream.value(request),
-      options: CallOptions(timeout: Duration(seconds: 10)),
-    );
+    final responseStream = reflectClient.serverReflectionInfo(Stream.value(request), options: CallOptions(timeout: Duration(seconds: 10)));
     final serviceResponse = await responseStream.first;
-    final fdpRequests = serviceResponse.listServicesResponse.service
-        .map((service) => ServerReflectionRequest(host: _host, fileContainingSymbol: service.name));
+    final fdpRequests = serviceResponse.listServicesResponse.service.map(
+      (service) => ServerReflectionRequest(host: _host, fileContainingSymbol: service.name),
+    );
     final fdpResponseStream = reflectClient.serverReflectionInfo(
       Stream.fromIterable(fdpRequests),
       options: CallOptions(timeout: Duration(seconds: 10)),

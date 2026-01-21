@@ -97,25 +97,28 @@ class _LoginScreenState extends State<LoginScreen> {
           : Center(
               child: SizedBox(
                 width: 250,
-                child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  // Add text fields and a submit button in a column layout.
-                  TextField(
-                    onChanged: (value) => setState(() {
-                      // When the text field changes, update the value of _apiKeyId
-                      _apiKeyId = value;
-                    }),
-                    decoration: const InputDecoration(hintText: 'Enter your API Key ID'),
-                  ),
-                  const SizedBox(height: 8), // Additional padding between elements
-                  TextField(
-                    onChanged: (value) => setState(() {
-                      // When the text field changes, update the value of _apiKey
-                      _apiKey = value;
-                    }),
-                    decoration: const InputDecoration(hintText: 'Enter your API Key'),
-                  ),
-                  const SizedBox(height: 16), // Additional padding between elements
-                  ElevatedButton(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    // Add text fields and a submit button in a column layout.
+                    TextField(
+                      onChanged: (value) => setState(() {
+                        // When the text field changes, update the value of _apiKeyId
+                        _apiKeyId = value;
+                      }),
+                      decoration: const InputDecoration(hintText: 'Enter your API Key ID'),
+                    ),
+                    const SizedBox(height: 8), // Additional padding between elements
+                    TextField(
+                      onChanged: (value) => setState(() {
+                        // When the text field changes, update the value of _apiKey
+                        _apiKey = value;
+                      }),
+                      decoration: const InputDecoration(hintText: 'Enter your API Key'),
+                    ),
+                    const SizedBox(height: 16), // Additional padding between elements
+                    ElevatedButton(
                       onPressed: () {
                         // First check that both fields are filled.
                         // If either is empty, we should exit early.
@@ -126,8 +129,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         // If both fields are non-empty, we can try to navigate to the HomeScreen.
                         _navigateHome();
                       },
-                      child: const Text('Login')),
-                ]),
+                      child: const Text('Login'),
+                    ),
+                  ],
+                ),
               ),
             ),
     );

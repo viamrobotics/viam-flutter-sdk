@@ -29,8 +29,9 @@ void main() {
   group('Discovery RPC Client Tests', () {
     test('discoverResources', () async {
       final expected = [ComponentConfig()];
-      when(serviceClient.discoverResources(any, options: anyNamed('options')))
-          .thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
+      when(
+        serviceClient.discoverResources(any, options: anyNamed('options')),
+      ).thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
       final response = await client.discoverResources();
       expect(response, equals(expected));
     });

@@ -15,10 +15,7 @@ class ViamArmWidget extends StatefulWidget {
   /// The [Arm]
   final Arm arm;
 
-  const ViamArmWidget({
-    super.key,
-    required this.arm,
-  });
+  const ViamArmWidget({super.key, required this.arm});
 
   @override
   State<ViamArmWidget> createState() => _ViamArmWidgetState();

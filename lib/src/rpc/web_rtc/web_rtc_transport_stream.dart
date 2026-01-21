@@ -29,11 +29,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
   @override
   StreamSink<List<int>> get outgoingMessages => _outgoingMessages.sink;
 
-  WebRtcTransportStream(
-    this.webRtcClientChannel,
-    this.headersRequest,
-    this.onRequestFailure,
-  ) {
+  WebRtcTransportStream(this.webRtcClientChannel, this.headersRequest, this.onRequestFailure) {
     _listenToOutgoingMessages();
     _listenToDataChannel();
   }
@@ -41,10 +37,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
   @override
   Future<void> terminate() async {
     webRtcClientChannel.removeOnMessageListener(onMessage);
-    await Future.wait([
-      _incomingMessages.close(),
-      _outgoingMessages.close(),
-    ]);
+    await Future.wait([_incomingMessages.close(), _outgoingMessages.close()]);
   }
 
   void _listenToOutgoingMessages() {
@@ -53,10 +46,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
 
       if (connectionState == RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
           connectionState == RTCPeerConnectionState.RTCPeerConnectionStateDisconnected) {
-        onRequestFailure(
-          const ConnectionLostException('RTCPeerConnection lost'),
-          StackTrace.current,
-        );
+        onRequestFailure(const ConnectionLostException('RTCPeerConnection lost'), StackTrace.current);
         return;
       }
 
@@ -76,17 +66,19 @@ class WebRtcTransportStream extends GrpcTransportStream {
               ..eos = true
               ..packetMessage = (grpc.PacketMessage()
                 ..data = data
-                ..eom = true))
+                ..eom = true)),
         ];
       } else {
-        requests = chunks.mapIndexed((index, chunk) => grpc.Request()
-          ..stream = headersRequest.stream
-          ..message = (grpc.RequestMessage()
-            ..hasMessage = true
-            ..eos = index == chunks.length - 1
-            ..packetMessage = (grpc.PacketMessage()
-              ..data = chunk
-              ..eom = index == chunks.length - 1)));
+        requests = chunks.mapIndexed(
+          (index, chunk) => grpc.Request()
+            ..stream = headersRequest.stream
+            ..message = (grpc.RequestMessage()
+              ..hasMessage = true
+              ..eos = index == chunks.length - 1
+              ..packetMessage = (grpc.PacketMessage()
+                ..data = chunk
+                ..eom = index == chunks.length - 1)),
+        );
       }
       requests.forEach((payloadRequest) {
         webRtcClientChannel.dataChannel.send(RTCDataChannelMessage.fromBinary(payloadRequest.writeToBuffer()));
@@ -109,32 +101,17 @@ class WebRtcTransportStream extends GrpcTransportStream {
 
     switch (type) {
       case grpc.Response_Type.headers:
-        _addGrpcMessage(
-          GrpcMetadata(
-            headers.metadata.md.map(
-              (key, value) => MapEntry(
-                key,
-                value.values.firstOrNull ?? '',
-              ),
-            ),
-          ),
-        );
+        _addGrpcMessage(GrpcMetadata(headers.metadata.md.map((key, value) => MapEntry(key, value.values.firstOrNull ?? ''))));
         break;
       case grpc.Response_Type.message:
         receivedPacketMessageData.addAll(message.packetMessage.data);
         if (message.packetMessage.eom) {
-          _addGrpcMessage(GrpcData(
-            List.unmodifiable(receivedPacketMessageData),
-            isCompressed: false,
-          ));
+          _addGrpcMessage(GrpcData(List.unmodifiable(receivedPacketMessageData), isCompressed: false));
           receivedPacketMessageData.clear();
         }
         break;
       case grpc.Response_Type.trailers:
-        _addGrpcMessage(GrpcMetadata({
-          _grpcStatusKey: trailers.status.code.toString(),
-          _grpcMessageKey: trailers.status.message,
-        }));
+        _addGrpcMessage(GrpcMetadata({_grpcStatusKey: trailers.status.code.toString(), _grpcMessageKey: trailers.status.message}));
         _incomingMessages.close();
         break;
       case grpc.Response_Type.notSet:

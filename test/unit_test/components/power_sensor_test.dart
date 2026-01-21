@@ -109,7 +109,11 @@ void main() {
       final ResourceManager manager = ResourceManager();
       manager.register(PowerSensor.getResourceName(name), powerSensor);
       service = PowerSensorService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: port,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
       server = Server.create(services: [service]);
       await server.serve(port: port);
     });
@@ -141,9 +145,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = PowerSensorServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -151,9 +157,11 @@ void main() {
         expect(powerSensor.extra, null);
 
         final client = PowerSensorServiceClient(channel);
-        await client.getVoltage(GetVoltageRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.getVoltage(
+          GetVoltageRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(powerSensor.extra, {'foo': 'bar'});
       });
     });
@@ -178,12 +186,7 @@ void main() {
       test('readings', () async {
         final client = PowerSensorClient(name, channel);
         final result = await client.readings();
-        final expectedKeys = [
-          'voltage',
-          'is_ac',
-          'current',
-          'power',
-        ];
+        final expectedKeys = ['voltage', 'is_ac', 'current', 'power'];
         final expectedValues = [powerSensor.volts, powerSensor.isAc, powerSensor.amperes, powerSensor.watts];
         expect(result.keys, expectedKeys);
         expect(result.values, expectedValues);

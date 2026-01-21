@@ -8,10 +8,7 @@ import 'offline_screen.dart';
 import 'online_screen.dart';
 
 class ProvisionNewMachineScreen extends StatefulWidget {
-  const ProvisionNewMachineScreen({
-    super.key,
-    this.promptForCredentials = false,
-  });
+  const ProvisionNewMachineScreen({super.key, this.promptForCredentials = false});
 
   final bool promptForCredentials;
 
@@ -114,14 +111,16 @@ class _ProvisionNewMachineScreenState extends State<ProvisionNewMachineScreen> {
           // HotspotProvisioningFlow completed successfully and the robot is online
           if (result.status == MachineStatus.online) {
             if (mounted) {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => OnlineScreen(onPressed: () => Navigator.of(context).pop())));
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => OnlineScreen(onPressed: () => Navigator.of(context).pop())));
             }
           } else {
             // HotspotProvisioningFlow timed out or the robot is offline
             if (mounted) {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => OfflineScreen(onPressed: () => Navigator.of(context).pop())));
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => OfflineScreen(onPressed: () => Navigator.of(context).pop())));
             }
           }
         } else {
@@ -139,8 +138,10 @@ class _ProvisionNewMachineScreenState extends State<ProvisionNewMachineScreen> {
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surface,
-        title: Text(widget.promptForCredentials ? 'Provision New Machine (With Credential Input)' : 'Provision New Machine',
-            style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
+        title: Text(
+          widget.promptForCredentials ? 'Provision New Machine (With Credential Input)' : 'Provision New Machine',
+          style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+        ),
       ),
       body: Center(
         child: Column(

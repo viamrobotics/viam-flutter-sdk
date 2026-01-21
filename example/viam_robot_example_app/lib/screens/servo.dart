@@ -47,9 +47,7 @@ class _ServoScreenState extends State<ServoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.resourceName.name.toUpperCase()),
-      ),
+      appBar: AppBar(title: Text(widget.resourceName.name.toUpperCase())),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -61,32 +59,16 @@ class _ServoScreenState extends State<ServoScreen> {
                 style: const TextStyle(fontWeight: FontWeight.w300),
               ),
               const SizedBox(height: 16),
+              Row(children: [Text('Angle: $angle')]),
               Row(
                 children: [
-                  Text('Angle: $angle'),
-                ],
-              ),
-              Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: (angle - 10 < 0) ? null : () => _move(angle - 10),
-                    child: const Text('-10'),
-                  ),
+                  ElevatedButton(onPressed: (angle - 10 < 0) ? null : () => _move(angle - 10), child: const Text('-10')),
                   const SizedBox(width: 16),
-                  ElevatedButton(
-                    onPressed: (angle - 1 < 0) ? null : () => _move(angle - 1),
-                    child: const Text('-1'),
-                  ),
+                  ElevatedButton(onPressed: (angle - 1 < 0) ? null : () => _move(angle - 1), child: const Text('-1')),
                   const SizedBox(width: 16),
-                  ElevatedButton(
-                    onPressed: (angle + 1 > 180) ? null : () => _move(angle + 1),
-                    child: const Text('1'),
-                  ),
+                  ElevatedButton(onPressed: (angle + 1 > 180) ? null : () => _move(angle + 1), child: const Text('1')),
                   const SizedBox(width: 16),
-                  ElevatedButton(
-                    onPressed: (angle + 10 > 180) ? null : () => _move(angle + 10),
-                    child: const Text('10'),
-                  ),
+                  ElevatedButton(onPressed: (angle + 10 > 180) ? null : () => _move(angle + 10), child: const Text('10')),
                 ],
               ),
               Row(
@@ -99,10 +81,7 @@ class _ServoScreenState extends State<ServoScreen> {
                       onChanged: (value) => setState(() {
                         moveTo = value;
                       }),
-                      decoration: const InputDecoration(
-                        border: UnderlineInputBorder(),
-                        labelText: 'Move To:',
-                      ),
+                      decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: 'Move To:'),
                     ),
                   ),
                   const SizedBox(width: 16),
