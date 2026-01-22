@@ -207,5 +207,21 @@ void main() {
         expect(output['no_change'], 182);
       });
     });
+
+    test('Kinematics.fromProto with meshesByUrdfFilepath', () {
+      final mockMesh = Mesh()..contentType = 'test/mesh';
+      final mockMeshes = {'path/to/mesh.urdf': mockMesh};
+      final gkResponse = GetKinematicsResponse()
+        ..format = KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA
+        ..kinematicsData = [10, 20, 30]
+        ..meshesByUrdfFilepath.addAll(mockMeshes);
+
+      final kinematics = Kinematics.fromProto(gkResponse);
+
+      expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
+      expect(kinematics.raw, [10, 20, 30]);
+      expect(kinematics.meshesByUrdfFilepath, mockMeshes);
+      expect(kinematics.meshesByUrdfFilepath['path/to/mesh.urdf']?.contentType, 'test/mesh');
+    });
   });
 }

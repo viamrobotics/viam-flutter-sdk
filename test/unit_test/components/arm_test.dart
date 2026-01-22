@@ -18,7 +18,7 @@ class FakeArm extends Arm {
     ..z = 0;
   Map<String, dynamic>? extra;
   Map<String, Mesh> arm3DModels = {};
-  Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
+  Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3], {});
   List<Geometry> armGeometries = [
     Geometry()
       ..box = (RectangularPrism()
@@ -90,7 +90,7 @@ class FakeArm extends Arm {
   @override
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return armKinematics;
+    return Kinematics(armKinematics.format, armKinematics.raw, arm3DModels);
   }
 }
 
@@ -179,6 +179,7 @@ void main() {
       final kinematics = await arm.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
+      expect(kinematics.meshesByUrdfFilepath, arm.arm3DModels);
     });
   });
 
@@ -313,6 +314,7 @@ void main() {
         final response = await client.getKinematics(request);
         expect(response.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(response.kinematicsData, [1, 2, 3]);
+        expect(response.meshesByUrdfFilepath, arm.arm3DModels);
       });
 
       test('getGeometries', () async {
@@ -403,6 +405,7 @@ void main() {
       final kinematics = await client.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
+      expect(kinematics.meshesByUrdfFilepath, arm.arm3DModels);
     });
 
     test('getGeometries', () async {

@@ -248,7 +248,7 @@ class DataClient {
   /// Obtain unified tabular data and metadata, queried with SQL.
   ///
   /// ```
-  /// // List<Map<String, dynamic>>? _responseData;
+  ///  //List<Map<String, dynamic>>? _responseData;
   ///
   ///  _viam = await Viam.withApiKey(
   ///      dotenv.env['API_KEY_ID'] ?? '',
@@ -277,9 +277,9 @@ class DataClient {
   /// Obtain unified tabular data and metadata, queried with MQL. The query should be of type List<Map<String, dynamic>>.
   ///
   /// ```
-  /// // import 'package:bson/bson.dart';
+  ///  // import 'package:bson/bson.dart';
   ///
-  /// // List<Map<String, dynamic>>? _responseData;
+  ///  //List<Map<String, dynamic>>? _responseData;
   ///
   ///  _viam = await Viam.withApiKey(
   ///      dotenv.env['API_KEY_ID'] ?? '',
@@ -298,7 +298,7 @@ class DataClient {
   ///    sqlQuery
   ///  });
   ///
-  ///  final limit = BsonCodec.serialize({"\$limit": 1});
+  ///  final limit = BsonCodec.serialize({"$limit": 1});
   ///
   ///  final pipeline = [query.byteList, sort.byteList, limit.byteList];
   ///  _responseData = await dataClient.tabularDataByMql(
@@ -684,7 +684,8 @@ class DataClient {
   ///     0,
   ///    .1,
   ///    .2,
-  ///    .3
+  ///    .3,
+  ///     confidence: 0.9
   ///   );
   ///   print('Successfully added bounding box');
   /// } catch (e) {
@@ -700,6 +701,7 @@ class DataClient {
     double yMinNormalized,
     double xMaxNormalized,
     double yMaxNormalized,
+    {double? confidence}
   ) async {
     final request = AddBoundingBoxToImageByIDRequest()
       ..label = label
@@ -708,6 +710,9 @@ class DataClient {
       ..yMinNormalized = yMinNormalized
       ..xMaxNormalized = xMaxNormalized
       ..yMaxNormalized = yMaxNormalized;
+    if (confidence != null) {
+      request.confidence = confidence;
+    }
     final response = await _dataClient.addBoundingBoxToImageByID(request);
     return response.bboxId;
   }

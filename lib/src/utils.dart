@@ -14,11 +14,12 @@ final _logger = Logger();
 class Kinematics {
   KinematicsFileFormat format;
   List<int> raw;
+  final Map<String, Mesh> meshesByUrdfFilepath;
 
-  Kinematics(this.format, this.raw);
+  Kinematics(this.format, this.raw, this.meshesByUrdfFilepath);
 
   factory Kinematics.fromProto(GetKinematicsResponse gkResponse) {
-    return Kinematics(gkResponse.format, gkResponse.kinematicsData);
+    return Kinematics(gkResponse.format, gkResponse.kinematicsData, gkResponse.meshesByUrdfFilepath);
   }
 }
 

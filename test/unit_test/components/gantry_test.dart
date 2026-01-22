@@ -15,7 +15,8 @@ class FakeGantry extends Gantry {
   List<double> mLengths;
   bool isStopped = true;
   Map<String, dynamic>? extra;
-  Kinematics gantryKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
+  Map<String, Mesh> gantryMeshes = {};
+  Kinematics gantryKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3], {});
   List<Geometry> gantryGeometries = [
     Geometry()
       ..box = (RectangularPrism()
@@ -71,7 +72,7 @@ class FakeGantry extends Gantry {
   @override
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return gantryKinematics;
+    return Kinematics(gantryKinematics.format, gantryKinematics.raw, gantryMeshes);
   }
 
   @override
@@ -153,6 +154,7 @@ void main() {
       final kinematics = await gantry.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
+      expect(kinematics.meshesByUrdfFilepath, gantry.gantryMeshes);
     });
 
     test('getGeometries', () async {
@@ -284,6 +286,7 @@ void main() {
         final response = await client.getKinematics(request);
         expect(response.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(response.kinematicsData, [1, 2, 3]);
+        expect(response.meshesByUrdfFilepath, gantry.gantryMeshes);
       });
 
       test('getGeometries', () async {
@@ -360,6 +363,7 @@ void main() {
         final kinematics = await client.getKinematics();
         expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(kinematics.raw, [1, 2, 3]);
+        expect(kinematics.meshesByUrdfFilepath, gantry.gantryMeshes);
       });
 
       test('getGeometries', () async {

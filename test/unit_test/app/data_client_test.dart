@@ -416,9 +416,9 @@ void main() {
         expect(response, equals(12));
       });
 
-      test('addTagsToBinaryDataByIds', () async {
+      test('addTagsToBinaryDataByIDs', () async {
         when(serviceClient.addTagsToBinaryDataByIDs(any)).thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByIDsResponse()));
-        await dataClient.addTagsToBinaryDataByIds(['tags'], ['file']);
+        await dataClient.addTagsToBinaryDataByIDs(['tags'], ['file']);
         verify(serviceClient.addTagsToBinaryDataByIDs(any)).called(1);
       });
 
@@ -453,8 +453,9 @@ void main() {
           serviceClient.addBoundingBoxToImageByID(any),
         ).thenAnswer((_) => MockResponseFuture.value(AddBoundingBoxToImageByIDResponse(bboxId: 'bboxId')));
 
-        final response = await dataClient.addBoundingBoxToImageById('label', 'file', 0.1, 0.2, 0.3, 0.4);
+        final response = await dataClient.addBoundingBoxToImageById('label', 'file', 0.1, 0.2, 0.3, 0.4, confidence: 0.9);
         expect(response, equals('bboxId'));
+        verify(serviceClient.addBoundingBoxToImageByID(argThat(predicate<AddBoundingBoxToImageByIDRequest>((req) => req.confidence == 0.9)))).called(1);
       });
 
       test('removeBoundingBoxFromImageById', () async {
