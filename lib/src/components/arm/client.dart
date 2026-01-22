@@ -4,7 +4,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/arm/v1/arm.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
-import '../../utils.dart';
+import '../../utils.dart' hide Kinematics;
 import 'arm.dart';
 
 /// {@category Components}

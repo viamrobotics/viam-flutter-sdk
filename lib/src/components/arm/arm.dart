@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 
 import '../../../viam_sdk.dart';
 import '../../gen/common/v1/common.pb.dart';
-import '../../utils.dart';
 
 /// {@category Components}
 /// Arm represents a physical robot arm that exists in three-dimensional space.
@@ -174,6 +173,9 @@ class Kinematics {
   final List<int> raw;
   final Map<String, Mesh> meshesByUrdfFilepath;
 
+  static const ListEquality<int> _rawEquality = ListEquality<int>();
+  static const MapEquality<String, Mesh> _meshEquality = MapEquality<String, Mesh>();
+
   const Kinematics(this.format, this.raw, {this.meshesByUrdfFilepath = const {}});
 
   factory Kinematics.fromProto(GetKinematicsResponse proto) {
@@ -193,9 +195,9 @@ class Kinematics {
       other is Kinematics &&
           runtimeType == other.runtimeType &&
           format == other.format &&
-          listEquals(raw, other.raw) &&
-          mapEquals(meshesByUrdfFilepath, other.meshesByUrdfFilepath);
+          _rawEquality.equals(raw, other.raw) &&
+          _meshEquality.equals(meshesByUrdfFilepath, other.meshesByUrdfFilepath);
 
   @override
-  int get hashCode => format.hashCode ^ listHash(raw) ^ mapHash(meshesByUrdfFilepath);
+  int get hashCode => Object.hash(format, _rawEquality.hash(raw), _meshEquality.hash(meshesByUrdfFilepath));
 }
