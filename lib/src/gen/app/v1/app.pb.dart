@@ -12230,14 +12230,83 @@ class ModuleMetadata extends $pb.GeneratedMessage {
   void clearLanguage() => clearField(8);
 }
 
+class MLModelVersion extends $pb.GeneratedMessage {
+  factory MLModelVersion({
+    $core.String? version,
+    $51.Timestamp? createdOn,
+  }) {
+    final $result = create();
+    if (version != null) {
+      $result.version = version;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    return $result;
+  }
+  MLModelVersion._() : super();
+  factory MLModelVersion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MLModelVersion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLModelVersion', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'version')
+    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MLModelVersion clone() => MLModelVersion()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MLModelVersion copyWith(void Function(MLModelVersion) updates) => super.copyWith((message) => updates(message as MLModelVersion)) as MLModelVersion;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MLModelVersion create() => MLModelVersion._();
+  MLModelVersion createEmptyInstance() => create();
+  static $pb.PbList<MLModelVersion> createRepeated() => $pb.PbList<MLModelVersion>();
+  @$core.pragma('dart2js:noInline')
+  static MLModelVersion getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MLModelVersion>(create);
+  static MLModelVersion? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get version => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set version($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasVersion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVersion() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $51.Timestamp get createdOn => $_getN(1);
+  @$pb.TagNumber(2)
+  set createdOn($51.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCreatedOn() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCreatedOn() => clearField(2);
+  @$pb.TagNumber(2)
+  $51.Timestamp ensureCreatedOn() => $_ensure(1);
+}
+
 class MLModelMetadata extends $pb.GeneratedMessage {
   factory MLModelMetadata({
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<$core.String>? versions,
     $10.ModelType? modelType,
     $10.ModelFramework? modelFramework,
+    $core.Iterable<MLModelVersion>? detailedVersions,
   }) {
     final $result = create();
     if (versions != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.versions.addAll(versions);
     }
     if (modelType != null) {
@@ -12245,6 +12314,9 @@ class MLModelMetadata extends $pb.GeneratedMessage {
     }
     if (modelFramework != null) {
       $result.modelFramework = modelFramework;
+    }
+    if (detailedVersions != null) {
+      $result.detailedVersions.addAll(detailedVersions);
     }
     return $result;
   }
@@ -12256,6 +12328,7 @@ class MLModelMetadata extends $pb.GeneratedMessage {
     ..pPS(1, _omitFieldNames ? '' : 'versions')
     ..e<$10.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $10.ModelType.valueOf, enumValues: $10.ModelType.values)
     ..e<$10.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $10.ModelFramework.valueOf, enumValues: $10.ModelFramework.values)
+    ..pc<MLModelVersion>(4, _omitFieldNames ? '' : 'detailedVersions', $pb.PbFieldType.PM, subBuilder: MLModelVersion.create)
     ..hasRequiredFields = false
   ;
 
@@ -12281,6 +12354,7 @@ class MLModelMetadata extends $pb.GeneratedMessage {
   static MLModelMetadata? _defaultInstance;
 
   /// A list of package versions for a ML model
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<$core.String> get versions => $_getList(0);
 
@@ -12301,6 +12375,9 @@ class MLModelMetadata extends $pb.GeneratedMessage {
   $core.bool hasModelFramework() => $_has(2);
   @$pb.TagNumber(3)
   void clearModelFramework() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<MLModelVersion> get detailedVersions => $_getList(3);
 }
 
 class MLTrainingVersion extends $pb.GeneratedMessage {

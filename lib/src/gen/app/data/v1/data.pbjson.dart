@@ -971,6 +971,10 @@ const AddBoundingBoxToImageByIDRequest$json = {
     {'1': 'y_min_normalized', '3': 4, '4': 1, '5': 1, '10': 'yMinNormalized'},
     {'1': 'x_max_normalized', '3': 5, '4': 1, '5': 1, '10': 'xMaxNormalized'},
     {'1': 'y_max_normalized', '3': 6, '4': 1, '5': 1, '10': 'yMaxNormalized'},
+    {'1': 'confidence', '3': 9, '4': 1, '5': 1, '9': 0, '10': 'confidence', '17': true},
+  ],
+  '8': [
+    {'1': '_confidence'},
   ],
   '9': [
     {'1': 1, '2': 2},
@@ -985,8 +989,9 @@ final $typed_data.Uint8List addBoundingBoxToImageByIDRequestDescriptor = $conver
     'aWQYCCABKAlSDGJpbmFyeURhdGFJZBIUCgVsYWJlbBgCIAEoCVIFbGFiZWwSKAoQeF9taW5fbm'
     '9ybWFsaXplZBgDIAEoAVIOeE1pbk5vcm1hbGl6ZWQSKAoQeV9taW5fbm9ybWFsaXplZBgEIAEo'
     'AVIOeU1pbk5vcm1hbGl6ZWQSKAoQeF9tYXhfbm9ybWFsaXplZBgFIAEoAVIOeE1heE5vcm1hbG'
-    'l6ZWQSKAoQeV9tYXhfbm9ybWFsaXplZBgGIAEoAVIOeU1heE5vcm1hbGl6ZWRKBAgBEAJSB2Zp'
-    'bGVfaWQ=');
+    'l6ZWQSKAoQeV9tYXhfbm9ybWFsaXplZBgGIAEoAVIOeU1heE5vcm1hbGl6ZWQSIwoKY29uZmlk'
+    'ZW5jZRgJIAEoAUgAUgpjb25maWRlbmNliAEBQg0KC19jb25maWRlbmNlSgQIARACUgdmaWxlX2'
+    'lk');
 
 @$core.Deprecated('Use addBoundingBoxToImageByIDResponseDescriptor instead')
 const AddBoundingBoxToImageByIDResponse$json = {
@@ -1059,6 +1064,7 @@ const UpdateBoundingBoxRequest$json = {
     {'1': 'y_min_normalized', '3': 5, '4': 1, '5': 1, '9': 2, '10': 'yMinNormalized', '17': true},
     {'1': 'x_max_normalized', '3': 6, '4': 1, '5': 1, '9': 3, '10': 'xMaxNormalized', '17': true},
     {'1': 'y_max_normalized', '3': 7, '4': 1, '5': 1, '9': 4, '10': 'yMaxNormalized', '17': true},
+    {'1': 'confidence', '3': 9, '4': 1, '5': 1, '9': 5, '10': 'confidence', '17': true},
   ],
   '8': [
     {'1': '_label'},
@@ -1066,6 +1072,7 @@ const UpdateBoundingBoxRequest$json = {
     {'1': '_y_min_normalized'},
     {'1': '_x_max_normalized'},
     {'1': '_y_max_normalized'},
+    {'1': '_confidence'},
   ],
 };
 
@@ -1077,9 +1084,10 @@ final $typed_data.Uint8List updateBoundingBoxRequestDescriptor = $convert.base64
     'BSBWxhYmVsiAEBEi0KEHhfbWluX25vcm1hbGl6ZWQYBCABKAFIAVIOeE1pbk5vcm1hbGl6ZWSI'
     'AQESLQoQeV9taW5fbm9ybWFsaXplZBgFIAEoAUgCUg55TWluTm9ybWFsaXplZIgBARItChB4X2'
     '1heF9ub3JtYWxpemVkGAYgASgBSANSDnhNYXhOb3JtYWxpemVkiAEBEi0KEHlfbWF4X25vcm1h'
-    'bGl6ZWQYByABKAFIBFIOeU1heE5vcm1hbGl6ZWSIAQFCCAoGX2xhYmVsQhMKEV94X21pbl9ub3'
-    'JtYWxpemVkQhMKEV95X21pbl9ub3JtYWxpemVkQhMKEV94X21heF9ub3JtYWxpemVkQhMKEV95'
-    'X21heF9ub3JtYWxpemVk');
+    'bGl6ZWQYByABKAFIBFIOeU1heE5vcm1hbGl6ZWSIAQESIwoKY29uZmlkZW5jZRgJIAEoAUgFUg'
+    'pjb25maWRlbmNliAEBQggKBl9sYWJlbEITChFfeF9taW5fbm9ybWFsaXplZEITChFfeV9taW5f'
+    'bm9ybWFsaXplZEITChFfeF9tYXhfbm9ybWFsaXplZEITChFfeV9tYXhfbm9ybWFsaXplZEINCg'
+    'tfY29uZmlkZW5jZQ==');
 
 @$core.Deprecated('Use updateBoundingBoxResponseDescriptor instead')
 const UpdateBoundingBoxResponse$json = {
