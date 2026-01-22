@@ -3594,6 +3594,7 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     BinaryID? binaryId,
     $core.String? binaryDataId,
+    $core.double? confidence,
   }) {
     final $result = create();
     if (label != null) {
@@ -3618,6 +3619,9 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
     if (binaryDataId != null) {
       $result.binaryDataId = binaryDataId;
     }
+    if (confidence != null) {
+      $result.confidence = confidence;
+    }
     return $result;
   }
   AddBoundingBoxToImageByIDRequest._() : super();
@@ -3632,6 +3636,7 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(6, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
     ..aOM<BinaryID>(7, _omitFieldNames ? '' : 'binaryId', subBuilder: BinaryID.create)
     ..aOS(8, _omitFieldNames ? '' : 'binaryDataId')
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -3725,6 +3730,15 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   $core.bool hasBinaryDataId() => $_has(6);
   @$pb.TagNumber(8)
   void clearBinaryDataId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get confidence => $_getN(7);
+  @$pb.TagNumber(9)
+  set confidence($core.double v) { $_setDouble(7, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasConfidence() => $_has(7);
+  @$pb.TagNumber(9)
+  void clearConfidence() => clearField(9);
 }
 
 /// AddBoundingBoxToImageByIDResponse returns the bounding box ID of the successfully added bounding box.
@@ -3910,6 +3924,7 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
     $core.double? xMaxNormalized,
     $core.double? yMaxNormalized,
     $core.String? binaryDataId,
+    $core.double? confidence,
   }) {
     final $result = create();
     if (binaryId != null) {
@@ -3937,6 +3952,9 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
     if (binaryDataId != null) {
       $result.binaryDataId = binaryDataId;
     }
+    if (confidence != null) {
+      $result.confidence = confidence;
+    }
     return $result;
   }
   UpdateBoundingBoxRequest._() : super();
@@ -3952,6 +3970,7 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(6, _omitFieldNames ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
     ..a<$core.double>(7, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
     ..aOS(8, _omitFieldNames ? '' : 'binaryDataId')
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -4054,6 +4073,15 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
   $core.bool hasBinaryDataId() => $_has(7);
   @$pb.TagNumber(8)
   void clearBinaryDataId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get confidence => $_getN(8);
+  @$pb.TagNumber(9)
+  set confidence($core.double v) { $_setDouble(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasConfidence() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearConfidence() => clearField(9);
 }
 
 class UpdateBoundingBoxResponse extends $pb.GeneratedMessage {
