@@ -62,6 +62,7 @@
 <li><span class="parameter" id="-param-xMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">xMaxNormalized</span>, </span></li>
 <li><span class="parameter" id="-param-yMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">yMaxNormalized</span>, </span></li>
 <li><span class="parameter" id="-param-binaryDataId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">binaryDataId</span>, </span></li>
+<li><span class="parameter" id="-param-confidence"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">confidence</span>, </span></li>
 </ol>})
     </section>
     
@@ -80,6 +81,7 @@
   $core.double? xMaxNormalized,
   $core.double? yMaxNormalized,
   $core.String? binaryDataId,
+  $core.double? confidence,
 }) {
   final $result = create();
   if (binaryId != null) {
@@ -106,6 +108,9 @@
   }
   if (binaryDataId != null) {
     $result.binaryDataId = binaryDataId;
+  }
+  if (confidence != null) {
+    $result.confidence = confidence;
   }
   return $result;
 }</code></pre>

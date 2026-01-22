@@ -54,9 +54,10 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">MLModelMetadata</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-versions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">versions</span>, </span></li>
+      <span class="name ">MLModelMetadata</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-versions"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated/Deprecated.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">versions</span>, </span></li>
 <li><span class="parameter" id="-param-modelType"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelType-class.html">ModelType</a>?</span> <span class="parameter-name">modelType</span>, </span></li>
 <li><span class="parameter" id="-param-modelFramework"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelFramework-class.html">ModelFramework</a>?</span> <span class="parameter-name">modelFramework</span>, </span></li>
+<li><span class="parameter" id="-param-detailedVersions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/MLModelVersion-class.html">MLModelVersion</a></span>&gt;</span>?</span> <span class="parameter-name">detailedVersions</span>, </span></li>
 </ol>})
     </section>
     
@@ -66,12 +67,15 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory MLModelMetadata({
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
   $core.Iterable&lt;$core.String&gt;? versions,
   $10.ModelType? modelType,
   $10.ModelFramework? modelFramework,
+  $core.Iterable&lt;MLModelVersion&gt;? detailedVersions,
 }) {
   final $result = create();
   if (versions != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
     $result.versions.addAll(versions);
   }
   if (modelType != null) {
@@ -79,6 +83,9 @@
   }
   if (modelFramework != null) {
     $result.modelFramework = modelFramework;
+  }
+  if (detailedVersions != null) {
+    $result.detailedVersions.addAll(detailedVersions);
   }
   return $result;
 }</code></pre>
