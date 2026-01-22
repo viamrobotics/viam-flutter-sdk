@@ -52,9 +52,8 @@ class CameraClient extends Camera with RPCDebugLoggerMixin implements ResourceRP
     final response = await client.getImages(request, options: callOptions);
 
     final images = response.images.map((image) {
-      final mimeType = image.hasMimeType() && image.mimeType.isNotEmpty
-          ? MimeType.fromString(image.mimeType)
-          : MimeType.unsupported('unspecified');
+      final mimeType =
+          image.hasMimeType() && image.mimeType.isNotEmpty ? MimeType.fromString(image.mimeType) : MimeType.unsupported('unspecified');
       final viamImage = ViamImage(image.image, mimeType);
       return NamedImage(sourceName: image.sourceName, image: viamImage);
     }).toList();

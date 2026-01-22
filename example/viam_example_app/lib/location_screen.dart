@@ -70,7 +70,7 @@ class _LocationScreenState extends State<LocationScreen> {
       body: _isLoading
           ? const CircularProgressIndicator.adaptive()
           : // Build a list from the [locations] state.
-            ListView.builder(
+          ListView.builder(
               // This list builder is a little bit more complicated,
               // because we have to show both [Location]s and [Robot]s.
               // Here, we are using both the Location list provided to us

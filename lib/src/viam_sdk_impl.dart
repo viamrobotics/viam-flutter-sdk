@@ -43,7 +43,7 @@ class ViamImpl implements Viam {
   }
 
   ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
-    : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
+      : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _appRobotClient = AppRobotClient(RobotServiceClient(_clientChannelBase));
     _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
