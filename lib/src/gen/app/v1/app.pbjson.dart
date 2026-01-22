@@ -3144,22 +3144,45 @@ final $typed_data.Uint8List moduleMetadataDescriptor = $convert.base64Decode(
     'VhZ2VIA1IIbGFuZ3VhZ2WIAQFCDAoKX2ZpcnN0X3J1bkIXChVfbWFya2Rvd25fZGVzY3JpcHRp'
     'b25CDgoMX3NvdXJjZV90eXBlQgsKCV9sYW5ndWFnZQ==');
 
+@$core.Deprecated('Use mLModelVersionDescriptor instead')
+const MLModelVersion$json = {
+  '1': 'MLModelVersion',
+  '2': [
+    {'1': 'version', '3': 1, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'created_on', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
+  ],
+};
+
+/// Descriptor for `MLModelVersion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mLModelVersionDescriptor = $convert.base64Decode(
+    'Cg5NTE1vZGVsVmVyc2lvbhIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEjkKCmNyZWF0ZWRfb2'
+    '4YAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkT24=');
+
 @$core.Deprecated('Use mLModelMetadataDescriptor instead')
 const MLModelMetadata$json = {
   '1': 'MLModelMetadata',
   '2': [
-    {'1': 'versions', '3': 1, '4': 3, '5': 9, '10': 'versions'},
+    {
+      '1': 'versions',
+      '3': 1,
+      '4': 3,
+      '5': 9,
+      '8': {'3': true},
+      '10': 'versions',
+    },
     {'1': 'model_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '10': 'modelType'},
     {'1': 'model_framework', '3': 3, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '10': 'modelFramework'},
+    {'1': 'detailed_versions', '3': 4, '4': 3, '5': 11, '6': '.viam.app.v1.MLModelVersion', '10': 'detailedVersions'},
   ],
 };
 
 /// Descriptor for `MLModelMetadata`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List mLModelMetadataDescriptor = $convert.base64Decode(
-    'Cg9NTE1vZGVsTWV0YWRhdGESGgoIdmVyc2lvbnMYASADKAlSCHZlcnNpb25zEkAKCm1vZGVsX3'
-    'R5cGUYAiABKA4yIS52aWFtLmFwcC5tbHRyYWluaW5nLnYxLk1vZGVsVHlwZVIJbW9kZWxUeXBl'
-    'Ek8KD21vZGVsX2ZyYW1ld29yaxgDIAEoDjImLnZpYW0uYXBwLm1sdHJhaW5pbmcudjEuTW9kZW'
-    'xGcmFtZXdvcmtSDm1vZGVsRnJhbWV3b3Jr');
+    'Cg9NTE1vZGVsTWV0YWRhdGESHgoIdmVyc2lvbnMYASADKAlCAhgBUgh2ZXJzaW9ucxJACgptb2'
+    'RlbF90eXBlGAIgASgOMiEudmlhbS5hcHAubWx0cmFpbmluZy52MS5Nb2RlbFR5cGVSCW1vZGVs'
+    'VHlwZRJPCg9tb2RlbF9mcmFtZXdvcmsYAyABKA4yJi52aWFtLmFwcC5tbHRyYWluaW5nLnYxLk'
+    '1vZGVsRnJhbWV3b3JrUg5tb2RlbEZyYW1ld29yaxJIChFkZXRhaWxlZF92ZXJzaW9ucxgEIAMo'
+    'CzIbLnZpYW0uYXBwLnYxLk1MTW9kZWxWZXJzaW9uUhBkZXRhaWxlZFZlcnNpb25z');
 
 @$core.Deprecated('Use mLTrainingVersionDescriptor instead')
 const MLTrainingVersion$json = {
