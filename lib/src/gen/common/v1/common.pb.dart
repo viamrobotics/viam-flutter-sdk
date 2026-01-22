@@ -1690,6 +1690,7 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
   factory GetKinematicsResponse({
     KinematicsFileFormat? format,
     $core.List<$core.int>? kinematicsData,
+    $core.Map<$core.String, Mesh>? meshesByUrdfFilepath,
   }) {
     final $result = create();
     if (format != null) {
@@ -1697,6 +1698,9 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
     }
     if (kinematicsData != null) {
       $result.kinematicsData = kinematicsData;
+    }
+    if (meshesByUrdfFilepath != null) {
+      $result.meshesByUrdfFilepath.addAll(meshesByUrdfFilepath);
     }
     return $result;
   }
@@ -1707,6 +1711,7 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetKinematicsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..e<KinematicsFileFormat>(1, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: KinematicsFileFormat.KINEMATICS_FILE_FORMAT_UNSPECIFIED, valueOf: KinematicsFileFormat.valueOf, enumValues: KinematicsFileFormat.values)
     ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'kinematicsData', $pb.PbFieldType.OY)
+    ..m<$core.String, Mesh>(3, _omitFieldNames ? '' : 'meshesByUrdfFilepath', entryClassName: 'GetKinematicsResponse.MeshesByUrdfFilepathEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: Mesh.create, valueDefaultOrMaker: Mesh.getDefault, packageName: const $pb.PackageName('viam.common.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -1751,6 +1756,10 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
   $core.bool hasKinematicsData() => $_has(1);
   @$pb.TagNumber(2)
   void clearKinematicsData() => clearField(2);
+
+  /// Map of URDF mesh file paths to mesh data
+  @$pb.TagNumber(3)
+  $core.Map<$core.String, Mesh> get meshesByUrdfFilepath => $_getMap(2);
 }
 
 class GetGeometriesRequest extends $pb.GeneratedMessage {

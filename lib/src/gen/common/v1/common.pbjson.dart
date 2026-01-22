@@ -375,14 +375,30 @@ const GetKinematicsResponse$json = {
   '2': [
     {'1': 'format', '3': 1, '4': 1, '5': 14, '6': '.viam.common.v1.KinematicsFileFormat', '10': 'format'},
     {'1': 'kinematics_data', '3': 2, '4': 1, '5': 12, '10': 'kinematicsData'},
+    {'1': 'meshes_by_urdf_filepath', '3': 3, '4': 3, '5': 11, '6': '.viam.common.v1.GetKinematicsResponse.MeshesByUrdfFilepathEntry', '10': 'meshesByUrdfFilepath'},
   ],
+  '3': [GetKinematicsResponse_MeshesByUrdfFilepathEntry$json],
+};
+
+@$core.Deprecated('Use getKinematicsResponseDescriptor instead')
+const GetKinematicsResponse_MeshesByUrdfFilepathEntry$json = {
+  '1': 'MeshesByUrdfFilepathEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Mesh', '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `GetKinematicsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getKinematicsResponseDescriptor = $convert.base64Decode(
     'ChVHZXRLaW5lbWF0aWNzUmVzcG9uc2USPAoGZm9ybWF0GAEgASgOMiQudmlhbS5jb21tb24udj'
     'EuS2luZW1hdGljc0ZpbGVGb3JtYXRSBmZvcm1hdBInCg9raW5lbWF0aWNzX2RhdGEYAiABKAxS'
-    'DmtpbmVtYXRpY3NEYXRh');
+    'DmtpbmVtYXRpY3NEYXRhEnYKF21lc2hlc19ieV91cmRmX2ZpbGVwYXRoGAMgAygLMj8udmlhbS'
+    '5jb21tb24udjEuR2V0S2luZW1hdGljc1Jlc3BvbnNlLk1lc2hlc0J5VXJkZkZpbGVwYXRoRW50'
+    'cnlSFG1lc2hlc0J5VXJkZkZpbGVwYXRoGl0KGU1lc2hlc0J5VXJkZkZpbGVwYXRoRW50cnkSEA'
+    'oDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC52aWFtLmNvbW1vbi52MS5NZXNoUgV2'
+    'YWx1ZToCOAE=');
 
 @$core.Deprecated('Use getGeometriesRequestDescriptor instead')
 const GetGeometriesRequest$json = {
