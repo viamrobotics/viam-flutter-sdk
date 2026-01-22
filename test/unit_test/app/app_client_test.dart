@@ -619,31 +619,29 @@ void main() {
     test('addRole', () async {
       final expected = AddRoleResponse();
       when(serviceClient.addRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      final authorization =
-          ViamAuthorization(
-              authorizationId: AuthorizationId.robotOwner,
-              resourceType: ResourceType.robot,
-              resourceId: 'resourceId',
-              organizationId: 'organizationId',
-              identityType: IdentityType.user,
-            )
-            ..authorizationType = 'authorizationType'
-            ..identityId = 'identityId';
+      final authorization = ViamAuthorization(
+        authorizationId: AuthorizationId.robotOwner,
+        resourceType: ResourceType.robot,
+        resourceId: 'resourceId',
+        organizationId: 'organizationId',
+        identityType: IdentityType.user,
+      )
+        ..authorizationType = 'authorizationType'
+        ..identityId = 'identityId';
       await appClient.addRole(authorization);
       verify(serviceClient.addRole(any)).called(1);
     });
 
     test('removeRole', () async {
-      final authorization =
-          ViamAuthorization(
-              authorizationId: AuthorizationId.robotOwner,
-              resourceType: ResourceType.robot,
-              resourceId: 'resourceId',
-              organizationId: 'organizationId',
-              identityType: IdentityType.user,
-            )
-            ..authorizationType = 'authorizationType'
-            ..identityId = 'identityId';
+      final authorization = ViamAuthorization(
+        authorizationId: AuthorizationId.robotOwner,
+        resourceType: ResourceType.robot,
+        resourceId: 'resourceId',
+        organizationId: 'organizationId',
+        identityType: IdentityType.user,
+      )
+        ..authorizationType = 'authorizationType'
+        ..identityId = 'identityId';
       final expected = RemoveRoleResponse();
       when(serviceClient.removeRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       await appClient.removeRole(authorization);
@@ -653,26 +651,24 @@ void main() {
     test('changeRole', () async {
       final expected = ChangeRoleResponse();
       when(serviceClient.changeRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      final oldAuthorization =
-          ViamAuthorization(
-              authorizationId: AuthorizationId.robotOwner,
-              resourceType: ResourceType.robot,
-              resourceId: 'resourceId',
-              organizationId: 'organizationId',
-              identityType: IdentityType.user,
-            )
-            ..authorizationType = 'authorizationType'
-            ..identityId = 'identityId';
-      final newAuthorization =
-          ViamAuthorization(
-              authorizationId: AuthorizationId.robotOwner,
-              resourceType: ResourceType.robot,
-              resourceId: 'resourceId2',
-              organizationId: 'organizationId2',
-              identityType: IdentityType.user,
-            )
-            ..authorizationType = 'authorizationType2'
-            ..identityId = 'identityId2';
+      final oldAuthorization = ViamAuthorization(
+        authorizationId: AuthorizationId.robotOwner,
+        resourceType: ResourceType.robot,
+        resourceId: 'resourceId',
+        organizationId: 'organizationId',
+        identityType: IdentityType.user,
+      )
+        ..authorizationType = 'authorizationType'
+        ..identityId = 'identityId';
+      final newAuthorization = ViamAuthorization(
+        authorizationId: AuthorizationId.robotOwner,
+        resourceType: ResourceType.robot,
+        resourceId: 'resourceId2',
+        organizationId: 'organizationId2',
+        identityType: IdentityType.user,
+      )
+        ..authorizationType = 'authorizationType2'
+        ..identityId = 'identityId2';
       await appClient.changeRole(oldAuthorization, newAuthorization);
       verify(serviceClient.changeRole(any)).called(1);
     });
@@ -772,9 +768,15 @@ void main() {
     test('updateModule', () async {
       const expected = 'url';
       when(serviceClient.updateModule(any)).thenAnswer((_) => MockResponseFuture.value(UpdateModuleResponse()..url = expected));
-      final response = await appClient.updateModule('moduleId', Visibility.VISIBILITY_UNSPECIFIED, 'url', 'description', [
-        Model(),
-      ], 'entrypoint');
+      final response = await appClient.updateModule(
+          'moduleId',
+          Visibility.VISIBILITY_UNSPECIFIED,
+          'url',
+          'description',
+          [
+            Model(),
+          ],
+          'entrypoint');
       expect(response, equals(expected));
     });
 
@@ -812,12 +814,12 @@ void main() {
       when(serviceClient.createKey(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final authorizations = [
         ViamAuthorization(
-            authorizationId: AuthorizationId.robotOwner,
-            resourceType: ResourceType.robot,
-            resourceId: 'resourceId',
-            organizationId: 'organizationId',
-            identityType: IdentityType.user,
-          )
+          authorizationId: AuthorizationId.robotOwner,
+          resourceType: ResourceType.robot,
+          resourceId: 'resourceId',
+          organizationId: 'organizationId',
+          identityType: IdentityType.user,
+        )
           ..authorizationType = 'authorizationType'
           ..identityId = 'identityId',
       ];

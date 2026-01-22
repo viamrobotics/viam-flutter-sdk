@@ -623,7 +623,7 @@ class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
   final String Function()? _sessionId;
 
   AuthenticatedChannel(String host, int port, this.accessToken, bool insecure, [this._sessionId])
-    : super(host: host, port: port, transportSecure: !insecure);
+      : super(host: host, port: port, transportSecure: !insecure);
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {

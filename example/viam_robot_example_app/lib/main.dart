@@ -103,9 +103,8 @@ class _MyHomePageState extends State<MyHomePage> {
     if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != null) {
       return BaseScreen(
         base: Base.fromRobot(_robot, rname.name),
-        cameras: _robot.resourceNames
-            .where((e) => e.subtype == Camera.subtype.resourceSubtype)
-            .map((e) => Camera.fromRobot(_robot, e.name)),
+        cameras:
+            _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
         robot: _robot,
       );
     }
@@ -121,9 +120,8 @@ class _MyHomePageState extends State<MyHomePage> {
     if (rname.subtype == Gripper.subtype.resourceSubtype) {
       return GripperScreen(
         gripper: Gripper.fromRobot(_robot, rname.name),
-        cameras: _robot.resourceNames
-            .where((e) => e.subtype == Camera.subtype.resourceSubtype)
-            .map((e) => Camera.fromRobot(_robot, e.name)),
+        cameras:
+            _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
         robot: _robot,
       );
     }
@@ -183,18 +181,18 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         )
                       : _loading
-                      ? const CircularProgressIndicator.adaptive()
-                      : Column(
-                          children: [
-                            ViamButton(
-                              onPressed: _login,
-                              text: 'Login',
-                              role: ViamButtonRole.inverse,
-                              style: ViamButtonFillStyle.filled,
-                              size: ViamButtonSizeClass.xl,
+                          ? const CircularProgressIndicator.adaptive()
+                          : Column(
+                              children: [
+                                ViamButton(
+                                  onPressed: _login,
+                                  text: 'Login',
+                                  role: ViamButtonRole.inverse,
+                                  style: ViamButtonFillStyle.filled,
+                                  size: ViamButtonSizeClass.xl,
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
                 ],
               ),
             ),

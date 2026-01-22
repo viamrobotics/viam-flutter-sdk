@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 final lightTheme = ThemeData(
   colorScheme: ThemeData().colorScheme.copyWith(
-    primary: Colors.black,
-    secondary: Colors.grey,
-    secondaryContainer: Color.fromRGBO(231, 229, 228, 1.0),
-    outline: Colors.black12,
-    error: Color.fromRGBO(190, 53, 54, 1),
-    onError: Colors.white,
-    surface: Colors.white,
-  ),
+        primary: Colors.black,
+        secondary: Colors.grey,
+        secondaryContainer: Color.fromRGBO(231, 229, 228, 1.0),
+        outline: Colors.black12,
+        error: Color.fromRGBO(190, 53, 54, 1),
+        onError: Colors.white,
+        surface: Colors.white,
+      ),
   cardColor: Colors.white,
   cardTheme: CardThemeData(
     color: Colors.white,

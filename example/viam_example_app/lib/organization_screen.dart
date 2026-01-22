@@ -86,7 +86,7 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
       body: _isLoading
           ? const CircularProgressIndicator.adaptive()
           : // Build a list from the [locations] state.
-            ListView.builder(
+          ListView.builder(
               itemCount: parentLocations.length,
               itemBuilder: (_, index) {
                 final location = parentLocations[index];
