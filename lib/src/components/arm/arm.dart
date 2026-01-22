@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:collection/collection.dart';
 import 'package:flutter/services.dart';
 
 import '../../../viam_sdk.dart';
 import '../../gen/common/v1/common.pb.dart';
+import '../../utils.dart';
 
 /// {@category Components}
 /// Arm represents a physical robot arm that exists in three-dimensional space.
@@ -165,39 +165,4 @@ abstract class Arm extends Resource {
 
     return maxReach;
   }
-}
-
-/// Kinematics represents the kinematics of a component.
-class Kinematics {
-  final KinematicsFileFormat format;
-  final List<int> raw;
-  final Map<String, Mesh> meshesByUrdfFilepath;
-
-  static const ListEquality<int> _rawEquality = ListEquality<int>();
-  static const MapEquality<String, Mesh> _meshEquality = MapEquality<String, Mesh>();
-
-  const Kinematics(this.format, this.raw, {this.meshesByUrdfFilepath = const {}});
-
-  factory Kinematics.fromProto(GetKinematicsResponse proto) {
-    return Kinematics(proto.format, proto.kinematicsData, meshesByUrdfFilepath: proto.meshesByUrdfFilepath);
-  }
-
-  GetKinematicsResponse toProto() {
-    return GetKinematicsResponse()
-      ..format = format
-      ..kinematicsData = raw
-      ..meshesByUrdfFilepath.addAll(meshesByUrdfFilepath);
-  }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Kinematics &&
-          runtimeType == other.runtimeType &&
-          format == other.format &&
-          _rawEquality.equals(raw, other.raw) &&
-          _meshEquality.equals(meshesByUrdfFilepath, other.meshesByUrdfFilepath);
-
-  @override
-  int get hashCode => Object.hash(format, _rawEquality.hash(raw), _meshEquality.hash(meshesByUrdfFilepath));
 }
