@@ -12,7 +12,7 @@ class FakeSensor extends Sensor {
     'String': 'string',
     'int': 1,
     'double': 2.02,
-    'list': [0, 1, 2, 3]
+    'list': [0, 1, 2, 3],
   };
   Map<String, dynamic>? extra;
 
@@ -73,7 +73,11 @@ void main() {
       final ResourceManager manager = ResourceManager();
       manager.register(Sensor.getResourceName(name), sensor);
       service = SensorService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: port,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
       server = Server.create(services: [service]);
       await server.serve(port: port);
     });
@@ -95,9 +99,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = SensorServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -105,9 +111,11 @@ void main() {
         expect(sensor.extra, null);
 
         final client = SensorServiceClient(channel);
-        await client.getReadings(GetReadingsRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.getReadings(
+          GetReadingsRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(sensor.extra, {'foo': 'bar'});
       });
     });

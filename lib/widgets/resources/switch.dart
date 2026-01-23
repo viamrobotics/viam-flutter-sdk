@@ -81,8 +81,9 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
   }
 
   ButtonStyle buttonStyle = ButtonStyle(
-      shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
-      foregroundColor: WidgetStateProperty.all(Colors.black));
+    shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
+    foregroundColor: WidgetStateProperty.all(Colors.black),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -96,10 +97,7 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
     );
 
     final List<ButtonSegment<int>> segments = List.generate(numberOfPositions!, (index) {
-      return ButtonSegment<int>(
-        value: index,
-        label: Text(finalLabels[index]),
-      );
+      return ButtonSegment<int>(value: index, label: Text(finalLabels[index]));
     });
 
     void updateSelected(Set<int> selected) {

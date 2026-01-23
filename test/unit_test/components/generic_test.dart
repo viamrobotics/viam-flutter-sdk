@@ -47,7 +47,11 @@ void main() {
       final ResourceManager manager = ResourceManager();
       manager.register(Generic.getResourceName(name), generic);
       service = GenericService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: port,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
       server = Server.create(services: [service]);
       await server.serve(port: port);
     });
@@ -62,9 +66,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = generic_pb.GenericServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
     });

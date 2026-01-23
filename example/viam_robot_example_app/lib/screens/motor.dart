@@ -11,9 +11,7 @@ class MotorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(resourceName.name.toUpperCase()),
-      ),
+      appBar: AppBar(title: Text(resourceName.name.toUpperCase())),
       body: Center(
         child: Column(
           children: [
@@ -23,7 +21,7 @@ class MotorScreen extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
             const SizedBox(height: 16),
-            ViamMotorWidget(motor: motor)
+            ViamMotorWidget(motor: motor),
           ],
         ),
       ),

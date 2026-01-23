@@ -201,7 +201,11 @@ void main() {
       final manager = ResourceManager();
       manager.register(Base.getResourceName(name), base);
       service = BaseService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: port,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
       server = Server.create(services: [service]);
       await server.serve(port: port);
     });
@@ -327,9 +331,11 @@ void main() {
       test('doCommand', () async {
         final Map<String, String> cmd = {'foo': 'bar'};
         final client = BaseServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap(), {'command': cmd});
       });
 
@@ -337,9 +343,11 @@ void main() {
         expect(base.extra, null);
 
         final client = BaseServiceClient(channel);
-        await client.stop(StopRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.stop(
+          StopRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(base.extra, {'foo': 'bar'});
       });
     });

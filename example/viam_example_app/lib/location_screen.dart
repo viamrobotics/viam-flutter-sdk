@@ -49,12 +49,12 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void _navigateToLocation(Location location) {
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (_) => LocationScreen(
-              widget._viam,
-              location,
-              widget.locations.where((element) => element.parentLocationId == location.id).toList(),
-            )));
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) =>
+            LocationScreen(widget._viam, location, widget.locations.where((element) => element.parentLocationId == location.id).toList()),
+      ),
+    );
   }
 
   void _navigateToRobot(Robot robot) {
@@ -64,9 +64,7 @@ class _LocationScreenState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.location.name),
-      ),
+      appBar: AppBar(title: Text(widget.location.name)),
       // If we are loading, show a loading indicator.
       // Otherwise, show a list of [Location]s.
       body: _isLoading
@@ -98,13 +96,10 @@ class _LocationScreenState extends State<LocationScreen> {
                   // Here, we calculate the new index.
                   final robotIndex = index - widget.locations.length;
                   final robot = robots[robotIndex];
-                  return ListTile(
-                    title: Text(robot.name),
-                    onTap: () => _navigateToRobot(robot),
-                    trailing: const Icon(Icons.chevron_right),
-                  );
+                  return ListTile(title: Text(robot.name), onTap: () => _navigateToRobot(robot), trailing: const Icon(Icons.chevron_right));
                 }
-              }),
+              },
+            ),
     );
   }
 }

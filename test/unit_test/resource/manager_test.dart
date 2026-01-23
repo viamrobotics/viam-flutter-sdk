@@ -77,8 +77,10 @@ void main() {
         manager.register(remoteRN2, remoteResource2);
 
         // Error when using short name only
-        expect(() => manager.getResource<Sensor>(Sensor.getResourceName(remoteName)),
-            throwsA(isA<MultipleRemoteResourcesSameNameException>()));
+        expect(
+          () => manager.getResource<Sensor>(Sensor.getResourceName(remoteName)),
+          throwsA(isA<MultipleRemoteResourcesSameNameException>()),
+        );
       });
     });
   });

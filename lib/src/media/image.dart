@@ -145,11 +145,7 @@ class _ViamRGBADecoder extends img.Decoder {
 
   @override
   img.Image? decodeFrame(int frame) {
-    final image = img.Image(
-      width: info.width,
-      height: info.height,
-      numChannels: 4,
-    );
+    final image = img.Image(width: info.width, height: info.height, numChannels: 4);
     const int bitsPerPixel = 32;
     final rowStride = ((_info.width * bitsPerPixel + 31) ~/ 32) * 4;
 

@@ -16,32 +16,30 @@ class MotorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(motor.name)),
-      body: Column(children: [
-        // The first widget in our column will be the one provided
-        // by the Viam SDK.
-        ViamMotorWidget(motor: motor),
-        const SizedBox(height: 16), // Padding between widgets
-
-        // Here we have 2 buttons that control the [Motor]:
-        // Either go backward or forward for 10 revolutions.
-        // The [Motor] resource provides many control functions, but here
-        // we are using the [Motor.goFor] method.
-        //
-        // You can extrapolate this to other Viam resources.
-        // For example, you could make the onPressed function call
-        // [Gripper.open] on a gripper, or [Sensor.readings] on a Sensor.
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          ElevatedButton(
-            onPressed: () => {motor.goFor(100, -10)},
-            child: const Text('Go Backwards 10 Revolutions'),
+      body: Column(
+        children: [
+          // The first widget in our column will be the one provided
+          // by the Viam SDK.
+          ViamMotorWidget(motor: motor),
+          const SizedBox(height: 16), // Padding between widgets
+          // Here we have 2 buttons that control the [Motor]:
+          // Either go backward or forward for 10 revolutions.
+          // The [Motor] resource provides many control functions, but here
+          // we are using the [Motor.goFor] method.
+          //
+          // You can extrapolate this to other Viam resources.
+          // For example, you could make the onPressed function call
+          // [Gripper.open] on a gripper, or [Sensor.readings] on a Sensor.
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(onPressed: () => {motor.goFor(100, -10)}, child: const Text('Go Backwards 10 Revolutions')),
+              const SizedBox(width: 16), // Padding between widgets
+              ElevatedButton(onPressed: () => {motor.goFor(100, 10)}, child: const Text('Go Forwards 10 Revolutions')),
+            ],
           ),
-          const SizedBox(width: 16), // Padding between widgets
-          ElevatedButton(
-            onPressed: () => {motor.goFor(100, 10)},
-            child: const Text('Go Forwards 10 Revolutions'),
-          ),
-        ]),
-      ]),
+        ],
+      ),
     );
   }
 }

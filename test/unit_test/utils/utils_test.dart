@@ -117,7 +117,7 @@ void main() {
 
       test('Map<String, dynamic>', () {
         final list = [
-          {'foo': 'bar'}
+          {'foo': 'bar'},
         ];
         final listValue = list.toValue();
         expect(listValue.listValue.values.first.structValue.toMap(), {'foo': 'bar'});
@@ -163,7 +163,7 @@ void main() {
 
         test('Map<String, dynamic>', () {
           final map = {
-            'Map': {'foo': 'bar'}
+            'Map': {'foo': 'bar'},
           };
           final struct = map.toStruct();
           expect(struct.fields.values.first.structValue.toMap(), {'foo': 'bar'});

@@ -16,7 +16,13 @@ class MLTrainingClient {
   ///
   /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
   Future<String> submitTrainingJob(
-      String orgId, String datasetId, String modelName, String modelVersion, ModelType modelType, List<String> tags) async {
+    String orgId,
+    String datasetId,
+    String modelName,
+    String modelVersion,
+    ModelType modelType,
+    List<String> tags,
+  ) async {
     final request = SubmitTrainingJobRequest()
       ..organizationId = orgId
       ..datasetId = datasetId
@@ -34,7 +40,12 @@ class MLTrainingClient {
   ///
   /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
   Future<String> submitCustomTrainingJob(
-      String orgId, String datasetId, String modelName, String modelVersion, String registryItemId) async {
+    String orgId,
+    String datasetId,
+    String modelName,
+    String modelVersion,
+    String registryItemId,
+  ) async {
     final request = SubmitCustomTrainingJobRequest()
       ..organizationId = orgId
       ..datasetId = datasetId
@@ -58,8 +69,10 @@ class MLTrainingClient {
   /// if [status] is not provided, all training jobs will be returned.
   ///
   /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
-  Future<List<TrainingJobMetadata>> listTrainingJobs(String orgId,
-      {TrainingStatus status = TrainingStatus.TRAINING_STATUS_UNSPECIFIED}) async {
+  Future<List<TrainingJobMetadata>> listTrainingJobs(
+    String orgId, {
+    TrainingStatus status = TrainingStatus.TRAINING_STATUS_UNSPECIFIED,
+  }) async {
     final request = ListTrainingJobsRequest()
       ..organizationId = orgId
       ..status = status;

@@ -96,8 +96,14 @@ class AppClient {
   /// Update an [Organization]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<Organization> updateOrganization(String organizationId,
-      {String? name, String? publicNamespace, String? region, String? cid, FragmentImportList? defaultFragments}) async {
+  Future<Organization> updateOrganization(
+    String organizationId, {
+    String? name,
+    String? publicNamespace,
+    String? region,
+    String? cid,
+    FragmentImportList? defaultFragments,
+  }) async {
     final request = UpdateOrganizationRequest()..organizationId = organizationId;
     if (name != null) request.name = name;
     if (publicNamespace != null) request.publicNamespace = publicNamespace;
@@ -130,8 +136,12 @@ class AppClient {
   /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<OrganizationInvite> createOrganizationInvite(String organizationId, String email, List<ViamAuthorization> authorizations,
-      {bool sendEmailInvite = true}) async {
+  Future<OrganizationInvite> createOrganizationInvite(
+    String organizationId,
+    String email,
+    List<ViamAuthorization> authorizations, {
+    bool sendEmailInvite = true,
+  }) async {
     final List<Authorization> protoAuthorizations = [];
     for (final authorization in authorizations) {
       protoAuthorizations.add(authorization.toProto);
@@ -149,7 +159,11 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<OrganizationInvite> updateOrganizationInviteAuthorizations(
-      String organizationId, String email, List<ViamAuthorization> addAuthorizations, List<ViamAuthorization> removeAuthorizations) async {
+    String organizationId,
+    String email,
+    List<ViamAuthorization> addAuthorizations,
+    List<ViamAuthorization> removeAuthorizations,
+  ) async {
     final List<Authorization> protoAddAuthorizations = [];
     for (final authorization in addAuthorizations) {
       protoAddAuthorizations.add(authorization.toProto);
@@ -161,7 +175,9 @@ class AppClient {
     }
 
     final request = UpdateOrganizationInviteAuthorizationsRequest(
-        addAuthorizations: protoAddAuthorizations, removeAuthorizations: protoRemoveAuthorizations)
+      addAuthorizations: protoAddAuthorizations,
+      removeAuthorizations: protoRemoveAuthorizations,
+    )
       ..organizationId = organizationId
       ..email = email;
     final UpdateOrganizationInviteAuthorizationsResponse response = await _client.updateOrganizationInviteAuthorizations(request);
@@ -569,8 +585,14 @@ class AppClient {
   /// Update a [Fragment]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config,
-      {bool? public, FragmentVisibility? visibility, DateTime? lastKnownUpdate}) async {
+  Future<Fragment> updateFragment(
+    String id,
+    String name,
+    Map<String, dynamic> config, {
+    bool? public,
+    FragmentVisibility? visibility,
+    DateTime? lastKnownUpdate,
+  }) async {
     final request = UpdateFragmentRequest()
       ..id = id
       ..name = name
@@ -632,10 +654,12 @@ class AppClient {
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Permission>> checkPermissions(ResourceType resourceType, String resourceId, List<Permission> permissions) async {
     final request = CheckPermissionsRequest()
-      ..permissions.add((AuthorizedPermissions()
-        ..resourceType = resourceType.name
-        ..resourceId = resourceId
-        ..permissions.addAll(permissions.map((e) => e.value))));
+      ..permissions.add(
+        (AuthorizedPermissions()
+          ..resourceType = resourceType.name
+          ..resourceId = resourceId
+          ..permissions.addAll(permissions.map((e) => e.value))),
+      );
     final response = await _client.checkPermissions(request);
     if (response.authorizedPermissions.isEmpty) return [];
     return response.authorizedPermissions.first.permissions
@@ -679,8 +703,14 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<RegistryItem>> listRegistryItems(
-      List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses,
-      {String? organizationId, String? searchTerm, String? pageToken}) async {
+    List<PackageType> types,
+    List<Visibility> visibilities,
+    List<String> platforms,
+    List<RegistryItemStatus> statuses, {
+    String? organizationId,
+    String? searchTerm,
+    String? pageToken,
+  }) async {
     final request = ListRegistryItemsRequest(types: types, visibilities: visibilities, platforms: platforms, statuses: statuses)
       ..organizationId = organizationId ?? ''
       ..searchTerm = searchTerm ?? ''
@@ -711,7 +741,13 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<String> updateModule(
-      String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint) async {
+    String moduleId,
+    Visibility visibility,
+    String url,
+    String description,
+    List<Model> models,
+    String entrypoint,
+  ) async {
     final request = UpdateModuleRequest(models: models)
       ..moduleId = moduleId
       ..visibility = visibility

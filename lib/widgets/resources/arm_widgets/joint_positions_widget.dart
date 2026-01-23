@@ -8,11 +8,7 @@ import '../arm.dart';
 class JointPositionsWidget extends StatefulWidget {
   final viam.Arm arm;
   final ArmNotifier updateNotifier;
-  const JointPositionsWidget({
-    super.key,
-    required this.arm,
-    required this.updateNotifier,
-  });
+  const JointPositionsWidget({super.key, required this.arm, required this.updateNotifier});
 
   @override
   State<JointPositionsWidget> createState() => _JointPositionsWidgetState();
@@ -83,9 +79,7 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
       final formattedValue = clampedValue.toStringAsFixed(1);
       if (_textControllers[index].text != formattedValue) {
         _textControllers[index].text = formattedValue;
-        _textControllers[index].selection = TextSelection.fromPosition(
-          TextPosition(offset: _textControllers[index].text.length),
-        );
+        _textControllers[index].selection = TextSelection.fromPosition(TextPosition(offset: _textControllers[index].text.length));
       }
     });
 
@@ -104,12 +98,7 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
     return Column(
       children: [
         Divider(),
-        Text(
-          'Joint Positions',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        Text('Joint Positions', style: TextStyle(fontWeight: FontWeight.bold)),
         Divider(),
         Padding(
           padding: const EdgeInsets.all(20.0),
@@ -146,15 +135,9 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
                   });
                 },
               ),
-              Text(
-                'Live',
-              ),
+              Text('Live'),
               Spacer(),
-              OutlinedButton.icon(
-                onPressed: _isLive ? null : _setJointPositions,
-                label: Text('Execute'),
-                icon: Icon(Icons.play_arrow),
-              ),
+              OutlinedButton.icon(onPressed: _isLive ? null : _setJointPositions, label: Text('Execute'), icon: Icon(Icons.play_arrow)),
             ],
           ),
         ),
@@ -193,34 +176,20 @@ class _BuildJointControlRow extends StatelessWidget {
         children: [
           Row(
             children: [
-              SizedBox(
-                width: 35,
-                child: Text(
-                  'J${index + 1}',
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-              ),
+              SizedBox(width: 35, child: Text('J${index + 1}', style: Theme.of(context).textTheme.titleMedium)),
               SizedBox(
                 width: 70,
                 child: TextField(
                   controller: controller,
                   textAlign: TextAlign.center,
                   keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
-                  inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp(r'^-?\d*\.?\d*')),
-                  ],
+                  inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'^-?\d*\.?\d*'))],
                   onSubmitted: onSubmitted,
                 ),
               ),
               Spacer(),
-              IconButton(
-                icon: const Icon(Icons.remove),
-                onPressed: onDecrement,
-              ),
-              IconButton(
-                icon: const Icon(Icons.add),
-                onPressed: onIncrement,
-              ),
+              IconButton(icon: const Icon(Icons.remove), onPressed: onDecrement),
+              IconButton(icon: const Icon(Icons.add), onPressed: onIncrement),
             ],
           ),
           Row(

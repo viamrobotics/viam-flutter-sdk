@@ -22,11 +22,7 @@ class _TextControlStruct {
 class PoseWidget extends StatefulWidget {
   final viam.Arm arm;
   final ArmNotifier updateNotifier;
-  const PoseWidget({
-    super.key,
-    required this.arm,
-    required this.updateNotifier,
-  });
+  const PoseWidget({super.key, required this.arm, required this.updateNotifier});
 
   @override
   State<PoseWidget> createState() => _PoseWidgetState();
@@ -159,9 +155,7 @@ class _PoseWidgetState extends State<PoseWidget> {
       final formattedValue = value.toStringAsFixed(1);
       if (textController.text != formattedValue) {
         textController.text = formattedValue;
-        textController.selection = TextSelection.fromPosition(
-          TextPosition(offset: textController.text.length),
-        );
+        textController.selection = TextSelection.fromPosition(TextPosition(offset: textController.text.length));
       }
     });
   }
@@ -173,12 +167,7 @@ class _PoseWidgetState extends State<PoseWidget> {
         : Column(
             children: [
               Divider(),
-              Text(
-                'Pose Values',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Text('Pose Values', style: TextStyle(fontWeight: FontWeight.bold)),
               Divider(),
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -192,11 +181,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                       min: -_maxReach,
                       max: _maxReach,
                       onValueChanged: (newValue) {
-                        _updateControlValue(
-                          'x',
-                          _textControllers!.x,
-                          newValue.clamp(-_maxReach, _maxReach),
-                        );
+                        _updateControlValue('x', _textControllers!.x, newValue.clamp(-_maxReach, _maxReach));
                         if (_isLive) {
                           _updatePose();
                         }
@@ -209,11 +194,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                       min: -_maxReach,
                       max: _maxReach,
                       onValueChanged: (newValue) {
-                        _updateControlValue(
-                          'y',
-                          _textControllers!.y,
-                          newValue.clamp(-_maxReach, _maxReach),
-                        );
+                        _updateControlValue('y', _textControllers!.y, newValue.clamp(-_maxReach, _maxReach));
                         if (_isLive) {
                           _updatePose();
                         }
@@ -226,11 +207,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                       min: -_maxReach,
                       max: _maxReach,
                       onValueChanged: (newValue) {
-                        _updateControlValue(
-                          'z',
-                          _textControllers!.z,
-                          newValue.clamp(-_maxReach, _maxReach),
-                        );
+                        _updateControlValue('z', _textControllers!.z, newValue.clamp(-_maxReach, _maxReach));
                         if (_isLive) {
                           _updatePose();
                         }
@@ -243,11 +220,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                       min: _minOrientation,
                       max: _maxOrientation,
                       onValueChanged: (newValue) {
-                        _updateControlValue(
-                          'oX',
-                          _textControllers!.oX,
-                          newValue.clamp(_minOrientation, _maxOrientation),
-                        );
+                        _updateControlValue('oX', _textControllers!.oX, newValue.clamp(_minOrientation, _maxOrientation));
                         if (_isLive) {
                           _updatePose();
                         }
@@ -260,11 +233,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                       min: _minOrientation,
                       max: _maxOrientation,
                       onValueChanged: (newValue) {
-                        _updateControlValue(
-                          'oY',
-                          _textControllers!.oY,
-                          newValue.clamp(_minOrientation, _maxOrientation),
-                        );
+                        _updateControlValue('oY', _textControllers!.oY, newValue.clamp(_minOrientation, _maxOrientation));
                         if (_isLive) {
                           _updatePose();
                         }
@@ -277,11 +246,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                       min: _minOrientation,
                       max: _maxOrientation,
                       onValueChanged: (newValue) {
-                        _updateControlValue(
-                          'oZ',
-                          _textControllers!.oZ,
-                          newValue.clamp(_minOrientation, _maxOrientation),
-                        );
+                        _updateControlValue('oZ', _textControllers!.oZ, newValue.clamp(_minOrientation, _maxOrientation));
                         if (_isLive) {
                           _updatePose();
                         }
@@ -294,11 +259,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                       min: _minTheta,
                       max: _maxTheta,
                       onValueChanged: (newValue) {
-                        _updateControlValue(
-                          'theta',
-                          _textControllers!.theta,
-                          newValue.clamp(_minTheta, _maxTheta),
-                        );
+                        _updateControlValue('theta', _textControllers!.theta, newValue.clamp(_minTheta, _maxTheta));
                         if (_isLive) {
                           _updatePose();
                         }
@@ -320,15 +281,9 @@ class _PoseWidgetState extends State<PoseWidget> {
                         });
                       },
                     ),
-                    Text(
-                      'Live',
-                    ),
+                    Text('Live'),
                     Spacer(),
-                    OutlinedButton.icon(
-                      onPressed: _isLive ? null : _updatePose,
-                      label: Text('Execute'),
-                      icon: Icon(Icons.play_arrow),
-                    ),
+                    OutlinedButton.icon(onPressed: _isLive ? null : _updatePose, label: Text('Execute'), icon: Icon(Icons.play_arrow)),
                   ],
                 ),
               ),
@@ -362,22 +317,14 @@ class _BuildJointControlRow extends StatelessWidget {
         children: [
           Row(
             children: [
-              SizedBox(
-                width: 55,
-                child: Text(
-                  label,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-              ),
+              SizedBox(width: 55, child: Text(label, style: Theme.of(context).textTheme.titleMedium)),
               SizedBox(
                 width: 70,
                 child: TextField(
                   controller: controller,
                   textAlign: TextAlign.center,
                   keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
-                  inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp(r'^-?\d*\.?\d*')),
-                  ],
+                  inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'^-?\d*\.?\d*'))],
                   onSubmitted: (newValue) {
                     final parsedValue = double.tryParse(newValue) ?? value;
                     onValueChanged(parsedValue);
@@ -403,12 +350,7 @@ class _BuildJointControlRow extends StatelessWidget {
             children: [
               SizedBox(width: 35),
               Expanded(
-                child: Slider(
-                  value: value.clamp(min, max),
-                  min: min,
-                  max: max,
-                  onChanged: onValueChanged,
-                ),
+                child: Slider(value: value.clamp(min, max), min: min, max: max, onChanged: onValueChanged),
               ),
             ],
           ),

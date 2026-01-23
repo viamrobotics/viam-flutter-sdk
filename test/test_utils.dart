@@ -26,10 +26,7 @@ Future<int> getUnsafeUnusedPort() async {
 }
 
 class TestableWidget extends StatelessWidget {
-  const TestableWidget({
-    super.key,
-    required this.child,
-  });
+  const TestableWidget({super.key, required this.child});
 
   final Widget child;
 
@@ -37,9 +34,7 @@ class TestableWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Scaffold(
-        body: child,
-      ),
+      home: Scaffold(body: child),
     );
   }
 }

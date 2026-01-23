@@ -1654,8 +1654,12 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<void> createIndex(String organizationId, IndexableCollection collectionType, Map<String, dynamic> indexSpec,
-      {String? pipelineName}) async {
+  Future<void> createIndex(
+    String organizationId,
+    IndexableCollection collectionType,
+    Map<String, dynamic> indexSpec, {
+    String? pipelineName,
+  }) async {
     final request = CreateIndexRequest()
       ..organizationId = organizationId
       ..collectionType = collectionType

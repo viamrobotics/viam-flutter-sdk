@@ -42,10 +42,7 @@ class _ViamButtonWidgetState extends State<ViamButtonWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ViamButton(
-          text: 'Push',
-          onPressed: isLoading ? null : _pushButton,
-        ),
+        ViamButton(text: 'Push', onPressed: isLoading ? null : _pushButton),
         if (error != null)
           Padding(
             padding: const EdgeInsets.only(top: 8.0),

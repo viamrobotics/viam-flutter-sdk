@@ -20,9 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Viam Example',
-      home: MyHomePage(
-        title: 'Viam Example',
-      ),
+      home: MyHomePage(title: 'Viam Example'),
     );
   }
 }
@@ -58,10 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // Be sure to create a .env file with these fields
     _robot = await RobotClient.atAddress(
       dotenv.env['ROBOT_LOCATION']!,
-      RobotClientOptions.withApiKey(
-        dotenv.env['API_KEY_ID']!,
-        dotenv.env['API_KEY']!,
-      ),
+      RobotClientOptions.withApiKey(dotenv.env['API_KEY_ID']!, dotenv.env['API_KEY']!),
     );
 
     final services = _robot.resourceNames.where((element) => element.type == resourceTypeService);
@@ -107,10 +102,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != null) {
       return BaseScreen(
-          base: Base.fromRobot(_robot, rname.name),
-          cameras:
-              _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
-          robot: _robot);
+        base: Base.fromRobot(_robot, rname.name),
+        cameras:
+            _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
+        robot: _robot,
+      );
     }
     if (rname.subtype == Board.subtype.resourceSubtype) {
       return BoardScreen(board: Board.fromRobot(_robot, rname.name), resourceName: rname);
@@ -123,10 +119,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Gripper.subtype.resourceSubtype) {
       return GripperScreen(
-          gripper: Gripper.fromRobot(_robot, rname.name),
-          cameras:
-              _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
-          robot: _robot);
+        gripper: Gripper.fromRobot(_robot, rname.name),
+        cameras:
+            _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
+        robot: _robot,
+      );
     }
     if (rname.subtype == Motor.subtype.resourceSubtype) {
       return MotorScreen(motor: Motor.fromRobot(_robot, rname.name), resourceName: rname);
@@ -149,25 +146,25 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: _loggedIn
           ? ListView.builder(
               itemCount: _resourceNames.length,
               itemBuilder: (context, index) {
                 final resourceName = _resourceNames[index];
-                return Column(children: [
-                  ListTile(
-                    title: Text(resourceName.name),
-                    subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: _isNavigable(resourceName) ? const Icon(Icons.chevron_right) : null,
-                    onTap: () => _isNavigable(resourceName)
-                        ? Navigator.push(context, MaterialPageRoute(builder: (context) => _getScreen(resourceName)!))
-                        : null,
-                  ),
-                  const Divider(height: 0, indent: 0, endIndent: 0)
-                ]);
+                return Column(
+                  children: [
+                    ListTile(
+                      title: Text(resourceName.name),
+                      subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
+                      trailing: _isNavigable(resourceName) ? const Icon(Icons.chevron_right) : null,
+                      onTap: () => _isNavigable(resourceName)
+                          ? Navigator.push(context, MaterialPageRoute(builder: (context) => _getScreen(resourceName)!))
+                          : null,
+                    ),
+                    const Divider(height: 0, indent: 0, endIndent: 0),
+                  ],
+                );
               },
               padding: EdgeInsets.zero,
             )
@@ -176,21 +173,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   _loggedIn
-                      ? Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
-                          const Text('Resource Names: '),
-                          Text(_robot.resourceNames.where((element) => element.type == resourceTypeComponent).join('\n')),
-                        ])
+                      ? Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            const Text('Resource Names: '),
+                            Text(_robot.resourceNames.where((element) => element.type == resourceTypeComponent).join('\n')),
+                          ],
+                        )
                       : _loading
                           ? const CircularProgressIndicator.adaptive()
-                          : Column(children: [
-                              ViamButton(
-                                onPressed: _login,
-                                text: 'Login',
-                                role: ViamButtonRole.inverse,
-                                style: ViamButtonFillStyle.filled,
-                                size: ViamButtonSizeClass.xl,
-                              )
-                            ])
+                          : Column(
+                              children: [
+                                ViamButton(
+                                  onPressed: _login,
+                                  text: 'Login',
+                                  role: ViamButtonRole.inverse,
+                                  style: ViamButtonFillStyle.filled,
+                                  size: ViamButtonSizeClass.xl,
+                                ),
+                              ],
+                            ),
                 ],
               ),
             ),

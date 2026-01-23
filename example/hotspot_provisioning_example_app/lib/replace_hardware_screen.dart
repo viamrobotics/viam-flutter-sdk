@@ -136,16 +136,14 @@ class _ReplaceHardwareScreenState extends State<ReplaceHardwareScreen> {
       switch (result.status) {
         case MachineStatus.online:
           if (mounted) {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => OnlineScreen(onPressed: () => Navigator.of(context).pop())),
-            );
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => OnlineScreen(onPressed: () => Navigator.of(context).pop())));
           }
           break;
         case MachineStatus.offline:
           if (mounted) {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => OfflineScreen(onPressed: () => Navigator.of(context).pop())),
-            );
+            Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (context) => OfflineScreen(onPressed: () => Navigator.of(context).pop())));
           }
           break;
         case MachineStatus.loading:
@@ -178,8 +176,10 @@ class _ReplaceHardwareScreenState extends State<ReplaceHardwareScreen> {
               itemCount: _robots.length,
               itemBuilder: (context, index) => ListTile(
                 title: Text(_robots[index].robot.name, style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
-                subtitle:
-                    Text('location: ${_robots[index].locationName}', style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
+                subtitle: Text(
+                  'location: ${_robots[index].locationName}',
+                  style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+                ),
                 trailing: _machineStatuses[_robots[index].robot.id]?.statusIcon,
                 onTap: () => _goToHotspotProvisioningFlow(context, _viam!, _robots[index].robot),
               ),

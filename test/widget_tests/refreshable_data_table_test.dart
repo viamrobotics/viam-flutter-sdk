@@ -18,11 +18,7 @@ void main() {
     });
 
     testWidgets('displays no sensor readings available', (tester) async {
-      final widget = TestableWidget(
-        child: ViamRefreshableDataTable(
-          getData: ({Map<String, dynamic>? extra}) async => <String, dynamic>{},
-        ),
-      );
+      final widget = TestableWidget(child: ViamRefreshableDataTable(getData: ({Map<String, dynamic>? extra}) async => <String, dynamic>{}));
       await tester.pumpWidget(widget);
 
       final noSensorReadingsAvailable = find.textContaining(RegExp(r'No sensor readings available'));

@@ -62,41 +62,18 @@ class _ViamServoWidgetState extends State<ViamServoWidget> {
         const SizedBox(height: 5),
         Row(
           children: [
-            ViamButton(
-              onPressed: () => _move(angle - 10),
-              text: '-10',
-              size: ViamButtonSizeClass.small,
-            ),
+            ViamButton(onPressed: () => _move(angle - 10), text: '-10', size: ViamButtonSizeClass.small),
             const SizedBox(width: 4),
-            ViamButton(
-              onPressed: () => _move(angle - 1),
-              text: '-1',
-              size: ViamButtonSizeClass.small,
-            ),
+            ViamButton(onPressed: () => _move(angle - 1), text: '-1', size: ViamButtonSizeClass.small),
             const SizedBox(width: 4),
-            ViamButton(
-              onPressed: () => _move(angle + 1),
-              text: '1',
-              size: ViamButtonSizeClass.small,
-            ),
+            ViamButton(onPressed: () => _move(angle + 1), text: '1', size: ViamButtonSizeClass.small),
             const SizedBox(width: 4),
-            ViamButton(
-              onPressed: () => _move(angle + 10),
-              text: '10',
-              size: ViamButtonSizeClass.small,
-            ),
+            ViamButton(onPressed: () => _move(angle + 10), text: '10', size: ViamButtonSizeClass.small),
           ],
         ),
         const SizedBox(height: 8),
         Row(
-          children: [
-            ViamButton(
-              onPressed: () => _stop(),
-              text: 'STOP',
-              role: ViamButtonRole.danger,
-              size: ViamButtonSizeClass.small,
-            ),
-          ],
+          children: [ViamButton(onPressed: () => _stop(), text: 'STOP', role: ViamButtonRole.danger, size: ViamButtonSizeClass.small)],
         ),
         if (error != null) Text('Error: $error', style: const TextStyle(color: Colors.red)),
       ],

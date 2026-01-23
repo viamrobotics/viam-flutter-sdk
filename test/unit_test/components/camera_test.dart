@@ -40,19 +40,10 @@ class FakeCamera extends Camera {
   }
 
   @override
-  Future<GetImagesResult> getImages({
-    List<String>? filterSourceNames,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<GetImagesResult> getImages({List<String>? filterSourceNames, Map<String, dynamic>? extra}) async {
     final images = [
-      NamedImage(
-        sourceName: leftCamSource,
-        image: ViamImage([1, 2, 3], MimeType.jpeg),
-      ),
-      NamedImage(
-        sourceName: rightCamSource,
-        image: ViamImage([4, 5, 6], MimeType.png),
-      ),
+      NamedImage(sourceName: leftCamSource, image: ViamImage([1, 2, 3], MimeType.jpeg)),
+      NamedImage(sourceName: rightCamSource, image: ViamImage([4, 5, 6], MimeType.png)),
     ];
 
     final filteredImages = (filterSourceNames != null && filterSourceNames.isNotEmpty)
@@ -61,9 +52,7 @@ class FakeCamera extends Camera {
 
     return GetImagesResult(
       images: filteredImages,
-      metadata: ResponseMetadata(
-        capturedAt: expectedCapturedAt,
-      ),
+      metadata: ResponseMetadata(capturedAt: expectedCapturedAt),
     );
   }
 }
@@ -136,7 +125,11 @@ void main() {
       service = CameraService(manager);
       server = Server.create(services: [service]);
       await serveServerAtUnusedPort(server);
-      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: server.port!,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
     });
 
     tearDown(() async {
@@ -162,9 +155,11 @@ void main() {
       test('doCommand', () async {
         final client = CameraServiceClient(channel);
         final Map<String, String> cmd = {'foo': 'bar'};
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap(), {'command': cmd});
       });
 
@@ -180,17 +175,21 @@ void main() {
         expect(respAll.images[1].image, [4, 5, 6]);
 
         // Single filter
-        final respFiltered = await client.getImages(GetImagesRequest()
-          ..name = name
-          ..filterSourceNames.addAll([leftCamSource]));
+        final respFiltered = await client.getImages(
+          GetImagesRequest()
+            ..name = name
+            ..filterSourceNames.addAll([leftCamSource]),
+        );
         expect(respFiltered.images.length, 1);
         expect(respFiltered.images[0].sourceName, leftCamSource);
         expect(respFiltered.images[0].image, [1, 2, 3]);
 
         // All filters
-        final respFilteredAll = await client.getImages(GetImagesRequest()
-          ..name = name
-          ..filterSourceNames.addAll([leftCamSource, rightCamSource]));
+        final respFilteredAll = await client.getImages(
+          GetImagesRequest()
+            ..name = name
+            ..filterSourceNames.addAll([leftCamSource, rightCamSource]),
+        );
         expect(respFilteredAll.images.length, 2);
         expect(respFilteredAll.images[0].sourceName, leftCamSource);
         expect(respFilteredAll.images[0].image, [1, 2, 3]);
@@ -198,9 +197,11 @@ void main() {
         expect(respFilteredAll.images[1].image, [4, 5, 6]);
 
         // Empty filter
-        final respFilteredEmpty = await client.getImages(GetImagesRequest()
-          ..name = name
-          ..filterSourceNames.addAll([]));
+        final respFilteredEmpty = await client.getImages(
+          GetImagesRequest()
+            ..name = name
+            ..filterSourceNames.addAll([]),
+        );
         expect(respFilteredEmpty.images.length, 2);
         expect(respFilteredEmpty.images[0].sourceName, leftCamSource);
         expect(respFilteredEmpty.images[0].image, [1, 2, 3]);

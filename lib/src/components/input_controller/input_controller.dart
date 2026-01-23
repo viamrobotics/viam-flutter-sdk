@@ -59,8 +59,12 @@ abstract class InputController extends Resource {
   /// ```
   ///
   /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/).
-  Future<void> registerControlCallback(String control, List<String> triggers, void Function(Event)? callback,
-      {Map<String, dynamic>? extra});
+  Future<void> registerControlCallback(
+    String control,
+    List<String> triggers,
+    void Function(Event)? callback, {
+    Map<String, dynamic>? extra,
+  });
 
   /// Get the [ResourceName] for this [InputController] with the given [name]
   ///

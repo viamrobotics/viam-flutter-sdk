@@ -74,7 +74,11 @@ void main() {
       server = Server.create(services: [service]);
       await serveServerAtUnusedPort(server);
 
-      channel = ClientChannel('localhost', port: server.port!, options: ChannelOptions(credentials: const ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: server.port!,
+        options: ChannelOptions(credentials: const ChannelCredentials.insecure()),
+      );
     });
 
     tearDown(() async {

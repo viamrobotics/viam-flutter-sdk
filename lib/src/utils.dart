@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
@@ -12,14 +13,41 @@ import 'gen/google/protobuf/struct.pb.dart';
 final _logger = Logger();
 
 class Kinematics {
-  KinematicsFileFormat format;
-  List<int> raw;
+  final KinematicsFileFormat format;
+  final List<int> raw;
+  final Map<String, Mesh> meshesByUrdfFilepath;
 
-  Kinematics(this.format, this.raw);
+  static const ListEquality<int> _rawEquality = ListEquality<int>();
+  static const MapEquality<String, Mesh> _meshEquality = MapEquality<String, Mesh>();
+
+  const Kinematics(this.format, this.raw, {this.meshesByUrdfFilepath = const {}});
 
   factory Kinematics.fromProto(GetKinematicsResponse gkResponse) {
-    return Kinematics(gkResponse.format, gkResponse.kinematicsData);
+    return Kinematics(
+      gkResponse.format,
+      gkResponse.kinematicsData,
+      meshesByUrdfFilepath: gkResponse.meshesByUrdfFilepath,
+    );
   }
+
+  GetKinematicsResponse toProto() {
+    return GetKinematicsResponse()
+      ..format = format
+      ..kinematicsData = raw
+      ..meshesByUrdfFilepath.addAll(meshesByUrdfFilepath);
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Kinematics &&
+          runtimeType == other.runtimeType &&
+          format == other.format &&
+          _rawEquality.equals(raw, other.raw) &&
+          _meshEquality.equals(meshesByUrdfFilepath, other.meshesByUrdfFilepath);
+
+  @override
+  int get hashCode => Object.hash(format, _rawEquality.hash(raw), _meshEquality.hash(meshesByUrdfFilepath));
 }
 
 extension NullableStringUtils on String? {
@@ -138,15 +166,11 @@ String getVersionMetadata() {
 /// Show an error dialog with one action: OK, which simply dismisses the dialog
 Future<void> showErrorDialog(BuildContext context, {String title = 'An Error Occurred', String? error}) async {
   return showAdaptiveDialog(
-      context: context,
-      builder: (context) => AlertDialog.adaptive(
-            title: Text(title),
-            content: error == null ? null : Text(error),
-            actions: [
-              PlatformDialogAction(
-                onPressed: Navigator.of(context).pop,
-                child: Text('OK'),
-              )
-            ],
-          ));
+    context: context,
+    builder: (context) => AlertDialog.adaptive(
+      title: Text(title),
+      content: error == null ? null : Text(error),
+      actions: [PlatformDialogAction(onPressed: Navigator.of(context).pop, child: Text('OK'))],
+    ),
+  );
 }

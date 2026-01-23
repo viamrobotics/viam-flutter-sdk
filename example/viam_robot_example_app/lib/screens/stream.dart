@@ -50,8 +50,12 @@ class _StreamScreenState extends State<StreamScreen> {
 
     final ui.ImmutableBuffer buffer = await ui.ImmutableBuffer.fromUint8List(image.toUint8List());
 
-    final ui.ImageDescriptor id =
-        ui.ImageDescriptor.raw(buffer, height: image.height, width: image.width, pixelFormat: ui.PixelFormat.rgba8888);
+    final ui.ImageDescriptor id = ui.ImageDescriptor.raw(
+      buffer,
+      height: image.height,
+      width: image.width,
+      pixelFormat: ui.PixelFormat.rgba8888,
+    );
 
     final ui.Codec codec = await id.instantiateCodec(targetHeight: image.height, targetWidth: image.width);
 
@@ -64,9 +68,7 @@ class _StreamScreenState extends State<StreamScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.resourceName.name.toUpperCase()),
-      ),
+      appBar: AppBar(title: Text(widget.resourceName.name.toUpperCase())),
       body: Center(
         child: Column(
           children: [
@@ -80,10 +82,7 @@ class _StreamScreenState extends State<StreamScreen> {
             const SizedBox(height: 16),
             if (_imgLoaded) Image.memory(Uint8List.fromList(image!.raw), scale: 3),
             const SizedBox(height: 16),
-            ElevatedButton(
-              child: const Text('Get image'),
-              onPressed: () => _getImage(),
-            )
+            ElevatedButton(child: const Text('Get image'), onPressed: () => _getImage()),
           ],
         ),
       ),

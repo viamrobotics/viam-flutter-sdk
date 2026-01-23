@@ -45,12 +45,10 @@ class _ViamRefreshableDataTableState extends State<ViamRefreshableDataTable> {
   Future<void> getReadings() async {
     try {
       final response = await widget.getData();
-      setState(
-        () {
-          readings = Map.fromEntries(response.entries.toList()..sort((a, b) => a.key.compareTo(b.key)));
-          lastRefreshed = DateTime.now();
-        },
-      );
+      setState(() {
+        readings = Map.fromEntries(response.entries.toList()..sort((a, b) => a.key.compareTo(b.key)));
+        lastRefreshed = DateTime.now();
+      });
     } catch (e) {
       Text('Error: $e');
     }
@@ -103,54 +101,61 @@ class _ViamRefreshableDataTableState extends State<ViamRefreshableDataTable> {
           const Text('No sensor readings available')
         else
           DataTable(
-              columns: const <DataColumn>[DataColumn(label: Text('Reading')), DataColumn(label: Text('Value'))],
-              rows: readings.keys
-                  .map((e) => DataRow(cells: [
-                        DataCell(Text(e)),
-                        DataCell(
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.5,
-                            height: 120,
-                            child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: SingleChildScrollView(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(readings[e].toString()),
-                                ),
-                              ),
+            columns: const <DataColumn>[
+              DataColumn(label: Text('Reading')),
+              DataColumn(label: Text('Value')),
+            ],
+            rows: readings.keys
+                .map(
+                  (e) => DataRow(
+                    cells: [
+                      DataCell(Text(e)),
+                      DataCell(
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 120,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: SingleChildScrollView(
+                              child: Padding(padding: const EdgeInsets.all(8.0), child: Text(readings[e].toString())),
                             ),
                           ),
-                        )
-                      ]))
-                  .toList()),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                .toList(),
+          ),
         if (widget.showLastRefreshed && lastRefreshed != null)
-          Column(children: [
-            const SizedBox(height: 8),
-            Text('Updated at: ${formattedDate(lastRefreshed!)}'),
-          ]),
+          Column(children: [const SizedBox(height: 8), Text('Updated at: ${formattedDate(lastRefreshed!)}')]),
         if (widget.showRefreshControls)
-          Column(children: [
-            const SizedBox(height: 8),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              if (widget.refreshInterval != null)
-                ViamButton(
-                  onPressed: playPause,
-                  text: isPaused ? 'Play' : 'Pause',
-                  icon: isPaused ? Icons.play_arrow : Icons.pause,
-                  variant: ViamButtonVariant.iconOnly,
-                  style: ViamButtonFillStyle.ghost,
-                ),
-              const SizedBox(width: 8),
-              ViamButton(
-                onPressed: refresh,
-                text: 'Refresh',
-                icon: Icons.refresh,
-                variant: ViamButtonVariant.iconOnly,
-                style: ViamButtonFillStyle.ghost,
+          Column(
+            children: [
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (widget.refreshInterval != null)
+                    ViamButton(
+                      onPressed: playPause,
+                      text: isPaused ? 'Play' : 'Pause',
+                      icon: isPaused ? Icons.play_arrow : Icons.pause,
+                      variant: ViamButtonVariant.iconOnly,
+                      style: ViamButtonFillStyle.ghost,
+                    ),
+                  const SizedBox(width: 8),
+                  ViamButton(
+                    onPressed: refresh,
+                    text: 'Refresh',
+                    icon: Icons.refresh,
+                    variant: ViamButtonVariant.iconOnly,
+                    style: ViamButtonFillStyle.ghost,
+                  ),
+                ],
               ),
-            ]),
-          ]),
+            ],
+          ),
       ],
     );
   }

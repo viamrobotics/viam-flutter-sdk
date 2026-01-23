@@ -28,8 +28,9 @@ void main() {
   group('Generic Service RPC Client Tests', () {
     test('doCommand', () async {
       final expected = {'foo': 'bar'};
-      when(serviceClient.doCommand(any, options: anyNamed('options')))
-          .thenAnswer((_) => MockResponseFuture.value(DoCommandResponse(result: expected.toStruct())));
+      when(
+        serviceClient.doCommand(any, options: anyNamed('options')),
+      ).thenAnswer((_) => MockResponseFuture.value(DoCommandResponse(result: expected.toStruct())));
       final response = await client.doCommand(expected);
       expect(response, equals(expected));
     });

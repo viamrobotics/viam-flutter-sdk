@@ -10,10 +10,7 @@ class ViamSensorWidget extends StatelessWidget {
   /// The [Sensor]
   final Sensor sensor;
 
-  const ViamSensorWidget({
-    super.key,
-    required this.sensor,
-  });
+  const ViamSensorWidget({super.key, required this.sensor});
 
   @override
   Widget build(BuildContext context) {

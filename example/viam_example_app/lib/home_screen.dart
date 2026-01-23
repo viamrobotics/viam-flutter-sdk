@@ -78,7 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () => _navigateToOrganization(org),
                   trailing: const Icon(Icons.chevron_right),
                 );
-              }),
+              },
+            ),
     );
   }
 }

@@ -143,7 +143,11 @@ void main() {
       service = GripperService(manager);
       server = Server.create(services: [service]);
       await serveServerAtUnusedPort(server);
-      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: server.port!,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
     });
 
     tearDown(() async {
@@ -212,9 +216,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = GripperServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -222,9 +228,11 @@ void main() {
         expect(gripper.extra, null);
 
         final client = GripperServiceClient(channel);
-        await client.stop(StopRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.stop(
+          StopRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(gripper.extra, {'foo': 'bar'});
       });
     });

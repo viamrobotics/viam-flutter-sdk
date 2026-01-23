@@ -7,10 +7,7 @@ import '../viam_sdk.dart';
 
 /// A [Joystick] to control a specific [Base]
 class ViamBaseJoystick extends StatefulWidget {
-  const ViamBaseJoystick({
-    super.key,
-    required this.base,
-  });
+  const ViamBaseJoystick({super.key, required this.base});
 
   /// The [Base]
   final Base base;
@@ -30,20 +27,14 @@ class _ViamBaseJoystickState extends State<ViamBaseJoystick> {
       children: [
         Text('Y: ${y.round()}% Z: ${z.round()}%'),
         const SizedBox(height: 16),
-        Joystick(
-          listener: callSetPower,
-          onStickDragEnd: () => callSetPower(StickDragDetails(0, 0)),
-        )
+        Joystick(listener: callSetPower, onStickDragEnd: () => callSetPower(StickDragDetails(0, 0))),
       ],
     );
   }
 
   void callSetPower(StickDragDetails details) {
     touchActive = (details.x != 0 || details.y != 0);
-    widget.base.setPower(
-      Vector3()..y = details.y * -1,
-      Vector3()..z = details.x * -1,
-    );
+    widget.base.setPower(Vector3()..y = details.y * -1, Vector3()..z = details.x * -1);
     setState(() {
       y = details.y * -100;
       z = details.x * -100;

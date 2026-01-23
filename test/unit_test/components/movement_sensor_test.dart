@@ -164,7 +164,11 @@ void main() {
       final ResourceManager manager = ResourceManager();
       manager.register(MovementSensor.getResourceName(name), movementSensor);
       service = MovementSensorService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: port,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
       server = Server.create(services: [service]);
       await server.serve(port: port);
     });
@@ -232,9 +236,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = MovementSensorServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -242,9 +248,11 @@ void main() {
         expect(movementSensor.extra, null);
 
         final client = MovementSensorServiceClient(channel);
-        await client.getAccuracy(GetAccuracyRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.getAccuracy(
+          GetAccuracyRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(movementSensor.extra, {'foo': 'bar'});
       });
     });
@@ -307,7 +315,7 @@ void main() {
           'angular_velocity',
           'linear_acceleration',
           'compass',
-          'orientation'
+          'orientation',
         ];
         expect(result.keys, expectedKeys);
 

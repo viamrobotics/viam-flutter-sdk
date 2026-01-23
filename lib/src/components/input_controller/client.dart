@@ -66,8 +66,12 @@ class InputControllerClient extends InputController with RPCDebugLoggerMixin imp
   }
 
   @override
-  Future<void> registerControlCallback(String control, List<String> triggers, void Function(Event)? callback,
-      {Map<String, dynamic>? extra}) async {
+  Future<void> registerControlCallback(
+    String control,
+    List<String> triggers,
+    void Function(Event)? callback, {
+    Map<String, dynamic>? extra,
+  }) async {
     if (extra != null) {
       _extra = extra.toStruct();
     }

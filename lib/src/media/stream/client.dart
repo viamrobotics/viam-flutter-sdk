@@ -103,9 +103,11 @@ class StreamManager {
       ..width = width
       ..height = height;
     try {
-      await _client.setStreamOptions(SetStreamOptionsRequest()
-        ..name = sanitizedName
-        ..resolution = resolution);
+      await _client.setStreamOptions(
+        SetStreamOptionsRequest()
+          ..name = sanitizedName
+          ..resolution = resolution,
+      );
       _logger.d('Set options for stream named $name');
     } catch (e) {
       _logger.e('Failed to set options for stream named $name');

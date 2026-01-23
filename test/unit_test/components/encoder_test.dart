@@ -125,7 +125,11 @@ void main() {
       service = EncoderService(manager);
       server = Server.create(services: [service]);
       await serveServerAtUnusedPort(server);
-      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: server.port!,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
     });
 
     tearDown(() async {
@@ -147,9 +151,11 @@ void main() {
         expect(response.value, 0);
         expect(response.positionType, PositionType.POSITION_TYPE_UNSPECIFIED);
 
-        response = await client.getPosition(GetPositionRequest()
-          ..name = name
-          ..positionType = PositionType.POSITION_TYPE_TICKS_COUNT);
+        response = await client.getPosition(
+          GetPositionRequest()
+            ..name = name
+            ..positionType = PositionType.POSITION_TYPE_TICKS_COUNT,
+        );
         expect(response.value, 0);
         expect(response.positionType, PositionType.POSITION_TYPE_TICKS_COUNT);
       });
@@ -165,9 +171,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = EncoderServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -175,9 +183,11 @@ void main() {
         expect(encoder.extra, null);
 
         final client = EncoderServiceClient(channel);
-        await client.getPosition(GetPositionRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.getPosition(
+          GetPositionRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(encoder.extra, {'foo': 'bar'});
       });
 

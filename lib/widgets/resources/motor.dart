@@ -78,31 +78,34 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
     return Center(
       child: Column(
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            const Text('Automatically stop on release:'),
-            Switch(
-              thumbColor: MaterialStateColor.resolveWith((states) {
-                if (states.contains(MaterialState.selected)) {
-                  return Theme.of(context).colorScheme.primary;
-                }
-                return Theme.of(context).colorScheme.primary.withOpacity(0.35);
-              }),
-              trackColor: MaterialStateColor.resolveWith((states) {
-                if (states.contains(MaterialState.selected)) {
-                  return Theme.of(context).colorScheme.primary.withOpacity(0.5);
-                }
-                return Colors.transparent;
-              }),
-              trackOutlineColor: MaterialStatePropertyAll(Theme.of(context).colorScheme.secondary),
-              value: autoStop,
-              onChanged: (value) => setState(() {
-                if (value) {
-                  stop();
-                }
-                autoStop = value;
-              }),
-            ),
-          ]),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Automatically stop on release:'),
+              Switch(
+                thumbColor: MaterialStateColor.resolveWith((states) {
+                  if (states.contains(MaterialState.selected)) {
+                    return Theme.of(context).colorScheme.primary;
+                  }
+                  return Theme.of(context).colorScheme.primary.withOpacity(0.35);
+                }),
+                trackColor: MaterialStateColor.resolveWith((states) {
+                  if (states.contains(MaterialState.selected)) {
+                    return Theme.of(context).colorScheme.primary.withOpacity(0.5);
+                  }
+                  return Colors.transparent;
+                }),
+                trackOutlineColor: MaterialStatePropertyAll(Theme.of(context).colorScheme.secondary),
+                value: autoStop,
+                onChanged: (value) => setState(() {
+                  if (value) {
+                    stop();
+                  }
+                  autoStop = value;
+                }),
+              ),
+            ],
+          ),
           Text('Power: ${(power * 100).round()}%'),
           SliderTheme(
             data: _sliderTheme,

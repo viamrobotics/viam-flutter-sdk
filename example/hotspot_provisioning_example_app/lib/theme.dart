@@ -14,15 +14,11 @@ final lightTheme = ThemeData(
   cardTheme: CardThemeData(
     color: Colors.white,
     elevation: 0,
-    shape: Border.all(
-      color: Colors.black12,
-    ),
+    shape: Border.all(color: Colors.black12),
   ),
   drawerTheme: DrawerThemeData(
     backgroundColor: Colors.white,
-    shape: Border.all(
-      color: Colors.black12,
-    ),
+    shape: Border.all(color: Colors.black12),
   ),
   filledButtonTheme: FilledButtonThemeData(style: FilledButton.styleFrom(shape: LinearBorder())),
   fontFamily: 'Public Sans',
@@ -37,11 +33,7 @@ final lightTheme = ThemeData(
   appBarTheme: AppBarTheme(backgroundColor: Colors.black, foregroundColor: Colors.white),
   textTheme: TextTheme().copyWith(headlineMedium: TextStyle().copyWith(color: Colors.black87)),
   radioTheme: RadioThemeData().copyWith(fillColor: WidgetStatePropertyAll(Colors.black87)),
-  listTileTheme: ListTileThemeData(
-    iconColor: Colors.black,
-    textColor: Colors.black,
-    tileColor: Colors.white,
-  ),
+  listTileTheme: ListTileThemeData(iconColor: Colors.black, textColor: Colors.black, tileColor: Colors.white),
   progressIndicatorTheme: ProgressIndicatorThemeData(color: Colors.black),
 );
 
@@ -61,9 +53,7 @@ final darkTheme = ThemeData(
   cardTheme: CardThemeData(
     color: Colors.white12,
     elevation: 0,
-    shape: Border.all(
-      color: Colors.white12,
-    ),
+    shape: Border.all(color: Colors.white12),
   ),
   fontFamily: 'Public Sans',
   filledButtonTheme: FilledButtonThemeData(style: FilledButton.styleFrom(shape: LinearBorder())),
@@ -78,10 +68,6 @@ final darkTheme = ThemeData(
   appBarTheme: AppBarTheme(backgroundColor: Colors.black, foregroundColor: Colors.white),
   textTheme: TextTheme().copyWith(headlineMedium: TextStyle().copyWith(color: Colors.white)),
   radioTheme: RadioThemeData().copyWith(fillColor: WidgetStatePropertyAll(Colors.white)),
-  listTileTheme: ListTileThemeData(
-    iconColor: Colors.white,
-    textColor: Colors.white,
-    tileColor: Colors.white12,
-  ),
+  listTileTheme: ListTileThemeData(iconColor: Colors.white, textColor: Colors.white, tileColor: Colors.white12),
   progressIndicatorTheme: ProgressIndicatorThemeData(color: Colors.white),
 );

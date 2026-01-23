@@ -71,12 +71,7 @@ class InputControllerService extends InputControllerServiceBase {
 
     for (final ev in request.events) {
       if (ev.events.isNotEmpty) {
-        await inputController.registerControlCallback(
-          ev.control,
-          ev.events,
-          ctrlFunc,
-          extra: request.extra.toMap(),
-        );
+        await inputController.registerControlCallback(ev.control, ev.events, ctrlFunc, extra: request.extra.toMap());
       }
 
       if (ev.cancelledEvents.isNotEmpty) {

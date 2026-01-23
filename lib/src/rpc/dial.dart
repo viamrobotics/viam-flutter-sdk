@@ -250,18 +250,25 @@ Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, S
   _logger.d('Dialing direct GRPC to $address');
   if (options.credentials == null && options.accessToken == null) {
     final host = _hostAndPort(address, options.insecure);
-    return GrpcOrGrpcWebClientChannel.grpc(host.host,
-        port: host.port,
-        options: ChannelOptions(
-          credentials: options.insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
-          codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
-        ));
+    return GrpcOrGrpcWebClientChannel.grpc(
+      host.host,
+      port: host.port,
+      options: ChannelOptions(
+        credentials: options.insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
+        codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
+      ),
+    );
   }
   return _authenticatedChannel(address, options, sessionCallback);
 }
 
-Future _logConnectionStats(Stopwatch webrtcDialSW, RTCPeerConnection peerConnection, int updateCalls, Duration totalCallUpdateDuration,
-    maxCallUpdateDuration) async {
+Future _logConnectionStats(
+  Stopwatch webrtcDialSW,
+  RTCPeerConnection peerConnection,
+  int updateCalls,
+  Duration totalCallUpdateDuration,
+  maxCallUpdateDuration,
+) async {
   webrtcDialSW.stop();
   _logger.d('STATS: all ICE candidates gathered in ${webrtcDialSW.elapsed}');
   _logger.d('STATS: $updateCalls call updates to the signaling server were made');
@@ -333,17 +340,8 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
     _logger.d('Failed to get optional WebRTC config', error: error, stackTrace: st);
     config = WebRTCConfig();
   }
-  final iceServers = config.additionalIceServers
-      .map((e) => {
-            'urls': e.urls,
-            'credential': e.credential,
-            'username': e.username,
-          })
-      .toList()
-    ..add({
-      'urls': 'stun:global.stun.twilio.com:3478',
-      'sdpSemantics': 'unified-plan',
-    });
+  final iceServers = config.additionalIceServers.map((e) => {'urls': e.urls, 'credential': e.credential, 'username': e.username}).toList()
+    ..add({'urls': 'stun:global.stun.twilio.com:3478', 'sdpSemantics': 'unified-plan'});
 
   final createPeerConnSW = Stopwatch()..start();
   final peerConnection = await createPeerConnection({'iceServers': iceServers});
@@ -451,10 +449,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
 
   negotiationChannel.onMessage = (msg) async {
     final decodedSDPMap = json.decode(utf8.decode(base64Decode(msg.text))) as Map;
-    final sdp = RTCSessionDescription(
-      decodedSDPMap['sdp'],
-      decodedSDPMap['type'],
-    );
+    final sdp = RTCSessionDescription(decodedSDPMap['sdp'], decodedSDPMap['type']);
     final offerCollision = sdp.type == 'offer' && peerConnection.signalingState != RTCSignalingState.RTCSignalingStateStable;
     if (offerCollision) {
       return;
@@ -476,59 +471,64 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
   final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
   final encodedSdp = _encodeSDPJsonStringToBase64String(sdpJsonString);
   try {
-    callStream = signalingClient.call(CallRequest()
-      ..sdp = encodedSdp
-      ..disableTrickle = options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle);
+    callStream = signalingClient.call(
+      CallRequest()
+        ..sdp = encodedSdp
+        ..disableTrickle = options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle,
+    );
   } catch (error, st) {
     _logger.e('Failed to get call stream', error: error, stackTrace: st);
     rethrow;
   }
 
   bool isResponseStreamInitialized = false;
-  callStream.listen((CallResponse response) async {
-    if (response.hasInit()) {
-      if (isResponseStreamInitialized) {
-        return;
-      }
-      isResponseStreamInitialized = true;
+  callStream.listen(
+    (CallResponse response) async {
+      if (response.hasInit()) {
+        if (isResponseStreamInitialized) {
+          return;
+        }
+        isResponseStreamInitialized = true;
 
-      uuid = response.uuid;
-      final sdp = utf8.decode(base64Decode(response.init.sdp));
-      final sdpMap = json.decode(sdp) as Map;
-      final remoteSdp = RTCSessionDescription(sdpMap['sdp'], sdpMap['type']);
+        uuid = response.uuid;
+        final sdp = utf8.decode(base64Decode(response.init.sdp));
+        final sdpMap = json.decode(sdp) as Map;
+        final remoteSdp = RTCSessionDescription(sdpMap['sdp'], sdpMap['type']);
 
-      try {
-        await peerConnection.setRemoteDescription(remoteSdp);
-        didSetRemoteDesc.complete();
-      } catch (error, st) {
-        _logger.e('Set remote SDP error', error: error, stackTrace: st);
-        rethrow;
-      }
-    } else if (response.hasUpdate()) {
-      if (!isResponseStreamInitialized) {
-        _logger.e('Updating before initialized');
-        throw Exception('Updating before initialized');
-      }
-      if (response.uuid != uuid) {
-        _logger.e('UUID mismatch in update. Got ${response.uuid}, want $uuid');
-        throw Exception('UUID mismatch in update. Got ${response.uuid}, want $uuid');
-      }
+        try {
+          await peerConnection.setRemoteDescription(remoteSdp);
+          didSetRemoteDesc.complete();
+        } catch (error, st) {
+          _logger.e('Set remote SDP error', error: error, stackTrace: st);
+          rethrow;
+        }
+      } else if (response.hasUpdate()) {
+        if (!isResponseStreamInitialized) {
+          _logger.e('Updating before initialized');
+          throw Exception('Updating before initialized');
+        }
+        if (response.uuid != uuid) {
+          _logger.e('UUID mismatch in update. Got ${response.uuid}, want $uuid');
+          throw Exception('UUID mismatch in update. Got ${response.uuid}, want $uuid');
+        }
 
-      final iceCandidate = RTCIceCandidate(
-        response.update.candidate.candidate,
-        response.update.candidate.sdpMid,
-        response.update.candidate.sdpmLineIndex,
-      );
-      try {
-        _logger.d('STATS: adding remote ICE candidate of ${iceCandidate.candidate}');
-        await peerConnection.addCandidate(iceCandidate);
-      } catch (error, st) {
-        _logger.e('Add candidate error', error: error, stackTrace: st);
+        final iceCandidate = RTCIceCandidate(
+          response.update.candidate.candidate,
+          response.update.candidate.sdpMid,
+          response.update.candidate.sdpmLineIndex,
+        );
+        try {
+          _logger.d('STATS: adding remote ICE candidate of ${iceCandidate.candidate}');
+          await peerConnection.addCandidate(iceCandidate);
+        } catch (error, st) {
+          _logger.e('Add candidate error', error: error, stackTrace: st);
+        }
       }
-    }
-  }, onError: (error) {
-    didConnect.completeError(error);
-  });
+    },
+    onError: (error) {
+      didConnect.completeError(error);
+    },
+  );
 
   dataChannel.onDataChannelState = (state) {
     if (state == RTCDataChannelState.RTCDataChannelOpen) {
@@ -623,11 +623,7 @@ class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
   final String Function()? _sessionId;
 
   AuthenticatedChannel(String host, int port, this.accessToken, bool insecure, [this._sessionId])
-      : super(
-          host: host,
-          port: port,
-          transportSecure: !insecure,
-        );
+      : super(host: host, port: port, transportSecure: !insecure);
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {

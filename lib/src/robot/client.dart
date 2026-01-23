@@ -150,7 +150,8 @@ class RobotClient {
       final resource = _manager.getResource<ResourceRPCClient>(resourceName);
       if (_channel != resource.channel) {
         _logger.d(
-            'Resetting channel for resource named ${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}');
+          'Resetting channel for resource named ${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}',
+        );
         resource.channel = _channel;
       }
     }

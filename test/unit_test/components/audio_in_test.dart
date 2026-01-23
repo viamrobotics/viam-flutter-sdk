@@ -137,7 +137,11 @@ void main() {
       final ResourceManager manager = ResourceManager();
       manager.register(AudioIn.getResourceName(name), audioIn);
       service = AudioInService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: port,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
       server = Server.create(services: [service]);
       await server.serve(port: port);
     });
@@ -155,12 +159,14 @@ void main() {
         final extra = {'key': 'value'};
 
         final client = AudioInServiceClient(channel);
-        final stream = client.getAudio(GetAudioRequest()
-          ..name = name
-          ..codec = codec
-          ..durationSeconds = durationSeconds
-          ..previousTimestampNanoseconds = previousTimestamp
-          ..extra = extra.toStruct());
+        final stream = client.getAudio(
+          GetAudioRequest()
+            ..name = name
+            ..codec = codec
+            ..durationSeconds = durationSeconds
+            ..previousTimestampNanoseconds = previousTimestamp
+            ..extra = extra.toStruct(),
+        );
 
         final chunks = await stream.toList();
         expect(chunks.length, 2);
@@ -174,9 +180,11 @@ void main() {
 
       test('getAudio with only required parameters', () async {
         final client = AudioInServiceClient(channel);
-        final stream = client.getAudio(GetAudioRequest()
-          ..name = name
-          ..codec = 'mp3');
+        final stream = client.getAudio(
+          GetAudioRequest()
+            ..name = name
+            ..codec = 'mp3',
+        );
 
         final chunks = await stream.toList();
         expect(chunks.length, 2);
@@ -194,18 +202,22 @@ void main() {
       test('getProperties with extra', () async {
         final extra = {'test': 'data'};
         final client = AudioInServiceClient(channel);
-        await client.getProperties(GetPropertiesRequest()
-          ..name = name
-          ..extra = extra.toStruct());
+        await client.getProperties(
+          GetPropertiesRequest()
+            ..name = name
+            ..extra = extra.toStruct(),
+        );
         expect(audioIn.propertiesExtra, extra);
       });
 
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
         final client = AudioInServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
     });

@@ -51,12 +51,13 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getdetections).
   Future<List<Detection>> detections(ViamImage image, {Map<String, dynamic>? extra}) async {
     final request = GetDetectionsRequest(
-        name: name,
-        image: image.raw,
-        width: Int64(image.image?.width ?? 0),
-        height: Int64(image.image?.height ?? 0),
-        mimeType: image.mimeType.name,
-        extra: extra?.toStruct());
+      name: name,
+      image: image.raw,
+      width: Int64(image.image?.width ?? 0),
+      height: Int64(image.image?.height ?? 0),
+      mimeType: image.mimeType.name,
+      extra: extra?.toStruct(),
+    );
     final response = await client.getDetections(request, options: callOptions);
     return response.detections;
   }
@@ -88,13 +89,14 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getclassifications).
   Future<List<Classification>> classifications(ViamImage image, int count, {Map<String, dynamic>? extra}) async {
     final request = GetClassificationsRequest(
-        name: name,
-        image: image.raw,
-        width: image.image?.width,
-        height: image.image?.height,
-        mimeType: image.mimeType.name,
-        n: count,
-        extra: extra?.toStruct());
+      name: name,
+      image: image.raw,
+      width: image.image?.width,
+      height: image.image?.height,
+      mimeType: image.mimeType.name,
+      n: count,
+      extra: extra?.toStruct(),
+    );
     final response = await client.getClassifications(request, options: callOptions);
     return response.classifications;
   }
