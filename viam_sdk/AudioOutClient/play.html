@@ -78,11 +78,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;PlayResponse&gt; play({
-  required Uint8List audioData,
-  required AudioInfo audioInfo,
-  Map&lt;String, dynamic&gt;? extra,
-}) async {
+Future&lt;PlayResponse&gt; play({required Uint8List audioData, required AudioInfo audioInfo, Map&lt;String, dynamic&gt;? extra}) async {
   final request = PlayRequest()
     ..name = name
     ..audioData = audioData

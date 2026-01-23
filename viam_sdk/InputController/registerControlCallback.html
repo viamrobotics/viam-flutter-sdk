@@ -87,8 +87,12 @@ If "ButtonChange" is included, it will register callbacks for both "ButtonPress"
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; registerControlCallback(String control, List&lt;String&gt; triggers, void Function(Event)? callback,
-    {Map&lt;String, dynamic&gt;? extra});</code></pre>
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; registerControlCallback(
+  String control,
+  List&lt;String&gt; triggers,
+  void Function(Event)? callback, {
+  Map&lt;String, dynamic&gt;? extra,
+});</code></pre>
 </section>
 
 

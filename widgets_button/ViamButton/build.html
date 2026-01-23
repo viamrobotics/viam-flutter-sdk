@@ -113,10 +113,7 @@ Widget build(BuildContext context) {
   final iconWidget = (icon != null) ? Icon(icon, size: size.fontSize * 1.25) : const SizedBox.shrink();
   final labelWidget = (variant == ViamButtonVariant.iconOnly)
       ? const SizedBox.shrink()
-      : Text(
-          text,
-          style: TextStyle(fontWeight: (icon != null) ? FontWeight.bold : FontWeight.normal),
-        );
+      : Text(text, style: TextStyle(fontWeight: (icon != null) ? FontWeight.bold : FontWeight.normal));
   final first = (variant == ViamButtonVariant.iconTrailing) ? labelWidget : iconWidget;
   final second = (variant == ViamButtonVariant.iconTrailing) ? iconWidget : labelWidget;
   final widget = Row(mainAxisAlignment: MainAxisAlignment.center, mainAxisSize: MainAxisSize.min, children: [first, second]);
@@ -128,7 +125,10 @@ Widget build(BuildContext context) {
   if (variant == ViamButtonVariant.iconOnly) {
     child = Tooltip(message: text, waitDuration: const Duration(seconds: 1), child: child);
   }
-  return Theme(data: ThemeData(primarySwatch: role.materialColor), child: child);
+  return Theme(
+    data: ThemeData(primarySwatch: role.materialColor),
+    child: child,
+  );
 }</code></pre>
 </section>
 

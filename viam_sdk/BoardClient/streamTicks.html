@@ -84,11 +84,12 @@ Stream&lt;Tick&gt; tickStream = await myBoard.streamTicks(interrupts);
   <pre class="language-dart"><code class="language-dart">@override
 Stream&lt;Tick&gt; streamTicks(List&lt;String&gt; interrupts, {Map&lt;String, dynamic&gt;? extra}) {
   final response = client.streamTicks(
-      StreamTicksRequest()
-        ..name = name
-        ..pinNames.addAll(interrupts)
-        ..extra = extra?.toStruct() ?? Struct(),
-      options: callOptions);
+    StreamTicksRequest()
+      ..name = name
+      ..pinNames.addAll(interrupts)
+      ..extra = extra?.toStruct() ?? Struct(),
+    options: callOptions,
+  );
 
   final stream = response.map((resp) =&gt; Tick(pinName: resp.pinName, high: resp.high, time: resp.time));
   return stream.asBroadcastStream(onCancel: (_) =&gt; response.cancel());

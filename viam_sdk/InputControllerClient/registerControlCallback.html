@@ -93,8 +93,12 @@ If "ButtonChange" is included, it will register callbacks for both "ButtonPress"
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;void&gt; registerControlCallback(String control, List&lt;String&gt; triggers, void Function(Event)? callback,
-    {Map&lt;String, dynamic&gt;? extra}) async {
+Future&lt;void&gt; registerControlCallback(
+  String control,
+  List&lt;String&gt; triggers,
+  void Function(Event)? callback, {
+  Map&lt;String, dynamic&gt;? extra,
+}) async {
   if (extra != null) {
     _extra = extra.toStruct();
   }

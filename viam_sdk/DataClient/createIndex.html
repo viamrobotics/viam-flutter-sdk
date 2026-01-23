@@ -94,8 +94,12 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; createIndex(String organizationId, IndexableCollection collectionType, Map&lt;String, dynamic&gt; indexSpec,
-    {String? pipelineName}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; createIndex(
+  String organizationId,
+  IndexableCollection collectionType,
+  Map&lt;String, dynamic&gt; indexSpec, {
+  String? pipelineName,
+}) async {
   final request = CreateIndexRequest()
     ..organizationId = organizationId
     ..collectionType = collectionType

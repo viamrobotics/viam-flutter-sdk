@@ -80,13 +80,14 @@ var classifications = await myVisionService.classifications(latestImage, 2);
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;Classification&gt;&gt; classifications(ViamImage image, int count, {Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetClassificationsRequest(
-      name: name,
-      image: image.raw,
-      width: image.image?.width,
-      height: image.image?.height,
-      mimeType: image.mimeType.name,
-      n: count,
-      extra: extra?.toStruct());
+    name: name,
+    image: image.raw,
+    width: image.image?.width,
+    height: image.image?.height,
+    mimeType: image.mimeType.name,
+    n: count,
+    extra: extra?.toStruct(),
+  );
   final response = await client.getClassifications(request, options: callOptions);
   return response.classifications;
 }</code></pre>

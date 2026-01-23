@@ -90,10 +90,7 @@ For more information, see <a href="https://docs.viam.com/dev/reference/apis/comp
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;GetImagesResult&gt; getImages({
-  List&lt;String&gt;? filterSourceNames,
-  Map&lt;String, dynamic&gt;? extra,
-}) async {
+Future&lt;GetImagesResult&gt; getImages({List&lt;String&gt;? filterSourceNames, Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetImagesRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
@@ -108,23 +105,15 @@ Future&lt;GetImagesResult&gt; getImages({
     final mimeType =
         image.hasMimeType() &amp;&amp; image.mimeType.isNotEmpty ? MimeType.fromString(image.mimeType) : MimeType.unsupported(&#39;unspecified&#39;);
     final viamImage = ViamImage(image.image, mimeType);
-    return NamedImage(
-      sourceName: image.sourceName,
-      image: viamImage,
-    );
+    return NamedImage(sourceName: image.sourceName, image: viamImage);
   }).toList();
 
   ResponseMetadata? nativeMetadata;
   if (response.hasResponseMetadata()) {
-    nativeMetadata = ResponseMetadata(
-      capturedAt: response.responseMetadata.capturedAt.toDateTime(),
-    );
+    nativeMetadata = ResponseMetadata(capturedAt: response.responseMetadata.capturedAt.toDateTime());
   }
 
-  return GetImagesResult(
-    images: images,
-    metadata: nativeMetadata,
-  );
+  return GetImagesResult(images: images, metadata: nativeMetadata);
 }</code></pre>
 </section>
 
