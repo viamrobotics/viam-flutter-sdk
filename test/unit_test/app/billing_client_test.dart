@@ -50,5 +50,32 @@ void main() {
         ]),
       );
     });
+
+    test('chargeOrganization', () async {
+      final expected = ChargeOrganizationResponse()..invoiceId = 'invoiceId';
+      when(
+        serviceClient.chargeOrganization(
+          argThat(
+            isA<ChargeOrganizationRequest>()
+                .having((req) => req.orgIdToCharge, 'orgIdToCharge', 'orgId')
+                .having((req) => req.description, 'description', 'description')
+                .having((req) => req.subtotal, 'subtotal', 100.0)
+                .having((req) => req.tax, 'tax', 10.0)
+                .having((req) => req.orgIdForBranding, 'orgIdForBranding', 'brandingOrgId')
+                .having((req) => req.disableConfirmationEmail, 'disableConfirmationEmail', true),
+          ),
+        ),
+      ).thenAnswer((_) => MockResponseFuture.value(expected));
+
+      final response = await billingClient.chargeOrganization(
+        'orgId',
+        100.0,
+        10.0,
+        description: 'description',
+        orgIdForBranding: 'brandingOrgId',
+        disableConfirmationEmail: true,
+      );
+      expect(response, equals(expected));
+    });
   });
 }
