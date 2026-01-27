@@ -47,4 +47,31 @@ class BillingClient {
     final stream = response.map((event) => event.chunk);
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());
   }
+
+  /// Charge an organization for a specific amount.
+  ///
+  /// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+  Future<ChargeOrganizationResponse> chargeOrganization(
+    String orgIdToCharge,
+    double subtotal,
+    double tax,
+    {String? description,
+    String? orgIdForBranding,
+    bool? disableConfirmationEmail,}
+  ) async {
+    final request = ChargeOrganizationRequest()
+      ..orgIdToCharge = orgIdToCharge
+      ..subtotal = subtotal
+      ..tax = tax;
+    if (description != null) {
+      request.description = description;
+    }
+    if (orgIdForBranding != null) {
+      request.orgIdForBranding = orgIdForBranding;
+    }
+    if (disableConfirmationEmail != null) {
+      request.disableConfirmationEmail = disableConfirmationEmail;
+    }
+    return await _client.chargeOrganization(request);
+  }
 }
