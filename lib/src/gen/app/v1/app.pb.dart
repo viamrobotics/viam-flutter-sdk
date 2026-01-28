@@ -674,6 +674,7 @@ class Organization extends $pb.GeneratedMessage {
     $core.String? publicNamespace,
     $core.String? defaultRegion,
     $core.String? cid,
+    FragmentImportList? defaultFragments,
   }) {
     final $result = create();
     if (id != null) {
@@ -694,6 +695,9 @@ class Organization extends $pb.GeneratedMessage {
     if (cid != null) {
       $result.cid = cid;
     }
+    if (defaultFragments != null) {
+      $result.defaultFragments = defaultFragments;
+    }
     return $result;
   }
   Organization._() : super();
@@ -707,6 +711,7 @@ class Organization extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(5, _omitFieldNames ? '' : 'defaultRegion')
     ..aOS(6, _omitFieldNames ? '' : 'cid')
+    ..aOM<FragmentImportList>(7, _omitFieldNames ? '' : 'defaultFragments', subBuilder: FragmentImportList.create)
     ..hasRequiredFields = false
   ;
 
@@ -788,6 +793,17 @@ class Organization extends $pb.GeneratedMessage {
   $core.bool hasCid() => $_has(5);
   @$pb.TagNumber(6)
   void clearCid() => clearField(6);
+
+  @$pb.TagNumber(7)
+  FragmentImportList get defaultFragments => $_getN(6);
+  @$pb.TagNumber(7)
+  set defaultFragments(FragmentImportList v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasDefaultFragments() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDefaultFragments() => clearField(7);
+  @$pb.TagNumber(7)
+  FragmentImportList ensureDefaultFragments() => $_ensure(6);
 }
 
 class OrganizationMember extends $pb.GeneratedMessage {
@@ -16812,6 +16828,7 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
     $core.String? blobPath,
     $core.String? entrypoint,
     AppType? appType,
+    $core.bool? public,
   }) {
     final $result = create();
     if (blobPath != null) {
@@ -16823,6 +16840,9 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
     if (appType != null) {
       $result.appType = appType;
     }
+    if (public != null) {
+      $result.public = public;
+    }
     return $result;
   }
   GetAppContentResponse._() : super();
@@ -16833,6 +16853,7 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'blobPath')
     ..aOS(2, _omitFieldNames ? '' : 'entrypoint')
     ..e<AppType>(3, _omitFieldNames ? '' : 'appType', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
+    ..aOB(4, _omitFieldNames ? '' : 'public')
     ..hasRequiredFields = false
   ;
 
@@ -16883,6 +16904,15 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
   $core.bool hasAppType() => $_has(2);
   @$pb.TagNumber(3)
   void clearAppType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get public => $_getBF(3);
+  @$pb.TagNumber(4)
+  set public($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPublic() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPublic() => clearField(4);
 }
 
 class OrganizationSetLogoRequest extends $pb.GeneratedMessage {

@@ -49,6 +49,18 @@ class BillingServiceClient extends $grpc.Client {
       '/viam.app.v1.BillingService/UpdateOrganizationBillingTier',
       ($12.UpdateOrganizationBillingTierRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.UpdateOrganizationBillingTierResponse.fromBuffer(value));
+  static final _$getLocationBillingOrganization = $grpc.ClientMethod<$12.GetLocationBillingOrganizationRequest, $12.GetLocationBillingOrganizationResponse>(
+      '/viam.app.v1.BillingService/GetLocationBillingOrganization',
+      ($12.GetLocationBillingOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.GetLocationBillingOrganizationResponse.fromBuffer(value));
+  static final _$updateLocationBillingOrganization = $grpc.ClientMethod<$12.UpdateLocationBillingOrganizationRequest, $12.UpdateLocationBillingOrganizationResponse>(
+      '/viam.app.v1.BillingService/UpdateLocationBillingOrganization',
+      ($12.UpdateLocationBillingOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.UpdateLocationBillingOrganizationResponse.fromBuffer(value));
+  static final _$chargeOrganization = $grpc.ClientMethod<$12.ChargeOrganizationRequest, $12.ChargeOrganizationResponse>(
+      '/viam.app.v1.BillingService/ChargeOrganization',
+      ($12.ChargeOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.ChargeOrganizationResponse.fromBuffer(value));
   static final _$createInvoiceAndChargeImmediately = $grpc.ClientMethod<$12.CreateInvoiceAndChargeImmediatelyRequest, $12.CreateInvoiceAndChargeImmediatelyResponse>(
       '/viam.app.v1.BillingService/CreateInvoiceAndChargeImmediately',
       ($12.CreateInvoiceAndChargeImmediatelyRequest value) => value.writeToBuffer(),
@@ -86,6 +98,18 @@ class BillingServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($12.UpdateOrganizationBillingTierRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateOrganizationBillingTier, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.GetLocationBillingOrganizationResponse> getLocationBillingOrganization($12.GetLocationBillingOrganizationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getLocationBillingOrganization, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization($12.UpdateLocationBillingOrganizationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateLocationBillingOrganization, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.ChargeOrganizationResponse> chargeOrganization($12.ChargeOrganizationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$chargeOrganization, request, options: options);
   }
 
   $grpc.ResponseFuture<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately($12.CreateInvoiceAndChargeImmediatelyRequest request, {$grpc.CallOptions? options}) {
@@ -147,6 +171,27 @@ abstract class BillingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.UpdateOrganizationBillingTierRequest.fromBuffer(value),
         ($12.UpdateOrganizationBillingTierResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.GetLocationBillingOrganizationRequest, $12.GetLocationBillingOrganizationResponse>(
+        'GetLocationBillingOrganization',
+        getLocationBillingOrganization_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.GetLocationBillingOrganizationRequest.fromBuffer(value),
+        ($12.GetLocationBillingOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.UpdateLocationBillingOrganizationRequest, $12.UpdateLocationBillingOrganizationResponse>(
+        'UpdateLocationBillingOrganization',
+        updateLocationBillingOrganization_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.UpdateLocationBillingOrganizationRequest.fromBuffer(value),
+        ($12.UpdateLocationBillingOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.ChargeOrganizationRequest, $12.ChargeOrganizationResponse>(
+        'ChargeOrganization',
+        chargeOrganization_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.ChargeOrganizationRequest.fromBuffer(value),
+        ($12.ChargeOrganizationResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$12.CreateInvoiceAndChargeImmediatelyRequest, $12.CreateInvoiceAndChargeImmediatelyResponse>(
         'CreateInvoiceAndChargeImmediately',
         createInvoiceAndChargeImmediately_Pre,
@@ -184,6 +229,18 @@ abstract class BillingServiceBase extends $grpc.Service {
     return updateOrganizationBillingTier(call, await request);
   }
 
+  $async.Future<$12.GetLocationBillingOrganizationResponse> getLocationBillingOrganization_Pre($grpc.ServiceCall call, $async.Future<$12.GetLocationBillingOrganizationRequest> request) async {
+    return getLocationBillingOrganization(call, await request);
+  }
+
+  $async.Future<$12.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization_Pre($grpc.ServiceCall call, $async.Future<$12.UpdateLocationBillingOrganizationRequest> request) async {
+    return updateLocationBillingOrganization(call, await request);
+  }
+
+  $async.Future<$12.ChargeOrganizationResponse> chargeOrganization_Pre($grpc.ServiceCall call, $async.Future<$12.ChargeOrganizationRequest> request) async {
+    return chargeOrganization(call, await request);
+  }
+
   $async.Future<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately_Pre($grpc.ServiceCall call, $async.Future<$12.CreateInvoiceAndChargeImmediatelyRequest> request) async {
     return createInvoiceAndChargeImmediately(call, await request);
   }
@@ -195,5 +252,8 @@ abstract class BillingServiceBase extends $grpc.Service {
   $async.Future<$12.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($grpc.ServiceCall call, $12.SendPaymentRequiredEmailRequest request);
   $async.Future<$12.GetAvailableBillingTiersResponse> getAvailableBillingTiers($grpc.ServiceCall call, $12.GetAvailableBillingTiersRequest request);
   $async.Future<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($grpc.ServiceCall call, $12.UpdateOrganizationBillingTierRequest request);
+  $async.Future<$12.GetLocationBillingOrganizationResponse> getLocationBillingOrganization($grpc.ServiceCall call, $12.GetLocationBillingOrganizationRequest request);
+  $async.Future<$12.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization($grpc.ServiceCall call, $12.UpdateLocationBillingOrganizationRequest request);
+  $async.Future<$12.ChargeOrganizationResponse> chargeOrganization($grpc.ServiceCall call, $12.ChargeOrganizationRequest request);
   $async.Future<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately($grpc.ServiceCall call, $12.CreateInvoiceAndChargeImmediatelyRequest request);
 }

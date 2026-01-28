@@ -1627,6 +1627,373 @@ class UpdateOrganizationBillingTierResponse extends $pb.GeneratedMessage {
   static UpdateOrganizationBillingTierResponse? _defaultInstance;
 }
 
+class GetLocationBillingOrganizationRequest extends $pb.GeneratedMessage {
+  factory GetLocationBillingOrganizationRequest({
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
+  GetLocationBillingOrganizationRequest._() : super();
+  factory GetLocationBillingOrganizationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLocationBillingOrganizationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationBillingOrganizationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'locationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLocationBillingOrganizationRequest clone() => GetLocationBillingOrganizationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLocationBillingOrganizationRequest copyWith(void Function(GetLocationBillingOrganizationRequest) updates) => super.copyWith((message) => updates(message as GetLocationBillingOrganizationRequest)) as GetLocationBillingOrganizationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLocationBillingOrganizationRequest create() => GetLocationBillingOrganizationRequest._();
+  GetLocationBillingOrganizationRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLocationBillingOrganizationRequest> createRepeated() => $pb.PbList<GetLocationBillingOrganizationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLocationBillingOrganizationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLocationBillingOrganizationRequest>(create);
+  static GetLocationBillingOrganizationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get locationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set locationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLocationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocationId() => clearField(1);
+}
+
+class GetLocationBillingOrganizationResponse extends $pb.GeneratedMessage {
+  factory GetLocationBillingOrganizationResponse({
+    $core.String? billingOrganizationId,
+  }) {
+    final $result = create();
+    if (billingOrganizationId != null) {
+      $result.billingOrganizationId = billingOrganizationId;
+    }
+    return $result;
+  }
+  GetLocationBillingOrganizationResponse._() : super();
+  factory GetLocationBillingOrganizationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLocationBillingOrganizationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationBillingOrganizationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'billingOrganizationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLocationBillingOrganizationResponse clone() => GetLocationBillingOrganizationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLocationBillingOrganizationResponse copyWith(void Function(GetLocationBillingOrganizationResponse) updates) => super.copyWith((message) => updates(message as GetLocationBillingOrganizationResponse)) as GetLocationBillingOrganizationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLocationBillingOrganizationResponse create() => GetLocationBillingOrganizationResponse._();
+  GetLocationBillingOrganizationResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLocationBillingOrganizationResponse> createRepeated() => $pb.PbList<GetLocationBillingOrganizationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLocationBillingOrganizationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLocationBillingOrganizationResponse>(create);
+  static GetLocationBillingOrganizationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get billingOrganizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set billingOrganizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBillingOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBillingOrganizationId() => clearField(1);
+}
+
+class UpdateLocationBillingOrganizationRequest extends $pb.GeneratedMessage {
+  factory UpdateLocationBillingOrganizationRequest({
+    $core.String? locationId,
+    $core.String? billingOrganizationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (billingOrganizationId != null) {
+      $result.billingOrganizationId = billingOrganizationId;
+    }
+    return $result;
+  }
+  UpdateLocationBillingOrganizationRequest._() : super();
+  factory UpdateLocationBillingOrganizationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateLocationBillingOrganizationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLocationBillingOrganizationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'locationId')
+    ..aOS(2, _omitFieldNames ? '' : 'billingOrganizationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateLocationBillingOrganizationRequest clone() => UpdateLocationBillingOrganizationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateLocationBillingOrganizationRequest copyWith(void Function(UpdateLocationBillingOrganizationRequest) updates) => super.copyWith((message) => updates(message as UpdateLocationBillingOrganizationRequest)) as UpdateLocationBillingOrganizationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateLocationBillingOrganizationRequest create() => UpdateLocationBillingOrganizationRequest._();
+  UpdateLocationBillingOrganizationRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateLocationBillingOrganizationRequest> createRepeated() => $pb.PbList<UpdateLocationBillingOrganizationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateLocationBillingOrganizationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLocationBillingOrganizationRequest>(create);
+  static UpdateLocationBillingOrganizationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get locationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set locationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLocationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get billingOrganizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set billingOrganizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBillingOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBillingOrganizationId() => clearField(2);
+}
+
+class UpdateLocationBillingOrganizationResponse extends $pb.GeneratedMessage {
+  factory UpdateLocationBillingOrganizationResponse() => create();
+  UpdateLocationBillingOrganizationResponse._() : super();
+  factory UpdateLocationBillingOrganizationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateLocationBillingOrganizationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLocationBillingOrganizationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateLocationBillingOrganizationResponse clone() => UpdateLocationBillingOrganizationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateLocationBillingOrganizationResponse copyWith(void Function(UpdateLocationBillingOrganizationResponse) updates) => super.copyWith((message) => updates(message as UpdateLocationBillingOrganizationResponse)) as UpdateLocationBillingOrganizationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateLocationBillingOrganizationResponse create() => UpdateLocationBillingOrganizationResponse._();
+  UpdateLocationBillingOrganizationResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateLocationBillingOrganizationResponse> createRepeated() => $pb.PbList<UpdateLocationBillingOrganizationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateLocationBillingOrganizationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLocationBillingOrganizationResponse>(create);
+  static UpdateLocationBillingOrganizationResponse? _defaultInstance;
+}
+
+class ChargeOrganizationRequest extends $pb.GeneratedMessage {
+  factory ChargeOrganizationRequest({
+    $core.String? orgIdToCharge,
+    $core.String? description,
+    $core.double? subtotal,
+    $core.double? tax,
+    $core.String? orgIdForBranding,
+    $core.bool? disableConfirmationEmail,
+  }) {
+    final $result = create();
+    if (orgIdToCharge != null) {
+      $result.orgIdToCharge = orgIdToCharge;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (subtotal != null) {
+      $result.subtotal = subtotal;
+    }
+    if (tax != null) {
+      $result.tax = tax;
+    }
+    if (orgIdForBranding != null) {
+      $result.orgIdForBranding = orgIdForBranding;
+    }
+    if (disableConfirmationEmail != null) {
+      $result.disableConfirmationEmail = disableConfirmationEmail;
+    }
+    return $result;
+  }
+  ChargeOrganizationRequest._() : super();
+  factory ChargeOrganizationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChargeOrganizationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChargeOrganizationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgIdToCharge')
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'subtotal', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'tax', $pb.PbFieldType.OD)
+    ..aOS(5, _omitFieldNames ? '' : 'orgIdForBranding')
+    ..aOB(6, _omitFieldNames ? '' : 'disableConfirmationEmail')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ChargeOrganizationRequest clone() => ChargeOrganizationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ChargeOrganizationRequest copyWith(void Function(ChargeOrganizationRequest) updates) => super.copyWith((message) => updates(message as ChargeOrganizationRequest)) as ChargeOrganizationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ChargeOrganizationRequest create() => ChargeOrganizationRequest._();
+  ChargeOrganizationRequest createEmptyInstance() => create();
+  static $pb.PbList<ChargeOrganizationRequest> createRepeated() => $pb.PbList<ChargeOrganizationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ChargeOrganizationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChargeOrganizationRequest>(create);
+  static ChargeOrganizationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgIdToCharge => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgIdToCharge($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgIdToCharge() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgIdToCharge() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get description => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set description($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDescription() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDescription() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get subtotal => $_getN(2);
+  @$pb.TagNumber(3)
+  set subtotal($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSubtotal() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSubtotal() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get tax => $_getN(3);
+  @$pb.TagNumber(4)
+  set tax($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTax() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTax() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get orgIdForBranding => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set orgIdForBranding($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasOrgIdForBranding() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOrgIdForBranding() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get disableConfirmationEmail => $_getBF(5);
+  @$pb.TagNumber(6)
+  set disableConfirmationEmail($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDisableConfirmationEmail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDisableConfirmationEmail() => clearField(6);
+}
+
+class ChargeOrganizationResponse extends $pb.GeneratedMessage {
+  factory ChargeOrganizationResponse({
+    $core.String? invoiceId,
+  }) {
+    final $result = create();
+    if (invoiceId != null) {
+      $result.invoiceId = invoiceId;
+    }
+    return $result;
+  }
+  ChargeOrganizationResponse._() : super();
+  factory ChargeOrganizationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChargeOrganizationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChargeOrganizationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'invoiceId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ChargeOrganizationResponse clone() => ChargeOrganizationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ChargeOrganizationResponse copyWith(void Function(ChargeOrganizationResponse) updates) => super.copyWith((message) => updates(message as ChargeOrganizationResponse)) as ChargeOrganizationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ChargeOrganizationResponse create() => ChargeOrganizationResponse._();
+  ChargeOrganizationResponse createEmptyInstance() => create();
+  static $pb.PbList<ChargeOrganizationResponse> createRepeated() => $pb.PbList<ChargeOrganizationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ChargeOrganizationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChargeOrganizationResponse>(create);
+  static ChargeOrganizationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get invoiceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set invoiceId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasInvoiceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInvoiceId() => clearField(1);
+}
+
+/// Deprecated: Use ChargeOrganizationRequest instead
 class CreateInvoiceAndChargeImmediatelyRequest extends $pb.GeneratedMessage {
   factory CreateInvoiceAndChargeImmediatelyRequest({
     $core.String? orgIdToCharge,
@@ -1733,6 +2100,7 @@ class CreateInvoiceAndChargeImmediatelyRequest extends $pb.GeneratedMessage {
   void clearDisableEmail() => clearField(5);
 }
 
+/// Deprecated: Use ChargeOrganizationResponse instead
 class CreateInvoiceAndChargeImmediatelyResponse extends $pb.GeneratedMessage {
   factory CreateInvoiceAndChargeImmediatelyResponse({
     $core.String? invoiceId,
