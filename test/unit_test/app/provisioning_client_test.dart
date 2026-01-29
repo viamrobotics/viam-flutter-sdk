@@ -37,6 +37,18 @@ void main() {
       verify(serviceClient.setSmartMachineCredentials(any)).called(1);
     });
 
+    test('setSmartMachineCredentials with API key', () async {
+      final expected = SetSmartMachineCredentialsResponse();
+      when(serviceClient.setSmartMachineCredentials(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await provisioningClient.setSmartMachineCredentials(
+        id: 'fake-id',
+        secret: 'fake-secret',
+        apiKeyId: 'fake-api-key-id',
+        apiKey: 'fake-api-key',
+      );
+      verify(serviceClient.setSmartMachineCredentials(any)).called(1);
+    });
+
     test('getNetworkList', () async {
       final expected = GetNetworkListResponse();
       when(serviceClient.getNetworkList(any)).thenAnswer((_) => MockResponseFuture.value(expected));

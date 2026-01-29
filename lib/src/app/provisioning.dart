@@ -33,12 +33,20 @@ class ProvisioningClient {
   /// [id] is the RobotPart id
   /// [secret] is the RobotPart secret
   /// [appAddress] is the cloud address that the robot will authenticate against
+  /// [apiKeyId] is the optional API key ID for authentication
+  /// [apiKey] is the optional API key value for authentication
   Future<void> setSmartMachineCredentials({
     required String id,
     required String secret,
     String appAddress = 'https://app.viam.com:443',
+    String? apiKeyId,
+    String? apiKey,
   }) async {
-    final cloud = CloudConfig(id: id, secret: secret, appAddress: appAddress);
+    APIKey? apiKeyConfig;
+    if (apiKeyId != null && apiKey != null) {
+      apiKeyConfig = APIKey(id: apiKeyId, key: apiKey);
+    }
+    final cloud = CloudConfig(id: id, secret: secret, appAddress: appAddress, apiKey: apiKeyConfig);
     final request = SetSmartMachineCredentialsRequest(cloud: cloud);
     await _client.setSmartMachineCredentials(request);
   }
