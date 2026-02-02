@@ -112,6 +112,27 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $12.UpdateOrganizationBillingTierRequest.fromBuffer(value),
       ($12.UpdateOrganizationBillingTierResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$12.GetLocationBillingOrganizationRequest, $12.GetLocationBillingOrganizationResponse&gt;(
+      &#39;GetLocationBillingOrganization&#39;,
+      getLocationBillingOrganization_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $12.GetLocationBillingOrganizationRequest.fromBuffer(value),
+      ($12.GetLocationBillingOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$12.UpdateLocationBillingOrganizationRequest, $12.UpdateLocationBillingOrganizationResponse&gt;(
+      &#39;UpdateLocationBillingOrganization&#39;,
+      updateLocationBillingOrganization_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $12.UpdateLocationBillingOrganizationRequest.fromBuffer(value),
+      ($12.UpdateLocationBillingOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$12.ChargeOrganizationRequest, $12.ChargeOrganizationResponse&gt;(
+      &#39;ChargeOrganization&#39;,
+      chargeOrganization_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $12.ChargeOrganizationRequest.fromBuffer(value),
+      ($12.ChargeOrganizationResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$12.CreateInvoiceAndChargeImmediatelyRequest, $12.CreateInvoiceAndChargeImmediatelyResponse&gt;(
       &#39;CreateInvoiceAndChargeImmediately&#39;,
       createInvoiceAndChargeImmediately_Pre,
