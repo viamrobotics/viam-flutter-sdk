@@ -298,7 +298,7 @@ class DataClient {
   ///    sqlQuery
   ///  });
   ///
-  ///  final limit = BsonCodec.serialize({"\$limit": 1});
+  ///  final limit = BsonCodec.serialize({"$limit": 1});
   ///
   ///  final pipeline = [query.byteList, sort.byteList, limit.byteList];
   ///  _responseData = await dataClient.tabularDataByMql(
@@ -1028,6 +1028,8 @@ class DataClient {
     Map<String, Any>? methodParameters,
     Iterable<String> datasetIds = const [],
     Iterable<String> tags = const [],
+    DateTime? fileCreateTime,
+    DateTime? fileModifyTime,
   }) async {
     final metadata = UploadMetadata()
       ..partId = partId
@@ -1040,6 +1042,8 @@ class DataClient {
     if (componentName != null) metadata.componentName = componentName;
     if (methodName != null) metadata.methodName = methodName;
     if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
+    if (fileCreateTime != null) metadata.fileCreateTime = Timestamp.fromDateTime(fileCreateTime);
+    if (fileModifyTime != null) metadata.fileModifyTime = Timestamp.fromDateTime(fileModifyTime);
     final metadataRequest = FileUploadRequest()..metadata = metadata;
 
     // Make requests that are at most 2MB large (max gRPC request size is 4MB)
@@ -1111,6 +1115,8 @@ class DataClient {
     Map<String, Any>? methodParameters,
     Iterable<String> datasetIds = const [],
     Iterable<String> tags = const [],
+    DateTime? fileCreateTime,
+    DateTime? fileModifyTime,
   }) async {
     final fileNameAndExt = path.split(Platform.pathSeparator).last;
     String fName, ext;
@@ -1132,6 +1138,8 @@ class DataClient {
     if (componentName != null) metadata.componentName = componentName;
     if (methodName != null) metadata.methodName = methodName;
     if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
+    if (fileCreateTime != null) metadata.fileCreateTime = Timestamp.fromDateTime(fileCreateTime);
+    if (fileModifyTime != null) metadata.fileModifyTime = Timestamp.fromDateTime(fileModifyTime);
     final metadataStream = Stream.value(FileUploadRequest()..metadata = metadata);
 
     final file = File(path);

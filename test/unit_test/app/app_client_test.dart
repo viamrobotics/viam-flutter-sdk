@@ -147,6 +147,7 @@ void main() {
       final fragmentImportList = FragmentImportList()..fragments.addAll(fragmentList);
       final response = await appClient.updateOrganization('organizationId', defaultFragments: fragmentImportList);
       expect(response, equals(expected));
+      verify(serviceClient.updateOrganization(argThat(isA<UpdateOrganizationRequest>().having((req) => req.defaultFragments, 'defaultFragments', fragmentImportList)))).called(1);
     });
 
     test('deleteOrganization', () async {
@@ -914,6 +915,32 @@ void main() {
       when(serviceClient.updateRobotPartMetadata(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotPartMetadataResponse()));
       await appClient.updateRobotPartMetadata('orgId', {'key': 'value'});
       verify(serviceClient.updateRobotPartMetadata(any)).called(1);
+    });
+
+    test('getAppContent', () async {
+      final expectedResponse = GetAppContentResponse()
+        ..blobPath = 'path'
+        ..entrypoint = 'entry'
+        ..appType = AppType.APP_TYPE_APP;
+
+      when(serviceClient.getAppContent(any)).thenAnswer((_) => MockResponseFuture.value(expectedResponse));
+
+      final response = await appClient.getAppContent('orgId', appName: 'appName');
+      expect(response, equals(expectedResponse));
+    });
+
+    test('getAppContent with public field', () async {
+      final expectedResponse = GetAppContentResponse()
+        ..blobPath = 'path'
+        ..entrypoint = 'entry'
+        ..appType = AppType.APP_TYPE_APP
+        ..public = true;
+
+      when(serviceClient.getAppContent(any)).thenAnswer((_) => MockResponseFuture.value(expectedResponse));
+
+      final response = await appClient.getAppContent('orgId', appName: 'appName');
+      expect(response, equals(expectedResponse));
+      expect(response.public, isTrue);
     });
   });
 }

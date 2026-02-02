@@ -96,6 +96,22 @@ class AppClient {
   /// Update an [Organization]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// client.updateOrganization(
+  ///   organizationId,
+  ///   name: 'New Organization Name',
+  ///   publicNamespace: 'new-namespace',
+  ///   region: 'us-east-1',
+  ///   cid: 'some-cid',
+  ///   defaultFragments: FragmentImportList(fragments: [
+  ///     Fragment(id: 'fragment-id-1'),
+  ///     Fragment(id: 'fragment-id-2'),
+  ///   ]),
+  /// );
+  /// ```
   Future<Organization> updateOrganization(
     String organizationId, {
     String? name,
@@ -903,5 +919,15 @@ class AppClient {
       ..id = robotPartId
       ..data = data.toStruct();
     await _client.updateRobotPartMetadata(request);
+  }
+
+  /// Get the content of the app.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  ///
+  /// The response includes a `public` field which indicates if the app content is public.
+  Future<GetAppContentResponse> getAppContent() async {
+    final request = GetAppContentRequest();
+    return await _client.getAppContent(request);
   }
 }

@@ -593,6 +593,32 @@ void main() {
         expect(() => DateTime.parse(syncServiceClient.metadata!.fileName), returnsNormally);
       });
 
+      test('uploadImage with file times', () async {
+        final image = ViamImage([0, 0, 0], MimeType.jpeg);
+        final createTime = DateTime.utc(2023, 1, 1, 10, 0, 0);
+        final modifyTime = DateTime.utc(2023, 1, 1, 11, 0, 0);
+
+        final expected = UploadMetadata()
+          ..partId = 'partId'
+          ..type = DataType.DATA_TYPE_FILE
+          ..fileName = 'fileName'
+          ..datasetIds.addAll(['datasetId'])
+          ..fileExtension = '.jpeg'
+          ..fileCreateTime = Timestamp.fromDateTime(createTime)
+          ..fileModifyTime = Timestamp.fromDateTime(modifyTime);
+
+        await dataClient.uploadImage(
+          image,
+          'partId',
+          fileName: 'fileName',
+          datasetIds: ['datasetId'],
+          fileCreateTime: createTime,
+          fileModifyTime: modifyTime,
+        );
+        expect(syncServiceClient.metadata?.fileCreateTime, expected.fileCreateTime);
+        expect(syncServiceClient.metadata?.fileModifyTime, expected.fileModifyTime);
+      });
+
       test('uploadFile', () async {
         final expected = UploadMetadata()
           ..partId = 'partId'
@@ -605,6 +631,31 @@ void main() {
 
         await dataClient.uploadFile('/dev/null', 'partId', fileName: 'otherName', datasetIds: ['datasetId']);
         expect(syncServiceClient.metadata?.fileName, equals('otherName'));
+      });
+
+      test('uploadFile with file times', () async {
+        final createTime = DateTime.utc(2023, 1, 1, 10, 0, 0);
+        final modifyTime = DateTime.utc(2023, 1, 1, 11, 0, 0);
+
+        final expected = UploadMetadata()
+          ..partId = 'partId'
+          ..type = DataType.DATA_TYPE_FILE
+          ..fileName = 'otherName'
+          ..datasetIds.addAll(['datasetId'])
+          ..fileExtension = ''
+          ..fileCreateTime = Timestamp.fromDateTime(createTime)
+          ..fileModifyTime = Timestamp.fromDateTime(modifyTime);
+
+        await dataClient.uploadFile(
+          '/dev/null',
+          'partId',
+          fileName: 'otherName',
+          datasetIds: ['datasetId'],
+          fileCreateTime: createTime,
+          fileModifyTime: modifyTime,
+        );
+        expect(syncServiceClient.metadata?.fileCreateTime, expected.fileCreateTime);
+        expect(syncServiceClient.metadata?.fileModifyTime, expected.fileModifyTime);
       });
 
       test('binaryDataCaptureUpload', () async {
