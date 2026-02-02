@@ -868,4 +868,23 @@ class AppClient {
       ..data = data.toStruct();
     await _client.updateRobotPartMetadata(request);
   }
+
+  /// Upload a device token for the user.
+  Future<void> uploadDeviceToken(String email, String bundleId, String deviceUuid, String deviceToken) async {
+    final request = UploadDeviceTokenRequest()
+      ..email = email
+      ..bundleId = bundleId
+      ..deviceUuid = deviceUuid
+      ..deviceToken = deviceToken;
+    await _client.uploadDeviceToken(request);
+  }
+
+  /// Delete a device token for the user.
+  Future<void> deleteDeviceToken(String email, String bundleId, String deviceUuid) async {
+    final request = DeleteDeviceTokenRequest()
+      ..email = email
+      ..bundleId = bundleId
+      ..deviceUuid = deviceUuid;
+    await _client.deleteDeviceToken(request);
+  }
 }
