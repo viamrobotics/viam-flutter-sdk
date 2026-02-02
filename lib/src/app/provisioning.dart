@@ -38,9 +38,9 @@ class ProvisioningClient {
   Future<void> setSmartMachineCredentials({
     required String id,
     required String secret,
-    String appAddress = 'https://app.viam.com:443',
     required String apiKeyId,
     required String apiKey,
+    String appAddress = 'https://app.viam.com:443',
   }) async {
     final apiKeyConfig = APIKey(id: apiKeyId, key: apiKey);
     final cloud = CloudConfig(id: id, secret: secret, appAddress: appAddress, apiKey: apiKeyConfig);
