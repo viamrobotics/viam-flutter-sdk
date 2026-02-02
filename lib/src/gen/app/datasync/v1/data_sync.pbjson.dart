@@ -216,9 +216,11 @@ const UploadMetadata$json = {
     {'1': 'component_name', '3': 3, '4': 1, '5': 9, '10': 'componentName'},
     {'1': 'method_name', '3': 5, '4': 1, '5': 9, '10': 'methodName'},
     {'1': 'type', '3': 6, '4': 1, '5': 14, '6': '.viam.app.datasync.v1.DataType', '10': 'type'},
-    {'1': 'file_name', '3': 7, '4': 1, '5': 9, '10': 'fileName'},
     {'1': 'method_parameters', '3': 8, '4': 3, '5': 11, '6': '.viam.app.datasync.v1.UploadMetadata.MethodParametersEntry', '10': 'methodParameters'},
+    {'1': 'file_name', '3': 7, '4': 1, '5': 9, '10': 'fileName'},
     {'1': 'file_extension', '3': 9, '4': 1, '5': 9, '10': 'fileExtension'},
+    {'1': 'file_create_time', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'fileCreateTime'},
+    {'1': 'file_modify_time', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'fileModifyTime'},
     {'1': 'tags', '3': 10, '4': 3, '5': 9, '10': 'tags'},
     {'1': 'dataset_ids', '3': 12, '4': 3, '5': 9, '10': 'datasetIds'},
     {'1': 'mime_type', '3': 13, '4': 1, '5': 9, '10': 'mimeType'},
@@ -246,14 +248,17 @@ final $typed_data.Uint8List uploadMetadataDescriptor = $convert.base64Decode(
     'Cg5VcGxvYWRNZXRhZGF0YRIXCgdwYXJ0X2lkGAEgASgJUgZwYXJ0SWQSJQoOY29tcG9uZW50X3'
     'R5cGUYAiABKAlSDWNvbXBvbmVudFR5cGUSJQoOY29tcG9uZW50X25hbWUYAyABKAlSDWNvbXBv'
     'bmVudE5hbWUSHwoLbWV0aG9kX25hbWUYBSABKAlSCm1ldGhvZE5hbWUSMgoEdHlwZRgGIAEoDj'
-    'IeLnZpYW0uYXBwLmRhdGFzeW5jLnYxLkRhdGFUeXBlUgR0eXBlEhsKCWZpbGVfbmFtZRgHIAEo'
-    'CVIIZmlsZU5hbWUSZwoRbWV0aG9kX3BhcmFtZXRlcnMYCCADKAsyOi52aWFtLmFwcC5kYXRhc3'
-    'luYy52MS5VcGxvYWRNZXRhZGF0YS5NZXRob2RQYXJhbWV0ZXJzRW50cnlSEG1ldGhvZFBhcmFt'
-    'ZXRlcnMSJQoOZmlsZV9leHRlbnNpb24YCSABKAlSDWZpbGVFeHRlbnNpb24SEgoEdGFncxgKIA'
-    'MoCVIEdGFncxIfCgtkYXRhc2V0X2lkcxgMIAMoCVIKZGF0YXNldElkcxIbCgltaW1lX3R5cGUY'
-    'DSABKAlSCG1pbWVUeXBlGlkKFU1ldGhvZFBhcmFtZXRlcnNFbnRyeRIQCgNrZXkYASABKAlSA2'
-    'tleRIqCgV2YWx1ZRgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlSBXZhbHVlOgI4AUoECAQQ'
-    'BUoECAsQDFIPY29tcG9uZW50X21vZGVsUgpzZXNzaW9uX2lk');
+    'IeLnZpYW0uYXBwLmRhdGFzeW5jLnYxLkRhdGFUeXBlUgR0eXBlEmcKEW1ldGhvZF9wYXJhbWV0'
+    'ZXJzGAggAygLMjoudmlhbS5hcHAuZGF0YXN5bmMudjEuVXBsb2FkTWV0YWRhdGEuTWV0aG9kUG'
+    'FyYW1ldGVyc0VudHJ5UhBtZXRob2RQYXJhbWV0ZXJzEhsKCWZpbGVfbmFtZRgHIAEoCVIIZmls'
+    'ZU5hbWUSJQoOZmlsZV9leHRlbnNpb24YCSABKAlSDWZpbGVFeHRlbnNpb24SRAoQZmlsZV9jcm'
+    'VhdGVfdGltZRgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDmZpbGVDcmVhdGVU'
+    'aW1lEkQKEGZpbGVfbW9kaWZ5X3RpbWUYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW'
+    '1wUg5maWxlTW9kaWZ5VGltZRISCgR0YWdzGAogAygJUgR0YWdzEh8KC2RhdGFzZXRfaWRzGAwg'
+    'AygJUgpkYXRhc2V0SWRzEhsKCW1pbWVfdHlwZRgNIAEoCVIIbWltZVR5cGUaWQoVTWV0aG9kUG'
+    'FyYW1ldGVyc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EioKBXZhbHVlGAIgASgLMhQuZ29vZ2xl'
+    'LnByb3RvYnVmLkFueVIFdmFsdWU6AjgBSgQIBBAFSgQICxAMUg9jb21wb25lbnRfbW9kZWxSCn'
+    'Nlc3Npb25faWQ=');
 
 @$core.Deprecated('Use captureIntervalDescriptor instead')
 const CaptureInterval$json = {

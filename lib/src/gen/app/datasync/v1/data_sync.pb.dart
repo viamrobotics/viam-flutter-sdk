@@ -720,6 +720,8 @@ class UploadMetadata extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? tags,
     $core.Iterable<$core.String>? datasetIds,
     $core.String? mimeType,
+    $51.Timestamp? fileCreateTime,
+    $51.Timestamp? fileModifyTime,
   }) {
     final $result = create();
     if (partId != null) {
@@ -755,6 +757,12 @@ class UploadMetadata extends $pb.GeneratedMessage {
     if (mimeType != null) {
       $result.mimeType = mimeType;
     }
+    if (fileCreateTime != null) {
+      $result.fileCreateTime = fileCreateTime;
+    }
+    if (fileModifyTime != null) {
+      $result.fileModifyTime = fileModifyTime;
+    }
     return $result;
   }
   UploadMetadata._() : super();
@@ -773,6 +781,8 @@ class UploadMetadata extends $pb.GeneratedMessage {
     ..pPS(10, _omitFieldNames ? '' : 'tags')
     ..pPS(12, _omitFieldNames ? '' : 'datasetIds')
     ..aOS(13, _omitFieldNames ? '' : 'mimeType')
+    ..aOM<$51.Timestamp>(14, _omitFieldNames ? '' : 'fileCreateTime', subBuilder: $51.Timestamp.create)
+    ..aOM<$51.Timestamp>(15, _omitFieldNames ? '' : 'fileModifyTime', subBuilder: $51.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -877,6 +887,28 @@ class UploadMetadata extends $pb.GeneratedMessage {
   $core.bool hasMimeType() => $_has(10);
   @$pb.TagNumber(13)
   void clearMimeType() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $51.Timestamp get fileCreateTime => $_getN(11);
+  @$pb.TagNumber(14)
+  set fileCreateTime($51.Timestamp v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasFileCreateTime() => $_has(11);
+  @$pb.TagNumber(14)
+  void clearFileCreateTime() => clearField(14);
+  @$pb.TagNumber(14)
+  $51.Timestamp ensureFileCreateTime() => $_ensure(11);
+
+  @$pb.TagNumber(15)
+  $51.Timestamp get fileModifyTime => $_getN(12);
+  @$pb.TagNumber(15)
+  set fileModifyTime($51.Timestamp v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasFileModifyTime() => $_has(12);
+  @$pb.TagNumber(15)
+  void clearFileModifyTime() => clearField(15);
+  @$pb.TagNumber(15)
+  $51.Timestamp ensureFileModifyTime() => $_ensure(12);
 }
 
 /// CaptureInterval specifies the start and end times of the data capture.
