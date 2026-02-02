@@ -32,9 +32,9 @@ class ProvisioningClient {
   ///
   /// [id] is the RobotPart id
   /// [secret] is the RobotPart secret
-  /// [appAddress] is the cloud address that the robot will authenticate against
   /// [apiKeyId] is the API key ID for authentication
   /// [apiKey] is the API key value for authentication
+  /// [appAddress] is the cloud address that the robot will authenticate against
   Future<void> setSmartMachineCredentials({
     required String id,
     required String secret,
