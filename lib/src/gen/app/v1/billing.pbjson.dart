@@ -536,6 +536,95 @@ const UpdateOrganizationBillingTierResponse$json = {
 final $typed_data.Uint8List updateOrganizationBillingTierResponseDescriptor = $convert.base64Decode(
     'CiVVcGRhdGVPcmdhbml6YXRpb25CaWxsaW5nVGllclJlc3BvbnNl');
 
+@$core.Deprecated('Use getLocationBillingOrganizationRequestDescriptor instead')
+const GetLocationBillingOrganizationRequest$json = {
+  '1': 'GetLocationBillingOrganizationRequest',
+  '2': [
+    {'1': 'location_id', '3': 1, '4': 1, '5': 9, '10': 'locationId'},
+  ],
+};
+
+/// Descriptor for `GetLocationBillingOrganizationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLocationBillingOrganizationRequestDescriptor = $convert.base64Decode(
+    'CiVHZXRMb2NhdGlvbkJpbGxpbmdPcmdhbml6YXRpb25SZXF1ZXN0Eh8KC2xvY2F0aW9uX2lkGA'
+    'EgASgJUgpsb2NhdGlvbklk');
+
+@$core.Deprecated('Use getLocationBillingOrganizationResponseDescriptor instead')
+const GetLocationBillingOrganizationResponse$json = {
+  '1': 'GetLocationBillingOrganizationResponse',
+  '2': [
+    {'1': 'billing_organization_id', '3': 1, '4': 1, '5': 9, '10': 'billingOrganizationId'},
+  ],
+};
+
+/// Descriptor for `GetLocationBillingOrganizationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLocationBillingOrganizationResponseDescriptor = $convert.base64Decode(
+    'CiZHZXRMb2NhdGlvbkJpbGxpbmdPcmdhbml6YXRpb25SZXNwb25zZRI2ChdiaWxsaW5nX29yZ2'
+    'FuaXphdGlvbl9pZBgBIAEoCVIVYmlsbGluZ09yZ2FuaXphdGlvbklk');
+
+@$core.Deprecated('Use updateLocationBillingOrganizationRequestDescriptor instead')
+const UpdateLocationBillingOrganizationRequest$json = {
+  '1': 'UpdateLocationBillingOrganizationRequest',
+  '2': [
+    {'1': 'location_id', '3': 1, '4': 1, '5': 9, '10': 'locationId'},
+    {'1': 'billing_organization_id', '3': 2, '4': 1, '5': 9, '10': 'billingOrganizationId'},
+  ],
+};
+
+/// Descriptor for `UpdateLocationBillingOrganizationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateLocationBillingOrganizationRequestDescriptor = $convert.base64Decode(
+    'CihVcGRhdGVMb2NhdGlvbkJpbGxpbmdPcmdhbml6YXRpb25SZXF1ZXN0Eh8KC2xvY2F0aW9uX2'
+    'lkGAEgASgJUgpsb2NhdGlvbklkEjYKF2JpbGxpbmdfb3JnYW5pemF0aW9uX2lkGAIgASgJUhVi'
+    'aWxsaW5nT3JnYW5pemF0aW9uSWQ=');
+
+@$core.Deprecated('Use updateLocationBillingOrganizationResponseDescriptor instead')
+const UpdateLocationBillingOrganizationResponse$json = {
+  '1': 'UpdateLocationBillingOrganizationResponse',
+};
+
+/// Descriptor for `UpdateLocationBillingOrganizationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateLocationBillingOrganizationResponseDescriptor = $convert.base64Decode(
+    'CilVcGRhdGVMb2NhdGlvbkJpbGxpbmdPcmdhbml6YXRpb25SZXNwb25zZQ==');
+
+@$core.Deprecated('Use chargeOrganizationRequestDescriptor instead')
+const ChargeOrganizationRequest$json = {
+  '1': 'ChargeOrganizationRequest',
+  '2': [
+    {'1': 'org_id_to_charge', '3': 1, '4': 1, '5': 9, '10': 'orgIdToCharge'},
+    {'1': 'description', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'description', '17': true},
+    {'1': 'subtotal', '3': 3, '4': 1, '5': 1, '10': 'subtotal'},
+    {'1': 'tax', '3': 4, '4': 1, '5': 1, '10': 'tax'},
+    {'1': 'org_id_for_branding', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'orgIdForBranding', '17': true},
+    {'1': 'disable_confirmation_email', '3': 6, '4': 1, '5': 8, '10': 'disableConfirmationEmail'},
+  ],
+  '8': [
+    {'1': '_description'},
+    {'1': '_org_id_for_branding'},
+  ],
+};
+
+/// Descriptor for `ChargeOrganizationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List chargeOrganizationRequestDescriptor = $convert.base64Decode(
+    'ChlDaGFyZ2VPcmdhbml6YXRpb25SZXF1ZXN0EicKEG9yZ19pZF90b19jaGFyZ2UYASABKAlSDW'
+    '9yZ0lkVG9DaGFyZ2USJQoLZGVzY3JpcHRpb24YAiABKAlIAFILZGVzY3JpcHRpb26IAQESGgoI'
+    'c3VidG90YWwYAyABKAFSCHN1YnRvdGFsEhAKA3RheBgEIAEoAVIDdGF4EjIKE29yZ19pZF9mb3'
+    'JfYnJhbmRpbmcYBSABKAlIAVIQb3JnSWRGb3JCcmFuZGluZ4gBARI8ChpkaXNhYmxlX2NvbmZp'
+    'cm1hdGlvbl9lbWFpbBgGIAEoCFIYZGlzYWJsZUNvbmZpcm1hdGlvbkVtYWlsQg4KDF9kZXNjcm'
+    'lwdGlvbkIWChRfb3JnX2lkX2Zvcl9icmFuZGluZw==');
+
+@$core.Deprecated('Use chargeOrganizationResponseDescriptor instead')
+const ChargeOrganizationResponse$json = {
+  '1': 'ChargeOrganizationResponse',
+  '2': [
+    {'1': 'invoice_id', '3': 1, '4': 1, '5': 9, '10': 'invoiceId'},
+  ],
+};
+
+/// Descriptor for `ChargeOrganizationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List chargeOrganizationResponseDescriptor = $convert.base64Decode(
+    'ChpDaGFyZ2VPcmdhbml6YXRpb25SZXNwb25zZRIdCgppbnZvaWNlX2lkGAEgASgJUglpbnZvaW'
+    'NlSWQ=');
+
 @$core.Deprecated('Use createInvoiceAndChargeImmediatelyRequestDescriptor instead')
 const CreateInvoiceAndChargeImmediatelyRequest$json = {
   '1': 'CreateInvoiceAndChargeImmediatelyRequest',

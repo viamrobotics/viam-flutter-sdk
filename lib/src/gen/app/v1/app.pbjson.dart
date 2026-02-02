@@ -373,9 +373,11 @@ const Organization$json = {
     {'1': 'public_namespace', '3': 4, '4': 1, '5': 9, '10': 'publicNamespace'},
     {'1': 'default_region', '3': 5, '4': 1, '5': 9, '10': 'defaultRegion'},
     {'1': 'cid', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'cid', '17': true},
+    {'1': 'default_fragments', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.FragmentImportList', '9': 1, '10': 'defaultFragments', '17': true},
   ],
   '8': [
     {'1': '_cid'},
+    {'1': '_default_fragments'},
   ],
 };
 
@@ -384,7 +386,9 @@ final $typed_data.Uint8List organizationDescriptor = $convert.base64Decode(
     'CgxPcmdhbml6YXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSOQoKY3'
     'JlYXRlZF9vbhgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRPbhIp'
     'ChBwdWJsaWNfbmFtZXNwYWNlGAQgASgJUg9wdWJsaWNOYW1lc3BhY2USJQoOZGVmYXVsdF9yZW'
-    'dpb24YBSABKAlSDWRlZmF1bHRSZWdpb24SFQoDY2lkGAYgASgJSABSA2NpZIgBAUIGCgRfY2lk');
+    'dpb24YBSABKAlSDWRlZmF1bHRSZWdpb24SFQoDY2lkGAYgASgJSABSA2NpZIgBARJRChFkZWZh'
+    'dWx0X2ZyYWdtZW50cxgHIAEoCzIfLnZpYW0uYXBwLnYxLkZyYWdtZW50SW1wb3J0TGlzdEgBUh'
+    'BkZWZhdWx0RnJhZ21lbnRziAEBQgYKBF9jaWRCFAoSX2RlZmF1bHRfZnJhZ21lbnRz');
 
 @$core.Deprecated('Use organizationMemberDescriptor instead')
 const OrganizationMember$json = {
@@ -4181,6 +4185,7 @@ const GetAppContentResponse$json = {
     {'1': 'blob_path', '3': 1, '4': 1, '5': 9, '10': 'blobPath'},
     {'1': 'entrypoint', '3': 2, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'app_type', '3': 3, '4': 1, '5': 14, '6': '.viam.app.v1.AppType', '10': 'appType'},
+    {'1': 'public', '3': 4, '4': 1, '5': 8, '10': 'public'},
   ],
 };
 
@@ -4188,7 +4193,7 @@ const GetAppContentResponse$json = {
 final $typed_data.Uint8List getAppContentResponseDescriptor = $convert.base64Decode(
     'ChVHZXRBcHBDb250ZW50UmVzcG9uc2USGwoJYmxvYl9wYXRoGAEgASgJUghibG9iUGF0aBIeCg'
     'plbnRyeXBvaW50GAIgASgJUgplbnRyeXBvaW50Ei8KCGFwcF90eXBlGAMgASgOMhQudmlhbS5h'
-    'cHAudjEuQXBwVHlwZVIHYXBwVHlwZQ==');
+    'cHAudjEuQXBwVHlwZVIHYXBwVHlwZRIWCgZwdWJsaWMYBCABKAhSBnB1YmxpYw==');
 
 @$core.Deprecated('Use organizationSetLogoRequestDescriptor instead')
 const OrganizationSetLogoRequest$json = {
