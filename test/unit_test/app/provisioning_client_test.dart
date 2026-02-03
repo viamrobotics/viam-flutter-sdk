@@ -33,7 +33,12 @@ void main() {
     test('setSmartMachineCredentials', () async {
       final expected = SetSmartMachineCredentialsResponse();
       when(serviceClient.setSmartMachineCredentials(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      await provisioningClient.setSmartMachineCredentials(id: 'fake-id', secret: 'fake-secret');
+      await provisioningClient.setSmartMachineCredentials(
+        id: 'fake-id',
+        secret: 'fake-secret',
+        apiKeyId: 'fake-api-key-id',
+        apiKey: 'fake-api-key',
+      );
       verify(serviceClient.setSmartMachineCredentials(any)).called(1);
     });
 
