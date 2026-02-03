@@ -1,11 +1,13 @@
 # Changelog
 
-## [v0.16.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.16.0) (2026-01-26)
+## [v0.17.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.17.0) (2026-02-03)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.15.2...v0.16.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.16.0...v0.17.0)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#490](https://github.com/viamrobotics/viam-flutter-sdk/pull/490) ([viambot](https://github.com/viambot))
+- v0.16.0 [\#489](https://github.com/viamrobotics/viam-flutter-sdk/pull/489) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-13121: update protos [\#487](https://github.com/viamrobotics/viam-flutter-sdk/pull/487) ([nfranczak](https://github.com/nfranczak))
 - v0.15.2 [\#486](https://github.com/viamrobotics/viam-flutter-sdk/pull/486) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#484](https://github.com/viamrobotics/viam-flutter-sdk/pull/484) ([viambot](https://github.com/viambot))
@@ -190,6 +192,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.16.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.16.0) (2026-01-26)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.15.2...v0.16.0)
 
 ## [v0.15.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.15.2) (2026-01-20)
 
@@ -449,7 +455,7 @@
 - RSDK-6463: Add updateRobotPart [\#174](https://github.com/viamrobotics/viam-flutter-sdk/pull/174) ([mcvella](https://github.com/mcvella))
 - v0.0.10 [\#173](https://github.com/viamrobotics/viam-flutter-sdk/pull/173) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#172](https://github.com/viamrobotics/viam-flutter-sdk/pull/172) ([github-actions[bot]](https://github.com/apps/github-actions))
-- RSDK-6122: getAccuracy [\#170](https://github.com/viamrobotics/viam-flutter-sdk/pull/170) ([susmitaSanyal](https://github.com/susmitaSanyal))
+- RSDK-6122: getAccuracy [\#170](https://github.com/viamrobotics/viam-flutter-sdk/pull/170) ([susWorld](https://github.com/susWorld))
 - Automated Protos Update [\#169](https://github.com/viamrobotics/viam-flutter-sdk/pull/169) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-5424 - fix video stream on flutter web [\#168](https://github.com/viamrobotics/viam-flutter-sdk/pull/168) ([clintpurser](https://github.com/clintpurser))
 - RSDK-4602 - add extra params to camera [\#167](https://github.com/viamrobotics/viam-flutter-sdk/pull/167) ([mcvella](https://github.com/mcvella))
