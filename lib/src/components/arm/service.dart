@@ -95,8 +95,9 @@ class ArmService extends ArmServiceBase {
   }
 
   @override
-  Future<MoveThroughJointPositionsResponse> moveThroughJointPositions(ServiceCall call, MoveThroughJointPositionsRequest request) {
-    // TODO: implement moveThroughJointPositions
-    throw UnimplementedError();
+  Future<MoveThroughJointPositionsResponse> moveThroughJointPositions(ServiceCall call, MoveThroughJointPositionsRequest request) async {
+    final arm = _armFromManager(request.name);
+    await arm.moveThroughJointPositions(request.positions, options: request.hasOptions() ? request.options : null, extra: request.extra.toMap());
+    return MoveThroughJointPositionsResponse();
   }
 }
