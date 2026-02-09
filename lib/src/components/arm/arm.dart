@@ -49,6 +49,23 @@ abstract class Arm extends Resource {
   /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#movetojointpositions).
   Future<void> moveToJointPositions(List<double> positions, {Map<String, dynamic>? extra});
 
+  /// Move the arm through a series of [positions] with optional [options].
+  ///
+  /// ```
+  /// // Create a list of joint angles for each arm joint
+  /// List<double> targetPositions1 = [180, 90, 15.75, 30, 90, 0];
+  /// List<double> targetPositions2 = [0, 0, 0, 0, 0, 0];
+  ///
+  /// // Create MoveOptions with per-joint velocities
+  /// final options = MoveOptions(maxVelDegsPerSecJoints: [10, 20, 30, 40, 50, 60]);
+  ///
+  /// // Move the arm through the joint positions
+  /// await myArm.moveThroughJointPositions([JointPositions()..values.addAll(targetPositions1), JointPositions()..values.addAll(targetPositions2)], options: options);
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#movethroughjointpositions).
+  Future<void> moveThroughJointPositions(List<JointPositions> positions, {MoveOptions? options, Map<String, dynamic>? extra});
+
   /// Get the [List] of current joint angles of each arm joint
   ///
   /// ```

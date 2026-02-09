@@ -58,6 +58,16 @@ class ArmClient extends Arm with RPCDebugLoggerMixin implements ResourceRPCClien
   }
 
   @override
+  Future<void> moveThroughJointPositions(List<JointPositions> positions, {MoveOptions? options, Map<String, dynamic>? extra}) async {
+    final request = MoveThroughJointPositionsRequest()
+      ..name = name
+      ..positions.addAll(positions)
+      ..options = options ?? MoveOptions()
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.moveThroughJointPositions(request, options: callOptions);
+  }
+
+  @override
   Future<List<double>> jointPositions({Map<String, dynamic>? extra}) async {
     final request = GetJointPositionsRequest()
       ..name = name

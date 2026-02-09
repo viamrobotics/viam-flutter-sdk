@@ -16,6 +16,8 @@ class FakeArm extends Arm {
     ..x = 0
     ..y = 0
     ..z = 0;
+  List<JointPositions> armMoveThroughJointPositions = [];
+  MoveOptions? armMoveThroughOptions;
   Map<String, dynamic>? extra;
   Map<String, Mesh> arm3DModels = {};
   Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
@@ -77,6 +79,14 @@ class FakeArm extends Arm {
   }
 
   @override
+  Future<void> moveThroughJointPositions(List<JointPositions> positions, {MoveOptions? options, Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    armMoveThroughJointPositions = positions;
+    armMoveThroughOptions = options;
+    isStopped = false;
+  }
+
+  @override
   Future<Map<String, Mesh>> get3DModels({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return arm3DModels;
@@ -134,6 +144,18 @@ void main() {
         ..z = 1;
       await arm.moveToPosition(expected);
       expect(arm.armEndPosition, expected);
+    });
+
+    test('moveThroughJointPositions', () async {
+      final expectedPositions = [
+        JointPositions()..values.addAll([1.0, 2.0, 3.0]),
+        JointPositions()..values.addAll([4.0, 5.0, 6.0]),
+      ];
+      final expectedOptions = MoveOptions(maxVelDegsPerSecJoints: [10.0, 20.0, 30.0]);
+      await arm.moveThroughJointPositions(expectedPositions, options: expectedOptions);
+      expect(arm.armMoveThroughJointPositions, expectedPositions);
+      expect(arm.armMoveThroughOptions, expectedOptions);
+      expect(arm.isStopped, false);
     });
 
     test('stop', () async {
@@ -263,6 +285,23 @@ void main() {
         expect(arm.armEndPosition, expected);
       });
 
+      test('moveThroughJointPositions', () async {
+        final client = ArmServiceClient(channel);
+        final expectedPositions = [
+          JointPositions()..values.addAll([1.0, 2.0, 3.0]),
+          JointPositions()..values.addAll([4.0, 5.0, 6.0]),
+        ];
+        final expectedOptions = MoveOptions(maxVelDegsPerSecJoints: [10.0, 20.0, 30.0]);
+        final request = MoveThroughJointPositionsRequest()
+          ..name = name
+          ..positions.addAll(expectedPositions)
+          ..options = expectedOptions;
+        await client.moveThroughJointPositions(request);
+        expect(arm.armMoveThroughJointPositions, expectedPositions);
+        expect(arm.armMoveThroughOptions, expectedOptions);
+        expect(arm.isStopped, false);
+      });
+
       test('stop', () async {
         final client = ArmServiceClient(channel);
         final request = StopRequest()..name = name;
@@ -377,6 +416,19 @@ void main() {
           ..z = 1;
         await client.moveToPosition(expected);
         expect(arm.armEndPosition, expected);
+      });
+
+      test('moveThroughJointPositions', () async {
+        final client = ArmClient(name, channel);
+        final expectedPositions = [
+          JointPositions()..values.addAll([1.0, 2.0, 3.0]),
+          JointPositions()..values.addAll([4.0, 5.0, 6.0]),
+        ];
+        final expectedOptions = MoveOptions(maxVelDegsPerSecJoints: [10.0, 20.0, 30.0]);
+        await client.moveThroughJointPositions(expectedPositions, options: expectedOptions);
+        expect(arm.armMoveThroughJointPositions, expectedPositions);
+        expect(arm.armMoveThroughOptions, expectedOptions);
+        expect(arm.isStopped, false);
       });
 
       test('stop', () async {
