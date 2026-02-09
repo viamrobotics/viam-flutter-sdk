@@ -955,6 +955,8 @@ class MoveOptions extends $pb.GeneratedMessage {
   factory MoveOptions({
     $core.double? maxVelDegsPerSec,
     $core.double? maxAccDegsPerSec2,
+    $core.Iterable<$core.double>? maxVelDegsPerSecJoints,
+    $core.Iterable<$core.double>? maxAccDegsPerSec2Joints,
   }) {
     final $result = create();
     if (maxVelDegsPerSec != null) {
@@ -962,6 +964,12 @@ class MoveOptions extends $pb.GeneratedMessage {
     }
     if (maxAccDegsPerSec2 != null) {
       $result.maxAccDegsPerSec2 = maxAccDegsPerSec2;
+    }
+    if (maxVelDegsPerSecJoints != null) {
+      $result.maxVelDegsPerSecJoints.addAll(maxVelDegsPerSecJoints);
+    }
+    if (maxAccDegsPerSec2Joints != null) {
+      $result.maxAccDegsPerSec2Joints.addAll(maxAccDegsPerSec2Joints);
     }
     return $result;
   }
@@ -972,6 +980,8 @@ class MoveOptions extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOptions', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..a<$core.double>(1, _omitFieldNames ? '' : 'maxVelDegsPerSec', $pb.PbFieldType.OD)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'maxAccDegsPerSec2', $pb.PbFieldType.OD)
+    ..p<$core.double>(3, _omitFieldNames ? '' : 'maxVelDegsPerSecJoints', $pb.PbFieldType.KD)
+    ..p<$core.double>(4, _omitFieldNames ? '' : 'maxAccDegsPerSec2Joints', $pb.PbFieldType.KD)
     ..hasRequiredFields = false
   ;
 
@@ -996,7 +1006,8 @@ class MoveOptions extends $pb.GeneratedMessage {
   static MoveOptions getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOptions>(create);
   static MoveOptions? _defaultInstance;
 
-  /// Maximum allowable velocity of an arm joint, in degrees per second
+  /// Maximum allowable velocity of an arm joint, in degrees per second.
+  /// Ignored when max_vel_degs_per_sec_joints is set.
   @$pb.TagNumber(1)
   $core.double get maxVelDegsPerSec => $_getN(0);
   @$pb.TagNumber(1)
@@ -1006,7 +1017,8 @@ class MoveOptions extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearMaxVelDegsPerSec() => clearField(1);
 
-  /// Maximum allowable acceleration of an arm joint, in degrees per second squared
+  /// Maximum allowable acceleration of an arm joint, in degrees per second squared.
+  /// ignored when max_acc_degs_per_sec2_joints is set.
   @$pb.TagNumber(2)
   $core.double get maxAccDegsPerSec2 => $_getN(1);
   @$pb.TagNumber(2)
@@ -1015,6 +1027,14 @@ class MoveOptions extends $pb.GeneratedMessage {
   $core.bool hasMaxAccDegsPerSec2() => $_has(1);
   @$pb.TagNumber(2)
   void clearMaxAccDegsPerSec2() => clearField(2);
+
+  /// Per-joint maximum velocity in degrees per second.
+  @$pb.TagNumber(3)
+  $core.List<$core.double> get maxVelDegsPerSecJoints => $_getList(2);
+
+  /// Per-joint maximum acceleration in degrees per second squared.
+  @$pb.TagNumber(4)
+  $core.List<$core.double> get maxAccDegsPerSec2Joints => $_getList(3);
 }
 
 
