@@ -230,6 +230,8 @@ const MoveOptions$json = {
   '2': [
     {'1': 'max_vel_degs_per_sec', '3': 1, '4': 1, '5': 1, '9': 0, '10': 'maxVelDegsPerSec', '17': true},
     {'1': 'max_acc_degs_per_sec2', '3': 2, '4': 1, '5': 1, '9': 1, '10': 'maxAccDegsPerSec2', '17': true},
+    {'1': 'max_vel_degs_per_sec_joints', '3': 3, '4': 3, '5': 1, '10': 'maxVelDegsPerSecJoints'},
+    {'1': 'max_acc_degs_per_sec2_joints', '3': 4, '4': 3, '5': 1, '10': 'maxAccDegsPerSec2Joints'},
   ],
   '8': [
     {'1': '_max_vel_degs_per_sec'},
@@ -241,6 +243,8 @@ const MoveOptions$json = {
 final $typed_data.Uint8List moveOptionsDescriptor = $convert.base64Decode(
     'CgtNb3ZlT3B0aW9ucxIzChRtYXhfdmVsX2RlZ3NfcGVyX3NlYxgBIAEoAUgAUhBtYXhWZWxEZW'
     'dzUGVyU2VjiAEBEjUKFW1heF9hY2NfZGVnc19wZXJfc2VjMhgCIAEoAUgBUhFtYXhBY2NEZWdz'
-    'UGVyU2VjMogBAUIXChVfbWF4X3ZlbF9kZWdzX3Blcl9zZWNCGAoWX21heF9hY2NfZGVnc19wZX'
-    'Jfc2VjMg==');
+    'UGVyU2VjMogBARI7ChttYXhfdmVsX2RlZ3NfcGVyX3NlY19qb2ludHMYAyADKAFSFm1heFZlbE'
+    'RlZ3NQZXJTZWNKb2ludHMSPQocbWF4X2FjY19kZWdzX3Blcl9zZWMyX2pvaW50cxgEIAMoAVIX'
+    'bWF4QWNjRGVnc1BlclNlYzJKb2ludHNCFwoVX21heF92ZWxfZGVnc19wZXJfc2VjQhgKFl9tYX'
+    'hfYWNjX2RlZ3NfcGVyX3NlYzI=');
 
