@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="MoveOptions.new" class="callable">
-          <span class="name"><a href="../viam_protos.component.arm/MoveOptions/MoveOptions.html">MoveOptions</a></span><span class="signature">({<span class="parameter" id="-param-maxVelDegsPerSec"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxVelDegsPerSec</span>, </span><span class="parameter" id="-param-maxAccDegsPerSec2"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxAccDegsPerSec2</span></span>})</span>
+          <span class="name"><a href="../viam_protos.component.arm/MoveOptions/MoveOptions.html">MoveOptions</a></span><span class="signature">({<span class="parameter" id="-param-maxVelDegsPerSec"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxVelDegsPerSec</span>, </span><span class="parameter" id="-param-maxAccDegsPerSec2"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxAccDegsPerSec2</span>, </span><span class="parameter" id="-param-maxVelDegsPerSecJoints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">maxVelDegsPerSecJoints</span>, </span><span class="parameter" id="-param-maxAccDegsPerSec2Joints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">maxAccDegsPerSec2Joints</span></span>})</span>
         </dt>
         <dd>
           
@@ -171,8 +171,21 @@ to protobuf fields.
 
 </dt>
 <dd>
-  Maximum allowable acceleration of an arm joint, in degrees per second squared
+  Maximum allowable acceleration of an arm joint, in degrees per second squared.
+ignored when max_acc_degs_per_sec2_joints is set.
   <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="maxAccDegsPerSec2Joints" class="property">
+  <span class="name"><a href="../viam_protos.component.arm/MoveOptions/maxAccDegsPerSec2Joints.html">maxAccDegsPerSec2Joints</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Per-joint maximum acceleration in degrees per second squared.
+  <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 
@@ -183,8 +196,21 @@ to protobuf fields.
 
 </dt>
 <dd>
-  Maximum allowable velocity of an arm joint, in degrees per second
+  Maximum allowable velocity of an arm joint, in degrees per second.
+Ignored when max_vel_degs_per_sec_joints is set.
   <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="maxVelDegsPerSecJoints" class="property">
+  <span class="name"><a href="../viam_protos.component.arm/MoveOptions/maxVelDegsPerSecJoints.html">maxVelDegsPerSecJoints</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Per-joint maximum velocity in degrees per second.
+  <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 

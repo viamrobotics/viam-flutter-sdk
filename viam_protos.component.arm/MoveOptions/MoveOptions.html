@@ -56,6 +56,8 @@
       
       <span class="name ">MoveOptions</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-maxVelDegsPerSec"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxVelDegsPerSec</span>, </span></li>
 <li><span class="parameter" id="-param-maxAccDegsPerSec2"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxAccDegsPerSec2</span>, </span></li>
+<li><span class="parameter" id="-param-maxVelDegsPerSecJoints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">maxVelDegsPerSecJoints</span>, </span></li>
+<li><span class="parameter" id="-param-maxAccDegsPerSec2Joints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">maxAccDegsPerSec2Joints</span>, </span></li>
 </ol>})
     </section>
     
@@ -67,6 +69,8 @@
   <pre class="language-dart"><code class="language-dart">factory MoveOptions({
   $core.double? maxVelDegsPerSec,
   $core.double? maxAccDegsPerSec2,
+  $core.Iterable&lt;$core.double&gt;? maxVelDegsPerSecJoints,
+  $core.Iterable&lt;$core.double&gt;? maxAccDegsPerSec2Joints,
 }) {
   final $result = create();
   if (maxVelDegsPerSec != null) {
@@ -74,6 +78,12 @@
   }
   if (maxAccDegsPerSec2 != null) {
     $result.maxAccDegsPerSec2 = maxAccDegsPerSec2;
+  }
+  if (maxVelDegsPerSecJoints != null) {
+    $result.maxVelDegsPerSecJoints.addAll(maxVelDegsPerSecJoints);
+  }
+  if (maxAccDegsPerSec2Joints != null) {
+    $result.maxAccDegsPerSec2Joints.addAll(maxAccDegsPerSec2Joints);
   }
   return $result;
 }</code></pre>
