@@ -31,9 +31,7 @@ class SessionsClient implements ResourceRPCClient {
   Duration _heartbeatInterval = Duration(seconds: 1);
   final String _host;
 
-  SessionsClient(this.channel, this._enabled, this._host) {
-    metadata();
-  }
+  SessionsClient(this.channel, this._enabled, this._host);
 
   /// Retrieve metadata associated with the session (e.g. whether sessions are supported, the current ID of the session)
   Future<String> metadata() async {
