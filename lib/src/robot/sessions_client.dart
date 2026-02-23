@@ -75,7 +75,6 @@ class SessionsClient implements ResourceRPCClient {
     _currentId = '';
     _supported = null;
     await metadata();
-    await _heartbeatTask();
     await _applyHeartbeatMonitoredMethods();
   }
 
@@ -89,7 +88,9 @@ class SessionsClient implements ResourceRPCClient {
 
   /// Start the session client
   void start() {
-    reset();
+    reset().then((_) {
+      _heartbeatTask();
+    });
   }
 
   Future<void> _heartbeatTask() async {
