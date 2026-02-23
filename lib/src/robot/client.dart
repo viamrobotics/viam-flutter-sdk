@@ -207,14 +207,14 @@ class RobotClient {
         _channel = channel;
         _streamManager.channel = _channel as WebRtcClientChannel;
         _client = client;
-        _sessionsClient = SessionsClient(_channel, _options.enableSessions, this._address);
+        _sessionsClient = SessionsClient(_channel, _options.enableSessions, _address);
         await refresh();
         _connected = true;
         _logger.i('Successfully reconnected to robot');
         _startCheckConnectionTask();
       } catch (e) {
         await _channel.shutdown();
-        _sessionsClient.reset();
+        await _sessionsClient.reset();
         if (!_shouldAttemptReconnection) {
           _logger.i('Failed to reconnect. No more attempts to reconnect will be made.');
           break;

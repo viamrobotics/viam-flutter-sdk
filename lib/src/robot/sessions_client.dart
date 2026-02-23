@@ -62,21 +62,21 @@ class SessionsClient implements ResourceRPCClient {
         _supported = false;
       } else {
         _logger.e('Error starting session: $e');
-        reset();
+        await reset();
       }
       return '';
     }
   }
 
   /// Reset the current session and re-obtain metadata
-  void reset() {
+  Future<void> reset() async {
     if (!_enabled) return;
     _logger.d('Resetting current session with ID: $_currentId');
     _currentId = '';
     _supported = null;
-    metadata();
-    _heartbeatTask();
-    _applyHeartbeatMonitoredMethods();
+    await metadata();
+    await _heartbeatTask();
+    await _applyHeartbeatMonitoredMethods();
   }
 
   /// Stop the session client and heartbeat tasks
@@ -110,7 +110,7 @@ class SessionsClient implements ResourceRPCClient {
       await client.sendSessionHeartbeat(request);
     } on GrpcError catch (e) {
       _logger.d('Session terminated: $e');
-      reset();
+      await reset();
     }
   }
 
