@@ -36,7 +36,7 @@ class SessionsClient implements ResourceRPCClient {
   }
 
   /// Retrieve metadata associated with the session (e.g. whether sessions are supported, the current ID of the session)
-  String metadata() {
+  Future<String> metadata() async {
     if (!_enabled) return '';
     if (_supported == false) return '';
 
@@ -44,37 +44,28 @@ class SessionsClient implements ResourceRPCClient {
 
     final request = StartSessionRequest();
     try {
-      final future = client.startSession(request);
+      final response = await client.startSession(request);
 
-      future.then(
-        (response) {
-          _supported = true;
-          _currentId = response.id;
+      _supported = true;
+      _currentId = response.id;
 
-          // We send heartbeats slightly faster than the interval window to
-          // ensure that we don't fall outside of it and expire the session.
-          _heartbeatInterval = Duration(
-            seconds: response.heartbeatWindow.seconds.toInt() ~/ 1.8,
-            microseconds: response.heartbeatWindow.nanos ~/ 1.8,
-          );
-
-          return _currentId;
-        },
-        onError: (error, _) {
-          if (error is GrpcError && error.code == Code.UNIMPLEMENTED.value) {
-            _supported = false;
-          } else {
-            _logger.e('Error starting session: $error');
-          }
-          return '';
-        },
+      // We send heartbeats slightly faster than the interval window to
+      // ensure that we don't fall outside of it and expire the session.
+      _heartbeatInterval = Duration(
+        seconds: response.heartbeatWindow.seconds.toInt() ~/ 1.8,
+        microseconds: response.heartbeatWindow.nanos ~/ 1.8,
       );
-    } catch (e) {
-      _logger.e('Error starting session: $e');
-      reset();
-    }
 
-    return '';
+      return _currentId;
+    } catch (e) {
+      if (e is GrpcError && e.code == Code.UNIMPLEMENTED.value) {
+        _supported = false;
+      } else {
+        _logger.e('Error starting session: $e');
+        reset();
+      }
+      return '';
+    }
   }
 
   /// Reset the current session and re-obtain metadata

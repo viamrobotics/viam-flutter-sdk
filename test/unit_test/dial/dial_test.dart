@@ -22,7 +22,7 @@ void main() {
       final output = TestLogOutput();
       final dialOpts = DialOptions()..logOutput = output;
       // Dial to arbitrary address and assert that logs get redirected to TestLogOutput.
-      dial('foo', dialOpts, () => '');
+      dial('foo', dialOpts, () async => '');
 
       final events = output.outputtedEvents();
       expect(events.isNotEmpty, true);

@@ -9,7 +9,7 @@ import 'web_rtc_client_connection.dart';
 class WebRtcClientChannel extends ClientChannelBase {
   final RTCPeerConnection rtcPeerConnection;
   final RTCDataChannel dataChannel;
-  final String Function() _sessionId;
+  final String _sessionId;
   final List<Function(RTCDataChannelMessage data)> onMessageListeners = [];
 
   WebRtcClientChannel(this.rtcPeerConnection, this.dataChannel, this._sessionId) {
@@ -30,7 +30,7 @@ class WebRtcClientChannel extends ClientChannelBase {
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
     if (SessionsClient.heartbeatMonitoredMethods[method.path] ?? false) {
-      final sessionMetadata = _sessionId();
+      final sessionMetadata = _sessionId;
       if (sessionMetadata.isNotEmpty) {
         options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: sessionMetadata}));
       }

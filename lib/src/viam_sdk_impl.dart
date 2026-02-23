@@ -68,7 +68,7 @@ class ViamImpl implements Viam {
         ..credentials = Credentials.apiKey(apiKey)
         ..attemptMdns = false
         ..webRtcOptions = (DialWebRtcOptions()..disable = true),
-      () => '',
+      () async => '',
     );
     return ViamImpl._withChannel(channel);
   }
