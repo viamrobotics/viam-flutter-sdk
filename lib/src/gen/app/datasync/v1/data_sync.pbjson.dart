@@ -163,7 +163,15 @@ const SensorMetadata$json = {
   '2': [
     {'1': 'time_requested', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeRequested'},
     {'1': 'time_received', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeReceived'},
-    {'1': 'mime_type', '3': 3, '4': 1, '5': 14, '6': '.viam.app.datasync.v1.MimeType', '10': 'mimeType'},
+    {
+      '1': 'mime_type',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.viam.app.datasync.v1.MimeType',
+      '8': {'3': true},
+      '10': 'mimeType',
+    },
     {'1': 'annotations', '3': 4, '4': 1, '5': 11, '6': '.viam.app.data.v1.Annotations', '10': 'annotations'},
   ],
 };
@@ -172,9 +180,10 @@ const SensorMetadata$json = {
 final $typed_data.Uint8List sensorMetadataDescriptor = $convert.base64Decode(
     'Cg5TZW5zb3JNZXRhZGF0YRJBCg50aW1lX3JlcXVlc3RlZBgBIAEoCzIaLmdvb2dsZS5wcm90b2'
     'J1Zi5UaW1lc3RhbXBSDXRpbWVSZXF1ZXN0ZWQSPwoNdGltZV9yZWNlaXZlZBgCIAEoCzIaLmdv'
-    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDHRpbWVSZWNlaXZlZBI7CgltaW1lX3R5cGUYAyABKA'
-    '4yHi52aWFtLmFwcC5kYXRhc3luYy52MS5NaW1lVHlwZVIIbWltZVR5cGUSPwoLYW5ub3RhdGlv'
-    'bnMYBCABKAsyHS52aWFtLmFwcC5kYXRhLnYxLkFubm90YXRpb25zUgthbm5vdGF0aW9ucw==');
+    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDHRpbWVSZWNlaXZlZBI/CgltaW1lX3R5cGUYAyABKA'
+    '4yHi52aWFtLmFwcC5kYXRhc3luYy52MS5NaW1lVHlwZUICGAFSCG1pbWVUeXBlEj8KC2Fubm90'
+    'YXRpb25zGAQgASgLMh0udmlhbS5hcHAuZGF0YS52MS5Bbm5vdGF0aW9uc1ILYW5ub3RhdGlvbn'
+    'M=');
 
 @$core.Deprecated('Use sensorDataDescriptor instead')
 const SensorData$json = {
@@ -286,6 +295,7 @@ const DataCaptureMetadata$json = {
     {'1': 'method_parameters', '3': 6, '4': 3, '5': 11, '6': '.viam.app.datasync.v1.DataCaptureMetadata.MethodParametersEntry', '10': 'methodParameters'},
     {'1': 'file_extension', '3': 7, '4': 1, '5': 9, '10': 'fileExtension'},
     {'1': 'tags', '3': 8, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'mime_type', '3': 10, '4': 1, '5': 9, '10': 'mimeType'},
   ],
   '3': [DataCaptureMetadata_MethodParametersEntry$json],
   '9': [
@@ -313,9 +323,10 @@ final $typed_data.Uint8List dataCaptureMetadataDescriptor = $convert.base64Decod
     '52MS5EYXRhVHlwZVIEdHlwZRJsChFtZXRob2RfcGFyYW1ldGVycxgGIAMoCzI/LnZpYW0uYXBw'
     'LmRhdGFzeW5jLnYxLkRhdGFDYXB0dXJlTWV0YWRhdGEuTWV0aG9kUGFyYW1ldGVyc0VudHJ5Uh'
     'BtZXRob2RQYXJhbWV0ZXJzEiUKDmZpbGVfZXh0ZW5zaW9uGAcgASgJUg1maWxlRXh0ZW5zaW9u'
-    'EhIKBHRhZ3MYCCADKAlSBHRhZ3MaWQoVTWV0aG9kUGFyYW1ldGVyc0VudHJ5EhAKA2tleRgBIA'
-    'EoCVIDa2V5EioKBXZhbHVlGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueVIFdmFsdWU6AjgB'
-    'SgQIAxAESgQICRAKUg9jb21wb25lbnRfbW9kZWxSCnNlc3Npb25faWQ=');
+    'EhIKBHRhZ3MYCCADKAlSBHRhZ3MSGwoJbWltZV90eXBlGAogASgJUghtaW1lVHlwZRpZChVNZX'
+    'Rob2RQYXJhbWV0ZXJzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC5n'
+    'b29nbGUucHJvdG9idWYuQW55UgV2YWx1ZToCOAFKBAgDEARKBAgJEApSD2NvbXBvbmVudF9tb2'
+    'RlbFIKc2Vzc2lvbl9pZA==');
 
 @$core.Deprecated('Use dataCaptureUploadMetadataDescriptor instead')
 const DataCaptureUploadMetadata$json = {
