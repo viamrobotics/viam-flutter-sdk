@@ -56,7 +56,7 @@
       
       <span class="name ">SensorMetadata</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-timeRequested"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">timeRequested</span>, </span></li>
 <li><span class="parameter" id="-param-timeReceived"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">timeReceived</span>, </span></li>
-<li><span class="parameter" id="-param-mimeType"><span class="type-annotation"><a href="../../viam_protos.app.data_sync/MimeType-class.html">MimeType</a>?</span> <span class="parameter-name">mimeType</span>, </span></li>
+<li><span class="parameter" id="-param-mimeType"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated/Deprecated.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../../viam_protos.app.data_sync/MimeType-class.html">MimeType</a>?</span> <span class="parameter-name">mimeType</span>, </span></li>
 <li><span class="parameter" id="-param-annotations"><span class="type-annotation"><a href="../../viam_protos.app.data/Annotations-class.html">Annotations</a>?</span> <span class="parameter-name">annotations</span>, </span></li>
 </ol>})
     </section>
@@ -69,6 +69,7 @@
   <pre class="language-dart"><code class="language-dart">factory SensorMetadata({
   $51.Timestamp? timeRequested,
   $51.Timestamp? timeReceived,
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
   MimeType? mimeType,
   $4.Annotations? annotations,
 }) {
@@ -80,6 +81,7 @@
     $result.timeReceived = timeReceived;
   }
   if (mimeType != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
     $result.mimeType = mimeType;
   }
   if (annotations != null) {

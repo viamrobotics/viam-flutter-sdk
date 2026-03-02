@@ -61,6 +61,7 @@
 <li><span class="parameter" id="-param-methodParameters"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">Any</span>&gt;</span>?</span> <span class="parameter-name">methodParameters</span>, </span></li>
 <li><span class="parameter" id="-param-fileExtension"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">fileExtension</span>, </span></li>
 <li><span class="parameter" id="-param-tags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tags</span>, </span></li>
+<li><span class="parameter" id="-param-mimeType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">mimeType</span>, </span></li>
 </ol>})
     </section>
     
@@ -77,6 +78,7 @@
   $core.Map&lt;$core.String, $52.Any&gt;? methodParameters,
   $core.String? fileExtension,
   $core.Iterable&lt;$core.String&gt;? tags,
+  $core.String? mimeType,
 }) {
   final $result = create();
   if (componentType != null) {
@@ -99,6 +101,9 @@
   }
   if (tags != null) {
     $result.tags.addAll(tags);
+  }
+  if (mimeType != null) {
+    $result.mimeType = mimeType;
   }
   return $result;
 }</code></pre>
