@@ -712,6 +712,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     DistortionParameters? distortionParameters,
     $core.Iterable<$core.String>? mimeTypes,
     $core.double? frameRate,
+    ExtrinsicParameters? extrinsicParameters,
   }) {
     final $result = create();
     if (supportsPcd != null) {
@@ -729,6 +730,9 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     if (frameRate != null) {
       $result.frameRate = frameRate;
     }
+    if (extrinsicParameters != null) {
+      $result.extrinsicParameters = extrinsicParameters;
+    }
     return $result;
   }
   GetPropertiesResponse._() : super();
@@ -741,6 +745,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     ..aOM<DistortionParameters>(3, _omitFieldNames ? '' : 'distortionParameters', subBuilder: DistortionParameters.create)
     ..pPS(4, _omitFieldNames ? '' : 'mimeTypes')
     ..a<$core.double>(5, _omitFieldNames ? '' : 'frameRate', $pb.PbFieldType.OF)
+    ..aOM<ExtrinsicParameters>(6, _omitFieldNames ? '' : 'extrinsicParameters', subBuilder: ExtrinsicParameters.create)
     ..hasRequiredFields = false
   ;
 
@@ -816,6 +821,19 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   $core.bool hasFrameRate() => $_has(4);
   @$pb.TagNumber(5)
   void clearFrameRate() => clearField(5);
+
+  /// Parameters for the camera's position relative to a reference frame
+  /// If camera does not provide extrinsic parameters, leave the field empty
+  @$pb.TagNumber(6)
+  ExtrinsicParameters get extrinsicParameters => $_getN(5);
+  @$pb.TagNumber(6)
+  set extrinsicParameters(ExtrinsicParameters v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasExtrinsicParameters() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExtrinsicParameters() => clearField(6);
+  @$pb.TagNumber(6)
+  ExtrinsicParameters ensureExtrinsicParameters() => $_ensure(5);
 }
 
 class Webcams extends $pb.GeneratedMessage {
@@ -1239,6 +1257,78 @@ class DistortionParameters extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<$core.double> get parameters => $_getList(1);
+}
+
+/// ExtrinsicParameters define the position of the camera
+/// relative to a reference frame (the world or another sensor).
+class ExtrinsicParameters extends $pb.GeneratedMessage {
+  factory ExtrinsicParameters({
+    $16.Vector3? translation,
+    $16.Orientation? orientation,
+  }) {
+    final $result = create();
+    if (translation != null) {
+      $result.translation = translation;
+    }
+    if (orientation != null) {
+      $result.orientation = orientation;
+    }
+    return $result;
+  }
+  ExtrinsicParameters._() : super();
+  factory ExtrinsicParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExtrinsicParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtrinsicParameters', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOM<$16.Vector3>(1, _omitFieldNames ? '' : 'translation', subBuilder: $16.Vector3.create)
+    ..aOM<$16.Orientation>(2, _omitFieldNames ? '' : 'orientation', subBuilder: $16.Orientation.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ExtrinsicParameters clone() => ExtrinsicParameters()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ExtrinsicParameters copyWith(void Function(ExtrinsicParameters) updates) => super.copyWith((message) => updates(message as ExtrinsicParameters)) as ExtrinsicParameters;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtrinsicParameters create() => ExtrinsicParameters._();
+  ExtrinsicParameters createEmptyInstance() => create();
+  static $pb.PbList<ExtrinsicParameters> createRepeated() => $pb.PbList<ExtrinsicParameters>();
+  @$core.pragma('dart2js:noInline')
+  static ExtrinsicParameters getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExtrinsicParameters>(create);
+  static ExtrinsicParameters? _defaultInstance;
+
+  /// The translation from the reference frame to the camera.
+  @$pb.TagNumber(1)
+  $16.Vector3 get translation => $_getN(0);
+  @$pb.TagNumber(1)
+  set translation($16.Vector3 v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTranslation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTranslation() => clearField(1);
+  @$pb.TagNumber(1)
+  $16.Vector3 ensureTranslation() => $_ensure(0);
+
+  /// The orientation from the reference frame to the camera.
+  @$pb.TagNumber(2)
+  $16.Orientation get orientation => $_getN(1);
+  @$pb.TagNumber(2)
+  set orientation($16.Orientation v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrientation() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrientation() => clearField(2);
+  @$pb.TagNumber(2)
+  $16.Orientation ensureOrientation() => $_ensure(1);
 }
 
 

@@ -2203,6 +2203,7 @@ class FieldOptions_FeatureSupport extends $pb.GeneratedMessage {
     Edition? editionDeprecated,
     $core.String? deprecationWarning,
     Edition? editionRemoved,
+    $core.String? removalError,
   }) {
     final $result = create();
     if (editionIntroduced != null) {
@@ -2217,6 +2218,9 @@ class FieldOptions_FeatureSupport extends $pb.GeneratedMessage {
     if (editionRemoved != null) {
       $result.editionRemoved = editionRemoved;
     }
+    if (removalError != null) {
+      $result.removalError = removalError;
+    }
     return $result;
   }
   FieldOptions_FeatureSupport._() : super();
@@ -2228,6 +2232,7 @@ class FieldOptions_FeatureSupport extends $pb.GeneratedMessage {
     ..e<Edition>(2, _omitFieldNames ? '' : 'editionDeprecated', $pb.PbFieldType.OE, defaultOrMaker: Edition.EDITION_UNKNOWN, valueOf: Edition.valueOf, enumValues: Edition.values)
     ..aOS(3, _omitFieldNames ? '' : 'deprecationWarning')
     ..e<Edition>(4, _omitFieldNames ? '' : 'editionRemoved', $pb.PbFieldType.OE, defaultOrMaker: Edition.EDITION_UNKNOWN, valueOf: Edition.valueOf, enumValues: Edition.values)
+    ..aOS(5, _omitFieldNames ? '' : 'removalError')
     ..hasRequiredFields = false
   ;
 
@@ -2297,6 +2302,17 @@ class FieldOptions_FeatureSupport extends $pb.GeneratedMessage {
   $core.bool hasEditionRemoved() => $_has(3);
   @$pb.TagNumber(4)
   void clearEditionRemoved() => clearField(4);
+
+  /// The removal error text if this feature is used after the edition it was
+  /// removed in.
+  @$pb.TagNumber(5)
+  $core.String get removalError => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set removalError($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRemovalError() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRemovalError() => clearField(5);
 }
 
 class FieldOptions extends $pb.GeneratedMessage {

@@ -463,6 +463,7 @@ class SensorMetadata extends $pb.GeneratedMessage {
   factory SensorMetadata({
     $51.Timestamp? timeRequested,
     $51.Timestamp? timeReceived,
+  @$core.Deprecated('This field is deprecated.')
     MimeType? mimeType,
     $4.Annotations? annotations,
   }) {
@@ -474,6 +475,7 @@ class SensorMetadata extends $pb.GeneratedMessage {
       $result.timeReceived = timeReceived;
     }
     if (mimeType != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.mimeType = mimeType;
     }
     if (annotations != null) {
@@ -536,12 +538,16 @@ class SensorMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $51.Timestamp ensureTimeReceived() => $_ensure(1);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   MimeType get mimeType => $_getN(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   set mimeType(MimeType v) { setField(3, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasMimeType() => $_has(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   void clearMimeType() => clearField(3);
 
@@ -990,6 +996,7 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
     $core.Map<$core.String, $52.Any>? methodParameters,
     $core.String? fileExtension,
     $core.Iterable<$core.String>? tags,
+    $core.String? mimeType,
   }) {
     final $result = create();
     if (componentType != null) {
@@ -1013,6 +1020,9 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
     if (tags != null) {
       $result.tags.addAll(tags);
     }
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
     return $result;
   }
   DataCaptureMetadata._() : super();
@@ -1027,6 +1037,7 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
     ..m<$core.String, $52.Any>(6, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'DataCaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $52.Any.create, valueDefaultOrMaker: $52.Any.getDefault, packageName: const $pb.PackageName('viam.app.datasync.v1'))
     ..aOS(7, _omitFieldNames ? '' : 'fileExtension')
     ..pPS(8, _omitFieldNames ? '' : 'tags')
+    ..aOS(10, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
   ;
 
@@ -1101,6 +1112,15 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(8)
   $core.List<$core.String> get tags => $_getList(6);
+
+  @$pb.TagNumber(10)
+  $core.String get mimeType => $_getSZ(7);
+  @$pb.TagNumber(10)
+  set mimeType($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasMimeType() => $_has(7);
+  @$pb.TagNumber(10)
+  void clearMimeType() => clearField(10);
 }
 
 /// DataCaptureUploadMetadata contains the metadata for streaming binary (image + file) data.

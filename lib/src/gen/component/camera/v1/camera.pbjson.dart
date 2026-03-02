@@ -177,6 +177,7 @@ const GetPropertiesResponse$json = {
     {'1': 'distortion_parameters', '3': 3, '4': 1, '5': 11, '6': '.viam.component.camera.v1.DistortionParameters', '10': 'distortionParameters'},
     {'1': 'mime_types', '3': 4, '4': 3, '5': 9, '10': 'mimeTypes'},
     {'1': 'frame_rate', '3': 5, '4': 1, '5': 2, '9': 0, '10': 'frameRate', '17': true},
+    {'1': 'extrinsic_parameters', '3': 6, '4': 1, '5': 11, '6': '.viam.component.camera.v1.ExtrinsicParameters', '10': 'extrinsicParameters'},
   ],
   '8': [
     {'1': '_frame_rate'},
@@ -190,8 +191,9 @@ final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Dec
     'YS52MS5JbnRyaW5zaWNQYXJhbWV0ZXJzUhNpbnRyaW5zaWNQYXJhbWV0ZXJzEmMKFWRpc3Rvcn'
     'Rpb25fcGFyYW1ldGVycxgDIAEoCzIuLnZpYW0uY29tcG9uZW50LmNhbWVyYS52MS5EaXN0b3J0'
     'aW9uUGFyYW1ldGVyc1IUZGlzdG9ydGlvblBhcmFtZXRlcnMSHQoKbWltZV90eXBlcxgEIAMoCV'
-    'IJbWltZVR5cGVzEiIKCmZyYW1lX3JhdGUYBSABKAJIAFIJZnJhbWVSYXRliAEBQg0KC19mcmFt'
-    'ZV9yYXRl');
+    'IJbWltZVR5cGVzEiIKCmZyYW1lX3JhdGUYBSABKAJIAFIJZnJhbWVSYXRliAEBEmAKFGV4dHJp'
+    'bnNpY19wYXJhbWV0ZXJzGAYgASgLMi0udmlhbS5jb21wb25lbnQuY2FtZXJhLnYxLkV4dHJpbn'
+    'NpY1BhcmFtZXRlcnNSE2V4dHJpbnNpY1BhcmFtZXRlcnNCDQoLX2ZyYW1lX3JhdGU=');
 
 @$core.Deprecated('Use webcamsDescriptor instead')
 const Webcams$json = {
@@ -274,4 +276,19 @@ const DistortionParameters$json = {
 final $typed_data.Uint8List distortionParametersDescriptor = $convert.base64Decode(
     'ChREaXN0b3J0aW9uUGFyYW1ldGVycxIUCgVtb2RlbBgBIAEoCVIFbW9kZWwSHgoKcGFyYW1ldG'
     'VycxgCIAMoAVIKcGFyYW1ldGVycw==');
+
+@$core.Deprecated('Use extrinsicParametersDescriptor instead')
+const ExtrinsicParameters$json = {
+  '1': 'ExtrinsicParameters',
+  '2': [
+    {'1': 'translation', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Vector3', '10': 'translation'},
+    {'1': 'orientation', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Orientation', '10': 'orientation'},
+  ],
+};
+
+/// Descriptor for `ExtrinsicParameters`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extrinsicParametersDescriptor = $convert.base64Decode(
+    'ChNFeHRyaW5zaWNQYXJhbWV0ZXJzEjkKC3RyYW5zbGF0aW9uGAEgASgLMhcudmlhbS5jb21tb2'
+    '4udjEuVmVjdG9yM1ILdHJhbnNsYXRpb24SPQoLb3JpZW50YXRpb24YAiABKAsyGy52aWFtLmNv'
+    'bW1vbi52MS5PcmllbnRhdGlvblILb3JpZW50YXRpb24=');
 
