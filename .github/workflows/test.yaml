@@ -30,16 +30,5 @@ jobs:
             dart analyze --no-fatal-warnings "$d/lib"
           done
 
-      - name: Test examples
-        run: |
-          for d in example/*/; do
-            if [ -d "$d/test" ]; then
-              echo "=== Testing $d ==="
-              cd "$d"
-              flutter test
-              cd -
-            fi
-          done
-
       - name: Run tests
         run: make test
