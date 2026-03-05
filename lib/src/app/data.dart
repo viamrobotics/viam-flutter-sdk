@@ -424,6 +424,9 @@ class DataClient {
   ///
   /// Returns the number of pieces of data that were deleted.
   ///
+  /// Optionally, a [filter] can be provided to further constrain which data is deleted.
+  /// When provided, the filter applies as an AND constraint with the organization and time parameters.
+  ///
   ///  ```
   ///  _viam = await Viam.withApiKey(
   ///      dotenv.env['API_KEY_ID'] ?? '',
@@ -432,7 +435,12 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   ///  try {
+  ///    // Delete all data older than 5 days
   ///    dataClient.deleteTabularData("<YOUR-ORG-ID>", 5);
+  ///
+  ///    // Delete data older than 5 days, filtered by location
+  ///    final filter = TabularFilter(locationIds: ["<YOUR-LOCATION-ID>"]);
+  ///    dataClient.deleteTabularData("<YOUR-ORG-ID>", 5, filter: filter);
   ///
   ///   print('Successfully deleted tabular data');
   ///  } catch (e) {
@@ -441,10 +449,17 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<int> deleteTabularData(String organizationId, int olderThanDays) async {
+  Future<int> deleteTabularData(
+    String organizationId,
+    int olderThanDays, {
+    TabularFilter? filter,
+  }) async {
     final request = DeleteTabularDataRequest()
       ..organizationId = organizationId
       ..deleteOlderThanDays = olderThanDays;
+    if (filter != null) {
+      request.filter = filter;
+    }
     final response = await _dataClient.deleteTabularData(request);
     return response.deletedCount.toInt();
   }

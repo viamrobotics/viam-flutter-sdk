@@ -398,6 +398,41 @@ void main() {
         expect(response, equals(12));
       });
 
+      test('deleteTabularData_withFilter', () async {
+        TabularFilter? capturedFilter;
+
+        when(serviceClient.deleteTabularData(any)).thenAnswer((invocation) {
+          final request = invocation.positionalArguments[0] as DeleteTabularDataRequest;
+          capturedFilter = request.hasFilter() ? request.filter : null;
+          return MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(8));
+        });
+
+        final filter = TabularFilter()
+          ..locationIds.addAll(['location-1'])
+          ..componentName = 'camera-1';
+
+        final response = await dataClient.deleteTabularData('some_org_id', 5, filter: filter);
+        expect(response, equals(8));
+        expect(capturedFilter, isNotNull);
+        expect(capturedFilter?.locationIds, equals(['location-1']));
+        expect(capturedFilter?.componentName, equals('camera-1'));
+      });
+
+      test('deleteTabularData_withEmptyFilter', () async {
+        TabularFilter? capturedFilter;
+
+        when(serviceClient.deleteTabularData(any)).thenAnswer((invocation) {
+          final request = invocation.positionalArguments[0] as DeleteTabularDataRequest;
+          capturedFilter = request.hasFilter() ? request.filter : null;
+          return MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(10));
+        });
+
+        final filter = TabularFilter();
+        final response = await dataClient.deleteTabularData('some_org_id', 5, filter: filter);
+        expect(response, equals(10));
+        expect(capturedFilter, isNotNull);
+      });
+
       test('deleteBinaryDataByFilter', () async {
         when(
           serviceClient.deleteBinaryDataByFilter(any),
