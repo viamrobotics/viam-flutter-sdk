@@ -439,7 +439,7 @@ class DataClient {
   ///    dataClient.deleteTabularData("<YOUR-ORG-ID>", 5);
   ///
   ///    // Delete data older than 5 days, filtered by location
-  ///    final filter = TabularFilter(locationIds: ["<YOUR-LOCATION-ID>"]);
+  ///    final filter = DeleteTabularFilter(locationIds: ["<YOUR-LOCATION-ID>"]);
   ///    dataClient.deleteTabularData("<YOUR-ORG-ID>", 5, filter: filter);
   ///
   ///   print('Successfully deleted tabular data');
@@ -452,7 +452,7 @@ class DataClient {
   Future<int> deleteTabularData(
     String organizationId,
     int olderThanDays, {
-    TabularFilter? filter,
+    DeleteTabularFilter? filter,
   }) async {
     final request = DeleteTabularDataRequest()
       ..organizationId = organizationId

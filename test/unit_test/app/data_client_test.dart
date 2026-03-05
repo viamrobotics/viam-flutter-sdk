@@ -399,7 +399,7 @@ void main() {
       });
 
       test('deleteTabularData_withFilter', () async {
-        TabularFilter? capturedFilter;
+        DeleteTabularFilter? capturedFilter;
 
         when(serviceClient.deleteTabularData(any)).thenAnswer((invocation) {
           final request = invocation.positionalArguments[0] as DeleteTabularDataRequest;
@@ -407,7 +407,7 @@ void main() {
           return MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(8));
         });
 
-        final filter = TabularFilter()
+        final filter = DeleteTabularFilter()
           ..locationIds.addAll(['location-1'])
           ..componentName = 'camera-1';
 
@@ -419,7 +419,7 @@ void main() {
       });
 
       test('deleteTabularData_withEmptyFilter', () async {
-        TabularFilter? capturedFilter;
+        DeleteTabularFilter? capturedFilter;
 
         when(serviceClient.deleteTabularData(any)).thenAnswer((invocation) {
           final request = invocation.positionalArguments[0] as DeleteTabularDataRequest;
@@ -427,7 +427,7 @@ void main() {
           return MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(10));
         });
 
-        final filter = TabularFilter();
+        final filter = DeleteTabularFilter();
         final response = await dataClient.deleteTabularData('some_org_id', 5, filter: filter);
         expect(response, equals(10));
         expect(capturedFilter, isNotNull);
