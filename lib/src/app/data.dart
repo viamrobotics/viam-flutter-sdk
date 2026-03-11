@@ -420,12 +420,13 @@ class DataClient {
         .toList();
   }
 
-  /// Delete tabular data older than a provided number of days from an organization.
+  /// Delete tabular data older than a specified number of days.
   ///
   /// Returns the number of pieces of data that were deleted.
   ///
   /// Optionally, a [filter] can be provided to further constrain which data is deleted.
-  /// When provided, the filter applies as an AND constraint with the organization and time parameters.
+  /// If provided, only data matching the filter will be deleted.
+  /// If omitted, data is deleted based on organizationId and olderThanDays.
   ///
   ///  ```
   ///  _viam = await Viam.withApiKey(
