@@ -58,6 +58,8 @@
 <li><span class="parameter" id="-param-hostInfo"><span class="type-annotation"><a href="../../viam_protos.app.agent/HostInfo-class.html">HostInfo</a>?</span> <span class="parameter-name">hostInfo</span>, </span></li>
 <li><span class="parameter" id="-param-subsystemVersions"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated/Deprecated.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">subsystemVersions</span>, </span></li>
 <li><span class="parameter" id="-param-versionInfo"><span class="type-annotation"><a href="../../viam_protos.app.agent/VersionInfo-class.html">VersionInfo</a>?</span> <span class="parameter-name">versionInfo</span>, </span></li>
+<li><span class="parameter" id="-param-agentUptime"><span class="type-annotation">Duration?</span> <span class="parameter-name">agentUptime</span>, </span></li>
+<li><span class="parameter" id="-param-viamServerUptime"><span class="type-annotation">Duration?</span> <span class="parameter-name">viamServerUptime</span>, </span></li>
 </ol>})
     </section>
     
@@ -72,6 +74,8 @@
 @$core.Deprecated(&#39;This field is deprecated.&#39;)
   $core.Map&lt;$core.String, $core.String&gt;? subsystemVersions,
   VersionInfo? versionInfo,
+  $49.Duration? agentUptime,
+  $49.Duration? viamServerUptime,
 }) {
   final $result = create();
   if (id != null) {
@@ -86,6 +90,12 @@
   }
   if (versionInfo != null) {
     $result.versionInfo = versionInfo;
+  }
+  if (agentUptime != null) {
+    $result.agentUptime = agentUptime;
+  }
+  if (viamServerUptime != null) {
+    $result.viamServerUptime = viamServerUptime;
   }
   return $result;
 }</code></pre>
