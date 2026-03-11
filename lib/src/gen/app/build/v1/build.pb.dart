@@ -28,6 +28,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     $core.String? moduleVersion,
     $core.String? token,
     $core.String? workdir,
+    $core.String? distro,
   }) {
     final $result = create();
     if (repo != null) {
@@ -51,6 +52,9 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     if (workdir != null) {
       $result.workdir = workdir;
     }
+    if (distro != null) {
+      $result.distro = distro;
+    }
     return $result;
   }
   StartBuildRequest._() : super();
@@ -65,6 +69,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'moduleVersion')
     ..aOS(6, _omitFieldNames ? '' : 'token')
     ..aOS(7, _omitFieldNames ? '' : 'workdir')
+    ..aOS(8, _omitFieldNames ? '' : 'distro')
     ..hasRequiredFields = false
   ;
 
@@ -153,6 +158,17 @@ class StartBuildRequest extends $pb.GeneratedMessage {
   $core.bool hasWorkdir() => $_has(6);
   @$pb.TagNumber(7)
   void clearWorkdir() => clearField(7);
+
+  /// optional distro for linux platforms. defaults to bullseye.
+  /// must be bookworm for cpp module builds.
+  @$pb.TagNumber(8)
+  $core.String get distro => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set distro($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasDistro() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDistro() => clearField(8);
 }
 
 class StartBuildResponse extends $pb.GeneratedMessage {
