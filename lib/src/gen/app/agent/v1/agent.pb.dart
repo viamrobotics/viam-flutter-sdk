@@ -27,6 +27,8 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, $core.String>? subsystemVersions,
     VersionInfo? versionInfo,
+    $49.Duration? agentUptime,
+    $49.Duration? viamServerUptime,
   }) {
     final $result = create();
     if (id != null) {
@@ -42,6 +44,12 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
     if (versionInfo != null) {
       $result.versionInfo = versionInfo;
     }
+    if (agentUptime != null) {
+      $result.agentUptime = agentUptime;
+    }
+    if (viamServerUptime != null) {
+      $result.viamServerUptime = viamServerUptime;
+    }
     return $result;
   }
   DeviceAgentConfigRequest._() : super();
@@ -53,6 +61,8 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
     ..aOM<HostInfo>(2, _omitFieldNames ? '' : 'hostInfo', subBuilder: HostInfo.create)
     ..m<$core.String, $core.String>(3, _omitFieldNames ? '' : 'subsystemVersions', entryClassName: 'DeviceAgentConfigRequest.SubsystemVersionsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.agent.v1'))
     ..aOM<VersionInfo>(4, _omitFieldNames ? '' : 'versionInfo', subBuilder: VersionInfo.create)
+    ..aOM<$49.Duration>(5, _omitFieldNames ? '' : 'agentUptime', subBuilder: $49.Duration.create)
+    ..aOM<$49.Duration>(6, _omitFieldNames ? '' : 'viamServerUptime', subBuilder: $49.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -116,6 +126,30 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
   void clearVersionInfo() => clearField(4);
   @$pb.TagNumber(4)
   VersionInfo ensureVersionInfo() => $_ensure(3);
+
+  /// how long viam-agent has been running since its most recent start
+  @$pb.TagNumber(5)
+  $49.Duration get agentUptime => $_getN(4);
+  @$pb.TagNumber(5)
+  set agentUptime($49.Duration v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAgentUptime() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAgentUptime() => clearField(5);
+  @$pb.TagNumber(5)
+  $49.Duration ensureAgentUptime() => $_ensure(4);
+
+  /// how long viam-server has been running since its most recent start (omitted if not running)
+  @$pb.TagNumber(6)
+  $49.Duration get viamServerUptime => $_getN(5);
+  @$pb.TagNumber(6)
+  set viamServerUptime($49.Duration v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasViamServerUptime() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearViamServerUptime() => clearField(6);
+  @$pb.TagNumber(6)
+  $49.Duration ensureViamServerUptime() => $_ensure(5);
 }
 
 class DeviceAgentConfigResponse extends $pb.GeneratedMessage {

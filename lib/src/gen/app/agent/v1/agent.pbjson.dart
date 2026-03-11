@@ -47,6 +47,8 @@ const DeviceAgentConfigRequest$json = {
       '10': 'subsystemVersions',
     },
     {'1': 'version_info', '3': 4, '4': 1, '5': 11, '6': '.viam.app.agent.v1.VersionInfo', '10': 'versionInfo'},
+    {'1': 'agent_uptime', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'agentUptime'},
+    {'1': 'viam_server_uptime', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'viamServerUptime'},
   ],
   '3': [DeviceAgentConfigRequest_SubsystemVersionsEntry$json],
 };
@@ -68,8 +70,10 @@ final $typed_data.Uint8List deviceAgentConfigRequestDescriptor = $convert.base64
     'ZW1fdmVyc2lvbnMYAyADKAsyQi52aWFtLmFwcC5hZ2VudC52MS5EZXZpY2VBZ2VudENvbmZpZ1'
     'JlcXVlc3QuU3Vic3lzdGVtVmVyc2lvbnNFbnRyeUICGAFSEXN1YnN5c3RlbVZlcnNpb25zEkEK'
     'DHZlcnNpb25faW5mbxgEIAEoCzIeLnZpYW0uYXBwLmFnZW50LnYxLlZlcnNpb25JbmZvUgt2ZX'
-    'JzaW9uSW5mbxpEChZTdWJzeXN0ZW1WZXJzaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQK'
-    'BXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
+    'JzaW9uSW5mbxI8CgxhZ2VudF91cHRpbWUYBSABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRp'
+    'b25SC2FnZW50VXB0aW1lEkcKEnZpYW1fc2VydmVyX3VwdGltZRgGIAEoCzIZLmdvb2dsZS5wcm'
+    '90b2J1Zi5EdXJhdGlvblIQdmlhbVNlcnZlclVwdGltZRpEChZTdWJzeXN0ZW1WZXJzaW9uc0Vu'
+    'dHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use deviceAgentConfigResponseDescriptor instead')
 const DeviceAgentConfigResponse$json = {
