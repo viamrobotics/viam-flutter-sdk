@@ -30,6 +30,7 @@ class SessionsClient implements ResourceRPCClient {
   bool? _supported;
   Duration _heartbeatInterval = Duration(seconds: 1);
   final String _host;
+  Timer? _heartbeatTimer;
 
   SessionsClient(this.channel, this._enabled, this._host) {
     metadata();
@@ -94,6 +95,8 @@ class SessionsClient implements ResourceRPCClient {
     _logger.d('Stopping SessionClient');
     _currentId = '';
     _supported = null;
+    _heartbeatTimer?.cancel();
+    _heartbeatTimer = null;
   }
 
   /// Start the session client
@@ -103,10 +106,15 @@ class SessionsClient implements ResourceRPCClient {
 
   Future<void> _heartbeatTask() async {
     if (!_enabled) return;
-    while (_supported != false) {
-      await _heartbeatTick();
-      await Future.delayed(_heartbeatInterval);
-    }
+    _heartbeatTimer?.cancel();
+    _heartbeatTimer = null;
+    _heartbeatTimer = Timer.periodic(_heartbeatInterval, (timer) {
+      if (_supported == true) {
+        _heartbeatTick();
+      } else {
+        timer.cancel();
+      }
+    });
   }
 
   Future<void> _heartbeatTick() async {
