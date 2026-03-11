@@ -298,7 +298,7 @@ class DataClient {
   ///    sqlQuery
   ///  });
   ///
-  ///  final limit = BsonCodec.serialize({"\$limit": 1});
+  ///  final limit = BsonCodec.serialize({"$limit": 1});
   ///
   ///  final pipeline = [query.byteList, sort.byteList, limit.byteList];
   ///  _responseData = await dataClient.tabularDataByMql(
@@ -432,7 +432,12 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   ///  try {
-  ///    dataClient.deleteTabularData("<YOUR-ORG-ID>", 5);
+  ///    // Delete all tabular data older than 5 days for a specific organization
+  ///    await dataClient.deleteTabularData("<YOUR-ORG-ID>", 5);
+  ///
+  ///    // Delete all tabular data older than 10 days for a specific robot
+  ///    final filter = DeleteTabularFilter(robotId: "<YOUR-ROBOT-ID>");
+  ///    await dataClient.deleteTabularData("<YOUR-ORG-ID>", 10, filter: filter);
   ///
   ///   print('Successfully deleted tabular data');
   ///  } catch (e) {
@@ -441,10 +446,13 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<int> deleteTabularData(String organizationId, int olderThanDays) async {
+  Future<int> deleteTabularData(String organizationId, int olderThanDays, {DeleteTabularFilter? filter}) async {
     final request = DeleteTabularDataRequest()
       ..organizationId = organizationId
       ..deleteOlderThanDays = olderThanDays;
+    if (filter != null) {
+      request.filter = filter;
+    }
     final response = await _dataClient.deleteTabularData(request);
     return response.deletedCount.toInt();
   }

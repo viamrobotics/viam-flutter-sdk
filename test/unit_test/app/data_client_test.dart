@@ -398,6 +398,37 @@ void main() {
         expect(response, equals(12));
       });
 
+      test('deleteTabularData_withFilter', () async {
+        final filter = DeleteTabularFilter()
+          ..locationIds.add('loc1')
+          ..robotId = 'robot1'
+          ..partId = 'part1'
+          ..componentType = 'type1'
+          ..componentName = 'name1'
+          ..method = 'method1'
+          ..tagsFilter = (TagsFilter()..tags.add('tag1'));
+        bool filterPassed = false;
+        when(
+          serviceClient.deleteTabularData(any),
+        ).thenAnswer((invocation) {
+          final request = invocation.positionalArguments[0] as DeleteTabularDataRequest;
+          if (request.hasFilter() &&
+              request.filter.locationIds.contains('loc1') &&
+              request.filter.robotId == 'robot1' &&
+              request.filter.partId == 'part1' &&
+              request.filter.componentType == 'type1' &&
+              request.filter.componentName == 'name1' &&
+              request.filter.method == 'method1' &&
+              request.filter.tagsFilter.tags.contains('tag1')) {
+            filterPassed = true;
+          }
+          return MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(15));
+        });
+        final response = await dataClient.deleteTabularData('some_org_id', 5, filter: filter);
+        expect(response, equals(15));
+        expect(filterPassed, isTrue);
+      });
+
       test('deleteBinaryDataByFilter', () async {
         when(
           serviceClient.deleteBinaryDataByFilter(any),
