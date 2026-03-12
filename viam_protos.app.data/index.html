@@ -416,6 +416,7 @@ in UTC time. For example, if delete_older_than_days=1 and the request is made at
 If the request is at 10PM EST on March 11 (March 12 2AM UTC), this deletes all data captured
 through March 11 11:59:59PM UTC.
 If delete_older_than_days is 0, all existing data is deleted.
+If no filter is provided, data will be deleted based on organization_id.
 </dd>
 
           <dt id="DeleteTabularDataResponse">
@@ -424,6 +425,14 @@ If delete_older_than_days is 0, all existing data is deleted.
 </dt>
 <dd>
   DeleteBinaryDataResponse returns the number of tabular datapoints deleted.
+</dd>
+
+          <dt id="DeleteTabularFilter">
+  <span class="name "><a href="../viam_protos.app.data/DeleteTabularFilter-class.html">DeleteTabularFilter</a></span> 
+
+</dt>
+<dd>
+  TabularFilter filters tabular data. All fields are optional; omitted fields are treated as unconstrained.
 </dd>
 
           <dt id="ExportTabularDataRequest">
@@ -1281,6 +1290,18 @@ from the requested data source, as long as it was synced within the last year.
 
           <dt id="DeleteTabularDataResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/DeleteTabularDataResponse$json-constant.html">DeleteTabularDataResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DeleteTabularFilter$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/DeleteTabularFilter$json-constant.html">DeleteTabularFilter$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -2301,6 +2322,18 @@ from the requested data source, as long as it was synced within the last year.
 </dt>
 <dd>
   Descriptor for <code>DeleteTabularDataResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="deleteTabularFilterDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data/deleteTabularFilterDescriptor.html">deleteTabularFilterDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DeleteTabularFilter</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

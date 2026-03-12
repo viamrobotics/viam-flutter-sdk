@@ -59,7 +59,8 @@ in UTC time. For example, if delete_older_than_days=1 and the request is made at
 (March 11 5AM UTC), this deletes all data captured through March 10 11:59:59PM UTC.
 If the request is at 10PM EST on March 11 (March 12 2AM UTC), this deletes all data captured
 through March 11 11:59:59PM UTC.
-If delete_older_than_days is 0, all existing data is deleted.</p>
+If delete_older_than_days is 0, all existing data is deleted.
+If no filter is provided, data will be deleted based on organization_id.</p>
 </section>
 
 
@@ -95,7 +96,7 @@ If delete_older_than_days is 0, all existing data is deleted.</p>
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="DeleteTabularDataRequest.new" class="callable">
-          <span class="name"><a href="../viam_protos.app.data/DeleteTabularDataRequest/DeleteTabularDataRequest.html">DeleteTabularDataRequest</a></span><span class="signature">({<span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-deleteOlderThanDays"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">deleteOlderThanDays</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.data/DeleteTabularDataRequest/DeleteTabularDataRequest.html">DeleteTabularDataRequest</a></span><span class="signature">({<span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-deleteOlderThanDays"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">deleteOlderThanDays</span>, </span><span class="parameter" id="-param-filter"><span class="type-annotation"><a href="../viam_protos.app.data/DeleteTabularFilter-class.html">DeleteTabularFilter</a>?</span> <span class="parameter-name">filter</span></span>})</span>
         </dt>
         <dd>
           
@@ -145,6 +146,18 @@ If delete_older_than_days is 0, all existing data is deleted.</p>
   Subclasses can override this getter to be notified of changes
 to protobuf fields.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="filter" class="property">
+  <span class="name"><a href="../viam_protos.app.data/DeleteTabularDataRequest/filter.html">filter</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.app.data/DeleteTabularFilter-class.html">DeleteTabularFilter</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -307,6 +320,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearFilter" class="callable">
+  <span class="name"><a href="../viam_protos.app.data/DeleteTabularDataRequest/clearFilter.html">clearFilter</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearOrganizationId" class="callable">
   <span class="name"><a href="../viam_protos.app.data/DeleteTabularDataRequest/clearOrganizationId.html">clearOrganizationId</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -399,6 +425,19 @@ to protobuf fields.
         provided by the <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions.html">GeneratedMessageGenericExtensions</a> extension</span>
       </p>
   Returns a writable deep copy of this message.
+  
+
+</dd>
+
+        <dt id="ensureFilter" class="callable">
+  <span class="name"><a href="../viam_protos.app.data/DeleteTabularDataRequest/ensureFilter.html">ensureFilter</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.data/DeleteTabularFilter-class.html">DeleteTabularFilter</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
   
 
 </dd>
@@ -531,6 +570,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether this message has a field associated with <code>tagNumber</code>.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasFilter" class="callable">
+  <span class="name"><a href="../viam_protos.app.data/DeleteTabularDataRequest/hasFilter.html">hasFilter</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 

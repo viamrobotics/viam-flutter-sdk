@@ -61,6 +61,7 @@
 <li><span class="parameter" id="-param-moduleVersion"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">moduleVersion</span>, </span></li>
 <li><span class="parameter" id="-param-token"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">token</span>, </span></li>
 <li><span class="parameter" id="-param-workdir"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">workdir</span>, </span></li>
+<li><span class="parameter" id="-param-distro"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">distro</span>, </span></li>
 </ol>})
     </section>
     
@@ -77,6 +78,7 @@
   $core.String? moduleVersion,
   $core.String? token,
   $core.String? workdir,
+  $core.String? distro,
 }) {
   final $result = create();
   if (repo != null) {
@@ -99,6 +101,9 @@
   }
   if (workdir != null) {
     $result.workdir = workdir;
+  }
+  if (distro != null) {
+    $result.distro = distro;
   }
   return $result;
 }</code></pre>
