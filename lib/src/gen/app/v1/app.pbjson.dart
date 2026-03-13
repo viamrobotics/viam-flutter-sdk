@@ -4429,6 +4429,7 @@ const OAuthConfig$json = {
     {'1': 'redirect_uris', '3': 5, '4': 3, '5': 9, '10': 'redirectUris'},
     {'1': 'logout_uri', '3': 6, '4': 1, '5': 9, '10': 'logoutUri'},
     {'1': 'enabled_grants', '3': 7, '4': 3, '5': 14, '6': '.viam.app.v1.EnabledGrant', '10': 'enabledGrants'},
+    {'1': 'invite_redirect_uri', '3': 8, '4': 1, '5': 9, '10': 'inviteRedirectUri'},
   ],
 };
 
@@ -4440,7 +4441,8 @@ final $typed_data.Uint8List oAuthConfigDescriptor = $convert.base64Decode(
     '52aWFtLmFwcC52MS5VUkxWYWxpZGF0aW9uUg11cmxWYWxpZGF0aW9uEh8KC29yaWdpbl91cmlz'
     'GAQgAygJUgpvcmlnaW5VcmlzEiMKDXJlZGlyZWN0X3VyaXMYBSADKAlSDHJlZGlyZWN0VXJpcx'
     'IdCgpsb2dvdXRfdXJpGAYgASgJUglsb2dvdXRVcmkSQAoOZW5hYmxlZF9ncmFudHMYByADKA4y'
-    'GS52aWFtLmFwcC52MS5FbmFibGVkR3JhbnRSDWVuYWJsZWRHcmFudHM=');
+    'GS52aWFtLmFwcC52MS5FbmFibGVkR3JhbnRSDWVuYWJsZWRHcmFudHMSLgoTaW52aXRlX3JlZG'
+    'lyZWN0X3VyaRgIIAEoCVIRaW52aXRlUmVkaXJlY3RVcmk=');
 
 @$core.Deprecated('Use getAppBrandingRequestDescriptor instead')
 const GetAppBrandingRequest$json = {
