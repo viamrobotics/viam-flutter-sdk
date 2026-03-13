@@ -420,9 +420,13 @@ class DataClient {
         .toList();
   }
 
-  /// Delete tabular data older than a provided number of days from an organization.
+  /// Delete tabular data older than a specified number of days.
   ///
   /// Returns the number of pieces of data that were deleted.
+  ///
+  /// Optionally, a [filter] can be provided to further constrain which data is deleted.
+  /// If provided, only data matching the filter will be deleted.
+  /// If omitted, data is deleted based on organizationId and olderThanDays.
   ///
   ///  ```
   ///  _viam = await Viam.withApiKey(
@@ -432,7 +436,12 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   ///  try {
+  ///    // Delete all data older than 5 days
   ///    dataClient.deleteTabularData("<YOUR-ORG-ID>", 5);
+  ///
+  ///    // Delete data older than 5 days, filtered by location
+  ///    final filter = DeleteTabularFilter(locationIds: ["<YOUR-LOCATION-ID>"]);
+  ///    dataClient.deleteTabularData("<YOUR-ORG-ID>", 5, filter: filter);
   ///
   ///   print('Successfully deleted tabular data');
   ///  } catch (e) {
@@ -441,10 +450,17 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<int> deleteTabularData(String organizationId, int olderThanDays) async {
+  Future<int> deleteTabularData(
+    String organizationId,
+    int olderThanDays, {
+    DeleteTabularFilter? filter,
+  }) async {
     final request = DeleteTabularDataRequest()
       ..organizationId = organizationId
       ..deleteOlderThanDays = olderThanDays;
+    if (filter != null) {
+      request.filter = filter;
+    }
     final response = await _dataClient.deleteTabularData(request);
     return response.deletedCount.toInt();
   }
