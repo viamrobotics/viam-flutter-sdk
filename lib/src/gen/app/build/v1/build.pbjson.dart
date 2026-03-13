@@ -40,11 +40,13 @@ const StartBuildRequest$json = {
     {'1': 'module_version', '3': 5, '4': 1, '5': 9, '10': 'moduleVersion'},
     {'1': 'token', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'token', '17': true},
     {'1': 'workdir', '3': 7, '4': 1, '5': 9, '9': 2, '10': 'workdir', '17': true},
+    {'1': 'distro', '3': 8, '4': 1, '5': 9, '9': 3, '10': 'distro', '17': true},
   ],
   '8': [
     {'1': '_ref'},
     {'1': '_token'},
     {'1': '_workdir'},
+    {'1': '_distro'},
   ],
 };
 
@@ -53,8 +55,9 @@ final $typed_data.Uint8List startBuildRequestDescriptor = $convert.base64Decode(
     'ChFTdGFydEJ1aWxkUmVxdWVzdBISCgRyZXBvGAEgASgJUgRyZXBvEhUKA3JlZhgCIAEoCUgAUg'
     'NyZWaIAQESHAoJcGxhdGZvcm1zGAMgAygJUglwbGF0Zm9ybXMSGwoJbW9kdWxlX2lkGAQgASgJ'
     'Ughtb2R1bGVJZBIlCg5tb2R1bGVfdmVyc2lvbhgFIAEoCVINbW9kdWxlVmVyc2lvbhIZCgV0b2'
-    'tlbhgGIAEoCUgBUgV0b2tlbogBARIdCgd3b3JrZGlyGAcgASgJSAJSB3dvcmtkaXKIAQFCBgoE'
-    'X3JlZkIICgZfdG9rZW5CCgoIX3dvcmtkaXI=');
+    'tlbhgGIAEoCUgBUgV0b2tlbogBARIdCgd3b3JrZGlyGAcgASgJSAJSB3dvcmtkaXKIAQESGwoG'
+    'ZGlzdHJvGAggASgJSANSBmRpc3Ryb4gBAUIGCgRfcmVmQggKBl90b2tlbkIKCghfd29ya2Rpck'
+    'IJCgdfZGlzdHJv');
 
 @$core.Deprecated('Use startBuildResponseDescriptor instead')
 const StartBuildResponse$json = {

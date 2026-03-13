@@ -686,12 +686,38 @@ final $typed_data.Uint8List binaryMetadataDescriptor = $convert.base64Decode(
     'tkYXRhc2V0X2lkcxgJIAMoCVIKZGF0YXNldElkcxIkCg5iaW5hcnlfZGF0YV9pZBgKIAEoCVIM'
     'YmluYXJ5RGF0YUlk');
 
+@$core.Deprecated('Use deleteTabularFilterDescriptor instead')
+const DeleteTabularFilter$json = {
+  '1': 'DeleteTabularFilter',
+  '2': [
+    {'1': 'location_ids', '3': 1, '4': 3, '5': 9, '10': 'locationIds'},
+    {'1': 'robot_id', '3': 2, '4': 1, '5': 9, '10': 'robotId'},
+    {'1': 'part_id', '3': 3, '4': 1, '5': 9, '10': 'partId'},
+    {'1': 'component_type', '3': 4, '4': 1, '5': 9, '10': 'componentType'},
+    {'1': 'component_name', '3': 5, '4': 1, '5': 9, '10': 'componentName'},
+    {'1': 'method', '3': 6, '4': 1, '5': 9, '10': 'method'},
+    {'1': 'tags_filter', '3': 7, '4': 1, '5': 11, '6': '.viam.app.data.v1.TagsFilter', '10': 'tagsFilter'},
+  ],
+};
+
+/// Descriptor for `DeleteTabularFilter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTabularFilterDescriptor = $convert.base64Decode(
+    'ChNEZWxldGVUYWJ1bGFyRmlsdGVyEiEKDGxvY2F0aW9uX2lkcxgBIAMoCVILbG9jYXRpb25JZH'
+    'MSGQoIcm9ib3RfaWQYAiABKAlSB3JvYm90SWQSFwoHcGFydF9pZBgDIAEoCVIGcGFydElkEiUK'
+    'DmNvbXBvbmVudF90eXBlGAQgASgJUg1jb21wb25lbnRUeXBlEiUKDmNvbXBvbmVudF9uYW1lGA'
+    'UgASgJUg1jb21wb25lbnROYW1lEhYKBm1ldGhvZBgGIAEoCVIGbWV0aG9kEj0KC3RhZ3NfZmls'
+    'dGVyGAcgASgLMhwudmlhbS5hcHAuZGF0YS52MS5UYWdzRmlsdGVyUgp0YWdzRmlsdGVy');
+
 @$core.Deprecated('Use deleteTabularDataRequestDescriptor instead')
 const DeleteTabularDataRequest$json = {
   '1': 'DeleteTabularDataRequest',
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'delete_older_than_days', '3': 2, '4': 1, '5': 13, '10': 'deleteOlderThanDays'},
+    {'1': 'filter', '3': 3, '4': 1, '5': 11, '6': '.viam.app.data.v1.DeleteTabularFilter', '9': 0, '10': 'filter', '17': true},
+  ],
+  '8': [
+    {'1': '_filter'},
   ],
 };
 
@@ -699,7 +725,8 @@ const DeleteTabularDataRequest$json = {
 final $typed_data.Uint8List deleteTabularDataRequestDescriptor = $convert.base64Decode(
     'ChhEZWxldGVUYWJ1bGFyRGF0YVJlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg5vcm'
     'dhbml6YXRpb25JZBIzChZkZWxldGVfb2xkZXJfdGhhbl9kYXlzGAIgASgNUhNkZWxldGVPbGRl'
-    'clRoYW5EYXlz');
+    'clRoYW5EYXlzEkIKBmZpbHRlchgDIAEoCzIlLnZpYW0uYXBwLmRhdGEudjEuRGVsZXRlVGFidW'
+    'xhckZpbHRlckgAUgZmaWx0ZXKIAQFCCQoHX2ZpbHRlcg==');
 
 @$core.Deprecated('Use deleteTabularDataResponseDescriptor instead')
 const DeleteTabularDataResponse$json = {
