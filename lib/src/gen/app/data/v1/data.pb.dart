@@ -2551,6 +2551,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     Annotations? annotations,
     $core.Iterable<$core.String>? datasetIds,
     $core.String? binaryDataId,
+    $fixnum.Int64? fileSizeBytes,
   }) {
     final $result = create();
     if (id != null) {
@@ -2584,6 +2585,9 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     if (binaryDataId != null) {
       $result.binaryDataId = binaryDataId;
     }
+    if (fileSizeBytes != null) {
+      $result.fileSizeBytes = fileSizeBytes;
+    }
     return $result;
   }
   BinaryMetadata._() : super();
@@ -2601,6 +2605,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     ..aOM<Annotations>(8, _omitFieldNames ? '' : 'annotations', subBuilder: Annotations.create)
     ..pPS(9, _omitFieldNames ? '' : 'datasetIds')
     ..aOS(10, _omitFieldNames ? '' : 'binaryDataId')
+    ..a<$fixnum.Int64>(11, _omitFieldNames ? '' : 'fileSizeBytes', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -2720,6 +2725,15 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   $core.bool hasBinaryDataId() => $_has(9);
   @$pb.TagNumber(10)
   void clearBinaryDataId() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get fileSizeBytes => $_getI64(10);
+  @$pb.TagNumber(11)
+  set fileSizeBytes($fixnum.Int64 v) { $_setInt64(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasFileSizeBytes() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearFileSizeBytes() => clearField(11);
 }
 
 /// TabularFilter filters tabular data. All fields are optional; omitted fields are treated as unconstrained.

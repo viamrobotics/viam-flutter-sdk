@@ -48,10 +48,14 @@ class IsLegalAcceptedRequest extends $pb.GeneratedMessage {
 class IsLegalAcceptedResponse extends $pb.GeneratedMessage {
   factory IsLegalAcceptedResponse({
     $core.bool? acceptedLegal,
+    $core.bool? everAcceptedLegal,
   }) {
     final $result = create();
     if (acceptedLegal != null) {
       $result.acceptedLegal = acceptedLegal;
+    }
+    if (everAcceptedLegal != null) {
+      $result.everAcceptedLegal = everAcceptedLegal;
     }
     return $result;
   }
@@ -61,6 +65,7 @@ class IsLegalAcceptedResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IsLegalAcceptedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'acceptedLegal')
+    ..aOB(2, _omitFieldNames ? '' : 'everAcceptedLegal')
     ..hasRequiredFields = false
   ;
 
@@ -94,6 +99,16 @@ class IsLegalAcceptedResponse extends $pb.GeneratedMessage {
   $core.bool hasAcceptedLegal() => $_has(0);
   @$pb.TagNumber(1)
   void clearAcceptedLegal() => clearField(1);
+
+  /// Whether the user has ever accepted any version of the legal terms.
+  @$pb.TagNumber(2)
+  $core.bool get everAcceptedLegal => $_getBF(1);
+  @$pb.TagNumber(2)
+  set everAcceptedLegal($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEverAcceptedLegal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEverAcceptedLegal() => clearField(2);
 }
 
 class AcceptLegalRequest extends $pb.GeneratedMessage {

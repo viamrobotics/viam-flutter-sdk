@@ -671,6 +671,7 @@ const BinaryMetadata$json = {
     {'1': 'annotations', '3': 8, '4': 1, '5': 11, '6': '.viam.app.data.v1.Annotations', '10': 'annotations'},
     {'1': 'dataset_ids', '3': 9, '4': 3, '5': 9, '10': 'datasetIds'},
     {'1': 'binary_data_id', '3': 10, '4': 1, '5': 9, '10': 'binaryDataId'},
+    {'1': 'file_size_bytes', '3': 11, '4': 1, '5': 4, '10': 'fileSizeBytes'},
   ],
 };
 
@@ -684,7 +685,7 @@ final $typed_data.Uint8List binaryMetadataDescriptor = $convert.base64Decode(
     'oIZmlsZV9leHQYBiABKAlSB2ZpbGVFeHQSEAoDdXJpGAcgASgJUgN1cmkSPwoLYW5ub3RhdGlv'
     'bnMYCCABKAsyHS52aWFtLmFwcC5kYXRhLnYxLkFubm90YXRpb25zUgthbm5vdGF0aW9ucxIfCg'
     'tkYXRhc2V0X2lkcxgJIAMoCVIKZGF0YXNldElkcxIkCg5iaW5hcnlfZGF0YV9pZBgKIAEoCVIM'
-    'YmluYXJ5RGF0YUlk');
+    'YmluYXJ5RGF0YUlkEiYKD2ZpbGVfc2l6ZV9ieXRlcxgLIAEoBFINZmlsZVNpemVCeXRlcw==');
 
 @$core.Deprecated('Use deleteTabularFilterDescriptor instead')
 const DeleteTabularFilter$json = {
