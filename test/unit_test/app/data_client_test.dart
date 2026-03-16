@@ -115,14 +115,19 @@ void main() {
         const last = 'last';
         const sortOrder = Order.ORDER_ASCENDING;
         bool includeBinary = false;
+        final expectedFileSizeBytes = Int64(1024);
 
         when(serviceClient.binaryDataByFilter(any)).thenAnswer((invocation) {
           includeBinary = (invocation.positionalArguments[0] as BinaryDataByFilterRequest).includeBinary;
-          return MockResponseFuture.value(
-            BinaryDataByFilterResponse()
-              ..count = Int64(limit)
-              ..last = last,
-          );
+          final response = BinaryDataByFilterResponse()
+            ..count = Int64(limit)
+            ..last = last;
+          if (includeBinary) {
+            response.data.add(BinaryData()
+              ..binary = [1, 2, 3, 4]
+              ..metadata = (BinaryMetadata()..fileSizeBytes = expectedFileSizeBytes));
+          }
+          return MockResponseFuture.value(response);
         });
 
         final response = await dataClient.binaryDataByFilter(
@@ -135,6 +140,8 @@ void main() {
         expect(response.count, equals(Int64(limit)));
         expect(response.last, equals(last));
         expect(includeBinary, isTrue);
+        expect(response.data, isNotEmpty);
+        expect(response.data.first.metadata.fileSizeBytes, equals(expectedFileSizeBytes));
       });
 
       test('binaryDataByFilter_countOnly', () async {
@@ -157,10 +164,19 @@ void main() {
             ..locationId = 'locationid'
             ..fileId = 'fileid',
         ];
+        final expectedFileSizeBytes1 = Int64(2048);
+        final expectedFileSizeBytes2 = Int64(3072);
+        final expectedFileSizeBytes3 = Int64(4096);
         final data = [
-          BinaryData()..binary = [1, 2, 3, 4],
-          BinaryData()..binary = [2, 3, 4, 5],
-          BinaryData()..binary = [3, 4, 5, 6],
+          BinaryData()
+            ..binary = [1, 2, 3, 4]
+            ..metadata = (BinaryMetadata()..fileSizeBytes = expectedFileSizeBytes1),
+          BinaryData()
+            ..binary = [2, 3, 4, 5]
+            ..metadata = (BinaryMetadata()..fileSizeBytes = expectedFileSizeBytes2),
+          BinaryData()
+            ..binary = [3, 4, 5, 6]
+            ..metadata = (BinaryMetadata()..fileSizeBytes = expectedFileSizeBytes3),
         ];
         bool includeBinary = false;
 
@@ -172,6 +188,10 @@ void main() {
         final response = await dataClient.binaryDataByIds(ids, includeBinary: true);
         expect(response.data, equals(data));
         expect(includeBinary, isTrue);
+        expect(response.data, hasLength(3));
+        expect(response.data[0].metadata.fileSizeBytes, equals(expectedFileSizeBytes1));
+        expect(response.data[1].metadata.fileSizeBytes, equals(expectedFileSizeBytes2));
+        expect(response.data[2].metadata.fileSizeBytes, equals(expectedFileSizeBytes3));
       });
 
       test('tabularDataBySql', () async {
