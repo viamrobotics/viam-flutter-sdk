@@ -1257,13 +1257,11 @@ class DataClient {
   ///    // Define tabular data
   ///    final List<Map<String, dynamic>> tabularData;
   ///    tabularData = [{
-  ///      'readings': {
-  ///        "altitude_m": 50.2,
-  ///        "coordinate": {
-  ///          "latitude": 40.5,
-  ///          "longitude": -72.98
-  ///       }
-  ///      }
+  ///      "altitude_m": 50.2,
+  ///      "coordinate": {
+  ///        "latitude": 40.5,
+  ///        "longitude": -72.98
+  ///      },
   ///    }];
   ///
   ///   // Define date request times
