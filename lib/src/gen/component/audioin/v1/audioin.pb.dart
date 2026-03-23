@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../common/v1/common.pb.dart' as $9;
+import '../../../google/protobuf/struct.pb.dart' as $49;
 
 class GetAudioRequest extends $pb.GeneratedMessage {
   factory GetAudioRequest({
@@ -24,7 +24,7 @@ class GetAudioRequest extends $pb.GeneratedMessage {
     $core.String? codec,
     $core.String? requestId,
     $fixnum.Int64? previousTimestampNanoseconds,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -57,7 +57,7 @@ class GetAudioRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'codec')
     ..aOS(4, _omitFieldNames ? '' : 'requestId')
     ..aInt64(5, _omitFieldNames ? '' : 'previousTimestampNanoseconds')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -133,15 +133,15 @@ class GetAudioRequest extends $pb.GeneratedMessage {
   void clearPreviousTimestampNanoseconds() => clearField(5);
 
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(5);
+  $49.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(5);
+  $49.Struct ensureExtra() => $_ensure(5);
 }
 
 class GetAudioResponse extends $pb.GeneratedMessage {
@@ -213,7 +213,7 @@ class GetAudioResponse extends $pb.GeneratedMessage {
 class AudioChunk extends $pb.GeneratedMessage {
   factory AudioChunk({
     $core.List<$core.int>? audioData,
-    $16.AudioInfo? audioInfo,
+    $9.AudioInfo? audioInfo,
     $fixnum.Int64? startTimestampNanoseconds,
     $fixnum.Int64? endTimestampNanoseconds,
     $core.int? sequence,
@@ -242,7 +242,7 @@ class AudioChunk extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AudioChunk', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioin.v1'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'audioData', $pb.PbFieldType.OY)
-    ..aOM<$16.AudioInfo>(2, _omitFieldNames ? '' : 'audioInfo', subBuilder: $16.AudioInfo.create)
+    ..aOM<$9.AudioInfo>(2, _omitFieldNames ? '' : 'audioInfo', subBuilder: $9.AudioInfo.create)
     ..aInt64(3, _omitFieldNames ? '' : 'startTimestampNanoseconds')
     ..aInt64(4, _omitFieldNames ? '' : 'endTimestampNanoseconds')
     ..a<$core.int>(5, _omitFieldNames ? '' : 'sequence', $pb.PbFieldType.O3)
@@ -282,15 +282,15 @@ class AudioChunk extends $pb.GeneratedMessage {
 
   /// Info about the audio stream for this chunk
   @$pb.TagNumber(2)
-  $16.AudioInfo get audioInfo => $_getN(1);
+  $9.AudioInfo get audioInfo => $_getN(1);
   @$pb.TagNumber(2)
-  set audioInfo($16.AudioInfo v) { setField(2, v); }
+  set audioInfo($9.AudioInfo v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAudioInfo() => $_has(1);
   @$pb.TagNumber(2)
   void clearAudioInfo() => clearField(2);
   @$pb.TagNumber(2)
-  $16.AudioInfo ensureAudioInfo() => $_ensure(1);
+  $9.AudioInfo ensureAudioInfo() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get startTimestampNanoseconds => $_getI64(2);

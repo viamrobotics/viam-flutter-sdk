@@ -15,29 +15,33 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
-import 'shell.pb.dart' as $43;
+import '../../../common/v1/common.pb.dart' as $9;
+import 'shell.pb.dart' as $42;
 
 export 'shell.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.shell.v1.ShellService')
 class ShellServiceClient extends $grpc.Client {
-  static final _$shell = $grpc.ClientMethod<$43.ShellRequest, $43.ShellResponse>(
+  static final _$shell = $grpc.ClientMethod<$42.ShellRequest, $42.ShellResponse>(
       '/viam.service.shell.v1.ShellService/Shell',
-      ($43.ShellRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $43.ShellResponse.fromBuffer(value));
-  static final _$copyFilesToMachine = $grpc.ClientMethod<$43.CopyFilesToMachineRequest, $43.CopyFilesToMachineResponse>(
+      ($42.ShellRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $42.ShellResponse.fromBuffer(value));
+  static final _$copyFilesToMachine = $grpc.ClientMethod<$42.CopyFilesToMachineRequest, $42.CopyFilesToMachineResponse>(
       '/viam.service.shell.v1.ShellService/CopyFilesToMachine',
-      ($43.CopyFilesToMachineRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $43.CopyFilesToMachineResponse.fromBuffer(value));
-  static final _$copyFilesFromMachine = $grpc.ClientMethod<$43.CopyFilesFromMachineRequest, $43.CopyFilesFromMachineResponse>(
+      ($42.CopyFilesToMachineRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $42.CopyFilesToMachineResponse.fromBuffer(value));
+  static final _$copyFilesFromMachine = $grpc.ClientMethod<$42.CopyFilesFromMachineRequest, $42.CopyFilesFromMachineResponse>(
       '/viam.service.shell.v1.ShellService/CopyFilesFromMachine',
-      ($43.CopyFilesFromMachineRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $43.CopyFilesFromMachineResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+      ($42.CopyFilesFromMachineRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $42.CopyFilesFromMachineResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.service.shell.v1.ShellService/DoCommand',
-      ($16.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
+      ($9.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DoCommandResponse.fromBuffer(value));
+  static final _$getStatus = $grpc.ClientMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+      '/viam.service.shell.v1.ShellService/GetStatus',
+      ($9.GetStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetStatusResponse.fromBuffer(value));
 
   ShellServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -45,20 +49,24 @@ class ShellServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseStream<$43.ShellResponse> shell($async.Stream<$43.ShellRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$42.ShellResponse> shell($async.Stream<$42.ShellRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$shell, request, options: options);
   }
 
-  $grpc.ResponseStream<$43.CopyFilesToMachineResponse> copyFilesToMachine($async.Stream<$43.CopyFilesToMachineRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$42.CopyFilesToMachineResponse> copyFilesToMachine($async.Stream<$42.CopyFilesToMachineRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$copyFilesToMachine, request, options: options);
   }
 
-  $grpc.ResponseStream<$43.CopyFilesFromMachineResponse> copyFilesFromMachine($async.Stream<$43.CopyFilesFromMachineRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$42.CopyFilesFromMachineResponse> copyFilesFromMachine($async.Stream<$42.CopyFilesFromMachineRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$copyFilesFromMachine, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DoCommandResponse> doCommand($9.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.GetStatusResponse> getStatus($9.GetStatusRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getStatus, request, options: options);
   }
 }
 
@@ -67,42 +75,54 @@ abstract class ShellServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.shell.v1.ShellService';
 
   ShellServiceBase() {
-    $addMethod($grpc.ServiceMethod<$43.ShellRequest, $43.ShellResponse>(
+    $addMethod($grpc.ServiceMethod<$42.ShellRequest, $42.ShellResponse>(
         'Shell',
         shell,
         true,
         true,
-        ($core.List<$core.int> value) => $43.ShellRequest.fromBuffer(value),
-        ($43.ShellResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$43.CopyFilesToMachineRequest, $43.CopyFilesToMachineResponse>(
+        ($core.List<$core.int> value) => $42.ShellRequest.fromBuffer(value),
+        ($42.ShellResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$42.CopyFilesToMachineRequest, $42.CopyFilesToMachineResponse>(
         'CopyFilesToMachine',
         copyFilesToMachine,
         true,
         true,
-        ($core.List<$core.int> value) => $43.CopyFilesToMachineRequest.fromBuffer(value),
-        ($43.CopyFilesToMachineResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$43.CopyFilesFromMachineRequest, $43.CopyFilesFromMachineResponse>(
+        ($core.List<$core.int> value) => $42.CopyFilesToMachineRequest.fromBuffer(value),
+        ($42.CopyFilesToMachineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$42.CopyFilesFromMachineRequest, $42.CopyFilesFromMachineResponse>(
         'CopyFilesFromMachine',
         copyFilesFromMachine,
         true,
         true,
-        ($core.List<$core.int> value) => $43.CopyFilesFromMachineRequest.fromBuffer(value),
-        ($43.CopyFilesFromMachineResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+        ($core.List<$core.int> value) => $42.CopyFilesFromMachineRequest.fromBuffer(value),
+        ($42.CopyFilesFromMachineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
-        ($16.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $9.DoCommandRequest.fromBuffer(value),
+        ($9.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+        'GetStatus',
+        getStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.GetStatusRequest.fromBuffer(value),
+        ($9.GetStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$16.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$16.DoCommandRequest> request) async {
+  $async.Future<$9.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$9.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Stream<$43.ShellResponse> shell($grpc.ServiceCall call, $async.Stream<$43.ShellRequest> request);
-  $async.Stream<$43.CopyFilesToMachineResponse> copyFilesToMachine($grpc.ServiceCall call, $async.Stream<$43.CopyFilesToMachineRequest> request);
-  $async.Stream<$43.CopyFilesFromMachineResponse> copyFilesFromMachine($grpc.ServiceCall call, $async.Stream<$43.CopyFilesFromMachineRequest> request);
-  $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$9.GetStatusRequest> request) async {
+    return getStatus(call, await request);
+  }
+
+  $async.Stream<$42.ShellResponse> shell($grpc.ServiceCall call, $async.Stream<$42.ShellRequest> request);
+  $async.Stream<$42.CopyFilesToMachineResponse> copyFilesToMachine($grpc.ServiceCall call, $async.Stream<$42.CopyFilesToMachineRequest> request);
+  $async.Stream<$42.CopyFilesFromMachineResponse> copyFilesFromMachine($grpc.ServiceCall call, $async.Stream<$42.CopyFilesFromMachineRequest> request);
+  $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
 }

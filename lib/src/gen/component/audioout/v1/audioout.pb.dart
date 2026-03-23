@@ -13,15 +13,15 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../common/v1/common.pb.dart' as $9;
+import '../../../google/protobuf/struct.pb.dart' as $49;
 
 class PlayRequest extends $pb.GeneratedMessage {
   factory PlayRequest({
     $core.String? name,
     $core.List<$core.int>? audioData,
-    $16.AudioInfo? audioInfo,
-    $50.Struct? extra,
+    $9.AudioInfo? audioInfo,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -45,8 +45,8 @@ class PlayRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlayRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioout.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'audioData', $pb.PbFieldType.OY)
-    ..aOM<$16.AudioInfo>(3, _omitFieldNames ? '' : 'audioInfo', subBuilder: $16.AudioInfo.create)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$9.AudioInfo>(3, _omitFieldNames ? '' : 'audioInfo', subBuilder: $9.AudioInfo.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -91,26 +91,26 @@ class PlayRequest extends $pb.GeneratedMessage {
 
   /// Info describing the audio_data
   @$pb.TagNumber(3)
-  $16.AudioInfo get audioInfo => $_getN(2);
+  $9.AudioInfo get audioInfo => $_getN(2);
   @$pb.TagNumber(3)
-  set audioInfo($16.AudioInfo v) { setField(3, v); }
+  set audioInfo($9.AudioInfo v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAudioInfo() => $_has(2);
   @$pb.TagNumber(3)
   void clearAudioInfo() => clearField(3);
   @$pb.TagNumber(3)
-  $16.AudioInfo ensureAudioInfo() => $_ensure(2);
+  $9.AudioInfo ensureAudioInfo() => $_ensure(2);
 
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $49.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $49.Struct ensureExtra() => $_ensure(3);
 }
 
 class PlayResponse extends $pb.GeneratedMessage {

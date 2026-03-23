@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $49;
-import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../google/protobuf/duration.pb.dart' as $48;
+import '../../../google/protobuf/struct.pb.dart' as $49;
 import 'agent.pbenum.dart';
 
 export 'agent.pbenum.dart';
@@ -27,8 +27,8 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, $core.String>? subsystemVersions,
     VersionInfo? versionInfo,
-    $49.Duration? agentUptime,
-    $49.Duration? viamServerUptime,
+    $48.Duration? agentUptime,
+    $48.Duration? viamServerUptime,
   }) {
     final $result = create();
     if (id != null) {
@@ -61,8 +61,8 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
     ..aOM<HostInfo>(2, _omitFieldNames ? '' : 'hostInfo', subBuilder: HostInfo.create)
     ..m<$core.String, $core.String>(3, _omitFieldNames ? '' : 'subsystemVersions', entryClassName: 'DeviceAgentConfigRequest.SubsystemVersionsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.agent.v1'))
     ..aOM<VersionInfo>(4, _omitFieldNames ? '' : 'versionInfo', subBuilder: VersionInfo.create)
-    ..aOM<$49.Duration>(5, _omitFieldNames ? '' : 'agentUptime', subBuilder: $49.Duration.create)
-    ..aOM<$49.Duration>(6, _omitFieldNames ? '' : 'viamServerUptime', subBuilder: $49.Duration.create)
+    ..aOM<$48.Duration>(5, _omitFieldNames ? '' : 'agentUptime', subBuilder: $48.Duration.create)
+    ..aOM<$48.Duration>(6, _omitFieldNames ? '' : 'viamServerUptime', subBuilder: $48.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -129,40 +129,40 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
 
   /// how long viam-agent has been running since its most recent start
   @$pb.TagNumber(5)
-  $49.Duration get agentUptime => $_getN(4);
+  $48.Duration get agentUptime => $_getN(4);
   @$pb.TagNumber(5)
-  set agentUptime($49.Duration v) { setField(5, v); }
+  set agentUptime($48.Duration v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasAgentUptime() => $_has(4);
   @$pb.TagNumber(5)
   void clearAgentUptime() => clearField(5);
   @$pb.TagNumber(5)
-  $49.Duration ensureAgentUptime() => $_ensure(4);
+  $48.Duration ensureAgentUptime() => $_ensure(4);
 
   /// how long viam-server has been running since its most recent start (omitted if not running)
   @$pb.TagNumber(6)
-  $49.Duration get viamServerUptime => $_getN(5);
+  $48.Duration get viamServerUptime => $_getN(5);
   @$pb.TagNumber(6)
-  set viamServerUptime($49.Duration v) { setField(6, v); }
+  set viamServerUptime($48.Duration v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasViamServerUptime() => $_has(5);
   @$pb.TagNumber(6)
   void clearViamServerUptime() => clearField(6);
   @$pb.TagNumber(6)
-  $49.Duration ensureViamServerUptime() => $_ensure(5);
+  $48.Duration ensureViamServerUptime() => $_ensure(5);
 }
 
 class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
   factory DeviceAgentConfigResponse({
   @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, DeviceSubsystemConfig>? subsystemConfigs,
-    $49.Duration? checkInterval,
+    $48.Duration? checkInterval,
     UpdateInfo? agentUpdateInfo,
     UpdateInfo? viamServerUpdateInfo,
-    $50.Struct? advancedSettings,
-    $50.Struct? networkConfiguration,
-    $50.Struct? additionalNetworks,
-    $50.Struct? systemConfiguration,
+    $49.Struct? advancedSettings,
+    $49.Struct? networkConfiguration,
+    $49.Struct? additionalNetworks,
+    $49.Struct? systemConfiguration,
   }) {
     final $result = create();
     if (subsystemConfigs != null) {
@@ -198,13 +198,13 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceAgentConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
     ..m<$core.String, DeviceSubsystemConfig>(1, _omitFieldNames ? '' : 'subsystemConfigs', entryClassName: 'DeviceAgentConfigResponse.SubsystemConfigsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: DeviceSubsystemConfig.create, valueDefaultOrMaker: DeviceSubsystemConfig.getDefault, packageName: const $pb.PackageName('viam.app.agent.v1'))
-    ..aOM<$49.Duration>(2, _omitFieldNames ? '' : 'checkInterval', subBuilder: $49.Duration.create)
+    ..aOM<$48.Duration>(2, _omitFieldNames ? '' : 'checkInterval', subBuilder: $48.Duration.create)
     ..aOM<UpdateInfo>(3, _omitFieldNames ? '' : 'agentUpdateInfo', subBuilder: UpdateInfo.create)
     ..aOM<UpdateInfo>(4, _omitFieldNames ? '' : 'viamServerUpdateInfo', subBuilder: UpdateInfo.create)
-    ..aOM<$50.Struct>(5, _omitFieldNames ? '' : 'advancedSettings', subBuilder: $50.Struct.create)
-    ..aOM<$50.Struct>(6, _omitFieldNames ? '' : 'networkConfiguration', subBuilder: $50.Struct.create)
-    ..aOM<$50.Struct>(7, _omitFieldNames ? '' : 'additionalNetworks', subBuilder: $50.Struct.create)
-    ..aOM<$50.Struct>(8, _omitFieldNames ? '' : 'systemConfiguration', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(5, _omitFieldNames ? '' : 'advancedSettings', subBuilder: $49.Struct.create)
+    ..aOM<$49.Struct>(6, _omitFieldNames ? '' : 'networkConfiguration', subBuilder: $49.Struct.create)
+    ..aOM<$49.Struct>(7, _omitFieldNames ? '' : 'additionalNetworks', subBuilder: $49.Struct.create)
+    ..aOM<$49.Struct>(8, _omitFieldNames ? '' : 'systemConfiguration', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -238,15 +238,15 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
 
   /// how often this request should be repeated
   @$pb.TagNumber(2)
-  $49.Duration get checkInterval => $_getN(1);
+  $48.Duration get checkInterval => $_getN(1);
   @$pb.TagNumber(2)
-  set checkInterval($49.Duration v) { setField(2, v); }
+  set checkInterval($48.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCheckInterval() => $_has(1);
   @$pb.TagNumber(2)
   void clearCheckInterval() => clearField(2);
   @$pb.TagNumber(2)
-  $49.Duration ensureCheckInterval() => $_ensure(1);
+  $48.Duration ensureCheckInterval() => $_ensure(1);
 
   /// update info for agent and viam-server, parsed/processed in App
   @$pb.TagNumber(3)
@@ -273,48 +273,48 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
 
   /// various settings that are passed directly to device Agent
   @$pb.TagNumber(5)
-  $50.Struct get advancedSettings => $_getN(4);
+  $49.Struct get advancedSettings => $_getN(4);
   @$pb.TagNumber(5)
-  set advancedSettings($50.Struct v) { setField(5, v); }
+  set advancedSettings($49.Struct v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasAdvancedSettings() => $_has(4);
   @$pb.TagNumber(5)
   void clearAdvancedSettings() => clearField(5);
   @$pb.TagNumber(5)
-  $50.Struct ensureAdvancedSettings() => $_ensure(4);
+  $49.Struct ensureAdvancedSettings() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $50.Struct get networkConfiguration => $_getN(5);
+  $49.Struct get networkConfiguration => $_getN(5);
   @$pb.TagNumber(6)
-  set networkConfiguration($50.Struct v) { setField(6, v); }
+  set networkConfiguration($49.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasNetworkConfiguration() => $_has(5);
   @$pb.TagNumber(6)
   void clearNetworkConfiguration() => clearField(6);
   @$pb.TagNumber(6)
-  $50.Struct ensureNetworkConfiguration() => $_ensure(5);
+  $49.Struct ensureNetworkConfiguration() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $50.Struct get additionalNetworks => $_getN(6);
+  $49.Struct get additionalNetworks => $_getN(6);
   @$pb.TagNumber(7)
-  set additionalNetworks($50.Struct v) { setField(7, v); }
+  set additionalNetworks($49.Struct v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasAdditionalNetworks() => $_has(6);
   @$pb.TagNumber(7)
   void clearAdditionalNetworks() => clearField(7);
   @$pb.TagNumber(7)
-  $50.Struct ensureAdditionalNetworks() => $_ensure(6);
+  $49.Struct ensureAdditionalNetworks() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $50.Struct get systemConfiguration => $_getN(7);
+  $49.Struct get systemConfiguration => $_getN(7);
   @$pb.TagNumber(8)
-  set systemConfiguration($50.Struct v) { setField(8, v); }
+  set systemConfiguration($49.Struct v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasSystemConfiguration() => $_has(7);
   @$pb.TagNumber(8)
   void clearSystemConfiguration() => clearField(8);
   @$pb.TagNumber(8)
-  $50.Struct ensureSystemConfiguration() => $_ensure(7);
+  $49.Struct ensureSystemConfiguration() => $_ensure(7);
 }
 
 /// DEPRECATED as of January 2025
@@ -323,7 +323,7 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
     UpdateInfo? updateInfo,
     $core.bool? disable,
     $core.bool? forceRestart,
-    $50.Struct? attributes,
+    $49.Struct? attributes,
   }) {
     final $result = create();
     if (updateInfo != null) {
@@ -348,7 +348,7 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
     ..aOM<UpdateInfo>(1, _omitFieldNames ? '' : 'updateInfo', subBuilder: UpdateInfo.create)
     ..aOB(2, _omitFieldNames ? '' : 'disable')
     ..aOB(3, _omitFieldNames ? '' : 'forceRestart')
-    ..aOM<$50.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -407,15 +407,15 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
 
   /// arbitrary config sections
   @$pb.TagNumber(4)
-  $50.Struct get attributes => $_getN(3);
+  $49.Struct get attributes => $_getN(3);
   @$pb.TagNumber(4)
-  set attributes($50.Struct v) { setField(4, v); }
+  set attributes($49.Struct v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAttributes() => $_has(3);
   @$pb.TagNumber(4)
   void clearAttributes() => clearField(4);
   @$pb.TagNumber(4)
-  $50.Struct ensureAttributes() => $_ensure(3);
+  $49.Struct ensureAttributes() => $_ensure(3);
 }
 
 class VersionInfo extends $pb.GeneratedMessage {

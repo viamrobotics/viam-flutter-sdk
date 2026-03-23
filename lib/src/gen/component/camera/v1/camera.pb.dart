@@ -14,166 +14,14 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../app/data/v1/data.pb.dart' as $4;
-import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $50;
-import 'camera.pbenum.dart';
-
-export 'camera.pbenum.dart';
-
-class GetImageRequest extends $pb.GeneratedMessage {
-  factory GetImageRequest({
-    $core.String? name,
-    $core.String? mimeType,
-    $50.Struct? extra,
-  }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (mimeType != null) {
-      $result.mimeType = mimeType;
-    }
-    if (extra != null) {
-      $result.extra = extra;
-    }
-    return $result;
-  }
-  GetImageRequest._() : super();
-  factory GetImageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetImageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetImageRequest clone() => GetImageRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetImageRequest copyWith(void Function(GetImageRequest) updates) => super.copyWith((message) => updates(message as GetImageRequest)) as GetImageRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetImageRequest create() => GetImageRequest._();
-  GetImageRequest createEmptyInstance() => create();
-  static $pb.PbList<GetImageRequest> createRepeated() => $pb.PbList<GetImageRequest>();
-  @$core.pragma('dart2js:noInline')
-  static GetImageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetImageRequest>(create);
-  static GetImageRequest? _defaultInstance;
-
-  /// Name of a camera
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-
-  /// Requested MIME type of response
-  @$pb.TagNumber(2)
-  $core.String get mimeType => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set mimeType($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasMimeType() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearMimeType() => clearField(2);
-
-  /// Additional arguments to the method
-  @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
-  @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
-  @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(2);
-  @$pb.TagNumber(99)
-  void clearExtra() => clearField(99);
-  @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
-}
-
-class GetImageResponse extends $pb.GeneratedMessage {
-  factory GetImageResponse({
-    $core.String? mimeType,
-    $core.List<$core.int>? image,
-  }) {
-    final $result = create();
-    if (mimeType != null) {
-      $result.mimeType = mimeType;
-    }
-    if (image != null) {
-      $result.image = image;
-    }
-    return $result;
-  }
-  GetImageResponse._() : super();
-  factory GetImageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetImageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'mimeType')
-    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'image', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetImageResponse clone() => GetImageResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetImageResponse copyWith(void Function(GetImageResponse) updates) => super.copyWith((message) => updates(message as GetImageResponse)) as GetImageResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetImageResponse create() => GetImageResponse._();
-  GetImageResponse createEmptyInstance() => create();
-  static $pb.PbList<GetImageResponse> createRepeated() => $pb.PbList<GetImageResponse>();
-  @$core.pragma('dart2js:noInline')
-  static GetImageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetImageResponse>(create);
-  static GetImageResponse? _defaultInstance;
-
-  /// Actual MIME type of response
-  @$pb.TagNumber(1)
-  $core.String get mimeType => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set mimeType($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasMimeType() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearMimeType() => clearField(1);
-
-  /// Frame in bytes
-  @$pb.TagNumber(2)
-  $core.List<$core.int> get image => $_getN(1);
-  @$pb.TagNumber(2)
-  set image($core.List<$core.int> v) { $_setBytes(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasImage() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearImage() => clearField(2);
-}
+import '../../../common/v1/common.pb.dart' as $9;
+import '../../../google/protobuf/struct.pb.dart' as $49;
 
 class GetImagesRequest extends $pb.GeneratedMessage {
   factory GetImagesRequest({
     $core.String? name,
     $core.Iterable<$core.String>? filterSourceNames,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -194,7 +42,7 @@ class GetImagesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..pPS(2, _omitFieldNames ? '' : 'filterSourceNames')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -236,21 +84,21 @@ class GetImagesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $49.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $49.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetImagesResponse extends $pb.GeneratedMessage {
   factory GetImagesResponse({
     $core.Iterable<Image>? images,
-    $16.ResponseMetadata? responseMetadata,
+    $9.ResponseMetadata? responseMetadata,
   }) {
     final $result = create();
     if (images != null) {
@@ -267,7 +115,7 @@ class GetImagesResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..pc<Image>(1, _omitFieldNames ? '' : 'images', $pb.PbFieldType.PM, subBuilder: Image.create)
-    ..aOM<$16.ResponseMetadata>(84260, _omitFieldNames ? '' : 'responseMetadata', subBuilder: $16.ResponseMetadata.create)
+    ..aOM<$9.ResponseMetadata>(84260, _omitFieldNames ? '' : 'responseMetadata', subBuilder: $9.ResponseMetadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -298,21 +146,20 @@ class GetImagesResponse extends $pb.GeneratedMessage {
 
   /// contains timestamp data
   @$pb.TagNumber(84260)
-  $16.ResponseMetadata get responseMetadata => $_getN(1);
+  $9.ResponseMetadata get responseMetadata => $_getN(1);
   @$pb.TagNumber(84260)
-  set responseMetadata($16.ResponseMetadata v) { setField(84260, v); }
+  set responseMetadata($9.ResponseMetadata v) { setField(84260, v); }
   @$pb.TagNumber(84260)
   $core.bool hasResponseMetadata() => $_has(1);
   @$pb.TagNumber(84260)
   void clearResponseMetadata() => clearField(84260);
   @$pb.TagNumber(84260)
-  $16.ResponseMetadata ensureResponseMetadata() => $_ensure(1);
+  $9.ResponseMetadata ensureResponseMetadata() => $_ensure(1);
 }
 
 class Image extends $pb.GeneratedMessage {
   factory Image({
     $core.String? sourceName,
-    Format? format,
     $core.List<$core.int>? image,
     $core.String? mimeType,
     $4.Annotations? annotations,
@@ -320,9 +167,6 @@ class Image extends $pb.GeneratedMessage {
     final $result = create();
     if (sourceName != null) {
       $result.sourceName = sourceName;
-    }
-    if (format != null) {
-      $result.format = format;
     }
     if (image != null) {
       $result.image = image;
@@ -341,7 +185,6 @@ class Image extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Image', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sourceName')
-    ..e<Format>(2, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: Format.FORMAT_UNSPECIFIED, valueOf: Format.valueOf, enumValues: Format.values)
     ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'image', $pb.PbFieldType.OY)
     ..aOS(4, _omitFieldNames ? '' : 'mimeType')
     ..aOM<$4.Annotations>(5, _omitFieldNames ? '' : 'annotations', subBuilder: $4.Annotations.create)
@@ -379,137 +222,44 @@ class Image extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSourceName() => clearField(1);
 
-  /// format of the response image bytes
-  @$pb.TagNumber(2)
-  Format get format => $_getN(1);
-  @$pb.TagNumber(2)
-  set format(Format v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasFormat() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearFormat() => clearField(2);
-
   /// image in bytes
   @$pb.TagNumber(3)
-  $core.List<$core.int> get image => $_getN(2);
+  $core.List<$core.int> get image => $_getN(1);
   @$pb.TagNumber(3)
-  set image($core.List<$core.int> v) { $_setBytes(2, v); }
+  set image($core.List<$core.int> v) { $_setBytes(1, v); }
   @$pb.TagNumber(3)
-  $core.bool hasImage() => $_has(2);
+  $core.bool hasImage() => $_has(1);
   @$pb.TagNumber(3)
   void clearImage() => clearField(3);
 
   /// The mime type of the image
   @$pb.TagNumber(4)
-  $core.String get mimeType => $_getSZ(3);
+  $core.String get mimeType => $_getSZ(2);
   @$pb.TagNumber(4)
-  set mimeType($core.String v) { $_setString(3, v); }
+  set mimeType($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(4)
-  $core.bool hasMimeType() => $_has(3);
+  $core.bool hasMimeType() => $_has(2);
   @$pb.TagNumber(4)
   void clearMimeType() => clearField(4);
 
   /// annotations can be used to store additional information about the image
   @$pb.TagNumber(5)
-  $4.Annotations get annotations => $_getN(4);
+  $4.Annotations get annotations => $_getN(3);
   @$pb.TagNumber(5)
   set annotations($4.Annotations v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasAnnotations() => $_has(4);
+  $core.bool hasAnnotations() => $_has(3);
   @$pb.TagNumber(5)
   void clearAnnotations() => clearField(5);
   @$pb.TagNumber(5)
-  $4.Annotations ensureAnnotations() => $_ensure(4);
-}
-
-class RenderFrameRequest extends $pb.GeneratedMessage {
-  factory RenderFrameRequest({
-    $core.String? name,
-    $core.String? mimeType,
-    $50.Struct? extra,
-  }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (mimeType != null) {
-      $result.mimeType = mimeType;
-    }
-    if (extra != null) {
-      $result.extra = extra;
-    }
-    return $result;
-  }
-  RenderFrameRequest._() : super();
-  factory RenderFrameRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RenderFrameRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenderFrameRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  RenderFrameRequest clone() => RenderFrameRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  RenderFrameRequest copyWith(void Function(RenderFrameRequest) updates) => super.copyWith((message) => updates(message as RenderFrameRequest)) as RenderFrameRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static RenderFrameRequest create() => RenderFrameRequest._();
-  RenderFrameRequest createEmptyInstance() => create();
-  static $pb.PbList<RenderFrameRequest> createRepeated() => $pb.PbList<RenderFrameRequest>();
-  @$core.pragma('dart2js:noInline')
-  static RenderFrameRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RenderFrameRequest>(create);
-  static RenderFrameRequest? _defaultInstance;
-
-  /// Name of a camera
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-
-  /// Requested MIME type of response
-  @$pb.TagNumber(2)
-  $core.String get mimeType => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set mimeType($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasMimeType() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearMimeType() => clearField(2);
-
-  /// Additional arguments to the method
-  @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
-  @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
-  @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(2);
-  @$pb.TagNumber(99)
-  void clearExtra() => clearField(99);
-  @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $4.Annotations ensureAnnotations() => $_ensure(3);
 }
 
 class GetPointCloudRequest extends $pb.GeneratedMessage {
   factory GetPointCloudRequest({
     $core.String? name,
     $core.String? mimeType,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -530,7 +280,7 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPointCloudRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'mimeType')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -577,15 +327,15 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $49.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $49.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetPointCloudResponse extends $pb.GeneratedMessage {
@@ -1263,8 +1013,8 @@ class DistortionParameters extends $pb.GeneratedMessage {
 /// relative to a reference frame (the world or another sensor).
 class ExtrinsicParameters extends $pb.GeneratedMessage {
   factory ExtrinsicParameters({
-    $16.Vector3? translation,
-    $16.Orientation? orientation,
+    $9.Vector3? translation,
+    $9.Orientation? orientation,
   }) {
     final $result = create();
     if (translation != null) {
@@ -1280,8 +1030,8 @@ class ExtrinsicParameters extends $pb.GeneratedMessage {
   factory ExtrinsicParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtrinsicParameters', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOM<$16.Vector3>(1, _omitFieldNames ? '' : 'translation', subBuilder: $16.Vector3.create)
-    ..aOM<$16.Orientation>(2, _omitFieldNames ? '' : 'orientation', subBuilder: $16.Orientation.create)
+    ..aOM<$9.Vector3>(1, _omitFieldNames ? '' : 'translation', subBuilder: $9.Vector3.create)
+    ..aOM<$9.Orientation>(2, _omitFieldNames ? '' : 'orientation', subBuilder: $9.Orientation.create)
     ..hasRequiredFields = false
   ;
 
@@ -1308,27 +1058,27 @@ class ExtrinsicParameters extends $pb.GeneratedMessage {
 
   /// The translation from the reference frame to the camera.
   @$pb.TagNumber(1)
-  $16.Vector3 get translation => $_getN(0);
+  $9.Vector3 get translation => $_getN(0);
   @$pb.TagNumber(1)
-  set translation($16.Vector3 v) { setField(1, v); }
+  set translation($9.Vector3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTranslation() => $_has(0);
   @$pb.TagNumber(1)
   void clearTranslation() => clearField(1);
   @$pb.TagNumber(1)
-  $16.Vector3 ensureTranslation() => $_ensure(0);
+  $9.Vector3 ensureTranslation() => $_ensure(0);
 
   /// The orientation from the reference frame to the camera.
   @$pb.TagNumber(2)
-  $16.Orientation get orientation => $_getN(1);
+  $9.Orientation get orientation => $_getN(1);
   @$pb.TagNumber(2)
-  set orientation($16.Orientation v) { setField(2, v); }
+  set orientation($9.Orientation v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasOrientation() => $_has(1);
   @$pb.TagNumber(2)
   void clearOrientation() => clearField(2);
   @$pb.TagNumber(2)
-  $16.Orientation ensureOrientation() => $_ensure(1);
+  $9.Orientation ensureOrientation() => $_ensure(1);
 }
 
 
