@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:fixnum/fixnum.dart';
 
 import '../../protos/app/packages.dart';
-import '../gen/app/v1/app.pbgrpc.dart';
-import '../gen/common/v1/common.pb.dart';
+import '../../protos/app/app.dart';
+import '../../protos/common/common.dart';
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../utils.dart';
 import 'permissions.dart';
@@ -907,11 +907,10 @@ class AppClient {
 
   /// Upload a device push token for the user.
   ///
-  /// Associates a device token with the user's email and app bundle ID so that
+  /// Associates a device token with the user and app bundle ID so that
   /// push notifications can be sent to this device when triggers fire.
-  Future<void> uploadDevicePushToken(String email, String bundleId, String deviceUuid, String deviceToken) async {
+  Future<void> uploadDevicePushToken(String bundleId, String deviceUuid, String deviceToken) async {
     final request = UploadDevicePushTokenRequest()
-      ..email = email
       ..bundleId = bundleId
       ..deviceUuid = deviceUuid
       ..deviceToken = deviceToken;
@@ -922,9 +921,8 @@ class AppClient {
   ///
   /// Removes a previously registered device token, stopping push notifications
   /// for this device.
-  Future<void> deleteDevicePushToken(String email, String bundleId, String deviceUuid) async {
+  Future<void> deleteDevicePushToken(String bundleId, String deviceUuid) async {
     final request = DeleteDevicePushTokenRequest()
-      ..email = email
       ..bundleId = bundleId
       ..deviceUuid = deviceUuid;
     await _client.deleteDevicePushToken(request);
@@ -932,11 +930,10 @@ class AppClient {
 
   /// Get all device push tokens for the user.
   ///
-  /// Returns a list of device tokens registered for the given user email and
+  /// Returns a list of device tokens registered for the authenticated user and
   /// app bundle ID.
-  Future<List<String>> getDevicePushTokens(String email, String bundleId) async {
+  Future<List<String>> getDevicePushTokens(String bundleId) async {
     final request = GetDevicePushTokensRequest()
-      ..email = email
       ..bundleId = bundleId;
     final GetDevicePushTokensResponse response = await _client.getDevicePushTokens(request);
     return response.deviceTokens;
