@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:fixnum/fixnum.dart';
 
 import '../../protos/app/packages.dart';
-import '../../protos/app/app.dart';
-import '../../protos/common/common.dart';
+import '../gen/app/v1/app.pbgrpc.dart';
+import '../gen/common/v1/common.pb.dart';
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../utils.dart';
 import 'permissions.dart';
