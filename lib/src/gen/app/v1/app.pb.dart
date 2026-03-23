@@ -18301,5 +18301,360 @@ class MachinePickerCustomizations extends $pb.GeneratedMessage {
 }
 
 
+class DoCommandResult extends $pb.GeneratedMessage {
+  factory DoCommandResult({
+    $core.String? input,
+    $core.String? userId,
+    $core.String? errorMessage,
+    $core.int? statusCode,
+    $51.Timestamp? timestamp,
+    $core.String? machineId,
+    $core.String? resourceName,
+  }) {
+    final $result = create();
+    if (input != null) {
+      $result.input = input;
+    }
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (errorMessage != null) {
+      $result.errorMessage = errorMessage;
+    }
+    if (statusCode != null) {
+      $result.statusCode = statusCode;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    if (resourceName != null) {
+      $result.resourceName = resourceName;
+    }
+    return $result;
+  }
+  DoCommandResult._() : super();
+  factory DoCommandResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DoCommandResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoCommandResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'input')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'errorMessage')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'statusCode', $pb.PbFieldType.O3)
+    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $51.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'machineId')
+    ..aOS(7, _omitFieldNames ? '' : 'resourceName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DoCommandResult clone() => DoCommandResult()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DoCommandResult copyWith(void Function(DoCommandResult) updates) => super.copyWith((message) => updates(message as DoCommandResult)) as DoCommandResult;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DoCommandResult create() => DoCommandResult._();
+  DoCommandResult createEmptyInstance() => create();
+  static $pb.PbList<DoCommandResult> createRepeated() => $pb.PbList<DoCommandResult>();
+  @$core.pragma('dart2js:noInline')
+  static DoCommandResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DoCommandResult>(create);
+  static DoCommandResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get input => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set input($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasInput() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInput() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get errorMessage => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set errorMessage($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasErrorMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearErrorMessage() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get statusCode => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set statusCode($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStatusCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatusCode() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $51.Timestamp get timestamp => $_getN(4);
+  @$pb.TagNumber(5)
+  set timestamp($51.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTimestamp() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTimestamp() => clearField(5);
+  @$pb.TagNumber(5)
+  $51.Timestamp ensureTimestamp() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get machineId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set machineId($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMachineId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMachineId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get resourceName => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set resourceName($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasResourceName() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearResourceName() => clearField(7);
+}
+
+class PostDoCommandResultRequest extends $pb.GeneratedMessage {
+  factory PostDoCommandResultRequest({
+    $core.String? input,
+    $core.String? userId,
+    $core.String? machineId,
+    $core.String? resourceName,
+  }) {
+    final $result = create();
+    if (input != null) {
+      $result.input = input;
+    }
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    if (resourceName != null) {
+      $result.resourceName = resourceName;
+    }
+    return $result;
+  }
+  PostDoCommandResultRequest._() : super();
+  factory PostDoCommandResultRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PostDoCommandResultRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostDoCommandResultRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'input')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'machineId')
+    ..aOS(4, _omitFieldNames ? '' : 'resourceName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PostDoCommandResultRequest clone() => PostDoCommandResultRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PostDoCommandResultRequest copyWith(void Function(PostDoCommandResultRequest) updates) => super.copyWith((message) => updates(message as PostDoCommandResultRequest)) as PostDoCommandResultRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostDoCommandResultRequest create() => PostDoCommandResultRequest._();
+  PostDoCommandResultRequest createEmptyInstance() => create();
+  static $pb.PbList<PostDoCommandResultRequest> createRepeated() => $pb.PbList<PostDoCommandResultRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PostDoCommandResultRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostDoCommandResultRequest>(create);
+  static PostDoCommandResultRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get input => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set input($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasInput() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInput() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get machineId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set machineId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMachineId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMachineId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get resourceName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set resourceName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasResourceName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResourceName() => clearField(4);
+}
+
+class PostDoCommandResultResponse extends $pb.GeneratedMessage {
+  factory PostDoCommandResultResponse() => create();
+  PostDoCommandResultResponse._() : super();
+  factory PostDoCommandResultResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PostDoCommandResultResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostDoCommandResultResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PostDoCommandResultResponse clone() => PostDoCommandResultResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PostDoCommandResultResponse copyWith(void Function(PostDoCommandResultResponse) updates) => super.copyWith((message) => updates(message as PostDoCommandResultResponse)) as PostDoCommandResultResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostDoCommandResultResponse create() => PostDoCommandResultResponse._();
+  PostDoCommandResultResponse createEmptyInstance() => create();
+  static $pb.PbList<PostDoCommandResultResponse> createRepeated() => $pb.PbList<PostDoCommandResultResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PostDoCommandResultResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostDoCommandResultResponse>(create);
+  static PostDoCommandResultResponse? _defaultInstance;
+}
+
+class GetDoCommandResultsRequest extends $pb.GeneratedMessage {
+  factory GetDoCommandResultsRequest({
+    $core.String? machineId,
+  }) {
+    final $result = create();
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    return $result;
+  }
+  GetDoCommandResultsRequest._() : super();
+  factory GetDoCommandResultsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDoCommandResultsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDoCommandResultsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'machineId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDoCommandResultsRequest clone() => GetDoCommandResultsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDoCommandResultsRequest copyWith(void Function(GetDoCommandResultsRequest) updates) => super.copyWith((message) => updates(message as GetDoCommandResultsRequest)) as GetDoCommandResultsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDoCommandResultsRequest create() => GetDoCommandResultsRequest._();
+  GetDoCommandResultsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDoCommandResultsRequest> createRepeated() => $pb.PbList<GetDoCommandResultsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDoCommandResultsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDoCommandResultsRequest>(create);
+  static GetDoCommandResultsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get machineId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set machineId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMachineId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMachineId() => clearField(1);
+}
+
+class GetDoCommandResultsResponse extends $pb.GeneratedMessage {
+  factory GetDoCommandResultsResponse({
+    $core.Iterable<DoCommandResult>? results,
+  }) {
+    final $result = create();
+    if (results != null) {
+      $result.results.addAll(results);
+    }
+    return $result;
+  }
+  GetDoCommandResultsResponse._() : super();
+  factory GetDoCommandResultsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDoCommandResultsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDoCommandResultsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<DoCommandResult>(1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM, subBuilder: DoCommandResult.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDoCommandResultsResponse clone() => GetDoCommandResultsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDoCommandResultsResponse copyWith(void Function(GetDoCommandResultsResponse) updates) => super.copyWith((message) => updates(message as GetDoCommandResultsResponse)) as GetDoCommandResultsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDoCommandResultsResponse create() => GetDoCommandResultsResponse._();
+  GetDoCommandResultsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDoCommandResultsResponse> createRepeated() => $pb.PbList<GetDoCommandResultsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDoCommandResultsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDoCommandResultsResponse>(create);
+  static GetDoCommandResultsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<DoCommandResult> get results => $_getList(0);
+}
+
+
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

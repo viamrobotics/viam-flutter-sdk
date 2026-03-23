@@ -457,6 +457,14 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/GetAppBranding',
       ($11.GetAppBrandingRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $11.GetAppBrandingResponse.fromBuffer(value));
+  static final _$postDoCommandResult = $grpc.ClientMethod<$11.PostDoCommandResultRequest, $11.PostDoCommandResultResponse>(
+      '/viam.app.v1.AppService/PostDoCommandResult',
+      ($11.PostDoCommandResultRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.PostDoCommandResultResponse.fromBuffer(value));
+  static final _$getDoCommandResults = $grpc.ClientMethod<$11.GetDoCommandResultsRequest, $11.GetDoCommandResultsResponse>(
+      '/viam.app.v1.AppService/GetDoCommandResults',
+      ($11.GetDoCommandResultsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.GetDoCommandResultsResponse.fromBuffer(value));
 
   AppServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -898,6 +906,14 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$11.GetAppBrandingResponse> getAppBranding($11.GetAppBrandingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAppBranding, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$11.PostDoCommandResultResponse> postDoCommandResult($11.PostDoCommandResultRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$postDoCommandResult, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$11.GetDoCommandResultsResponse> getDoCommandResults($11.GetDoCommandResultsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getDoCommandResults, request, options: options);
   }
 }
 
@@ -1669,6 +1685,20 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $11.GetAppBrandingRequest.fromBuffer(value),
         ($11.GetAppBrandingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.PostDoCommandResultRequest, $11.PostDoCommandResultResponse>(
+        'PostDoCommandResult',
+        postDoCommandResult_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.PostDoCommandResultRequest.fromBuffer(value),
+        ($11.PostDoCommandResultResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.GetDoCommandResultsRequest, $11.GetDoCommandResultsResponse>(
+        'GetDoCommandResults',
+        getDoCommandResults_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.GetDoCommandResultsRequest.fromBuffer(value),
+        ($11.GetDoCommandResultsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$11.GetUserIDByEmailResponse> getUserIDByEmail_Pre($grpc.ServiceCall call, $async.Future<$11.GetUserIDByEmailRequest> request) async {
@@ -2103,6 +2133,14 @@ abstract class AppServiceBase extends $grpc.Service {
     return getAppBranding(call, await request);
   }
 
+  $async.Future<$11.PostDoCommandResultResponse> postDoCommandResult_Pre($grpc.ServiceCall call, $async.Future<$11.PostDoCommandResultRequest> request) async {
+    return postDoCommandResult(call, await request);
+  }
+
+  $async.Future<$11.GetDoCommandResultsResponse> getDoCommandResults_Pre($grpc.ServiceCall call, $async.Future<$11.GetDoCommandResultsRequest> request) async {
+    return getDoCommandResults(call, await request);
+  }
+
   $async.Future<$11.GetUserIDByEmailResponse> getUserIDByEmail($grpc.ServiceCall call, $11.GetUserIDByEmailRequest request);
   $async.Future<$11.CreateOrganizationResponse> createOrganization($grpc.ServiceCall call, $11.CreateOrganizationRequest request);
   $async.Future<$11.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $11.ListOrganizationsRequest request);
@@ -2212,4 +2250,6 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$11.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($grpc.ServiceCall call, $11.CreateKeyFromExistingKeyAuthorizationsRequest request);
   $async.Future<$11.GetAppContentResponse> getAppContent($grpc.ServiceCall call, $11.GetAppContentRequest request);
   $async.Future<$11.GetAppBrandingResponse> getAppBranding($grpc.ServiceCall call, $11.GetAppBrandingRequest request);
+  $async.Future<$11.PostDoCommandResultResponse> postDoCommandResult($grpc.ServiceCall call, $11.PostDoCommandResultRequest request);
+  $async.Future<$11.GetDoCommandResultsResponse> getDoCommandResults($grpc.ServiceCall call, $11.GetDoCommandResultsRequest request);
 }

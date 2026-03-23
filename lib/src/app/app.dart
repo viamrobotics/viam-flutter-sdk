@@ -904,4 +904,37 @@ class AppClient {
       ..data = data.toStruct();
     await _client.updateRobotPartMetadata(request);
   }
+
+  /// Post a [DoCommandResult] to store the input and outcome of a DoCommand execution.
+  ///
+  /// Required Parameters:
+  ///
+  /// * [input]: The command input string that was sent.
+  /// * [userId]: The ID of the user who ran the command.
+  /// * [machineId]: The ID of the machine the command was run against.
+  /// * [resourceName]: The name of the resource the command targeted.
+  Future<void> postDoCommandResult(
+    String input,
+    String userId,
+    String machineId,
+    String resourceName,
+  ) async {
+    final request = PostDoCommandResultRequest()
+      ..input = input
+      ..userId = userId
+      ..machineId = machineId
+      ..resourceName = resourceName;
+    await _client.postDoCommandResult(request);
+  }
+
+  /// Get the recent [DoCommandResult]s for a machine.
+  ///
+  /// Required Parameters:
+  ///
+  /// * [machineId]: The ID of the machine to query DoCommand results for.
+  Future<List<DoCommandResult>> getDoCommandResults(String machineId) async {
+    final request = GetDoCommandResultsRequest()..machineId = machineId;
+    final GetDoCommandResultsResponse response = await _client.getDoCommandResults(request);
+    return response.results;
+  }
 }
