@@ -27,13 +27,15 @@ const IsLegalAcceptedResponse$json = {
   '1': 'IsLegalAcceptedResponse',
   '2': [
     {'1': 'accepted_legal', '3': 1, '4': 1, '5': 8, '10': 'acceptedLegal'},
+    {'1': 'ever_accepted_legal', '3': 2, '4': 1, '5': 8, '10': 'everAcceptedLegal'},
   ],
 };
 
 /// Descriptor for `IsLegalAcceptedResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List isLegalAcceptedResponseDescriptor = $convert.base64Decode(
     'ChdJc0xlZ2FsQWNjZXB0ZWRSZXNwb25zZRIlCg5hY2NlcHRlZF9sZWdhbBgBIAEoCFINYWNjZX'
-    'B0ZWRMZWdhbA==');
+    'B0ZWRMZWdhbBIuChNldmVyX2FjY2VwdGVkX2xlZ2FsGAIgASgIUhFldmVyQWNjZXB0ZWRMZWdh'
+    'bA==');
 
 @$core.Deprecated('Use acceptLegalRequestDescriptor instead')
 const AcceptLegalRequest$json = {

@@ -17888,6 +17888,7 @@ class OAuthConfig extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? redirectUris,
     $core.String? logoutUri,
     $core.Iterable<EnabledGrant>? enabledGrants,
+    $core.String? inviteRedirectUri,
   }) {
     final $result = create();
     if (clientAuthentication != null) {
@@ -17911,6 +17912,9 @@ class OAuthConfig extends $pb.GeneratedMessage {
     if (enabledGrants != null) {
       $result.enabledGrants.addAll(enabledGrants);
     }
+    if (inviteRedirectUri != null) {
+      $result.inviteRedirectUri = inviteRedirectUri;
+    }
     return $result;
   }
   OAuthConfig._() : super();
@@ -17925,6 +17929,7 @@ class OAuthConfig extends $pb.GeneratedMessage {
     ..pPS(5, _omitFieldNames ? '' : 'redirectUris')
     ..aOS(6, _omitFieldNames ? '' : 'logoutUri')
     ..pc<EnabledGrant>(7, _omitFieldNames ? '' : 'enabledGrants', $pb.PbFieldType.KE, valueOf: EnabledGrant.valueOf, enumValues: EnabledGrant.values, defaultEnumValue: EnabledGrant.ENABLED_GRANT_UNSPECIFIED)
+    ..aOS(8, _omitFieldNames ? '' : 'inviteRedirectUri')
     ..hasRequiredFields = false
   ;
 
@@ -17993,6 +17998,15 @@ class OAuthConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.List<EnabledGrant> get enabledGrants => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get inviteRedirectUri => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set inviteRedirectUri($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasInviteRedirectUri() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearInviteRedirectUri() => clearField(8);
 }
 
 /// Branding and customization for app machine picker

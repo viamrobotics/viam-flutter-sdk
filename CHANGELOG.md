@@ -1,11 +1,18 @@
 # Changelog
 
-## [v0.17.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.17.1) (2026-03-02)
+## [v0.18.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.18.0) (2026-03-16)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.17.0...v0.17.1)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.17.1...v0.18.0)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#509](https://github.com/viamrobotics/viam-flutter-sdk/pull/509) ([viambot](https://github.com/viambot))
+- Make all cred fields optional and add deprecated annotation to secret [\#506](https://github.com/viamrobotics/viam-flutter-sdk/pull/506) ([danielbotros](https://github.com/danielbotros))
+- Automated Protos Update [\#504](https://github.com/viamrobotics/viam-flutter-sdk/pull/504) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#503](https://github.com/viamrobotics/viam-flutter-sdk/pull/503) ([viambot](https://github.com/viambot))
+- APP-15413 Add filter param to DeleteTabularData [\#502](https://github.com/viamrobotics/viam-flutter-sdk/pull/502) ([katiepeters](https://github.com/katiepeters))
+- RSDK-13259: Add tests to examples [\#501](https://github.com/viamrobotics/viam-flutter-sdk/pull/501) ([allisonschiang](https://github.com/allisonschiang))
+- v0.17.1 [\#500](https://github.com/viamrobotics/viam-flutter-sdk/pull/500) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#498](https://github.com/viamrobotics/viam-flutter-sdk/pull/498) ([viambot](https://github.com/viambot))
 - Automated Protos Update [\#495](https://github.com/viamrobotics/viam-flutter-sdk/pull/495) ([viambot](https://github.com/viambot))
 - v0.17.0 [\#494](https://github.com/viamrobotics/viam-flutter-sdk/pull/494) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -197,6 +204,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.17.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.17.1) (2026-03-02)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.17.0...v0.17.1)
 
 ## [v0.17.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.17.0) (2026-02-03)
 

@@ -37,9 +37,9 @@ class ProvisioningClient {
   /// [appAddress] is the cloud address that the robot will authenticate against
   Future<void> setSmartMachineCredentials({
     required String id,
-    required String secret,
-    required String apiKeyId,
-    required String apiKey,
+    @Deprecated('Use apiKeyId and apiKey instead. secret will be removed in a future release.') String? secret,
+    String? apiKeyId,
+    String? apiKey,
     String appAddress = 'https://app.viam.com:443',
   }) async {
     final apiKeyConfig = APIKey(id: apiKeyId, key: apiKey);

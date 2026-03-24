@@ -2551,6 +2551,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     Annotations? annotations,
     $core.Iterable<$core.String>? datasetIds,
     $core.String? binaryDataId,
+    $fixnum.Int64? fileSizeBytes,
   }) {
     final $result = create();
     if (id != null) {
@@ -2584,6 +2585,9 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     if (binaryDataId != null) {
       $result.binaryDataId = binaryDataId;
     }
+    if (fileSizeBytes != null) {
+      $result.fileSizeBytes = fileSizeBytes;
+    }
     return $result;
   }
   BinaryMetadata._() : super();
@@ -2601,6 +2605,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     ..aOM<Annotations>(8, _omitFieldNames ? '' : 'annotations', subBuilder: Annotations.create)
     ..pPS(9, _omitFieldNames ? '' : 'datasetIds')
     ..aOS(10, _omitFieldNames ? '' : 'binaryDataId')
+    ..a<$fixnum.Int64>(11, _omitFieldNames ? '' : 'fileSizeBytes', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -2720,6 +2725,146 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   $core.bool hasBinaryDataId() => $_has(9);
   @$pb.TagNumber(10)
   void clearBinaryDataId() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get fileSizeBytes => $_getI64(10);
+  @$pb.TagNumber(11)
+  set fileSizeBytes($fixnum.Int64 v) { $_setInt64(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasFileSizeBytes() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearFileSizeBytes() => clearField(11);
+}
+
+/// TabularFilter filters tabular data. All fields are optional; omitted fields are treated as unconstrained.
+class DeleteTabularFilter extends $pb.GeneratedMessage {
+  factory DeleteTabularFilter({
+    $core.Iterable<$core.String>? locationIds,
+    $core.String? robotId,
+    $core.String? partId,
+    $core.String? componentType,
+    $core.String? componentName,
+    $core.String? method,
+    TagsFilter? tagsFilter,
+  }) {
+    final $result = create();
+    if (locationIds != null) {
+      $result.locationIds.addAll(locationIds);
+    }
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (componentType != null) {
+      $result.componentType = componentType;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (method != null) {
+      $result.method = method;
+    }
+    if (tagsFilter != null) {
+      $result.tagsFilter = tagsFilter;
+    }
+    return $result;
+  }
+  DeleteTabularFilter._() : super();
+  factory DeleteTabularFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTabularFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTabularFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'locationIds')
+    ..aOS(2, _omitFieldNames ? '' : 'robotId')
+    ..aOS(3, _omitFieldNames ? '' : 'partId')
+    ..aOS(4, _omitFieldNames ? '' : 'componentType')
+    ..aOS(5, _omitFieldNames ? '' : 'componentName')
+    ..aOS(6, _omitFieldNames ? '' : 'method')
+    ..aOM<TagsFilter>(7, _omitFieldNames ? '' : 'tagsFilter', subBuilder: TagsFilter.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTabularFilter clone() => DeleteTabularFilter()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTabularFilter copyWith(void Function(DeleteTabularFilter) updates) => super.copyWith((message) => updates(message as DeleteTabularFilter)) as DeleteTabularFilter;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTabularFilter create() => DeleteTabularFilter._();
+  DeleteTabularFilter createEmptyInstance() => create();
+  static $pb.PbList<DeleteTabularFilter> createRepeated() => $pb.PbList<DeleteTabularFilter>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTabularFilter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTabularFilter>(create);
+  static DeleteTabularFilter? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get locationIds => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get robotId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set robotId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRobotId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRobotId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get partId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set partId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPartId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPartId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get componentType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set componentType($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasComponentType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearComponentType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get componentName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set componentName($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasComponentName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearComponentName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get method => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set method($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMethod() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMethod() => clearField(6);
+
+  @$pb.TagNumber(7)
+  TagsFilter get tagsFilter => $_getN(6);
+  @$pb.TagNumber(7)
+  set tagsFilter(TagsFilter v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasTagsFilter() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTagsFilter() => clearField(7);
+  @$pb.TagNumber(7)
+  TagsFilter ensureTagsFilter() => $_ensure(6);
 }
 
 /// DeleteTabularDataRequest deletes the data from the organization that is older than `delete_older_than_days`
@@ -2728,10 +2873,12 @@ class BinaryMetadata extends $pb.GeneratedMessage {
 /// If the request is at 10PM EST on March 11 (March 12 2AM UTC), this deletes all data captured
 /// through March 11 11:59:59PM UTC.
 /// If delete_older_than_days is 0, all existing data is deleted.
+/// If no filter is provided, data will be deleted based on organization_id.
 class DeleteTabularDataRequest extends $pb.GeneratedMessage {
   factory DeleteTabularDataRequest({
     $core.String? organizationId,
     $core.int? deleteOlderThanDays,
+    DeleteTabularFilter? filter,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -2739,6 +2886,9 @@ class DeleteTabularDataRequest extends $pb.GeneratedMessage {
     }
     if (deleteOlderThanDays != null) {
       $result.deleteOlderThanDays = deleteOlderThanDays;
+    }
+    if (filter != null) {
+      $result.filter = filter;
     }
     return $result;
   }
@@ -2749,6 +2899,7 @@ class DeleteTabularDataRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTabularDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'deleteOlderThanDays', $pb.PbFieldType.OU3)
+    ..aOM<DeleteTabularFilter>(3, _omitFieldNames ? '' : 'filter', subBuilder: DeleteTabularFilter.create)
     ..hasRequiredFields = false
   ;
 
@@ -2790,6 +2941,17 @@ class DeleteTabularDataRequest extends $pb.GeneratedMessage {
   $core.bool hasDeleteOlderThanDays() => $_has(1);
   @$pb.TagNumber(2)
   void clearDeleteOlderThanDays() => clearField(2);
+
+  @$pb.TagNumber(3)
+  DeleteTabularFilter get filter => $_getN(2);
+  @$pb.TagNumber(3)
+  set filter(DeleteTabularFilter v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFilter() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFilter() => clearField(3);
+  @$pb.TagNumber(3)
+  DeleteTabularFilter ensureFilter() => $_ensure(2);
 }
 
 /// DeleteBinaryDataResponse returns the number of tabular datapoints deleted.

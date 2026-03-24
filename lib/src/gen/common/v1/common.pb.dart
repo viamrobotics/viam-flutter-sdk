@@ -356,11 +356,146 @@ class Orientation extends $pb.GeneratedMessage {
   void clearTheta() => clearField(4);
 }
 
+class PoseCloud extends $pb.GeneratedMessage {
+  factory PoseCloud({
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+    $core.double? oX,
+    $core.double? oY,
+    $core.double? oZ,
+    $core.double? theta,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    if (oX != null) {
+      $result.oX = oX;
+    }
+    if (oY != null) {
+      $result.oY = oY;
+    }
+    if (oZ != null) {
+      $result.oZ = oZ;
+    }
+    if (theta != null) {
+      $result.theta = theta;
+    }
+    return $result;
+  }
+  PoseCloud._() : super();
+  factory PoseCloud.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PoseCloud.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PoseCloud', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'x', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'y', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'z', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'oX', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'oY', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'oZ', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'theta', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PoseCloud clone() => PoseCloud()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PoseCloud copyWith(void Function(PoseCloud) updates) => super.copyWith((message) => updates(message as PoseCloud)) as PoseCloud;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PoseCloud create() => PoseCloud._();
+  PoseCloud createEmptyInstance() => create();
+  static $pb.PbList<PoseCloud> createRepeated() => $pb.PbList<PoseCloud>();
+  @$core.pragma('dart2js:noInline')
+  static PoseCloud getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PoseCloud>(create);
+  static PoseCloud? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get x => $_getN(0);
+  @$pb.TagNumber(1)
+  set x($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasX() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearX() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get y => $_getN(1);
+  @$pb.TagNumber(2)
+  set y($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasY() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearY() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get z => $_getN(2);
+  @$pb.TagNumber(3)
+  set z($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasZ() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearZ() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get oX => $_getN(3);
+  @$pb.TagNumber(4)
+  set oX($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOX() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOX() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get oY => $_getN(4);
+  @$pb.TagNumber(5)
+  set oY($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasOY() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOY() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get oZ => $_getN(5);
+  @$pb.TagNumber(6)
+  set oZ($core.double v) { $_setDouble(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOZ() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOZ() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get theta => $_getN(6);
+  @$pb.TagNumber(7)
+  set theta($core.double v) { $_setDouble(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasTheta() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTheta() => clearField(7);
+}
+
 /// PoseInFrame contains a pose and the reference frame in which it was observed
 class PoseInFrame extends $pb.GeneratedMessage {
   factory PoseInFrame({
     $core.String? referenceFrame,
     Pose? pose,
+    PoseCloud? goalCloud,
   }) {
     final $result = create();
     if (referenceFrame != null) {
@@ -368,6 +503,9 @@ class PoseInFrame extends $pb.GeneratedMessage {
     }
     if (pose != null) {
       $result.pose = pose;
+    }
+    if (goalCloud != null) {
+      $result.goalCloud = goalCloud;
     }
     return $result;
   }
@@ -378,6 +516,7 @@ class PoseInFrame extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PoseInFrame', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'referenceFrame')
     ..aOM<Pose>(2, _omitFieldNames ? '' : 'pose', subBuilder: Pose.create)
+    ..aOM<PoseCloud>(3, _omitFieldNames ? '' : 'goalCloud', subBuilder: PoseCloud.create)
     ..hasRequiredFields = false
   ;
 
@@ -421,6 +560,17 @@ class PoseInFrame extends $pb.GeneratedMessage {
   void clearPose() => clearField(2);
   @$pb.TagNumber(2)
   Pose ensurePose() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  PoseCloud get goalCloud => $_getN(2);
+  @$pb.TagNumber(3)
+  set goalCloud(PoseCloud v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasGoalCloud() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGoalCloud() => clearField(3);
+  @$pb.TagNumber(3)
+  PoseCloud ensureGoalCloud() => $_ensure(2);
 }
 
 class Vector3 extends $pb.GeneratedMessage {

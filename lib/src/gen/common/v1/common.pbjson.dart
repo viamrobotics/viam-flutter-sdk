@@ -81,19 +81,45 @@ final $typed_data.Uint8List orientationDescriptor = $convert.base64Decode(
     'CgtPcmllbnRhdGlvbhIPCgNvX3gYASABKAFSAm9YEg8KA29feRgCIAEoAVICb1kSDwoDb196GA'
     'MgASgBUgJvWhIUCgV0aGV0YRgEIAEoAVIFdGhldGE=');
 
+@$core.Deprecated('Use poseCloudDescriptor instead')
+const PoseCloud$json = {
+  '1': 'PoseCloud',
+  '2': [
+    {'1': 'x', '3': 1, '4': 1, '5': 1, '10': 'x'},
+    {'1': 'y', '3': 2, '4': 1, '5': 1, '10': 'y'},
+    {'1': 'z', '3': 3, '4': 1, '5': 1, '10': 'z'},
+    {'1': 'o_x', '3': 4, '4': 1, '5': 1, '10': 'oX'},
+    {'1': 'o_y', '3': 5, '4': 1, '5': 1, '10': 'oY'},
+    {'1': 'o_z', '3': 6, '4': 1, '5': 1, '10': 'oZ'},
+    {'1': 'theta', '3': 7, '4': 1, '5': 1, '10': 'theta'},
+  ],
+};
+
+/// Descriptor for `PoseCloud`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List poseCloudDescriptor = $convert.base64Decode(
+    'CglQb3NlQ2xvdWQSDAoBeBgBIAEoAVIBeBIMCgF5GAIgASgBUgF5EgwKAXoYAyABKAFSAXoSDw'
+    'oDb194GAQgASgBUgJvWBIPCgNvX3kYBSABKAFSAm9ZEg8KA29fehgGIAEoAVICb1oSFAoFdGhl'
+    'dGEYByABKAFSBXRoZXRh');
+
 @$core.Deprecated('Use poseInFrameDescriptor instead')
 const PoseInFrame$json = {
   '1': 'PoseInFrame',
   '2': [
     {'1': 'reference_frame', '3': 1, '4': 1, '5': 9, '10': 'referenceFrame'},
     {'1': 'pose', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'pose'},
+    {'1': 'goal_cloud', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.PoseCloud', '9': 0, '10': 'goalCloud', '17': true},
+  ],
+  '8': [
+    {'1': '_goal_cloud'},
   ],
 };
 
 /// Descriptor for `PoseInFrame`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List poseInFrameDescriptor = $convert.base64Decode(
     'CgtQb3NlSW5GcmFtZRInCg9yZWZlcmVuY2VfZnJhbWUYASABKAlSDnJlZmVyZW5jZUZyYW1lEi'
-    'gKBHBvc2UYAiABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgRwb3Nl');
+    'gKBHBvc2UYAiABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgRwb3NlEj0KCmdvYWxfY2xvdWQY'
+    'AyABKAsyGS52aWFtLmNvbW1vbi52MS5Qb3NlQ2xvdWRIAFIJZ29hbENsb3VkiAEBQg0KC19nb2'
+    'FsX2Nsb3Vk');
 
 @$core.Deprecated('Use vector3Descriptor instead')
 const Vector3$json = {
