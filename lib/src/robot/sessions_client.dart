@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
@@ -107,11 +106,9 @@ class SessionsClient implements ResourceRPCClient {
 
   Future<void> _heartbeatTask() async {
     while (_supported != false) {
-      print("heartbeatTask loop ❤️");
       await _heartbeatTick();
       await Future.delayed(_heartbeatInterval);
     }
-    print("heartbeatTask ended ☠️");
   }
 
   Future<void> _heartbeatTick() async {
