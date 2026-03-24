@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
@@ -85,7 +86,7 @@ class SessionsClient implements ResourceRPCClient {
     _currentId = '';
     _supported = null;
     await metadata();
-    await _applyHeartbeatMonitoredMethods();
+    unawaited(_applyHeartbeatMonitoredMethods());
   }
 
   /// Stop the session client and heartbeat tasks
@@ -106,9 +107,11 @@ class SessionsClient implements ResourceRPCClient {
 
   Future<void> _heartbeatTask() async {
     while (_supported != false) {
+      print("heartbeatTask loop ❤️");
       await _heartbeatTick();
       await Future.delayed(_heartbeatInterval);
     }
+    print("heartbeatTask ended ☠️");
   }
 
   Future<void> _heartbeatTick() async {
@@ -119,6 +122,12 @@ class SessionsClient implements ResourceRPCClient {
 
     try {
       await client.sendSessionHeartbeat(request);
+      print("heartbeatTick ❤️");
+      final random = Random().nextInt(20);
+      if (random == 0) {
+        print("heartbeatTick FORCED error ☠️");
+        throw GrpcError.internal('Test error');
+      }
     } on GrpcError catch (e) {
       _logger.d('Session terminated: $e');
       await reset();
