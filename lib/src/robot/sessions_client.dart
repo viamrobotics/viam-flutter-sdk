@@ -26,7 +26,7 @@ class SessionsClient implements ResourceRPCClient {
   RobotServiceClient get client => RobotServiceClient(channel);
 
   String _currentId = '';
-  String get sessionId {
+  String sessionId() {
     return _currentId;
   }
 

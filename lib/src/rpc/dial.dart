@@ -132,7 +132,7 @@ class DialWebRtcOptions {
 
 /// {@category Viam SDK}
 /// Initial connection to a robot at the provided address with the given options, allowing for specifying of initial connection attempt count and timeout
-Future<ClientChannelBase> dialInitial(String address, DialOptions? options, String sessionId) async {
+Future<ClientChannelBase> dialInitial(String address, DialOptions? options, String Function() sessionId) async {
   final opts = options ?? DialOptions();
 
   int numAttempts = opts.initialConnectionAttempts;
@@ -161,7 +161,7 @@ Future<ClientChannelBase> dialInitial(String address, DialOptions? options, Stri
 
 /// {@category Viam SDK}
 /// Connect to a robot at the provided address with the given options
-Future<ClientChannelBase> dial(String address, DialOptions? options, String sessionId) async {
+Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionId) async {
   final opts = options ?? DialOptions();
   _logger = _newDialLogger(opts.logOutput);
 
@@ -246,7 +246,7 @@ Future<String> _searchMdns(String address) async {
   throw NotLocalAddressException(address);
 }
 
-Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, String sessionId) async {
+Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, String Function() sessionId) async {
   _logger.d('Dialing direct GRPC to $address');
   if (options.credentials == null && options.accessToken == null) {
     final host = _hostAndPort(address, options.insecure);
@@ -313,7 +313,7 @@ Future _logConnectionStats(
   }
 }
 
-Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, String sessionId) async {
+Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, String Function() sessionId) async {
   final Stopwatch webrtcDialSW = Stopwatch()..start();
   _logger.d('Dialing WebRTC to $address');
   if (options.authEntity.isNullOrEmpty) {
@@ -555,7 +555,7 @@ String _encodeSDPJsonStringToBase64String(String sdp) {
   return base64.encode(bytes);
 }
 
-Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions options, String sessionId) async {
+Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions options, String Function() sessionId) async {
   final authSW = Stopwatch()..start();
   String accessToken = options.accessToken ?? '';
   if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
@@ -620,7 +620,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
 /// A channel that attaches an access token to gRPC metadata for every call
 class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
   final String accessToken;
-  final String? _sessionId;
+  final String Function()? _sessionId;
 
   AuthenticatedChannel(String host, int port, this.accessToken, bool insecure, [this._sessionId])
       : super(host: host, port: port, transportSecure: !insecure);
@@ -628,7 +628,7 @@ class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
     if ((SessionsClient.heartbeatMonitoredMethods[method.path] ?? false) && _sessionId != null) {
-      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId!}));
+      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId!()}));
     }
 
     options = options.mergedWith(CallOptions(metadata: {'Authorization': 'Bearer $accessToken'}));

@@ -96,7 +96,7 @@ class RobotClient {
     final client = RobotClient._();
     client._address = url;
     client._options = options;
-    client._channel = await dialInitial(url, options.dialOptions, client._sessionsClient.sessionId);
+    client._channel = await dialInitial(url, options.dialOptions, () => client._sessionsClient.sessionId());
     client._sessionsClient = SessionsClient(client._channel, options.enableSessions, url);
     client._sessionsClient.start();
     client._client = rpb.RobotServiceClient(client._channel);
