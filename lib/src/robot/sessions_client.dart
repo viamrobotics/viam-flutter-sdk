@@ -119,12 +119,6 @@ class SessionsClient implements ResourceRPCClient {
 
     try {
       await client.sendSessionHeartbeat(request);
-      print("heartbeatTick ❤️");
-      final random = Random().nextInt(20);
-      if (random == 0) {
-        print("heartbeatTick FORCED error ☠️");
-        throw GrpcError.internal('Test error');
-      }
     } on GrpcError catch (e) {
       _logger.d('Session terminated: $e');
       await reset();
