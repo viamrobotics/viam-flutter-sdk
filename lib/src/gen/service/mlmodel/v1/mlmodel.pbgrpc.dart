@@ -15,6 +15,7 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../../common/v1/common.pb.dart' as $9;
 import 'mlmodel.pb.dart' as $8;
 
 export 'mlmodel.pb.dart';
@@ -29,6 +30,10 @@ class MLModelServiceClient extends $grpc.Client {
       '/viam.service.mlmodel.v1.MLModelService/Metadata',
       ($8.MetadataRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $8.MetadataResponse.fromBuffer(value));
+  static final _$getStatus = $grpc.ClientMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+      '/viam.service.mlmodel.v1.MLModelService/GetStatus',
+      ($9.GetStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetStatusResponse.fromBuffer(value));
 
   MLModelServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -42,6 +47,10 @@ class MLModelServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$8.MetadataResponse> metadata($8.MetadataRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$metadata, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.GetStatusResponse> getStatus($9.GetStatusRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getStatus, request, options: options);
   }
 }
 
@@ -64,6 +73,13 @@ abstract class MLModelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $8.MetadataRequest.fromBuffer(value),
         ($8.MetadataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+        'GetStatus',
+        getStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.GetStatusRequest.fromBuffer(value),
+        ($9.GetStatusResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$8.InferResponse> infer_Pre($grpc.ServiceCall call, $async.Future<$8.InferRequest> request) async {
@@ -74,6 +90,11 @@ abstract class MLModelServiceBase extends $grpc.Service {
     return metadata(call, await request);
   }
 
+  $async.Future<$9.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$9.GetStatusRequest> request) async {
+    return getStatus(call, await request);
+  }
+
   $async.Future<$8.InferResponse> infer($grpc.ServiceCall call, $8.InferRequest request);
   $async.Future<$8.MetadataResponse> metadata($grpc.ServiceCall call, $8.MetadataRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
 }

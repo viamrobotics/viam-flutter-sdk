@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $51;
+import '../../../google/protobuf/timestamp.pb.dart' as $50;
 import '../../packages/v1/packages.pb.dart' as $1;
 import 'build.pbenum.dart';
 
@@ -159,7 +159,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearWorkdir() => clearField(7);
 
-  /// optional distro for linux platforms. defaults to bullseye.
+  /// optional distro for linux platforms.
   /// must be bookworm for cpp module builds.
   @$pb.TagNumber(8)
   $core.String get distro => $_getSZ(7);
@@ -290,6 +290,7 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? workdir,
     $core.String? moduleId,
+    $core.String? distro,
   }) {
     final $result = create();
     if (platform != null) {
@@ -301,6 +302,9 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     if (moduleId != null) {
       $result.moduleId = moduleId;
     }
+    if (distro != null) {
+      $result.distro = distro;
+    }
     return $result;
   }
   ReloadBuildInfo._() : super();
@@ -311,6 +315,7 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'platform')
     ..aOS(2, _omitFieldNames ? '' : 'workdir')
     ..aOS(3, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(4, _omitFieldNames ? '' : 'distro')
     ..hasRequiredFields = false
   ;
 
@@ -364,6 +369,17 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
   $core.bool hasModuleId() => $_has(2);
   @$pb.TagNumber(3)
   void clearModuleId() => clearField(3);
+
+  /// optional distro for linux platforms.
+  /// must be bookworm for cpp module builds.
+  @$pb.TagNumber(4)
+  $core.String get distro => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set distro($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDistro() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDistro() => clearField(4);
 }
 
 enum StartReloadBuildRequest_CloudBuild {
@@ -505,6 +521,7 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     $core.String? packageVersion,
     $core.String? moduleVersion,
     $core.Iterable<$core.String>? platforms,
+    $core.String? distro,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -519,6 +536,9 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     if (platforms != null) {
       $result.platforms.addAll(platforms);
     }
+    if (distro != null) {
+      $result.distro = distro;
+    }
     return $result;
   }
   StartPackageBuildRequest._() : super();
@@ -530,6 +550,7 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'packageVersion')
     ..aOS(3, _omitFieldNames ? '' : 'moduleVersion')
     ..pPS(4, _omitFieldNames ? '' : 'platforms')
+    ..aOS(5, _omitFieldNames ? '' : 'distro')
     ..hasRequiredFields = false
   ;
 
@@ -587,6 +608,17 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
   /// specify the platforms to build for (ex: linux/arm64)
   @$pb.TagNumber(4)
   $core.List<$core.String> get platforms => $_getList(3);
+
+  /// optional distro for linux platforms.
+  /// must be bookworm for cpp module builds.
+  @$pb.TagNumber(5)
+  $core.String get distro => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set distro($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDistro() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDistro() => clearField(5);
 }
 
 class StartPackageBuildResponse extends $pb.GeneratedMessage {
@@ -713,8 +745,8 @@ class JobInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? version,
     JobStatus? status,
-    $51.Timestamp? startTime,
-    $51.Timestamp? endTime,
+    $50.Timestamp? startTime,
+    $50.Timestamp? endTime,
     $core.String? buildStep,
   }) {
     final $result = create();
@@ -750,8 +782,8 @@ class JobInfo extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'platform')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..e<JobStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: JobStatus.JOB_STATUS_UNSPECIFIED, valueOf: JobStatus.valueOf, enumValues: JobStatus.values)
-    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $50.Timestamp.create)
     ..aOS(7, _omitFieldNames ? '' : 'buildStep')
     ..hasRequiredFields = false
   ;
@@ -814,26 +846,26 @@ class JobInfo extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $51.Timestamp get startTime => $_getN(4);
+  $50.Timestamp get startTime => $_getN(4);
   @$pb.TagNumber(5)
-  set startTime($51.Timestamp v) { setField(5, v); }
+  set startTime($50.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $51.Timestamp ensureStartTime() => $_ensure(4);
+  $50.Timestamp ensureStartTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $51.Timestamp get endTime => $_getN(5);
+  $50.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($51.Timestamp v) { setField(6, v); }
+  set endTime($50.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $51.Timestamp ensureEndTime() => $_ensure(5);
+  $50.Timestamp ensureEndTime() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get buildStep => $_getSZ(6);

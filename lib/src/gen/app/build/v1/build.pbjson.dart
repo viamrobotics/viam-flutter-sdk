@@ -92,17 +92,19 @@ const ReloadBuildInfo$json = {
     {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
     {'1': 'workdir', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'workdir', '17': true},
     {'1': 'module_id', '3': 3, '4': 1, '5': 9, '10': 'moduleId'},
+    {'1': 'distro', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'distro', '17': true},
   ],
   '8': [
     {'1': '_workdir'},
+    {'1': '_distro'},
   ],
 };
 
 /// Descriptor for `ReloadBuildInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List reloadBuildInfoDescriptor = $convert.base64Decode(
     'Cg9SZWxvYWRCdWlsZEluZm8SGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3JtEh0KB3dvcmtkaX'
-    'IYAiABKAlIAFIHd29ya2RpcogBARIbCgltb2R1bGVfaWQYAyABKAlSCG1vZHVsZUlkQgoKCF93'
-    'b3JrZGly');
+    'IYAiABKAlIAFIHd29ya2RpcogBARIbCgltb2R1bGVfaWQYAyABKAlSCG1vZHVsZUlkEhsKBmRp'
+    'c3RybxgEIAEoCUgBUgZkaXN0cm+IAQFCCgoIX3dvcmtkaXJCCQoHX2Rpc3Rybw==');
 
 @$core.Deprecated('Use startReloadBuildRequestDescriptor instead')
 const StartReloadBuildRequest$json = {
@@ -143,6 +145,10 @@ const StartPackageBuildRequest$json = {
     {'1': 'package_version', '3': 2, '4': 1, '5': 9, '10': 'packageVersion'},
     {'1': 'module_version', '3': 3, '4': 1, '5': 9, '10': 'moduleVersion'},
     {'1': 'platforms', '3': 4, '4': 3, '5': 9, '10': 'platforms'},
+    {'1': 'distro', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'distro', '17': true},
+  ],
+  '8': [
+    {'1': '_distro'},
   ],
 };
 
@@ -150,7 +156,8 @@ const StartPackageBuildRequest$json = {
 final $typed_data.Uint8List startPackageBuildRequestDescriptor = $convert.base64Decode(
     'ChhTdGFydFBhY2thZ2VCdWlsZFJlcXVlc3QSGwoJbW9kdWxlX2lkGAEgASgJUghtb2R1bGVJZB'
     'InCg9wYWNrYWdlX3ZlcnNpb24YAiABKAlSDnBhY2thZ2VWZXJzaW9uEiUKDm1vZHVsZV92ZXJz'
-    'aW9uGAMgASgJUg1tb2R1bGVWZXJzaW9uEhwKCXBsYXRmb3JtcxgEIAMoCVIJcGxhdGZvcm1z');
+    'aW9uGAMgASgJUg1tb2R1bGVWZXJzaW9uEhwKCXBsYXRmb3JtcxgEIAMoCVIJcGxhdGZvcm1zEh'
+    'sKBmRpc3RybxgFIAEoCUgAUgZkaXN0cm+IAQFCCQoHX2Rpc3Rybw==');
 
 @$core.Deprecated('Use startPackageBuildResponseDescriptor instead')
 const StartPackageBuildResponse$json = {

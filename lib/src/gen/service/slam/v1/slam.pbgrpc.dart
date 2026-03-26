@@ -15,33 +15,37 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
-import 'slam.pb.dart' as $44;
+import '../../../common/v1/common.pb.dart' as $9;
+import 'slam.pb.dart' as $43;
 
 export 'slam.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.slam.v1.SLAMService')
 class SLAMServiceClient extends $grpc.Client {
-  static final _$getPosition = $grpc.ClientMethod<$44.GetPositionRequest, $44.GetPositionResponse>(
+  static final _$getPosition = $grpc.ClientMethod<$43.GetPositionRequest, $43.GetPositionResponse>(
       '/viam.service.slam.v1.SLAMService/GetPosition',
-      ($44.GetPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $44.GetPositionResponse.fromBuffer(value));
-  static final _$getPointCloudMap = $grpc.ClientMethod<$44.GetPointCloudMapRequest, $44.GetPointCloudMapResponse>(
+      ($43.GetPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $43.GetPositionResponse.fromBuffer(value));
+  static final _$getPointCloudMap = $grpc.ClientMethod<$43.GetPointCloudMapRequest, $43.GetPointCloudMapResponse>(
       '/viam.service.slam.v1.SLAMService/GetPointCloudMap',
-      ($44.GetPointCloudMapRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $44.GetPointCloudMapResponse.fromBuffer(value));
-  static final _$getInternalState = $grpc.ClientMethod<$44.GetInternalStateRequest, $44.GetInternalStateResponse>(
+      ($43.GetPointCloudMapRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $43.GetPointCloudMapResponse.fromBuffer(value));
+  static final _$getInternalState = $grpc.ClientMethod<$43.GetInternalStateRequest, $43.GetInternalStateResponse>(
       '/viam.service.slam.v1.SLAMService/GetInternalState',
-      ($44.GetInternalStateRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $44.GetInternalStateResponse.fromBuffer(value));
-  static final _$getProperties = $grpc.ClientMethod<$44.GetPropertiesRequest, $44.GetPropertiesResponse>(
+      ($43.GetInternalStateRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $43.GetInternalStateResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$43.GetPropertiesRequest, $43.GetPropertiesResponse>(
       '/viam.service.slam.v1.SLAMService/GetProperties',
-      ($44.GetPropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $44.GetPropertiesResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+      ($43.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $43.GetPropertiesResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.service.slam.v1.SLAMService/DoCommand',
-      ($16.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
+      ($9.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DoCommandResponse.fromBuffer(value));
+  static final _$getStatus = $grpc.ClientMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+      '/viam.service.slam.v1.SLAMService/GetStatus',
+      ($9.GetStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetStatusResponse.fromBuffer(value));
 
   SLAMServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -49,24 +53,28 @@ class SLAMServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$44.GetPositionResponse> getPosition($44.GetPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$43.GetPositionResponse> getPosition($43.GetPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPosition, request, options: options);
   }
 
-  $grpc.ResponseStream<$44.GetPointCloudMapResponse> getPointCloudMap($44.GetPointCloudMapRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$43.GetPointCloudMapResponse> getPointCloudMap($43.GetPointCloudMapRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$getPointCloudMap, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseStream<$44.GetInternalStateResponse> getInternalState($44.GetInternalStateRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$43.GetInternalStateResponse> getInternalState($43.GetInternalStateRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$getInternalState, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$44.GetPropertiesResponse> getProperties($44.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$43.GetPropertiesResponse> getProperties($43.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DoCommandResponse> doCommand($9.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.GetStatusResponse> getStatus($9.GetStatusRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getStatus, request, options: options);
   }
 }
 
@@ -75,66 +83,78 @@ abstract class SLAMServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.slam.v1.SLAMService';
 
   SLAMServiceBase() {
-    $addMethod($grpc.ServiceMethod<$44.GetPositionRequest, $44.GetPositionResponse>(
+    $addMethod($grpc.ServiceMethod<$43.GetPositionRequest, $43.GetPositionResponse>(
         'GetPosition',
         getPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $44.GetPositionRequest.fromBuffer(value),
-        ($44.GetPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$44.GetPointCloudMapRequest, $44.GetPointCloudMapResponse>(
+        ($core.List<$core.int> value) => $43.GetPositionRequest.fromBuffer(value),
+        ($43.GetPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$43.GetPointCloudMapRequest, $43.GetPointCloudMapResponse>(
         'GetPointCloudMap',
         getPointCloudMap_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $44.GetPointCloudMapRequest.fromBuffer(value),
-        ($44.GetPointCloudMapResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$44.GetInternalStateRequest, $44.GetInternalStateResponse>(
+        ($core.List<$core.int> value) => $43.GetPointCloudMapRequest.fromBuffer(value),
+        ($43.GetPointCloudMapResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$43.GetInternalStateRequest, $43.GetInternalStateResponse>(
         'GetInternalState',
         getInternalState_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $44.GetInternalStateRequest.fromBuffer(value),
-        ($44.GetInternalStateResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$44.GetPropertiesRequest, $44.GetPropertiesResponse>(
+        ($core.List<$core.int> value) => $43.GetInternalStateRequest.fromBuffer(value),
+        ($43.GetInternalStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$43.GetPropertiesRequest, $43.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $44.GetPropertiesRequest.fromBuffer(value),
-        ($44.GetPropertiesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+        ($core.List<$core.int> value) => $43.GetPropertiesRequest.fromBuffer(value),
+        ($43.GetPropertiesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
-        ($16.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $9.DoCommandRequest.fromBuffer(value),
+        ($9.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+        'GetStatus',
+        getStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.GetStatusRequest.fromBuffer(value),
+        ($9.GetStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$44.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$44.GetPositionRequest> request) async {
+  $async.Future<$43.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$43.GetPositionRequest> request) async {
     return getPosition(call, await request);
   }
 
-  $async.Stream<$44.GetPointCloudMapResponse> getPointCloudMap_Pre($grpc.ServiceCall call, $async.Future<$44.GetPointCloudMapRequest> request) async* {
+  $async.Stream<$43.GetPointCloudMapResponse> getPointCloudMap_Pre($grpc.ServiceCall call, $async.Future<$43.GetPointCloudMapRequest> request) async* {
     yield* getPointCloudMap(call, await request);
   }
 
-  $async.Stream<$44.GetInternalStateResponse> getInternalState_Pre($grpc.ServiceCall call, $async.Future<$44.GetInternalStateRequest> request) async* {
+  $async.Stream<$43.GetInternalStateResponse> getInternalState_Pre($grpc.ServiceCall call, $async.Future<$43.GetInternalStateRequest> request) async* {
     yield* getInternalState(call, await request);
   }
 
-  $async.Future<$44.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$44.GetPropertiesRequest> request) async {
+  $async.Future<$43.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$43.GetPropertiesRequest> request) async {
     return getProperties(call, await request);
   }
 
-  $async.Future<$16.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$16.DoCommandRequest> request) async {
+  $async.Future<$9.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$9.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$44.GetPositionResponse> getPosition($grpc.ServiceCall call, $44.GetPositionRequest request);
-  $async.Stream<$44.GetPointCloudMapResponse> getPointCloudMap($grpc.ServiceCall call, $44.GetPointCloudMapRequest request);
-  $async.Stream<$44.GetInternalStateResponse> getInternalState($grpc.ServiceCall call, $44.GetInternalStateRequest request);
-  $async.Future<$44.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $44.GetPropertiesRequest request);
-  $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$9.GetStatusRequest> request) async {
+    return getStatus(call, await request);
+  }
+
+  $async.Future<$43.GetPositionResponse> getPosition($grpc.ServiceCall call, $43.GetPositionRequest request);
+  $async.Stream<$43.GetPointCloudMapResponse> getPointCloudMap($grpc.ServiceCall call, $43.GetPointCloudMapRequest request);
+  $async.Stream<$43.GetInternalStateResponse> getInternalState($grpc.ServiceCall call, $43.GetInternalStateRequest request);
+  $async.Future<$43.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $43.GetPropertiesRequest request);
+  $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
 }
