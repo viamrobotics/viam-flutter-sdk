@@ -14,6 +14,7 @@ class FakeAudioOut extends AudioOut {
   AudioInfo? audioInfo;
   Map<String, dynamic>? extra;
   Map<String, dynamic>? propertiesExtra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
   String name;
@@ -23,6 +24,11 @@ class FakeAudioOut extends AudioOut {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -93,6 +99,11 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await audioOut.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await audioOut.getStatus();
+      expect(result, audioOut.statusResult);
     });
   });
 
@@ -176,6 +187,12 @@ void main() {
         );
         expect(resp.result.toMap()['command'], cmd);
       });
+
+      test('getStatus', () async {
+        final client = AudioOutServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), audioOut.statusResult);
+      });
     });
 
     group('AudioOut Client Tests', () {
@@ -217,6 +234,12 @@ void main() {
         final client = AudioOutClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = AudioOutClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, audioOut.statusResult);
       });
     });
   });

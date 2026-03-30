@@ -53,4 +53,11 @@ class PowerSensorService extends PowerSensorServiceBase {
     final power = await powerSensor.power(extra: request.extra.toMap());
     return GetPowerResponse()..watts = power;
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final powerSensor = _fromManager(request.name);
+    final result = await powerSensor.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }

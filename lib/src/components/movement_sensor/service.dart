@@ -103,4 +103,11 @@ class MovementSensorService extends MovementSensorServiceBase {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
+
+  @override
+  Future<common_pb.GetStatusResponse> getStatus(ServiceCall call, common_pb.GetStatusRequest request) async {
+    final movementSensor = _fromManager(request.name);
+    final result = await movementSensor.getStatus();
+    return common_pb.GetStatusResponse()..result = result.toStruct();
+  }
 }

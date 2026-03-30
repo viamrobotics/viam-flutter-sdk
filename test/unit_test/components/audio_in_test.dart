@@ -16,6 +16,7 @@ class FakeAudioIn extends AudioIn {
   Int64? previousTimestampNanoseconds;
   Map<String, dynamic>? extra;
   Map<String, dynamic>? propertiesExtra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
   String name;
@@ -25,6 +26,11 @@ class FakeAudioIn extends AudioIn {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -121,6 +127,11 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await audioIn.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await audioIn.getStatus();
+      expect(result, audioIn.statusResult);
     });
   });
 
@@ -220,6 +231,12 @@ void main() {
         );
         expect(resp.result.toMap()['command'], cmd);
       });
+
+      test('getStatus', () async {
+        final client = AudioInServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), audioIn.statusResult);
+      });
     });
 
     group('AudioIn Client Tests', () {
@@ -277,6 +294,12 @@ void main() {
         final client = AudioInClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = AudioInClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, audioIn.statusResult);
       });
     });
   });

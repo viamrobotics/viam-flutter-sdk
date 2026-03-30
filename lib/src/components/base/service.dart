@@ -85,4 +85,11 @@ class BaseService extends BaseServiceBase {
       ..widthMeters = properties.widthMeters
       ..wheelCircumferenceMeters = properties.wheelCircumferenceMeters;
   }
+
+  @override
+  Future<common_pb.GetStatusResponse> getStatus(ServiceCall call, common_pb.GetStatusRequest request) async {
+    final base = _fromManager(request.name);
+    final result = await base.getStatus();
+    return common_pb.GetStatusResponse()..result = result.toStruct();
+  }
 }

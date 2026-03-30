@@ -62,6 +62,13 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
   }
 
   @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
+
+  @override
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
     final request = GetKinematicsRequest()
       ..name = name

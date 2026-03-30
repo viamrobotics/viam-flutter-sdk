@@ -18,6 +18,7 @@ class FakePowerSensor extends PowerSensor {
   double watts = 0;
   Map<String, dynamic> sensorReadings = {'voltage': 0.0, 'is_ac': false, 'current': 0.0, 'power': 0.0};
   Map<String, dynamic>? extra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
   String name;
@@ -27,6 +28,11 @@ class FakePowerSensor extends PowerSensor {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -94,6 +100,11 @@ void main() {
       final resp = await powersensor.doCommand(cmd);
       expect(resp['command'], cmd);
     });
+
+    test('getStatus', () async {
+      final result = await powersensor.getStatus();
+      expect(result, powersensor.statusResult);
+    });
   });
 
   group('PowerSensor RPC Tests', () {
@@ -153,6 +164,12 @@ void main() {
         expect(resp.result.toMap()['command'], cmd);
       });
 
+      test('getStatus', () async {
+        final client = PowerSensorServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), powerSensor.statusResult);
+      });
+
       test('extra', () async {
         expect(powerSensor.extra, null);
 
@@ -196,6 +213,12 @@ void main() {
         final cmd = {'foo': 'bar'};
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = PowerSensorClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, powerSensor.statusResult);
       });
 
       test('extra', () async {

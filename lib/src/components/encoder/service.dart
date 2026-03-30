@@ -63,4 +63,11 @@ class EncoderService extends EncoderServiceBase {
     final geometries = await encoder.getGeometries(extra: request.extra.toMap());
     return common_pb.GetGeometriesResponse()..geometries.addAll(geometries);
   }
+
+  @override
+  Future<common_pb.GetStatusResponse> getStatus(ServiceCall call, common_pb.GetStatusRequest request) async {
+    final encoder = _fromManager(request.name);
+    final result = await encoder.getStatus();
+    return common_pb.GetStatusResponse()..result = result.toStruct();
+  }
 }
