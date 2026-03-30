@@ -58,6 +58,7 @@
 <li><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
 <li><span class="parameter" id="-param-robotConfig"><span class="type-annotation">Struct?</span> <span class="parameter-name">robotConfig</span>, </span></li>
 <li><span class="parameter" id="-param-lastKnownUpdate"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastKnownUpdate</span>, </span></li>
+<li><span class="parameter" id="-param-robotConfigJson"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">robotConfigJson</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,8 +70,9 @@
   <pre class="language-dart"><code class="language-dart">factory UpdateRobotPartRequest({
   $core.String? id,
   $core.String? name,
-  $50.Struct? robotConfig,
-  $51.Timestamp? lastKnownUpdate,
+  $49.Struct? robotConfig,
+  $50.Timestamp? lastKnownUpdate,
+  $core.String? robotConfigJson,
 }) {
   final $result = create();
   if (id != null) {
@@ -84,6 +86,9 @@
   }
   if (lastKnownUpdate != null) {
     $result.lastKnownUpdate = lastKnownUpdate;
+  }
+  if (robotConfigJson != null) {
+    $result.robotConfigJson = robotConfigJson;
   }
   return $result;
 }</code></pre>

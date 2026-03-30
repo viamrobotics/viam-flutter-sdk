@@ -63,20 +63,27 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">VideoServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$45.GetVideoRequest, $45.GetVideoResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$44.GetVideoRequest, $44.GetVideoResponse&gt;(
       &#39;GetVideo&#39;,
       getVideo_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $45.GetVideoRequest.fromBuffer(value),
-      ($45.GetVideoResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $44.GetVideoRequest.fromBuffer(value),
+      ($44.GetVideoResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.DoCommandRequest, $9.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $16.DoCommandRequest.fromBuffer(value),
-      ($16.DoCommandResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.DoCommandRequest.fromBuffer(value),
+      ($9.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.GetStatusRequest, $9.GetStatusResponse&gt;(
+      &#39;GetStatus&#39;,
+      getStatus_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.GetStatusRequest.fromBuffer(value),
+      ($9.GetStatusResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

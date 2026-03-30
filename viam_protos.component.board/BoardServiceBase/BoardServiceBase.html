@@ -105,13 +105,20 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $20.SetPWMFrequencyRequest.fromBuffer(value),
       ($20.SetPWMFrequencyResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$9.DoCommandRequest, $9.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $16.DoCommandRequest.fromBuffer(value),
-      ($16.DoCommandResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.DoCommandRequest.fromBuffer(value),
+      ($9.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.GetStatusRequest, $9.GetStatusResponse&gt;(
+      &#39;GetStatus&#39;,
+      getStatus_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.GetStatusRequest.fromBuffer(value),
+      ($9.GetStatusResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$20.ReadAnalogReaderRequest, $20.ReadAnalogReaderResponse&gt;(
       &#39;ReadAnalogReader&#39;,
       readAnalogReader_Pre,
@@ -147,13 +154,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $20.SetPowerModeRequest.fromBuffer(value),
       ($20.SetPowerModeResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$16.GetGeometriesRequest, $16.GetGeometriesResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$9.GetGeometriesRequest, $9.GetGeometriesResponse&gt;(
       &#39;GetGeometries&#39;,
       getGeometries_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $16.GetGeometriesRequest.fromBuffer(value),
-      ($16.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.GetGeometriesRequest.fromBuffer(value),
+      ($9.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

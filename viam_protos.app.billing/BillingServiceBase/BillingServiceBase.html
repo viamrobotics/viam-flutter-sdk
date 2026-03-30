@@ -63,83 +63,83 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">BillingServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$12.GetCurrentMonthUsageRequest, $12.GetCurrentMonthUsageResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$13.GetCurrentMonthUsageRequest, $13.GetCurrentMonthUsageResponse&gt;(
       &#39;GetCurrentMonthUsage&#39;,
       getCurrentMonthUsage_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.GetCurrentMonthUsageRequest.fromBuffer(value),
-      ($12.GetCurrentMonthUsageResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.GetOrgBillingInformationRequest, $12.GetOrgBillingInformationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.GetCurrentMonthUsageRequest.fromBuffer(value),
+      ($13.GetCurrentMonthUsageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.GetOrgBillingInformationRequest, $13.GetOrgBillingInformationResponse&gt;(
       &#39;GetOrgBillingInformation&#39;,
       getOrgBillingInformation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.GetOrgBillingInformationRequest.fromBuffer(value),
-      ($12.GetOrgBillingInformationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.GetInvoicesSummaryRequest, $12.GetInvoicesSummaryResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.GetOrgBillingInformationRequest.fromBuffer(value),
+      ($13.GetOrgBillingInformationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.GetInvoicesSummaryRequest, $13.GetInvoicesSummaryResponse&gt;(
       &#39;GetInvoicesSummary&#39;,
       getInvoicesSummary_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.GetInvoicesSummaryRequest.fromBuffer(value),
-      ($12.GetInvoicesSummaryResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.GetInvoicePdfRequest, $12.GetInvoicePdfResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.GetInvoicesSummaryRequest.fromBuffer(value),
+      ($13.GetInvoicesSummaryResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.GetInvoicePdfRequest, $13.GetInvoicePdfResponse&gt;(
       &#39;GetInvoicePdf&#39;,
       getInvoicePdf_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.GetInvoicePdfRequest.fromBuffer(value),
-      ($12.GetInvoicePdfResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.SendPaymentRequiredEmailRequest, $12.SendPaymentRequiredEmailResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.GetInvoicePdfRequest.fromBuffer(value),
+      ($13.GetInvoicePdfResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.SendPaymentRequiredEmailRequest, $13.SendPaymentRequiredEmailResponse&gt;(
       &#39;SendPaymentRequiredEmail&#39;,
       sendPaymentRequiredEmail_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.SendPaymentRequiredEmailRequest.fromBuffer(value),
-      ($12.SendPaymentRequiredEmailResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.GetAvailableBillingTiersRequest, $12.GetAvailableBillingTiersResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.SendPaymentRequiredEmailRequest.fromBuffer(value),
+      ($13.SendPaymentRequiredEmailResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.GetAvailableBillingTiersRequest, $13.GetAvailableBillingTiersResponse&gt;(
       &#39;GetAvailableBillingTiers&#39;,
       getAvailableBillingTiers_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.GetAvailableBillingTiersRequest.fromBuffer(value),
-      ($12.GetAvailableBillingTiersResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.UpdateOrganizationBillingTierRequest, $12.UpdateOrganizationBillingTierResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.GetAvailableBillingTiersRequest.fromBuffer(value),
+      ($13.GetAvailableBillingTiersResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.UpdateOrganizationBillingTierRequest, $13.UpdateOrganizationBillingTierResponse&gt;(
       &#39;UpdateOrganizationBillingTier&#39;,
       updateOrganizationBillingTier_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.UpdateOrganizationBillingTierRequest.fromBuffer(value),
-      ($12.UpdateOrganizationBillingTierResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.GetLocationBillingOrganizationRequest, $12.GetLocationBillingOrganizationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.UpdateOrganizationBillingTierRequest.fromBuffer(value),
+      ($13.UpdateOrganizationBillingTierResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.GetLocationBillingOrganizationRequest, $13.GetLocationBillingOrganizationResponse&gt;(
       &#39;GetLocationBillingOrganization&#39;,
       getLocationBillingOrganization_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.GetLocationBillingOrganizationRequest.fromBuffer(value),
-      ($12.GetLocationBillingOrganizationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.UpdateLocationBillingOrganizationRequest, $12.UpdateLocationBillingOrganizationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.GetLocationBillingOrganizationRequest.fromBuffer(value),
+      ($13.GetLocationBillingOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.UpdateLocationBillingOrganizationRequest, $13.UpdateLocationBillingOrganizationResponse&gt;(
       &#39;UpdateLocationBillingOrganization&#39;,
       updateLocationBillingOrganization_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.UpdateLocationBillingOrganizationRequest.fromBuffer(value),
-      ($12.UpdateLocationBillingOrganizationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.ChargeOrganizationRequest, $12.ChargeOrganizationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.UpdateLocationBillingOrganizationRequest.fromBuffer(value),
+      ($13.UpdateLocationBillingOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.ChargeOrganizationRequest, $13.ChargeOrganizationResponse&gt;(
       &#39;ChargeOrganization&#39;,
       chargeOrganization_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.ChargeOrganizationRequest.fromBuffer(value),
-      ($12.ChargeOrganizationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$12.CreateInvoiceAndChargeImmediatelyRequest, $12.CreateInvoiceAndChargeImmediatelyResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.ChargeOrganizationRequest.fromBuffer(value),
+      ($13.ChargeOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$13.CreateInvoiceAndChargeImmediatelyRequest, $13.CreateInvoiceAndChargeImmediatelyResponse&gt;(
       &#39;CreateInvoiceAndChargeImmediately&#39;,
       createInvoiceAndChargeImmediately_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $12.CreateInvoiceAndChargeImmediatelyRequest.fromBuffer(value),
-      ($12.CreateInvoiceAndChargeImmediatelyResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $13.CreateInvoiceAndChargeImmediatelyRequest.fromBuffer(value),
+      ($13.CreateInvoiceAndChargeImmediatelyResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

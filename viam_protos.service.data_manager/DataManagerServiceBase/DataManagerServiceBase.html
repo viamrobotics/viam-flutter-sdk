@@ -63,27 +63,34 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">DataManagerServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$38.SyncRequest, $38.SyncResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$37.SyncRequest, $37.SyncResponse&gt;(
       &#39;Sync&#39;,
       sync_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $38.SyncRequest.fromBuffer(value),
-      ($38.SyncResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $37.SyncRequest.fromBuffer(value),
+      ($37.SyncResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.DoCommandRequest, $9.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $16.DoCommandRequest.fromBuffer(value),
-      ($16.DoCommandResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$38.UploadBinaryDataToDatasetsRequest, $38.UploadBinaryDataToDatasetsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.DoCommandRequest.fromBuffer(value),
+      ($9.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.GetStatusRequest, $9.GetStatusResponse&gt;(
+      &#39;GetStatus&#39;,
+      getStatus_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.GetStatusRequest.fromBuffer(value),
+      ($9.GetStatusResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$37.UploadBinaryDataToDatasetsRequest, $37.UploadBinaryDataToDatasetsResponse&gt;(
       &#39;UploadBinaryDataToDatasets&#39;,
       uploadBinaryDataToDatasets_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $38.UploadBinaryDataToDatasetsRequest.fromBuffer(value),
-      ($38.UploadBinaryDataToDatasetsResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $37.UploadBinaryDataToDatasetsRequest.fromBuffer(value),
+      ($37.UploadBinaryDataToDatasetsResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 
