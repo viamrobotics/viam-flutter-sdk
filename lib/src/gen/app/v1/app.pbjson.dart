@@ -286,6 +286,10 @@ const RobotPart$json = {
     {'1': 'last_updated', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'lastUpdated'},
     {'1': 'online_state', '3': 16, '4': 1, '5': 14, '6': '.viam.app.v1.OnlineState', '8': {}, '10': 'onlineState'},
     {'1': 'seconds_since_online', '3': 17, '4': 1, '5': 3, '8': {}, '10': 'secondsSinceOnline'},
+    {'1': 'robot_config_json', '3': 18, '4': 1, '5': 9, '8': {}, '9': 0, '10': 'robotConfigJson', '17': true},
+  ],
+  '8': [
+    {'1': '_robot_config_json'},
   ],
 };
 
@@ -314,7 +318,10 @@ final $typed_data.Uint8List robotPartDescriptor = $convert.base64Decode(
     'bGluZVN0YXRlQjaahJ4DMWJzb246Im9ubGluZV9zdGF0ZSIganNvbjoib25saW5lX3N0YXRlLG'
     '9taXRlbXB0eSJSC29ubGluZVN0YXRlEngKFHNlY29uZHNfc2luY2Vfb25saW5lGBEgASgDQkaa'
     'hJ4DQWJzb246InNlY29uZHNfc2luY2Vfb25saW5lIiBqc29uOiJzZWNvbmRzX3NpbmNlX29ubG'
-    'luZSxvbWl0ZW1wdHkiUhJzZWNvbmRzU2luY2VPbmxpbmU=');
+    'luZSxvbWl0ZW1wdHkiUhJzZWNvbmRzU2luY2VPbmxpbmUSbwoRcm9ib3RfY29uZmlnX2pzb24Y'
+    'EiABKAlCPpqEngM5YnNvbjoiY29uZmlnX2pzb24sb21pdGVtcHR5IiBqc29uOiJjb25maWdfan'
+    'NvbixvbWl0ZW1wdHkiSABSD3JvYm90Q29uZmlnSnNvbogBAUIUChJfcm9ib3RfY29uZmlnX2pz'
+    'b24=');
 
 @$core.Deprecated('Use robotPartHistoryEntryDescriptor instead')
 const RobotPartHistoryEntry$json = {
@@ -1762,9 +1769,11 @@ const UpdateRobotPartRequest$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'robot_config', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'robotConfig'},
     {'1': 'last_known_update', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'lastKnownUpdate', '17': true},
+    {'1': 'robot_config_json', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'robotConfigJson', '17': true},
   ],
   '8': [
     {'1': '_last_known_update'},
+    {'1': '_robot_config_json'},
   ],
 };
 
@@ -1773,7 +1782,9 @@ final $typed_data.Uint8List updateRobotPartRequestDescriptor = $convert.base64De
     'ChZVcGRhdGVSb2JvdFBhcnRSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUg'
     'RuYW1lEjoKDHJvYm90X2NvbmZpZxgDIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSC3Jv'
     'Ym90Q29uZmlnEksKEWxhc3Rfa25vd25fdXBkYXRlGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
-    'RpbWVzdGFtcEgAUg9sYXN0S25vd25VcGRhdGWIAQFCFAoSX2xhc3Rfa25vd25fdXBkYXRl');
+    'RpbWVzdGFtcEgAUg9sYXN0S25vd25VcGRhdGWIAQESLwoRcm9ib3RfY29uZmlnX2pzb24YBSAB'
+    'KAlIAVIPcm9ib3RDb25maWdKc29uiAEBQhQKEl9sYXN0X2tub3duX3VwZGF0ZUIUChJfcm9ib3'
+    'RfY29uZmlnX2pzb24=');
 
 @$core.Deprecated('Use updateRobotPartResponseDescriptor instead')
 const UpdateRobotPartResponse$json = {

@@ -2,7 +2,6 @@ import 'package:grpc/grpc.dart';
 
 import '../../gen/common/v1/common.pb.dart' as proto;
 import '../../gen/component/camera/v1/camera.pbgrpc.dart';
-import '../../gen/google/api/httpbody.pb.dart';
 import '../../gen/google/protobuf/timestamp.pb.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
@@ -31,12 +30,6 @@ class CameraService extends CameraServiceBase {
   }
 
   @override
-  Future<GetImageResponse> getImage(ServiceCall call, GetImageRequest request) async {
-    // Deprecated: Use getImages instead.
-    throw UnimplementedError();
-  }
-
-  @override
   Future<GetPointCloudResponse> getPointCloud(ServiceCall call, GetPointCloudRequest request) async {
     final camera = _fromManager(request.name);
     final image = await camera.pointCloud(extra: request.extra.toMap());
@@ -50,12 +43,6 @@ class CameraService extends CameraServiceBase {
     final camera = _fromManager(request.name);
     final properties = await camera.properties();
     return properties;
-  }
-
-  @override
-  Future<HttpBody> renderFrame(ServiceCall call, RenderFrameRequest request) async {
-    // Deprecated: Use getImages instead.
-    throw UnimplementedError();
   }
 
   @override

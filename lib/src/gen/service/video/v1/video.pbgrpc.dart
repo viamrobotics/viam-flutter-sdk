@@ -15,21 +15,25 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
-import 'video.pb.dart' as $45;
+import '../../../common/v1/common.pb.dart' as $9;
+import 'video.pb.dart' as $44;
 
 export 'video.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.video.v1.VideoService')
 class VideoServiceClient extends $grpc.Client {
-  static final _$getVideo = $grpc.ClientMethod<$45.GetVideoRequest, $45.GetVideoResponse>(
+  static final _$getVideo = $grpc.ClientMethod<$44.GetVideoRequest, $44.GetVideoResponse>(
       '/viam.service.video.v1.VideoService/GetVideo',
-      ($45.GetVideoRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $45.GetVideoResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+      ($44.GetVideoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $44.GetVideoResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.service.video.v1.VideoService/DoCommand',
-      ($16.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
+      ($9.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DoCommandResponse.fromBuffer(value));
+  static final _$getStatus = $grpc.ClientMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+      '/viam.service.video.v1.VideoService/GetStatus',
+      ($9.GetStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetStatusResponse.fromBuffer(value));
 
   VideoServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -37,12 +41,16 @@ class VideoServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseStream<$45.GetVideoResponse> getVideo($45.GetVideoRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$44.GetVideoResponse> getVideo($44.GetVideoRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$getVideo, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DoCommandResponse> doCommand($9.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.GetStatusResponse> getStatus($9.GetStatusRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getStatus, request, options: options);
   }
 }
 
@@ -51,30 +59,42 @@ abstract class VideoServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.video.v1.VideoService';
 
   VideoServiceBase() {
-    $addMethod($grpc.ServiceMethod<$45.GetVideoRequest, $45.GetVideoResponse>(
+    $addMethod($grpc.ServiceMethod<$44.GetVideoRequest, $44.GetVideoResponse>(
         'GetVideo',
         getVideo_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $45.GetVideoRequest.fromBuffer(value),
-        ($45.GetVideoResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+        ($core.List<$core.int> value) => $44.GetVideoRequest.fromBuffer(value),
+        ($44.GetVideoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
-        ($16.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $9.DoCommandRequest.fromBuffer(value),
+        ($9.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+        'GetStatus',
+        getStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.GetStatusRequest.fromBuffer(value),
+        ($9.GetStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Stream<$45.GetVideoResponse> getVideo_Pre($grpc.ServiceCall call, $async.Future<$45.GetVideoRequest> request) async* {
+  $async.Stream<$44.GetVideoResponse> getVideo_Pre($grpc.ServiceCall call, $async.Future<$44.GetVideoRequest> request) async* {
     yield* getVideo(call, await request);
   }
 
-  $async.Future<$16.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$16.DoCommandRequest> request) async {
+  $async.Future<$9.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$9.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Stream<$45.GetVideoResponse> getVideo($grpc.ServiceCall call, $45.GetVideoRequest request);
-  $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$9.GetStatusRequest> request) async {
+    return getStatus(call, await request);
+  }
+
+  $async.Stream<$44.GetVideoResponse> getVideo($grpc.ServiceCall call, $44.GetVideoRequest request);
+  $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
 }

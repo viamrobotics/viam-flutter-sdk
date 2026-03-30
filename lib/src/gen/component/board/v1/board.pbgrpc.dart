@@ -15,7 +15,7 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
+import '../../../common/v1/common.pb.dart' as $9;
 import 'board.pb.dart' as $20;
 
 export 'board.pb.dart';
@@ -46,10 +46,14 @@ class BoardServiceClient extends $grpc.Client {
       '/viam.component.board.v1.BoardService/SetPWMFrequency',
       ($20.SetPWMFrequencyRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $20.SetPWMFrequencyResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+  static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.component.board.v1.BoardService/DoCommand',
-      ($16.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
+      ($9.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DoCommandResponse.fromBuffer(value));
+  static final _$getStatus = $grpc.ClientMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+      '/viam.component.board.v1.BoardService/GetStatus',
+      ($9.GetStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetStatusResponse.fromBuffer(value));
   static final _$readAnalogReader = $grpc.ClientMethod<$20.ReadAnalogReaderRequest, $20.ReadAnalogReaderResponse>(
       '/viam.component.board.v1.BoardService/ReadAnalogReader',
       ($20.ReadAnalogReaderRequest value) => value.writeToBuffer(),
@@ -70,10 +74,10 @@ class BoardServiceClient extends $grpc.Client {
       '/viam.component.board.v1.BoardService/SetPowerMode',
       ($20.SetPowerModeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $20.SetPowerModeResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$16.GetGeometriesRequest, $16.GetGeometriesResponse>(
+  static final _$getGeometries = $grpc.ClientMethod<$9.GetGeometriesRequest, $9.GetGeometriesResponse>(
       '/viam.component.board.v1.BoardService/GetGeometries',
-      ($16.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.GetGeometriesResponse.fromBuffer(value));
+      ($9.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetGeometriesResponse.fromBuffer(value));
 
   BoardServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -105,8 +109,12 @@ class BoardServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setPWMFrequency, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DoCommandResponse> doCommand($9.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.GetStatusResponse> getStatus($9.GetStatusRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getStatus, request, options: options);
   }
 
   $grpc.ResponseFuture<$20.ReadAnalogReaderResponse> readAnalogReader($20.ReadAnalogReaderRequest request, {$grpc.CallOptions? options}) {
@@ -129,7 +137,7 @@ class BoardServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setPowerMode, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.GetGeometriesResponse> getGeometries($16.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetGeometriesResponse> getGeometries($9.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -181,13 +189,20 @@ abstract class BoardServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $20.SetPWMFrequencyRequest.fromBuffer(value),
         ($20.SetPWMFrequencyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+    $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
-        ($16.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $9.DoCommandRequest.fromBuffer(value),
+        ($9.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+        'GetStatus',
+        getStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.GetStatusRequest.fromBuffer(value),
+        ($9.GetStatusResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$20.ReadAnalogReaderRequest, $20.ReadAnalogReaderResponse>(
         'ReadAnalogReader',
         readAnalogReader_Pre,
@@ -223,13 +238,13 @@ abstract class BoardServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $20.SetPowerModeRequest.fromBuffer(value),
         ($20.SetPowerModeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.GetGeometriesRequest, $16.GetGeometriesResponse>(
+    $addMethod($grpc.ServiceMethod<$9.GetGeometriesRequest, $9.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.GetGeometriesRequest.fromBuffer(value),
-        ($16.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $9.GetGeometriesRequest.fromBuffer(value),
+        ($9.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$20.SetGPIOResponse> setGPIO_Pre($grpc.ServiceCall call, $async.Future<$20.SetGPIORequest> request) async {
@@ -256,8 +271,12 @@ abstract class BoardServiceBase extends $grpc.Service {
     return setPWMFrequency(call, await request);
   }
 
-  $async.Future<$16.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$16.DoCommandRequest> request) async {
+  $async.Future<$9.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$9.DoCommandRequest> request) async {
     return doCommand(call, await request);
+  }
+
+  $async.Future<$9.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$9.GetStatusRequest> request) async {
+    return getStatus(call, await request);
   }
 
   $async.Future<$20.ReadAnalogReaderResponse> readAnalogReader_Pre($grpc.ServiceCall call, $async.Future<$20.ReadAnalogReaderRequest> request) async {
@@ -280,7 +299,7 @@ abstract class BoardServiceBase extends $grpc.Service {
     return setPowerMode(call, await request);
   }
 
-  $async.Future<$16.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$16.GetGeometriesRequest> request) async {
+  $async.Future<$9.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$9.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
@@ -290,11 +309,12 @@ abstract class BoardServiceBase extends $grpc.Service {
   $async.Future<$20.SetPWMResponse> setPWM($grpc.ServiceCall call, $20.SetPWMRequest request);
   $async.Future<$20.PWMFrequencyResponse> pWMFrequency($grpc.ServiceCall call, $20.PWMFrequencyRequest request);
   $async.Future<$20.SetPWMFrequencyResponse> setPWMFrequency($grpc.ServiceCall call, $20.SetPWMFrequencyRequest request);
-  $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
+  $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
   $async.Future<$20.ReadAnalogReaderResponse> readAnalogReader($grpc.ServiceCall call, $20.ReadAnalogReaderRequest request);
   $async.Future<$20.WriteAnalogResponse> writeAnalog($grpc.ServiceCall call, $20.WriteAnalogRequest request);
   $async.Future<$20.GetDigitalInterruptValueResponse> getDigitalInterruptValue($grpc.ServiceCall call, $20.GetDigitalInterruptValueRequest request);
   $async.Stream<$20.StreamTicksResponse> streamTicks($grpc.ServiceCall call, $20.StreamTicksRequest request);
   $async.Future<$20.SetPowerModeResponse> setPowerMode($grpc.ServiceCall call, $20.SetPowerModeRequest request);
-  $async.Future<$16.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $16.GetGeometriesRequest request);
+  $async.Future<$9.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $9.GetGeometriesRequest request);
 }
