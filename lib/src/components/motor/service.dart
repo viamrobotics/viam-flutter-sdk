@@ -105,4 +105,11 @@ class MotorService extends MotorServiceBase {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
+
+  @override
+  Future<common_pb.GetStatusResponse> getStatus(ServiceCall call, common_pb.GetStatusRequest request) async {
+    final motor = _fromManager(request.name);
+    final result = await motor.getStatus();
+    return common_pb.GetStatusResponse()..result = result.toStruct();
+  }
 }

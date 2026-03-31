@@ -50,4 +50,11 @@ class AudioOutService extends AudioOutServiceBase {
   Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
     throw UnimplementedError();
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final audioOut = _fromManager(request.name);
+    final result = await audioOut.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }

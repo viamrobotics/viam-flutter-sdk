@@ -40,4 +40,11 @@ class SensorService extends SensorServiceBase {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final sensor = _fromManager(request.name);
+    final result = await sensor.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }

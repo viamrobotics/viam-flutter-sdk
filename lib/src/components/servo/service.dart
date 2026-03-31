@@ -61,4 +61,11 @@ class ServoService extends ServoServiceBase {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final servo = _fromManager(request.name);
+    final result = await servo.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }

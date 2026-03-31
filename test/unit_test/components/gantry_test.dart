@@ -15,6 +15,7 @@ class FakeGantry extends Gantry {
   List<double> mLengths;
   bool isStopped = true;
   Map<String, dynamic>? extra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
   Kinematics gantryKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
   List<Geometry> gantryGeometries = [
     Geometry()
@@ -44,6 +45,11 @@ class FakeGantry extends Gantry {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -141,6 +147,11 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await gantry.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await gantry.getStatus();
+      expect(result, gantry.statusResult);
     });
 
     test('extra', () async {
@@ -266,6 +277,12 @@ void main() {
         expect(resp.result.toMap()['command'], cmd);
       });
 
+      test('getStatus', () async {
+        final client = GantryServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), gantry.statusResult);
+      });
+
       test('extra', () async {
         expect(gantry.extra, null);
 
@@ -346,6 +363,12 @@ void main() {
         final client = GantryClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = GantryClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, gantry.statusResult);
       });
 
       test('extra', () async {

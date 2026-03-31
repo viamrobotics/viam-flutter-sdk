@@ -36,6 +36,13 @@ class BoardClient extends Board with RPCDebugLoggerMixin implements ResourceRPCC
   }
 
   @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = common.GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
+
+  @override
   Future<void> setGpioState(String pin, bool high, {Map<String, dynamic>? extra}) async {
     final request = SetGPIORequest()
       ..name = name

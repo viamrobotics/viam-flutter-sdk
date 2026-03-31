@@ -48,4 +48,11 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
     final response = await client.doCommand(request);
     return response.result.toMap();
   }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = GetStatusRequest()..name = name;
+    final response = await client.getStatus(request);
+    return response.result.toMap();
+  }
 }
