@@ -907,7 +907,7 @@ class AppClient {
 
   /// Upload a device push token for the user.
   ///
-  /// Associates a device token with the user and app bundle ID so that
+  /// Associates a device token with the user and app ID so that
   /// push notifications can be sent to this device when triggers fire.
   Future<void> uploadDevicePushToken(String appId, String deviceUuid, String deviceToken) async {
     final request = UploadDevicePushTokenRequest()
@@ -930,8 +930,7 @@ class AppClient {
 
   /// Get all device push tokens for the user.
   ///
-  /// Returns a list of device tokens registered for the authenticated user and
-  /// app bundle ID.
+  /// Returns a list of device tokens registered for the authenticated user and app ID.
   Future<List<String>> getDevicePushTokens(String appId) async {
     final request = GetDevicePushTokensRequest()..appId = appId;
     final GetDevicePushTokensResponse response = await _client.getDevicePushTokens(request);
