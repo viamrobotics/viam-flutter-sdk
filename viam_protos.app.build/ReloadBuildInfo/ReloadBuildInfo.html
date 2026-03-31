@@ -57,6 +57,7 @@
       <span class="name ">ReloadBuildInfo</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-platform"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">platform</span>, </span></li>
 <li><span class="parameter" id="-param-workdir"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">workdir</span>, </span></li>
 <li><span class="parameter" id="-param-moduleId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">moduleId</span>, </span></li>
+<li><span class="parameter" id="-param-distro"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">distro</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,6 +70,7 @@
   $core.String? platform,
   $core.String? workdir,
   $core.String? moduleId,
+  $core.String? distro,
 }) {
   final $result = create();
   if (platform != null) {
@@ -79,6 +81,9 @@
   }
   if (moduleId != null) {
     $result.moduleId = moduleId;
+  }
+  if (distro != null) {
+    $result.distro = distro;
   }
   return $result;
 }</code></pre>
