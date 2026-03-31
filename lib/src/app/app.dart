@@ -904,4 +904,36 @@ class AppClient {
       ..data = data.toStruct();
     await _client.updateRobotPartMetadata(request);
   }
+
+  /// Upload a device push token for the user.
+  ///
+  /// Associates a device token with the user and app ID so that
+  /// push notifications can be sent to this device when triggers fire.
+  Future<void> uploadDevicePushToken(String appId, String deviceUuid, String deviceToken) async {
+    final request = UploadDevicePushTokenRequest()
+      ..appId = appId
+      ..deviceUuid = deviceUuid
+      ..deviceToken = deviceToken;
+    await _client.uploadDevicePushToken(request);
+  }
+
+  /// Delete a device push token for the user.
+  ///
+  /// Removes a previously registered device token, stopping push notifications
+  /// for this device.
+  Future<void> deleteDevicePushToken(String appId, String deviceUuid) async {
+    final request = DeleteDevicePushTokenRequest()
+      ..appId = appId
+      ..deviceUuid = deviceUuid;
+    await _client.deleteDevicePushToken(request);
+  }
+
+  /// Get all device push tokens for the user.
+  ///
+  /// Returns a list of device tokens registered for the authenticated user and app ID.
+  Future<List<String>> getDevicePushTokens(String appId) async {
+    final request = GetDevicePushTokensRequest()..appId = appId;
+    final GetDevicePushTokensResponse response = await _client.getDevicePushTokens(request);
+    return response.deviceTokens;
+  }
 }
