@@ -159,7 +159,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearWorkdir() => clearField(7);
 
-  /// optional distro for linux platforms. defaults to bullseye.
+  /// optional distro for linux platforms.
   /// must be bookworm for cpp module builds.
   @$pb.TagNumber(8)
   $core.String get distro => $_getSZ(7);
@@ -290,6 +290,7 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? workdir,
     $core.String? moduleId,
+    $core.String? distro,
   }) {
     final $result = create();
     if (platform != null) {
@@ -301,6 +302,9 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     if (moduleId != null) {
       $result.moduleId = moduleId;
     }
+    if (distro != null) {
+      $result.distro = distro;
+    }
     return $result;
   }
   ReloadBuildInfo._() : super();
@@ -311,6 +315,7 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'platform')
     ..aOS(2, _omitFieldNames ? '' : 'workdir')
     ..aOS(3, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(4, _omitFieldNames ? '' : 'distro')
     ..hasRequiredFields = false
   ;
 
@@ -364,6 +369,17 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
   $core.bool hasModuleId() => $_has(2);
   @$pb.TagNumber(3)
   void clearModuleId() => clearField(3);
+
+  /// optional distro for linux platforms.
+  /// must be bookworm for cpp module builds.
+  @$pb.TagNumber(4)
+  $core.String get distro => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set distro($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDistro() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDistro() => clearField(4);
 }
 
 enum StartReloadBuildRequest_CloudBuild {
@@ -505,6 +521,7 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     $core.String? packageVersion,
     $core.String? moduleVersion,
     $core.Iterable<$core.String>? platforms,
+    $core.String? distro,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -519,6 +536,9 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     if (platforms != null) {
       $result.platforms.addAll(platforms);
     }
+    if (distro != null) {
+      $result.distro = distro;
+    }
     return $result;
   }
   StartPackageBuildRequest._() : super();
@@ -530,6 +550,7 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'packageVersion')
     ..aOS(3, _omitFieldNames ? '' : 'moduleVersion')
     ..pPS(4, _omitFieldNames ? '' : 'platforms')
+    ..aOS(5, _omitFieldNames ? '' : 'distro')
     ..hasRequiredFields = false
   ;
 
@@ -587,6 +608,17 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
   /// specify the platforms to build for (ex: linux/arm64)
   @$pb.TagNumber(4)
   $core.List<$core.String> get platforms => $_getList(3);
+
+  /// optional distro for linux platforms.
+  /// must be bookworm for cpp module builds.
+  @$pb.TagNumber(5)
+  $core.String get distro => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set distro($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDistro() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDistro() => clearField(5);
 }
 
 class StartPackageBuildResponse extends $pb.GeneratedMessage {

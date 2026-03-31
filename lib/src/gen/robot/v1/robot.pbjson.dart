@@ -649,27 +649,23 @@ final $typed_data.Uint8List getCloudMetadataRequestDescriptor = $convert.base64D
 const GetCloudMetadataResponse$json = {
   '1': 'GetCloudMetadataResponse',
   '2': [
-    {
-      '1': 'robot_part_id',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'robotPartId',
-    },
     {'1': 'primary_org_id', '3': 2, '4': 1, '5': 9, '10': 'primaryOrgId'},
     {'1': 'location_id', '3': 3, '4': 1, '5': 9, '10': 'locationId'},
     {'1': 'machine_id', '3': 4, '4': 1, '5': 9, '10': 'machineId'},
     {'1': 'machine_part_id', '3': 5, '4': 1, '5': 9, '10': 'machinePartId'},
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['robot_part_id'],
 };
 
 /// Descriptor for `GetCloudMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getCloudMetadataResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRDbG91ZE1ldGFkYXRhUmVzcG9uc2USJgoNcm9ib3RfcGFydF9pZBgBIAEoCUICGAFSC3'
-    'JvYm90UGFydElkEiQKDnByaW1hcnlfb3JnX2lkGAIgASgJUgxwcmltYXJ5T3JnSWQSHwoLbG9j'
-    'YXRpb25faWQYAyABKAlSCmxvY2F0aW9uSWQSHQoKbWFjaGluZV9pZBgEIAEoCVIJbWFjaGluZU'
-    'lkEiYKD21hY2hpbmVfcGFydF9pZBgFIAEoCVINbWFjaGluZVBhcnRJZA==');
+    'ChhHZXRDbG91ZE1ldGFkYXRhUmVzcG9uc2USJAoOcHJpbWFyeV9vcmdfaWQYAiABKAlSDHByaW'
+    '1hcnlPcmdJZBIfCgtsb2NhdGlvbl9pZBgDIAEoCVIKbG9jYXRpb25JZBIdCgptYWNoaW5lX2lk'
+    'GAQgASgJUgltYWNoaW5lSWQSJgoPbWFjaGluZV9wYXJ0X2lkGAUgASgJUg1tYWNoaW5lUGFydE'
+    'lkSgQIARACUg1yb2JvdF9wYXJ0X2lk');
 
 @$core.Deprecated('Use restartModuleRequestDescriptor instead')
 const RestartModuleRequest$json = {

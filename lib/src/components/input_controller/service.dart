@@ -93,4 +93,11 @@ class InputControllerService extends InputControllerServiceBase {
       await eventController.close();
     }
   }
+
+  @override
+  Future<common_pb.GetStatusResponse> getStatus(ServiceCall call, common_pb.GetStatusRequest request) async {
+    final inputController = _fromManager(request.name);
+    final result = await inputController.getStatus();
+    return common_pb.GetStatusResponse()..result = result.toStruct();
+  }
 }

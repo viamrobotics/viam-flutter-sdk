@@ -73,4 +73,11 @@ class CameraService extends CameraServiceBase {
 
     return response;
   }
+
+  @override
+  Future<proto.GetStatusResponse> getStatus(ServiceCall call, proto.GetStatusRequest request) async {
+    final camera = _fromManager(request.name);
+    final result = await camera.getStatus();
+    return proto.GetStatusResponse()..result = result.toStruct();
+  }
 }

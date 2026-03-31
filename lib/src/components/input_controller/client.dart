@@ -214,4 +214,11 @@ class InputControllerClient extends InputController with RPCDebugLoggerMixin imp
     final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = common_pb.GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
 }

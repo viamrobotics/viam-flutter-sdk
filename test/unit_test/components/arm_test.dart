@@ -20,6 +20,7 @@ class FakeArm extends Arm {
   Map<String, Mesh> arm3DModels = {};
   Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
   Map<String, Mesh> armMeshesByUrdfFilepath = {};
+  Map<String, dynamic> statusResult = {'status': 'ok'};
   List<Geometry> armGeometries = [
     Geometry()
       ..box = (RectangularPrism()
@@ -36,6 +37,11 @@ class FakeArm extends Arm {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -160,6 +166,11 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await arm.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await arm.getStatus();
+      expect(result, arm.statusResult);
     });
 
     test('extra', () async {
@@ -303,6 +314,12 @@ void main() {
         expect(resp.result.toMap()['command'], cmd);
       });
 
+      test('getStatus', () async {
+        final client = ArmServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), arm.statusResult);
+      });
+
       test('extra', () async {
         expect(arm.extra, null);
 
@@ -404,6 +421,12 @@ void main() {
         final client = ArmClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = ArmClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, arm.statusResult);
       });
 
       test('extra', () async {

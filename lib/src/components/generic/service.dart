@@ -33,4 +33,11 @@ class GenericService extends GenericServiceBase {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final generic = _fromManager(request.name);
+    final result = await generic.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }

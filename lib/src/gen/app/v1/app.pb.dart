@@ -18331,6 +18331,612 @@ class MachinePickerCustomizations extends $pb.GeneratedMessage {
   void clearSubheading() => clearField(2);
 }
 
+class UploadDevicePushTokenRequest extends $pb.GeneratedMessage {
+  factory UploadDevicePushTokenRequest({
+    $core.String? appId,
+    $core.String? deviceToken,
+    $core.String? deviceUuid,
+  }) {
+    final $result = create();
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    if (deviceToken != null) {
+      $result.deviceToken = deviceToken;
+    }
+    if (deviceUuid != null) {
+      $result.deviceUuid = deviceUuid;
+    }
+    return $result;
+  }
+  UploadDevicePushTokenRequest._() : super();
+  factory UploadDevicePushTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadDevicePushTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadDevicePushTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceToken')
+    ..aOS(3, _omitFieldNames ? '' : 'deviceUuid')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadDevicePushTokenRequest clone() => UploadDevicePushTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadDevicePushTokenRequest copyWith(void Function(UploadDevicePushTokenRequest) updates) => super.copyWith((message) => updates(message as UploadDevicePushTokenRequest)) as UploadDevicePushTokenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadDevicePushTokenRequest create() => UploadDevicePushTokenRequest._();
+  UploadDevicePushTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<UploadDevicePushTokenRequest> createRepeated() => $pb.PbList<UploadDevicePushTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UploadDevicePushTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadDevicePushTokenRequest>(create);
+  static UploadDevicePushTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deviceUuid => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deviceUuid($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDeviceUuid() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeviceUuid() => clearField(3);
+}
+
+class UploadDevicePushTokenResponse extends $pb.GeneratedMessage {
+  factory UploadDevicePushTokenResponse() => create();
+  UploadDevicePushTokenResponse._() : super();
+  factory UploadDevicePushTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadDevicePushTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadDevicePushTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadDevicePushTokenResponse clone() => UploadDevicePushTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadDevicePushTokenResponse copyWith(void Function(UploadDevicePushTokenResponse) updates) => super.copyWith((message) => updates(message as UploadDevicePushTokenResponse)) as UploadDevicePushTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadDevicePushTokenResponse create() => UploadDevicePushTokenResponse._();
+  UploadDevicePushTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<UploadDevicePushTokenResponse> createRepeated() => $pb.PbList<UploadDevicePushTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UploadDevicePushTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadDevicePushTokenResponse>(create);
+  static UploadDevicePushTokenResponse? _defaultInstance;
+}
+
+class DeleteDevicePushTokenRequest extends $pb.GeneratedMessage {
+  factory DeleteDevicePushTokenRequest({
+    $core.String? appId,
+    $core.String? deviceUuid,
+  }) {
+    final $result = create();
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    if (deviceUuid != null) {
+      $result.deviceUuid = deviceUuid;
+    }
+    return $result;
+  }
+  DeleteDevicePushTokenRequest._() : super();
+  factory DeleteDevicePushTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteDevicePushTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteDevicePushTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceUuid')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteDevicePushTokenRequest clone() => DeleteDevicePushTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteDevicePushTokenRequest copyWith(void Function(DeleteDevicePushTokenRequest) updates) => super.copyWith((message) => updates(message as DeleteDevicePushTokenRequest)) as DeleteDevicePushTokenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteDevicePushTokenRequest create() => DeleteDevicePushTokenRequest._();
+  DeleteDevicePushTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteDevicePushTokenRequest> createRepeated() => $pb.PbList<DeleteDevicePushTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteDevicePushTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteDevicePushTokenRequest>(create);
+  static DeleteDevicePushTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceUuid => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceUuid($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceUuid() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceUuid() => clearField(2);
+}
+
+class DeleteDevicePushTokenResponse extends $pb.GeneratedMessage {
+  factory DeleteDevicePushTokenResponse() => create();
+  DeleteDevicePushTokenResponse._() : super();
+  factory DeleteDevicePushTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteDevicePushTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteDevicePushTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteDevicePushTokenResponse clone() => DeleteDevicePushTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteDevicePushTokenResponse copyWith(void Function(DeleteDevicePushTokenResponse) updates) => super.copyWith((message) => updates(message as DeleteDevicePushTokenResponse)) as DeleteDevicePushTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteDevicePushTokenResponse create() => DeleteDevicePushTokenResponse._();
+  DeleteDevicePushTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteDevicePushTokenResponse> createRepeated() => $pb.PbList<DeleteDevicePushTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteDevicePushTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteDevicePushTokenResponse>(create);
+  static DeleteDevicePushTokenResponse? _defaultInstance;
+}
+
+class GetDevicePushTokensRequest extends $pb.GeneratedMessage {
+  factory GetDevicePushTokensRequest({
+    $core.String? appId,
+  }) {
+    final $result = create();
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    return $result;
+  }
+  GetDevicePushTokensRequest._() : super();
+  factory GetDevicePushTokensRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDevicePushTokensRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicePushTokensRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDevicePushTokensRequest clone() => GetDevicePushTokensRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDevicePushTokensRequest copyWith(void Function(GetDevicePushTokensRequest) updates) => super.copyWith((message) => updates(message as GetDevicePushTokensRequest)) as GetDevicePushTokensRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDevicePushTokensRequest create() => GetDevicePushTokensRequest._();
+  GetDevicePushTokensRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDevicePushTokensRequest> createRepeated() => $pb.PbList<GetDevicePushTokensRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDevicePushTokensRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicePushTokensRequest>(create);
+  static GetDevicePushTokensRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+}
+
+class GetDevicePushTokensResponse extends $pb.GeneratedMessage {
+  factory GetDevicePushTokensResponse({
+    $core.Iterable<$core.String>? deviceTokens,
+  }) {
+    final $result = create();
+    if (deviceTokens != null) {
+      $result.deviceTokens.addAll(deviceTokens);
+    }
+    return $result;
+  }
+  GetDevicePushTokensResponse._() : super();
+  factory GetDevicePushTokensResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDevicePushTokensResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicePushTokensResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'deviceTokens')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDevicePushTokensResponse clone() => GetDevicePushTokensResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDevicePushTokensResponse copyWith(void Function(GetDevicePushTokensResponse) updates) => super.copyWith((message) => updates(message as GetDevicePushTokensResponse)) as GetDevicePushTokensResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDevicePushTokensResponse create() => GetDevicePushTokensResponse._();
+  GetDevicePushTokensResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDevicePushTokensResponse> createRepeated() => $pb.PbList<GetDevicePushTokensResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDevicePushTokensResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicePushTokensResponse>(create);
+  static GetDevicePushTokensResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get deviceTokens => $_getList(0);
+}
+
+class SetFirebaseConfigRequest extends $pb.GeneratedMessage {
+  factory SetFirebaseConfigRequest({
+    $core.String? orgId,
+    $core.String? appId,
+    $core.String? configJson,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    if (configJson != null) {
+      $result.configJson = configJson;
+    }
+    return $result;
+  }
+  SetFirebaseConfigRequest._() : super();
+  factory SetFirebaseConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetFirebaseConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetFirebaseConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'appId')
+    ..aOS(3, _omitFieldNames ? '' : 'configJson')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetFirebaseConfigRequest clone() => SetFirebaseConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetFirebaseConfigRequest copyWith(void Function(SetFirebaseConfigRequest) updates) => super.copyWith((message) => updates(message as SetFirebaseConfigRequest)) as SetFirebaseConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetFirebaseConfigRequest create() => SetFirebaseConfigRequest._();
+  SetFirebaseConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<SetFirebaseConfigRequest> createRepeated() => $pb.PbList<SetFirebaseConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetFirebaseConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetFirebaseConfigRequest>(create);
+  static SetFirebaseConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get appId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set appId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAppId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAppId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get configJson => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set configJson($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasConfigJson() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConfigJson() => clearField(3);
+}
+
+class SetFirebaseConfigResponse extends $pb.GeneratedMessage {
+  factory SetFirebaseConfigResponse() => create();
+  SetFirebaseConfigResponse._() : super();
+  factory SetFirebaseConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetFirebaseConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetFirebaseConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetFirebaseConfigResponse clone() => SetFirebaseConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetFirebaseConfigResponse copyWith(void Function(SetFirebaseConfigResponse) updates) => super.copyWith((message) => updates(message as SetFirebaseConfigResponse)) as SetFirebaseConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetFirebaseConfigResponse create() => SetFirebaseConfigResponse._();
+  SetFirebaseConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<SetFirebaseConfigResponse> createRepeated() => $pb.PbList<SetFirebaseConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetFirebaseConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetFirebaseConfigResponse>(create);
+  static SetFirebaseConfigResponse? _defaultInstance;
+}
+
+class GetFirebaseConfigRequest extends $pb.GeneratedMessage {
+  factory GetFirebaseConfigRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
+  GetFirebaseConfigRequest._() : super();
+  factory GetFirebaseConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFirebaseConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFirebaseConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetFirebaseConfigRequest clone() => GetFirebaseConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetFirebaseConfigRequest copyWith(void Function(GetFirebaseConfigRequest) updates) => super.copyWith((message) => updates(message as GetFirebaseConfigRequest)) as GetFirebaseConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetFirebaseConfigRequest create() => GetFirebaseConfigRequest._();
+  GetFirebaseConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<GetFirebaseConfigRequest> createRepeated() => $pb.PbList<GetFirebaseConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetFirebaseConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFirebaseConfigRequest>(create);
+  static GetFirebaseConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+}
+
+class GetFirebaseConfigResponse extends $pb.GeneratedMessage {
+  factory GetFirebaseConfigResponse({
+    $core.String? appId,
+  }) {
+    final $result = create();
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    return $result;
+  }
+  GetFirebaseConfigResponse._() : super();
+  factory GetFirebaseConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFirebaseConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFirebaseConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetFirebaseConfigResponse clone() => GetFirebaseConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetFirebaseConfigResponse copyWith(void Function(GetFirebaseConfigResponse) updates) => super.copyWith((message) => updates(message as GetFirebaseConfigResponse)) as GetFirebaseConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetFirebaseConfigResponse create() => GetFirebaseConfigResponse._();
+  GetFirebaseConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<GetFirebaseConfigResponse> createRepeated() => $pb.PbList<GetFirebaseConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetFirebaseConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFirebaseConfigResponse>(create);
+  static GetFirebaseConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+}
+
+class DeleteFirebaseConfigRequest extends $pb.GeneratedMessage {
+  factory DeleteFirebaseConfigRequest({
+    $core.String? orgId,
+    $core.String? appId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    return $result;
+  }
+  DeleteFirebaseConfigRequest._() : super();
+  factory DeleteFirebaseConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteFirebaseConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteFirebaseConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'appId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteFirebaseConfigRequest clone() => DeleteFirebaseConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteFirebaseConfigRequest copyWith(void Function(DeleteFirebaseConfigRequest) updates) => super.copyWith((message) => updates(message as DeleteFirebaseConfigRequest)) as DeleteFirebaseConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteFirebaseConfigRequest create() => DeleteFirebaseConfigRequest._();
+  DeleteFirebaseConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteFirebaseConfigRequest> createRepeated() => $pb.PbList<DeleteFirebaseConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteFirebaseConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteFirebaseConfigRequest>(create);
+  static DeleteFirebaseConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get appId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set appId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAppId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAppId() => clearField(2);
+}
+
+class DeleteFirebaseConfigResponse extends $pb.GeneratedMessage {
+  factory DeleteFirebaseConfigResponse() => create();
+  DeleteFirebaseConfigResponse._() : super();
+  factory DeleteFirebaseConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteFirebaseConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteFirebaseConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteFirebaseConfigResponse clone() => DeleteFirebaseConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteFirebaseConfigResponse copyWith(void Function(DeleteFirebaseConfigResponse) updates) => super.copyWith((message) => updates(message as DeleteFirebaseConfigResponse)) as DeleteFirebaseConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteFirebaseConfigResponse create() => DeleteFirebaseConfigResponse._();
+  DeleteFirebaseConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteFirebaseConfigResponse> createRepeated() => $pb.PbList<DeleteFirebaseConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteFirebaseConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteFirebaseConfigResponse>(create);
+  static DeleteFirebaseConfigResponse? _defaultInstance;
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

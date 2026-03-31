@@ -457,6 +457,30 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/GetAppBranding',
       ($12.GetAppBrandingRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.GetAppBrandingResponse.fromBuffer(value));
+  static final _$uploadDevicePushToken = $grpc.ClientMethod<$12.UploadDevicePushTokenRequest, $12.UploadDevicePushTokenResponse>(
+      '/viam.app.v1.AppService/UploadDevicePushToken',
+      ($12.UploadDevicePushTokenRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.UploadDevicePushTokenResponse.fromBuffer(value));
+  static final _$deleteDevicePushToken = $grpc.ClientMethod<$12.DeleteDevicePushTokenRequest, $12.DeleteDevicePushTokenResponse>(
+      '/viam.app.v1.AppService/DeleteDevicePushToken',
+      ($12.DeleteDevicePushTokenRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.DeleteDevicePushTokenResponse.fromBuffer(value));
+  static final _$getDevicePushTokens = $grpc.ClientMethod<$12.GetDevicePushTokensRequest, $12.GetDevicePushTokensResponse>(
+      '/viam.app.v1.AppService/GetDevicePushTokens',
+      ($12.GetDevicePushTokensRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.GetDevicePushTokensResponse.fromBuffer(value));
+  static final _$setFirebaseConfig = $grpc.ClientMethod<$12.SetFirebaseConfigRequest, $12.SetFirebaseConfigResponse>(
+      '/viam.app.v1.AppService/SetFirebaseConfig',
+      ($12.SetFirebaseConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.SetFirebaseConfigResponse.fromBuffer(value));
+  static final _$getFirebaseConfig = $grpc.ClientMethod<$12.GetFirebaseConfigRequest, $12.GetFirebaseConfigResponse>(
+      '/viam.app.v1.AppService/GetFirebaseConfig',
+      ($12.GetFirebaseConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.GetFirebaseConfigResponse.fromBuffer(value));
+  static final _$deleteFirebaseConfig = $grpc.ClientMethod<$12.DeleteFirebaseConfigRequest, $12.DeleteFirebaseConfigResponse>(
+      '/viam.app.v1.AppService/DeleteFirebaseConfig',
+      ($12.DeleteFirebaseConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.DeleteFirebaseConfigResponse.fromBuffer(value));
 
   AppServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -898,6 +922,30 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$12.GetAppBrandingResponse> getAppBranding($12.GetAppBrandingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAppBranding, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.UploadDevicePushTokenResponse> uploadDevicePushToken($12.UploadDevicePushTokenRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$uploadDevicePushToken, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.DeleteDevicePushTokenResponse> deleteDevicePushToken($12.DeleteDevicePushTokenRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteDevicePushToken, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.GetDevicePushTokensResponse> getDevicePushTokens($12.GetDevicePushTokensRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getDevicePushTokens, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.SetFirebaseConfigResponse> setFirebaseConfig($12.SetFirebaseConfigRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setFirebaseConfig, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.GetFirebaseConfigResponse> getFirebaseConfig($12.GetFirebaseConfigRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getFirebaseConfig, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.DeleteFirebaseConfigResponse> deleteFirebaseConfig($12.DeleteFirebaseConfigRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteFirebaseConfig, request, options: options);
   }
 }
 
@@ -1669,6 +1717,48 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.GetAppBrandingRequest.fromBuffer(value),
         ($12.GetAppBrandingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.UploadDevicePushTokenRequest, $12.UploadDevicePushTokenResponse>(
+        'UploadDevicePushToken',
+        uploadDevicePushToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.UploadDevicePushTokenRequest.fromBuffer(value),
+        ($12.UploadDevicePushTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.DeleteDevicePushTokenRequest, $12.DeleteDevicePushTokenResponse>(
+        'DeleteDevicePushToken',
+        deleteDevicePushToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.DeleteDevicePushTokenRequest.fromBuffer(value),
+        ($12.DeleteDevicePushTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.GetDevicePushTokensRequest, $12.GetDevicePushTokensResponse>(
+        'GetDevicePushTokens',
+        getDevicePushTokens_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.GetDevicePushTokensRequest.fromBuffer(value),
+        ($12.GetDevicePushTokensResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.SetFirebaseConfigRequest, $12.SetFirebaseConfigResponse>(
+        'SetFirebaseConfig',
+        setFirebaseConfig_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.SetFirebaseConfigRequest.fromBuffer(value),
+        ($12.SetFirebaseConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.GetFirebaseConfigRequest, $12.GetFirebaseConfigResponse>(
+        'GetFirebaseConfig',
+        getFirebaseConfig_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.GetFirebaseConfigRequest.fromBuffer(value),
+        ($12.GetFirebaseConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.DeleteFirebaseConfigRequest, $12.DeleteFirebaseConfigResponse>(
+        'DeleteFirebaseConfig',
+        deleteFirebaseConfig_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.DeleteFirebaseConfigRequest.fromBuffer(value),
+        ($12.DeleteFirebaseConfigResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$12.GetUserIDByEmailResponse> getUserIDByEmail_Pre($grpc.ServiceCall call, $async.Future<$12.GetUserIDByEmailRequest> request) async {
@@ -2103,6 +2193,30 @@ abstract class AppServiceBase extends $grpc.Service {
     return getAppBranding(call, await request);
   }
 
+  $async.Future<$12.UploadDevicePushTokenResponse> uploadDevicePushToken_Pre($grpc.ServiceCall call, $async.Future<$12.UploadDevicePushTokenRequest> request) async {
+    return uploadDevicePushToken(call, await request);
+  }
+
+  $async.Future<$12.DeleteDevicePushTokenResponse> deleteDevicePushToken_Pre($grpc.ServiceCall call, $async.Future<$12.DeleteDevicePushTokenRequest> request) async {
+    return deleteDevicePushToken(call, await request);
+  }
+
+  $async.Future<$12.GetDevicePushTokensResponse> getDevicePushTokens_Pre($grpc.ServiceCall call, $async.Future<$12.GetDevicePushTokensRequest> request) async {
+    return getDevicePushTokens(call, await request);
+  }
+
+  $async.Future<$12.SetFirebaseConfigResponse> setFirebaseConfig_Pre($grpc.ServiceCall call, $async.Future<$12.SetFirebaseConfigRequest> request) async {
+    return setFirebaseConfig(call, await request);
+  }
+
+  $async.Future<$12.GetFirebaseConfigResponse> getFirebaseConfig_Pre($grpc.ServiceCall call, $async.Future<$12.GetFirebaseConfigRequest> request) async {
+    return getFirebaseConfig(call, await request);
+  }
+
+  $async.Future<$12.DeleteFirebaseConfigResponse> deleteFirebaseConfig_Pre($grpc.ServiceCall call, $async.Future<$12.DeleteFirebaseConfigRequest> request) async {
+    return deleteFirebaseConfig(call, await request);
+  }
+
   $async.Future<$12.GetUserIDByEmailResponse> getUserIDByEmail($grpc.ServiceCall call, $12.GetUserIDByEmailRequest request);
   $async.Future<$12.CreateOrganizationResponse> createOrganization($grpc.ServiceCall call, $12.CreateOrganizationRequest request);
   $async.Future<$12.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $12.ListOrganizationsRequest request);
@@ -2212,4 +2326,10 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$12.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($grpc.ServiceCall call, $12.CreateKeyFromExistingKeyAuthorizationsRequest request);
   $async.Future<$12.GetAppContentResponse> getAppContent($grpc.ServiceCall call, $12.GetAppContentRequest request);
   $async.Future<$12.GetAppBrandingResponse> getAppBranding($grpc.ServiceCall call, $12.GetAppBrandingRequest request);
+  $async.Future<$12.UploadDevicePushTokenResponse> uploadDevicePushToken($grpc.ServiceCall call, $12.UploadDevicePushTokenRequest request);
+  $async.Future<$12.DeleteDevicePushTokenResponse> deleteDevicePushToken($grpc.ServiceCall call, $12.DeleteDevicePushTokenRequest request);
+  $async.Future<$12.GetDevicePushTokensResponse> getDevicePushTokens($grpc.ServiceCall call, $12.GetDevicePushTokensRequest request);
+  $async.Future<$12.SetFirebaseConfigResponse> setFirebaseConfig($grpc.ServiceCall call, $12.SetFirebaseConfigRequest request);
+  $async.Future<$12.GetFirebaseConfigResponse> getFirebaseConfig($grpc.ServiceCall call, $12.GetFirebaseConfigRequest request);
+  $async.Future<$12.DeleteFirebaseConfigResponse> deleteFirebaseConfig($grpc.ServiceCall call, $12.DeleteFirebaseConfigRequest request);
 }

@@ -2465,18 +2465,12 @@ class GetCloudMetadataRequest extends $pb.GeneratedMessage {
 
 class GetCloudMetadataResponse extends $pb.GeneratedMessage {
   factory GetCloudMetadataResponse({
-  @$core.Deprecated('This field is deprecated.')
-    $core.String? robotPartId,
     $core.String? primaryOrgId,
     $core.String? locationId,
     $core.String? machineId,
     $core.String? machinePartId,
   }) {
     final $result = create();
-    if (robotPartId != null) {
-      // ignore: deprecated_member_use_from_same_package
-      $result.robotPartId = robotPartId;
-    }
     if (primaryOrgId != null) {
       $result.primaryOrgId = primaryOrgId;
     }
@@ -2496,7 +2490,6 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
   factory GetCloudMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCloudMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'robotPartId')
     ..aOS(2, _omitFieldNames ? '' : 'primaryOrgId')
     ..aOS(3, _omitFieldNames ? '' : 'locationId')
     ..aOS(4, _omitFieldNames ? '' : 'machineId')
@@ -2525,53 +2518,39 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
   static GetCloudMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCloudMetadataResponse>(create);
   static GetCloudMetadataResponse? _defaultInstance;
 
-  /// Deprecated: use machine_part_id field.
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.String get robotPartId => $_getSZ(0);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  set robotPartId($core.String v) { $_setString(0, v); }
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.bool hasRobotPartId() => $_has(0);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  void clearRobotPartId() => clearField(1);
-
   @$pb.TagNumber(2)
-  $core.String get primaryOrgId => $_getSZ(1);
+  $core.String get primaryOrgId => $_getSZ(0);
   @$pb.TagNumber(2)
-  set primaryOrgId($core.String v) { $_setString(1, v); }
+  set primaryOrgId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPrimaryOrgId() => $_has(1);
+  $core.bool hasPrimaryOrgId() => $_has(0);
   @$pb.TagNumber(2)
   void clearPrimaryOrgId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get locationId => $_getSZ(2);
+  $core.String get locationId => $_getSZ(1);
   @$pb.TagNumber(3)
-  set locationId($core.String v) { $_setString(2, v); }
+  set locationId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(3)
-  $core.bool hasLocationId() => $_has(2);
+  $core.bool hasLocationId() => $_has(1);
   @$pb.TagNumber(3)
   void clearLocationId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get machineId => $_getSZ(3);
+  $core.String get machineId => $_getSZ(2);
   @$pb.TagNumber(4)
-  set machineId($core.String v) { $_setString(3, v); }
+  set machineId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(4)
-  $core.bool hasMachineId() => $_has(3);
+  $core.bool hasMachineId() => $_has(2);
   @$pb.TagNumber(4)
   void clearMachineId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get machinePartId => $_getSZ(4);
+  $core.String get machinePartId => $_getSZ(3);
   @$pb.TagNumber(5)
-  set machinePartId($core.String v) { $_setString(4, v); }
+  set machinePartId($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(5)
-  $core.bool hasMachinePartId() => $_has(4);
+  $core.bool hasMachinePartId() => $_has(3);
   @$pb.TagNumber(5)
   void clearMachinePartId() => clearField(5);
 }

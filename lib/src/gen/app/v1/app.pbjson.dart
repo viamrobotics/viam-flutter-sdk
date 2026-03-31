@@ -4559,3 +4559,147 @@ final $typed_data.Uint8List machinePickerCustomizationsDescriptor = $convert.bas
     '5niAEBEiMKCnN1YmhlYWRpbmcYAiABKAlIAVIKc3ViaGVhZGluZ4gBAUIKCghfaGVhZGluZ0IN'
     'Cgtfc3ViaGVhZGluZw==');
 
+@$core.Deprecated('Use uploadDevicePushTokenRequestDescriptor instead')
+const UploadDevicePushTokenRequest$json = {
+  '1': 'UploadDevicePushTokenRequest',
+  '2': [
+    {'1': 'app_id', '3': 1, '4': 1, '5': 9, '10': 'appId'},
+    {'1': 'device_token', '3': 2, '4': 1, '5': 9, '10': 'deviceToken'},
+    {'1': 'device_uuid', '3': 3, '4': 1, '5': 9, '10': 'deviceUuid'},
+  ],
+};
+
+/// Descriptor for `UploadDevicePushTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List uploadDevicePushTokenRequestDescriptor = $convert.base64Decode(
+    'ChxVcGxvYWREZXZpY2VQdXNoVG9rZW5SZXF1ZXN0EhUKBmFwcF9pZBgBIAEoCVIFYXBwSWQSIQ'
+    'oMZGV2aWNlX3Rva2VuGAIgASgJUgtkZXZpY2VUb2tlbhIfCgtkZXZpY2VfdXVpZBgDIAEoCVIK'
+    'ZGV2aWNlVXVpZA==');
+
+@$core.Deprecated('Use uploadDevicePushTokenResponseDescriptor instead')
+const UploadDevicePushTokenResponse$json = {
+  '1': 'UploadDevicePushTokenResponse',
+};
+
+/// Descriptor for `UploadDevicePushTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List uploadDevicePushTokenResponseDescriptor = $convert.base64Decode(
+    'Ch1VcGxvYWREZXZpY2VQdXNoVG9rZW5SZXNwb25zZQ==');
+
+@$core.Deprecated('Use deleteDevicePushTokenRequestDescriptor instead')
+const DeleteDevicePushTokenRequest$json = {
+  '1': 'DeleteDevicePushTokenRequest',
+  '2': [
+    {'1': 'app_id', '3': 1, '4': 1, '5': 9, '10': 'appId'},
+    {'1': 'device_uuid', '3': 2, '4': 1, '5': 9, '10': 'deviceUuid'},
+  ],
+};
+
+/// Descriptor for `DeleteDevicePushTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteDevicePushTokenRequestDescriptor = $convert.base64Decode(
+    'ChxEZWxldGVEZXZpY2VQdXNoVG9rZW5SZXF1ZXN0EhUKBmFwcF9pZBgBIAEoCVIFYXBwSWQSHw'
+    'oLZGV2aWNlX3V1aWQYAiABKAlSCmRldmljZVV1aWQ=');
+
+@$core.Deprecated('Use deleteDevicePushTokenResponseDescriptor instead')
+const DeleteDevicePushTokenResponse$json = {
+  '1': 'DeleteDevicePushTokenResponse',
+};
+
+/// Descriptor for `DeleteDevicePushTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteDevicePushTokenResponseDescriptor = $convert.base64Decode(
+    'Ch1EZWxldGVEZXZpY2VQdXNoVG9rZW5SZXNwb25zZQ==');
+
+@$core.Deprecated('Use getDevicePushTokensRequestDescriptor instead')
+const GetDevicePushTokensRequest$json = {
+  '1': 'GetDevicePushTokensRequest',
+  '2': [
+    {'1': 'app_id', '3': 1, '4': 1, '5': 9, '10': 'appId'},
+  ],
+};
+
+/// Descriptor for `GetDevicePushTokensRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDevicePushTokensRequestDescriptor = $convert.base64Decode(
+    'ChpHZXREZXZpY2VQdXNoVG9rZW5zUmVxdWVzdBIVCgZhcHBfaWQYASABKAlSBWFwcElk');
+
+@$core.Deprecated('Use getDevicePushTokensResponseDescriptor instead')
+const GetDevicePushTokensResponse$json = {
+  '1': 'GetDevicePushTokensResponse',
+  '2': [
+    {'1': 'device_tokens', '3': 1, '4': 3, '5': 9, '10': 'deviceTokens'},
+  ],
+};
+
+/// Descriptor for `GetDevicePushTokensResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDevicePushTokensResponseDescriptor = $convert.base64Decode(
+    'ChtHZXREZXZpY2VQdXNoVG9rZW5zUmVzcG9uc2USIwoNZGV2aWNlX3Rva2VucxgBIAMoCVIMZG'
+    'V2aWNlVG9rZW5z');
+
+@$core.Deprecated('Use setFirebaseConfigRequestDescriptor instead')
+const SetFirebaseConfigRequest$json = {
+  '1': 'SetFirebaseConfigRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'app_id', '3': 2, '4': 1, '5': 9, '10': 'appId'},
+    {'1': 'config_json', '3': 3, '4': 1, '5': 9, '10': 'configJson'},
+  ],
+};
+
+/// Descriptor for `SetFirebaseConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setFirebaseConfigRequestDescriptor = $convert.base64Decode(
+    'ChhTZXRGaXJlYmFzZUNvbmZpZ1JlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZBIVCgZhcH'
+    'BfaWQYAiABKAlSBWFwcElkEh8KC2NvbmZpZ19qc29uGAMgASgJUgpjb25maWdKc29u');
+
+@$core.Deprecated('Use setFirebaseConfigResponseDescriptor instead')
+const SetFirebaseConfigResponse$json = {
+  '1': 'SetFirebaseConfigResponse',
+};
+
+/// Descriptor for `SetFirebaseConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setFirebaseConfigResponseDescriptor = $convert.base64Decode(
+    'ChlTZXRGaXJlYmFzZUNvbmZpZ1Jlc3BvbnNl');
+
+@$core.Deprecated('Use getFirebaseConfigRequestDescriptor instead')
+const GetFirebaseConfigRequest$json = {
+  '1': 'GetFirebaseConfigRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `GetFirebaseConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFirebaseConfigRequestDescriptor = $convert.base64Decode(
+    'ChhHZXRGaXJlYmFzZUNvbmZpZ1JlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZA==');
+
+@$core.Deprecated('Use getFirebaseConfigResponseDescriptor instead')
+const GetFirebaseConfigResponse$json = {
+  '1': 'GetFirebaseConfigResponse',
+  '2': [
+    {'1': 'app_id', '3': 1, '4': 1, '5': 9, '10': 'appId'},
+  ],
+};
+
+/// Descriptor for `GetFirebaseConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFirebaseConfigResponseDescriptor = $convert.base64Decode(
+    'ChlHZXRGaXJlYmFzZUNvbmZpZ1Jlc3BvbnNlEhUKBmFwcF9pZBgBIAEoCVIFYXBwSWQ=');
+
+@$core.Deprecated('Use deleteFirebaseConfigRequestDescriptor instead')
+const DeleteFirebaseConfigRequest$json = {
+  '1': 'DeleteFirebaseConfigRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'app_id', '3': 2, '4': 1, '5': 9, '10': 'appId'},
+  ],
+};
+
+/// Descriptor for `DeleteFirebaseConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteFirebaseConfigRequestDescriptor = $convert.base64Decode(
+    'ChtEZWxldGVGaXJlYmFzZUNvbmZpZ1JlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZBIVCg'
+    'ZhcHBfaWQYAiABKAlSBWFwcElk');
+
+@$core.Deprecated('Use deleteFirebaseConfigResponseDescriptor instead')
+const DeleteFirebaseConfigResponse$json = {
+  '1': 'DeleteFirebaseConfigResponse',
+};
+
+/// Descriptor for `DeleteFirebaseConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteFirebaseConfigResponseDescriptor = $convert.base64Decode(
+    'ChxEZWxldGVGaXJlYmFzZUNvbmZpZ1Jlc3BvbnNl');
+

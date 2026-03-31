@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/camera/service.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' show GetStatusRequest;
 import 'package:viam_sdk/src/gen/component/camera/v1/camera.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -14,6 +15,7 @@ const String rightCamSource = 'right';
 
 class FakeCamera extends Camera {
   Map<String, dynamic>? extra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
   String name;
@@ -23,6 +25,11 @@ class FakeCamera extends Camera {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -83,6 +90,11 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await camera.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await camera.getStatus();
+      expect(result, camera.statusResult);
     });
 
     test('getImages', () async {
@@ -163,6 +175,12 @@ void main() {
         expect(resp.result.toMap(), {'command': cmd});
       });
 
+      test('getStatus', () async {
+        final client = CameraServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), camera.statusResult);
+      });
+
       test('getImages', () async {
         final client = CameraServiceClient(channel);
 
@@ -229,6 +247,12 @@ void main() {
         final cmd = {'foo': 'bar'};
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = CameraClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, camera.statusResult);
       });
 
       test('getImages', () async {

@@ -79,4 +79,11 @@ class GripperService extends GripperServiceBase {
       ..isHoldingSomething = response.isHoldingSomething
       ..meta = response.meta.toStruct();
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final gripper = _fromManager(request.name);
+    final result = await gripper.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }

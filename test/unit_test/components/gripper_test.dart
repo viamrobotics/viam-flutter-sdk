@@ -13,6 +13,7 @@ class FakeGripper extends Gripper {
   bool isOpen = false;
   bool isStopped = true;
   Map<String, dynamic>? extra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
   String name;
@@ -33,6 +34,11 @@ class FakeGripper extends Gripper {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -114,6 +120,11 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await gripper.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await gripper.getStatus();
+      expect(result, gripper.statusResult);
     });
 
     test('extra', () async {
@@ -224,6 +235,12 @@ void main() {
         expect(resp.result.toMap()['command'], cmd);
       });
 
+      test('getStatus', () async {
+        final client = GripperServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), gripper.statusResult);
+      });
+
       test('extra', () async {
         expect(gripper.extra, null);
 
@@ -293,6 +310,12 @@ void main() {
         final client = GripperClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = GripperClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, gripper.statusResult);
       });
 
       test('extra', () async {
