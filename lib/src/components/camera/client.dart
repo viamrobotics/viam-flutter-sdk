@@ -74,4 +74,11 @@ class CameraClient extends Camera with RPCDebugLoggerMixin implements ResourceRP
     final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = proto.GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
 }

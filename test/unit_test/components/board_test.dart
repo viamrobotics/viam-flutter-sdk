@@ -4,6 +4,7 @@ import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/board/service.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/component/board/v1/board.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -35,6 +36,13 @@ class FakeBoard extends Board {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  Map<String, dynamic> statusResult = {'status': 'ok'};
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -190,6 +198,11 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await board.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await board.getStatus();
+      expect(result, board.statusResult);
     });
 
     test('extra', () async {
@@ -378,6 +391,12 @@ void main() {
         expect(resp.result.toMap()['command'], cmd);
       });
 
+      test('getStatus', () async {
+        final client = BoardServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), board.statusResult);
+      });
+
       test('extra', () async {
         final client = BoardServiceClient(channel);
         expect(board.extra, null);
@@ -481,6 +500,12 @@ void main() {
         final client = BoardClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = BoardClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, board.statusResult);
       });
 
       test('extra', () async {

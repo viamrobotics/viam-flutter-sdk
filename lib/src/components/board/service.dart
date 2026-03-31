@@ -127,4 +127,11 @@ class BoardService extends BoardServiceBase {
       rethrow;
     }
   }
+
+  @override
+  Future<common.GetStatusResponse> getStatus(ServiceCall call, common.GetStatusRequest request) async {
+    final board = _fromManager(request.name);
+    final result = await board.getStatus();
+    return common.GetStatusResponse()..result = result.toStruct();
+  }
 }

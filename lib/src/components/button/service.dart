@@ -34,4 +34,11 @@ class ButtonService extends ButtonServiceBase {
     final result = await button.doCommand(request.command.toMap());
     return DoCommandResponse()..result = result.toStruct();
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final button = _fromManager(request.name);
+    final result = await button.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }
