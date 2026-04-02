@@ -49,6 +49,22 @@ final $typed_data.Uint8List clientLibraryDestinationDescriptor = $convert.base64
     'ChhDbGllbnRMaWJyYXJ5RGVzdGluYXRpb24SKgomQ0xJRU5UX0xJQlJBUllfREVTVElOQVRJT0'
     '5fVU5TUEVDSUZJRUQQABIKCgZHSVRIVUIQChITCg9QQUNLQUdFX01BTkFHRVIQFA==');
 
+@$core.Deprecated('Use flowControlLimitExceededBehaviorProtoDescriptor instead')
+const FlowControlLimitExceededBehaviorProto$json = {
+  '1': 'FlowControlLimitExceededBehaviorProto',
+  '2': [
+    {'1': 'UNSET_BEHAVIOR', '2': 0},
+    {'1': 'THROW_EXCEPTION', '2': 1},
+    {'1': 'BLOCK', '2': 2},
+    {'1': 'IGNORE', '2': 3},
+  ],
+};
+
+/// Descriptor for `FlowControlLimitExceededBehaviorProto`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List flowControlLimitExceededBehaviorProtoDescriptor = $convert.base64Decode(
+    'CiVGbG93Q29udHJvbExpbWl0RXhjZWVkZWRCZWhhdmlvclByb3RvEhIKDlVOU0VUX0JFSEFWSU'
+    '9SEAASEwoPVEhST1dfRVhDRVBUSU9OEAESCQoFQkxPQ0sQAhIKCgZJR05PUkUQAw==');
+
 @$core.Deprecated('Use commonLanguageSettingsDescriptor instead')
 const CommonLanguageSettings$json = {
   '1': 'CommonLanguageSettings',
@@ -188,13 +204,15 @@ const PhpSettings$json = {
   '1': 'PhpSettings',
   '2': [
     {'1': 'common', '3': 1, '4': 1, '5': 11, '6': '.google.api.CommonLanguageSettings', '10': 'common'},
+    {'1': 'library_package', '3': 2, '4': 1, '5': 9, '10': 'libraryPackage'},
   ],
 };
 
 /// Descriptor for `PhpSettings`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List phpSettingsDescriptor = $convert.base64Decode(
     'CgtQaHBTZXR0aW5ncxI6CgZjb21tb24YASABKAsyIi5nb29nbGUuYXBpLkNvbW1vbkxhbmd1YW'
-    'dlU2V0dGluZ3NSBmNvbW1vbg==');
+    'dlU2V0dGluZ3NSBmNvbW1vbhInCg9saWJyYXJ5X3BhY2thZ2UYAiABKAlSDmxpYnJhcnlQYWNr'
+    'YWdl');
 
 @$core.Deprecated('Use pythonSettingsDescriptor instead')
 const PythonSettings$json = {
@@ -336,6 +354,7 @@ const MethodSettings$json = {
     {'1': 'selector', '3': 1, '4': 1, '5': 9, '10': 'selector'},
     {'1': 'long_running', '3': 2, '4': 1, '5': 11, '6': '.google.api.MethodSettings.LongRunning', '10': 'longRunning'},
     {'1': 'auto_populated_fields', '3': 3, '4': 3, '5': 9, '10': 'autoPopulatedFields'},
+    {'1': 'batching', '3': 4, '4': 1, '5': 11, '6': '.google.api.BatchingConfigProto', '10': 'batching'},
   ],
   '3': [MethodSettings_LongRunning$json],
 };
@@ -356,12 +375,13 @@ final $typed_data.Uint8List methodSettingsDescriptor = $convert.base64Decode(
     'Cg5NZXRob2RTZXR0aW5ncxIaCghzZWxlY3RvchgBIAEoCVIIc2VsZWN0b3ISSQoMbG9uZ19ydW'
     '5uaW5nGAIgASgLMiYuZ29vZ2xlLmFwaS5NZXRob2RTZXR0aW5ncy5Mb25nUnVubmluZ1ILbG9u'
     'Z1J1bm5pbmcSMgoVYXV0b19wb3B1bGF0ZWRfZmllbGRzGAMgAygJUhNhdXRvUG9wdWxhdGVkRm'
-    'llbGRzGpQCCgtMb25nUnVubmluZxJHChJpbml0aWFsX3BvbGxfZGVsYXkYASABKAsyGS5nb29n'
-    'bGUucHJvdG9idWYuRHVyYXRpb25SEGluaXRpYWxQb2xsRGVsYXkSMgoVcG9sbF9kZWxheV9tdW'
-    'x0aXBsaWVyGAIgASgCUhNwb2xsRGVsYXlNdWx0aXBsaWVyEj8KDm1heF9wb2xsX2RlbGF5GAMg'
-    'ASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgxtYXhQb2xsRGVsYXkSRwoSdG90YWxfcG'
-    '9sbF90aW1lb3V0GAQgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUhB0b3RhbFBvbGxU'
-    'aW1lb3V0');
+    'llbGRzEjsKCGJhdGNoaW5nGAQgASgLMh8uZ29vZ2xlLmFwaS5CYXRjaGluZ0NvbmZpZ1Byb3Rv'
+    'UghiYXRjaGluZxqUAgoLTG9uZ1J1bm5pbmcSRwoSaW5pdGlhbF9wb2xsX2RlbGF5GAEgASgLMh'
+    'kuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUhBpbml0aWFsUG9sbERlbGF5EjIKFXBvbGxfZGVs'
+    'YXlfbXVsdGlwbGllchgCIAEoAlITcG9sbERlbGF5TXVsdGlwbGllchI/Cg5tYXhfcG9sbF9kZW'
+    'xheRgDIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvblIMbWF4UG9sbERlbGF5EkcKEnRv'
+    'dGFsX3BvbGxfdGltZW91dBgEIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvblIQdG90YW'
+    'xQb2xsVGltZW91dA==');
 
 @$core.Deprecated('Use selectiveGapicGenerationDescriptor instead')
 const SelectiveGapicGeneration$json = {
@@ -377,4 +397,64 @@ final $typed_data.Uint8List selectiveGapicGenerationDescriptor = $convert.base64
     'ChhTZWxlY3RpdmVHYXBpY0dlbmVyYXRpb24SGAoHbWV0aG9kcxgBIAMoCVIHbWV0aG9kcxI/Ch'
     'xnZW5lcmF0ZV9vbWl0dGVkX2FzX2ludGVybmFsGAIgASgIUhlnZW5lcmF0ZU9taXR0ZWRBc0lu'
     'dGVybmFs');
+
+@$core.Deprecated('Use batchingConfigProtoDescriptor instead')
+const BatchingConfigProto$json = {
+  '1': 'BatchingConfigProto',
+  '2': [
+    {'1': 'thresholds', '3': 1, '4': 1, '5': 11, '6': '.google.api.BatchingSettingsProto', '10': 'thresholds'},
+    {'1': 'batch_descriptor', '3': 2, '4': 1, '5': 11, '6': '.google.api.BatchingDescriptorProto', '10': 'batchDescriptor'},
+  ],
+};
+
+/// Descriptor for `BatchingConfigProto`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List batchingConfigProtoDescriptor = $convert.base64Decode(
+    'ChNCYXRjaGluZ0NvbmZpZ1Byb3RvEkEKCnRocmVzaG9sZHMYASABKAsyIS5nb29nbGUuYXBpLk'
+    'JhdGNoaW5nU2V0dGluZ3NQcm90b1IKdGhyZXNob2xkcxJOChBiYXRjaF9kZXNjcmlwdG9yGAIg'
+    'ASgLMiMuZ29vZ2xlLmFwaS5CYXRjaGluZ0Rlc2NyaXB0b3JQcm90b1IPYmF0Y2hEZXNjcmlwdG'
+    '9y');
+
+@$core.Deprecated('Use batchingSettingsProtoDescriptor instead')
+const BatchingSettingsProto$json = {
+  '1': 'BatchingSettingsProto',
+  '2': [
+    {'1': 'element_count_threshold', '3': 1, '4': 1, '5': 5, '10': 'elementCountThreshold'},
+    {'1': 'request_byte_threshold', '3': 2, '4': 1, '5': 3, '10': 'requestByteThreshold'},
+    {'1': 'delay_threshold', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'delayThreshold'},
+    {'1': 'element_count_limit', '3': 4, '4': 1, '5': 5, '10': 'elementCountLimit'},
+    {'1': 'request_byte_limit', '3': 5, '4': 1, '5': 5, '10': 'requestByteLimit'},
+    {'1': 'flow_control_element_limit', '3': 6, '4': 1, '5': 5, '10': 'flowControlElementLimit'},
+    {'1': 'flow_control_byte_limit', '3': 7, '4': 1, '5': 5, '10': 'flowControlByteLimit'},
+    {'1': 'flow_control_limit_exceeded_behavior', '3': 8, '4': 1, '5': 14, '6': '.google.api.FlowControlLimitExceededBehaviorProto', '10': 'flowControlLimitExceededBehavior'},
+  ],
+};
+
+/// Descriptor for `BatchingSettingsProto`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List batchingSettingsProtoDescriptor = $convert.base64Decode(
+    'ChVCYXRjaGluZ1NldHRpbmdzUHJvdG8SNgoXZWxlbWVudF9jb3VudF90aHJlc2hvbGQYASABKA'
+    'VSFWVsZW1lbnRDb3VudFRocmVzaG9sZBI0ChZyZXF1ZXN0X2J5dGVfdGhyZXNob2xkGAIgASgD'
+    'UhRyZXF1ZXN0Qnl0ZVRocmVzaG9sZBJCCg9kZWxheV90aHJlc2hvbGQYAyABKAsyGS5nb29nbG'
+    'UucHJvdG9idWYuRHVyYXRpb25SDmRlbGF5VGhyZXNob2xkEi4KE2VsZW1lbnRfY291bnRfbGlt'
+    'aXQYBCABKAVSEWVsZW1lbnRDb3VudExpbWl0EiwKEnJlcXVlc3RfYnl0ZV9saW1pdBgFIAEoBV'
+    'IQcmVxdWVzdEJ5dGVMaW1pdBI7ChpmbG93X2NvbnRyb2xfZWxlbWVudF9saW1pdBgGIAEoBVIX'
+    'Zmxvd0NvbnRyb2xFbGVtZW50TGltaXQSNQoXZmxvd19jb250cm9sX2J5dGVfbGltaXQYByABKA'
+    'VSFGZsb3dDb250cm9sQnl0ZUxpbWl0EoEBCiRmbG93X2NvbnRyb2xfbGltaXRfZXhjZWVkZWRf'
+    'YmVoYXZpb3IYCCABKA4yMS5nb29nbGUuYXBpLkZsb3dDb250cm9sTGltaXRFeGNlZWRlZEJlaG'
+    'F2aW9yUHJvdG9SIGZsb3dDb250cm9sTGltaXRFeGNlZWRlZEJlaGF2aW9y');
+
+@$core.Deprecated('Use batchingDescriptorProtoDescriptor instead')
+const BatchingDescriptorProto$json = {
+  '1': 'BatchingDescriptorProto',
+  '2': [
+    {'1': 'batched_field', '3': 1, '4': 1, '5': 9, '10': 'batchedField'},
+    {'1': 'discriminator_fields', '3': 2, '4': 3, '5': 9, '10': 'discriminatorFields'},
+    {'1': 'subresponse_field', '3': 3, '4': 1, '5': 9, '10': 'subresponseField'},
+  ],
+};
+
+/// Descriptor for `BatchingDescriptorProto`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List batchingDescriptorProtoDescriptor = $convert.base64Decode(
+    'ChdCYXRjaGluZ0Rlc2NyaXB0b3JQcm90bxIjCg1iYXRjaGVkX2ZpZWxkGAEgASgJUgxiYXRjaG'
+    'VkRmllbGQSMQoUZGlzY3JpbWluYXRvcl9maWVsZHMYAiADKAlSE2Rpc2NyaW1pbmF0b3JGaWVs'
+    'ZHMSKwoRc3VicmVzcG9uc2VfZmllbGQYAyABKAlSEHN1YnJlc3BvbnNlRmllbGQ=');
 

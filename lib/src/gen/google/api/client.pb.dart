@@ -11,6 +11,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../protobuf/duration.pb.dart' as $6;
@@ -581,9 +582,10 @@ class JavaSettings extends $pb.GeneratedMessage {
   ///
   ///  Example of a YAML configuration::
   ///
-  ///   publishing:
-  ///     java_settings:
-  ///       library_package: com.google.cloud.pubsub.v1
+  ///      publishing:
+  ///        library_settings:
+  ///          java_settings:
+  ///            library_package: com.google.cloud.pubsub.v1
   @$pb.TagNumber(1)
   $core.String get libraryPackage => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -602,11 +604,11 @@ class JavaSettings extends $pb.GeneratedMessage {
   ///
   ///  Example of a YAML configuration::
   ///
-  ///   publishing:
-  ///     java_settings:
-  ///       service_class_names:
-  ///         - google.pubsub.v1.Publisher: TopicAdmin
-  ///         - google.pubsub.v1.Subscriber: SubscriptionAdmin
+  ///      publishing:
+  ///        java_settings:
+  ///          service_class_names:
+  ///            - google.pubsub.v1.Publisher: TopicAdmin
+  ///            - google.pubsub.v1.Subscriber: SubscriptionAdmin
   @$pb.TagNumber(2)
   $core.Map<$core.String, $core.String> get serviceClassNames => $_getMap(1);
 
@@ -681,10 +683,14 @@ class CppSettings extends $pb.GeneratedMessage {
 class PhpSettings extends $pb.GeneratedMessage {
   factory PhpSettings({
     CommonLanguageSettings? common,
+    $core.String? libraryPackage,
   }) {
     final $result = create();
     if (common != null) {
       $result.common = common;
+    }
+    if (libraryPackage != null) {
+      $result.libraryPackage = libraryPackage;
     }
     return $result;
   }
@@ -694,6 +700,7 @@ class PhpSettings extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PhpSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+    ..aOS(2, _omitFieldNames ? '' : 'libraryPackage')
     ..hasRequiredFields = false
   ;
 
@@ -729,6 +736,27 @@ class PhpSettings extends $pb.GeneratedMessage {
   void clearCommon() => clearField(1);
   @$pb.TagNumber(1)
   CommonLanguageSettings ensureCommon() => $_ensure(0);
+
+  ///  The package name to use in Php. Clobbers the php_namespace option
+  ///  set in the protobuf. This should be used **only** by APIs
+  ///  who have already set the language_settings.php.package_name" field
+  ///  in gapic.yaml. API teams should use the protobuf php_namespace option
+  ///  where possible.
+  ///
+  ///  Example of a YAML configuration::
+  ///
+  ///      publishing:
+  ///        library_settings:
+  ///          php_settings:
+  ///            library_package: Google\Cloud\PubSub\V1
+  @$pb.TagNumber(2)
+  $core.String get libraryPackage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set libraryPackage($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLibraryPackage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLibraryPackage() => clearField(2);
 }
 
 /// Experimental features to be included during client library generation.
@@ -1179,10 +1207,12 @@ class GoSettings extends $pb.GeneratedMessage {
   ///  service names and values are the name to be used for the service client
   ///  and call options.
   ///
-  ///  publishing:
-  ///    go_settings:
-  ///      renamed_services:
-  ///        Publisher: TopicAdmin
+  ///  Example:
+  ///
+  ///      publishing:
+  ///        go_settings:
+  ///          renamed_services:
+  ///            Publisher: TopicAdmin
   @$pb.TagNumber(2)
   $core.Map<$core.String, $core.String> get renamedServices => $_getMap(1);
 }
@@ -1305,6 +1335,7 @@ class MethodSettings extends $pb.GeneratedMessage {
     $core.String? selector,
     MethodSettings_LongRunning? longRunning,
     $core.Iterable<$core.String>? autoPopulatedFields,
+    BatchingConfigProto? batching,
   }) {
     final $result = create();
     if (selector != null) {
@@ -1316,6 +1347,9 @@ class MethodSettings extends $pb.GeneratedMessage {
     if (autoPopulatedFields != null) {
       $result.autoPopulatedFields.addAll(autoPopulatedFields);
     }
+    if (batching != null) {
+      $result.batching = batching;
+    }
     return $result;
   }
   MethodSettings._() : super();
@@ -1326,6 +1360,7 @@ class MethodSettings extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'selector')
     ..aOM<MethodSettings_LongRunning>(2, _omitFieldNames ? '' : 'longRunning', subBuilder: MethodSettings_LongRunning.create)
     ..pPS(3, _omitFieldNames ? '' : 'autoPopulatedFields')
+    ..aOM<BatchingConfigProto>(4, _omitFieldNames ? '' : 'batching', subBuilder: BatchingConfigProto.create)
     ..hasRequiredFields = false
   ;
 
@@ -1355,10 +1390,10 @@ class MethodSettings extends $pb.GeneratedMessage {
   ///
   ///  Example:
   ///
-  ///     publishing:
-  ///       method_settings:
-  ///       - selector: google.storage.control.v2.StorageControl.CreateFolder
-  ///         # method settings for CreateFolder...
+  ///      publishing:
+  ///        method_settings:
+  ///        - selector: google.storage.control.v2.StorageControl.CreateFolder
+  ///          # method settings for CreateFolder...
   @$pb.TagNumber(1)
   $core.String get selector => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1374,14 +1409,14 @@ class MethodSettings extends $pb.GeneratedMessage {
   ///
   ///  Example of a YAML configuration::
   ///
-  ///     publishing:
-  ///       method_settings:
-  ///       - selector: google.cloud.speech.v2.Speech.BatchRecognize
-  ///         long_running:
-  ///           initial_poll_delay: 60s # 1 minute
-  ///           poll_delay_multiplier: 1.5
-  ///           max_poll_delay: 360s # 6 minutes
-  ///           total_poll_timeout: 54000s # 90 minutes
+  ///      publishing:
+  ///        method_settings:
+  ///        - selector: google.cloud.speech.v2.Speech.BatchRecognize
+  ///          long_running:
+  ///            initial_poll_delay: 60s # 1 minute
+  ///            poll_delay_multiplier: 1.5
+  ///            max_poll_delay: 360s # 6 minutes
+  ///            total_poll_timeout: 54000s # 90 minutes
   @$pb.TagNumber(2)
   MethodSettings_LongRunning get longRunning => $_getN(1);
   @$pb.TagNumber(2)
@@ -1399,13 +1434,35 @@ class MethodSettings extends $pb.GeneratedMessage {
   ///
   ///  Example of a YAML configuration:
   ///
-  ///     publishing:
-  ///       method_settings:
-  ///       - selector: google.example.v1.ExampleService.CreateExample
-  ///         auto_populated_fields:
-  ///         - request_id
+  ///      publishing:
+  ///        method_settings:
+  ///        - selector: google.example.v1.ExampleService.CreateExample
+  ///          auto_populated_fields:
+  ///          - request_id
   @$pb.TagNumber(3)
   $core.List<$core.String> get autoPopulatedFields => $_getList(2);
+
+  ///  Batching configuration for an API method in client libraries.
+  ///
+  ///  Example of a YAML configuration:
+  ///
+  ///      publishing:
+  ///        method_settings:
+  ///        - selector: google.example.v1.ExampleService.BatchCreateExample
+  ///          batching:
+  ///            element_count_threshold: 1000
+  ///            request_byte_threshold: 100000000
+  ///            delay_threshold_millis: 10
+  @$pb.TagNumber(4)
+  BatchingConfigProto get batching => $_getN(3);
+  @$pb.TagNumber(4)
+  set batching(BatchingConfigProto v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBatching() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBatching() => clearField(4);
+  @$pb.TagNumber(4)
+  BatchingConfigProto ensureBatching() => $_ensure(3);
 }
 
 /// This message is used to configure the generation of a subset of the RPCs in
@@ -1474,6 +1531,326 @@ class SelectiveGapicGeneration extends $pb.GeneratedMessage {
   $core.bool hasGenerateOmittedAsInternal() => $_has(1);
   @$pb.TagNumber(2)
   void clearGenerateOmittedAsInternal() => clearField(2);
+}
+
+/// `BatchingConfigProto` defines the batching configuration for an API method.
+class BatchingConfigProto extends $pb.GeneratedMessage {
+  factory BatchingConfigProto({
+    BatchingSettingsProto? thresholds,
+    BatchingDescriptorProto? batchDescriptor,
+  }) {
+    final $result = create();
+    if (thresholds != null) {
+      $result.thresholds = thresholds;
+    }
+    if (batchDescriptor != null) {
+      $result.batchDescriptor = batchDescriptor;
+    }
+    return $result;
+  }
+  BatchingConfigProto._() : super();
+  factory BatchingConfigProto.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BatchingConfigProto.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BatchingConfigProto', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<BatchingSettingsProto>(1, _omitFieldNames ? '' : 'thresholds', subBuilder: BatchingSettingsProto.create)
+    ..aOM<BatchingDescriptorProto>(2, _omitFieldNames ? '' : 'batchDescriptor', subBuilder: BatchingDescriptorProto.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BatchingConfigProto clone() => BatchingConfigProto()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BatchingConfigProto copyWith(void Function(BatchingConfigProto) updates) => super.copyWith((message) => updates(message as BatchingConfigProto)) as BatchingConfigProto;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BatchingConfigProto create() => BatchingConfigProto._();
+  BatchingConfigProto createEmptyInstance() => create();
+  static $pb.PbList<BatchingConfigProto> createRepeated() => $pb.PbList<BatchingConfigProto>();
+  @$core.pragma('dart2js:noInline')
+  static BatchingConfigProto getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BatchingConfigProto>(create);
+  static BatchingConfigProto? _defaultInstance;
+
+  /// The thresholds which trigger a batched request to be sent.
+  @$pb.TagNumber(1)
+  BatchingSettingsProto get thresholds => $_getN(0);
+  @$pb.TagNumber(1)
+  set thresholds(BatchingSettingsProto v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasThresholds() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearThresholds() => clearField(1);
+  @$pb.TagNumber(1)
+  BatchingSettingsProto ensureThresholds() => $_ensure(0);
+
+  /// The request and response fields used in batching.
+  @$pb.TagNumber(2)
+  BatchingDescriptorProto get batchDescriptor => $_getN(1);
+  @$pb.TagNumber(2)
+  set batchDescriptor(BatchingDescriptorProto v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBatchDescriptor() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBatchDescriptor() => clearField(2);
+  @$pb.TagNumber(2)
+  BatchingDescriptorProto ensureBatchDescriptor() => $_ensure(1);
+}
+
+/// `BatchingSettingsProto` specifies a set of batching thresholds, each of
+/// which acts as a trigger to send a batch of messages as a request. At least
+/// one threshold must be positive nonzero.
+class BatchingSettingsProto extends $pb.GeneratedMessage {
+  factory BatchingSettingsProto({
+    $core.int? elementCountThreshold,
+    $fixnum.Int64? requestByteThreshold,
+    $6.Duration? delayThreshold,
+    $core.int? elementCountLimit,
+    $core.int? requestByteLimit,
+    $core.int? flowControlElementLimit,
+    $core.int? flowControlByteLimit,
+    FlowControlLimitExceededBehaviorProto? flowControlLimitExceededBehavior,
+  }) {
+    final $result = create();
+    if (elementCountThreshold != null) {
+      $result.elementCountThreshold = elementCountThreshold;
+    }
+    if (requestByteThreshold != null) {
+      $result.requestByteThreshold = requestByteThreshold;
+    }
+    if (delayThreshold != null) {
+      $result.delayThreshold = delayThreshold;
+    }
+    if (elementCountLimit != null) {
+      $result.elementCountLimit = elementCountLimit;
+    }
+    if (requestByteLimit != null) {
+      $result.requestByteLimit = requestByteLimit;
+    }
+    if (flowControlElementLimit != null) {
+      $result.flowControlElementLimit = flowControlElementLimit;
+    }
+    if (flowControlByteLimit != null) {
+      $result.flowControlByteLimit = flowControlByteLimit;
+    }
+    if (flowControlLimitExceededBehavior != null) {
+      $result.flowControlLimitExceededBehavior = flowControlLimitExceededBehavior;
+    }
+    return $result;
+  }
+  BatchingSettingsProto._() : super();
+  factory BatchingSettingsProto.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BatchingSettingsProto.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BatchingSettingsProto', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'elementCountThreshold', $pb.PbFieldType.O3)
+    ..aInt64(2, _omitFieldNames ? '' : 'requestByteThreshold')
+    ..aOM<$6.Duration>(3, _omitFieldNames ? '' : 'delayThreshold', subBuilder: $6.Duration.create)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'elementCountLimit', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'requestByteLimit', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'flowControlElementLimit', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'flowControlByteLimit', $pb.PbFieldType.O3)
+    ..e<FlowControlLimitExceededBehaviorProto>(8, _omitFieldNames ? '' : 'flowControlLimitExceededBehavior', $pb.PbFieldType.OE, defaultOrMaker: FlowControlLimitExceededBehaviorProto.UNSET_BEHAVIOR, valueOf: FlowControlLimitExceededBehaviorProto.valueOf, enumValues: FlowControlLimitExceededBehaviorProto.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BatchingSettingsProto clone() => BatchingSettingsProto()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BatchingSettingsProto copyWith(void Function(BatchingSettingsProto) updates) => super.copyWith((message) => updates(message as BatchingSettingsProto)) as BatchingSettingsProto;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BatchingSettingsProto create() => BatchingSettingsProto._();
+  BatchingSettingsProto createEmptyInstance() => create();
+  static $pb.PbList<BatchingSettingsProto> createRepeated() => $pb.PbList<BatchingSettingsProto>();
+  @$core.pragma('dart2js:noInline')
+  static BatchingSettingsProto getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BatchingSettingsProto>(create);
+  static BatchingSettingsProto? _defaultInstance;
+
+  /// The number of elements of a field collected into a batch which, if
+  /// exceeded, causes the batch to be sent.
+  @$pb.TagNumber(1)
+  $core.int get elementCountThreshold => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set elementCountThreshold($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasElementCountThreshold() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearElementCountThreshold() => clearField(1);
+
+  /// The aggregated size of the batched field which, if exceeded, causes the
+  /// batch to be sent. This size is computed by aggregating the sizes of the
+  /// request field to be batched, not of the entire request message.
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get requestByteThreshold => $_getI64(1);
+  @$pb.TagNumber(2)
+  set requestByteThreshold($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRequestByteThreshold() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRequestByteThreshold() => clearField(2);
+
+  /// The duration after which a batch should be sent, starting from the addition
+  /// of the first message to that batch.
+  @$pb.TagNumber(3)
+  $6.Duration get delayThreshold => $_getN(2);
+  @$pb.TagNumber(3)
+  set delayThreshold($6.Duration v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDelayThreshold() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDelayThreshold() => clearField(3);
+  @$pb.TagNumber(3)
+  $6.Duration ensureDelayThreshold() => $_ensure(2);
+
+  /// The maximum number of elements collected in a batch that could be accepted
+  /// by server.
+  @$pb.TagNumber(4)
+  $core.int get elementCountLimit => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set elementCountLimit($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasElementCountLimit() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearElementCountLimit() => clearField(4);
+
+  /// The maximum size of the request that could be accepted by server.
+  @$pb.TagNumber(5)
+  $core.int get requestByteLimit => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set requestByteLimit($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRequestByteLimit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequestByteLimit() => clearField(5);
+
+  /// The maximum number of elements allowed by flow control.
+  @$pb.TagNumber(6)
+  $core.int get flowControlElementLimit => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set flowControlElementLimit($core.int v) { $_setSignedInt32(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasFlowControlElementLimit() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFlowControlElementLimit() => clearField(6);
+
+  /// The maximum size of data allowed by flow control.
+  @$pb.TagNumber(7)
+  $core.int get flowControlByteLimit => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set flowControlByteLimit($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasFlowControlByteLimit() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFlowControlByteLimit() => clearField(7);
+
+  /// The behavior to take when the flow control limit is exceeded.
+  @$pb.TagNumber(8)
+  FlowControlLimitExceededBehaviorProto get flowControlLimitExceededBehavior => $_getN(7);
+  @$pb.TagNumber(8)
+  set flowControlLimitExceededBehavior(FlowControlLimitExceededBehaviorProto v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasFlowControlLimitExceededBehavior() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFlowControlLimitExceededBehavior() => clearField(8);
+}
+
+/// `BatchingDescriptorProto` specifies the fields of the request message to be
+/// used for batching, and, optionally, the fields of the response message to be
+/// used for demultiplexing.
+class BatchingDescriptorProto extends $pb.GeneratedMessage {
+  factory BatchingDescriptorProto({
+    $core.String? batchedField,
+    $core.Iterable<$core.String>? discriminatorFields,
+    $core.String? subresponseField,
+  }) {
+    final $result = create();
+    if (batchedField != null) {
+      $result.batchedField = batchedField;
+    }
+    if (discriminatorFields != null) {
+      $result.discriminatorFields.addAll(discriminatorFields);
+    }
+    if (subresponseField != null) {
+      $result.subresponseField = subresponseField;
+    }
+    return $result;
+  }
+  BatchingDescriptorProto._() : super();
+  factory BatchingDescriptorProto.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BatchingDescriptorProto.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BatchingDescriptorProto', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'batchedField')
+    ..pPS(2, _omitFieldNames ? '' : 'discriminatorFields')
+    ..aOS(3, _omitFieldNames ? '' : 'subresponseField')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BatchingDescriptorProto clone() => BatchingDescriptorProto()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BatchingDescriptorProto copyWith(void Function(BatchingDescriptorProto) updates) => super.copyWith((message) => updates(message as BatchingDescriptorProto)) as BatchingDescriptorProto;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BatchingDescriptorProto create() => BatchingDescriptorProto._();
+  BatchingDescriptorProto createEmptyInstance() => create();
+  static $pb.PbList<BatchingDescriptorProto> createRepeated() => $pb.PbList<BatchingDescriptorProto>();
+  @$core.pragma('dart2js:noInline')
+  static BatchingDescriptorProto getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BatchingDescriptorProto>(create);
+  static BatchingDescriptorProto? _defaultInstance;
+
+  /// The repeated field in the request message to be aggregated by batching.
+  @$pb.TagNumber(1)
+  $core.String get batchedField => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set batchedField($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBatchedField() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBatchedField() => clearField(1);
+
+  /// A list of the fields in the request message. Two requests will be batched
+  /// together only if the values of every field specified in
+  /// `request_discriminator_fields` is equal between the two requests.
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get discriminatorFields => $_getList(1);
+
+  /// Optional. When present, indicates the field in the response message to be
+  /// used to demultiplex the response into multiple response messages, in
+  /// correspondence with the multiple request messages originally batched
+  /// together.
+  @$pb.TagNumber(3)
+  $core.String get subresponseField => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set subresponseField($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSubresponseField() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSubresponseField() => clearField(3);
 }
 
 class Client {

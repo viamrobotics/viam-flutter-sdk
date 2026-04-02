@@ -3566,6 +3566,18 @@ final $typed_data.Uint8List updateModuleRequestDescriptor = $convert.base64Decod
     'IAEoCUgBUhNtYXJrZG93bkRlc2NyaXB0aW9uiAEBQgwKCl9maXJzdF9ydW5CFwoVX21hcmtkb3'
     'duX2Rlc2NyaXB0aW9u');
 
+@$core.Deprecated('Use allowedOrgIDsDescriptor instead')
+const AllowedOrgIDs$json = {
+  '1': 'AllowedOrgIDs',
+  '2': [
+    {'1': 'ids', '3': 1, '4': 3, '5': 9, '10': 'ids'},
+  ],
+};
+
+/// Descriptor for `AllowedOrgIDs`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List allowedOrgIDsDescriptor = $convert.base64Decode(
+    'Cg1BbGxvd2VkT3JnSURzEhAKA2lkcxgBIAMoCVIDaWRz');
+
 @$core.Deprecated('Use appDescriptor instead')
 const App$json = {
   '1': 'App',
@@ -3576,9 +3588,11 @@ const App$json = {
     {'1': 'fragment_ids', '3': 4, '4': 3, '5': 9, '10': 'fragmentIds'},
     {'1': 'logo_path', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'logoPath', '17': true},
     {'1': 'customizations', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.AppCustomizations', '10': 'customizations'},
+    {'1': 'allowed_org_ids', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.AllowedOrgIDs', '9': 1, '10': 'allowedOrgIds', '17': true},
   ],
   '8': [
     {'1': '_logo_path'},
+    {'1': '_allowed_org_ids'},
   ],
 };
 
@@ -3587,8 +3601,9 @@ final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
     'CgNBcHASEgoEbmFtZRgBIAEoCVIEbmFtZRISCgR0eXBlGAIgASgJUgR0eXBlEh4KCmVudHJ5cG'
     '9pbnQYAyABKAlSCmVudHJ5cG9pbnQSIQoMZnJhZ21lbnRfaWRzGAQgAygJUgtmcmFnbWVudElk'
     'cxIgCglsb2dvX3BhdGgYBSABKAlIAFIIbG9nb1BhdGiIAQESRgoOY3VzdG9taXphdGlvbnMYBi'
-    'ABKAsyHi52aWFtLmFwcC52MS5BcHBDdXN0b21pemF0aW9uc1IOY3VzdG9taXphdGlvbnNCDAoK'
-    'X2xvZ29fcGF0aA==');
+    'ABKAsyHi52aWFtLmFwcC52MS5BcHBDdXN0b21pemF0aW9uc1IOY3VzdG9taXphdGlvbnMSRwoP'
+    'YWxsb3dlZF9vcmdfaWRzGAcgASgLMhoudmlhbS5hcHAudjEuQWxsb3dlZE9yZ0lEc0gBUg1hbG'
+    'xvd2VkT3JnSWRziAEBQgwKCl9sb2dvX3BhdGhCEgoQX2FsbG93ZWRfb3JnX2lkcw==');
 
 @$core.Deprecated('Use updateModuleResponseDescriptor instead')
 const UpdateModuleResponse$json = {
@@ -4501,6 +4516,7 @@ const GetAppBrandingResponse$json = {
     {'1': 'logo_path', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'logoPath', '17': true},
     {'1': 'text_customizations', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.GetAppBrandingResponse.TextCustomizationsEntry', '10': 'textCustomizations'},
     {'1': 'fragment_ids', '3': 3, '4': 3, '5': 9, '10': 'fragmentIds'},
+    {'1': 'allowed_org_ids', '3': 4, '4': 3, '5': 9, '10': 'allowedOrgIds'},
   ],
   '3': [GetAppBrandingResponse_TextCustomizationsEntry$json],
   '8': [
@@ -4523,9 +4539,10 @@ final $typed_data.Uint8List getAppBrandingResponseDescriptor = $convert.base64De
     'ChZHZXRBcHBCcmFuZGluZ1Jlc3BvbnNlEiAKCWxvZ29fcGF0aBgBIAEoCUgAUghsb2dvUGF0aI'
     'gBARJsChN0ZXh0X2N1c3RvbWl6YXRpb25zGAIgAygLMjsudmlhbS5hcHAudjEuR2V0QXBwQnJh'
     'bmRpbmdSZXNwb25zZS5UZXh0Q3VzdG9taXphdGlvbnNFbnRyeVISdGV4dEN1c3RvbWl6YXRpb2'
-    '5zEiEKDGZyYWdtZW50X2lkcxgDIAMoCVILZnJhZ21lbnRJZHMaYQoXVGV4dEN1c3RvbWl6YXRp'
-    'b25zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSMAoFdmFsdWUYAiABKAsyGi52aWFtLmFwcC52MS'
-    '5UZXh0T3ZlcnJpZGVzUgV2YWx1ZToCOAFCDAoKX2xvZ29fcGF0aA==');
+    '5zEiEKDGZyYWdtZW50X2lkcxgDIAMoCVILZnJhZ21lbnRJZHMSJgoPYWxsb3dlZF9vcmdfaWRz'
+    'GAQgAygJUg1hbGxvd2VkT3JnSWRzGmEKF1RleHRDdXN0b21pemF0aW9uc0VudHJ5EhAKA2tleR'
+    'gBIAEoCVIDa2V5EjAKBXZhbHVlGAIgASgLMhoudmlhbS5hcHAudjEuVGV4dE92ZXJyaWRlc1IF'
+    'dmFsdWU6AjgBQgwKCl9sb2dvX3BhdGg=');
 
 @$core.Deprecated('Use appCustomizationsDescriptor instead')
 const AppCustomizations$json = {

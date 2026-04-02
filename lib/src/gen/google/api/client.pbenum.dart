@@ -60,5 +60,25 @@ class ClientLibraryDestination extends $pb.ProtobufEnum {
   const ClientLibraryDestination._($core.int v, $core.String n) : super(v, n);
 }
 
+/// The behavior to take when the flow control limit is exceeded.
+class FlowControlLimitExceededBehaviorProto extends $pb.ProtobufEnum {
+  static const FlowControlLimitExceededBehaviorProto UNSET_BEHAVIOR = FlowControlLimitExceededBehaviorProto._(0, _omitEnumNames ? '' : 'UNSET_BEHAVIOR');
+  static const FlowControlLimitExceededBehaviorProto THROW_EXCEPTION = FlowControlLimitExceededBehaviorProto._(1, _omitEnumNames ? '' : 'THROW_EXCEPTION');
+  static const FlowControlLimitExceededBehaviorProto BLOCK = FlowControlLimitExceededBehaviorProto._(2, _omitEnumNames ? '' : 'BLOCK');
+  static const FlowControlLimitExceededBehaviorProto IGNORE = FlowControlLimitExceededBehaviorProto._(3, _omitEnumNames ? '' : 'IGNORE');
+
+  static const $core.List<FlowControlLimitExceededBehaviorProto> values = <FlowControlLimitExceededBehaviorProto> [
+    UNSET_BEHAVIOR,
+    THROW_EXCEPTION,
+    BLOCK,
+    IGNORE,
+  ];
+
+  static final $core.Map<$core.int, FlowControlLimitExceededBehaviorProto> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FlowControlLimitExceededBehaviorProto? valueOf($core.int value) => _byValue[value];
+
+  const FlowControlLimitExceededBehaviorProto._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
