@@ -14125,6 +14125,50 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   void clearMarkdownDescription() => clearField(9);
 }
 
+class AllowedOrgIDs extends $pb.GeneratedMessage {
+  factory AllowedOrgIDs({
+    $core.Iterable<$core.String>? ids,
+  }) {
+    final $result = create();
+    if (ids != null) {
+      $result.ids.addAll(ids);
+    }
+    return $result;
+  }
+  AllowedOrgIDs._() : super();
+  factory AllowedOrgIDs.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AllowedOrgIDs.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AllowedOrgIDs', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'ids')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AllowedOrgIDs clone() => AllowedOrgIDs()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AllowedOrgIDs copyWith(void Function(AllowedOrgIDs) updates) => super.copyWith((message) => updates(message as AllowedOrgIDs)) as AllowedOrgIDs;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AllowedOrgIDs create() => AllowedOrgIDs._();
+  AllowedOrgIDs createEmptyInstance() => create();
+  static $pb.PbList<AllowedOrgIDs> createRepeated() => $pb.PbList<AllowedOrgIDs>();
+  @$core.pragma('dart2js:noInline')
+  static AllowedOrgIDs getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AllowedOrgIDs>(create);
+  static AllowedOrgIDs? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get ids => $_getList(0);
+}
+
 class App extends $pb.GeneratedMessage {
   factory App({
     $core.String? name,
@@ -14133,6 +14177,7 @@ class App extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? fragmentIds,
     $core.String? logoPath,
     AppCustomizations? customizations,
+    AllowedOrgIDs? allowedOrgIds,
   }) {
     final $result = create();
     if (name != null) {
@@ -14153,6 +14198,9 @@ class App extends $pb.GeneratedMessage {
     if (customizations != null) {
       $result.customizations = customizations;
     }
+    if (allowedOrgIds != null) {
+      $result.allowedOrgIds = allowedOrgIds;
+    }
     return $result;
   }
   App._() : super();
@@ -14166,6 +14214,7 @@ class App extends $pb.GeneratedMessage {
     ..pPS(4, _omitFieldNames ? '' : 'fragmentIds')
     ..aOS(5, _omitFieldNames ? '' : 'logoPath')
     ..aOM<AppCustomizations>(6, _omitFieldNames ? '' : 'customizations', subBuilder: AppCustomizations.create)
+    ..aOM<AllowedOrgIDs>(7, _omitFieldNames ? '' : 'allowedOrgIds', subBuilder: AllowedOrgIDs.create)
     ..hasRequiredFields = false
   ;
 
@@ -14245,6 +14294,18 @@ class App extends $pb.GeneratedMessage {
   void clearCustomizations() => clearField(6);
   @$pb.TagNumber(6)
   AppCustomizations ensureCustomizations() => $_ensure(5);
+
+  /// Optional: list of org IDs that are allowed to use this app; if empty, all orgs are allowed
+  @$pb.TagNumber(7)
+  AllowedOrgIDs get allowedOrgIds => $_getN(6);
+  @$pb.TagNumber(7)
+  set allowedOrgIds(AllowedOrgIDs v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAllowedOrgIds() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAllowedOrgIds() => clearField(7);
+  @$pb.TagNumber(7)
+  AllowedOrgIDs ensureAllowedOrgIds() => $_ensure(6);
 }
 
 class UpdateModuleResponse extends $pb.GeneratedMessage {
@@ -18154,6 +18215,7 @@ class GetAppBrandingResponse extends $pb.GeneratedMessage {
     $core.String? logoPath,
     $core.Map<$core.String, TextOverrides>? textCustomizations,
     $core.Iterable<$core.String>? fragmentIds,
+    $core.Iterable<$core.String>? allowedOrgIds,
   }) {
     final $result = create();
     if (logoPath != null) {
@@ -18165,6 +18227,9 @@ class GetAppBrandingResponse extends $pb.GeneratedMessage {
     if (fragmentIds != null) {
       $result.fragmentIds.addAll(fragmentIds);
     }
+    if (allowedOrgIds != null) {
+      $result.allowedOrgIds.addAll(allowedOrgIds);
+    }
     return $result;
   }
   GetAppBrandingResponse._() : super();
@@ -18175,6 +18240,7 @@ class GetAppBrandingResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'logoPath')
     ..m<$core.String, TextOverrides>(2, _omitFieldNames ? '' : 'textCustomizations', entryClassName: 'GetAppBrandingResponse.TextCustomizationsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: TextOverrides.create, valueDefaultOrMaker: TextOverrides.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
     ..pPS(3, _omitFieldNames ? '' : 'fragmentIds')
+    ..pPS(4, _omitFieldNames ? '' : 'allowedOrgIds')
     ..hasRequiredFields = false
   ;
 
@@ -18213,6 +18279,9 @@ class GetAppBrandingResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<$core.String> get fragmentIds => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get allowedOrgIds => $_getList(3);
 }
 
 class AppCustomizations extends $pb.GeneratedMessage {
