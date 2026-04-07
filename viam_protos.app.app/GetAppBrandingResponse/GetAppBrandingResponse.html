@@ -57,6 +57,7 @@
       <span class="name ">GetAppBrandingResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-logoPath"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">logoPath</span>, </span></li>
 <li><span class="parameter" id="-param-textCustomizations"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../../viam_protos.app.app/TextOverrides-class.html">TextOverrides</a></span>&gt;</span>?</span> <span class="parameter-name">textCustomizations</span>, </span></li>
 <li><span class="parameter" id="-param-fragmentIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">fragmentIds</span>, </span></li>
+<li><span class="parameter" id="-param-allowedOrgIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">allowedOrgIds</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,6 +70,7 @@
   $core.String? logoPath,
   $core.Map&lt;$core.String, TextOverrides&gt;? textCustomizations,
   $core.Iterable&lt;$core.String&gt;? fragmentIds,
+  $core.Iterable&lt;$core.String&gt;? allowedOrgIds,
 }) {
   final $result = create();
   if (logoPath != null) {
@@ -79,6 +81,9 @@
   }
   if (fragmentIds != null) {
     $result.fragmentIds.addAll(fragmentIds);
+  }
+  if (allowedOrgIds != null) {
+    $result.allowedOrgIds.addAll(allowedOrgIds);
   }
   return $result;
 }</code></pre>

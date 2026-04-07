@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="App.new" class="callable">
-          <span class="name"><a href="../viam_protos.app.app/App/App.html">App</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-entrypoint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">entrypoint</span>, </span><span class="parameter" id="-param-fragmentIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">fragmentIds</span>, </span><span class="parameter" id="-param-logoPath"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">logoPath</span>, </span><span class="parameter" id="-param-customizations"><span class="type-annotation"><a href="../viam_protos.app.app/AppCustomizations-class.html">AppCustomizations</a>?</span> <span class="parameter-name">customizations</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.app/App/App.html">App</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-entrypoint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">entrypoint</span>, </span><span class="parameter" id="-param-fragmentIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">fragmentIds</span>, </span><span class="parameter" id="-param-logoPath"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">logoPath</span>, </span><span class="parameter" id="-param-customizations"><span class="type-annotation"><a href="../viam_protos.app.app/AppCustomizations-class.html">AppCustomizations</a>?</span> <span class="parameter-name">customizations</span>, </span><span class="parameter" id="-param-allowedOrgIds"><span class="type-annotation"><a href="../viam_protos.app.app/AllowedOrgIDs-class.html">AllowedOrgIDs</a>?</span> <span class="parameter-name">allowedOrgIds</span></span>})</span>
         </dt>
         <dd>
           
@@ -115,6 +115,18 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="allowedOrgIds" class="property">
+  <span class="name"><a href="../viam_protos.app.app/App/allowedOrgIds.html">allowedOrgIds</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.app.app/AllowedOrgIDs-class.html">AllowedOrgIDs</a></span>
+  
+
+</dt>
+<dd>
+  Optional: list of org IDs that are allowed to use this app; if empty, all orgs are allowed
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="customizations" class="property">
   <span class="name"><a href="../viam_protos.app.app/App/customizations.html">customizations</a></span>
   <span class="signature">&#8596; <a href="../viam_protos.app.app/AppCustomizations-class.html">AppCustomizations</a></span>
@@ -308,6 +320,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearAllowedOrgIds" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/App/clearAllowedOrgIds.html">clearAllowedOrgIds</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearCustomizations" class="callable">
   <span class="name"><a href="../viam_protos.app.app/App/clearCustomizations.html">clearCustomizations</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -482,6 +507,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="ensureAllowedOrgIds" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/App/ensureAllowedOrgIds.html">ensureAllowedOrgIds</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.app/AllowedOrgIDs-class.html">AllowedOrgIDs</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="ensureCustomizations" class="callable">
   <span class="name"><a href="../viam_protos.app.app/App/ensureCustomizations.html">ensureCustomizations</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_protos.app.app/AppCustomizations-class.html">AppCustomizations</a></span>
@@ -584,6 +622,19 @@ default value if it is not set.
 <dd class="inherited">
   
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasAllowedOrgIds" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/App/hasAllowedOrgIds.html">hasAllowedOrgIds</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
