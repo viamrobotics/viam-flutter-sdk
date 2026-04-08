@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
+import '../exceptions.dart';
 import '../gen/common/v1/common.pb.dart';
 import '../gen/robot/v1/robot.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
@@ -253,9 +254,22 @@ class RobotClient {
     }
   }
 
-  /// Get a connected resource by its [ResourceName].
+  /// Get a resource client by its [ResourceName].
+  ///
+  /// If the resource is already cached in the manager, it will be returned directly.
+  /// Otherwise, a new client will be created on-demand using the [Registry].
+  /// This allows resource clients to be created whether or not the resource
+  /// currently exists on the server. Errors will surface when the client
+  /// attempts to communicate with the resource.
   T getResource<T>(ResourceName name) {
-    return _manager.getResource<T>(name);
+    try {
+      return _manager.getResource<T>(name);
+    } on ResourceNotFoundException {
+      final registration = Registry.instance.lookupSubtype(Subtype.fromResourceName(name));
+      final resource = registration.rpcClientCreator(name.name, _channel);
+      _manager.register(name, resource);
+      return resource as T;
+    }
   }
 
   /// Get a WebRTC stream client with the given name.
