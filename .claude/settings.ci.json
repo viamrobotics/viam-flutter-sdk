@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(file_path=.github/**)",
+      "Write(file_path=.github/**)",
+      "Edit(file_path=lib/src/gen/**)",
+      "Write(file_path=lib/src/gen/**)",
+      "Edit(file_path=lib/protos/**)",
+      "Write(file_path=lib/protos/**)",
+      "Edit(file_path=pubspec.lock)",
+      "Write(file_path=pubspec.lock)",
+      "Edit(file_path=Makefile)",
+      "Write(file_path=Makefile)"
+    ]
+  }
+}
