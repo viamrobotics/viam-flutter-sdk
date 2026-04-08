@@ -1,0 +1,42 @@
+name: Claude CI Fix
+
+on:
+  workflow_run:
+    workflows: ["Test"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Failed workflow run ID (from gh run list)'
+        required: true
+      branch:
+        description: 'PR branch name (e.g., claude/SDK-123)'
+        required: true
+
+jobs:
+  call-ci-fix:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (
+        github.event.workflow_run.conclusion == 'failure' &&
+        startsWith(github.event.workflow_run.head_branch, 'claude/')
+      )
+    # viamrobotics/claude-ci-workflows@v1.10.7
+    uses: viamrobotics/claude-ci-workflows/.github/workflows/claude-ci-fix.yml@118d898f2b199075e1758901393fa6d20f8c6f59
+    with:
+      run_id: ${{ github.event.workflow_run.id || inputs.run_id }}
+      branch: ${{ github.event.workflow_run.head_branch || inputs.branch }}
+      install_command: git clone https://github.com/flutter/flutter.git -b stable --depth 1 /opt/flutter && echo "/opt/flutter/bin" >> $GITHUB_PATH && flutter pub get
+      allowed_tools: 'Edit,Read,Write,Glob,Grep,Bash(flutter *),Bash(dart *),Bash(make *),Bash(git config *),Bash(git add *),Bash(git commit *),Bash(git push *),Bash(git status*),Bash(git diff*),Bash(git log*),Bash(git checkout *),Bash(git branch *),Bash(git rev-parse *),Bash(git fetch *)'
+      team_mention: '@viamrobotics/sdk'
+      extra_prompt: |
+        - Run `make format`, `make analyze`, and `make test` to verify your fix before committing. Fix any errors.
+      extra_system_prompt: |
+        This is a Flutter/Dart SDK. Use make targets for format, analyze, and test (e.g., `make format`, `make analyze`, `make test`).
+        Dart formatting uses line-length=140.
+        Do NOT manually edit files in lib/src/gen/ or lib/protos/ — these are auto-generated from protobuf definitions.
+        Do NOT manually edit *.mocks.dart files — regenerate with `make build_mocks` if needed.
+        Run `dart analyze lib/` to check for warnings.
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}

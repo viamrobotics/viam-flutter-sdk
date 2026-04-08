@@ -1,0 +1,74 @@
+name: Claude Jira Implementation
+
+# Triggered by Jira webhook via middleware that calls GitHub repository_dispatch API.
+# Expected payload:
+#   curl -X POST -H "Authorization: token $GITHUB_PAT" \
+#     https://api.github.com/repos/viamrobotics/viam-flutter-sdk/dispatches \
+#     -d '{
+#       "event_type": "jira-ticket",
+#       "client_payload": {
+#         "ticket_id": "SDK-123",
+#         "summary": "...",
+#         "description": "...",
+#         "task_complexity": "medium",
+#         "assignee": "John Doe",
+#         "assignee_email": "john@example.com"
+#       }
+#     }'
+
+on:
+  repository_dispatch:
+    types: [jira-ticket]
+  workflow_dispatch:
+    inputs:
+      ticket_id:
+        description: 'Jira ticket ID (e.g., SDK-123)'
+        required: true
+      summary:
+        description: 'Ticket summary'
+        required: true
+      description:
+        description: 'Ticket description'
+        required: true
+      task_complexity:
+        description: 'Task complexity: small (50 turns), medium (75), large (100)'
+        required: false
+        default: 'small'
+        type: choice
+        options:
+          - small
+          - medium
+          - large
+      assignee:
+        description: 'Jira assignee display name (for PR assignment)'
+        required: false
+      assignee_email:
+        description: 'Jira assignee email (for PR assignment)'
+        required: false
+
+jobs:
+  call-jira:
+    # viamrobotics/claude-ci-workflows@v1.10.7
+    uses: viamrobotics/claude-ci-workflows/.github/workflows/claude-jira.yml@118d898f2b199075e1758901393fa6d20f8c6f59
+    with:
+      ticket_id: ${{ github.event.client_payload.ticket_id || inputs.ticket_id }}
+      summary: ${{ github.event.client_payload.summary || inputs.summary }}
+      description: ${{ github.event.client_payload.description || inputs.description }}
+      task_complexity: ${{ github.event.client_payload.task_complexity || inputs.task_complexity || 'small' }}
+      assignee: ${{ github.event.client_payload.assignee || inputs.assignee || '' }}
+      assignee_email: ${{ github.event.client_payload.assignee_email || inputs.assignee_email || '' }}
+      install_command: git clone https://github.com/flutter/flutter.git -b stable --depth 1 /opt/flutter && echo "/opt/flutter/bin" >> $GITHUB_PATH && flutter pub get
+      allowed_tools: 'Edit,Read,Write,Glob,Grep,Bash(flutter *),Bash(dart *),Bash(make *),Bash(git config *),Bash(git add *),Bash(git commit *),Bash(git push *),Bash(git status*),Bash(git diff*),Bash(git log*),Bash(git checkout *),Bash(git branch *),Bash(git rev-parse *),Bash(git fetch *),Bash(gh pr create*),Bash(gh pr view*),Bash(gh pr diff*)'
+      extra_prompt: |
+        - Run `make format`, `make analyze`, and `make test` to verify your changes before committing. Fix any errors.
+      extra_system_prompt: |
+        This is a Flutter/Dart SDK. Use make targets for format, analyze, and test (e.g., `make format`, `make analyze`, `make test`).
+        Dart formatting uses line-length=140.
+        Do NOT manually edit files in lib/src/gen/ or lib/protos/ — these are auto-generated from protobuf definitions.
+        Do NOT manually edit *.mocks.dart files — regenerate with `make build_mocks` if needed.
+        Run `dart analyze lib/` to check for warnings.
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      SLACK_AI_WORKFLOW_ALERT_WEBHOOK_URL: ${{ secrets.SLACK_AI_WORKFLOW_ALERT_WEBHOOK_URL }}
+      CI_GITHUB_APP_ID: ${{ secrets.CI_GITHUB_APP_ID }}
+      CI_GITHUB_APP_PRIVATE_KEY: ${{ secrets.CI_GITHUB_APP_PRIVATE_KEY }}

@@ -1,0 +1,18 @@
+name: Test Flutter Install
+on: push
+jobs:
+  test-snap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Try snap
+        run: snap --version && sudo snap install flutter --classic && flutter --version
+
+  test-curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Flutter tarball
+        run: |
+          curl -fsSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_x86_64-stable.tar.xz | tar xJ -C /opt
+          echo "/opt/flutter/bin" >> $GITHUB_PATH
+      - name: Verify Flutter
+        run: flutter --version
