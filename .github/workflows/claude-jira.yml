@@ -64,12 +64,8 @@ jobs:
       jira_base_url: 'https://viam.atlassian.net'
       jira_user_email: 'ale.paredes@viam.com'
       extra_prompt: |
-        - Run `make format` to format code before committing.
-        - Run `make analyze` to check for lint issues. Fix any errors.
-        - Run `make test` to verify tests pass.
+        - Run `make format`, `make analyze`, and `make test` to verify your changes before committing. Fix any errors.
       show_full_output: true
-      extra_system_prompt: >-
-        Only run make buf to regenerate lib/src/gen/. Do NOT run other make targets unless explicitly needed.
     secrets:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       CI_GITHUB_APP_ID: ${{ secrets.CI_GITHUB_APP_ID }}

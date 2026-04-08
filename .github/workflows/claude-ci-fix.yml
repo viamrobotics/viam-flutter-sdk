@@ -30,10 +30,7 @@ jobs:
       allowed_tools: 'Edit,Read,Write,Glob,Grep,Bash(make format*),Bash(make analyze*),Bash(make test*),Bash(make build_mocks*),Bash(flutter *),Bash(dart *),Bash(git config *),Bash(git add *),Bash(git commit *),Bash(git push *),Bash(git status*),Bash(git diff*),Bash(git -C * diff*),Bash(git log*),Bash(git checkout *),Bash(git branch *),Bash(git rev-parse *),Bash(git fetch *),Bash(gh api repos/*/pulls/*/comments*)'
       team_mention: '@viamrobotics/sdk'
       extra_prompt: |
-        - Run `make format` to format code before committing.
-        - Run `make analyze` to check for lint issues. Fix any errors.
-      extra_system_prompt: >-
-        Only run make buf to regenerate lib/src/gen/. Do NOT run other make targets unless explicitly needed.
+        - Run `make format`, `make analyze`, and `make test` to verify your fix before committing. Fix any errors.
     secrets:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       GIT_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
