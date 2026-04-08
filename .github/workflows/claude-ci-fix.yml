@@ -26,7 +26,7 @@ jobs:
     with:
       run_id: ${{ github.event.workflow_run.id || inputs.run_id }}
       branch: ${{ github.event.workflow_run.head_branch || inputs.branch }}
-      install_command: 'sudo snap install flutter --classic && flutter pub get'
+      install_command: 'git clone https://github.com/flutter/flutter.git -b stable --depth 1 /opt/flutter && echo "/opt/flutter/bin" >> $GITHUB_PATH && /opt/flutter/bin/flutter pub get'
       allowed_tools: 'Edit,Read,Write,Glob,Grep,Bash(make format*),Bash(make analyze*),Bash(make test*),Bash(make build_mocks*),Bash(flutter *),Bash(dart *),Bash(git config *),Bash(git add *),Bash(git commit *),Bash(git push *),Bash(git status*),Bash(git diff*),Bash(git -C * diff*),Bash(git log*),Bash(git checkout *),Bash(git branch *),Bash(git rev-parse *),Bash(git fetch *),Bash(gh api repos/*/pulls/*/comments*)'
       team_mention: '@viamrobotics/sdk'
       extra_prompt: |
