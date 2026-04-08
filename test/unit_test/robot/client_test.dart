@@ -3,7 +3,6 @@ import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/motor/client.dart';
 import 'package:viam_sdk/src/components/motor/motor.dart';
 import 'package:viam_sdk/src/components/motor/service.dart';
-import 'package:viam_sdk/src/components/sensor/sensor.dart';
 import 'package:viam_sdk/src/exceptions.dart';
 import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/resource/base.dart';
@@ -144,7 +143,7 @@ void main() {
       expect(client.name, 'nonexistent_motor');
 
       // Error only surfaces when actually calling the resource
-      expect(() => client.position(), throwsA(anything));
+      await expectLater(client.position(), throwsA(anything));
     });
   });
 }
