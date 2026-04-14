@@ -6317,10 +6317,26 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
 class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
   factory GetRobotPartHistoryRequest({
     $core.String? id,
+    $core.String? pageToken,
+    $fixnum.Int64? pageLimit,
+    $50.Timestamp? start,
+    $50.Timestamp? end,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    if (pageLimit != null) {
+      $result.pageLimit = pageLimit;
+    }
+    if (start != null) {
+      $result.start = start;
+    }
+    if (end != null) {
+      $result.end = end;
     }
     return $result;
   }
@@ -6330,6 +6346,10 @@ class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartHistoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'pageToken')
+    ..aInt64(3, _omitFieldNames ? '' : 'pageLimit')
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'start', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'end', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -6362,15 +6382,59 @@ class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get pageLimit => $_getI64(2);
+  @$pb.TagNumber(3)
+  set pageLimit($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPageLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageLimit() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $50.Timestamp get start => $_getN(3);
+  @$pb.TagNumber(4)
+  set start($50.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStart() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStart() => clearField(4);
+  @$pb.TagNumber(4)
+  $50.Timestamp ensureStart() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $50.Timestamp get end => $_getN(4);
+  @$pb.TagNumber(5)
+  set end($50.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEnd() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEnd() => clearField(5);
+  @$pb.TagNumber(5)
+  $50.Timestamp ensureEnd() => $_ensure(4);
 }
 
 class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
   factory GetRobotPartHistoryResponse({
     $core.Iterable<RobotPartHistoryEntry>? history,
+    $core.String? nextPageToken,
   }) {
     final $result = create();
     if (history != null) {
       $result.history.addAll(history);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
     }
     return $result;
   }
@@ -6380,6 +6444,7 @@ class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartHistoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pc<RobotPartHistoryEntry>(1, _omitFieldNames ? '' : 'history', $pb.PbFieldType.PM, subBuilder: RobotPartHistoryEntry.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false
   ;
 
@@ -6406,6 +6471,15 @@ class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<RobotPartHistoryEntry> get history => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => clearField(2);
 }
 
 class UpdateRobotPartRequest extends $pb.GeneratedMessage {
