@@ -112,15 +112,24 @@ final $typed_data.Uint8List handlerMapDescriptor = $convert.base64Decode(
 const ReadyRequest$json = {
   '1': 'ReadyRequest',
   '2': [
-    {'1': 'parent_address', '3': 1, '4': 1, '5': 9, '10': 'parentAddress'},
+    {
+      '1': 'parent_address',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': {'3': true},
+      '10': 'parentAddress',
+    },
+    {'1': 'raw_parent_address', '3': 3, '4': 1, '5': 9, '10': 'rawParentAddress'},
     {'1': 'webrtc_offer', '3': 2, '4': 1, '5': 9, '10': 'webrtcOffer'},
   ],
 };
 
 /// Descriptor for `ReadyRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List readyRequestDescriptor = $convert.base64Decode(
-    'CgxSZWFkeVJlcXVlc3QSJQoOcGFyZW50X2FkZHJlc3MYASABKAlSDXBhcmVudEFkZHJlc3MSIQ'
-    'oMd2VicnRjX29mZmVyGAIgASgJUgt3ZWJydGNPZmZlcg==');
+    'CgxSZWFkeVJlcXVlc3QSKQoOcGFyZW50X2FkZHJlc3MYASABKAlCAhgBUg1wYXJlbnRBZGRyZX'
+    'NzEiwKEnJhd19wYXJlbnRfYWRkcmVzcxgDIAEoCVIQcmF3UGFyZW50QWRkcmVzcxIhCgx3ZWJy'
+    'dGNfb2ZmZXIYAiABKAlSC3dlYnJ0Y09mZmVy');
 
 @$core.Deprecated('Use readyResponseDescriptor instead')
 const ReadyResponse$json = {

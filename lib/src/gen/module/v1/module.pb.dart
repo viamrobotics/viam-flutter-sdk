@@ -388,15 +388,21 @@ class HandlerMap extends $pb.GeneratedMessage {
 
 class ReadyRequest extends $pb.GeneratedMessage {
   factory ReadyRequest({
+  @$core.Deprecated('This field is deprecated.')
     $core.String? parentAddress,
     $core.String? webrtcOffer,
+    $core.String? rawParentAddress,
   }) {
     final $result = create();
     if (parentAddress != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.parentAddress = parentAddress;
     }
     if (webrtcOffer != null) {
       $result.webrtcOffer = webrtcOffer;
+    }
+    if (rawParentAddress != null) {
+      $result.rawParentAddress = rawParentAddress;
     }
     return $result;
   }
@@ -407,6 +413,7 @@ class ReadyRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'parentAddress')
     ..aOS(2, _omitFieldNames ? '' : 'webrtcOffer')
+    ..aOS(3, _omitFieldNames ? '' : 'rawParentAddress')
     ..hasRequiredFields = false
   ;
 
@@ -431,12 +438,16 @@ class ReadyRequest extends $pb.GeneratedMessage {
   static ReadyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReadyRequest>(create);
   static ReadyRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get parentAddress => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set parentAddress($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasParentAddress() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearParentAddress() => clearField(1);
 
@@ -448,6 +459,15 @@ class ReadyRequest extends $pb.GeneratedMessage {
   $core.bool hasWebrtcOffer() => $_has(1);
   @$pb.TagNumber(2)
   void clearWebrtcOffer() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get rawParentAddress => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set rawParentAddress($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRawParentAddress() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRawParentAddress() => clearField(3);
 }
 
 class ReadyResponse extends $pb.GeneratedMessage {
