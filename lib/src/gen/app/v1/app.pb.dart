@@ -18045,6 +18045,218 @@ class ListOAuthAppsResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get clientIds => $_getList(0);
 }
 
+class CreateOAuthAppUserRequest extends $pb.GeneratedMessage {
+  factory CreateOAuthAppUserRequest({
+    $core.String? orgId,
+    $core.String? applicationId,
+    $core.String? email,
+    $core.String? firstName,
+    $core.String? lastName,
+    $core.String? password,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (applicationId != null) {
+      $result.applicationId = applicationId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (firstName != null) {
+      $result.firstName = firstName;
+    }
+    if (lastName != null) {
+      $result.lastName = lastName;
+    }
+    if (password != null) {
+      $result.password = password;
+    }
+    return $result;
+  }
+  CreateOAuthAppUserRequest._() : super();
+  factory CreateOAuthAppUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateOAuthAppUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateOAuthAppUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'applicationId')
+    ..aOS(3, _omitFieldNames ? '' : 'email')
+    ..aOS(4, _omitFieldNames ? '' : 'firstName')
+    ..aOS(5, _omitFieldNames ? '' : 'lastName')
+    ..aOS(6, _omitFieldNames ? '' : 'password')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateOAuthAppUserRequest clone() => CreateOAuthAppUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateOAuthAppUserRequest copyWith(void Function(CreateOAuthAppUserRequest) updates) => super.copyWith((message) => updates(message as CreateOAuthAppUserRequest)) as CreateOAuthAppUserRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOAuthAppUserRequest create() => CreateOAuthAppUserRequest._();
+  CreateOAuthAppUserRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateOAuthAppUserRequest> createRepeated() => $pb.PbList<CreateOAuthAppUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateOAuthAppUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOAuthAppUserRequest>(create);
+  static CreateOAuthAppUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get applicationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set applicationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasApplicationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApplicationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get email => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set email($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEmail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEmail() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get firstName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set firstName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFirstName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFirstName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get lastName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set lastName($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLastName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get password => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set password($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPassword() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPassword() => clearField(6);
+}
+
+class CreateOAuthAppUserResponse extends $pb.GeneratedMessage {
+  factory CreateOAuthAppUserResponse({
+    $core.String? authToken,
+    $core.String? registrationId,
+    $core.String? userId,
+    $core.String? refreshToken,
+  }) {
+    final $result = create();
+    if (authToken != null) {
+      $result.authToken = authToken;
+    }
+    if (registrationId != null) {
+      $result.registrationId = registrationId;
+    }
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (refreshToken != null) {
+      $result.refreshToken = refreshToken;
+    }
+    return $result;
+  }
+  CreateOAuthAppUserResponse._() : super();
+  factory CreateOAuthAppUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateOAuthAppUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateOAuthAppUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'authToken')
+    ..aOS(2, _omitFieldNames ? '' : 'registrationId')
+    ..aOS(3, _omitFieldNames ? '' : 'userId')
+    ..aOS(4, _omitFieldNames ? '' : 'refreshToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateOAuthAppUserResponse clone() => CreateOAuthAppUserResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateOAuthAppUserResponse copyWith(void Function(CreateOAuthAppUserResponse) updates) => super.copyWith((message) => updates(message as CreateOAuthAppUserResponse)) as CreateOAuthAppUserResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOAuthAppUserResponse create() => CreateOAuthAppUserResponse._();
+  CreateOAuthAppUserResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateOAuthAppUserResponse> createRepeated() => $pb.PbList<CreateOAuthAppUserResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateOAuthAppUserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOAuthAppUserResponse>(create);
+  static CreateOAuthAppUserResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get authToken => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set authToken($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAuthToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuthToken() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get registrationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set registrationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRegistrationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRegistrationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get userId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set userId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get refreshToken => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set refreshToken($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRefreshToken() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRefreshToken() => clearField(4);
+}
+
 class OAuthConfig extends $pb.GeneratedMessage {
   factory OAuthConfig({
     ClientAuthentication? clientAuthentication,

@@ -92,7 +92,9 @@ class CommonLanguageSettings extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<ClientLibraryDestination> get destinations => $_getList(1);
 
-  /// Configuration for which RPCs should be generated in the GAPIC client.
+  ///  Configuration for which RPCs should be generated in the GAPIC client.
+  ///
+  ///  Note: This field should not be used in most cases.
   @$pb.TagNumber(3)
   SelectiveGapicGeneration get selectiveGapicGeneration => $_getN(2);
   @$pb.TagNumber(3)
@@ -1465,8 +1467,10 @@ class MethodSettings extends $pb.GeneratedMessage {
   BatchingConfigProto ensureBatching() => $_ensure(3);
 }
 
-/// This message is used to configure the generation of a subset of the RPCs in
-/// a service for client libraries.
+///  This message is used to configure the generation of a subset of the RPCs in
+///  a service for client libraries.
+///
+///  Note: This feature should not be used in most cases.
 class SelectiveGapicGeneration extends $pb.GeneratedMessage {
   factory SelectiveGapicGeneration({
     $core.Iterable<$core.String>? methods,

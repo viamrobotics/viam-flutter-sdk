@@ -927,7 +927,23 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearIsInstanceFunction() => clearField(5);
 
-  /// Documentation string for the overload.
+  ///  Examples for the overload and its expected return value, separated by
+  ///  newlines.
+  ///
+  ///  Prefer using CEL literals in examples as they are easily consumed by
+  ///  humans and simple to validate with machines. The example should contain
+  ///  an expression with a literal return value in comments inline. If the
+  ///  expression example is too complex or would need an example for a
+  ///  variable that cannot be expressed in CEL, document the input and return
+  ///  in a comment preceding the example.
+  ///
+  ///  Examples:
+  ///
+  ///      1 in [1, 2, 3] // true
+  ///      'key' in {'key1: 1, 'key2': 2} // false
+  ///      // Test whether one or more keys exist within a map.
+  ///      // returns true if list_of_keys contains 'key2' or 'key3'
+  ///      list_of_keys.exists(key, key in {'key3': 1, 'key2': 2})
   @$pb.TagNumber(6)
   $core.String get doc => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -946,10 +962,14 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
 class Decl_FunctionDecl extends $pb.GeneratedMessage {
   factory Decl_FunctionDecl({
     $core.Iterable<Decl_FunctionDecl_Overload>? overloads,
+    $core.String? doc,
   }) {
     final $result = create();
     if (overloads != null) {
       $result.overloads.addAll(overloads);
+    }
+    if (doc != null) {
+      $result.doc = doc;
     }
     return $result;
   }
@@ -959,6 +979,7 @@ class Decl_FunctionDecl extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Decl.FunctionDecl', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
     ..pc<Decl_FunctionDecl_Overload>(1, _omitFieldNames ? '' : 'overloads', $pb.PbFieldType.PM, subBuilder: Decl_FunctionDecl_Overload.create)
+    ..aOS(2, _omitFieldNames ? '' : 'doc')
     ..hasRequiredFields = false
   ;
 
@@ -986,6 +1007,26 @@ class Decl_FunctionDecl extends $pb.GeneratedMessage {
   /// Required. List of function overloads, must contain at least one overload.
   @$pb.TagNumber(1)
   $core.List<Decl_FunctionDecl_Overload> get overloads => $_getList(0);
+
+  ///  Documentation string for the function that indicates the general purpose
+  ///  of the function and its behavior.
+  ///
+  ///  Documentation strings for the function should be general purpose with
+  ///  specific examples provided in the overload doc string.
+  ///
+  ///  Examples:
+  ///
+  ///      The 'in' operator tests whether an item exists in a collection.
+  ///
+  ///      The 'substring' function returns a substring of a target string.
+  @$pb.TagNumber(2)
+  $core.String get doc => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set doc($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDoc() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDoc() => clearField(2);
 }
 
 enum Decl_DeclKind {
