@@ -4460,6 +4460,43 @@ const ListOAuthAppsResponse$json = {
 final $typed_data.Uint8List listOAuthAppsResponseDescriptor = $convert.base64Decode(
     'ChVMaXN0T0F1dGhBcHBzUmVzcG9uc2USHQoKY2xpZW50X2lkcxgBIAMoCVIJY2xpZW50SWRz');
 
+@$core.Deprecated('Use createOAuthAppUserRequestDescriptor instead')
+const CreateOAuthAppUserRequest$json = {
+  '1': 'CreateOAuthAppUserRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'application_id', '3': 2, '4': 1, '5': 9, '10': 'applicationId'},
+    {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'first_name', '3': 4, '4': 1, '5': 9, '10': 'firstName'},
+    {'1': 'last_name', '3': 5, '4': 1, '5': 9, '10': 'lastName'},
+    {'1': 'password', '3': 6, '4': 1, '5': 9, '10': 'password'},
+  ],
+};
+
+/// Descriptor for `CreateOAuthAppUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createOAuthAppUserRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVPQXV0aEFwcFVzZXJSZXF1ZXN0EhUKBm9yZ19pZBgBIAEoCVIFb3JnSWQSJQoOYX'
+    'BwbGljYXRpb25faWQYAiABKAlSDWFwcGxpY2F0aW9uSWQSFAoFZW1haWwYAyABKAlSBWVtYWls'
+    'Eh0KCmZpcnN0X25hbWUYBCABKAlSCWZpcnN0TmFtZRIbCglsYXN0X25hbWUYBSABKAlSCGxhc3'
+    'ROYW1lEhoKCHBhc3N3b3JkGAYgASgJUghwYXNzd29yZA==');
+
+@$core.Deprecated('Use createOAuthAppUserResponseDescriptor instead')
+const CreateOAuthAppUserResponse$json = {
+  '1': 'CreateOAuthAppUserResponse',
+  '2': [
+    {'1': 'auth_token', '3': 1, '4': 1, '5': 9, '10': 'authToken'},
+    {'1': 'registration_id', '3': 2, '4': 1, '5': 9, '10': 'registrationId'},
+    {'1': 'user_id', '3': 3, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'refresh_token', '3': 4, '4': 1, '5': 9, '10': 'refreshToken'},
+  ],
+};
+
+/// Descriptor for `CreateOAuthAppUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createOAuthAppUserResponseDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVPQXV0aEFwcFVzZXJSZXNwb25zZRIdCgphdXRoX3Rva2VuGAEgASgJUglhdXRoVG'
+    '9rZW4SJwoPcmVnaXN0cmF0aW9uX2lkGAIgASgJUg5yZWdpc3RyYXRpb25JZBIXCgd1c2VyX2lk'
+    'GAMgASgJUgZ1c2VySWQSIwoNcmVmcmVzaF90b2tlbhgEIAEoCVIMcmVmcmVzaFRva2Vu');
+
 @$core.Deprecated('Use oAuthConfigDescriptor instead')
 const OAuthConfig$json = {
   '1': 'OAuthConfig',

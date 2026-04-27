@@ -17,7 +17,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../rpc/status.pb.dart' as $13;
 import 'value.pb.dart' as $12;
 
-/// A single evalution result.
+/// A single evaluation result.
 class EvalState_Result extends $pb.GeneratedMessage {
   factory EvalState_Result({
     $fixnum.Int64? expr,
@@ -63,7 +63,7 @@ class EvalState_Result extends $pb.GeneratedMessage {
   static EvalState_Result getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EvalState_Result>(create);
   static EvalState_Result? _defaultInstance;
 
-  /// The id of the expression this result if for.
+  /// The id of the expression this result is for.
   @$pb.TagNumber(1)
   $fixnum.Int64 get expr => $_getI64(0);
   @$pb.TagNumber(1)
@@ -86,7 +86,7 @@ class EvalState_Result extends $pb.GeneratedMessage {
 
 ///  The state of an evaluation.
 ///
-///  Can represent an inital, partial, or completed state of evaluation.
+///  Can represent an initial, partial, or completed state of evaluation.
 class EvalState extends $pb.GeneratedMessage {
   factory EvalState({
     $core.Iterable<ExprValue>? values,
@@ -224,14 +224,14 @@ class ExprValue extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $12.Value ensureValue() => $_ensure(0);
 
-  ///  The set of errors in the critical path of evalution.
+  ///  The set of errors in the critical path of evaluation.
   ///
   ///  Only errors in the critical path are included. For example,
   ///  `(<error1> || true) && <error2>` will only result in `<error2>`,
   ///  while `<error1> || <error2>` will result in both `<error1>` and
   ///  `<error2>`.
   ///
-  ///  Errors cause by the presence of other errors are not included in the
+  ///  Errors caused by the presence of other errors are not included in the
   ///  set. For example `<error1>.foo`, `foo(<error1>)`, and `<error1> + 1` will
   ///  only result in `<error1>`.
   ///
@@ -265,13 +265,13 @@ class ExprValue extends $pb.GeneratedMessage {
   ///      foo(<unknown[1]>) -> <unknown[1]>
   ///      <unknown[1]> + <unknown[2]> -> <unknown[1]> or <unknown[2[>
   ///
-  ///  Unknown takes precidence over Error in cases where a `Value` can short
+  ///  Unknown takes precedence over Error in cases where a `Value` can short
   ///  circuit the result:
   ///
   ///      <error> || <unknown> -> <unknown>
   ///      <error> && <unknown> -> <unknown>
   ///
-  ///  Errors take precidence in all other cases:
+  ///  Errors take precedence in all other cases:
   ///
   ///      <unknown> + <error> -> <error>
   ///      foo(<unknown>, <error>) -> <error>

@@ -293,7 +293,7 @@ class Expr_Call extends $pb.GeneratedMessage {
   static Expr_Call getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_Call>(create);
   static Expr_Call? _defaultInstance;
 
-  /// The target of an method call-style expression. For example, `x` in
+  /// The target of a method call-style expression. For example, `x` in
   /// `x.f()`.
   @$pb.TagNumber(1)
   Expr get target => $_getN(0);
@@ -323,7 +323,7 @@ class Expr_Call extends $pb.GeneratedMessage {
 
 ///  A list creation expression.
 ///
-///  Lists may either be homogenous, e.g. `[1, 2, 3]`, or heterogeneous, e.g.
+///  Lists may either be homogeneous, e.g. `[1, 2, 3]`, or heterogeneous, e.g.
 ///  `dyn([1, 'hello', 2.0])`
 class Expr_CreateList extends $pb.GeneratedMessage {
   factory Expr_CreateList({
@@ -462,7 +462,7 @@ class Expr_CreateStruct_Entry extends $pb.GeneratedMessage {
 
   /// Required. An id assigned to this node by the parser which is unique
   /// in a given expression tree. This is used to associate type
-  /// information and other attributes to the node.
+  /// information and other attributes with the node.
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
@@ -571,7 +571,7 @@ class Expr_CreateStruct extends $pb.GeneratedMessage {
   static Expr_CreateStruct getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_CreateStruct>(create);
   static Expr_CreateStruct? _defaultInstance;
 
-  /// The type name of the message to be created, empty when creating map
+  /// The type name of the message to be created; empty when creating map
   /// literals.
   @$pb.TagNumber(1)
   $core.String get messageName => $_getSZ(0);
@@ -610,7 +610,7 @@ class Expr_CreateStruct extends $pb.GeneratedMessage {
 ///
 ///  The `has(m.x)` macro tests whether the property `x` is present in struct
 ///  `m`. The semantics of this macro depend on the type of `m`. For proto2
-///  messages `has(m.x)` is defined as 'defined, but not set`. For proto3, the
+///  messages `has(m.x)` is defined as 'defined, but not set'. For proto3, the
 ///  macro tests whether the property is set to its default. For map and struct
 ///  types, the macro tests whether the property `x` is defined on `m`.
 ///
@@ -630,7 +630,7 @@ class Expr_CreateStruct extends $pb.GeneratedMessage {
 ///
 ///  Comprehensions for the optional V2 macros which support map-to-map
 ///  translation differ slightly from the standard environment macros in that
-///  they expose both the key or index in addition to the value for each list
+///  they expose the key or index in addition to the value for each list
 ///  or map entry:
 ///
 ///  ```
@@ -719,8 +719,9 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   static Expr_Comprehension? _defaultInstance;
 
   /// The name of the first iteration variable.
-  /// When the iter_range is a list, this variable is the list element.
-  /// When the iter_range is a map, this variable is the map entry key.
+  /// For the single iteration variable macros, when iter_range is a list, this
+  /// variable is the list element and when the iter_range is a map, this
+  /// variable is the map key.
   @$pb.TagNumber(1)
   $core.String get iterVar => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -807,9 +808,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   Expr ensureResult() => $_ensure(6);
 
-  /// The name of the second iteration variable, empty if not set.
-  /// When the iter_range is a list, this variable is the integer index.
-  /// When the iter_range is a map, this variable is the map entry value.
+  /// The name of the second iteration variable; empty if not set.
   /// This field is only set for comprehension v2 macros.
   @$pb.TagNumber(8)
   $core.String get iterVar2 => $_getSZ(7);
@@ -837,12 +836,12 @@ enum Expr_ExprKind {
 ///  Expressions are abstractly represented as a collection of identifiers,
 ///  select statements, function calls, literals, and comprehensions. All
 ///  operators with the exception of the '.' operator are modelled as function
-///  calls. This makes it easy to represent new operators into the existing AST.
+///  calls. This makes it easy to represent new operators in the existing AST.
 ///
 ///  All references within expressions must resolve to a
 ///  [Decl][google.api.expr.v1alpha1.Decl] provided at type-check for an
 ///  expression to be valid. A reference may either be a bare identifier `name` or
-///  a qualified identifier `google.api.name`. References may either refer to a
+///  a qualified identifier `google.api.name`. References may refer to either a
 ///  value or a function declaration.
 ///
 ///  For example, the expression `google.api.name.startsWith('expr')` references
@@ -940,7 +939,7 @@ class Expr extends $pb.GeneratedMessage {
 
   /// Required. An id assigned to this node by the parser which is unique in a
   /// given expression tree. This is used to associate type information and other
-  /// attributes to a node in the parse tree.
+  /// attributes with a node in the parse tree.
   @$pb.TagNumber(2)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(2)
@@ -1052,7 +1051,7 @@ enum Constant_ConstantKind {
 ///
 ///  Named 'Constant' here for backwards compatibility.
 ///
-///  This is similar as the primitives supported in the well-known type
+///  This is similar to the primitives supported in the well-known type
 ///  `google.protobuf.Value`, but richer so it can represent CEL's full range of
 ///  primitives.
 ///
@@ -1234,7 +1233,7 @@ class Constant extends $pb.GeneratedMessage {
 
   ///  protobuf.Duration value.
   ///
-  ///  Deprecated: duration is no longer considered a builtin cel type.
+  ///  Deprecated: duration is no longer considered a builtin CEL type.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(8)
   $6.Duration get durationValue => $_getN(7);
@@ -1253,7 +1252,7 @@ class Constant extends $pb.GeneratedMessage {
 
   ///  protobuf.Timestamp value.
   ///
-  ///  Deprecated: timestamp is no longer considered a builtin cel type.
+  ///  Deprecated: timestamp is no longer considered a builtin CEL type.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(9)
   $8.Timestamp get timestampValue => $_getN(8);
@@ -1404,7 +1403,7 @@ class SourceInfo_Extension extends $pb.GeneratedMessage {
   ///  If set, the listed components must understand the extension for the
   ///  expression to evaluate correctly.
   ///
-  ///  This field has set semantics, repeated values should be deduplicated.
+  ///  This field has set semantics; repeated values should be deduplicated.
   @$pb.TagNumber(2)
   $core.List<SourceInfo_Extension_Component> get affectedComponents => $_getList(1);
 
@@ -1517,7 +1516,7 @@ class SourceInfo extends $pb.GeneratedMessage {
   ///
   ///  The line number of a given position is the index `i` where for a given
   ///  `id` the `line_offsets[i] < id_positions[id] < line_offsets[i+1]`. The
-  ///  column may be derivd from `id_positions[id] - line_offsets[i]`.
+  ///  column may be derived from `id_positions[id] - line_offsets[i]`.
   @$pb.TagNumber(3)
   $core.List<$core.int> get lineOffsets => $_getList(2);
 
@@ -1604,7 +1603,7 @@ class SourcePosition extends $pb.GeneratedMessage {
   static SourcePosition getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SourcePosition>(create);
   static SourcePosition? _defaultInstance;
 
-  /// The soucre location name (e.g. file name).
+  /// The source location name (e.g. file name).
   @$pb.TagNumber(1)
   $core.String get location => $_getSZ(0);
   @$pb.TagNumber(1)

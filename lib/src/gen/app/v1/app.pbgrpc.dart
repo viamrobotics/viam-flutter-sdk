@@ -157,6 +157,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListOAuthApps',
       ($12.ListOAuthAppsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.ListOAuthAppsResponse.fromBuffer(value));
+  static final _$createOAuthAppUser = $grpc.ClientMethod<$12.CreateOAuthAppUserRequest, $12.CreateOAuthAppUserResponse>(
+      '/viam.app.v1.AppService/CreateOAuthAppUser',
+      ($12.CreateOAuthAppUserRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.CreateOAuthAppUserResponse.fromBuffer(value));
   static final _$createLocation = $grpc.ClientMethod<$12.CreateLocationRequest, $12.CreateLocationResponse>(
       '/viam.app.v1.AppService/CreateLocation',
       ($12.CreateLocationRequest value) => value.writeToBuffer(),
@@ -622,6 +626,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$12.ListOAuthAppsResponse> listOAuthApps($12.ListOAuthAppsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listOAuthApps, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.CreateOAuthAppUserResponse> createOAuthAppUser($12.CreateOAuthAppUserRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createOAuthAppUser, request, options: options);
   }
 
   $grpc.ResponseFuture<$12.CreateLocationResponse> createLocation($12.CreateLocationRequest request, {$grpc.CallOptions? options}) {
@@ -1192,6 +1200,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.ListOAuthAppsRequest.fromBuffer(value),
         ($12.ListOAuthAppsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.CreateOAuthAppUserRequest, $12.CreateOAuthAppUserResponse>(
+        'CreateOAuthAppUser',
+        createOAuthAppUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.CreateOAuthAppUserRequest.fromBuffer(value),
+        ($12.CreateOAuthAppUserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$12.CreateLocationRequest, $12.CreateLocationResponse>(
         'CreateLocation',
         createLocation_Pre,
@@ -1897,6 +1912,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return listOAuthApps(call, await request);
   }
 
+  $async.Future<$12.CreateOAuthAppUserResponse> createOAuthAppUser_Pre($grpc.ServiceCall call, $async.Future<$12.CreateOAuthAppUserRequest> request) async {
+    return createOAuthAppUser(call, await request);
+  }
+
   $async.Future<$12.CreateLocationResponse> createLocation_Pre($grpc.ServiceCall call, $async.Future<$12.CreateLocationRequest> request) async {
     return createLocation(call, await request);
   }
@@ -2251,6 +2270,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$12.UpdateOAuthAppResponse> updateOAuthApp($grpc.ServiceCall call, $12.UpdateOAuthAppRequest request);
   $async.Future<$12.DeleteOAuthAppResponse> deleteOAuthApp($grpc.ServiceCall call, $12.DeleteOAuthAppRequest request);
   $async.Future<$12.ListOAuthAppsResponse> listOAuthApps($grpc.ServiceCall call, $12.ListOAuthAppsRequest request);
+  $async.Future<$12.CreateOAuthAppUserResponse> createOAuthAppUser($grpc.ServiceCall call, $12.CreateOAuthAppUserRequest request);
   $async.Future<$12.CreateLocationResponse> createLocation($grpc.ServiceCall call, $12.CreateLocationRequest request);
   $async.Future<$12.GetLocationResponse> getLocation($grpc.ServiceCall call, $12.GetLocationRequest request);
   $async.Future<$12.UpdateLocationResponse> updateLocation($grpc.ServiceCall call, $12.UpdateLocationRequest request);
