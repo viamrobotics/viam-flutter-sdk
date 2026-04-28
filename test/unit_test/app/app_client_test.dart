@@ -864,6 +864,24 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('createOAuthAppUser', () async {
+      final expected = CreateOAuthAppUserResponse()
+        ..authToken = 'authToken'
+        ..registrationId = 'registrationId'
+        ..userId = 'userId'
+        ..refreshToken = 'refreshToken';
+      when(serviceClient.createOAuthAppUser(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.createOAuthAppUser(
+        orgId: 'orgId',
+        applicationId: 'applicationId',
+        email: 'email@example.com',
+        firstName: 'firstName',
+        lastName: 'lastName',
+        password: 'password',
+      );
+      expect(response, equals(expected));
+    });
+
     test('getOrganizationMetadata', () async {
       final expected = GetOrganizationMetadataResponse()..data = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
       when(serviceClient.getOrganizationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
