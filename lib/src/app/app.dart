@@ -833,6 +833,30 @@ class AppClient {
     return await _client.createKeyFromExistingKeyAuthorizations(request);
   }
 
+  /// Create a new user for an OAuth application.
+  ///
+  /// Returns the [CreateOAuthAppUserResponse] containing the generated `authToken`,
+  /// `registrationId`, `userId`, and `refreshToken` for the newly created user.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<CreateOAuthAppUserResponse> createOAuthAppUser({
+    required String orgId,
+    required String applicationId,
+    required String email,
+    required String firstName,
+    required String lastName,
+    required String password,
+  }) async {
+    final request = CreateOAuthAppUserRequest()
+      ..orgId = orgId
+      ..applicationId = applicationId
+      ..email = email
+      ..firstName = firstName
+      ..lastName = lastName
+      ..password = password;
+    return await _client.createOAuthAppUser(request);
+  }
+
   /// Retrieves user-defined [Metadata] for an organization.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
