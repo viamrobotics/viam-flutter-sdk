@@ -157,7 +157,7 @@ extension GetReadingsResponseUtils on GetReadingsResponse {
 }
 
 String getVersionMetadata() {
-  const String sdkVersion = 'v0.19.1';
+  const String sdkVersion = 'v0.19.2';
   const String apiTag = 'v0.1.540';
 
   return 'flutter;$sdkVersion;$apiTag';
