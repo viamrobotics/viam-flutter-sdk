@@ -1,11 +1,14 @@
 # Changelog
 
-## [v0.19.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.1) (2026-04-20)
+## [v0.19.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.2) (2026-04-30)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.0...v0.19.1)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.1...v0.19.2)
 
 **Merged pull requests:**
 
+- OAuth App user creation wrapper [\#531](https://github.com/viamrobotics/viam-flutter-sdk/pull/531) ([gmulz](https://github.com/gmulz))
+- Automated Protos Update [\#529](https://github.com/viamrobotics/viam-flutter-sdk/pull/529) ([viambot](https://github.com/viambot))
+- v0.19.1 [\#528](https://github.com/viamrobotics/viam-flutter-sdk/pull/528) ([github-actions[bot]](https://github.com/apps/github-actions))
 - claude-jira integration [\#524](https://github.com/viamrobotics/viam-flutter-sdk/pull/524) ([allisonschiang](https://github.com/allisonschiang))
 - Automated Protos Update [\#522](https://github.com/viamrobotics/viam-flutter-sdk/pull/522) ([viambot](https://github.com/viambot))
 - v0.19.0 [\#521](https://github.com/viamrobotics/viam-flutter-sdk/pull/521) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -215,6 +218,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.19.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.1) (2026-04-20)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.0...v0.19.1)
 
 ## [v0.19.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.0) (2026-04-06)
 
