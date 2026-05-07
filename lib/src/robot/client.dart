@@ -73,6 +73,17 @@ class RobotClient {
 
   RobotClient._();
 
+  /// Construct a [RobotClient] from an existing [rpb.RobotServiceClient].
+  ///
+  /// Most callers should use [atAddress] instead, which handles dialing,
+  /// session management, and resource discovery. This constructor is useful
+  /// when you have already obtained a [rpb.RobotServiceClient] (e.g. for
+  /// testing with a mock client). Methods that depend on the channel,
+  /// session, or resource manager will not work on instances created this way.
+  RobotClient.withClient(rpb.RobotServiceClient client) {
+    _client = client;
+  }
+
   /// Connect to a robot at the specified address with the provided options.
   ///
   /// ```
@@ -296,6 +307,21 @@ class RobotClient {
     final request = rpb.GetModelsFromModulesRequest();
     final response = await _client.getModelsFromModules(request);
     return response.models;
+  }
+
+  /// RestartModule restarts a module on the machine. Identify the module by either
+  /// [moduleId] (for registry modules) or [moduleName] (for local modules).
+  /// Exactly one of the two must be provided.
+  ///
+  /// ```
+  /// await machine.restartModule(moduleName: 'my-local-module');
+  /// ```
+  Future<void> restartModule({String? moduleId, String? moduleName}) async {
+    if ((moduleId == null) == (moduleName == null)) {
+      throw Exception('Exactly one of moduleId or moduleName must be provided');
+    }
+    final request = rpb.RestartModuleRequest(moduleId: moduleId, moduleName: moduleName);
+    await _client.restartModule(request);
   }
 
   /// GetMachineStatus returns status of the machine and its resources.
