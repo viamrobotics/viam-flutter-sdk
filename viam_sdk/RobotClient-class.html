@@ -63,6 +63,17 @@ RobotClient.atAddress(...)</p>
 
 
     
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+    <dl class="constructor-summary-list">
+        <dt id="RobotClient.withClient" class="callable">
+          <span class="name"><a href="../viam_sdk/RobotClient/RobotClient.withClient.html">RobotClient.withClient</a></span><span class="signature">(<span class="parameter" id="withClient-param-client"><span class="type-annotation"><a href="../viam_protos.robot.robot/RobotServiceClient-class.html">RobotServiceClient</a></span> <span class="parameter-name">client</span></span>)</span>
+        </dt>
+        <dd>
+          Construct a <a href="../viam_sdk/RobotClient-class.html">RobotClient</a> from an existing <a href="../viam_protos.robot.robot/RobotServiceClient-class.html">rpb.RobotServiceClient</a>.
+        </dd>
+    </dl>
+  </section>
     
   <section
       class="summary offset-anchor"
@@ -252,6 +263,21 @@ RobotClient.atAddress(...)</p>
 </dt>
 <dd>
   Reset the options for a stream with the given name.
+  
+
+</dd>
+
+        <dt id="restartModule" class="callable">
+  <span class="name"><a href="../viam_sdk/RobotClient/restartModule.html">restartModule</a></span><span class="signature">(<wbr>{<span class="parameter" id="restartModule-param-moduleId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">moduleId</span>, </span><span class="parameter" id="restartModule-param-moduleName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">moduleName</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  RestartModule restarts a module on the machine. Identify the module by either
+<code>moduleId</code> (for registry modules) or <code>moduleName</code> (for local modules).
+Exactly one of the two must be provided.
   
 
 </dd>
