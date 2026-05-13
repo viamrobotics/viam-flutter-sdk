@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $50;
-import '../../../google/rpc/status.pb.dart' as $52;
+import '../../../google/rpc/status.pb.dart' as $53;
 import 'ml_training.pbenum.dart';
 
 export 'ml_training.pbenum.dart';
@@ -606,7 +606,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     $50.Timestamp? lastModified,
     $core.String? syncedModelId,
     $core.String? id,
-    $52.Status? errorStatus,
+    $53.Status? errorStatus,
     $50.Timestamp? trainingStarted,
     $50.Timestamp? trainingEnded,
     $core.String? datasetId,
@@ -695,7 +695,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'lastModified', subBuilder: $50.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'syncedModelId')
     ..aOS(7, _omitFieldNames ? '' : 'id')
-    ..aOM<$52.Status>(8, _omitFieldNames ? '' : 'errorStatus', subBuilder: $52.Status.create)
+    ..aOM<$53.Status>(8, _omitFieldNames ? '' : 'errorStatus', subBuilder: $53.Status.create)
     ..aOM<$50.Timestamp>(9, _omitFieldNames ? '' : 'trainingStarted', subBuilder: $50.Timestamp.create)
     ..aOM<$50.Timestamp>(10, _omitFieldNames ? '' : 'trainingEnded', subBuilder: $50.Timestamp.create)
     ..aOS(11, _omitFieldNames ? '' : 'datasetId')
@@ -784,15 +784,15 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   void clearId() => clearField(7);
 
   @$pb.TagNumber(8)
-  $52.Status get errorStatus => $_getN(5);
+  $53.Status get errorStatus => $_getN(5);
   @$pb.TagNumber(8)
-  set errorStatus($52.Status v) { setField(8, v); }
+  set errorStatus($53.Status v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasErrorStatus() => $_has(5);
   @$pb.TagNumber(8)
   void clearErrorStatus() => clearField(8);
   @$pb.TagNumber(8)
-  $52.Status ensureErrorStatus() => $_ensure(5);
+  $53.Status ensureErrorStatus() => $_ensure(5);
 
   @$pb.TagNumber(9)
   $50.Timestamp get trainingStarted => $_getN(6);

@@ -27,6 +27,8 @@ class InvoiceSummary extends $pb.GeneratedMessage {
     $core.String? status,
     $50.Timestamp? dueDate,
     $50.Timestamp? paidDate,
+    $core.String? lastPaymentFailureReason,
+    $50.Timestamp? lastPaymentFailureAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -47,6 +49,12 @@ class InvoiceSummary extends $pb.GeneratedMessage {
     if (paidDate != null) {
       $result.paidDate = paidDate;
     }
+    if (lastPaymentFailureReason != null) {
+      $result.lastPaymentFailureReason = lastPaymentFailureReason;
+    }
+    if (lastPaymentFailureAt != null) {
+      $result.lastPaymentFailureAt = lastPaymentFailureAt;
+    }
     return $result;
   }
   InvoiceSummary._() : super();
@@ -60,6 +68,8 @@ class InvoiceSummary extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'status')
     ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $50.Timestamp.create)
     ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'paidDate', subBuilder: $50.Timestamp.create)
+    ..aOS(7, _omitFieldNames ? '' : 'lastPaymentFailureReason')
+    ..aOM<$50.Timestamp>(8, _omitFieldNames ? '' : 'lastPaymentFailureAt', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -143,6 +153,31 @@ class InvoiceSummary extends $pb.GeneratedMessage {
   void clearPaidDate() => clearField(6);
   @$pb.TagNumber(6)
   $50.Timestamp ensurePaidDate() => $_ensure(5);
+
+  /// Category of the most recent payment failure. One of: card_declined,
+  /// insufficient_funds, expired_card, incorrect_cvc, incorrect_card_number,
+  /// authentication_required, processing_error, other. Empty when no failure
+  /// is recorded. Clients must tolerate unknown values.
+  @$pb.TagNumber(7)
+  $core.String get lastPaymentFailureReason => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set lastPaymentFailureReason($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLastPaymentFailureReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastPaymentFailureReason() => clearField(7);
+
+  /// Time of the most recent payment failure. Empty when no failure recorded.
+  @$pb.TagNumber(8)
+  $50.Timestamp get lastPaymentFailureAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set lastPaymentFailureAt($50.Timestamp v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasLastPaymentFailureAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLastPaymentFailureAt() => clearField(8);
+  @$pb.TagNumber(8)
+  $50.Timestamp ensureLastPaymentFailureAt() => $_ensure(7);
 }
 
 class PaymentMethodCard extends $pb.GeneratedMessage {

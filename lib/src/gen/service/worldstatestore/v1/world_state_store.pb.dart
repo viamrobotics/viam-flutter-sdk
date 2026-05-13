@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $9;
-import '../../../google/protobuf/field_mask.pb.dart' as $56;
+import '../../../google/protobuf/field_mask.pb.dart' as $52;
 import '../../../google/protobuf/struct.pb.dart' as $49;
 import 'world_state_store.pbenum.dart';
 
@@ -338,7 +338,7 @@ class StreamTransformChangesResponse extends $pb.GeneratedMessage {
   factory StreamTransformChangesResponse({
     TransformChangeType? changeType,
     $9.Transform? transform,
-    $56.FieldMask? updatedFields,
+    $52.FieldMask? updatedFields,
   }) {
     final $result = create();
     if (changeType != null) {
@@ -359,7 +359,7 @@ class StreamTransformChangesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamTransformChangesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.worldstatestore.v1'), createEmptyInstance: create)
     ..e<TransformChangeType>(1, _omitFieldNames ? '' : 'changeType', $pb.PbFieldType.OE, defaultOrMaker: TransformChangeType.TRANSFORM_CHANGE_TYPE_UNSPECIFIED, valueOf: TransformChangeType.valueOf, enumValues: TransformChangeType.values)
     ..aOM<$9.Transform>(2, _omitFieldNames ? '' : 'transform', subBuilder: $9.Transform.create)
-    ..aOM<$56.FieldMask>(3, _omitFieldNames ? '' : 'updatedFields', subBuilder: $56.FieldMask.create)
+    ..aOM<$52.FieldMask>(3, _omitFieldNames ? '' : 'updatedFields', subBuilder: $52.FieldMask.create)
     ..hasRequiredFields = false
   ;
 
@@ -408,15 +408,15 @@ class StreamTransformChangesResponse extends $pb.GeneratedMessage {
   /// transforms, this will be the fields that have changed. For removed transforms, this will be the transform's UUID
   /// path.
   @$pb.TagNumber(3)
-  $56.FieldMask get updatedFields => $_getN(2);
+  $52.FieldMask get updatedFields => $_getN(2);
   @$pb.TagNumber(3)
-  set updatedFields($56.FieldMask v) { setField(3, v); }
+  set updatedFields($52.FieldMask v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdatedFields() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdatedFields() => clearField(3);
   @$pb.TagNumber(3)
-  $56.FieldMask ensureUpdatedFields() => $_ensure(2);
+  $52.FieldMask ensureUpdatedFields() => $_ensure(2);
 }
 
 

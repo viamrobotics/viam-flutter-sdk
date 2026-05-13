@@ -2242,6 +2242,59 @@ class Get3DModelsResponse extends $pb.GeneratedMessage {
   $core.Map<$core.String, Mesh> get models => $_getMap(0);
 }
 
+class GetWorldPoseResponse extends $pb.GeneratedMessage {
+  factory GetWorldPoseResponse({
+    Pose? pose,
+  }) {
+    final $result = create();
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    return $result;
+  }
+  GetWorldPoseResponse._() : super();
+  factory GetWorldPoseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetWorldPoseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetWorldPoseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOM<Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: Pose.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetWorldPoseResponse clone() => GetWorldPoseResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetWorldPoseResponse copyWith(void Function(GetWorldPoseResponse) updates) => super.copyWith((message) => updates(message as GetWorldPoseResponse)) as GetWorldPoseResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWorldPoseResponse create() => GetWorldPoseResponse._();
+  GetWorldPoseResponse createEmptyInstance() => create();
+  static $pb.PbList<GetWorldPoseResponse> createRepeated() => $pb.PbList<GetWorldPoseResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetWorldPoseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetWorldPoseResponse>(create);
+  static GetWorldPoseResponse? _defaultInstance;
+
+  /// Pose of the component in the world reference frame
+  @$pb.TagNumber(1)
+  Pose get pose => $_getN(0);
+  @$pb.TagNumber(1)
+  set pose(Pose v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPose() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPose() => clearField(1);
+  @$pb.TagNumber(1)
+  Pose ensurePose() => $_ensure(0);
+}
+
 class GetReadingsRequest extends $pb.GeneratedMessage {
   factory GetReadingsRequest({
     $core.String? name,

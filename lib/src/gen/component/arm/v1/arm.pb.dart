@@ -951,12 +951,17 @@ class IsMovingResponse extends $pb.GeneratedMessage {
   void clearIsMoving() => clearField(1);
 }
 
+/// MoveOptions specifies kinematic constraints for an arm motion. All fields
+/// are optional ceilings; any combination may be set. Every constraint that
+/// is set is respected at every point along the executed trajectory.
+/// The limiting constraint may change throughout execution.
 class MoveOptions extends $pb.GeneratedMessage {
   factory MoveOptions({
     $core.double? maxVelDegsPerSec,
     $core.double? maxAccDegsPerSec2,
     $core.Iterable<$core.double>? maxVelDegsPerSecJoints,
     $core.Iterable<$core.double>? maxAccDegsPerSec2Joints,
+    $core.double? maxTcpSpeed,
   }) {
     final $result = create();
     if (maxVelDegsPerSec != null) {
@@ -971,6 +976,9 @@ class MoveOptions extends $pb.GeneratedMessage {
     if (maxAccDegsPerSec2Joints != null) {
       $result.maxAccDegsPerSec2Joints.addAll(maxAccDegsPerSec2Joints);
     }
+    if (maxTcpSpeed != null) {
+      $result.maxTcpSpeed = maxTcpSpeed;
+    }
     return $result;
   }
   MoveOptions._() : super();
@@ -982,6 +990,7 @@ class MoveOptions extends $pb.GeneratedMessage {
     ..a<$core.double>(2, _omitFieldNames ? '' : 'maxAccDegsPerSec2', $pb.PbFieldType.OD)
     ..p<$core.double>(3, _omitFieldNames ? '' : 'maxVelDegsPerSecJoints', $pb.PbFieldType.KD)
     ..p<$core.double>(4, _omitFieldNames ? '' : 'maxAccDegsPerSec2Joints', $pb.PbFieldType.KD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'maxTcpSpeed', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -1007,6 +1016,7 @@ class MoveOptions extends $pb.GeneratedMessage {
   static MoveOptions? _defaultInstance;
 
   /// Maximum allowable velocity of an arm joint, in degrees per second.
+  /// The arm driver will move as fast as possible up to the set value.
   /// Ignored when max_vel_degs_per_sec_joints is set.
   @$pb.TagNumber(1)
   $core.double get maxVelDegsPerSec => $_getN(0);
@@ -1018,6 +1028,7 @@ class MoveOptions extends $pb.GeneratedMessage {
   void clearMaxVelDegsPerSec() => clearField(1);
 
   /// Maximum allowable acceleration of an arm joint, in degrees per second squared.
+  /// The arm driver will accelerate as fast as possible up to the set value.
   /// ignored when max_acc_degs_per_sec2_joints is set.
   @$pb.TagNumber(2)
   $core.double get maxAccDegsPerSec2 => $_getN(1);
@@ -1029,12 +1040,25 @@ class MoveOptions extends $pb.GeneratedMessage {
   void clearMaxAccDegsPerSec2() => clearField(2);
 
   /// Per-joint maximum velocity in degrees per second.
+  /// The arm driver will move each joint as fast as possible up to its respective set value.
   @$pb.TagNumber(3)
   $core.List<$core.double> get maxVelDegsPerSecJoints => $_getList(2);
 
   /// Per-joint maximum acceleration in degrees per second squared.
+  /// The arm driver will accelerate each joint as fast as possible up to its respective set value.
   @$pb.TagNumber(4)
   $core.List<$core.double> get maxAccDegsPerSec2Joints => $_getList(3);
+
+  /// Maximum allowable speed of an arm's tool center point in meters per second.
+  /// The arm driver will move the tool center point as fast as possible up to this set value.
+  @$pb.TagNumber(5)
+  $core.double get maxTcpSpeed => $_getN(4);
+  @$pb.TagNumber(5)
+  set maxTcpSpeed($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMaxTcpSpeed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMaxTcpSpeed() => clearField(5);
 }
 
 

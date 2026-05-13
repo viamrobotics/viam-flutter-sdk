@@ -1571,3 +1571,196 @@ final $typed_data.Uint8List createBinaryDataSignedURLResponseDescriptor = $conve
     'IJc2lnbmVkVXJsEjkKCmV4cGlyZXNfYXQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0'
     'YW1wUglleHBpcmVzQXQ=');
 
+@$core.Deprecated('Use sequenceResourceFilterDescriptor instead')
+const SequenceResourceFilter$json = {
+  '1': 'SequenceResourceFilter',
+  '2': [
+    {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
+    {'1': 'method_name', '3': 3, '4': 1, '5': 9, '10': 'methodName'},
+  ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['part_id'],
+};
+
+/// Descriptor for `SequenceResourceFilter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sequenceResourceFilterDescriptor = $convert.base64Decode(
+    'ChZTZXF1ZW5jZVJlc291cmNlRmlsdGVyEiMKDXJlc291cmNlX25hbWUYAiABKAlSDHJlc291cm'
+    'NlTmFtZRIfCgttZXRob2RfbmFtZRgDIAEoCVIKbWV0aG9kTmFtZUoECAEQAlIHcGFydF9pZA==');
+
+@$core.Deprecated('Use sequenceDescriptor instead')
+const Sequence$json = {
+  '1': 'Sequence',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'part_id', '3': 9, '4': 1, '5': 9, '10': 'partId'},
+    {'1': 'sequence_tags', '3': 3, '4': 3, '5': 9, '10': 'sequenceTags'},
+    {'1': 'created_at', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    {'1': 'start_time', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
+    {'1': 'end_time', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'endTime'},
+    {'1': 'resources', '3': 8, '4': 3, '5': 11, '6': '.viam.app.data.v1.SequenceResourceFilter', '10': 'resources'},
+  ],
+  '9': [
+    {'1': 2, '2': 3},
+  ],
+  '10': ['organization_id'],
+};
+
+/// Descriptor for `Sequence`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sequenceDescriptor = $convert.base64Decode(
+    'CghTZXF1ZW5jZRIOCgJpZBgBIAEoCVICaWQSFwoHcGFydF9pZBgJIAEoCVIGcGFydElkEiMKDX'
+    'NlcXVlbmNlX3RhZ3MYAyADKAlSDHNlcXVlbmNlVGFncxI5CgpjcmVhdGVkX2F0GAQgASgLMhou'
+    'Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYBSABKA'
+    'syGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSOQoKc3RhcnRfdGltZRgG'
+    'IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXN0YXJ0VGltZRI1CghlbmRfdGltZR'
+    'gHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSB2VuZFRpbWUSRgoJcmVzb3VyY2Vz'
+    'GAggAygLMigudmlhbS5hcHAuZGF0YS52MS5TZXF1ZW5jZVJlc291cmNlRmlsdGVyUglyZXNvdX'
+    'JjZXNKBAgCEANSD29yZ2FuaXphdGlvbl9pZA==');
+
+@$core.Deprecated('Use createSequenceRequestDescriptor instead')
+const CreateSequenceRequest$json = {
+  '1': 'CreateSequenceRequest',
+  '2': [
+    {'1': 'part_id', '3': 6, '4': 1, '5': 9, '10': 'partId'},
+    {'1': 'resources', '3': 2, '4': 3, '5': 11, '6': '.viam.app.data.v1.SequenceResourceFilter', '10': 'resources'},
+    {'1': 'sequence_tags', '3': 3, '4': 3, '5': 9, '10': 'sequenceTags'},
+    {'1': 'start_time', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
+    {'1': 'end_time', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'endTime'},
+  ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['organization_id'],
+};
+
+/// Descriptor for `CreateSequenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSequenceRequestDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVTZXF1ZW5jZVJlcXVlc3QSFwoHcGFydF9pZBgGIAEoCVIGcGFydElkEkYKCXJlc2'
+    '91cmNlcxgCIAMoCzIoLnZpYW0uYXBwLmRhdGEudjEuU2VxdWVuY2VSZXNvdXJjZUZpbHRlclIJ'
+    'cmVzb3VyY2VzEiMKDXNlcXVlbmNlX3RhZ3MYAyADKAlSDHNlcXVlbmNlVGFncxI5CgpzdGFydF'
+    '90aW1lGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJc3RhcnRUaW1lEjUKCGVu'
+    'ZF90aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIHZW5kVGltZUoECAEQAl'
+    'IPb3JnYW5pemF0aW9uX2lk');
+
+@$core.Deprecated('Use createSequenceResponseDescriptor instead')
+const CreateSequenceResponse$json = {
+  '1': 'CreateSequenceResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateSequenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSequenceResponseDescriptor = $convert.base64Decode(
+    'ChZDcmVhdGVTZXF1ZW5jZVJlc3BvbnNlEg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use getSequenceRequestDescriptor instead')
+const GetSequenceRequest$json = {
+  '1': 'GetSequenceRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetSequenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSequenceRequestDescriptor = $convert.base64Decode(
+    'ChJHZXRTZXF1ZW5jZVJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use getSequenceResponseDescriptor instead')
+const GetSequenceResponse$json = {
+  '1': 'GetSequenceResponse',
+  '2': [
+    {'1': 'sequence', '3': 1, '4': 1, '5': 11, '6': '.viam.app.data.v1.Sequence', '10': 'sequence'},
+  ],
+};
+
+/// Descriptor for `GetSequenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSequenceResponseDescriptor = $convert.base64Decode(
+    'ChNHZXRTZXF1ZW5jZVJlc3BvbnNlEjYKCHNlcXVlbmNlGAEgASgLMhoudmlhbS5hcHAuZGF0YS'
+    '52MS5TZXF1ZW5jZVIIc2VxdWVuY2U=');
+
+@$core.Deprecated('Use updateSequenceRequestDescriptor instead')
+const UpdateSequenceRequest$json = {
+  '1': 'UpdateSequenceRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'resources', '3': 2, '4': 3, '5': 11, '6': '.viam.app.data.v1.SequenceResourceFilter', '10': 'resources'},
+    {'1': 'sequence_tags', '3': 3, '4': 3, '5': 9, '10': 'sequenceTags'},
+    {'1': 'start_time', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
+    {'1': 'end_time', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'endTime'},
+    {'1': 'field_mask', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.FieldMask', '10': 'fieldMask'},
+  ],
+};
+
+/// Descriptor for `UpdateSequenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSequenceRequestDescriptor = $convert.base64Decode(
+    'ChVVcGRhdGVTZXF1ZW5jZVJlcXVlc3QSDgoCaWQYASABKAlSAmlkEkYKCXJlc291cmNlcxgCIA'
+    'MoCzIoLnZpYW0uYXBwLmRhdGEudjEuU2VxdWVuY2VSZXNvdXJjZUZpbHRlclIJcmVzb3VyY2Vz'
+    'EiMKDXNlcXVlbmNlX3RhZ3MYAyADKAlSDHNlcXVlbmNlVGFncxI5CgpzdGFydF90aW1lGAQgAS'
+    'gLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJc3RhcnRUaW1lEjUKCGVuZF90aW1lGAUg'
+    'ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIHZW5kVGltZRI5CgpmaWVsZF9tYXNrGA'
+    'YgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFza1IJZmllbGRNYXNr');
+
+@$core.Deprecated('Use updateSequenceResponseDescriptor instead')
+const UpdateSequenceResponse$json = {
+  '1': 'UpdateSequenceResponse',
+};
+
+/// Descriptor for `UpdateSequenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSequenceResponseDescriptor = $convert.base64Decode(
+    'ChZVcGRhdGVTZXF1ZW5jZVJlc3BvbnNl');
+
+@$core.Deprecated('Use deleteSequenceRequestDescriptor instead')
+const DeleteSequenceRequest$json = {
+  '1': 'DeleteSequenceRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteSequenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSequenceRequestDescriptor = $convert.base64Decode(
+    'ChVEZWxldGVTZXF1ZW5jZVJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use deleteSequenceResponseDescriptor instead')
+const DeleteSequenceResponse$json = {
+  '1': 'DeleteSequenceResponse',
+};
+
+/// Descriptor for `DeleteSequenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSequenceResponseDescriptor = $convert.base64Decode(
+    'ChZEZWxldGVTZXF1ZW5jZVJlc3BvbnNl');
+
+@$core.Deprecated('Use listSequencesRequestDescriptor instead')
+const ListSequencesRequest$json = {
+  '1': 'ListSequencesRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'page_token', '3': 2, '4': 1, '5': 9, '10': 'pageToken'},
+    {'1': 'page_size', '3': 3, '4': 1, '5': 13, '10': 'pageSize'},
+  ],
+};
+
+/// Descriptor for `ListSequencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSequencesRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0U2VxdWVuY2VzUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2FuaX'
+    'phdGlvbklkEh0KCnBhZ2VfdG9rZW4YAiABKAlSCXBhZ2VUb2tlbhIbCglwYWdlX3NpemUYAyAB'
+    'KA1SCHBhZ2VTaXpl');
+
+@$core.Deprecated('Use listSequencesResponseDescriptor instead')
+const ListSequencesResponse$json = {
+  '1': 'ListSequencesResponse',
+  '2': [
+    {'1': 'sequences', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.Sequence', '10': 'sequences'},
+    {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
+  ],
+};
+
+/// Descriptor for `ListSequencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSequencesResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0U2VxdWVuY2VzUmVzcG9uc2USOAoJc2VxdWVuY2VzGAEgAygLMhoudmlhbS5hcHAuZG'
+    'F0YS52MS5TZXF1ZW5jZVIJc2VxdWVuY2VzEiYKD25leHRfcGFnZV90b2tlbhgCIAEoCVINbmV4'
+    'dFBhZ2VUb2tlbg==');
+
