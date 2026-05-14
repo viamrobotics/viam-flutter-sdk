@@ -33,6 +33,28 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
   }
 
   @override
+  Future<PlayStreamResponse> playStream({
+    required AudioInfo audioInfo,
+    required Stream<Uint8List> audioStream,
+    Map<String, dynamic>? extra,
+  }) async {
+    final init = PlayStreamRequest()
+      ..init = (PlayStreamInit()
+        ..name = name
+        ..audioInfo = audioInfo
+        ..extra = extra?.toStruct() ?? Struct());
+
+    Stream<PlayStreamRequest> requests() async* {
+      yield init;
+      await for (final chunk in audioStream) {
+        yield PlayStreamRequest()..audioChunk = (PlayStreamChunk()..audioData = chunk);
+      }
+    }
+
+    return await client.playStream(requests());
+  }
+
+  @override
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra}) async {
     final request = GetPropertiesRequest()
       ..name = name

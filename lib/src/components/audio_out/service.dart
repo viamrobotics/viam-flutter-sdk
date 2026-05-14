@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:typed_data';
 
 import 'package:grpc/grpc.dart';
@@ -30,6 +31,36 @@ class AudioOutService extends AudioOutServiceBase {
       audioData: audioData is Uint8List ? audioData : Uint8List.fromList(audioData),
       audioInfo: request.audioInfo,
       extra: request.hasExtra() ? request.extra.toMap() : null,
+    );
+  }
+
+  @override
+  Future<PlayStreamResponse> playStream(ServiceCall call, Stream<PlayStreamRequest> request) async {
+    final iter = StreamIterator(request);
+    if (!await iter.moveNext()) {
+      throw GrpcError.invalidArgument('PlayStream: stream closed before init message');
+    }
+    final first = iter.current;
+    if (!first.hasInit()) {
+      throw GrpcError.invalidArgument('PlayStream: first message must be PlayStreamInit');
+    }
+    final init = first.init;
+    final audioOut = _fromManager(init.name);
+
+    Stream<Uint8List> chunks() async* {
+      while (await iter.moveNext()) {
+        final msg = iter.current;
+        if (msg.hasAudioChunk()) {
+          final bytes = msg.audioChunk.audioData;
+          yield bytes is Uint8List ? bytes : Uint8List.fromList(bytes);
+        }
+      }
+    }
+
+    return audioOut.playStream(
+      audioInfo: init.audioInfo,
+      audioStream: chunks(),
+      extra: init.hasExtra() ? init.extra.toMap() : null,
     );
   }
 
