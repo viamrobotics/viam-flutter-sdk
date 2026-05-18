@@ -145,7 +145,10 @@
 
 </dt>
 <dd>
-  
+  MoveOptions specifies kinematic constraints for an arm motion. All fields
+are optional ceilings; any combination may be set. Every constraint that
+is set is respected at every point along the executed trajectory.
+The limiting constraint may change throughout execution.
 </dd>
 
           <dt id="MoveThroughJointPositionsRequest">

@@ -60,6 +60,8 @@
 <li><span class="parameter" id="-param-status"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">status</span>, </span></li>
 <li><span class="parameter" id="-param-dueDate"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">dueDate</span>, </span></li>
 <li><span class="parameter" id="-param-paidDate"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">paidDate</span>, </span></li>
+<li><span class="parameter" id="-param-lastPaymentFailureReason"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">lastPaymentFailureReason</span>, </span></li>
+<li><span class="parameter" id="-param-lastPaymentFailureAt"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastPaymentFailureAt</span>, </span></li>
 </ol>})
     </section>
     
@@ -75,6 +77,8 @@
   $core.String? status,
   $50.Timestamp? dueDate,
   $50.Timestamp? paidDate,
+  $core.String? lastPaymentFailureReason,
+  $50.Timestamp? lastPaymentFailureAt,
 }) {
   final $result = create();
   if (id != null) {
@@ -94,6 +98,12 @@
   }
   if (paidDate != null) {
     $result.paidDate = paidDate;
+  }
+  if (lastPaymentFailureReason != null) {
+    $result.lastPaymentFailureReason = lastPaymentFailureReason;
+  }
+  if (lastPaymentFailureAt != null) {
+    $result.lastPaymentFailureAt = lastPaymentFailureAt;
   }
   return $result;
 }</code></pre>

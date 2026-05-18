@@ -56,7 +56,7 @@
       
       <span class="name ">StreamTransformChangesResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-changeType"><span class="type-annotation"><a href="../../viam_protos.service.world_state_store/TransformChangeType-class.html">TransformChangeType</a>?</span> <span class="parameter-name">changeType</span>, </span></li>
 <li><span class="parameter" id="-param-transform"><span class="type-annotation"><a href="../../viam_protos.common.common/Transform-class.html">Transform</a>?</span> <span class="parameter-name">transform</span>, </span></li>
-<li><span class="parameter" id="-param-updatedFields"><span class="type-annotation">dynamic</span> <span class="parameter-name">updatedFields</span>, </span></li>
+<li><span class="parameter" id="-param-updatedFields"><span class="type-annotation">FieldMask?</span> <span class="parameter-name">updatedFields</span>, </span></li>
 </ol>})
     </section>
     
@@ -68,7 +68,7 @@
   <pre class="language-dart"><code class="language-dart">factory StreamTransformChangesResponse({
   TransformChangeType? changeType,
   $9.Transform? transform,
-  $56.FieldMask? updatedFields,
+  $52.FieldMask? updatedFields,
 }) {
   final $result = create();
   if (changeType != null) {

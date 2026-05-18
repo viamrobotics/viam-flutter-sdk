@@ -53,6 +53,12 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>MoveOptions specifies kinematic constraints for an arm motion. All fields
+are optional ceilings; any combination may be set. Every constraint that
+is set is respected at every point along the executed trajectory.
+The limiting constraint may change throughout execution.</p>
+</section>
 
 
     <section>
@@ -87,7 +93,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="MoveOptions.new" class="callable">
-          <span class="name"><a href="../viam_protos.component.arm/MoveOptions/MoveOptions.html">MoveOptions</a></span><span class="signature">({<span class="parameter" id="-param-maxVelDegsPerSec"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxVelDegsPerSec</span>, </span><span class="parameter" id="-param-maxAccDegsPerSec2"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxAccDegsPerSec2</span>, </span><span class="parameter" id="-param-maxVelDegsPerSecJoints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">maxVelDegsPerSecJoints</span>, </span><span class="parameter" id="-param-maxAccDegsPerSec2Joints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">maxAccDegsPerSec2Joints</span></span>})</span>
+          <span class="name"><a href="../viam_protos.component.arm/MoveOptions/MoveOptions.html">MoveOptions</a></span><span class="signature">({<span class="parameter" id="-param-maxVelDegsPerSec"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxVelDegsPerSec</span>, </span><span class="parameter" id="-param-maxAccDegsPerSec2"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxAccDegsPerSec2</span>, </span><span class="parameter" id="-param-maxVelDegsPerSecJoints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">maxVelDegsPerSecJoints</span>, </span><span class="parameter" id="-param-maxAccDegsPerSec2Joints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">maxAccDegsPerSec2Joints</span>, </span><span class="parameter" id="-param-maxTcpSpeed"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxTcpSpeed</span></span>})</span>
         </dt>
         <dd>
           
@@ -172,6 +178,7 @@ to protobuf fields.
 </dt>
 <dd>
   Maximum allowable acceleration of an arm joint, in degrees per second squared.
+The arm driver will accelerate as fast as possible up to the set value.
 ignored when max_acc_degs_per_sec2_joints is set.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
@@ -185,7 +192,21 @@ ignored when max_acc_degs_per_sec2_joints is set.
 </dt>
 <dd>
   Per-joint maximum acceleration in degrees per second squared.
+The arm driver will accelerate each joint as fast as possible up to its respective set value.
   <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="maxTcpSpeed" class="property">
+  <span class="name"><a href="../viam_protos.component.arm/MoveOptions/maxTcpSpeed.html">maxTcpSpeed</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
+  
+
+</dt>
+<dd>
+  Maximum allowable speed of an arm's tool center point in meters per second.
+The arm driver will move the tool center point as fast as possible up to this set value.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -197,6 +218,7 @@ ignored when max_acc_degs_per_sec2_joints is set.
 </dt>
 <dd>
   Maximum allowable velocity of an arm joint, in degrees per second.
+The arm driver will move as fast as possible up to the set value.
 Ignored when max_vel_degs_per_sec_joints is set.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
@@ -210,6 +232,7 @@ Ignored when max_vel_degs_per_sec_joints is set.
 </dt>
 <dd>
   Per-joint maximum velocity in degrees per second.
+The arm driver will move each joint as fast as possible up to its respective set value.
   <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
@@ -314,6 +337,19 @@ Ignored when max_vel_degs_per_sec_joints is set.
 
         <dt id="clearMaxAccDegsPerSec2" class="callable">
   <span class="name"><a href="../viam_protos.component.arm/MoveOptions/clearMaxAccDegsPerSec2.html">clearMaxAccDegsPerSec2</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearMaxTcpSpeed" class="callable">
+  <span class="name"><a href="../viam_protos.component.arm/MoveOptions/clearMaxTcpSpeed.html">clearMaxTcpSpeed</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -541,6 +577,19 @@ default value if it is not set.
 
         <dt id="hasMaxAccDegsPerSec2" class="callable">
   <span class="name"><a href="../viam_protos.component.arm/MoveOptions/hasMaxAccDegsPerSec2.html">hasMaxAccDegsPerSec2</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasMaxTcpSpeed" class="callable">
+  <span class="name"><a href="../viam_protos.component.arm/MoveOptions/hasMaxTcpSpeed.html">hasMaxTcpSpeed</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   
