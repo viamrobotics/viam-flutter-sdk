@@ -5958,6 +5958,156 @@ class MockDataServiceClient extends _i1.Mock implements _i14.DataServiceClient {
           ) as _i4.ResponseFuture<_i15.CreateBinaryDataSignedURLResponse>);
 
   @override
+  _i4.ResponseFuture<_i15.CreateSequenceResponse> createSequence(
+    _i15.CreateSequenceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #createSequence,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.CreateSequenceResponse>(
+          this,
+          Invocation.method(
+            #createSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.CreateSequenceResponse>(
+          this,
+          Invocation.method(
+            #createSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.CreateSequenceResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.GetSequenceResponse> getSequence(
+    _i15.GetSequenceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSequence,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.GetSequenceResponse>(
+          this,
+          Invocation.method(
+            #getSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.GetSequenceResponse>(
+          this,
+          Invocation.method(
+            #getSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.GetSequenceResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.UpdateSequenceResponse> updateSequence(
+    _i15.UpdateSequenceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateSequence,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.UpdateSequenceResponse>(
+          this,
+          Invocation.method(
+            #updateSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.UpdateSequenceResponse>(
+          this,
+          Invocation.method(
+            #updateSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.UpdateSequenceResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.DeleteSequenceResponse> deleteSequence(
+    _i15.DeleteSequenceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteSequence,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.DeleteSequenceResponse>(
+          this,
+          Invocation.method(
+            #deleteSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.DeleteSequenceResponse>(
+          this,
+          Invocation.method(
+            #deleteSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.DeleteSequenceResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.ListSequencesResponse> listSequences(
+    _i15.ListSequencesRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #listSequences,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.ListSequencesResponse>(
+          this,
+          Invocation.method(
+            #listSequences,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.ListSequencesResponse>(
+          this,
+          Invocation.method(
+            #listSequences,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.ListSequencesResponse>);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {

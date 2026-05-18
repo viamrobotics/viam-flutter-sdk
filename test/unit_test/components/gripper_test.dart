@@ -269,7 +269,7 @@ void main() {
             ..name = name
             ..values.addAll(values),
         );
-        expect(gripper.goToInputsValues, values)
+        expect(gripper.goToInputsValues, values);
       });
 
       test('doCommand', () async {

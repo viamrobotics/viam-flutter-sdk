@@ -21,6 +21,7 @@ buf:
 	buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/struct.proto
 	buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/timestamp.proto
 	buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/wrappers.proto
+	buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/field_mask.proto
 	buf generate buf.build/grpc/grpc --path grpc/reflection/v1/reflection.proto
 	# There's a bug in dart protoc where it doesn't understand that `call` is already taken
 	$(SED) 's/yield\* call(call, await request);/yield\* this\.call(call, await request);/g' ./lib/src/gen/proto/rpc/webrtc/v1/signaling.pbgrpc.dart
