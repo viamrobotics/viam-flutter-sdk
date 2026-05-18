@@ -42,6 +42,14 @@ class GripperServiceClient extends $grpc.Client {
       '/viam.component.gripper.v1.GripperService/IsHoldingSomething',
       ($25.IsHoldingSomethingRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $25.IsHoldingSomethingResponse.fromBuffer(value));
+  static final _$getCurrentInputs = $grpc.ClientMethod<$25.GetCurrentInputsRequest, $25.GetCurrentInputsResponse>(
+      '/viam.component.gripper.v1.GripperService/GetCurrentInputs',
+      ($25.GetCurrentInputsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $25.GetCurrentInputsResponse.fromBuffer(value));
+  static final _$goToInputs = $grpc.ClientMethod<$25.GoToInputsRequest, $25.GoToInputsResponse>(
+      '/viam.component.gripper.v1.GripperService/GoToInputs',
+      ($25.GoToInputsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $25.GoToInputsResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.component.gripper.v1.GripperService/DoCommand',
       ($9.DoCommandRequest value) => value.writeToBuffer(),
@@ -83,6 +91,14 @@ class GripperServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$25.IsHoldingSomethingResponse> isHoldingSomething($25.IsHoldingSomethingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$isHoldingSomething, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$25.GetCurrentInputsResponse> getCurrentInputs($25.GetCurrentInputsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getCurrentInputs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$25.GoToInputsResponse> goToInputs($25.GoToInputsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$goToInputs, request, options: options);
   }
 
   $grpc.ResponseFuture<$9.DoCommandResponse> doCommand($9.DoCommandRequest request, {$grpc.CallOptions? options}) {
@@ -142,6 +158,20 @@ abstract class GripperServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $25.IsHoldingSomethingRequest.fromBuffer(value),
         ($25.IsHoldingSomethingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$25.GetCurrentInputsRequest, $25.GetCurrentInputsResponse>(
+        'GetCurrentInputs',
+        getCurrentInputs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $25.GetCurrentInputsRequest.fromBuffer(value),
+        ($25.GetCurrentInputsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$25.GoToInputsRequest, $25.GoToInputsResponse>(
+        'GoToInputs',
+        goToInputs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $25.GoToInputsRequest.fromBuffer(value),
+        ($25.GoToInputsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -192,6 +222,14 @@ abstract class GripperServiceBase extends $grpc.Service {
     return isHoldingSomething(call, await request);
   }
 
+  $async.Future<$25.GetCurrentInputsResponse> getCurrentInputs_Pre($grpc.ServiceCall call, $async.Future<$25.GetCurrentInputsRequest> request) async {
+    return getCurrentInputs(call, await request);
+  }
+
+  $async.Future<$25.GoToInputsResponse> goToInputs_Pre($grpc.ServiceCall call, $async.Future<$25.GoToInputsRequest> request) async {
+    return goToInputs(call, await request);
+  }
+
   $async.Future<$9.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$9.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
@@ -213,6 +251,8 @@ abstract class GripperServiceBase extends $grpc.Service {
   $async.Future<$25.StopResponse> stop($grpc.ServiceCall call, $25.StopRequest request);
   $async.Future<$25.IsMovingResponse> isMoving($grpc.ServiceCall call, $25.IsMovingRequest request);
   $async.Future<$25.IsHoldingSomethingResponse> isHoldingSomething($grpc.ServiceCall call, $25.IsHoldingSomethingRequest request);
+  $async.Future<$25.GetCurrentInputsResponse> getCurrentInputs($grpc.ServiceCall call, $25.GetCurrentInputsRequest request);
+  $async.Future<$25.GoToInputsResponse> goToInputs($grpc.ServiceCall call, $25.GoToInputsRequest request);
   $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
   $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
   $async.Future<$9.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $9.GetGeometriesRequest request);

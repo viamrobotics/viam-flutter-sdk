@@ -17,14 +17,14 @@ import '../../common/v1/common.pb.dart' as $9;
 import '../../google/protobuf/duration.pb.dart' as $48;
 import '../../google/protobuf/struct.pb.dart' as $49;
 import '../../google/protobuf/timestamp.pb.dart' as $50;
-import '../../opentelemetry/proto/trace/v1/trace.pb.dart' as $55;
+import '../../opentelemetry/proto/trace/v1/trace.pb.dart' as $56;
 import 'robot.pbenum.dart';
 
 export 'robot.pbenum.dart';
 
 class SendTracesRequest extends $pb.GeneratedMessage {
   factory SendTracesRequest({
-    $core.Iterable<$55.ResourceSpans>? resourceSpans,
+    $core.Iterable<$56.ResourceSpans>? resourceSpans,
   }) {
     final $result = create();
     if (resourceSpans != null) {
@@ -37,7 +37,7 @@ class SendTracesRequest extends $pb.GeneratedMessage {
   factory SendTracesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendTracesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
-    ..pc<$55.ResourceSpans>(1, _omitFieldNames ? '' : 'resourceSpans', $pb.PbFieldType.PM, subBuilder: $55.ResourceSpans.create)
+    ..pc<$56.ResourceSpans>(1, _omitFieldNames ? '' : 'resourceSpans', $pb.PbFieldType.PM, subBuilder: $56.ResourceSpans.create)
     ..hasRequiredFields = false
   ;
 
@@ -63,7 +63,7 @@ class SendTracesRequest extends $pb.GeneratedMessage {
   static SendTracesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$55.ResourceSpans> get resourceSpans => $_getList(0);
+  $core.List<$56.ResourceSpans> get resourceSpans => $_getList(0);
 }
 
 class SendTracesResponse extends $pb.GeneratedMessage {

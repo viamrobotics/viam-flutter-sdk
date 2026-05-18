@@ -518,6 +518,19 @@ final $typed_data.Uint8List get3DModelsResponseDescriptor = $convert.base64Decod
     'CgNrZXkYASABKAlSA2tleRIqCgV2YWx1ZRgCIAEoCzIULnZpYW0uY29tbW9uLnYxLk1lc2hSBX'
     'ZhbHVlOgI4AQ==');
 
+@$core.Deprecated('Use getWorldPoseResponseDescriptor instead')
+const GetWorldPoseResponse$json = {
+  '1': 'GetWorldPoseResponse',
+  '2': [
+    {'1': 'pose', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'pose'},
+  ],
+};
+
+/// Descriptor for `GetWorldPoseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getWorldPoseResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRXb3JsZFBvc2VSZXNwb25zZRIoCgRwb3NlGAEgASgLMhQudmlhbS5jb21tb24udjEuUG'
+    '9zZVIEcG9zZQ==');
+
 @$core.Deprecated('Use getReadingsRequestDescriptor instead')
 const GetReadingsRequest$json = {
   '1': 'GetReadingsRequest',
