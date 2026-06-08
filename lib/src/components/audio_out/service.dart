@@ -78,11 +78,6 @@ class AudioOutService extends AudioOutServiceBase {
   }
 
   @override
-  Future<PlayStreamResponse> playStream(ServiceCall call, Stream<PlayStreamRequest> request) {
-    throw UnimplementedError();
-  }
-
-  @override
   Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
     throw UnimplementedError();
   }
