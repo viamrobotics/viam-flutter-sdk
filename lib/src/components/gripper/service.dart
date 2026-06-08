@@ -35,6 +35,20 @@ class GripperService extends GripperServiceBase {
   }
 
   @override
+  Future<GetCurrentInputsResponse> getCurrentInputs(ServiceCall call, GetCurrentInputsRequest request) async {
+    final gripper = _fromManager(request.name);
+    final values = await gripper.getCurrentInputs(extra: request.extra.toMap());
+    return GetCurrentInputsResponse()..values.addAll(values);
+  }
+
+  @override
+  Future<GoToInputsResponse> goToInputs(ServiceCall call, GoToInputsRequest request) async {
+    final gripper = _fromManager(request.name);
+    await gripper.goToInputs(request.values, extra: request.extra.toMap());
+    return GoToInputsResponse();
+  }
+
+  @override
   Future<GrabResponse> grab(ServiceCall call, GrabRequest request) async {
     final gripper = _fromManager(request.name);
     await gripper.grab(extra: request.extra.toMap());

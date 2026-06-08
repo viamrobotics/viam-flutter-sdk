@@ -85,4 +85,22 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
     final response = await client.isHoldingSomething(request, options: callOptions);
     return HoldingStatus.fromProto(response);
   }
+
+  @override
+  Future<List<double>> getCurrentInputs({Map<String, dynamic>? extra}) async {
+    final request = GetCurrentInputsRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getCurrentInputs(request, options: callOptions);
+    return response.values;
+  }
+
+  @override
+  Future<void> goToInputs(List<double> values, {Map<String, dynamic>? extra}) async {
+    final request = GoToInputsRequest()
+      ..name = name
+      ..values.addAll(values)
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.goToInputs(request, options: callOptions);
+  }
 }

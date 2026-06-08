@@ -64,6 +64,12 @@ abstract class Gripper extends Resource {
   /// Whether the [Gripper] is currently holding onto an object.
   Future<HoldingStatus> isHoldingSomething({Map<String, dynamic>? extra});
 
+  /// Get the current position of the [Gripper] as a list of joint values.
+  Future<List<double>> getCurrentInputs({Map<String, dynamic>? extra});
+
+  /// Move the [Gripper] to the specified joint [values].
+  Future<void> goToInputs(List<double> values, {Map<String, dynamic>? extra});
+
   /// Get the kinematics data associated with the [Gripper]
   ///
   /// ```

@@ -41,12 +41,14 @@ const StartBuildRequest$json = {
     {'1': 'token', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'token', '17': true},
     {'1': 'workdir', '3': 7, '4': 1, '5': 9, '9': 2, '10': 'workdir', '17': true},
     {'1': 'distro', '3': 8, '4': 1, '5': 9, '9': 3, '10': 'distro', '17': true},
+    {'1': 'builder', '3': 9, '4': 1, '5': 9, '9': 4, '10': 'builder', '17': true},
   ],
   '8': [
     {'1': '_ref'},
     {'1': '_token'},
     {'1': '_workdir'},
     {'1': '_distro'},
+    {'1': '_builder'},
   ],
 };
 
@@ -56,20 +58,26 @@ final $typed_data.Uint8List startBuildRequestDescriptor = $convert.base64Decode(
     'NyZWaIAQESHAoJcGxhdGZvcm1zGAMgAygJUglwbGF0Zm9ybXMSGwoJbW9kdWxlX2lkGAQgASgJ'
     'Ughtb2R1bGVJZBIlCg5tb2R1bGVfdmVyc2lvbhgFIAEoCVINbW9kdWxlVmVyc2lvbhIZCgV0b2'
     'tlbhgGIAEoCUgBUgV0b2tlbogBARIdCgd3b3JrZGlyGAcgASgJSAJSB3dvcmtkaXKIAQESGwoG'
-    'ZGlzdHJvGAggASgJSANSBmRpc3Ryb4gBAUIGCgRfcmVmQggKBl90b2tlbkIKCghfd29ya2Rpck'
-    'IJCgdfZGlzdHJv');
+    'ZGlzdHJvGAggASgJSANSBmRpc3Ryb4gBARIdCgdidWlsZGVyGAkgASgJSARSB2J1aWxkZXKIAQ'
+    'FCBgoEX3JlZkIICgZfdG9rZW5CCgoIX3dvcmtkaXJCCQoHX2Rpc3Ryb0IKCghfYnVpbGRlcg==');
 
 @$core.Deprecated('Use startBuildResponseDescriptor instead')
 const StartBuildResponse$json = {
   '1': 'StartBuildResponse',
   '2': [
     {'1': 'build_id', '3': 1, '4': 1, '5': 9, '10': 'buildId'},
+    {'1': 'builder_fallback_message', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'builderFallbackMessage', '17': true},
+  ],
+  '8': [
+    {'1': '_builder_fallback_message'},
   ],
 };
 
 /// Descriptor for `StartBuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List startBuildResponseDescriptor = $convert.base64Decode(
-    'ChJTdGFydEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aWxkSWQ=');
+    'ChJTdGFydEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aWxkSWQSPQoYYnVpbG'
+    'Rlcl9mYWxsYmFja19tZXNzYWdlGAIgASgJSABSFmJ1aWxkZXJGYWxsYmFja01lc3NhZ2WIAQFC'
+    'GwoZX2J1aWxkZXJfZmFsbGJhY2tfbWVzc2FnZQ==');
 
 @$core.Deprecated('Use getLogsRequestDescriptor instead')
 const GetLogsRequest$json = {

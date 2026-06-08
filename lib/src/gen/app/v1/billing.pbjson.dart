@@ -128,6 +128,8 @@ const InvoiceSummary$json = {
     {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
     {'1': 'due_date', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'dueDate'},
     {'1': 'paid_date', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'paidDate'},
+    {'1': 'last_payment_failure_reason', '3': 7, '4': 1, '5': 9, '10': 'lastPaymentFailureReason'},
+    {'1': 'last_payment_failure_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastPaymentFailureAt'},
   ],
 };
 
@@ -137,7 +139,10 @@ final $typed_data.Uint8List invoiceSummaryDescriptor = $convert.base64Decode(
     'ouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILaW52b2ljZURhdGUSJQoOaW52b2ljZV9hbW91'
     'bnQYAyABKAFSDWludm9pY2VBbW91bnQSFgoGc3RhdHVzGAQgASgJUgZzdGF0dXMSNQoIZHVlX2'
     'RhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgdkdWVEYXRlEjcKCXBhaWRf'
-    'ZGF0ZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCHBhaWREYXRl');
+    'ZGF0ZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCHBhaWREYXRlEj0KG2xhc3'
+    'RfcGF5bWVudF9mYWlsdXJlX3JlYXNvbhgHIAEoCVIYbGFzdFBheW1lbnRGYWlsdXJlUmVhc29u'
+    'ElEKF2xhc3RfcGF5bWVudF9mYWlsdXJlX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcFIUbGFzdFBheW1lbnRGYWlsdXJlQXQ=');
 
 @$core.Deprecated('Use paymentMethodCardDescriptor instead')
 const PaymentMethodCard$json = {

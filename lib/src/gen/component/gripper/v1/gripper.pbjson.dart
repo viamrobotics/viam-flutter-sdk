@@ -140,3 +140,53 @@ final $typed_data.Uint8List isHoldingSomethingResponseDescriptor = $convert.base
     'EoCFISaXNIb2xkaW5nU29tZXRoaW5nEisKBG1ldGEYYyABKAsyFy5nb29nbGUucHJvdG9idWYu'
     'U3RydWN0UgRtZXRh');
 
+@$core.Deprecated('Use getCurrentInputsRequestDescriptor instead')
+const GetCurrentInputsRequest$json = {
+  '1': 'GetCurrentInputsRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetCurrentInputsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCurrentInputsRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRDdXJyZW50SW5wdXRzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGG'
+    'MgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+
+@$core.Deprecated('Use getCurrentInputsResponseDescriptor instead')
+const GetCurrentInputsResponse$json = {
+  '1': 'GetCurrentInputsResponse',
+  '2': [
+    {'1': 'values', '3': 1, '4': 3, '5': 1, '10': 'values'},
+  ],
+};
+
+/// Descriptor for `GetCurrentInputsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCurrentInputsResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRDdXJyZW50SW5wdXRzUmVzcG9uc2USFgoGdmFsdWVzGAEgAygBUgZ2YWx1ZXM=');
+
+@$core.Deprecated('Use goToInputsRequestDescriptor instead')
+const GoToInputsRequest$json = {
+  '1': 'GoToInputsRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'values', '3': 2, '4': 3, '5': 1, '10': 'values'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GoToInputsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List goToInputsRequestDescriptor = $convert.base64Decode(
+    'ChFHb1RvSW5wdXRzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEhYKBnZhbHVlcxgCIAMoAV'
+    'IGdmFsdWVzEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+
+@$core.Deprecated('Use goToInputsResponseDescriptor instead')
+const GoToInputsResponse$json = {
+  '1': 'GoToInputsResponse',
+};
+
+/// Descriptor for `GoToInputsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List goToInputsResponseDescriptor = $convert.base64Decode(
+    'ChJHb1RvSW5wdXRzUmVzcG9uc2U=');
+

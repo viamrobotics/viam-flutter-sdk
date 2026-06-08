@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/any.pb.dart' as $51;
+import '../../../google/protobuf/field_mask.pb.dart' as $52;
 import '../../../google/protobuf/struct.pb.dart' as $49;
 import '../../../google/protobuf/timestamp.pb.dart' as $50;
 import 'data.pbenum.dart';
@@ -6054,6 +6055,835 @@ class CreateBinaryDataSignedURLResponse extends $pb.GeneratedMessage {
   void clearExpiresAt() => clearField(2);
   @$pb.TagNumber(2)
   $50.Timestamp ensureExpiresAt() => $_ensure(1);
+}
+
+/// SequenceResourceFilter filters binary and/or tabular data by source identifiers.
+class SequenceResourceFilter extends $pb.GeneratedMessage {
+  factory SequenceResourceFilter({
+    $core.String? resourceName,
+    $core.String? methodName,
+  }) {
+    final $result = create();
+    if (resourceName != null) {
+      $result.resourceName = resourceName;
+    }
+    if (methodName != null) {
+      $result.methodName = methodName;
+    }
+    return $result;
+  }
+  SequenceResourceFilter._() : super();
+  factory SequenceResourceFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SequenceResourceFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SequenceResourceFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(2, _omitFieldNames ? '' : 'resourceName')
+    ..aOS(3, _omitFieldNames ? '' : 'methodName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SequenceResourceFilter clone() => SequenceResourceFilter()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SequenceResourceFilter copyWith(void Function(SequenceResourceFilter) updates) => super.copyWith((message) => updates(message as SequenceResourceFilter)) as SequenceResourceFilter;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SequenceResourceFilter create() => SequenceResourceFilter._();
+  SequenceResourceFilter createEmptyInstance() => create();
+  static $pb.PbList<SequenceResourceFilter> createRepeated() => $pb.PbList<SequenceResourceFilter>();
+  @$core.pragma('dart2js:noInline')
+  static SequenceResourceFilter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SequenceResourceFilter>(create);
+  static SequenceResourceFilter? _defaultInstance;
+
+  @$pb.TagNumber(2)
+  $core.String get resourceName => $_getSZ(0);
+  @$pb.TagNumber(2)
+  set resourceName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResourceName() => $_has(0);
+  @$pb.TagNumber(2)
+  void clearResourceName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get methodName => $_getSZ(1);
+  @$pb.TagNumber(3)
+  set methodName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMethodName() => $_has(1);
+  @$pb.TagNumber(3)
+  void clearMethodName() => clearField(3);
+}
+
+class Sequence extends $pb.GeneratedMessage {
+  factory Sequence({
+    $core.String? id,
+    $core.Iterable<$core.String>? sequenceTags,
+    $50.Timestamp? createdAt,
+    $50.Timestamp? updatedAt,
+    $50.Timestamp? startTime,
+    $50.Timestamp? endTime,
+    $core.Iterable<SequenceResourceFilter>? resources,
+    $core.String? partId,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (sequenceTags != null) {
+      $result.sequenceTags.addAll(sequenceTags);
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    return $result;
+  }
+  Sequence._() : super();
+  factory Sequence.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Sequence.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Sequence', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..pPS(3, _omitFieldNames ? '' : 'sequenceTags')
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'createdAt', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'updatedAt', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'startTime', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(7, _omitFieldNames ? '' : 'endTime', subBuilder: $50.Timestamp.create)
+    ..pc<SequenceResourceFilter>(8, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: SequenceResourceFilter.create)
+    ..aOS(9, _omitFieldNames ? '' : 'partId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Sequence clone() => Sequence()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Sequence copyWith(void Function(Sequence) updates) => super.copyWith((message) => updates(message as Sequence)) as Sequence;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Sequence create() => Sequence._();
+  Sequence createEmptyInstance() => create();
+  static $pb.PbList<Sequence> createRepeated() => $pb.PbList<Sequence>();
+  @$core.pragma('dart2js:noInline')
+  static Sequence getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Sequence>(create);
+  static Sequence? _defaultInstance;
+
+  /// Metadata associated with the sequence.
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get sequenceTags => $_getList(1);
+
+  @$pb.TagNumber(4)
+  $50.Timestamp get createdAt => $_getN(2);
+  @$pb.TagNumber(4)
+  set createdAt($50.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCreatedAt() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearCreatedAt() => clearField(4);
+  @$pb.TagNumber(4)
+  $50.Timestamp ensureCreatedAt() => $_ensure(2);
+
+  @$pb.TagNumber(5)
+  $50.Timestamp get updatedAt => $_getN(3);
+  @$pb.TagNumber(5)
+  set updatedAt($50.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUpdatedAt() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearUpdatedAt() => clearField(5);
+  @$pb.TagNumber(5)
+  $50.Timestamp ensureUpdatedAt() => $_ensure(3);
+
+  /// The time range the sequence applies to.
+  @$pb.TagNumber(6)
+  $50.Timestamp get startTime => $_getN(4);
+  @$pb.TagNumber(6)
+  set startTime($50.Timestamp v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasStartTime() => $_has(4);
+  @$pb.TagNumber(6)
+  void clearStartTime() => clearField(6);
+  @$pb.TagNumber(6)
+  $50.Timestamp ensureStartTime() => $_ensure(4);
+
+  @$pb.TagNumber(7)
+  $50.Timestamp get endTime => $_getN(5);
+  @$pb.TagNumber(7)
+  set endTime($50.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasEndTime() => $_has(5);
+  @$pb.TagNumber(7)
+  void clearEndTime() => clearField(7);
+  @$pb.TagNumber(7)
+  $50.Timestamp ensureEndTime() => $_ensure(5);
+
+  /// Resources whose data is associated with this sequence.
+  @$pb.TagNumber(8)
+  $core.List<SequenceResourceFilter> get resources => $_getList(6);
+
+  @$pb.TagNumber(9)
+  $core.String get partId => $_getSZ(7);
+  @$pb.TagNumber(9)
+  set partId($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPartId() => $_has(7);
+  @$pb.TagNumber(9)
+  void clearPartId() => clearField(9);
+}
+
+class CreateSequenceRequest extends $pb.GeneratedMessage {
+  factory CreateSequenceRequest({
+    $core.Iterable<SequenceResourceFilter>? resources,
+    $core.Iterable<$core.String>? sequenceTags,
+    $50.Timestamp? startTime,
+    $50.Timestamp? endTime,
+    $core.String? partId,
+  }) {
+    final $result = create();
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (sequenceTags != null) {
+      $result.sequenceTags.addAll(sequenceTags);
+    }
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    return $result;
+  }
+  CreateSequenceRequest._() : super();
+  factory CreateSequenceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSequenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSequenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<SequenceResourceFilter>(2, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: SequenceResourceFilter.create)
+    ..pPS(3, _omitFieldNames ? '' : 'sequenceTags')
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'startTime', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'endTime', subBuilder: $50.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'partId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSequenceRequest clone() => CreateSequenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSequenceRequest copyWith(void Function(CreateSequenceRequest) updates) => super.copyWith((message) => updates(message as CreateSequenceRequest)) as CreateSequenceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSequenceRequest create() => CreateSequenceRequest._();
+  CreateSequenceRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSequenceRequest> createRepeated() => $pb.PbList<CreateSequenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSequenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSequenceRequest>(create);
+  static CreateSequenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(2)
+  $core.List<SequenceResourceFilter> get resources => $_getList(0);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get sequenceTags => $_getList(1);
+
+  @$pb.TagNumber(4)
+  $50.Timestamp get startTime => $_getN(2);
+  @$pb.TagNumber(4)
+  set startTime($50.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStartTime() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearStartTime() => clearField(4);
+  @$pb.TagNumber(4)
+  $50.Timestamp ensureStartTime() => $_ensure(2);
+
+  @$pb.TagNumber(5)
+  $50.Timestamp get endTime => $_getN(3);
+  @$pb.TagNumber(5)
+  set endTime($50.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEndTime() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearEndTime() => clearField(5);
+  @$pb.TagNumber(5)
+  $50.Timestamp ensureEndTime() => $_ensure(3);
+
+  @$pb.TagNumber(6)
+  $core.String get partId => $_getSZ(4);
+  @$pb.TagNumber(6)
+  set partId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPartId() => $_has(4);
+  @$pb.TagNumber(6)
+  void clearPartId() => clearField(6);
+}
+
+class CreateSequenceResponse extends $pb.GeneratedMessage {
+  factory CreateSequenceResponse({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  CreateSequenceResponse._() : super();
+  factory CreateSequenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSequenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSequenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSequenceResponse clone() => CreateSequenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSequenceResponse copyWith(void Function(CreateSequenceResponse) updates) => super.copyWith((message) => updates(message as CreateSequenceResponse)) as CreateSequenceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSequenceResponse create() => CreateSequenceResponse._();
+  CreateSequenceResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateSequenceResponse> createRepeated() => $pb.PbList<CreateSequenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSequenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSequenceResponse>(create);
+  static CreateSequenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class GetSequenceRequest extends $pb.GeneratedMessage {
+  factory GetSequenceRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  GetSequenceRequest._() : super();
+  factory GetSequenceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSequenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSequenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSequenceRequest clone() => GetSequenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSequenceRequest copyWith(void Function(GetSequenceRequest) updates) => super.copyWith((message) => updates(message as GetSequenceRequest)) as GetSequenceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceRequest create() => GetSequenceRequest._();
+  GetSequenceRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSequenceRequest> createRepeated() => $pb.PbList<GetSequenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSequenceRequest>(create);
+  static GetSequenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class GetSequenceResponse extends $pb.GeneratedMessage {
+  factory GetSequenceResponse({
+    Sequence? sequence,
+  }) {
+    final $result = create();
+    if (sequence != null) {
+      $result.sequence = sequence;
+    }
+    return $result;
+  }
+  GetSequenceResponse._() : super();
+  factory GetSequenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSequenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSequenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Sequence>(1, _omitFieldNames ? '' : 'sequence', subBuilder: Sequence.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSequenceResponse clone() => GetSequenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSequenceResponse copyWith(void Function(GetSequenceResponse) updates) => super.copyWith((message) => updates(message as GetSequenceResponse)) as GetSequenceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceResponse create() => GetSequenceResponse._();
+  GetSequenceResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSequenceResponse> createRepeated() => $pb.PbList<GetSequenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSequenceResponse>(create);
+  static GetSequenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Sequence get sequence => $_getN(0);
+  @$pb.TagNumber(1)
+  set sequence(Sequence v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSequence() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSequence() => clearField(1);
+  @$pb.TagNumber(1)
+  Sequence ensureSequence() => $_ensure(0);
+}
+
+/// UpdateSequenceRequest updates the mutable fields of a sequence.
+/// Only fields listed in field_mask will be updated; others are left unchanged.
+/// Fields 2-5 are allowed fields for the field_mask.
+class UpdateSequenceRequest extends $pb.GeneratedMessage {
+  factory UpdateSequenceRequest({
+    $core.String? id,
+    $core.Iterable<SequenceResourceFilter>? resources,
+    $core.Iterable<$core.String>? sequenceTags,
+    $50.Timestamp? startTime,
+    $50.Timestamp? endTime,
+    $52.FieldMask? fieldMask,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (sequenceTags != null) {
+      $result.sequenceTags.addAll(sequenceTags);
+    }
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    if (fieldMask != null) {
+      $result.fieldMask = fieldMask;
+    }
+    return $result;
+  }
+  UpdateSequenceRequest._() : super();
+  factory UpdateSequenceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSequenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSequenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..pc<SequenceResourceFilter>(2, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: SequenceResourceFilter.create)
+    ..pPS(3, _omitFieldNames ? '' : 'sequenceTags')
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'startTime', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'endTime', subBuilder: $50.Timestamp.create)
+    ..aOM<$52.FieldMask>(6, _omitFieldNames ? '' : 'fieldMask', subBuilder: $52.FieldMask.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSequenceRequest clone() => UpdateSequenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSequenceRequest copyWith(void Function(UpdateSequenceRequest) updates) => super.copyWith((message) => updates(message as UpdateSequenceRequest)) as UpdateSequenceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSequenceRequest create() => UpdateSequenceRequest._();
+  UpdateSequenceRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateSequenceRequest> createRepeated() => $pb.PbList<UpdateSequenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSequenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSequenceRequest>(create);
+  static UpdateSequenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<SequenceResourceFilter> get resources => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get sequenceTags => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $50.Timestamp get startTime => $_getN(3);
+  @$pb.TagNumber(4)
+  set startTime($50.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStartTime() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStartTime() => clearField(4);
+  @$pb.TagNumber(4)
+  $50.Timestamp ensureStartTime() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $50.Timestamp get endTime => $_getN(4);
+  @$pb.TagNumber(5)
+  set endTime($50.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEndTime() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEndTime() => clearField(5);
+  @$pb.TagNumber(5)
+  $50.Timestamp ensureEndTime() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $52.FieldMask get fieldMask => $_getN(5);
+  @$pb.TagNumber(6)
+  set fieldMask($52.FieldMask v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasFieldMask() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFieldMask() => clearField(6);
+  @$pb.TagNumber(6)
+  $52.FieldMask ensureFieldMask() => $_ensure(5);
+}
+
+class UpdateSequenceResponse extends $pb.GeneratedMessage {
+  factory UpdateSequenceResponse() => create();
+  UpdateSequenceResponse._() : super();
+  factory UpdateSequenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSequenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSequenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSequenceResponse clone() => UpdateSequenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSequenceResponse copyWith(void Function(UpdateSequenceResponse) updates) => super.copyWith((message) => updates(message as UpdateSequenceResponse)) as UpdateSequenceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSequenceResponse create() => UpdateSequenceResponse._();
+  UpdateSequenceResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateSequenceResponse> createRepeated() => $pb.PbList<UpdateSequenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSequenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSequenceResponse>(create);
+  static UpdateSequenceResponse? _defaultInstance;
+}
+
+class DeleteSequenceRequest extends $pb.GeneratedMessage {
+  factory DeleteSequenceRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  DeleteSequenceRequest._() : super();
+  factory DeleteSequenceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteSequenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSequenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteSequenceRequest clone() => DeleteSequenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteSequenceRequest copyWith(void Function(DeleteSequenceRequest) updates) => super.copyWith((message) => updates(message as DeleteSequenceRequest)) as DeleteSequenceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSequenceRequest create() => DeleteSequenceRequest._();
+  DeleteSequenceRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteSequenceRequest> createRepeated() => $pb.PbList<DeleteSequenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSequenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSequenceRequest>(create);
+  static DeleteSequenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class DeleteSequenceResponse extends $pb.GeneratedMessage {
+  factory DeleteSequenceResponse() => create();
+  DeleteSequenceResponse._() : super();
+  factory DeleteSequenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteSequenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSequenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteSequenceResponse clone() => DeleteSequenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteSequenceResponse copyWith(void Function(DeleteSequenceResponse) updates) => super.copyWith((message) => updates(message as DeleteSequenceResponse)) as DeleteSequenceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSequenceResponse create() => DeleteSequenceResponse._();
+  DeleteSequenceResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteSequenceResponse> createRepeated() => $pb.PbList<DeleteSequenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSequenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSequenceResponse>(create);
+  static DeleteSequenceResponse? _defaultInstance;
+}
+
+class ListSequencesRequest extends $pb.GeneratedMessage {
+  factory ListSequencesRequest({
+    $core.String? organizationId,
+    $core.String? pageToken,
+    $core.int? pageSize,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    if (pageSize != null) {
+      $result.pageSize = pageSize;
+    }
+    return $result;
+  }
+  ListSequencesRequest._() : super();
+  factory ListSequencesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSequencesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSequencesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'pageToken')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSequencesRequest clone() => ListSequencesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSequencesRequest copyWith(void Function(ListSequencesRequest) updates) => super.copyWith((message) => updates(message as ListSequencesRequest)) as ListSequencesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSequencesRequest create() => ListSequencesRequest._();
+  ListSequencesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSequencesRequest> createRepeated() => $pb.PbList<ListSequencesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSequencesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSequencesRequest>(create);
+  static ListSequencesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get pageSize => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set pageSize($core.int v) { $_setUnsignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPageSize() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageSize() => clearField(3);
+}
+
+class ListSequencesResponse extends $pb.GeneratedMessage {
+  factory ListSequencesResponse({
+    $core.Iterable<Sequence>? sequences,
+    $core.String? nextPageToken,
+  }) {
+    final $result = create();
+    if (sequences != null) {
+      $result.sequences.addAll(sequences);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
+    }
+    return $result;
+  }
+  ListSequencesResponse._() : super();
+  factory ListSequencesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSequencesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSequencesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<Sequence>(1, _omitFieldNames ? '' : 'sequences', $pb.PbFieldType.PM, subBuilder: Sequence.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSequencesResponse clone() => ListSequencesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSequencesResponse copyWith(void Function(ListSequencesResponse) updates) => super.copyWith((message) => updates(message as ListSequencesResponse)) as ListSequencesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSequencesResponse create() => ListSequencesResponse._();
+  ListSequencesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSequencesResponse> createRepeated() => $pb.PbList<ListSequencesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSequencesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSequencesResponse>(create);
+  static ListSequencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Sequence> get sequences => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => clearField(2);
 }
 
 

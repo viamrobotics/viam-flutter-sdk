@@ -12,6 +12,7 @@ import '../../test_utils.dart';
 class FakeGripper extends Gripper {
   bool isOpen = false;
   bool isStopped = true;
+  List<double> goToInputsValues = [];
   Map<String, dynamic>? extra;
   Map<String, dynamic> statusResult = {'status': 'ok'};
 
@@ -65,6 +66,18 @@ class FakeGripper extends Gripper {
   Future<HoldingStatus> isHoldingSomething({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return HoldingStatus(true, {'foo': 'bar'});
+  }
+
+  @override
+  Future<List<double>> getCurrentInputs({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return [1.0, 2.0, 3.0];
+  }
+
+  @override
+  Future<void> goToInputs(List<double> values, {Map<String, dynamic>? extra}) async {
+    goToInputsValues = values;
+    this.extra = extra;
   }
 }
 
@@ -137,6 +150,17 @@ void main() {
       final response = await gripper.isHoldingSomething();
       expect(response.isHoldingSomething, true);
       expect(response.meta, {'foo': 'bar'});
+    });
+
+    test('getCurrentInputs', () async {
+      final values = await gripper.getCurrentInputs();
+      expect(values, [1.0, 2.0, 3.0]);
+    });
+
+    test('goToInputs', () async {
+      final values = [0.5, 1.0, 1.5];
+      await gripper.goToInputs(values);
+      expect(gripper.goToInputsValues, values);
     });
   });
 
@@ -223,6 +247,23 @@ void main() {
         expect(resp.meta.toMap(), {'foo': 'bar'});
       });
 
+      test('getCurrentInputs', () async {
+        final client = GripperServiceClient(channel);
+        final resp = await client.getCurrentInputs(GetCurrentInputsRequest()..name = name);
+        expect(resp.values, [1.0, 2.0, 3.0]);
+      });
+
+      test('goToInputs', () async {
+        final client = GripperServiceClient(channel);
+        final values = [0.5, 1.0, 1.5];
+        await client.goToInputs(
+          GoToInputsRequest()
+            ..name = name
+            ..values.addAll(values),
+        );
+        expect(gripper.goToInputsValues, values);
+      });
+
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
 
@@ -303,6 +344,19 @@ void main() {
         final kd = await client.getKinematics();
         expect(kd.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(kd.raw, [1, 2, 3]);
+      });
+
+      test('getCurrentInputs', () async {
+        final client = GripperClient(name, channel);
+        final values = await client.getCurrentInputs();
+        expect(values, [1.0, 2.0, 3.0]);
+      });
+
+      test('goToInputs', () async {
+        final client = GripperClient(name, channel);
+        final values = [0.5, 1.0, 1.5];
+        await client.goToInputs(values);
+        expect(gripper.goToInputsValues, values);
       });
 
       test('doCommand', () async {

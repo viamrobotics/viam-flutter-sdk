@@ -576,6 +576,228 @@ class IsHoldingSomethingResponse extends $pb.GeneratedMessage {
   $49.Struct ensureMeta() => $_ensure(1);
 }
 
+class GetCurrentInputsRequest extends $pb.GeneratedMessage {
+  factory GetCurrentInputsRequest({
+    $core.String? name,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GetCurrentInputsRequest._() : super();
+  factory GetCurrentInputsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCurrentInputsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentInputsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCurrentInputsRequest clone() => GetCurrentInputsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCurrentInputsRequest copyWith(void Function(GetCurrentInputsRequest) updates) => super.copyWith((message) => updates(message as GetCurrentInputsRequest)) as GetCurrentInputsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentInputsRequest create() => GetCurrentInputsRequest._();
+  GetCurrentInputsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetCurrentInputsRequest> createRepeated() => $pb.PbList<GetCurrentInputsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentInputsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCurrentInputsRequest>(create);
+  static GetCurrentInputsRequest? _defaultInstance;
+
+  /// Name of a gripper
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(1);
+}
+
+class GetCurrentInputsResponse extends $pb.GeneratedMessage {
+  factory GetCurrentInputsResponse({
+    $core.Iterable<$core.double>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
+  GetCurrentInputsResponse._() : super();
+  factory GetCurrentInputsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCurrentInputsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentInputsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..p<$core.double>(1, _omitFieldNames ? '' : 'values', $pb.PbFieldType.KD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCurrentInputsResponse clone() => GetCurrentInputsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCurrentInputsResponse copyWith(void Function(GetCurrentInputsResponse) updates) => super.copyWith((message) => updates(message as GetCurrentInputsResponse)) as GetCurrentInputsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentInputsResponse create() => GetCurrentInputsResponse._();
+  GetCurrentInputsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCurrentInputsResponse> createRepeated() => $pb.PbList<GetCurrentInputsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetCurrentInputsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCurrentInputsResponse>(create);
+  static GetCurrentInputsResponse? _defaultInstance;
+
+  /// The current input values of the gripper
+  @$pb.TagNumber(1)
+  $core.List<$core.double> get values => $_getList(0);
+}
+
+class GoToInputsRequest extends $pb.GeneratedMessage {
+  factory GoToInputsRequest({
+    $core.String? name,
+    $core.Iterable<$core.double>? values,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GoToInputsRequest._() : super();
+  factory GoToInputsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GoToInputsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GoToInputsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..p<$core.double>(2, _omitFieldNames ? '' : 'values', $pb.PbFieldType.KD)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GoToInputsRequest clone() => GoToInputsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GoToInputsRequest copyWith(void Function(GoToInputsRequest) updates) => super.copyWith((message) => updates(message as GoToInputsRequest)) as GoToInputsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GoToInputsRequest create() => GoToInputsRequest._();
+  GoToInputsRequest createEmptyInstance() => create();
+  static $pb.PbList<GoToInputsRequest> createRepeated() => $pb.PbList<GoToInputsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GoToInputsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GoToInputsRequest>(create);
+  static GoToInputsRequest? _defaultInstance;
+
+  /// Name of a gripper
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// The input values to move the gripper to
+  @$pb.TagNumber(2)
+  $core.List<$core.double> get values => $_getList(1);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(2);
+}
+
+class GoToInputsResponse extends $pb.GeneratedMessage {
+  factory GoToInputsResponse() => create();
+  GoToInputsResponse._() : super();
+  factory GoToInputsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GoToInputsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GoToInputsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GoToInputsResponse clone() => GoToInputsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GoToInputsResponse copyWith(void Function(GoToInputsResponse) updates) => super.copyWith((message) => updates(message as GoToInputsResponse)) as GoToInputsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GoToInputsResponse create() => GoToInputsResponse._();
+  GoToInputsResponse createEmptyInstance() => create();
+  static $pb.PbList<GoToInputsResponse> createRepeated() => $pb.PbList<GoToInputsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GoToInputsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GoToInputsResponse>(create);
+  static GoToInputsResponse? _defaultInstance;
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
