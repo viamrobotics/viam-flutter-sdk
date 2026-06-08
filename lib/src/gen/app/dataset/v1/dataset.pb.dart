@@ -14,6 +14,9 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $50;
+import 'dataset.pbenum.dart';
+
+export 'dataset.pbenum.dart';
 
 /// Dataset stores the metadata of a dataset.
 class Dataset extends $pb.GeneratedMessage {
@@ -22,6 +25,7 @@ class Dataset extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? organizationId,
     $50.Timestamp? timeCreated,
+    DatasetType? type,
   }) {
     final $result = create();
     if (id != null) {
@@ -36,6 +40,9 @@ class Dataset extends $pb.GeneratedMessage {
     if (timeCreated != null) {
       $result.timeCreated = timeCreated;
     }
+    if (type != null) {
+      $result.type = type;
+    }
     return $result;
   }
   Dataset._() : super();
@@ -47,6 +54,7 @@ class Dataset extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'organizationId')
     ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'timeCreated', subBuilder: $50.Timestamp.create)
+    ..e<DatasetType>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DatasetType.DATASET_TYPE_BINARY_DATA, valueOf: DatasetType.valueOf, enumValues: DatasetType.values)
     ..hasRequiredFields = false
   ;
 
@@ -108,6 +116,17 @@ class Dataset extends $pb.GeneratedMessage {
   void clearTimeCreated() => clearField(4);
   @$pb.TagNumber(4)
   $50.Timestamp ensureTimeCreated() => $_ensure(3);
+
+  /// type is the membership kind of this dataset. Immutable after creation; defaults to
+  /// DATASET_TYPE_BINARY_DATA when unset (including for pre-existing datasets).
+  @$pb.TagNumber(5)
+  DatasetType get type => $_getN(4);
+  @$pb.TagNumber(5)
+  set type(DatasetType v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearType() => clearField(5);
 }
 
 /// CreateDatasetRequest defines the name and organization ID of a dataset.
@@ -115,6 +134,7 @@ class CreateDatasetRequest extends $pb.GeneratedMessage {
   factory CreateDatasetRequest({
     $core.String? name,
     $core.String? organizationId,
+    DatasetType? type,
   }) {
     final $result = create();
     if (name != null) {
@@ -122,6 +142,9 @@ class CreateDatasetRequest extends $pb.GeneratedMessage {
     }
     if (organizationId != null) {
       $result.organizationId = organizationId;
+    }
+    if (type != null) {
+      $result.type = type;
     }
     return $result;
   }
@@ -132,6 +155,7 @@ class CreateDatasetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateDatasetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.dataset.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'organizationId')
+    ..e<DatasetType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DatasetType.DATASET_TYPE_BINARY_DATA, valueOf: DatasetType.valueOf, enumValues: DatasetType.values)
     ..hasRequiredFields = false
   ;
 
@@ -173,6 +197,16 @@ class CreateDatasetRequest extends $pb.GeneratedMessage {
   $core.bool hasOrganizationId() => $_has(1);
   @$pb.TagNumber(2)
   void clearOrganizationId() => clearField(2);
+
+  /// type is the membership kind for the new dataset. Defaults to DATASET_TYPE_BINARY_DATA when unset.
+  @$pb.TagNumber(3)
+  DatasetType get type => $_getN(2);
+  @$pb.TagNumber(3)
+  set type(DatasetType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearType() => clearField(3);
 }
 
 /// CreateDatasetResponse returns the dataset ID of the created dataset.
@@ -406,14 +440,19 @@ class RenameDatasetResponse extends $pb.GeneratedMessage {
   static RenameDatasetResponse? _defaultInstance;
 }
 
-/// ListDatasetsByOrganizationIDRequest requests all of the datasets for an organization.
+/// ListDatasetsByOrganizationIDRequest requests all of the datasets for an organization,
+/// optionally filtering on DatasetType
 class ListDatasetsByOrganizationIDRequest extends $pb.GeneratedMessage {
   factory ListDatasetsByOrganizationIDRequest({
     $core.String? organizationId,
+    DatasetType? type,
   }) {
     final $result = create();
     if (organizationId != null) {
       $result.organizationId = organizationId;
+    }
+    if (type != null) {
+      $result.type = type;
     }
     return $result;
   }
@@ -423,6 +462,7 @@ class ListDatasetsByOrganizationIDRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDatasetsByOrganizationIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.dataset.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..e<DatasetType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DatasetType.DATASET_TYPE_BINARY_DATA, valueOf: DatasetType.valueOf, enumValues: DatasetType.values)
     ..hasRequiredFields = false
   ;
 
@@ -455,6 +495,17 @@ class ListDatasetsByOrganizationIDRequest extends $pb.GeneratedMessage {
   $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(1)
   void clearOrganizationId() => clearField(1);
+
+  /// Optional DataseType to filter on.
+  /// If unset, will return all types.
+  @$pb.TagNumber(2)
+  DatasetType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(DatasetType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
 }
 
 /// ListDatasetsByOrganizationIDResponse returns all the dataset metadata for the organization.
@@ -714,6 +765,306 @@ class MergeDatasetsResponse extends $pb.GeneratedMessage {
   $core.bool hasDatasetId() => $_has(0);
   @$pb.TagNumber(1)
   void clearDatasetId() => clearField(1);
+}
+
+/// StartSequenceDatasetExportRequest specifies the sequence dataset to export.
+class StartSequenceDatasetExportRequest extends $pb.GeneratedMessage {
+  factory StartSequenceDatasetExportRequest({
+    $core.String? datasetId,
+  }) {
+    final $result = create();
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    return $result;
+  }
+  StartSequenceDatasetExportRequest._() : super();
+  factory StartSequenceDatasetExportRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StartSequenceDatasetExportRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartSequenceDatasetExportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.dataset.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'datasetId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StartSequenceDatasetExportRequest clone() => StartSequenceDatasetExportRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StartSequenceDatasetExportRequest copyWith(void Function(StartSequenceDatasetExportRequest) updates) => super.copyWith((message) => updates(message as StartSequenceDatasetExportRequest)) as StartSequenceDatasetExportRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartSequenceDatasetExportRequest create() => StartSequenceDatasetExportRequest._();
+  StartSequenceDatasetExportRequest createEmptyInstance() => create();
+  static $pb.PbList<StartSequenceDatasetExportRequest> createRepeated() => $pb.PbList<StartSequenceDatasetExportRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StartSequenceDatasetExportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartSequenceDatasetExportRequest>(create);
+  static StartSequenceDatasetExportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get datasetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set datasetId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDatasetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDatasetId() => clearField(1);
+}
+
+/// StartSequenceDatasetExportResponse returns the job_id to poll with
+class StartSequenceDatasetExportResponse extends $pb.GeneratedMessage {
+  factory StartSequenceDatasetExportResponse({
+    $core.String? jobId,
+  }) {
+    final $result = create();
+    if (jobId != null) {
+      $result.jobId = jobId;
+    }
+    return $result;
+  }
+  StartSequenceDatasetExportResponse._() : super();
+  factory StartSequenceDatasetExportResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StartSequenceDatasetExportResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartSequenceDatasetExportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.dataset.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'jobId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StartSequenceDatasetExportResponse clone() => StartSequenceDatasetExportResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StartSequenceDatasetExportResponse copyWith(void Function(StartSequenceDatasetExportResponse) updates) => super.copyWith((message) => updates(message as StartSequenceDatasetExportResponse)) as StartSequenceDatasetExportResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartSequenceDatasetExportResponse create() => StartSequenceDatasetExportResponse._();
+  StartSequenceDatasetExportResponse createEmptyInstance() => create();
+  static $pb.PbList<StartSequenceDatasetExportResponse> createRepeated() => $pb.PbList<StartSequenceDatasetExportResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StartSequenceDatasetExportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartSequenceDatasetExportResponse>(create);
+  static StartSequenceDatasetExportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get jobId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set jobId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasJobId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJobId() => clearField(1);
+}
+
+/// GetSequenceDatasetExportRequest looks up an export job by its job_id.
+class GetSequenceDatasetExportRequest extends $pb.GeneratedMessage {
+  factory GetSequenceDatasetExportRequest({
+    $core.String? jobId,
+  }) {
+    final $result = create();
+    if (jobId != null) {
+      $result.jobId = jobId;
+    }
+    return $result;
+  }
+  GetSequenceDatasetExportRequest._() : super();
+  factory GetSequenceDatasetExportRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSequenceDatasetExportRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSequenceDatasetExportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.dataset.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'jobId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSequenceDatasetExportRequest clone() => GetSequenceDatasetExportRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSequenceDatasetExportRequest copyWith(void Function(GetSequenceDatasetExportRequest) updates) => super.copyWith((message) => updates(message as GetSequenceDatasetExportRequest)) as GetSequenceDatasetExportRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceDatasetExportRequest create() => GetSequenceDatasetExportRequest._();
+  GetSequenceDatasetExportRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSequenceDatasetExportRequest> createRepeated() => $pb.PbList<GetSequenceDatasetExportRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceDatasetExportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSequenceDatasetExportRequest>(create);
+  static GetSequenceDatasetExportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get jobId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set jobId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasJobId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJobId() => clearField(1);
+}
+
+/// GetSequenceDatasetExportResponse reports the current status of an export
+/// job. download_url and expires_at are set only when status is COMPLETED;
+/// error_message is set only when status is FAILED.
+class GetSequenceDatasetExportResponse extends $pb.GeneratedMessage {
+  factory GetSequenceDatasetExportResponse({
+    $core.String? jobId,
+    SequenceDatasetExportStatus? status,
+    $core.String? downloadUrl,
+    $50.Timestamp? expiresAt,
+    $core.String? errorMessage,
+    $50.Timestamp? createdAt,
+    $50.Timestamp? completedAt,
+  }) {
+    final $result = create();
+    if (jobId != null) {
+      $result.jobId = jobId;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (downloadUrl != null) {
+      $result.downloadUrl = downloadUrl;
+    }
+    if (expiresAt != null) {
+      $result.expiresAt = expiresAt;
+    }
+    if (errorMessage != null) {
+      $result.errorMessage = errorMessage;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (completedAt != null) {
+      $result.completedAt = completedAt;
+    }
+    return $result;
+  }
+  GetSequenceDatasetExportResponse._() : super();
+  factory GetSequenceDatasetExportResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSequenceDatasetExportResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSequenceDatasetExportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.dataset.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'jobId')
+    ..e<SequenceDatasetExportStatus>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SequenceDatasetExportStatus.SEQUENCE_DATASET_EXPORT_STATUS_UNSPECIFIED, valueOf: SequenceDatasetExportStatus.valueOf, enumValues: SequenceDatasetExportStatus.values)
+    ..aOS(3, _omitFieldNames ? '' : 'downloadUrl')
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'expiresAt', subBuilder: $50.Timestamp.create)
+    ..aOS(5, _omitFieldNames ? '' : 'errorMessage')
+    ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'createdAt', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(7, _omitFieldNames ? '' : 'completedAt', subBuilder: $50.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSequenceDatasetExportResponse clone() => GetSequenceDatasetExportResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSequenceDatasetExportResponse copyWith(void Function(GetSequenceDatasetExportResponse) updates) => super.copyWith((message) => updates(message as GetSequenceDatasetExportResponse)) as GetSequenceDatasetExportResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceDatasetExportResponse create() => GetSequenceDatasetExportResponse._();
+  GetSequenceDatasetExportResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSequenceDatasetExportResponse> createRepeated() => $pb.PbList<GetSequenceDatasetExportResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceDatasetExportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSequenceDatasetExportResponse>(create);
+  static GetSequenceDatasetExportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get jobId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set jobId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasJobId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJobId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  SequenceDatasetExportStatus get status => $_getN(1);
+  @$pb.TagNumber(2)
+  set status(SequenceDatasetExportStatus v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => clearField(2);
+
+  /// Short-lived (e.g. 1h) signed URL for direct download from backing
+  /// storage. Empty unless status is COMPLETED.
+  @$pb.TagNumber(3)
+  $core.String get downloadUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set downloadUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDownloadUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDownloadUrl() => clearField(3);
+
+  /// When download_url stops working. Empty unless status is COMPLETED.
+  @$pb.TagNumber(4)
+  $50.Timestamp get expiresAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set expiresAt($50.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasExpiresAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpiresAt() => clearField(4);
+  @$pb.TagNumber(4)
+  $50.Timestamp ensureExpiresAt() => $_ensure(3);
+
+  /// Human-readable cause; empty unless status is FAILED.
+  @$pb.TagNumber(5)
+  $core.String get errorMessage => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set errorMessage($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasErrorMessage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearErrorMessage() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $50.Timestamp get createdAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set createdAt($50.Timestamp v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => clearField(6);
+  @$pb.TagNumber(6)
+  $50.Timestamp ensureCreatedAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $50.Timestamp get completedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set completedAt($50.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCompletedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCompletedAt() => clearField(7);
+  @$pb.TagNumber(7)
+  $50.Timestamp ensureCompletedAt() => $_ensure(6);
 }
 
 
