@@ -54,8 +54,9 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">StartReloadBuildRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-package"><span class="type-annotation"><a href="../../viam_protos.app.packages/CreatePackageRequest-class.html">CreatePackageRequest</a>?</span> <span class="parameter-name">package</span>, </span></li>
-<li><span class="parameter" id="-param-buildInfo"><span class="type-annotation"><a href="../../viam_protos.app.build/ReloadBuildInfo-class.html">ReloadBuildInfo</a>?</span> <span class="parameter-name">buildInfo</span>, </span></li>
+      <span class="name ">StartReloadBuildRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-package"><span class="type-annotation"><a href="../../viam_protos.app.packages/CreatePackageRequest-class.html">CreatePackageRequest</a>?</span> <span class="parameter-name">package</span>, </span></li>
+<li><span class="parameter" id="param-buildInfo"><span class="type-annotation"><a href="../../viam_protos.app.build/ReloadBuildInfo-class.html">ReloadBuildInfo</a>?</span> <span class="parameter-name">buildInfo</span>, </span></li>
+<li><span class="parameter" id="param-builder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">builder</span>, </span></li>
 </ol>})
     </section>
     
@@ -67,6 +68,7 @@
   <pre class="language-dart"><code class="language-dart">factory StartReloadBuildRequest({
   $1.CreatePackageRequest? package,
   ReloadBuildInfo? buildInfo,
+  $core.String? builder,
 }) {
   final $result = create();
   if (package != null) {
@@ -74,6 +76,9 @@
   }
   if (buildInfo != null) {
     $result.buildInfo = buildInfo;
+  }
+  if (builder != null) {
+    $result.builder = builder;
   }
   return $result;
 }</code></pre>

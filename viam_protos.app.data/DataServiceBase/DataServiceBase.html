@@ -224,6 +224,20 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $4.RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer(value),
       ($4.RemoveBinaryDataFromDatasetByIDsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$4.AddSequencesToDatasetRequest, $4.AddSequencesToDatasetResponse&gt;(
+      &#39;AddSequencesToDataset&#39;,
+      addSequencesToDataset_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $4.AddSequencesToDatasetRequest.fromBuffer(value),
+      ($4.AddSequencesToDatasetResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$4.RemoveSequencesFromDatasetRequest, $4.RemoveSequencesFromDatasetResponse&gt;(
+      &#39;RemoveSequencesFromDataset&#39;,
+      removeSequencesFromDataset_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $4.RemoveSequencesFromDatasetRequest.fromBuffer(value),
+      ($4.RemoveSequencesFromDatasetResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$4.CreateIndexRequest, $4.CreateIndexResponse&gt;(
       &#39;CreateIndex&#39;,
       createIndex_Pre,
@@ -322,6 +336,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $4.ListSequencesRequest.fromBuffer(value),
       ($4.ListSequencesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$4.SequencesByDatasetIDRequest, $4.SequencesByDatasetIDResponse&gt;(
+      &#39;SequencesByDatasetID&#39;,
+      sequencesByDatasetID_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $4.SequencesByDatasetIDRequest.fromBuffer(value),
+      ($4.SequencesByDatasetIDResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

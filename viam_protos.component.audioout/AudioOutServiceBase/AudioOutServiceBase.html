@@ -70,6 +70,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $18.PlayRequest.fromBuffer(value),
       ($18.PlayResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$18.PlayStreamRequest, $18.PlayStreamResponse&gt;(
+      &#39;PlayStream&#39;,
+      playStream,
+      true,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $18.PlayStreamRequest.fromBuffer(value),
+      ($18.PlayStreamResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$9.GetPropertiesRequest, $9.GetPropertiesResponse&gt;(
       &#39;GetProperties&#39;,
       getProperties_Pre,

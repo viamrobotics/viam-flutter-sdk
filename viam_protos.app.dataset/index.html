@@ -108,6 +108,15 @@
   
 </dd>
 
+          <dt id="DatasetType">
+  <span class="name "><a href="../viam_protos.app.dataset/DatasetType-class.html">DatasetType</a></span> 
+
+</dt>
+<dd>
+  DatasetType describes the kind of membership a dataset stores.
+buf:lint:ignore ENUM_ZERO_VALUE_SUFFIX
+</dd>
+
           <dt id="DeleteDatasetRequest">
   <span class="name "><a href="../viam_protos.app.dataset/DeleteDatasetRequest-class.html">DeleteDatasetRequest</a></span> 
 
@@ -122,6 +131,24 @@
 </dt>
 <dd>
   
+</dd>
+
+          <dt id="GetSequenceDatasetExportRequest">
+  <span class="name "><a href="../viam_protos.app.dataset/GetSequenceDatasetExportRequest-class.html">GetSequenceDatasetExportRequest</a></span> 
+
+</dt>
+<dd>
+  GetSequenceDatasetExportRequest looks up an export job by its job_id.
+</dd>
+
+          <dt id="GetSequenceDatasetExportResponse">
+  <span class="name "><a href="../viam_protos.app.dataset/GetSequenceDatasetExportResponse-class.html">GetSequenceDatasetExportResponse</a></span> 
+
+</dt>
+<dd>
+  GetSequenceDatasetExportResponse reports the current status of an export
+job. download_url and expires_at are set only when status is COMPLETED;
+error_message is set only when status is FAILED.
 </dd>
 
           <dt id="ListDatasetsByIDsRequest">
@@ -145,7 +172,8 @@
 
 </dt>
 <dd>
-  ListDatasetsByOrganizationIDRequest requests all of the datasets for an organization.
+  ListDatasetsByOrganizationIDRequest requests all of the datasets for an organization,
+optionally filtering on DatasetType
 </dd>
 
           <dt id="ListDatasetsByOrganizationIDResponse">
@@ -186,6 +214,30 @@
 </dt>
 <dd>
   
+</dd>
+
+          <dt id="SequenceDatasetExportStatus">
+  <span class="name "><a href="../viam_protos.app.dataset/SequenceDatasetExportStatus-class.html">SequenceDatasetExportStatus</a></span> 
+
+</dt>
+<dd>
+  SequenceDatasetExportStatus is the lifecycle state of an export job.
+</dd>
+
+          <dt id="StartSequenceDatasetExportRequest">
+  <span class="name "><a href="../viam_protos.app.dataset/StartSequenceDatasetExportRequest-class.html">StartSequenceDatasetExportRequest</a></span> 
+
+</dt>
+<dd>
+  StartSequenceDatasetExportRequest specifies the sequence dataset to export.
+</dd>
+
+          <dt id="StartSequenceDatasetExportResponse">
+  <span class="name "><a href="../viam_protos.app.dataset/StartSequenceDatasetExportResponse-class.html">StartSequenceDatasetExportResponse</a></span> 
+
+</dt>
+<dd>
+  StartSequenceDatasetExportResponse returns the job_id to poll with
 </dd>
 
       </dl>
@@ -234,6 +286,18 @@
 
 </dd>
 
+          <dt id="DatasetType$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/DatasetType$json-constant.html">DatasetType$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="DeleteDatasetRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/DeleteDatasetRequest$json-constant.html">DeleteDatasetRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -249,6 +313,30 @@
           <dt id="DeleteDatasetResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/DeleteDatasetResponse$json-constant.html">DeleteDatasetResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="GetSequenceDatasetExportRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/GetSequenceDatasetExportRequest$json-constant.html">GetSequenceDatasetExportRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="GetSequenceDatasetExportResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/GetSequenceDatasetExportResponse$json-constant.html">GetSequenceDatasetExportResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
 </dt>
@@ -354,6 +442,42 @@
 
 </dd>
 
+          <dt id="SequenceDatasetExportStatus$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/SequenceDatasetExportStatus$json-constant.html">SequenceDatasetExportStatus$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="StartSequenceDatasetExportRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/StartSequenceDatasetExportRequest$json-constant.html">StartSequenceDatasetExportRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="StartSequenceDatasetExportResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/StartSequenceDatasetExportResponse$json-constant.html">StartSequenceDatasetExportResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
       </dl>
     </section>
 
@@ -396,6 +520,18 @@
 
 </dd>
 
+          <dt id="datasetTypeDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/datasetTypeDescriptor.html">datasetTypeDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DatasetType</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="deleteDatasetRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.app.dataset/deleteDatasetRequestDescriptor.html">deleteDatasetRequestDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -416,6 +552,30 @@
 </dt>
 <dd>
   Descriptor for <code>DeleteDatasetResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="getSequenceDatasetExportRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/getSequenceDatasetExportRequestDescriptor.html">getSequenceDatasetExportRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>GetSequenceDatasetExportRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="getSequenceDatasetExportResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/getSequenceDatasetExportResponseDescriptor.html">getSequenceDatasetExportResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>GetSequenceDatasetExportResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -512,6 +672,42 @@
 </dt>
 <dd>
   Descriptor for <code>RenameDatasetResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="sequenceDatasetExportStatusDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/sequenceDatasetExportStatusDescriptor.html">sequenceDatasetExportStatusDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>SequenceDatasetExportStatus</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="startSequenceDatasetExportRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/startSequenceDatasetExportRequestDescriptor.html">startSequenceDatasetExportRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>StartSequenceDatasetExportRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="startSequenceDatasetExportResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/startSequenceDatasetExportResponseDescriptor.html">startSequenceDatasetExportResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>StartSequenceDatasetExportResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

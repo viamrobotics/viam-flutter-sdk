@@ -54,7 +54,8 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">ListDatasetsByOrganizationIDRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
+      <span class="name ">ListDatasetsByOrganizationIDRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
+<li><span class="parameter" id="param-type"><span class="type-annotation"><a href="../../viam_protos.app.dataset/DatasetType-class.html">DatasetType</a>?</span> <span class="parameter-name">type</span>, </span></li>
 </ol>})
     </section>
     
@@ -65,10 +66,14 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory ListDatasetsByOrganizationIDRequest({
   $core.String? organizationId,
+  DatasetType? type,
 }) {
   final $result = create();
   if (organizationId != null) {
     $result.organizationId = organizationId;
+  }
+  if (type != null) {
+    $result.type = type;
   }
   return $result;
 }</code></pre>
