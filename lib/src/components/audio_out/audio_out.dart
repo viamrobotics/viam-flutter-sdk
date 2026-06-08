@@ -14,6 +14,17 @@ abstract class AudioOut extends Resource {
   /// Play audio data on this audio output device
   Future<PlayResponse> play({required Uint8List audioData, required AudioInfo audioInfo, Map<String, dynamic>? extra});
 
+  /// Stream audio chunks to this audio output device for playback.
+  ///
+  /// The caller provides a [Stream] of raw audio bytes; each chunk must match
+  /// the codec and format described by [audioInfo]. Playback begins on the
+  /// device as chunks arrive, before the stream is exhausted.
+  Future<PlayStreamResponse> playStream({
+    required AudioInfo audioInfo,
+    required Stream<Uint8List> audioStream,
+    Map<String, dynamic>? extra,
+  });
+
   /// Get the audio properties of this audio output device
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra});
 

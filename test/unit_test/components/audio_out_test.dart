@@ -15,6 +15,9 @@ class FakeAudioOut extends AudioOut {
   Map<String, dynamic>? extra;
   Map<String, dynamic>? propertiesExtra;
   Map<String, dynamic> statusResult = {'status': 'ok'};
+  AudioInfo? streamedAudioInfo;
+  List<Uint8List> streamedChunks = [];
+  Map<String, dynamic>? streamedExtra;
 
   @override
   String name;
@@ -37,6 +40,21 @@ class FakeAudioOut extends AudioOut {
     this.audioInfo = audioInfo;
     this.extra = extra;
     return PlayResponse();
+  }
+
+  @override
+  Future<PlayStreamResponse> playStream({
+    required AudioInfo audioInfo,
+    required Stream<Uint8List> audioStream,
+    Map<String, dynamic>? extra,
+  }) async {
+    streamedAudioInfo = audioInfo;
+    streamedExtra = extra;
+    streamedChunks = [];
+    await for (final chunk in audioStream) {
+      streamedChunks.add(chunk);
+    }
+    return PlayStreamResponse();
   }
 
   @override
@@ -80,6 +98,36 @@ void main() {
       expect(audioOut.audioData, audioData);
       expect(audioOut.audioInfo, audioInfo);
       expect(audioOut.extra, null);
+    });
+
+    test('playStream drains chunks', () async {
+      final audioInfo = AudioInfo()
+        ..codec = AudioCodec.pcm16
+        ..sampleRateHz = 22050
+        ..numChannels = 1;
+      final chunks = [
+        Uint8List.fromList([1, 2, 3]),
+        Uint8List.fromList([4, 5, 6]),
+        Uint8List.fromList([7, 8, 9]),
+      ];
+
+      final result = await audioOut.playStream(
+        audioInfo: audioInfo,
+        audioStream: Stream.fromIterable(chunks),
+      );
+
+      expect(result, isA<PlayStreamResponse>());
+      expect(audioOut.streamedAudioInfo, audioInfo);
+      expect(audioOut.streamedChunks, chunks);
+    });
+
+    test('playStream with empty stream', () async {
+      final audioInfo = AudioInfo()..codec = AudioCodec.pcm16;
+
+      await audioOut.playStream(audioInfo: audioInfo, audioStream: const Stream.empty());
+
+      expect(audioOut.streamedAudioInfo, audioInfo);
+      expect(audioOut.streamedChunks, isEmpty);
     });
 
     test('getProperties', () async {
@@ -159,6 +207,36 @@ void main() {
         expect(audioOut.audioInfo?.sampleRateHz, 48000);
         expect(audioOut.extra, extra);
       });
+      test('playStream', () async {
+        final audioInfo = AudioInfo()
+          ..codec = AudioCodec.pcm16
+          ..numChannels = 1
+          ..sampleRateHz = 22050;
+        final chunks = [
+          Uint8List.fromList([10, 11, 12]),
+          Uint8List.fromList([13, 14, 15]),
+        ];
+        final extra = {'session': 'abc'};
+
+        final client = AudioOutServiceClient(channel);
+        final requests = Stream<PlayStreamRequest>.fromIterable([
+          PlayStreamRequest()
+            ..init = (PlayStreamInit()
+              ..name = name
+              ..audioInfo = audioInfo
+              ..extra = extra.toStruct()),
+          for (final chunk in chunks) PlayStreamRequest()..audioChunk = (PlayStreamChunk()..audioData = chunk),
+        ]);
+
+        final result = await client.playStream(requests);
+
+        expect(result, isA<PlayStreamResponse>());
+        expect(audioOut.streamedAudioInfo?.codec, AudioCodec.pcm16);
+        expect(audioOut.streamedAudioInfo?.sampleRateHz, 22050);
+        expect(audioOut.streamedChunks, chunks);
+        expect(audioOut.streamedExtra, extra);
+      });
+
       test('getProperties', () async {
         final client = AudioOutServiceClient(channel);
         final result = await client.getProperties(GetPropertiesRequest()..name = name);
@@ -213,6 +291,32 @@ void main() {
         expect(audioOut.audioInfo?.numChannels, 2);
         expect(audioOut.audioInfo?.sampleRateHz, 22050);
         expect(audioOut.extra, extra);
+      });
+
+      test('playStream', () async {
+        final audioInfo = AudioInfo()
+          ..codec = AudioCodec.opus
+          ..numChannels = 2
+          ..sampleRateHz = 48000;
+        final chunks = [
+          Uint8List.fromList([100, 101]),
+          Uint8List.fromList([102, 103]),
+        ];
+        final extra = {'k': 'v'};
+
+        final client = AudioOutClient(name, channel);
+        final result = await client.playStream(
+          audioInfo: audioInfo,
+          audioStream: Stream.fromIterable(chunks),
+          extra: extra,
+        );
+
+        expect(result, isA<PlayStreamResponse>());
+        expect(audioOut.streamedAudioInfo?.codec, AudioCodec.opus);
+        expect(audioOut.streamedAudioInfo?.numChannels, 2);
+        expect(audioOut.streamedAudioInfo?.sampleRateHz, 48000);
+        expect(audioOut.streamedChunks, chunks);
+        expect(audioOut.streamedExtra, extra);
       });
 
       test('getProperties', () async {
