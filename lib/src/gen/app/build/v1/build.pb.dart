@@ -423,6 +423,7 @@ class StartReloadBuildRequest extends $pb.GeneratedMessage {
   factory StartReloadBuildRequest({
     $1.CreatePackageRequest? package,
     ReloadBuildInfo? buildInfo,
+    $core.String? builder,
   }) {
     final $result = create();
     if (package != null) {
@@ -430,6 +431,9 @@ class StartReloadBuildRequest extends $pb.GeneratedMessage {
     }
     if (buildInfo != null) {
       $result.buildInfo = buildInfo;
+    }
+    if (builder != null) {
+      $result.builder = builder;
     }
     return $result;
   }
@@ -446,6 +450,7 @@ class StartReloadBuildRequest extends $pb.GeneratedMessage {
     ..oo(0, [1, 2])
     ..aOM<$1.CreatePackageRequest>(1, _omitFieldNames ? '' : 'package', subBuilder: $1.CreatePackageRequest.create)
     ..aOM<ReloadBuildInfo>(2, _omitFieldNames ? '' : 'buildInfo', subBuilder: ReloadBuildInfo.create)
+    ..aOS(3, _omitFieldNames ? '' : 'builder')
     ..hasRequiredFields = false
   ;
 
@@ -494,15 +499,30 @@ class StartReloadBuildRequest extends $pb.GeneratedMessage {
   void clearBuildInfo() => clearField(2);
   @$pb.TagNumber(2)
   ReloadBuildInfo ensureBuildInfo() => $_ensure(1);
+
+  /// optional target builder. defaults to 'default'.
+  /// use 'viam-cloudbuild-test' to target the new Viam build service (org must be whitelisted).
+  @$pb.TagNumber(3)
+  $core.String get builder => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set builder($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBuilder() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBuilder() => clearField(3);
 }
 
 class StartReloadBuildResponse extends $pb.GeneratedMessage {
   factory StartReloadBuildResponse({
     $core.String? buildId,
+    $core.String? builderFallbackMessage,
   }) {
     final $result = create();
     if (buildId != null) {
       $result.buildId = buildId;
+    }
+    if (builderFallbackMessage != null) {
+      $result.builderFallbackMessage = builderFallbackMessage;
     }
     return $result;
   }
@@ -512,6 +532,7 @@ class StartReloadBuildResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartReloadBuildResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'buildId')
+    ..aOS(2, _omitFieldNames ? '' : 'builderFallbackMessage')
     ..hasRequiredFields = false
   ;
 
@@ -544,6 +565,16 @@ class StartReloadBuildResponse extends $pb.GeneratedMessage {
   $core.bool hasBuildId() => $_has(0);
   @$pb.TagNumber(1)
   void clearBuildId() => clearField(1);
+
+  /// present when the requested builder was unavailable for this org and the default builder was used instead.
+  @$pb.TagNumber(2)
+  $core.String get builderFallbackMessage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set builderFallbackMessage($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBuilderFallbackMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBuilderFallbackMessage() => clearField(2);
 }
 
 class StartPackageBuildRequest extends $pb.GeneratedMessage {

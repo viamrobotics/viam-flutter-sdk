@@ -1274,6 +1274,52 @@ const RemoveBinaryDataFromDatasetByIDsResponse$json = {
 final $typed_data.Uint8List removeBinaryDataFromDatasetByIDsResponseDescriptor = $convert.base64Decode(
     'CihSZW1vdmVCaW5hcnlEYXRhRnJvbURhdGFzZXRCeUlEc1Jlc3BvbnNl');
 
+@$core.Deprecated('Use addSequencesToDatasetRequestDescriptor instead')
+const AddSequencesToDatasetRequest$json = {
+  '1': 'AddSequencesToDatasetRequest',
+  '2': [
+    {'1': 'dataset_id', '3': 1, '4': 1, '5': 9, '10': 'datasetId'},
+    {'1': 'sequence_ids', '3': 2, '4': 3, '5': 9, '10': 'sequenceIds'},
+  ],
+};
+
+/// Descriptor for `AddSequencesToDatasetRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addSequencesToDatasetRequestDescriptor = $convert.base64Decode(
+    'ChxBZGRTZXF1ZW5jZXNUb0RhdGFzZXRSZXF1ZXN0Eh0KCmRhdGFzZXRfaWQYASABKAlSCWRhdG'
+    'FzZXRJZBIhCgxzZXF1ZW5jZV9pZHMYAiADKAlSC3NlcXVlbmNlSWRz');
+
+@$core.Deprecated('Use addSequencesToDatasetResponseDescriptor instead')
+const AddSequencesToDatasetResponse$json = {
+  '1': 'AddSequencesToDatasetResponse',
+};
+
+/// Descriptor for `AddSequencesToDatasetResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addSequencesToDatasetResponseDescriptor = $convert.base64Decode(
+    'Ch1BZGRTZXF1ZW5jZXNUb0RhdGFzZXRSZXNwb25zZQ==');
+
+@$core.Deprecated('Use removeSequencesFromDatasetRequestDescriptor instead')
+const RemoveSequencesFromDatasetRequest$json = {
+  '1': 'RemoveSequencesFromDatasetRequest',
+  '2': [
+    {'1': 'dataset_id', '3': 1, '4': 1, '5': 9, '10': 'datasetId'},
+    {'1': 'sequence_ids', '3': 2, '4': 3, '5': 9, '10': 'sequenceIds'},
+  ],
+};
+
+/// Descriptor for `RemoveSequencesFromDatasetRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeSequencesFromDatasetRequestDescriptor = $convert.base64Decode(
+    'CiFSZW1vdmVTZXF1ZW5jZXNGcm9tRGF0YXNldFJlcXVlc3QSHQoKZGF0YXNldF9pZBgBIAEoCV'
+    'IJZGF0YXNldElkEiEKDHNlcXVlbmNlX2lkcxgCIAMoCVILc2VxdWVuY2VJZHM=');
+
+@$core.Deprecated('Use removeSequencesFromDatasetResponseDescriptor instead')
+const RemoveSequencesFromDatasetResponse$json = {
+  '1': 'RemoveSequencesFromDatasetResponse',
+};
+
+/// Descriptor for `RemoveSequencesFromDatasetResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeSequencesFromDatasetResponseDescriptor = $convert.base64Decode(
+    'CiJSZW1vdmVTZXF1ZW5jZXNGcm9tRGF0YXNldFJlc3BvbnNl');
+
 @$core.Deprecated('Use createIndexRequestDescriptor instead')
 const CreateIndexRequest$json = {
   '1': 'CreateIndexRequest',
@@ -1601,6 +1647,7 @@ const Sequence$json = {
     {'1': 'start_time', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
     {'1': 'end_time', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'endTime'},
     {'1': 'resources', '3': 8, '4': 3, '5': 11, '6': '.viam.app.data.v1.SequenceResourceFilter', '10': 'resources'},
+    {'1': 'dataset_ids', '3': 10, '4': 3, '5': 9, '10': 'datasetIds'},
   ],
   '9': [
     {'1': 2, '2': 3},
@@ -1617,7 +1664,8 @@ final $typed_data.Uint8List sequenceDescriptor = $convert.base64Decode(
     'IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXN0YXJ0VGltZRI1CghlbmRfdGltZR'
     'gHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSB2VuZFRpbWUSRgoJcmVzb3VyY2Vz'
     'GAggAygLMigudmlhbS5hcHAuZGF0YS52MS5TZXF1ZW5jZVJlc291cmNlRmlsdGVyUglyZXNvdX'
-    'JjZXNKBAgCEANSD29yZ2FuaXphdGlvbl9pZA==');
+    'JjZXMSHwoLZGF0YXNldF9pZHMYCiADKAlSCmRhdGFzZXRJZHNKBAgCEANSD29yZ2FuaXphdGlv'
+    'bl9pZA==');
 
 @$core.Deprecated('Use createSequenceRequestDescriptor instead')
 const CreateSequenceRequest$json = {
@@ -1763,4 +1811,35 @@ final $typed_data.Uint8List listSequencesResponseDescriptor = $convert.base64Dec
     'ChVMaXN0U2VxdWVuY2VzUmVzcG9uc2USOAoJc2VxdWVuY2VzGAEgAygLMhoudmlhbS5hcHAuZG'
     'F0YS52MS5TZXF1ZW5jZVIJc2VxdWVuY2VzEiYKD25leHRfcGFnZV90b2tlbhgCIAEoCVINbmV4'
     'dFBhZ2VUb2tlbg==');
+
+@$core.Deprecated('Use sequencesByDatasetIDRequestDescriptor instead')
+const SequencesByDatasetIDRequest$json = {
+  '1': 'SequencesByDatasetIDRequest',
+  '2': [
+    {'1': 'dataset_id', '3': 1, '4': 1, '5': 9, '10': 'datasetId'},
+    {'1': 'page_token', '3': 2, '4': 1, '5': 9, '10': 'pageToken'},
+    {'1': 'page_size', '3': 3, '4': 1, '5': 13, '10': 'pageSize'},
+  ],
+};
+
+/// Descriptor for `SequencesByDatasetIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sequencesByDatasetIDRequestDescriptor = $convert.base64Decode(
+    'ChtTZXF1ZW5jZXNCeURhdGFzZXRJRFJlcXVlc3QSHQoKZGF0YXNldF9pZBgBIAEoCVIJZGF0YX'
+    'NldElkEh0KCnBhZ2VfdG9rZW4YAiABKAlSCXBhZ2VUb2tlbhIbCglwYWdlX3NpemUYAyABKA1S'
+    'CHBhZ2VTaXpl');
+
+@$core.Deprecated('Use sequencesByDatasetIDResponseDescriptor instead')
+const SequencesByDatasetIDResponse$json = {
+  '1': 'SequencesByDatasetIDResponse',
+  '2': [
+    {'1': 'sequences', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.Sequence', '10': 'sequences'},
+    {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
+  ],
+};
+
+/// Descriptor for `SequencesByDatasetIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sequencesByDatasetIDResponseDescriptor = $convert.base64Decode(
+    'ChxTZXF1ZW5jZXNCeURhdGFzZXRJRFJlc3BvbnNlEjgKCXNlcXVlbmNlcxgBIAMoCzIaLnZpYW'
+    '0uYXBwLmRhdGEudjEuU2VxdWVuY2VSCXNlcXVlbmNlcxImCg9uZXh0X3BhZ2VfdG9rZW4YAiAB'
+    'KAlSDW5leHRQYWdlVG9rZW4=');
 

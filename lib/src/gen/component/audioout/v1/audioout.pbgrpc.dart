@@ -26,6 +26,10 @@ class AudioOutServiceClient extends $grpc.Client {
       '/viam.component.audioout.v1.AudioOutService/Play',
       ($18.PlayRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $18.PlayResponse.fromBuffer(value));
+  static final _$playStream = $grpc.ClientMethod<$18.PlayStreamRequest, $18.PlayStreamResponse>(
+      '/viam.component.audioout.v1.AudioOutService/PlayStream',
+      ($18.PlayStreamRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $18.PlayStreamResponse.fromBuffer(value));
   static final _$getProperties = $grpc.ClientMethod<$9.GetPropertiesRequest, $9.GetPropertiesResponse>(
       '/viam.component.audioout.v1.AudioOutService/GetProperties',
       ($9.GetPropertiesRequest value) => value.writeToBuffer(),
@@ -51,6 +55,10 @@ class AudioOutServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$18.PlayResponse> play($18.PlayRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$play, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$18.PlayStreamResponse> playStream($async.Stream<$18.PlayStreamRequest> request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$playStream, request, options: options).single;
   }
 
   $grpc.ResponseFuture<$9.GetPropertiesResponse> getProperties($9.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
@@ -82,6 +90,13 @@ abstract class AudioOutServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $18.PlayRequest.fromBuffer(value),
         ($18.PlayResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$18.PlayStreamRequest, $18.PlayStreamResponse>(
+        'PlayStream',
+        playStream,
+        true,
+        false,
+        ($core.List<$core.int> value) => $18.PlayStreamRequest.fromBuffer(value),
+        ($18.PlayStreamResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.GetPropertiesRequest, $9.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
@@ -133,6 +148,7 @@ abstract class AudioOutServiceBase extends $grpc.Service {
   }
 
   $async.Future<$18.PlayResponse> play($grpc.ServiceCall call, $18.PlayRequest request);
+  $async.Future<$18.PlayStreamResponse> playStream($grpc.ServiceCall call, $async.Stream<$18.PlayStreamRequest> request);
   $async.Future<$9.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $9.GetPropertiesRequest request);
   $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
   $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);

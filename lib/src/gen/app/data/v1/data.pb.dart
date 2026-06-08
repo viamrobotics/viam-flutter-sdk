@@ -4812,6 +4812,188 @@ class RemoveBinaryDataFromDatasetByIDsResponse extends $pb.GeneratedMessage {
   static RemoveBinaryDataFromDatasetByIDsResponse? _defaultInstance;
 }
 
+/// AddSequencesToDatasetRequest adds the sequences with the given IDs to the dataset with dataset_id.
+class AddSequencesToDatasetRequest extends $pb.GeneratedMessage {
+  factory AddSequencesToDatasetRequest({
+    $core.String? datasetId,
+    $core.Iterable<$core.String>? sequenceIds,
+  }) {
+    final $result = create();
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    if (sequenceIds != null) {
+      $result.sequenceIds.addAll(sequenceIds);
+    }
+    return $result;
+  }
+  AddSequencesToDatasetRequest._() : super();
+  factory AddSequencesToDatasetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddSequencesToDatasetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddSequencesToDatasetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'datasetId')
+    ..pPS(2, _omitFieldNames ? '' : 'sequenceIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddSequencesToDatasetRequest clone() => AddSequencesToDatasetRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddSequencesToDatasetRequest copyWith(void Function(AddSequencesToDatasetRequest) updates) => super.copyWith((message) => updates(message as AddSequencesToDatasetRequest)) as AddSequencesToDatasetRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddSequencesToDatasetRequest create() => AddSequencesToDatasetRequest._();
+  AddSequencesToDatasetRequest createEmptyInstance() => create();
+  static $pb.PbList<AddSequencesToDatasetRequest> createRepeated() => $pb.PbList<AddSequencesToDatasetRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddSequencesToDatasetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddSequencesToDatasetRequest>(create);
+  static AddSequencesToDatasetRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get datasetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set datasetId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDatasetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDatasetId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get sequenceIds => $_getList(1);
+}
+
+class AddSequencesToDatasetResponse extends $pb.GeneratedMessage {
+  factory AddSequencesToDatasetResponse() => create();
+  AddSequencesToDatasetResponse._() : super();
+  factory AddSequencesToDatasetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddSequencesToDatasetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddSequencesToDatasetResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddSequencesToDatasetResponse clone() => AddSequencesToDatasetResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddSequencesToDatasetResponse copyWith(void Function(AddSequencesToDatasetResponse) updates) => super.copyWith((message) => updates(message as AddSequencesToDatasetResponse)) as AddSequencesToDatasetResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddSequencesToDatasetResponse create() => AddSequencesToDatasetResponse._();
+  AddSequencesToDatasetResponse createEmptyInstance() => create();
+  static $pb.PbList<AddSequencesToDatasetResponse> createRepeated() => $pb.PbList<AddSequencesToDatasetResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AddSequencesToDatasetResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddSequencesToDatasetResponse>(create);
+  static AddSequencesToDatasetResponse? _defaultInstance;
+}
+
+/// RemoveSequencesFromDatasetRequest removes the sequences with the given IDs from the dataset with dataset_id.
+class RemoveSequencesFromDatasetRequest extends $pb.GeneratedMessage {
+  factory RemoveSequencesFromDatasetRequest({
+    $core.String? datasetId,
+    $core.Iterable<$core.String>? sequenceIds,
+  }) {
+    final $result = create();
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    if (sequenceIds != null) {
+      $result.sequenceIds.addAll(sequenceIds);
+    }
+    return $result;
+  }
+  RemoveSequencesFromDatasetRequest._() : super();
+  factory RemoveSequencesFromDatasetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveSequencesFromDatasetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveSequencesFromDatasetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'datasetId')
+    ..pPS(2, _omitFieldNames ? '' : 'sequenceIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveSequencesFromDatasetRequest clone() => RemoveSequencesFromDatasetRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveSequencesFromDatasetRequest copyWith(void Function(RemoveSequencesFromDatasetRequest) updates) => super.copyWith((message) => updates(message as RemoveSequencesFromDatasetRequest)) as RemoveSequencesFromDatasetRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveSequencesFromDatasetRequest create() => RemoveSequencesFromDatasetRequest._();
+  RemoveSequencesFromDatasetRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveSequencesFromDatasetRequest> createRepeated() => $pb.PbList<RemoveSequencesFromDatasetRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveSequencesFromDatasetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveSequencesFromDatasetRequest>(create);
+  static RemoveSequencesFromDatasetRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get datasetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set datasetId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDatasetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDatasetId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get sequenceIds => $_getList(1);
+}
+
+class RemoveSequencesFromDatasetResponse extends $pb.GeneratedMessage {
+  factory RemoveSequencesFromDatasetResponse() => create();
+  RemoveSequencesFromDatasetResponse._() : super();
+  factory RemoveSequencesFromDatasetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveSequencesFromDatasetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveSequencesFromDatasetResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveSequencesFromDatasetResponse clone() => RemoveSequencesFromDatasetResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveSequencesFromDatasetResponse copyWith(void Function(RemoveSequencesFromDatasetResponse) updates) => super.copyWith((message) => updates(message as RemoveSequencesFromDatasetResponse)) as RemoveSequencesFromDatasetResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveSequencesFromDatasetResponse create() => RemoveSequencesFromDatasetResponse._();
+  RemoveSequencesFromDatasetResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveSequencesFromDatasetResponse> createRepeated() => $pb.PbList<RemoveSequencesFromDatasetResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveSequencesFromDatasetResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveSequencesFromDatasetResponse>(create);
+  static RemoveSequencesFromDatasetResponse? _defaultInstance;
+}
+
 /// CreateIndexRequest starts a custom index build
 class CreateIndexRequest extends $pb.GeneratedMessage {
   factory CreateIndexRequest({
@@ -6132,6 +6314,7 @@ class Sequence extends $pb.GeneratedMessage {
     $50.Timestamp? endTime,
     $core.Iterable<SequenceResourceFilter>? resources,
     $core.String? partId,
+    $core.Iterable<$core.String>? datasetIds,
   }) {
     final $result = create();
     if (id != null) {
@@ -6158,6 +6341,9 @@ class Sequence extends $pb.GeneratedMessage {
     if (partId != null) {
       $result.partId = partId;
     }
+    if (datasetIds != null) {
+      $result.datasetIds.addAll(datasetIds);
+    }
     return $result;
   }
   Sequence._() : super();
@@ -6173,6 +6359,7 @@ class Sequence extends $pb.GeneratedMessage {
     ..aOM<$50.Timestamp>(7, _omitFieldNames ? '' : 'endTime', subBuilder: $50.Timestamp.create)
     ..pc<SequenceResourceFilter>(8, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: SequenceResourceFilter.create)
     ..aOS(9, _omitFieldNames ? '' : 'partId')
+    ..pPS(10, _omitFieldNames ? '' : 'datasetIds')
     ..hasRequiredFields = false
   ;
 
@@ -6267,6 +6454,11 @@ class Sequence extends $pb.GeneratedMessage {
   $core.bool hasPartId() => $_has(7);
   @$pb.TagNumber(9)
   void clearPartId() => clearField(9);
+
+  /// Datasets this sequence is a member of. Membership is added/removed via
+  /// AddSequencesToDataset / RemoveSequencesFromDataset.
+  @$pb.TagNumber(10)
+  $core.List<$core.String> get datasetIds => $_getList(8);
 }
 
 class CreateSequenceRequest extends $pb.GeneratedMessage {
@@ -6872,6 +7064,142 @@ class ListSequencesResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static ListSequencesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSequencesResponse>(create);
   static ListSequencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Sequence> get sequences => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => clearField(2);
+}
+
+class SequencesByDatasetIDRequest extends $pb.GeneratedMessage {
+  factory SequencesByDatasetIDRequest({
+    $core.String? datasetId,
+    $core.String? pageToken,
+    $core.int? pageSize,
+  }) {
+    final $result = create();
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    if (pageSize != null) {
+      $result.pageSize = pageSize;
+    }
+    return $result;
+  }
+  SequencesByDatasetIDRequest._() : super();
+  factory SequencesByDatasetIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SequencesByDatasetIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SequencesByDatasetIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'datasetId')
+    ..aOS(2, _omitFieldNames ? '' : 'pageToken')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SequencesByDatasetIDRequest clone() => SequencesByDatasetIDRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SequencesByDatasetIDRequest copyWith(void Function(SequencesByDatasetIDRequest) updates) => super.copyWith((message) => updates(message as SequencesByDatasetIDRequest)) as SequencesByDatasetIDRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SequencesByDatasetIDRequest create() => SequencesByDatasetIDRequest._();
+  SequencesByDatasetIDRequest createEmptyInstance() => create();
+  static $pb.PbList<SequencesByDatasetIDRequest> createRepeated() => $pb.PbList<SequencesByDatasetIDRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SequencesByDatasetIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SequencesByDatasetIDRequest>(create);
+  static SequencesByDatasetIDRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get datasetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set datasetId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDatasetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDatasetId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get pageSize => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set pageSize($core.int v) { $_setUnsignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPageSize() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageSize() => clearField(3);
+}
+
+class SequencesByDatasetIDResponse extends $pb.GeneratedMessage {
+  factory SequencesByDatasetIDResponse({
+    $core.Iterable<Sequence>? sequences,
+    $core.String? nextPageToken,
+  }) {
+    final $result = create();
+    if (sequences != null) {
+      $result.sequences.addAll(sequences);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
+    }
+    return $result;
+  }
+  SequencesByDatasetIDResponse._() : super();
+  factory SequencesByDatasetIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SequencesByDatasetIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SequencesByDatasetIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<Sequence>(1, _omitFieldNames ? '' : 'sequences', $pb.PbFieldType.PM, subBuilder: Sequence.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SequencesByDatasetIDResponse clone() => SequencesByDatasetIDResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SequencesByDatasetIDResponse copyWith(void Function(SequencesByDatasetIDResponse) updates) => super.copyWith((message) => updates(message as SequencesByDatasetIDResponse)) as SequencesByDatasetIDResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SequencesByDatasetIDResponse create() => SequencesByDatasetIDResponse._();
+  SequencesByDatasetIDResponse createEmptyInstance() => create();
+  static $pb.PbList<SequencesByDatasetIDResponse> createRepeated() => $pb.PbList<SequencesByDatasetIDResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SequencesByDatasetIDResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SequencesByDatasetIDResponse>(create);
+  static SequencesByDatasetIDResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<Sequence> get sequences => $_getList(0);
