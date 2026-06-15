@@ -1,15 +1,20 @@
 # Changelog
 
-## [v0.19.3](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.3) (2026-05-07)
+## [v0.19.4](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.4) (2026-06-15)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.2...v0.19.3)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.3...v0.19.4)
 
 **Merged pull requests:**
 
+- update proto to v0.1.558 [\#539](https://github.com/viamrobotics/viam-flutter-sdk/pull/539) ([stuqdog](https://github.com/stuqdog))
+- chore: bump claude-ci-workflows to v2.1.0 [\#538](https://github.com/viamrobotics/viam-flutter-sdk/pull/538) ([ale7714](https://github.com/ale7714))
+- RSDK-13978 Add playStream to AudioOut [\#537](https://github.com/viamrobotics/viam-flutter-sdk/pull/537) ([oliviamiller](https://github.com/oliviamiller))
+- v0.19.3 [\#536](https://github.com/viamrobotics/viam-flutter-sdk/pull/536) ([github-actions[bot]](https://github.com/apps/github-actions))
 - APP-16342: Add restartModule to RobotClient [\#535](https://github.com/viamrobotics/viam-flutter-sdk/pull/535) ([clintpurser](https://github.com/clintpurser))
 - chore: bump claude CI workflows to v2.0.0 [\#534](https://github.com/viamrobotics/viam-flutter-sdk/pull/534) ([ale7714](https://github.com/ale7714))
 - v0.19.2 [\#533](https://github.com/viamrobotics/viam-flutter-sdk/pull/533) ([github-actions[bot]](https://github.com/apps/github-actions))
 - OAuth App user creation wrapper [\#531](https://github.com/viamrobotics/viam-flutter-sdk/pull/531) ([gmulz](https://github.com/gmulz))
+- Automated Protos Update [\#530](https://github.com/viamrobotics/viam-flutter-sdk/pull/530) ([viambot](https://github.com/viambot))
 - Automated Protos Update [\#529](https://github.com/viamrobotics/viam-flutter-sdk/pull/529) ([viambot](https://github.com/viambot))
 - v0.19.1 [\#528](https://github.com/viamrobotics/viam-flutter-sdk/pull/528) ([github-actions[bot]](https://github.com/apps/github-actions))
 - claude-jira integration [\#524](https://github.com/viamrobotics/viam-flutter-sdk/pull/524) ([allisonschiang](https://github.com/allisonschiang))
@@ -221,6 +226,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.19.3](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.3) (2026-05-07)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.2...v0.19.3)
 
 ## [v0.19.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.2) (2026-04-30)
 
