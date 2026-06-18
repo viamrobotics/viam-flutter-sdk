@@ -113,6 +113,15 @@ abstract class MovementSensor extends Resource {
   /// For more information, see [Movement Sensor component](https://docs.viam.com/dev/reference/apis/components/movement-sensor/#getaccuracy).
   Future<Accuracy> accuracy({Map<String, dynamic>? extra});
 
+  /// Get all geometries associated with the [MovementSensor]
+  ///
+  /// ```
+  /// final geometries = await myMovementSensor.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/dev/reference/apis/components/movement-sensor/#getgeometries).
+  Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [common_pb.ResourceName] for this [MovementSensor] with the given [name]
   ///
   /// ```

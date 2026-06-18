@@ -22,6 +22,15 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
   GripperClient(this.name, this.channel);
 
   @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<void> grab({Map<String, dynamic>? extra}) async {
     final request = GrabRequest()
       ..name = name

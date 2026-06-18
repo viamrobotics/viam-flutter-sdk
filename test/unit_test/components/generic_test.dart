@@ -24,6 +24,13 @@ class FakeGeneric extends Generic {
   Future<Map<String, dynamic>> getStatus() async {
     return statusResult;
   }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    return geometries;
+  }
 }
 
 void main() {
@@ -44,6 +51,11 @@ void main() {
     test('getStatus', () async {
       final result = await generic.getStatus();
       expect(result, generic.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await generic.getGeometries();
+      expect(result, generic.geometries);
     });
   });
 
@@ -92,6 +104,12 @@ void main() {
         final response = await client.getStatus(GetStatusRequest()..name = name);
         expect(response.result.toMap(), generic.statusResult);
       });
+
+      test('getGeometries', () async {
+        final client = generic_pb.GenericServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, generic.geometries);
+      });
     });
 
     group('Generic Client Tests', () {
@@ -106,6 +124,12 @@ void main() {
         final client = GenericClient(name, channel);
         final result = await client.getStatus();
         expect(result, generic.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = GenericClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, generic.geometries);
       });
     });
   });

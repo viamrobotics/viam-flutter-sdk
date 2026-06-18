@@ -27,6 +27,15 @@ class BoardClient extends Board with RPCDebugLoggerMixin implements ResourceRPCC
   BoardClient(this.name, this.channel);
 
   @override
+  Future<List<common.Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = common.GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     final request = common.DoCommandRequest()
       ..name = name

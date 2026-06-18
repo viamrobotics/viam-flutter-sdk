@@ -97,6 +97,15 @@ abstract class Base extends Resource {
   /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#ismoving).
   Future<bool> isMoving();
 
+  /// Get all geometries associated with the [Base]
+  ///
+  /// ```
+  /// final geometries = await myBase.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#getgeometries).
+  Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [common_pb.ResourceName] for this [Base] with the given [name]
   ///
   /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#getresourcename).

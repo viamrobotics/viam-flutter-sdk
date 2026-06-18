@@ -22,6 +22,15 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
   MovementSensorClient(this.name, this.channel);
 
   @override
+  Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = common_pb.GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
     final request = common_pb.GetReadingsRequest()
       ..name = name

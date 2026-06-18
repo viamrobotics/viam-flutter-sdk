@@ -23,6 +23,15 @@ class BaseClient extends Base with RPCDebugLoggerMixin implements ResourceRPCCli
   BaseClient(this.name, this.channel);
 
   @override
+  Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = common_pb.GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<bool> isMoving() async {
     final request = IsMovingRequest()..name = name;
     final response = await client.isMoving(request, options: callOptions);

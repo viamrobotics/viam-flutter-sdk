@@ -22,6 +22,15 @@ class ServoClient extends Servo with RPCDebugLoggerMixin implements ResourceRPCC
   ServoClient(this.name, this.channel);
 
   @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<void> move(int angle, {Map<String, dynamic>? extra}) async {
     final request = MoveRequest()
       ..name = name

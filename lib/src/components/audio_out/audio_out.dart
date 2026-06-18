@@ -28,6 +28,13 @@ abstract class AudioOut extends Resource {
   /// Get the audio properties of this audio output device
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra});
 
+  /// Get all geometries associated with the [AudioOut]
+  ///
+  /// ```
+  /// final geometries = await myAudioOut.getGeometries();
+  /// ```
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [ResourceName] for this [AudioOut] with the given [name]
   static ResourceName getResourceName(String name) {
     return AudioOut.subtype.getResourceName(name);

@@ -9,6 +9,15 @@ import '../../robot/client.dart';
 abstract class Generic extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'generic');
 
+  /// Get all geometries associated with the [Generic]
+  ///
+  /// ```
+  /// final geometries = await myGeneric.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Generic component](https://docs.viam.com/dev/reference/apis/components/generic/#getgeometries).
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [ResourceName] for this [Generic] with the given [name]
   ///
   /// ```

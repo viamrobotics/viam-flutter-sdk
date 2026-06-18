@@ -23,6 +23,15 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
   AudioOutClient(this.name, this.channel);
 
   @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request);
+    return response.geometries;
+  }
+
+  @override
   Future<PlayResponse> play({required Uint8List audioData, required AudioInfo audioInfo, Map<String, dynamic>? extra}) async {
     final request = PlayRequest()
       ..name = name
