@@ -141,6 +141,15 @@ abstract class Motor extends Resource {
   /// For more information, see [Motor component](https://docs.viam.com/dev/reference/apis/components/motor/#ismoving).
   Future<bool> isMoving({Map<String, dynamic>? extra});
 
+  /// Get all geometries associated with the [Motor]
+  ///
+  /// ```
+  /// final geometries = await myMotor.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Motor component](https://docs.viam.com/dev/reference/apis/components/motor/#getgeometries).
+  Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [common_pb.ResourceName] for this [Motor] with the given [name].
   ///
   /// ```

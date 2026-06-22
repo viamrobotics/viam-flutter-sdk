@@ -45,6 +45,15 @@ abstract class Servo extends Resource {
   /// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/#ismoving).
   Future<bool> isMoving();
 
+  /// Get all geometries associated with the [Servo]
+  ///
+  /// ```
+  /// final geometries = await myServo.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/#getgeometries).
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [ResourceName] for this [Servo] with the given [name].
   ///
   /// ```

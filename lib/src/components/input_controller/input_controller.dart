@@ -66,6 +66,15 @@ abstract class InputController extends Resource {
     Map<String, dynamic>? extra,
   });
 
+  /// Get all geometries associated with the [InputController]
+  ///
+  /// ```
+  /// final geometries = await myInputController.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/#getgeometries).
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [ResourceName] for this [InputController] with the given [name]
   ///
   /// ```

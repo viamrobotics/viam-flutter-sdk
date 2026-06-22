@@ -23,6 +23,15 @@ class AudioInClient extends AudioIn implements ResourceRPCClient {
   AudioInClient(this.name, this.channel);
 
   @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request);
+    return response.geometries;
+  }
+
+  @override
   Stream<GetAudioResponse> getAudio({
     required String codec,
     double? durationSeconds,
