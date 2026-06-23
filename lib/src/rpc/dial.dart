@@ -132,7 +132,7 @@ class DialWebRtcOptions {
 
 /// {@category Viam SDK}
 /// Initial connection to a robot at the provided address with the given options, allowing for specifying of initial connection attempt count and timeout
-Future<ClientChannelBase> dialInitial(String address, DialOptions? options, String Function() sessionCallback) async {
+Future<ClientChannelBase> dialInitial(String address, DialOptions? options, String Function() sessionId) async {
   final opts = options ?? DialOptions();
 
   int numAttempts = opts.initialConnectionAttempts;
@@ -145,7 +145,7 @@ Future<ClientChannelBase> dialInitial(String address, DialOptions? options, Stri
 
   while (numAttempts != 0) {
     try {
-      final channel = await dial(address, opts, sessionCallback);
+      final channel = await dial(address, opts, sessionId);
       opts.timeout = timeout;
       return channel;
     } catch (e) {
@@ -161,7 +161,7 @@ Future<ClientChannelBase> dialInitial(String address, DialOptions? options, Stri
 
 /// {@category Viam SDK}
 /// Connect to a robot at the provided address with the given options
-Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
+Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionId) async {
   final opts = options ?? DialOptions();
   _logger = _newDialLogger(opts.logOutput);
 
@@ -179,7 +179,7 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
       final dialOptsCopy = opts.._usingMdns = true;
       dialOptsCopy.webRtcOptions ??= DialWebRtcOptions();
       dialOptsCopy.webRtcOptions?.signalingServerAddress = mdnsUri;
-      return await _dialWebRtc(address, dialOptsCopy, sessionCallback);
+      return await _dialWebRtc(address, dialOptsCopy, sessionId);
     } on NotLocalAddressException catch (e) {
       _logger.d(e.toString());
     } catch (e) {
@@ -195,9 +195,9 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
   }
   final Future<ClientChannelBase> chan;
   if (disableWebRtc) {
-    chan = _dialDirectGrpc(address, opts, sessionCallback);
+    chan = _dialDirectGrpc(address, opts, sessionId);
   } else {
-    chan = _dialWebRtc(address, opts, sessionCallback);
+    chan = _dialWebRtc(address, opts, sessionId);
   }
   dialSW.stop();
   _logger.d('STATS: dial function took ${dialSW.elapsed}');
@@ -246,7 +246,7 @@ Future<String> _searchMdns(String address) async {
   throw NotLocalAddressException(address);
 }
 
-Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, String Function() sessionCallback) async {
+Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, String Function() sessionId) async {
   _logger.d('Dialing direct GRPC to $address');
   if (options.credentials == null && options.accessToken == null) {
     final host = _hostAndPort(address, options.insecure);
@@ -259,7 +259,7 @@ Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, S
       ),
     );
   }
-  return _authenticatedChannel(address, options, sessionCallback);
+  return _authenticatedChannel(address, options, sessionId);
 }
 
 Future _logConnectionStats(
@@ -313,7 +313,7 @@ Future _logConnectionStats(
   }
 }
 
-Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, String Function() sessionCallback) async {
+Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, String Function() sessionId) async {
   final Stopwatch webrtcDialSW = Stopwatch()..start();
   _logger.d('Dialing WebRTC to $address');
   if (options.authEntity.isNullOrEmpty) {
@@ -329,7 +329,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
   final signalingServer = options.webRtcOptions?.signalingServerAddress ?? ((options._usingMdns) ? address : 'app.viam.com');
   final sigServerSW = Stopwatch()..start();
   _logger.d('Connecting to signaling server: $signalingServer');
-  final signalingChannel = await _dialDirectGrpc(signalingServer, options, sessionCallback);
+  final signalingChannel = await _dialDirectGrpc(signalingServer, options, sessionId);
   sigServerSW.stop();
   _logger.d('STATS: connected to signaling in ${sigServerSW.elapsed}');
   final signalingClient = SignalingServiceClient(signalingChannel, options: CallOptions(metadata: {'rpc-host': address}));
@@ -540,9 +540,9 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
     await didConnect.future;
   } catch (error, st) {
     _logger.i('Could not connect via WebRTC, attempting direct gRPC connection', error: error, stackTrace: st);
-    return _dialDirectGrpc(address, options, sessionCallback);
+    return _dialDirectGrpc(address, options, sessionId);
   }
-  return WebRtcClientChannel(peerConnection, dataChannel, sessionCallback);
+  return WebRtcClientChannel(peerConnection, dataChannel, sessionId);
 }
 
 String _convertSDPtoJsonString(RTCSessionDescription? sdp) {
@@ -555,7 +555,7 @@ String _encodeSDPJsonStringToBase64String(String sdp) {
   return base64.encode(bytes);
 }
 
-Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions options, String Function() sessionsCallback) async {
+Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions options, String Function() sessionId) async {
   final authSW = Stopwatch()..start();
   String accessToken = options.accessToken ?? '';
   if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
@@ -563,7 +563,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
     final addr = _hostAndPort(address, options.insecure);
     authSW.stop();
     _logger.d('STATS: authentication (pre-authenticated) took ${authSW.elapsed}');
-    return AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure, sessionsCallback);
+    return AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure, sessionId);
   }
 
   final addr = _hostAndPort(options.externalAuthAddress ?? address, options.insecure);
@@ -594,7 +594,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
   if (options.externalAuthAddress.isNotNullNorEmpty && options.externalAuthToEntity.isNotNullNorEmpty) {
     final addr = _hostAndPort(options.externalAuthAddress!, options.insecure);
     _logger.d('Authenticating to external address: $addr, for entity: ${options.externalAuthToEntity}');
-    authChannel = AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure, sessionsCallback);
+    authChannel = AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure, sessionId);
     final extAuthClient = ExternalAuthServiceClient(authChannel);
     final toRequest = pb.AuthenticateToRequest();
     if (options.externalAuthToEntity != null) {
@@ -613,7 +613,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
   final actual = _hostAndPort(address, options.insecure);
   authSW.stop();
   _logger.d('STATS: authentication took ${authSW.elapsed}');
-  return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure, sessionsCallback);
+  return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure, sessionId);
 }
 
 /// {@category Viam SDK}

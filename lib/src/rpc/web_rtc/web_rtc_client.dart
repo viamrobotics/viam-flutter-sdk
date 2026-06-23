@@ -30,9 +30,9 @@ class WebRtcClientChannel extends ClientChannelBase {
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
     if (SessionsClient.heartbeatMonitoredMethods[method.path] ?? false) {
-      final sessionMetadata = _sessionId();
-      if (sessionMetadata.isNotEmpty) {
-        options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: sessionMetadata}));
+      final sessionId = _sessionId();
+      if (sessionId.isNotEmpty) {
+        options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: sessionId}));
       }
     }
     options = options.mergedWith(CallOptions(metadata: {'viam_client': getVersionMetadata()}));
