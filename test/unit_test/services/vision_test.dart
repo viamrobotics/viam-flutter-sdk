@@ -66,10 +66,11 @@ void main() {
     });
 
     test('properties', () async {
-      final expected = GetPropertiesResponse(classificationsSupported: true);
+      final expected = GetPropertiesResponse(classificationsSupported: true, defaultCamera: 'my_camera');
       when(serviceClient.getProperties(any, options: anyNamed('options'))).thenAnswer((_) => MockResponseFuture.value(expected));
       final response = await client.properties();
       expect(response, equals(expected));
+      expect(response.defaultCamera, 'my_camera');
     });
 
     test('getObjectPointClouds', () async {

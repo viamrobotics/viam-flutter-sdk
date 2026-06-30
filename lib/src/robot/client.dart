@@ -8,6 +8,7 @@ import '../gen/common/v1/common.pb.dart';
 import '../gen/robot/v1/robot.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
 import '../gen/stream/v1/stream.pbgrpc.dart';
+import '../gen/app/datasync/v1/data_sync.pb.dart';
 import '../media/stream/client.dart';
 import '../resource/base.dart';
 import '../resource/manager.dart';
@@ -333,5 +334,18 @@ class RobotClient {
     final request = rpb.GetMachineStatusRequest();
     final response = await _client.getMachineStatus(request);
     return response;
+  }
+
+  /// Uploads data from a specified path on the robot to the cloud.
+  ///
+  /// For more information, see the [robot service docs](https://docs.viam.com/dev/reference/apis/service/robot/#uploaddatafrompath).
+  Future<UploadDataFromPathResponse> uploadDataFromPath(String path, {UploadMetadata? uploadMetadata, Map<String, dynamic>? extra}) async {
+    final request = UploadDataFromPathRequest()
+      ..path = path
+      ..extra = extra?.toStruct() ?? Struct();
+    if (uploadMetadata != null) {
+      request.uploadMetadata = uploadMetadata;
+    }
+    return await _client.uploadDataFromPath(request);
   }
 }

@@ -117,13 +117,14 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
 
   /// Get info about what vision methods the vision service provides.
   /// Currently returns boolean values that state whether the service implements the
-  /// classification, detection, and/or 3D object segmentation methods.
+  /// classification, detection, and/or 3D object segmentation methods, and the default camera used for *FromCamera and GetObjectPointClouds calls.
   ///
   /// ```
   /// // Example:
   /// var properties = await myVisionService.properties();
   /// properties.detections_supported
   /// properties.classifications_supported
+  /// properties.defaultCamera
   /// ```
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getproperties).
