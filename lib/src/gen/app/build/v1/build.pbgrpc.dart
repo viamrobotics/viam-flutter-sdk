@@ -65,6 +65,10 @@ class BuildServiceClient extends $grpc.Client {
       '/viam.app.build.v1.BuildService/StartReloadBuild',
       ($2.StartReloadBuildRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.StartReloadBuildResponse.fromBuffer(value));
+  static final _$startSourceUploadBuild = $grpc.ClientMethod<$2.StartSourceUploadBuildRequest, $2.StartSourceUploadBuildResponse>(
+      '/viam.app.build.v1.BuildService/StartSourceUploadBuild',
+      ($2.StartSourceUploadBuildRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.StartSourceUploadBuildResponse.fromBuffer(value));
   static final _$startPackageBuild = $grpc.ClientMethod<$2.StartPackageBuildRequest, $2.StartPackageBuildResponse>(
       '/viam.app.build.v1.BuildService/StartPackageBuild',
       ($2.StartPackageBuildRequest value) => value.writeToBuffer(),
@@ -118,6 +122,10 @@ class BuildServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.StartReloadBuildResponse> startReloadBuild($async.Stream<$2.StartReloadBuildRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$startReloadBuild, request, options: options).single;
+  }
+
+  $grpc.ResponseFuture<$2.StartSourceUploadBuildResponse> startSourceUploadBuild($async.Stream<$2.StartSourceUploadBuildRequest> request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$startSourceUploadBuild, request, options: options).single;
   }
 
   $grpc.ResponseFuture<$2.StartPackageBuildResponse> startPackageBuild($2.StartPackageBuildRequest request, {$grpc.CallOptions? options}) {
@@ -207,6 +215,13 @@ abstract class BuildServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.StartReloadBuildRequest.fromBuffer(value),
         ($2.StartReloadBuildResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.StartSourceUploadBuildRequest, $2.StartSourceUploadBuildResponse>(
+        'StartSourceUploadBuild',
+        startSourceUploadBuild,
+        true,
+        false,
+        ($core.List<$core.int> value) => $2.StartSourceUploadBuildRequest.fromBuffer(value),
+        ($2.StartSourceUploadBuildResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$2.StartPackageBuildRequest, $2.StartPackageBuildResponse>(
         'StartPackageBuild',
         startPackageBuild_Pre,
@@ -271,5 +286,6 @@ abstract class BuildServiceBase extends $grpc.Service {
   $async.Future<$2.LinkOrgResponse> linkOrg($grpc.ServiceCall call, $2.LinkOrgRequest request);
   $async.Future<$2.UnlinkOrgResponse> unlinkOrg($grpc.ServiceCall call, $2.UnlinkOrgRequest request);
   $async.Future<$2.StartReloadBuildResponse> startReloadBuild($grpc.ServiceCall call, $async.Stream<$2.StartReloadBuildRequest> request);
+  $async.Future<$2.StartSourceUploadBuildResponse> startSourceUploadBuild($grpc.ServiceCall call, $async.Stream<$2.StartSourceUploadBuildRequest> request);
   $async.Future<$2.StartPackageBuildResponse> startPackageBuild($grpc.ServiceCall call, $2.StartPackageBuildRequest request);
 }

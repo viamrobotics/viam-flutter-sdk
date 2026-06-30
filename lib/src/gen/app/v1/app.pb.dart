@@ -681,6 +681,51 @@ class ListOrganizationsRequest extends $pb.GeneratedMessage {
   static ListOrganizationsRequest? _defaultInstance;
 }
 
+/// An empty list means that all methods are allowed.
+class AllowedLoginMethods extends $pb.GeneratedMessage {
+  factory AllowedLoginMethods({
+    $core.Iterable<LoginMethod>? methods,
+  }) {
+    final $result = create();
+    if (methods != null) {
+      $result.methods.addAll(methods);
+    }
+    return $result;
+  }
+  AllowedLoginMethods._() : super();
+  factory AllowedLoginMethods.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AllowedLoginMethods.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AllowedLoginMethods', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<LoginMethod>(1, _omitFieldNames ? '' : 'methods', $pb.PbFieldType.KE, valueOf: LoginMethod.valueOf, enumValues: LoginMethod.values, defaultEnumValue: LoginMethod.LOGIN_METHOD_UNSPECIFIED)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AllowedLoginMethods clone() => AllowedLoginMethods()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AllowedLoginMethods copyWith(void Function(AllowedLoginMethods) updates) => super.copyWith((message) => updates(message as AllowedLoginMethods)) as AllowedLoginMethods;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AllowedLoginMethods create() => AllowedLoginMethods._();
+  AllowedLoginMethods createEmptyInstance() => create();
+  static $pb.PbList<AllowedLoginMethods> createRepeated() => $pb.PbList<AllowedLoginMethods>();
+  @$core.pragma('dart2js:noInline')
+  static AllowedLoginMethods getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AllowedLoginMethods>(create);
+  static AllowedLoginMethods? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<LoginMethod> get methods => $_getList(0);
+}
+
 class Organization extends $pb.GeneratedMessage {
   factory Organization({
     $core.String? id,
@@ -690,6 +735,7 @@ class Organization extends $pb.GeneratedMessage {
     $core.String? defaultRegion,
     $core.String? cid,
     FragmentImportList? defaultFragments,
+    AllowedLoginMethods? allowedLoginMethods,
   }) {
     final $result = create();
     if (id != null) {
@@ -713,6 +759,9 @@ class Organization extends $pb.GeneratedMessage {
     if (defaultFragments != null) {
       $result.defaultFragments = defaultFragments;
     }
+    if (allowedLoginMethods != null) {
+      $result.allowedLoginMethods = allowedLoginMethods;
+    }
     return $result;
   }
   Organization._() : super();
@@ -727,6 +776,7 @@ class Organization extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'defaultRegion')
     ..aOS(6, _omitFieldNames ? '' : 'cid')
     ..aOM<FragmentImportList>(7, _omitFieldNames ? '' : 'defaultFragments', subBuilder: FragmentImportList.create)
+    ..aOM<AllowedLoginMethods>(8, _omitFieldNames ? '' : 'allowedLoginMethods', subBuilder: AllowedLoginMethods.create)
     ..hasRequiredFields = false
   ;
 
@@ -819,6 +869,17 @@ class Organization extends $pb.GeneratedMessage {
   void clearDefaultFragments() => clearField(7);
   @$pb.TagNumber(7)
   FragmentImportList ensureDefaultFragments() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  AllowedLoginMethods get allowedLoginMethods => $_getN(7);
+  @$pb.TagNumber(8)
+  set allowedLoginMethods(AllowedLoginMethods v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAllowedLoginMethods() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAllowedLoginMethods() => clearField(8);
+  @$pb.TagNumber(8)
+  AllowedLoginMethods ensureAllowedLoginMethods() => $_ensure(7);
 }
 
 class OrganizationMember extends $pb.GeneratedMessage {
@@ -1429,6 +1490,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     $core.String? region,
     $core.String? cid,
     FragmentImportList? defaultFragments,
+    AllowedLoginMethods? allowedLoginMethods,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1449,6 +1511,9 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     if (defaultFragments != null) {
       $result.defaultFragments = defaultFragments;
     }
+    if (allowedLoginMethods != null) {
+      $result.allowedLoginMethods = allowedLoginMethods;
+    }
     return $result;
   }
   UpdateOrganizationRequest._() : super();
@@ -1462,6 +1527,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'region')
     ..aOS(5, _omitFieldNames ? '' : 'cid')
     ..aOM<FragmentImportList>(6, _omitFieldNames ? '' : 'defaultFragments', subBuilder: FragmentImportList.create)
+    ..aOM<AllowedLoginMethods>(7, _omitFieldNames ? '' : 'allowedLoginMethods', subBuilder: AllowedLoginMethods.create)
     ..hasRequiredFields = false
   ;
 
@@ -1542,6 +1608,17 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   void clearDefaultFragments() => clearField(6);
   @$pb.TagNumber(6)
   FragmentImportList ensureDefaultFragments() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  AllowedLoginMethods get allowedLoginMethods => $_getN(6);
+  @$pb.TagNumber(7)
+  set allowedLoginMethods(AllowedLoginMethods v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAllowedLoginMethods() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAllowedLoginMethods() => clearField(7);
+  @$pb.TagNumber(7)
+  AllowedLoginMethods ensureAllowedLoginMethods() => $_ensure(6);
 }
 
 class UpdateOrganizationResponse extends $pb.GeneratedMessage {
@@ -7245,6 +7322,7 @@ class Fragment extends $pb.GeneratedMessage {
     FragmentVisibility? visibility,
     $50.Timestamp? lastUpdated,
     $core.String? revision,
+    $core.String? publicNamespace,
   }) {
     final $result = create();
     if (id != null) {
@@ -7286,6 +7364,9 @@ class Fragment extends $pb.GeneratedMessage {
     if (revision != null) {
       $result.revision = revision;
     }
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
     return $result;
   }
   Fragment._() : super();
@@ -7306,6 +7387,7 @@ class Fragment extends $pb.GeneratedMessage {
     ..e<FragmentVisibility>(12, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: FragmentVisibility.FRAGMENT_VISIBILITY_UNSPECIFIED, valueOf: FragmentVisibility.valueOf, enumValues: FragmentVisibility.values)
     ..aOM<$50.Timestamp>(13, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $50.Timestamp.create)
     ..aOS(14, _omitFieldNames ? '' : 'revision')
+    ..aOS(15, _omitFieldNames ? '' : 'publicNamespace')
     ..hasRequiredFields = false
   ;
 
@@ -7457,6 +7539,15 @@ class Fragment extends $pb.GeneratedMessage {
   $core.bool hasRevision() => $_has(12);
   @$pb.TagNumber(14)
   void clearRevision() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get publicNamespace => $_getSZ(13);
+  @$pb.TagNumber(15)
+  set publicNamespace($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasPublicNamespace() => $_has(13);
+  @$pb.TagNumber(15)
+  void clearPublicNamespace() => clearField(15);
 }
 
 class FragmentHistoryEntry extends $pb.GeneratedMessage {
@@ -7907,7 +7998,9 @@ class FragmentImport extends $pb.GeneratedMessage {
     $core.String? fragmentId,
     $core.String? version,
     $core.String? prefix,
+  @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, $core.String>? variables,
+    $49.Struct? fragmentVariables,
   }) {
     final $result = create();
     if (fragmentId != null) {
@@ -7920,7 +8013,11 @@ class FragmentImport extends $pb.GeneratedMessage {
       $result.prefix = prefix;
     }
     if (variables != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.variables.addAll(variables);
+    }
+    if (fragmentVariables != null) {
+      $result.fragmentVariables = fragmentVariables;
     }
     return $result;
   }
@@ -7933,6 +8030,7 @@ class FragmentImport extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'version')
     ..aOS(3, _omitFieldNames ? '' : 'prefix')
     ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'variables', entryClassName: 'FragmentImport.VariablesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$49.Struct>(5, _omitFieldNames ? '' : 'fragmentVariables', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -7984,8 +8082,21 @@ class FragmentImport extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPrefix() => clearField(3);
 
+  /// Deprecated: use fragment_variables
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.Map<$core.String, $core.String> get variables => $_getMap(3);
+
+  @$pb.TagNumber(5)
+  $49.Struct get fragmentVariables => $_getN(4);
+  @$pb.TagNumber(5)
+  set fragmentVariables($49.Struct v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFragmentVariables() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFragmentVariables() => clearField(5);
+  @$pb.TagNumber(5)
+  $49.Struct ensureFragmentVariables() => $_ensure(4);
 }
 
 class ResolvedFragment extends $pb.GeneratedMessage {
@@ -12098,6 +12209,7 @@ class ModuleVersion extends $pb.GeneratedMessage {
     $core.String? firstRun,
     $core.String? markdownDescription,
     $core.Iterable<App>? apps,
+    DeprecatedStatus? deprecatedStatus,
   }) {
     final $result = create();
     if (version != null) {
@@ -12121,6 +12233,9 @@ class ModuleVersion extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (deprecatedStatus != null) {
+      $result.deprecatedStatus = deprecatedStatus;
+    }
     return $result;
   }
   ModuleVersion._() : super();
@@ -12135,6 +12250,7 @@ class ModuleVersion extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'firstRun')
     ..aOS(6, _omitFieldNames ? '' : 'markdownDescription')
     ..pc<App>(7, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..aOM<DeprecatedStatus>(8, _omitFieldNames ? '' : 'deprecatedStatus', subBuilder: DeprecatedStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -12210,6 +12326,18 @@ class ModuleVersion extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(7)
   $core.List<App> get apps => $_getList(6);
+
+  /// When set, marks this specific version as deprecated
+  @$pb.TagNumber(8)
+  DeprecatedStatus get deprecatedStatus => $_getN(7);
+  @$pb.TagNumber(8)
+  set deprecatedStatus(DeprecatedStatus v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasDeprecatedStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDeprecatedStatus() => clearField(8);
+  @$pb.TagNumber(8)
+  DeprecatedStatus ensureDeprecatedStatus() => $_ensure(7);
 }
 
 class ModuleMetadata extends $pb.GeneratedMessage {
@@ -12654,6 +12782,218 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   $core.List<MLTrainingVersion> get versions => $_getList(3);
 }
 
+/// note: current project will only support deprecation of modules;
+/// Training Script and ML Model aren't supported yet.
+class DeprecatedStatus extends $pb.GeneratedMessage {
+  factory DeprecatedStatus({
+    $50.Timestamp? deprecatedAt,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (deprecatedAt != null) {
+      $result.deprecatedAt = deprecatedAt;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
+  DeprecatedStatus._() : super();
+  factory DeprecatedStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecatedStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecatedStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<$50.Timestamp>(1, _omitFieldNames ? '' : 'deprecatedAt', subBuilder: $50.Timestamp.create)
+    ..aOS(2, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecatedStatus clone() => DeprecatedStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecatedStatus copyWith(void Function(DeprecatedStatus) updates) => super.copyWith((message) => updates(message as DeprecatedStatus)) as DeprecatedStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecatedStatus create() => DeprecatedStatus._();
+  DeprecatedStatus createEmptyInstance() => create();
+  static $pb.PbList<DeprecatedStatus> createRepeated() => $pb.PbList<DeprecatedStatus>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecatedStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecatedStatus>(create);
+  static DeprecatedStatus? _defaultInstance;
+
+  /// time of deprecation
+  @$pb.TagNumber(1)
+  $50.Timestamp get deprecatedAt => $_getN(0);
+  @$pb.TagNumber(1)
+  set deprecatedAt($50.Timestamp v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDeprecatedAt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeprecatedAt() => clearField(1);
+  @$pb.TagNumber(1)
+  $50.Timestamp ensureDeprecatedAt() => $_ensure(0);
+
+  /// msg explaining reason for deprecation
+  @$pb.TagNumber(2)
+  $core.String get message => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set message($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessage() => clearField(2);
+}
+
+enum RegistryItemBilling_Frequency {
+  costPerMonth, 
+  costPerYear, 
+  notSet
+}
+
+/// RegistryItemBilling stores usage cost information for a registry item. Its shape mirrors the
+/// billing block used by fragments so that billing jobs can consume registry item costs the same
+/// way. For now only cost_per_month.per_machine is supported; the additional fields that fragment
+/// billing supports (cost_per_year, tier_name, in_arrears, etc.) are intentionally omitted.
+class RegistryItemBilling extends $pb.GeneratedMessage {
+  factory RegistryItemBilling({
+    RegistryItemCostByResource? costPerMonth,
+    RegistryItemCostByResource? costPerYear,
+  }) {
+    final $result = create();
+    if (costPerMonth != null) {
+      $result.costPerMonth = costPerMonth;
+    }
+    if (costPerYear != null) {
+      $result.costPerYear = costPerYear;
+    }
+    return $result;
+  }
+  RegistryItemBilling._() : super();
+  factory RegistryItemBilling.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegistryItemBilling.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, RegistryItemBilling_Frequency> _RegistryItemBilling_FrequencyByTag = {
+    1 : RegistryItemBilling_Frequency.costPerMonth,
+    2 : RegistryItemBilling_Frequency.costPerYear,
+    0 : RegistryItemBilling_Frequency.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegistryItemBilling', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOM<RegistryItemCostByResource>(1, _omitFieldNames ? '' : 'costPerMonth', subBuilder: RegistryItemCostByResource.create)
+    ..aOM<RegistryItemCostByResource>(2, _omitFieldNames ? '' : 'costPerYear', subBuilder: RegistryItemCostByResource.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegistryItemBilling clone() => RegistryItemBilling()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegistryItemBilling copyWith(void Function(RegistryItemBilling) updates) => super.copyWith((message) => updates(message as RegistryItemBilling)) as RegistryItemBilling;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegistryItemBilling create() => RegistryItemBilling._();
+  RegistryItemBilling createEmptyInstance() => create();
+  static $pb.PbList<RegistryItemBilling> createRepeated() => $pb.PbList<RegistryItemBilling>();
+  @$core.pragma('dart2js:noInline')
+  static RegistryItemBilling getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegistryItemBilling>(create);
+  static RegistryItemBilling? _defaultInstance;
+
+  RegistryItemBilling_Frequency whichFrequency() => _RegistryItemBilling_FrequencyByTag[$_whichOneof(0)]!;
+  void clearFrequency() => clearField($_whichOneof(0));
+
+  /// The recurring monthly cost of the item, broken down by billable resource.
+  @$pb.TagNumber(1)
+  RegistryItemCostByResource get costPerMonth => $_getN(0);
+  @$pb.TagNumber(1)
+  set costPerMonth(RegistryItemCostByResource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCostPerMonth() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCostPerMonth() => clearField(1);
+  @$pb.TagNumber(1)
+  RegistryItemCostByResource ensureCostPerMonth() => $_ensure(0);
+
+  /// The recurring yearly cost of the item, broken down by billable resource.
+  @$pb.TagNumber(2)
+  RegistryItemCostByResource get costPerYear => $_getN(1);
+  @$pb.TagNumber(2)
+  set costPerYear(RegistryItemCostByResource v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCostPerYear() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCostPerYear() => clearField(2);
+  @$pb.TagNumber(2)
+  RegistryItemCostByResource ensureCostPerYear() => $_ensure(1);
+}
+
+/// RegistryItemCostByResource holds the cost of a registry item broken down by billable resource.
+/// Only the per_machine resource is currently supported.
+class RegistryItemCostByResource extends $pb.GeneratedMessage {
+  factory RegistryItemCostByResource({
+    $core.double? perMachine,
+  }) {
+    final $result = create();
+    if (perMachine != null) {
+      $result.perMachine = perMachine;
+    }
+    return $result;
+  }
+  RegistryItemCostByResource._() : super();
+  factory RegistryItemCostByResource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegistryItemCostByResource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegistryItemCostByResource', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'perMachine', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegistryItemCostByResource clone() => RegistryItemCostByResource()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegistryItemCostByResource copyWith(void Function(RegistryItemCostByResource) updates) => super.copyWith((message) => updates(message as RegistryItemCostByResource)) as RegistryItemCostByResource;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegistryItemCostByResource create() => RegistryItemCostByResource._();
+  RegistryItemCostByResource createEmptyInstance() => create();
+  static $pb.PbList<RegistryItemCostByResource> createRepeated() => $pb.PbList<RegistryItemCostByResource>();
+  @$core.pragma('dart2js:noInline')
+  static RegistryItemCostByResource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegistryItemCostByResource>(create);
+  static RegistryItemCostByResource? _defaultInstance;
+
+  /// The cost charged per machine using the item, in USD.
+  @$pb.TagNumber(1)
+  $core.double get perMachine => $_getN(0);
+  @$pb.TagNumber(1)
+  set perMachine($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPerMachine() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPerMachine() => clearField(1);
+}
+
 enum RegistryItem_Metadata {
   moduleMetadata, 
   mlModelMetadata, 
@@ -12679,7 +13019,9 @@ class RegistryItem extends $pb.GeneratedMessage {
     $fixnum.Int64? totalExternalOrganizationUsage,
     $50.Timestamp? createdAt,
     $50.Timestamp? updatedAt,
+    DeprecatedStatus? deprecatedStatus,
     MLTrainingMetadata? mlTrainingMetadata,
+    RegistryItemBilling? billing,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -12730,8 +13072,14 @@ class RegistryItem extends $pb.GeneratedMessage {
     if (updatedAt != null) {
       $result.updatedAt = updatedAt;
     }
+    if (deprecatedStatus != null) {
+      $result.deprecatedStatus = deprecatedStatus;
+    }
     if (mlTrainingMetadata != null) {
       $result.mlTrainingMetadata = mlTrainingMetadata;
+    }
+    if (billing != null) {
+      $result.billing = billing;
     }
     return $result;
   }
@@ -12763,7 +13111,9 @@ class RegistryItem extends $pb.GeneratedMessage {
     ..aInt64(14, _omitFieldNames ? '' : 'totalExternalOrganizationUsage')
     ..aOM<$50.Timestamp>(15, _omitFieldNames ? '' : 'createdAt', subBuilder: $50.Timestamp.create)
     ..aOM<$50.Timestamp>(16, _omitFieldNames ? '' : 'updatedAt', subBuilder: $50.Timestamp.create)
+    ..aOM<DeprecatedStatus>(17, _omitFieldNames ? '' : 'deprecatedStatus', subBuilder: DeprecatedStatus.create)
     ..aOM<MLTrainingMetadata>(18, _omitFieldNames ? '' : 'mlTrainingMetadata', subBuilder: MLTrainingMetadata.create)
+    ..aOM<RegistryItemBilling>(19, _omitFieldNames ? '' : 'billing', subBuilder: RegistryItemBilling.create)
     ..hasRequiredFields = false
   ;
 
@@ -12960,16 +13310,41 @@ class RegistryItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(16)
   $50.Timestamp ensureUpdatedAt() => $_ensure(15);
 
+  /// Whether the item is deprecated
+  @$pb.TagNumber(17)
+  DeprecatedStatus get deprecatedStatus => $_getN(16);
+  @$pb.TagNumber(17)
+  set deprecatedStatus(DeprecatedStatus v) { setField(17, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasDeprecatedStatus() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearDeprecatedStatus() => clearField(17);
+  @$pb.TagNumber(17)
+  DeprecatedStatus ensureDeprecatedStatus() => $_ensure(16);
+
   @$pb.TagNumber(18)
-  MLTrainingMetadata get mlTrainingMetadata => $_getN(16);
+  MLTrainingMetadata get mlTrainingMetadata => $_getN(17);
   @$pb.TagNumber(18)
   set mlTrainingMetadata(MLTrainingMetadata v) { setField(18, v); }
   @$pb.TagNumber(18)
-  $core.bool hasMlTrainingMetadata() => $_has(16);
+  $core.bool hasMlTrainingMetadata() => $_has(17);
   @$pb.TagNumber(18)
   void clearMlTrainingMetadata() => clearField(18);
   @$pb.TagNumber(18)
-  MLTrainingMetadata ensureMlTrainingMetadata() => $_ensure(16);
+  MLTrainingMetadata ensureMlTrainingMetadata() => $_ensure(17);
+
+  /// Usage cost information used by billing jobs to bill for monthly usage of the item.
+  /// This is unset when no cost has been configured for the item.
+  @$pb.TagNumber(19)
+  RegistryItemBilling get billing => $_getN(18);
+  @$pb.TagNumber(19)
+  set billing(RegistryItemBilling v) { setField(19, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasBilling() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearBilling() => clearField(19);
+  @$pb.TagNumber(19)
+  RegistryItemBilling ensureBilling() => $_ensure(18);
 }
 
 class GetRegistryItemRequest extends $pb.GeneratedMessage {
@@ -13219,6 +13594,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     UpdateMLModelMetadata? updateMlModelMetadata,
     UpdateMLTrainingMetadata? updateMlTrainingMetadata,
     $core.String? markdownDescription,
+    RegistryItemBilling? billing,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -13248,6 +13624,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     if (markdownDescription != null) {
       $result.markdownDescription = markdownDescription;
     }
+    if (billing != null) {
+      $result.billing = billing;
+    }
     return $result;
   }
   UpdateRegistryItemRequest._() : super();
@@ -13271,6 +13650,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     ..aOM<UpdateMLModelMetadata>(7, _omitFieldNames ? '' : 'updateMlModelMetadata', subBuilder: UpdateMLModelMetadata.create)
     ..aOM<UpdateMLTrainingMetadata>(8, _omitFieldNames ? '' : 'updateMlTrainingMetadata', subBuilder: UpdateMLTrainingMetadata.create)
     ..aOS(9, _omitFieldNames ? '' : 'markdownDescription')
+    ..aOM<RegistryItemBilling>(10, _omitFieldNames ? '' : 'billing', subBuilder: RegistryItemBilling.create)
     ..hasRequiredFields = false
   ;
 
@@ -13384,6 +13764,19 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   $core.bool hasMarkdownDescription() => $_has(8);
   @$pb.TagNumber(9)
   void clearMarkdownDescription() => clearField(9);
+
+  /// The usage cost information to store on the item. When unset, the existing billing
+  /// configuration is left unchanged.
+  @$pb.TagNumber(10)
+  RegistryItemBilling get billing => $_getN(9);
+  @$pb.TagNumber(10)
+  set billing(RegistryItemBilling v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasBilling() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearBilling() => clearField(10);
+  @$pb.TagNumber(10)
+  RegistryItemBilling ensureBilling() => $_ensure(9);
 }
 
 class UpdateRegistryItemResponse extends $pb.GeneratedMessage {
@@ -13431,6 +13824,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     $core.bool? includeMarkdownDocumentation,
     $core.Iterable<ModuleSourceType>? moduleSourceTypes,
     $core.Iterable<ModuleLanguage>? moduleLanguages,
+    $core.bool? showOwnedDeprecated,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -13466,6 +13860,9 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     if (moduleLanguages != null) {
       $result.moduleLanguages.addAll(moduleLanguages);
     }
+    if (showOwnedDeprecated != null) {
+      $result.showOwnedDeprecated = showOwnedDeprecated;
+    }
     return $result;
   }
   ListRegistryItemsRequest._() : super();
@@ -13484,6 +13881,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     ..aOB(9, _omitFieldNames ? '' : 'includeMarkdownDocumentation')
     ..pc<ModuleSourceType>(10, _omitFieldNames ? '' : 'moduleSourceTypes', $pb.PbFieldType.KE, valueOf: ModuleSourceType.valueOf, enumValues: ModuleSourceType.values, defaultEnumValue: ModuleSourceType.MODULE_SOURCE_TYPE_UNSPECIFIED)
     ..pc<ModuleLanguage>(11, _omitFieldNames ? '' : 'moduleLanguages', $pb.PbFieldType.KE, valueOf: ModuleLanguage.valueOf, enumValues: ModuleLanguage.values, defaultEnumValue: ModuleLanguage.MODULE_LANGUAGE_UNSPECIFIED)
+    ..aOB(12, _omitFieldNames ? '' : 'showOwnedDeprecated')
     ..hasRequiredFields = false
   ;
 
@@ -13566,6 +13964,15 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(11)
   $core.List<ModuleLanguage> get moduleLanguages => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.bool get showOwnedDeprecated => $_getBF(11);
+  @$pb.TagNumber(12)
+  set showOwnedDeprecated($core.bool v) { $_setBool(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasShowOwnedDeprecated() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearShowOwnedDeprecated() => clearField(12);
 }
 
 class ListRegistryItemsResponse extends $pb.GeneratedMessage {
@@ -13905,6 +14312,184 @@ class TransferRegistryItemResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static TransferRegistryItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransferRegistryItemResponse>(create);
   static TransferRegistryItemResponse? _defaultInstance;
+}
+
+class DeprecateRegistryItemRequest extends $pb.GeneratedMessage {
+  factory DeprecateRegistryItemRequest({
+    $core.String? itemId,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
+  DeprecateRegistryItemRequest._() : super();
+  factory DeprecateRegistryItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecateRegistryItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecateRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemRequest clone() => DeprecateRegistryItemRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemRequest copyWith(void Function(DeprecateRegistryItemRequest) updates) => super.copyWith((message) => updates(message as DeprecateRegistryItemRequest)) as DeprecateRegistryItemRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemRequest create() => DeprecateRegistryItemRequest._();
+  DeprecateRegistryItemRequest createEmptyInstance() => create();
+  static $pb.PbList<DeprecateRegistryItemRequest> createRepeated() => $pb.PbList<DeprecateRegistryItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecateRegistryItemRequest>(create);
+  static DeprecateRegistryItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get message => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set message($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessage() => clearField(2);
+}
+
+class DeprecateRegistryItemResponse extends $pb.GeneratedMessage {
+  factory DeprecateRegistryItemResponse() => create();
+  DeprecateRegistryItemResponse._() : super();
+  factory DeprecateRegistryItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecateRegistryItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecateRegistryItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemResponse clone() => DeprecateRegistryItemResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemResponse copyWith(void Function(DeprecateRegistryItemResponse) updates) => super.copyWith((message) => updates(message as DeprecateRegistryItemResponse)) as DeprecateRegistryItemResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemResponse create() => DeprecateRegistryItemResponse._();
+  DeprecateRegistryItemResponse createEmptyInstance() => create();
+  static $pb.PbList<DeprecateRegistryItemResponse> createRepeated() => $pb.PbList<DeprecateRegistryItemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecateRegistryItemResponse>(create);
+  static DeprecateRegistryItemResponse? _defaultInstance;
+}
+
+class UndeprecateRegistryItemRequest extends $pb.GeneratedMessage {
+  factory UndeprecateRegistryItemRequest({
+    $core.String? itemId,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    return $result;
+  }
+  UndeprecateRegistryItemRequest._() : super();
+  factory UndeprecateRegistryItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UndeprecateRegistryItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UndeprecateRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemRequest clone() => UndeprecateRegistryItemRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemRequest copyWith(void Function(UndeprecateRegistryItemRequest) updates) => super.copyWith((message) => updates(message as UndeprecateRegistryItemRequest)) as UndeprecateRegistryItemRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemRequest create() => UndeprecateRegistryItemRequest._();
+  UndeprecateRegistryItemRequest createEmptyInstance() => create();
+  static $pb.PbList<UndeprecateRegistryItemRequest> createRepeated() => $pb.PbList<UndeprecateRegistryItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UndeprecateRegistryItemRequest>(create);
+  static UndeprecateRegistryItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+}
+
+class UndeprecateRegistryItemResponse extends $pb.GeneratedMessage {
+  factory UndeprecateRegistryItemResponse() => create();
+  UndeprecateRegistryItemResponse._() : super();
+  factory UndeprecateRegistryItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UndeprecateRegistryItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UndeprecateRegistryItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemResponse clone() => UndeprecateRegistryItemResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemResponse copyWith(void Function(UndeprecateRegistryItemResponse) updates) => super.copyWith((message) => updates(message as UndeprecateRegistryItemResponse)) as UndeprecateRegistryItemResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemResponse create() => UndeprecateRegistryItemResponse._();
+  UndeprecateRegistryItemResponse createEmptyInstance() => create();
+  static $pb.PbList<UndeprecateRegistryItemResponse> createRepeated() => $pb.PbList<UndeprecateRegistryItemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UndeprecateRegistryItemResponse>(create);
+  static UndeprecateRegistryItemResponse? _defaultInstance;
 }
 
 /// Modules
@@ -15140,6 +15725,7 @@ class Module extends $pb.GeneratedMessage {
     $core.String? firstRun,
     $core.String? markdownDescription,
     $core.Iterable<App>? apps,
+    DeprecatedStatus? deprecatedStatus,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -15187,6 +15773,9 @@ class Module extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (deprecatedStatus != null) {
+      $result.deprecatedStatus = deprecatedStatus;
+    }
     return $result;
   }
   Module._() : super();
@@ -15209,6 +15798,7 @@ class Module extends $pb.GeneratedMessage {
     ..aOS(13, _omitFieldNames ? '' : 'firstRun')
     ..aOS(14, _omitFieldNames ? '' : 'markdownDescription')
     ..pc<App>(15, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..aOM<DeprecatedStatus>(16, _omitFieldNames ? '' : 'deprecatedStatus', subBuilder: DeprecatedStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -15366,6 +15956,18 @@ class Module extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(15)
   $core.List<App> get apps => $_getList(14);
+
+  /// Deprecated status of an individual module
+  @$pb.TagNumber(16)
+  DeprecatedStatus get deprecatedStatus => $_getN(15);
+  @$pb.TagNumber(16)
+  set deprecatedStatus(DeprecatedStatus v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasDeprecatedStatus() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearDeprecatedStatus() => clearField(16);
+  @$pb.TagNumber(16)
+  DeprecatedStatus ensureDeprecatedStatus() => $_ensure(15);
 }
 
 class VersionHistory extends $pb.GeneratedMessage {
@@ -15377,6 +15979,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     $core.String? firstRun,
     $core.String? markdownDescription,
     $core.Iterable<App>? apps,
+    DeprecatedStatus? deprecatedStatus,
   }) {
     final $result = create();
     if (version != null) {
@@ -15400,6 +16003,9 @@ class VersionHistory extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (deprecatedStatus != null) {
+      $result.deprecatedStatus = deprecatedStatus;
+    }
     return $result;
   }
   VersionHistory._() : super();
@@ -15414,6 +16020,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'firstRun')
     ..aOS(6, _omitFieldNames ? '' : 'markdownDescription')
     ..pc<App>(7, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..aOM<DeprecatedStatus>(8, _omitFieldNames ? '' : 'deprecatedStatus', subBuilder: DeprecatedStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -15489,6 +16096,18 @@ class VersionHistory extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(7)
   $core.List<App> get apps => $_getList(6);
+
+  /// Deprecated status of an individual module version
+  @$pb.TagNumber(8)
+  DeprecatedStatus get deprecatedStatus => $_getN(7);
+  @$pb.TagNumber(8)
+  set deprecatedStatus(DeprecatedStatus v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasDeprecatedStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDeprecatedStatus() => clearField(8);
+  @$pb.TagNumber(8)
+  DeprecatedStatus ensureDeprecatedStatus() => $_ensure(7);
 }
 
 class Uploads extends $pb.GeneratedMessage {
@@ -15667,6 +16286,216 @@ class ListModulesResponse extends $pb.GeneratedMessage {
   /// A listed of modules. When authenticated, this API will return modules that are private for this org. Public modules are always returned.
   @$pb.TagNumber(1)
   $core.List<Module> get modules => $_getList(0);
+}
+
+/// Deprecates a specific version of a registry item.
+class DeprecateRegistryItemVersionRequest extends $pb.GeneratedMessage {
+  factory DeprecateRegistryItemVersionRequest({
+    $core.String? itemId,
+    $core.String? version,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
+  DeprecateRegistryItemVersionRequest._() : super();
+  factory DeprecateRegistryItemVersionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecateRegistryItemVersionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecateRegistryItemVersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..aOS(3, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemVersionRequest clone() => DeprecateRegistryItemVersionRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemVersionRequest copyWith(void Function(DeprecateRegistryItemVersionRequest) updates) => super.copyWith((message) => updates(message as DeprecateRegistryItemVersionRequest)) as DeprecateRegistryItemVersionRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemVersionRequest create() => DeprecateRegistryItemVersionRequest._();
+  DeprecateRegistryItemVersionRequest createEmptyInstance() => create();
+  static $pb.PbList<DeprecateRegistryItemVersionRequest> createRepeated() => $pb.PbList<DeprecateRegistryItemVersionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemVersionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecateRegistryItemVersionRequest>(create);
+  static DeprecateRegistryItemVersionRequest? _defaultInstance;
+
+  /// The id of the registry item
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+
+  /// The semver string of the version to deprecate.
+  @$pb.TagNumber(2)
+  $core.String get version => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set version($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => clearField(2);
+
+  /// msg explaining reason for deprecation
+  @$pb.TagNumber(3)
+  $core.String get message => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set message($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMessage() => clearField(3);
+}
+
+class DeprecateRegistryItemVersionResponse extends $pb.GeneratedMessage {
+  factory DeprecateRegistryItemVersionResponse() => create();
+  DeprecateRegistryItemVersionResponse._() : super();
+  factory DeprecateRegistryItemVersionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecateRegistryItemVersionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecateRegistryItemVersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemVersionResponse clone() => DeprecateRegistryItemVersionResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemVersionResponse copyWith(void Function(DeprecateRegistryItemVersionResponse) updates) => super.copyWith((message) => updates(message as DeprecateRegistryItemVersionResponse)) as DeprecateRegistryItemVersionResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemVersionResponse create() => DeprecateRegistryItemVersionResponse._();
+  DeprecateRegistryItemVersionResponse createEmptyInstance() => create();
+  static $pb.PbList<DeprecateRegistryItemVersionResponse> createRepeated() => $pb.PbList<DeprecateRegistryItemVersionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemVersionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecateRegistryItemVersionResponse>(create);
+  static DeprecateRegistryItemVersionResponse? _defaultInstance;
+}
+
+class UndeprecateRegistryItemVersionRequest extends $pb.GeneratedMessage {
+  factory UndeprecateRegistryItemVersionRequest({
+    $core.String? itemId,
+    $core.String? version,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    return $result;
+  }
+  UndeprecateRegistryItemVersionRequest._() : super();
+  factory UndeprecateRegistryItemVersionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UndeprecateRegistryItemVersionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UndeprecateRegistryItemVersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemVersionRequest clone() => UndeprecateRegistryItemVersionRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemVersionRequest copyWith(void Function(UndeprecateRegistryItemVersionRequest) updates) => super.copyWith((message) => updates(message as UndeprecateRegistryItemVersionRequest)) as UndeprecateRegistryItemVersionRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemVersionRequest create() => UndeprecateRegistryItemVersionRequest._();
+  UndeprecateRegistryItemVersionRequest createEmptyInstance() => create();
+  static $pb.PbList<UndeprecateRegistryItemVersionRequest> createRepeated() => $pb.PbList<UndeprecateRegistryItemVersionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemVersionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UndeprecateRegistryItemVersionRequest>(create);
+  static UndeprecateRegistryItemVersionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get version => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set version($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => clearField(2);
+}
+
+class UndeprecateRegistryItemVersionResponse extends $pb.GeneratedMessage {
+  factory UndeprecateRegistryItemVersionResponse() => create();
+  UndeprecateRegistryItemVersionResponse._() : super();
+  factory UndeprecateRegistryItemVersionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UndeprecateRegistryItemVersionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UndeprecateRegistryItemVersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemVersionResponse clone() => UndeprecateRegistryItemVersionResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemVersionResponse copyWith(void Function(UndeprecateRegistryItemVersionResponse) updates) => super.copyWith((message) => updates(message as UndeprecateRegistryItemVersionResponse)) as UndeprecateRegistryItemVersionResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemVersionResponse create() => UndeprecateRegistryItemVersionResponse._();
+  UndeprecateRegistryItemVersionResponse createEmptyInstance() => create();
+  static $pb.PbList<UndeprecateRegistryItemVersionResponse> createRepeated() => $pb.PbList<UndeprecateRegistryItemVersionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemVersionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UndeprecateRegistryItemVersionResponse>(create);
+  static UndeprecateRegistryItemVersionResponse? _defaultInstance;
 }
 
 class GetUserIDByEmailRequest extends $pb.GeneratedMessage {

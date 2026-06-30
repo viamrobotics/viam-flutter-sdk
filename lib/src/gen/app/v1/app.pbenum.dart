@@ -53,6 +53,28 @@ class AuthenticationType extends $pb.ProtobufEnum {
   const AuthenticationType._($core.int v, $core.String n) : super(v, n);
 }
 
+/// LoginMethod is an interactive login mechanism an organization may allow.
+class LoginMethod extends $pb.ProtobufEnum {
+  static const LoginMethod LOGIN_METHOD_UNSPECIFIED = LoginMethod._(0, _omitEnumNames ? '' : 'LOGIN_METHOD_UNSPECIFIED');
+  static const LoginMethod LOGIN_METHOD_PASSWORD = LoginMethod._(1, _omitEnumNames ? '' : 'LOGIN_METHOD_PASSWORD');
+  static const LoginMethod LOGIN_METHOD_GOOGLE = LoginMethod._(2, _omitEnumNames ? '' : 'LOGIN_METHOD_GOOGLE');
+  static const LoginMethod LOGIN_METHOD_GITHUB = LoginMethod._(3, _omitEnumNames ? '' : 'LOGIN_METHOD_GITHUB');
+  static const LoginMethod LOGIN_METHOD_APPLE = LoginMethod._(4, _omitEnumNames ? '' : 'LOGIN_METHOD_APPLE');
+
+  static const $core.List<LoginMethod> values = <LoginMethod> [
+    LOGIN_METHOD_UNSPECIFIED,
+    LOGIN_METHOD_PASSWORD,
+    LOGIN_METHOD_GOOGLE,
+    LOGIN_METHOD_GITHUB,
+    LOGIN_METHOD_APPLE,
+  ];
+
+  static final $core.Map<$core.int, LoginMethod> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static LoginMethod? valueOf($core.int value) => _byValue[value];
+
+  const LoginMethod._($core.int v, $core.String n) : super(v, n);
+}
+
 class FragmentVisibility extends $pb.ProtobufEnum {
   static const FragmentVisibility FRAGMENT_VISIBILITY_UNSPECIFIED = FragmentVisibility._(0, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_UNSPECIFIED');
   static const FragmentVisibility FRAGMENT_VISIBILITY_PRIVATE = FragmentVisibility._(1, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_PRIVATE');

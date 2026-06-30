@@ -460,7 +460,8 @@ class Detection extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearClassName() => clearField(6);
 
-  /// the four corners of the box, in proportion to the respective image dimension
+  /// the four corners of the box, in proportion to the respective image
+  /// dimension
   @$pb.TagNumber(7)
   $core.double get xMinNormalized => $_getN(6);
   @$pb.TagNumber(7)
@@ -1358,6 +1359,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     $core.bool? classificationsSupported,
     $core.bool? detectionsSupported,
     $core.bool? objectPointCloudsSupported,
+    $core.String? defaultCamera,
   }) {
     final $result = create();
     if (classificationsSupported != null) {
@@ -1369,6 +1371,9 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     if (objectPointCloudsSupported != null) {
       $result.objectPointCloudsSupported = objectPointCloudsSupported;
     }
+    if (defaultCamera != null) {
+      $result.defaultCamera = defaultCamera;
+    }
     return $result;
   }
   GetPropertiesResponse._() : super();
@@ -1379,6 +1384,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     ..aOB(1, _omitFieldNames ? '' : 'classificationsSupported')
     ..aOB(2, _omitFieldNames ? '' : 'detectionsSupported')
     ..aOB(3, _omitFieldNames ? '' : 'objectPointCloudsSupported')
+    ..aOS(4, _omitFieldNames ? '' : 'defaultCamera')
     ..hasRequiredFields = false
   ;
 
@@ -1432,6 +1438,16 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   $core.bool hasObjectPointCloudsSupported() => $_has(2);
   @$pb.TagNumber(3)
   void clearObjectPointCloudsSupported() => clearField(3);
+
+  /// the default camera used for *FromCamera and GetObjectPointClouds calls
+  @$pb.TagNumber(4)
+  $core.String get defaultCamera => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set defaultCamera($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDefaultCamera() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDefaultCamera() => clearField(4);
 }
 
 
