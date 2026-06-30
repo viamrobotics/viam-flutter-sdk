@@ -145,12 +145,14 @@ void main() {
       ).thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
       final fragmentList = [FragmentImport()..fragmentId = 'fragmentId'];
       final fragmentImportList = FragmentImportList()..fragments.addAll(fragmentList);
-      final response = await appClient.updateOrganization('organizationId', defaultFragments: fragmentImportList);
+      final response = await appClient.updateOrganization(
+          'organizationId', defaultFragments: fragmentImportList, allowedLoginMethods: AllowedLoginMethods()..methods.add(LoginMethod.LOGIN_METHOD_PASSWORD));
       expect(response, equals(expected));
     });
 
     test('deleteOrganization', () async {
-      when(serviceClient.deleteOrganization(any)).thenAnswer((_) => MockResponseFuture.value(DeleteOrganizationResponse()));
+      final expected = DeleteOrganizationResponse();
+      when(serviceClient.deleteOrganization(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       await appClient.deleteOrganization('organizationId');
       verify(serviceClient.deleteOrganization(any)).called(1);
     });
@@ -745,6 +747,8 @@ void main() {
         [Visibility.VISIBILITY_UNSPECIFIED],
         ['platforms'],
         [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED],
+        includeMarkdownDocumentation: true,
+        showOwnedDeprecated: true,
       );
       expect(response, equals(expected));
     });
@@ -754,6 +758,20 @@ void main() {
       when(serviceClient.deleteRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       await appClient.deleteRegistryItem('itemId');
       verify(serviceClient.deleteRegistryItem(any)).called(1);
+    });
+
+    test('deprecateRegistryItem', () async {
+      final expected = DeprecateRegistryItemResponse();
+      when(serviceClient.deprecateRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deprecateRegistryItem('itemId', 'message');
+      verify(serviceClient.deprecateRegistryItem(argThat(isA<DeprecateRegistryItemRequest>().having((req) => req.itemId, 'itemId', 'itemId').having((req) => req.message, 'message', 'message')))).called(1);
+    });
+
+    test('undeprecateRegistryItem', () async {
+      final expected = UndeprecateRegistryItemResponse();
+      when(serviceClient.undeprecateRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.undeprecateRegistryItem('itemId');
+      verify(serviceClient.undeprecateRegistryItem(argThat(isA<UndeprecateRegistryItemRequest>().having((req) => req.itemId, 'itemId', 'itemId')))).called(1);
     });
 
     test('createModule', () async {
@@ -805,6 +823,20 @@ void main() {
       when(serviceClient.listModules(any)).thenAnswer((_) => MockResponseFuture.value(ListModulesResponse()..modules.addAll(expected)));
       final response = await appClient.listModules('moduleId');
       expect(response, equals(expected));
+    });
+
+    test('deprecateRegistryItemVersion', () async {
+      final expected = DeprecateRegistryItemVersionResponse();
+      when(serviceClient.deprecateRegistryItemVersion(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deprecateRegistryItemVersion('itemId', '1.0.0', 'message');
+      verify(serviceClient.deprecateRegistryItemVersion(argThat(isA<DeprecateRegistryItemVersionRequest>().having((req) => req.itemId, 'itemId', 'itemId').having((req) => req.version, 'version', '1.0.0').having((req) => req.message, 'message', 'message')))).called(1);
+    });
+
+    test('undeprecateRegistryItemVersion', () async {
+      final expected = UndeprecateRegistryItemVersionResponse();
+      when(serviceClient.undeprecateRegistryItemVersion(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.undeprecateRegistryItemVersion('itemId', '1.0.0');
+      verify(serviceClient.undeprecateRegistryItemVersion(argThat(isA<UndeprecateRegistryItemVersionRequest>().having((req) => req.itemId, 'itemId', 'itemId').having((req) => req.version, 'version', '1.0.0')))).called(1);
     });
 
     test('createKey', () async {

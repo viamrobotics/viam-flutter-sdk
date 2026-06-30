@@ -103,6 +103,7 @@ class AppClient {
     String? region,
     String? cid,
     FragmentImportList? defaultFragments,
+    AllowedLoginMethods? allowedLoginMethods,
   }) async {
     final request = UpdateOrganizationRequest()..organizationId = organizationId;
     if (name != null) request.name = name;
@@ -112,6 +113,7 @@ class AppClient {
     if (defaultFragments != null) {
       request.defaultFragments = defaultFragments;
     }
+    if (allowedLoginMethods != null) request.allowedLoginMethods = allowedLoginMethods;
     final UpdateOrganizationResponse response = await _client.updateOrganization(request);
     return response.organization;
   }
@@ -710,11 +712,15 @@ class AppClient {
     String? organizationId,
     String? searchTerm,
     String? pageToken,
+    bool? includeMarkdownDocumentation,
+    bool? showOwnedDeprecated,
   }) async {
     final request = ListRegistryItemsRequest(types: types, visibilities: visibilities, platforms: platforms, statuses: statuses)
       ..organizationId = organizationId ?? ''
       ..searchTerm = searchTerm ?? ''
       ..pageToken = pageToken ?? '';
+    if (includeMarkdownDocumentation != null) request.includeMarkdownDocumentation = includeMarkdownDocumentation;
+    if (showOwnedDeprecated != null) request.showOwnedDeprecated = showOwnedDeprecated;
     final ListRegistryItemsResponse response = await _client.listRegistryItems(request);
     return response.items;
   }
@@ -725,6 +731,24 @@ class AppClient {
   Future<void> deleteRegistryItem(String itemId) async {
     final request = DeleteRegistryItemRequest()..itemId = itemId;
     await _client.deleteRegistryItem(request);
+  }
+
+  /// Deprecates a [RegistryItem]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> deprecateRegistryItem(String itemId, String message) async {
+    final request = DeprecateRegistryItemRequest()
+      ..itemId = itemId
+      ..message = message;
+    await _client.deprecateRegistryItem(request);
+  }
+
+  /// Undeprecates a [RegistryItem]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> undeprecateRegistryItem(String itemId) async {
+    final request = UndeprecateRegistryItemRequest()..itemId = itemId;
+    await _client.undeprecateRegistryItem(request);
   }
 
   /// Create a [Module]
@@ -785,6 +809,27 @@ class AppClient {
     final request = ListModulesRequest()..organizationId = organizationId ?? '';
     final ListModulesResponse response = await _client.listModules(request);
     return response.modules;
+  }
+
+  /// Deprecates a specific version of a [RegistryItem].
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> deprecateRegistryItemVersion(String itemId, String version, String message) async {
+    final request = DeprecateRegistryItemVersionRequest()
+      ..itemId = itemId
+      ..version = version
+      ..message = message;
+    await _client.deprecateRegistryItemVersion(request);
+  }
+
+  /// Undeprecates a specific version of a [RegistryItem].
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> undeprecateRegistryItemVersion(String itemId, String version) async {
+    final request = UndeprecateRegistryItemVersionRequest()
+      ..itemId = itemId
+      ..version = version;
+    await _client.undeprecateRegistryItemVersion(request);
   }
 
   /// Create an [APIKey]
