@@ -121,6 +121,10 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/SendTraces',
       ($34.SendTracesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $34.SendTracesResponse.fromBuffer(value));
+  static final _$uploadDataFromPath = $grpc.ClientMethod<$34.UploadDataFromPathRequest, $34.UploadDataFromPathResponse>(
+      '/viam.robot.v1.RobotService/UploadDataFromPath',
+      ($34.UploadDataFromPathRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $34.UploadDataFromPathResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -226,6 +230,10 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$34.SendTracesResponse> sendTraces($34.SendTracesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sendTraces, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$34.UploadDataFromPathResponse> uploadDataFromPath($34.UploadDataFromPathRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$uploadDataFromPath, request, options: options);
   }
 }
 
@@ -409,6 +417,13 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $34.SendTracesRequest.fromBuffer(value),
         ($34.SendTracesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$34.UploadDataFromPathRequest, $34.UploadDataFromPathResponse>(
+        'UploadDataFromPath',
+        uploadDataFromPath_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $34.UploadDataFromPathRequest.fromBuffer(value),
+        ($34.UploadDataFromPathResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$34.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$34.GetOperationsRequest> request) async {
@@ -507,6 +522,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return sendTraces(call, await request);
   }
 
+  $async.Future<$34.UploadDataFromPathResponse> uploadDataFromPath_Pre($grpc.ServiceCall call, $async.Future<$34.UploadDataFromPathRequest> request) async {
+    return uploadDataFromPath(call, await request);
+  }
+
   $async.Future<$34.GetOperationsResponse> getOperations($grpc.ServiceCall call, $34.GetOperationsRequest request);
   $async.Future<$34.GetSessionsResponse> getSessions($grpc.ServiceCall call, $34.GetSessionsRequest request);
   $async.Future<$34.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $34.ResourceNamesRequest request);
@@ -532,4 +551,5 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$34.TransformPoseResponse> transformPose($grpc.ServiceCall call, $34.TransformPoseRequest request);
   $async.Future<$34.TransformPCDResponse> transformPCD($grpc.ServiceCall call, $34.TransformPCDRequest request);
   $async.Future<$34.SendTracesResponse> sendTraces($grpc.ServiceCall call, $34.SendTracesRequest request);
+  $async.Future<$34.UploadDataFromPathResponse> uploadDataFromPath($grpc.ServiceCall call, $34.UploadDataFromPathRequest request);
 }

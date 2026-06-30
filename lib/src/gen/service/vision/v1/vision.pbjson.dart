@@ -291,6 +291,10 @@ const GetPropertiesResponse$json = {
     {'1': 'classifications_supported', '3': 1, '4': 1, '5': 8, '10': 'classificationsSupported'},
     {'1': 'detections_supported', '3': 2, '4': 1, '5': 8, '10': 'detectionsSupported'},
     {'1': 'object_point_clouds_supported', '3': 3, '4': 1, '5': 8, '10': 'objectPointCloudsSupported'},
+    {'1': 'default_camera', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'defaultCamera', '17': true},
+  ],
+  '8': [
+    {'1': '_default_camera'},
   ],
 };
 
@@ -299,5 +303,6 @@ final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Dec
     'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USOwoZY2xhc3NpZmljYXRpb25zX3N1cHBvcnRlZBgBIA'
     'EoCFIYY2xhc3NpZmljYXRpb25zU3VwcG9ydGVkEjEKFGRldGVjdGlvbnNfc3VwcG9ydGVkGAIg'
     'ASgIUhNkZXRlY3Rpb25zU3VwcG9ydGVkEkEKHW9iamVjdF9wb2ludF9jbG91ZHNfc3VwcG9ydG'
-    'VkGAMgASgIUhpvYmplY3RQb2ludENsb3Vkc1N1cHBvcnRlZA==');
+    'VkGAMgASgIUhpvYmplY3RQb2ludENsb3Vkc1N1cHBvcnRlZBIqCg5kZWZhdWx0X2NhbWVyYRgE'
+    'IAEoCUgAUg1kZWZhdWx0Q2FtZXJhiAEBQhEKD19kZWZhdWx0X2NhbWVyYQ==');
 
