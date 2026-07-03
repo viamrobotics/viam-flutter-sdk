@@ -97,8 +97,8 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// Get information about the navigation service's properties, including its [MapType].
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getproperties).
-  Future<NavigationProperties> getProperties({Map<String, dynamic>? extra}) async {
-    final request = GetPropertiesRequest(name: name, extra: extra?.toStruct());
+  Future<NavigationProperties> getProperties() async {
+    final request = GetPropertiesRequest(name: name);
     return await client.getProperties(request, options: callOptions);
   }
 
