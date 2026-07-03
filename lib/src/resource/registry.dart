@@ -51,6 +51,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Switch.subtype, (name, channel) => SwitchClient(name, channel)));
     registerSubtype(ResourceRegistration(DiscoveryClient.subtype, (name, channel) => DiscoveryClient(name, channel)));
     registerSubtype(ResourceRegistration(GenericServiceClient.subtype, (name, channel) => GenericServiceClient(name, channel)));
+    registerSubtype(ResourceRegistration(NavigationClient.subtype, (name, channel) => NavigationClient(name, channel)));
     registerSubtype(ResourceRegistration(VisionClient.subtype, (name, channel) => VisionClient(name, channel)));
   }
 

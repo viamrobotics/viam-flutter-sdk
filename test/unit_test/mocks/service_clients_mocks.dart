@@ -10,6 +10,7 @@ import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/service/generic/v1/generic.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/service/navigation/v1/navigation.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/service/video/v1/video.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
 
@@ -21,6 +22,7 @@ import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
   MockSpec<DataServiceClient>(),
   MockSpec<ProvisioningServiceClient>(),
   MockSpec<VisionServiceClient>(),
+  MockSpec<NavigationServiceClient>(),
   MockSpec<BillingServiceClient>(),
   MockSpec<MLTrainingServiceClient>(),
   MockSpec<DatasetServiceClient>(),
