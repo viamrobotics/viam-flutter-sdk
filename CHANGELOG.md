@@ -1,11 +1,13 @@
 # Changelog
 
-## [v0.19.4](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.4) (2026-06-15)
+## [v0.19.5](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.5) (2026-07-10)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.3...v0.19.4)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.4...v0.19.5)
 
 **Merged pull requests:**
 
+- Add NavigationClient for the navigation service [\#544](https://github.com/viamrobotics/viam-flutter-sdk/pull/544) ([erh](https://github.com/erh))
+- v0.19.4 [\#540](https://github.com/viamrobotics/viam-flutter-sdk/pull/540) ([github-actions[bot]](https://github.com/apps/github-actions))
 - update proto to v0.1.558 [\#539](https://github.com/viamrobotics/viam-flutter-sdk/pull/539) ([stuqdog](https://github.com/stuqdog))
 - chore: bump claude-ci-workflows to v2.1.0 [\#538](https://github.com/viamrobotics/viam-flutter-sdk/pull/538) ([ale7714](https://github.com/ale7714))
 - RSDK-13978 Add playStream to AudioOut [\#537](https://github.com/viamrobotics/viam-flutter-sdk/pull/537) ([oliviamiller](https://github.com/oliviamiller))
@@ -226,6 +228,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.19.4](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.4) (2026-06-15)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.3...v0.19.4)
 
 ## [v0.19.3](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.3) (2026-05-07)
 
@@ -476,8 +482,6 @@
 - Automated Protos Update [\#216](https://github.com/viamrobotics/viam-flutter-sdk/pull/216) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add license auditing [\#214](https://github.com/viamrobotics/viam-flutter-sdk/pull/214) ([njooma](https://github.com/njooma))
 - RSDK-7445: paginate data by filter methods [\#213](https://github.com/viamrobotics/viam-flutter-sdk/pull/213) ([purplenicole730](https://github.com/purplenicole730))
-- Automated Protos Update [\#212](https://github.com/viamrobotics/viam-flutter-sdk/pull/212) ([github-actions[bot]](https://github.com/apps/github-actions))
-- v0.0.14 [\#211](https://github.com/viamrobotics/viam-flutter-sdk/pull/211) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-4264 - Move to api gostream dependency [\#210](https://github.com/viamrobotics/viam-flutter-sdk/pull/210) ([stuqdog](https://github.com/stuqdog))
 - RSDK-6665 - add getCloudMetadata client method [\#209](https://github.com/viamrobotics/viam-flutter-sdk/pull/209) ([stuqdog](https://github.com/stuqdog))
 - RSDK-7405 - dataset wrappers [\#208](https://github.com/viamrobotics/viam-flutter-sdk/pull/208) ([stuqdog](https://github.com/stuqdog))
