@@ -92,6 +92,14 @@
   
 </dd>
 
+          <dt id="AllowedLoginMethods">
+  <span class="name "><a href="../viam_protos.app.app/AllowedLoginMethods-class.html">AllowedLoginMethods</a></span> 
+
+</dt>
+<dd>
+  An empty list means that all methods are allowed.
+</dd>
+
           <dt id="AllowedOrgIDs">
   <span class="name "><a href="../viam_protos.app.app/AllowedOrgIDs-class.html">AllowedOrgIDs</a></span> 
 
@@ -670,6 +678,47 @@
 
           <dt id="DeleteRobotResponse">
   <span class="name "><a href="../viam_protos.app.app/DeleteRobotResponse-class.html">DeleteRobotResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DeprecatedStatus">
+  <span class="name "><a href="../viam_protos.app.app/DeprecatedStatus-class.html">DeprecatedStatus</a></span> 
+
+</dt>
+<dd>
+  note: current project will only support deprecation of modules;
+Training Script and ML Model aren't supported yet.
+</dd>
+
+          <dt id="DeprecateRegistryItemRequest">
+  <span class="name "><a href="../viam_protos.app.app/DeprecateRegistryItemRequest-class.html">DeprecateRegistryItemRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DeprecateRegistryItemResponse">
+  <span class="name "><a href="../viam_protos.app.app/DeprecateRegistryItemResponse-class.html">DeprecateRegistryItemResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DeprecateRegistryItemVersionRequest">
+  <span class="name "><a href="../viam_protos.app.app/DeprecateRegistryItemVersionRequest-class.html">DeprecateRegistryItemVersionRequest</a></span> 
+
+</dt>
+<dd>
+  Deprecates a specific version of a registry item.
+</dd>
+
+          <dt id="DeprecateRegistryItemVersionResponse">
+  <span class="name "><a href="../viam_protos.app.app/DeprecateRegistryItemVersionResponse-class.html">DeprecateRegistryItemVersionResponse</a></span> 
 
 </dt>
 <dd>
@@ -1572,6 +1621,14 @@
   
 </dd>
 
+          <dt id="LoginMethod">
+  <span class="name "><a href="../viam_protos.app.app/LoginMethod-class.html">LoginMethod</a></span> 
+
+</dt>
+<dd>
+  LoginMethod is an interactive login mechanism an organization may allow.
+</dd>
+
           <dt id="MachinePickerCustomizations">
   <span class="name "><a href="../viam_protos.app.app/MachinePickerCustomizations-class.html">MachinePickerCustomizations</a></span> 
 
@@ -1901,6 +1958,26 @@ to id, name, or both).
   
 </dd>
 
+          <dt id="RegistryItemBilling">
+  <span class="name "><a href="../viam_protos.app.app/RegistryItemBilling-class.html">RegistryItemBilling</a></span> 
+
+</dt>
+<dd>
+  RegistryItemBilling stores usage cost information for a registry item. Its shape mirrors the
+billing block used by fragments so that billing jobs can consume registry item costs the same
+way. For now only cost_per_month.per_machine is supported; the additional fields that fragment
+billing supports (cost_per_year, tier_name, in_arrears, etc.) are intentionally omitted.
+</dd>
+
+          <dt id="RegistryItemCostByResource">
+  <span class="name "><a href="../viam_protos.app.app/RegistryItemCostByResource-class.html">RegistryItemCostByResource</a></span> 
+
+</dt>
+<dd>
+  RegistryItemCostByResource holds the cost of a registry item broken down by billable resource.
+Only the per_machine resource is currently supported.
+</dd>
+
           <dt id="RegistryItemStatus">
   <span class="name "><a href="../viam_protos.app.app/RegistryItemStatus-class.html">RegistryItemStatus</a></span> 
 
@@ -2151,6 +2228,38 @@ to id, name, or both).
 
           <dt id="TransferRegistryItemResponse">
   <span class="name "><a href="../viam_protos.app.app/TransferRegistryItemResponse-class.html">TransferRegistryItemResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UndeprecateRegistryItemRequest">
+  <span class="name "><a href="../viam_protos.app.app/UndeprecateRegistryItemRequest-class.html">UndeprecateRegistryItemRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UndeprecateRegistryItemResponse">
+  <span class="name "><a href="../viam_protos.app.app/UndeprecateRegistryItemResponse-class.html">UndeprecateRegistryItemResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UndeprecateRegistryItemVersionRequest">
+  <span class="name "><a href="../viam_protos.app.app/UndeprecateRegistryItemVersionRequest-class.html">UndeprecateRegistryItemVersionRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UndeprecateRegistryItemVersionResponse">
+  <span class="name "><a href="../viam_protos.app.app/UndeprecateRegistryItemVersionResponse-class.html">UndeprecateRegistryItemVersionResponse</a></span> 
 
 </dt>
 <dd>
@@ -2531,6 +2640,14 @@ to id, name, or both).
   
 </dd>
 
+          <dt id="RegistryItemBilling_Frequency">
+  <span class="name "><a href="../viam_protos.app.app/RegistryItemBilling_Frequency.html">RegistryItemBilling_Frequency</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
           <dt id="UpdateRegistryItemRequest_Metadata">
   <span class="name "><a href="../viam_protos.app.app/UpdateRegistryItemRequest_Metadata.html">UpdateRegistryItemRequest_Metadata</a></span> 
 
@@ -2599,6 +2716,18 @@ to id, name, or both).
           <dt id="AddRoleResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/AddRoleResponse$json-constant.html">AddRoleResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="AllowedLoginMethods$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/AllowedLoginMethods$json-constant.html">AllowedLoginMethods$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
 </dt>
@@ -3450,6 +3579,66 @@ to id, name, or both).
 
           <dt id="DeleteRobotResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/DeleteRobotResponse$json-constant.html">DeleteRobotResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DeprecatedStatus$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/DeprecatedStatus$json-constant.html">DeprecatedStatus$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DeprecateRegistryItemRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/DeprecateRegistryItemRequest$json-constant.html">DeprecateRegistryItemRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DeprecateRegistryItemResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/DeprecateRegistryItemResponse$json-constant.html">DeprecateRegistryItemResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DeprecateRegistryItemVersionRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/DeprecateRegistryItemVersionRequest$json-constant.html">DeprecateRegistryItemVersionRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DeprecateRegistryItemVersionResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/DeprecateRegistryItemVersionResponse$json-constant.html">DeprecateRegistryItemVersionResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
   
 
@@ -4828,6 +5017,18 @@ to id, name, or both).
 
 </dd>
 
+          <dt id="LoginMethod$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/LoginMethod$json-constant.html">LoginMethod$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="MachinePickerCustomizations$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/MachinePickerCustomizations$json-constant.html">MachinePickerCustomizations$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -5320,6 +5521,30 @@ to id, name, or both).
 
 </dd>
 
+          <dt id="RegistryItemBilling$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/RegistryItemBilling$json-constant.html">RegistryItemBilling$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="RegistryItemCostByResource$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/RegistryItemCostByResource$json-constant.html">RegistryItemCostByResource$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="RegistryItemStatus$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/RegistryItemStatus$json-constant.html">RegistryItemStatus$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -5706,6 +5931,54 @@ to id, name, or both).
 
           <dt id="TransferRegistryItemResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/TransferRegistryItemResponse$json-constant.html">TransferRegistryItemResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="UndeprecateRegistryItemRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/UndeprecateRegistryItemRequest$json-constant.html">UndeprecateRegistryItemRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="UndeprecateRegistryItemResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/UndeprecateRegistryItemResponse$json-constant.html">UndeprecateRegistryItemResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="UndeprecateRegistryItemVersionRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/UndeprecateRegistryItemVersionRequest$json-constant.html">UndeprecateRegistryItemVersionRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="UndeprecateRegistryItemVersionResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/UndeprecateRegistryItemVersionResponse$json-constant.html">UndeprecateRegistryItemVersionResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
   
 
@@ -6294,6 +6567,18 @@ to id, name, or both).
 </dt>
 <dd>
   Descriptor for <code>AddRoleResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="allowedLoginMethodsDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/allowedLoginMethodsDescriptor.html">allowedLoginMethodsDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>AllowedLoginMethods</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -7146,6 +7431,66 @@ to id, name, or both).
 </dt>
 <dd>
   Descriptor for <code>DeleteRobotResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="deprecatedStatusDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/deprecatedStatusDescriptor.html">deprecatedStatusDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DeprecatedStatus</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="deprecateRegistryItemRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/deprecateRegistryItemRequestDescriptor.html">deprecateRegistryItemRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DeprecateRegistryItemRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="deprecateRegistryItemResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/deprecateRegistryItemResponseDescriptor.html">deprecateRegistryItemResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DeprecateRegistryItemResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="deprecateRegistryItemVersionRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/deprecateRegistryItemVersionRequestDescriptor.html">deprecateRegistryItemVersionRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DeprecateRegistryItemVersionRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="deprecateRegistryItemVersionResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/deprecateRegistryItemVersionResponseDescriptor.html">deprecateRegistryItemVersionResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DeprecateRegistryItemVersionResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -8494,6 +8839,18 @@ to id, name, or both).
 
 </dd>
 
+          <dt id="loginMethodDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/loginMethodDescriptor.html">loginMethodDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>LoginMethod</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="machinePickerCustomizationsDescriptor" class="property">
   <span class="name"><a href="../viam_protos.app.app/machinePickerCustomizationsDescriptor.html">machinePickerCustomizationsDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -8974,6 +9331,30 @@ to id, name, or both).
 
 </dd>
 
+          <dt id="registryItemBillingDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/registryItemBillingDescriptor.html">registryItemBillingDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>RegistryItemBilling</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="registryItemCostByResourceDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/registryItemCostByResourceDescriptor.html">registryItemCostByResourceDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>RegistryItemCostByResource</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="registryItemDescriptor" class="property">
   <span class="name"><a href="../viam_protos.app.app/registryItemDescriptor.html">registryItemDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -9354,6 +9735,54 @@ to id, name, or both).
 </dt>
 <dd>
   Descriptor for <code>TransferRegistryItemResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="undeprecateRegistryItemRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/undeprecateRegistryItemRequestDescriptor.html">undeprecateRegistryItemRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>UndeprecateRegistryItemRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="undeprecateRegistryItemResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/undeprecateRegistryItemResponseDescriptor.html">undeprecateRegistryItemResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>UndeprecateRegistryItemResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="undeprecateRegistryItemVersionRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/undeprecateRegistryItemVersionRequestDescriptor.html">undeprecateRegistryItemVersionRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>UndeprecateRegistryItemVersionRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="undeprecateRegistryItemVersionResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/undeprecateRegistryItemVersionResponseDescriptor.html">undeprecateRegistryItemVersionResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>UndeprecateRegistryItemVersionResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

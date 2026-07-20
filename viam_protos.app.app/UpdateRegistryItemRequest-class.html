@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="UpdateRegistryItemRequest.new" class="callable">
-          <span class="name"><a href="../viam_protos.app.app/UpdateRegistryItemRequest/UpdateRegistryItemRequest.html">UpdateRegistryItemRequest</a></span><span class="signature">({<span class="parameter" id="param-itemId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">itemId</span>, </span><span class="parameter" id="param-type"><span class="type-annotation"><a href="../viam_protos.app.packages/PackageType-class.html">PackageType</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="param-description"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">description</span>, </span><span class="parameter" id="param-visibility"><span class="type-annotation"><a href="../viam_protos.app.app/Visibility-class.html">Visibility</a>?</span> <span class="parameter-name">visibility</span>, </span><span class="parameter" id="param-url"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">url</span>, </span><span class="parameter" id="param-updateModuleMetadata"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateModuleMetadata-class.html">UpdateModuleMetadata</a>?</span> <span class="parameter-name">updateModuleMetadata</span>, </span><span class="parameter" id="param-updateMlModelMetadata"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateMLModelMetadata-class.html">UpdateMLModelMetadata</a>?</span> <span class="parameter-name">updateMlModelMetadata</span>, </span><span class="parameter" id="param-updateMlTrainingMetadata"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateMLTrainingMetadata-class.html">UpdateMLTrainingMetadata</a>?</span> <span class="parameter-name">updateMlTrainingMetadata</span>, </span><span class="parameter" id="param-markdownDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">markdownDescription</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.app/UpdateRegistryItemRequest/UpdateRegistryItemRequest.html">UpdateRegistryItemRequest</a></span><span class="signature">({<span class="parameter" id="param-itemId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">itemId</span>, </span><span class="parameter" id="param-type"><span class="type-annotation"><a href="../viam_protos.app.packages/PackageType-class.html">PackageType</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="param-description"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">description</span>, </span><span class="parameter" id="param-visibility"><span class="type-annotation"><a href="../viam_protos.app.app/Visibility-class.html">Visibility</a>?</span> <span class="parameter-name">visibility</span>, </span><span class="parameter" id="param-url"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">url</span>, </span><span class="parameter" id="param-updateModuleMetadata"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateModuleMetadata-class.html">UpdateModuleMetadata</a>?</span> <span class="parameter-name">updateModuleMetadata</span>, </span><span class="parameter" id="param-updateMlModelMetadata"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateMLModelMetadata-class.html">UpdateMLModelMetadata</a>?</span> <span class="parameter-name">updateMlModelMetadata</span>, </span><span class="parameter" id="param-updateMlTrainingMetadata"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateMLTrainingMetadata-class.html">UpdateMLTrainingMetadata</a>?</span> <span class="parameter-name">updateMlTrainingMetadata</span>, </span><span class="parameter" id="param-markdownDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">markdownDescription</span>, </span><span class="parameter" id="param-billing"><span class="type-annotation"><a href="../viam_protos.app.app/RegistryItemBilling-class.html">RegistryItemBilling</a>?</span> <span class="parameter-name">billing</span></span>})</span>
         </dt>
         <dd>
           
@@ -115,6 +115,19 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="billing" class="property">
+  <span class="name"><a href="../viam_protos.app.app/UpdateRegistryItemRequest/billing.html">billing</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.app.app/RegistryItemBilling-class.html">RegistryItemBilling</a></span>
+  
+
+</dt>
+<dd>
+  The usage cost information to store on the item. When unset, the existing billing
+configuration is left unchanged.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="description" class="property">
   <span class="name"><a href="../viam_protos.app.app/UpdateRegistryItemRequest/description.html">description</a></span>
   <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
@@ -341,6 +354,19 @@ to protobuf fields.
 <dd class="inherited">
   Clears all data that was set in this message.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clearBilling" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/UpdateRegistryItemRequest/clearBilling.html">clearBilling</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -583,6 +609,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="ensureBilling" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/UpdateRegistryItemRequest/ensureBilling.html">ensureBilling</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.app/RegistryItemBilling-class.html">RegistryItemBilling</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="ensureUpdateMlModelMetadata" class="callable">
   <span class="name"><a href="../viam_protos.app.app/UpdateRegistryItemRequest/ensureUpdateMlModelMetadata.html">ensureUpdateMlModelMetadata</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_protos.app.app/UpdateMLModelMetadata-class.html">UpdateMLModelMetadata</a></span>
@@ -711,6 +750,19 @@ default value if it is not set.
 <dd class="inherited">
   
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasBilling" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/UpdateRegistryItemRequest/hasBilling.html">hasBilling</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 

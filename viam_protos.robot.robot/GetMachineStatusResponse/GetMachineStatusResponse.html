@@ -58,6 +58,8 @@
 <li><span class="parameter" id="param-config"><span class="type-annotation"><a href="../../viam_protos.robot.robot/ConfigStatus-class.html">ConfigStatus</a>?</span> <span class="parameter-name">config</span>, </span></li>
 <li><span class="parameter" id="param-state"><span class="type-annotation"><a href="../../viam_protos.robot.robot/GetMachineStatusResponse_State-class.html">GetMachineStatusResponse_State</a>?</span> <span class="parameter-name">state</span>, </span></li>
 <li><span class="parameter" id="param-jobStatuses"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/JobStatus-class.html">JobStatus</a></span>&gt;</span>?</span> <span class="parameter-name">jobStatuses</span>, </span></li>
+<li><span class="parameter" id="param-modules"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/ModuleStatus-class.html">ModuleStatus</a></span>&gt;</span>?</span> <span class="parameter-name">modules</span>, </span></li>
+<li><span class="parameter" id="param-packages"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/PackageStatus-class.html">PackageStatus</a></span>&gt;</span>?</span> <span class="parameter-name">packages</span>, </span></li>
 </ol>})
     </section>
     
@@ -71,6 +73,8 @@
   ConfigStatus? config,
   GetMachineStatusResponse_State? state,
   $core.Iterable&lt;JobStatus&gt;? jobStatuses,
+  $core.Iterable&lt;ModuleStatus&gt;? modules,
+  $core.Iterable&lt;PackageStatus&gt;? packages,
 }) {
   final $result = create();
   if (resources != null) {
@@ -84,6 +88,12 @@
   }
   if (jobStatuses != null) {
     $result.jobStatuses.addAll(jobStatuses);
+  }
+  if (modules != null) {
+    $result.modules.addAll(modules);
+  }
+  if (packages != null) {
+    $result.packages.addAll(packages);
   }
   return $result;
 }</code></pre>

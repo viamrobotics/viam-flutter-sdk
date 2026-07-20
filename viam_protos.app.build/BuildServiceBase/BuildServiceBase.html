@@ -140,6 +140,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $2.StartReloadBuildRequest.fromBuffer(value),
       ($2.StartReloadBuildResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.StartSourceUploadBuildRequest, $2.StartSourceUploadBuildResponse&gt;(
+      &#39;StartSourceUploadBuild&#39;,
+      startSourceUploadBuild,
+      true,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.StartSourceUploadBuildRequest.fromBuffer(value),
+      ($2.StartSourceUploadBuildResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$2.StartPackageBuildRequest, $2.StartPackageBuildResponse&gt;(
       &#39;StartPackageBuild&#39;,
       startPackageBuild_Pre,

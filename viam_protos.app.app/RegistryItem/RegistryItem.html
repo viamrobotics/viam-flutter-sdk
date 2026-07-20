@@ -70,7 +70,9 @@
 <li><span class="parameter" id="param-totalExternalOrganizationUsage"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">totalExternalOrganizationUsage</span>, </span></li>
 <li><span class="parameter" id="param-createdAt"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdAt</span>, </span></li>
 <li><span class="parameter" id="param-updatedAt"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">updatedAt</span>, </span></li>
+<li><span class="parameter" id="param-deprecatedStatus"><span class="type-annotation"><a href="../../viam_protos.app.app/DeprecatedStatus-class.html">DeprecatedStatus</a>?</span> <span class="parameter-name">deprecatedStatus</span>, </span></li>
 <li><span class="parameter" id="param-mlTrainingMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/MLTrainingMetadata-class.html">MLTrainingMetadata</a>?</span> <span class="parameter-name">mlTrainingMetadata</span>, </span></li>
+<li><span class="parameter" id="param-billing"><span class="type-annotation"><a href="../../viam_protos.app.app/RegistryItemBilling-class.html">RegistryItemBilling</a>?</span> <span class="parameter-name">billing</span>, </span></li>
 </ol>})
     </section>
     
@@ -96,7 +98,9 @@
   $fixnum.Int64? totalExternalOrganizationUsage,
   $50.Timestamp? createdAt,
   $50.Timestamp? updatedAt,
+  DeprecatedStatus? deprecatedStatus,
   MLTrainingMetadata? mlTrainingMetadata,
+  RegistryItemBilling? billing,
 }) {
   final $result = create();
   if (itemId != null) {
@@ -147,8 +151,14 @@
   if (updatedAt != null) {
     $result.updatedAt = updatedAt;
   }
+  if (deprecatedStatus != null) {
+    $result.deprecatedStatus = deprecatedStatus;
+  }
   if (mlTrainingMetadata != null) {
     $result.mlTrainingMetadata = mlTrainingMetadata;
+  }
+  if (billing != null) {
+    $result.billing = billing;
   }
   return $result;
 }</code></pre>

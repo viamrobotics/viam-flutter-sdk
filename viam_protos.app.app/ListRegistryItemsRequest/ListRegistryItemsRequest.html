@@ -65,6 +65,7 @@
 <li><span class="parameter" id="param-includeMarkdownDocumentation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">includeMarkdownDocumentation</span>, </span></li>
 <li><span class="parameter" id="param-moduleSourceTypes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/ModuleSourceType-class.html">ModuleSourceType</a></span>&gt;</span>?</span> <span class="parameter-name">moduleSourceTypes</span>, </span></li>
 <li><span class="parameter" id="param-moduleLanguages"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/ModuleLanguage-class.html">ModuleLanguage</a></span>&gt;</span>?</span> <span class="parameter-name">moduleLanguages</span>, </span></li>
+<li><span class="parameter" id="param-showOwnedDeprecated"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">showOwnedDeprecated</span>, </span></li>
 </ol>})
     </section>
     
@@ -85,6 +86,7 @@
   $core.bool? includeMarkdownDocumentation,
   $core.Iterable&lt;ModuleSourceType&gt;? moduleSourceTypes,
   $core.Iterable&lt;ModuleLanguage&gt;? moduleLanguages,
+  $core.bool? showOwnedDeprecated,
 }) {
   final $result = create();
   if (organizationId != null) {
@@ -119,6 +121,9 @@
   }
   if (moduleLanguages != null) {
     $result.moduleLanguages.addAll(moduleLanguages);
+  }
+  if (showOwnedDeprecated != null) {
+    $result.showOwnedDeprecated = showOwnedDeprecated;
   }
   return $result;
 }</code></pre>

@@ -63,6 +63,7 @@
 <li><span class="parameter" id="param-updateMlModelMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/UpdateMLModelMetadata-class.html">UpdateMLModelMetadata</a>?</span> <span class="parameter-name">updateMlModelMetadata</span>, </span></li>
 <li><span class="parameter" id="param-updateMlTrainingMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/UpdateMLTrainingMetadata-class.html">UpdateMLTrainingMetadata</a>?</span> <span class="parameter-name">updateMlTrainingMetadata</span>, </span></li>
 <li><span class="parameter" id="param-markdownDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">markdownDescription</span>, </span></li>
+<li><span class="parameter" id="param-billing"><span class="type-annotation"><a href="../../viam_protos.app.app/RegistryItemBilling-class.html">RegistryItemBilling</a>?</span> <span class="parameter-name">billing</span>, </span></li>
 </ol>})
     </section>
     
@@ -81,6 +82,7 @@
   UpdateMLModelMetadata? updateMlModelMetadata,
   UpdateMLTrainingMetadata? updateMlTrainingMetadata,
   $core.String? markdownDescription,
+  RegistryItemBilling? billing,
 }) {
   final $result = create();
   if (itemId != null) {
@@ -109,6 +111,9 @@
   }
   if (markdownDescription != null) {
     $result.markdownDescription = markdownDescription;
+  }
+  if (billing != null) {
+    $result.billing = billing;
   }
   return $result;
 }</code></pre>

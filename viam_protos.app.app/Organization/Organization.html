@@ -61,6 +61,7 @@
 <li><span class="parameter" id="param-defaultRegion"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">defaultRegion</span>, </span></li>
 <li><span class="parameter" id="param-cid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">cid</span>, </span></li>
 <li><span class="parameter" id="param-defaultFragments"><span class="type-annotation"><a href="../../viam_protos.app.app/FragmentImportList-class.html">FragmentImportList</a>?</span> <span class="parameter-name">defaultFragments</span>, </span></li>
+<li><span class="parameter" id="param-allowedLoginMethods"><span class="type-annotation"><a href="../../viam_protos.app.app/AllowedLoginMethods-class.html">AllowedLoginMethods</a>?</span> <span class="parameter-name">allowedLoginMethods</span>, </span></li>
 </ol>})
     </section>
     
@@ -77,6 +78,7 @@
   $core.String? defaultRegion,
   $core.String? cid,
   FragmentImportList? defaultFragments,
+  AllowedLoginMethods? allowedLoginMethods,
 }) {
   final $result = create();
   if (id != null) {
@@ -99,6 +101,9 @@
   }
   if (defaultFragments != null) {
     $result.defaultFragments = defaultFragments;
+  }
+  if (allowedLoginMethods != null) {
+    $result.allowedLoginMethods = allowedLoginMethods;
   }
   return $result;
 }</code></pre>
