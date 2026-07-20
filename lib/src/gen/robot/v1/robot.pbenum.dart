@@ -70,5 +70,51 @@ class ResourceStatus_State extends $pb.ProtobufEnum {
   const ResourceStatus_State._($core.int v, $core.String n) : super(v, n);
 }
 
+class ModuleStatus_State extends $pb.ProtobufEnum {
+  static const ModuleStatus_State STATE_UNSPECIFIED = ModuleStatus_State._(0, _omitEnumNames ? '' : 'STATE_UNSPECIFIED');
+  static const ModuleStatus_State STATE_PENDING = ModuleStatus_State._(1, _omitEnumNames ? '' : 'STATE_PENDING');
+  static const ModuleStatus_State STATE_STARTING = ModuleStatus_State._(2, _omitEnumNames ? '' : 'STATE_STARTING');
+  static const ModuleStatus_State STATE_READY = ModuleStatus_State._(3, _omitEnumNames ? '' : 'STATE_READY');
+  static const ModuleStatus_State STATE_UNHEALTHY = ModuleStatus_State._(4, _omitEnumNames ? '' : 'STATE_UNHEALTHY');
+  static const ModuleStatus_State STATE_CLOSING = ModuleStatus_State._(5, _omitEnumNames ? '' : 'STATE_CLOSING');
+
+  static const $core.List<ModuleStatus_State> values = <ModuleStatus_State> [
+    STATE_UNSPECIFIED,
+    STATE_PENDING,
+    STATE_STARTING,
+    STATE_READY,
+    STATE_UNHEALTHY,
+    STATE_CLOSING,
+  ];
+
+  static final $core.Map<$core.int, ModuleStatus_State> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ModuleStatus_State? valueOf($core.int value) => _byValue[value];
+
+  const ModuleStatus_State._($core.int v, $core.String n) : super(v, n);
+}
+
+class PackageStatus_State extends $pb.ProtobufEnum {
+  static const PackageStatus_State STATE_UNSPECIFIED = PackageStatus_State._(0, _omitEnumNames ? '' : 'STATE_UNSPECIFIED');
+  static const PackageStatus_State STATE_DOWNLOADING = PackageStatus_State._(1, _omitEnumNames ? '' : 'STATE_DOWNLOADING');
+  static const PackageStatus_State STATE_LOADING = PackageStatus_State._(2, _omitEnumNames ? '' : 'STATE_LOADING');
+  static const PackageStatus_State STATE_FIRST_RUN = PackageStatus_State._(3, _omitEnumNames ? '' : 'STATE_FIRST_RUN');
+  static const PackageStatus_State STATE_READY = PackageStatus_State._(4, _omitEnumNames ? '' : 'STATE_READY');
+  static const PackageStatus_State STATE_FAILED = PackageStatus_State._(5, _omitEnumNames ? '' : 'STATE_FAILED');
+
+  static const $core.List<PackageStatus_State> values = <PackageStatus_State> [
+    STATE_UNSPECIFIED,
+    STATE_DOWNLOADING,
+    STATE_LOADING,
+    STATE_FIRST_RUN,
+    STATE_READY,
+    STATE_FAILED,
+  ];
+
+  static final $core.Map<$core.int, PackageStatus_State> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static PackageStatus_State? valueOf($core.int value) => _byValue[value];
+
+  const PackageStatus_State._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

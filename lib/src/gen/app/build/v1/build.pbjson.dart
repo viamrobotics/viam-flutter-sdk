@@ -154,6 +154,68 @@ final $typed_data.Uint8List startReloadBuildResponseDescriptor = $convert.base64
     'oYYnVpbGRlcl9mYWxsYmFja19tZXNzYWdlGAIgASgJSABSFmJ1aWxkZXJGYWxsYmFja01lc3Nh'
     'Z2WIAQFCGwoZX2J1aWxkZXJfZmFsbGJhY2tfbWVzc2FnZQ==');
 
+@$core.Deprecated('Use sourceUploadBuildInfoDescriptor instead')
+const SourceUploadBuildInfo$json = {
+  '1': 'SourceUploadBuildInfo',
+  '2': [
+    {'1': 'platforms', '3': 1, '4': 3, '5': 9, '10': 'platforms'},
+    {'1': 'workdir', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'workdir', '17': true},
+    {'1': 'module_id', '3': 3, '4': 1, '5': 9, '10': 'moduleId'},
+    {'1': 'distro', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'distro', '17': true},
+  ],
+  '8': [
+    {'1': '_workdir'},
+    {'1': '_distro'},
+  ],
+};
+
+/// Descriptor for `SourceUploadBuildInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sourceUploadBuildInfoDescriptor = $convert.base64Decode(
+    'ChVTb3VyY2VVcGxvYWRCdWlsZEluZm8SHAoJcGxhdGZvcm1zGAEgAygJUglwbGF0Zm9ybXMSHQ'
+    'oHd29ya2RpchgCIAEoCUgAUgd3b3JrZGlyiAEBEhsKCW1vZHVsZV9pZBgDIAEoCVIIbW9kdWxl'
+    'SWQSGwoGZGlzdHJvGAQgASgJSAFSBmRpc3Ryb4gBAUIKCghfd29ya2RpckIJCgdfZGlzdHJv');
+
+@$core.Deprecated('Use startSourceUploadBuildRequestDescriptor instead')
+const StartSourceUploadBuildRequest$json = {
+  '1': 'StartSourceUploadBuildRequest',
+  '2': [
+    {'1': 'package', '3': 1, '4': 1, '5': 11, '6': '.viam.app.packages.v1.CreatePackageRequest', '9': 0, '10': 'package'},
+    {'1': 'build_info', '3': 2, '4': 1, '5': 11, '6': '.viam.app.build.v1.SourceUploadBuildInfo', '9': 0, '10': 'buildInfo'},
+    {'1': 'module_version', '3': 3, '4': 1, '5': 9, '10': 'moduleVersion'},
+    {'1': 'builder', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'builder', '17': true},
+  ],
+  '8': [
+    {'1': 'cloud_build'},
+    {'1': '_builder'},
+  ],
+};
+
+/// Descriptor for `StartSourceUploadBuildRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startSourceUploadBuildRequestDescriptor = $convert.base64Decode(
+    'Ch1TdGFydFNvdXJjZVVwbG9hZEJ1aWxkUmVxdWVzdBJGCgdwYWNrYWdlGAEgASgLMioudmlhbS'
+    '5hcHAucGFja2FnZXMudjEuQ3JlYXRlUGFja2FnZVJlcXVlc3RIAFIHcGFja2FnZRJJCgpidWls'
+    'ZF9pbmZvGAIgASgLMigudmlhbS5hcHAuYnVpbGQudjEuU291cmNlVXBsb2FkQnVpbGRJbmZvSA'
+    'BSCWJ1aWxkSW5mbxIlCg5tb2R1bGVfdmVyc2lvbhgDIAEoCVINbW9kdWxlVmVyc2lvbhIdCgdi'
+    'dWlsZGVyGAQgASgJSAFSB2J1aWxkZXKIAQFCDQoLY2xvdWRfYnVpbGRCCgoIX2J1aWxkZXI=');
+
+@$core.Deprecated('Use startSourceUploadBuildResponseDescriptor instead')
+const StartSourceUploadBuildResponse$json = {
+  '1': 'StartSourceUploadBuildResponse',
+  '2': [
+    {'1': 'build_id', '3': 1, '4': 1, '5': 9, '10': 'buildId'},
+    {'1': 'builder_fallback_message', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'builderFallbackMessage', '17': true},
+  ],
+  '8': [
+    {'1': '_builder_fallback_message'},
+  ],
+};
+
+/// Descriptor for `StartSourceUploadBuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startSourceUploadBuildResponseDescriptor = $convert.base64Decode(
+    'Ch5TdGFydFNvdXJjZVVwbG9hZEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aW'
+    'xkSWQSPQoYYnVpbGRlcl9mYWxsYmFja19tZXNzYWdlGAIgASgJSABSFmJ1aWxkZXJGYWxsYmFj'
+    'a01lc3NhZ2WIAQFCGwoZX2J1aWxkZXJfZmFsbGJhY2tfbWVzc2FnZQ==');
+
 @$core.Deprecated('Use startPackageBuildRequestDescriptor instead')
 const StartPackageBuildRequest$json = {
   '1': 'StartPackageBuildRequest',

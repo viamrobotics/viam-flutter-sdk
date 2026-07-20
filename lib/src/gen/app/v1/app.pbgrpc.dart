@@ -409,6 +409,14 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/TransferRegistryItem',
       ($12.TransferRegistryItemRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.TransferRegistryItemResponse.fromBuffer(value));
+  static final _$deprecateRegistryItem = $grpc.ClientMethod<$12.DeprecateRegistryItemRequest, $12.DeprecateRegistryItemResponse>(
+      '/viam.app.v1.AppService/DeprecateRegistryItem',
+      ($12.DeprecateRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.DeprecateRegistryItemResponse.fromBuffer(value));
+  static final _$undeprecateRegistryItem = $grpc.ClientMethod<$12.UndeprecateRegistryItemRequest, $12.UndeprecateRegistryItemResponse>(
+      '/viam.app.v1.AppService/UndeprecateRegistryItem',
+      ($12.UndeprecateRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.UndeprecateRegistryItemResponse.fromBuffer(value));
   static final _$createModule = $grpc.ClientMethod<$12.CreateModuleRequest, $12.CreateModuleResponse>(
       '/viam.app.v1.AppService/CreateModule',
       ($12.CreateModuleRequest value) => value.writeToBuffer(),
@@ -429,6 +437,14 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListModules',
       ($12.ListModulesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.ListModulesResponse.fromBuffer(value));
+  static final _$deprecateRegistryItemVersion = $grpc.ClientMethod<$12.DeprecateRegistryItemVersionRequest, $12.DeprecateRegistryItemVersionResponse>(
+      '/viam.app.v1.AppService/DeprecateRegistryItemVersion',
+      ($12.DeprecateRegistryItemVersionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.DeprecateRegistryItemVersionResponse.fromBuffer(value));
+  static final _$undeprecateRegistryItemVersion = $grpc.ClientMethod<$12.UndeprecateRegistryItemVersionRequest, $12.UndeprecateRegistryItemVersionResponse>(
+      '/viam.app.v1.AppService/UndeprecateRegistryItemVersion',
+      ($12.UndeprecateRegistryItemVersionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.UndeprecateRegistryItemVersionResponse.fromBuffer(value));
   static final _$createKey = $grpc.ClientMethod<$12.CreateKeyRequest, $12.CreateKeyResponse>(
       '/viam.app.v1.AppService/CreateKey',
       ($12.CreateKeyRequest value) => value.writeToBuffer(),
@@ -880,6 +896,14 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$transferRegistryItem, request, options: options);
   }
 
+  $grpc.ResponseFuture<$12.DeprecateRegistryItemResponse> deprecateRegistryItem($12.DeprecateRegistryItemRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deprecateRegistryItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.UndeprecateRegistryItemResponse> undeprecateRegistryItem($12.UndeprecateRegistryItemRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$undeprecateRegistryItem, request, options: options);
+  }
+
   $grpc.ResponseFuture<$12.CreateModuleResponse> createModule($12.CreateModuleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createModule, request, options: options);
   }
@@ -898,6 +922,14 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$12.ListModulesResponse> listModules($12.ListModulesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listModules, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.DeprecateRegistryItemVersionResponse> deprecateRegistryItemVersion($12.DeprecateRegistryItemVersionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deprecateRegistryItemVersion, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.UndeprecateRegistryItemVersionResponse> undeprecateRegistryItemVersion($12.UndeprecateRegistryItemVersionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$undeprecateRegistryItemVersion, request, options: options);
   }
 
   $grpc.ResponseFuture<$12.CreateKeyResponse> createKey($12.CreateKeyRequest request, {$grpc.CallOptions? options}) {
@@ -1641,6 +1673,20 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.TransferRegistryItemRequest.fromBuffer(value),
         ($12.TransferRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.DeprecateRegistryItemRequest, $12.DeprecateRegistryItemResponse>(
+        'DeprecateRegistryItem',
+        deprecateRegistryItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.DeprecateRegistryItemRequest.fromBuffer(value),
+        ($12.DeprecateRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.UndeprecateRegistryItemRequest, $12.UndeprecateRegistryItemResponse>(
+        'UndeprecateRegistryItem',
+        undeprecateRegistryItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.UndeprecateRegistryItemRequest.fromBuffer(value),
+        ($12.UndeprecateRegistryItemResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$12.CreateModuleRequest, $12.CreateModuleResponse>(
         'CreateModule',
         createModule_Pre,
@@ -1676,6 +1722,20 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.ListModulesRequest.fromBuffer(value),
         ($12.ListModulesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.DeprecateRegistryItemVersionRequest, $12.DeprecateRegistryItemVersionResponse>(
+        'DeprecateRegistryItemVersion',
+        deprecateRegistryItemVersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.DeprecateRegistryItemVersionRequest.fromBuffer(value),
+        ($12.DeprecateRegistryItemVersionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.UndeprecateRegistryItemVersionRequest, $12.UndeprecateRegistryItemVersionResponse>(
+        'UndeprecateRegistryItemVersion',
+        undeprecateRegistryItemVersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.UndeprecateRegistryItemVersionRequest.fromBuffer(value),
+        ($12.UndeprecateRegistryItemVersionResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$12.CreateKeyRequest, $12.CreateKeyResponse>(
         'CreateKey',
         createKey_Pre,
@@ -2164,6 +2224,14 @@ abstract class AppServiceBase extends $grpc.Service {
     return transferRegistryItem(call, await request);
   }
 
+  $async.Future<$12.DeprecateRegistryItemResponse> deprecateRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$12.DeprecateRegistryItemRequest> request) async {
+    return deprecateRegistryItem(call, await request);
+  }
+
+  $async.Future<$12.UndeprecateRegistryItemResponse> undeprecateRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$12.UndeprecateRegistryItemRequest> request) async {
+    return undeprecateRegistryItem(call, await request);
+  }
+
   $async.Future<$12.CreateModuleResponse> createModule_Pre($grpc.ServiceCall call, $async.Future<$12.CreateModuleRequest> request) async {
     return createModule(call, await request);
   }
@@ -2178,6 +2246,14 @@ abstract class AppServiceBase extends $grpc.Service {
 
   $async.Future<$12.ListModulesResponse> listModules_Pre($grpc.ServiceCall call, $async.Future<$12.ListModulesRequest> request) async {
     return listModules(call, await request);
+  }
+
+  $async.Future<$12.DeprecateRegistryItemVersionResponse> deprecateRegistryItemVersion_Pre($grpc.ServiceCall call, $async.Future<$12.DeprecateRegistryItemVersionRequest> request) async {
+    return deprecateRegistryItemVersion(call, await request);
+  }
+
+  $async.Future<$12.UndeprecateRegistryItemVersionResponse> undeprecateRegistryItemVersion_Pre($grpc.ServiceCall call, $async.Future<$12.UndeprecateRegistryItemVersionRequest> request) async {
+    return undeprecateRegistryItemVersion(call, await request);
   }
 
   $async.Future<$12.CreateKeyResponse> createKey_Pre($grpc.ServiceCall call, $async.Future<$12.CreateKeyRequest> request) async {
@@ -2333,11 +2409,15 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$12.DeleteRegistryItemResponse> deleteRegistryItem($grpc.ServiceCall call, $12.DeleteRegistryItemRequest request);
   $async.Future<$12.RenameRegistryItemResponse> renameRegistryItem($grpc.ServiceCall call, $12.RenameRegistryItemRequest request);
   $async.Future<$12.TransferRegistryItemResponse> transferRegistryItem($grpc.ServiceCall call, $12.TransferRegistryItemRequest request);
+  $async.Future<$12.DeprecateRegistryItemResponse> deprecateRegistryItem($grpc.ServiceCall call, $12.DeprecateRegistryItemRequest request);
+  $async.Future<$12.UndeprecateRegistryItemResponse> undeprecateRegistryItem($grpc.ServiceCall call, $12.UndeprecateRegistryItemRequest request);
   $async.Future<$12.CreateModuleResponse> createModule($grpc.ServiceCall call, $12.CreateModuleRequest request);
   $async.Future<$12.UpdateModuleResponse> updateModule($grpc.ServiceCall call, $12.UpdateModuleRequest request);
   $async.Future<$12.UploadModuleFileResponse> uploadModuleFile($grpc.ServiceCall call, $async.Stream<$12.UploadModuleFileRequest> request);
   $async.Future<$12.GetModuleResponse> getModule($grpc.ServiceCall call, $12.GetModuleRequest request);
   $async.Future<$12.ListModulesResponse> listModules($grpc.ServiceCall call, $12.ListModulesRequest request);
+  $async.Future<$12.DeprecateRegistryItemVersionResponse> deprecateRegistryItemVersion($grpc.ServiceCall call, $12.DeprecateRegistryItemVersionRequest request);
+  $async.Future<$12.UndeprecateRegistryItemVersionResponse> undeprecateRegistryItemVersion($grpc.ServiceCall call, $12.UndeprecateRegistryItemVersionRequest request);
   $async.Future<$12.CreateKeyResponse> createKey($grpc.ServiceCall call, $12.CreateKeyRequest request);
   $async.Future<$12.DeleteKeyResponse> deleteKey($grpc.ServiceCall call, $12.DeleteKeyRequest request);
   $async.Future<$12.ListKeysResponse> listKeys($grpc.ServiceCall call, $12.ListKeysRequest request);

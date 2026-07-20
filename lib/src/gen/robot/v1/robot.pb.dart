@@ -11,8 +11,11 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../app/datasync/v1/data_sync.pb.dart' as $7;
+import '../../app/packages/v1/packages.pbenum.dart' as $1;
 import '../../common/v1/common.pb.dart' as $9;
 import '../../google/protobuf/duration.pb.dart' as $48;
 import '../../google/protobuf/struct.pb.dart' as $49;
@@ -96,6 +99,196 @@ class SendTracesResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static SendTracesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendTracesResponse>(create);
   static SendTracesResponse? _defaultInstance;
+}
+
+class UploadDataFromPathRequest extends $pb.GeneratedMessage {
+  factory UploadDataFromPathRequest({
+    $core.String? path,
+    $7.UploadMetadata? uploadMetadata,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (path != null) {
+      $result.path = path;
+    }
+    if (uploadMetadata != null) {
+      $result.uploadMetadata = uploadMetadata;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  UploadDataFromPathRequest._() : super();
+  factory UploadDataFromPathRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadDataFromPathRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadDataFromPathRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'path')
+    ..aOM<$7.UploadMetadata>(2, _omitFieldNames ? '' : 'uploadMetadata', subBuilder: $7.UploadMetadata.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadDataFromPathRequest clone() => UploadDataFromPathRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadDataFromPathRequest copyWith(void Function(UploadDataFromPathRequest) updates) => super.copyWith((message) => updates(message as UploadDataFromPathRequest)) as UploadDataFromPathRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadDataFromPathRequest create() => UploadDataFromPathRequest._();
+  UploadDataFromPathRequest createEmptyInstance() => create();
+  static $pb.PbList<UploadDataFromPathRequest> createRepeated() => $pb.PbList<UploadDataFromPathRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UploadDataFromPathRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadDataFromPathRequest>(create);
+  static UploadDataFromPathRequest? _defaultInstance;
+
+  /// File or folder path on the robot to upload.
+  @$pb.TagNumber(1)
+  $core.String get path => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set path($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPath() => clearField(1);
+
+  /// Optional metadata to apply to uploaded files.
+  @$pb.TagNumber(2)
+  $7.UploadMetadata get uploadMetadata => $_getN(1);
+  @$pb.TagNumber(2)
+  set uploadMetadata($7.UploadMetadata v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUploadMetadata() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUploadMetadata() => clearField(2);
+  @$pb.TagNumber(2)
+  $7.UploadMetadata ensureUploadMetadata() => $_ensure(1);
+
+  /// Additional arguments to the method.
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(2);
+}
+
+class UploadDataFromPathResponse extends $pb.GeneratedMessage {
+  factory UploadDataFromPathResponse({
+    $fixnum.Int64? filesUploaded,
+    $fixnum.Int64? filesFailed,
+    $fixnum.Int64? bytesUploaded,
+    $fixnum.Int64? bytesTotal,
+    $core.Iterable<$core.String>? ids,
+  }) {
+    final $result = create();
+    if (filesUploaded != null) {
+      $result.filesUploaded = filesUploaded;
+    }
+    if (filesFailed != null) {
+      $result.filesFailed = filesFailed;
+    }
+    if (bytesUploaded != null) {
+      $result.bytesUploaded = bytesUploaded;
+    }
+    if (bytesTotal != null) {
+      $result.bytesTotal = bytesTotal;
+    }
+    if (ids != null) {
+      $result.ids.addAll(ids);
+    }
+    return $result;
+  }
+  UploadDataFromPathResponse._() : super();
+  factory UploadDataFromPathResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadDataFromPathResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadDataFromPathResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'filesUploaded', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'filesFailed', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'bytesUploaded', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'bytesTotal', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..pPS(5, _omitFieldNames ? '' : 'ids')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadDataFromPathResponse clone() => UploadDataFromPathResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadDataFromPathResponse copyWith(void Function(UploadDataFromPathResponse) updates) => super.copyWith((message) => updates(message as UploadDataFromPathResponse)) as UploadDataFromPathResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadDataFromPathResponse create() => UploadDataFromPathResponse._();
+  UploadDataFromPathResponse createEmptyInstance() => create();
+  static $pb.PbList<UploadDataFromPathResponse> createRepeated() => $pb.PbList<UploadDataFromPathResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UploadDataFromPathResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadDataFromPathResponse>(create);
+  static UploadDataFromPathResponse? _defaultInstance;
+
+  /// Total number of files successfully uploaded.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get filesUploaded => $_getI64(0);
+  @$pb.TagNumber(1)
+  set filesUploaded($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFilesUploaded() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilesUploaded() => clearField(1);
+
+  /// Total number of files that failed to upload.
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get filesFailed => $_getI64(1);
+  @$pb.TagNumber(2)
+  set filesFailed($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFilesFailed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFilesFailed() => clearField(2);
+
+  /// Total bytes successfully uploaded.
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get bytesUploaded => $_getI64(2);
+  @$pb.TagNumber(3)
+  set bytesUploaded($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBytesUploaded() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBytesUploaded() => clearField(3);
+
+  /// Total bytes discovered in the directory.
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get bytesTotal => $_getI64(3);
+  @$pb.TagNumber(4)
+  set bytesTotal($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBytesTotal() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBytesTotal() => clearField(4);
+
+  /// Successfully uploaded binary data ids.
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get ids => $_getList(4);
 }
 
 class TunnelRequest extends $pb.GeneratedMessage {
@@ -2769,6 +2962,8 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     ConfigStatus? config,
     GetMachineStatusResponse_State? state,
     $core.Iterable<JobStatus>? jobStatuses,
+    $core.Iterable<ModuleStatus>? modules,
+    $core.Iterable<PackageStatus>? packages,
   }) {
     final $result = create();
     if (resources != null) {
@@ -2783,6 +2978,12 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     if (jobStatuses != null) {
       $result.jobStatuses.addAll(jobStatuses);
     }
+    if (modules != null) {
+      $result.modules.addAll(modules);
+    }
+    if (packages != null) {
+      $result.packages.addAll(packages);
+    }
     return $result;
   }
   GetMachineStatusResponse._() : super();
@@ -2794,6 +2995,8 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     ..aOM<ConfigStatus>(2, _omitFieldNames ? '' : 'config', subBuilder: ConfigStatus.create)
     ..e<GetMachineStatusResponse_State>(3, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: GetMachineStatusResponse_State.STATE_UNSPECIFIED, valueOf: GetMachineStatusResponse_State.valueOf, enumValues: GetMachineStatusResponse_State.values)
     ..pc<JobStatus>(4, _omitFieldNames ? '' : 'jobStatuses', $pb.PbFieldType.PM, subBuilder: JobStatus.create)
+    ..pc<ModuleStatus>(5, _omitFieldNames ? '' : 'modules', $pb.PbFieldType.PM, subBuilder: ModuleStatus.create)
+    ..pc<PackageStatus>(6, _omitFieldNames ? '' : 'packages', $pb.PbFieldType.PM, subBuilder: PackageStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -2843,6 +3046,12 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<JobStatus> get jobStatuses => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.List<ModuleStatus> get modules => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.List<PackageStatus> get packages => $_getList(5);
 }
 
 class JobStatus extends $pb.GeneratedMessage {
@@ -3042,6 +3251,280 @@ class ResourceStatus extends $pb.GeneratedMessage {
   void clearCloudMetadata() => clearField(6);
   @$pb.TagNumber(6)
   GetCloudMetadataResponse ensureCloudMetadata() => $_ensure(5);
+}
+
+class ModuleStatus extends $pb.GeneratedMessage {
+  factory ModuleStatus({
+    $core.String? moduleName,
+    ModuleStatus_State? state,
+    $50.Timestamp? lastUpdated,
+    $core.String? error,
+    $core.int? consecutiveFailures,
+  }) {
+    final $result = create();
+    if (moduleName != null) {
+      $result.moduleName = moduleName;
+    }
+    if (state != null) {
+      $result.state = state;
+    }
+    if (lastUpdated != null) {
+      $result.lastUpdated = lastUpdated;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    if (consecutiveFailures != null) {
+      $result.consecutiveFailures = consecutiveFailures;
+    }
+    return $result;
+  }
+  ModuleStatus._() : super();
+  factory ModuleStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ModuleStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ModuleStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'moduleName')
+    ..e<ModuleStatus_State>(2, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: ModuleStatus_State.STATE_UNSPECIFIED, valueOf: ModuleStatus_State.valueOf, enumValues: ModuleStatus_State.values)
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $50.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'error')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'consecutiveFailures', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ModuleStatus clone() => ModuleStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ModuleStatus copyWith(void Function(ModuleStatus) updates) => super.copyWith((message) => updates(message as ModuleStatus)) as ModuleStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ModuleStatus create() => ModuleStatus._();
+  ModuleStatus createEmptyInstance() => create();
+  static $pb.PbList<ModuleStatus> createRepeated() => $pb.PbList<ModuleStatus>();
+  @$core.pragma('dart2js:noInline')
+  static ModuleStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModuleStatus>(create);
+  static ModuleStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get moduleName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set moduleName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasModuleName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModuleName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  ModuleStatus_State get state => $_getN(1);
+  @$pb.TagNumber(2)
+  set state(ModuleStatus_State v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => clearField(2);
+
+  /// updated on every state transition
+  @$pb.TagNumber(3)
+  $50.Timestamp get lastUpdated => $_getN(2);
+  @$pb.TagNumber(3)
+  set lastUpdated($50.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLastUpdated() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastUpdated() => clearField(3);
+  @$pb.TagNumber(3)
+  $50.Timestamp ensureLastUpdated() => $_ensure(2);
+
+  /// when a module transitions to unhealthy, this field is populated with the error that caused the transition.
+  /// the error persists until the module reenters the Ready state, guaranteed to be nil in the Ready state
+  @$pb.TagNumber(4)
+  $core.String get error => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set error($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasError() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearError() => clearField(4);
+
+  /// number of times this module has entered the unhealthy state since the last time this module was in the ready state
+  /// this will increment if the module is in a restart loop (state transitioning between pending and starting repeatedly)
+  /// Resets to zero when the module enters the ready state or is reconfigured.
+  /// Useful for detecting modules stuck in a restart loop (like a python module with a syntax error)
+  @$pb.TagNumber(5)
+  $core.int get consecutiveFailures => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set consecutiveFailures($core.int v) { $_setUnsignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasConsecutiveFailures() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearConsecutiveFailures() => clearField(5);
+}
+
+class PackageStatus extends $pb.GeneratedMessage {
+  factory PackageStatus({
+    $core.String? name,
+    $1.PackageType? type,
+    PackageStatus_State? state,
+    $core.String? error,
+    $50.Timestamp? lastUpdated,
+    $core.String? version,
+    $fixnum.Int64? bytesDownloaded,
+    $fixnum.Int64? totalBytes,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (state != null) {
+      $result.state = state;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    if (lastUpdated != null) {
+      $result.lastUpdated = lastUpdated;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (bytesDownloaded != null) {
+      $result.bytesDownloaded = bytesDownloaded;
+    }
+    if (totalBytes != null) {
+      $result.totalBytes = totalBytes;
+    }
+    return $result;
+  }
+  PackageStatus._() : super();
+  factory PackageStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PackageStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PackageStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..e<$1.PackageType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $1.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $1.PackageType.valueOf, enumValues: $1.PackageType.values)
+    ..e<PackageStatus_State>(3, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: PackageStatus_State.STATE_UNSPECIFIED, valueOf: PackageStatus_State.valueOf, enumValues: PackageStatus_State.values)
+    ..aOS(4, _omitFieldNames ? '' : 'error')
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $50.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'version')
+    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'bytesDownloaded', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(8, _omitFieldNames ? '' : 'totalBytes', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PackageStatus clone() => PackageStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PackageStatus copyWith(void Function(PackageStatus) updates) => super.copyWith((message) => updates(message as PackageStatus)) as PackageStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PackageStatus create() => PackageStatus._();
+  PackageStatus createEmptyInstance() => create();
+  static $pb.PbList<PackageStatus> createRepeated() => $pb.PbList<PackageStatus>();
+  @$core.pragma('dart2js:noInline')
+  static PackageStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PackageStatus>(create);
+  static PackageStatus? _defaultInstance;
+
+  /// the package name as declared in the robot config (PackageConfig.Name)
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// the package type (module, ml_model, slam_map, etc.)
+  @$pb.TagNumber(2)
+  $1.PackageType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type($1.PackageType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+
+  /// current lifecycle state
+  @$pb.TagNumber(3)
+  PackageStatus_State get state => $_getN(2);
+  @$pb.TagNumber(3)
+  set state(PackageStatus_State v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearState() => clearField(3);
+
+  /// human-readable error detail when state == STATE_FAILED
+  @$pb.TagNumber(4)
+  $core.String get error => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set error($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasError() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearError() => clearField(4);
+
+  /// when this status was last updated
+  @$pb.TagNumber(5)
+  $50.Timestamp get lastUpdated => $_getN(4);
+  @$pb.TagNumber(5)
+  set lastUpdated($50.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLastUpdated() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastUpdated() => clearField(5);
+  @$pb.TagNumber(5)
+  $50.Timestamp ensureLastUpdated() => $_ensure(4);
+
+  /// the version string from PackageConfig
+  @$pb.TagNumber(6)
+  $core.String get version => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set version($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVersion() => clearField(6);
+
+  /// number of bytes of the package tarball downloaded so far. Only populated
+  /// while state == STATE_DOWNLOADING; equals total_bytes once the download completes.
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get bytesDownloaded => $_getI64(6);
+  @$pb.TagNumber(7)
+  set bytesDownloaded($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasBytesDownloaded() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBytesDownloaded() => clearField(7);
+
+  /// total size of the package tarball in bytes. Zero if the size is unknown.
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get totalBytes => $_getI64(7);
+  @$pb.TagNumber(8)
+  set totalBytes($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTotalBytes() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTotalBytes() => clearField(8);
 }
 
 class ConfigStatus extends $pb.GeneratedMessage {
