@@ -15,6 +15,10 @@ import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../rpc/web_rtc/web_rtc_client.dart';
 import 'sessions_client.dart';
+import '../gen/app/datasync/v1/data_sync.pb.dart' as $7;
+import '../gen/app/packages/v1/packages.pbenum.dart' as $1;
+import 'package:fixnum/fixnum.dart' as $fixnum;
+import '../gen/robot/v1/robot.pb.dart' show ModuleStatus, PackageStatus, UploadDataFromPathRequest, UploadDataFromPathResponse;
 
 /// {@category Viam SDK}
 typedef CloudMetadata = rpb.GetCloudMetadataResponse;
@@ -333,5 +337,38 @@ class RobotClient {
     final request = rpb.GetMachineStatusRequest();
     final response = await _client.getMachineStatus(request);
     return response;
+  }
+
+  /// Uploads data from a specified path on the robot to Viam's Data Manager.
+  ///
+  /// This method allows you to upload files or folders from the robot's local file system.
+  /// Optional metadata and extra arguments can be provided.
+  ///
+  /// ```
+  /// // Example: Upload a file from the robot's /tmp directory
+  /// final response = await robotClient.uploadDataFromPath(
+  ///   '/tmp/my_robot_data.txt',
+  ///   uploadMetadata: UploadMetadata(
+  ///     partId: 'my-robot-part-id',
+  ///     type: DataType.DATA_TYPE_FILE,
+  ///     fileName: 'uploaded_data.txt',
+  ///     fileExtension: '.txt',
+  ///   ),
+  ///   extra: {'custom_key': 'custom_value'},
+  /// );
+  /// print('Files uploaded: ${response.filesUploaded}');
+  /// print('Bytes uploaded: ${response.bytesUploaded}');
+  /// ```
+  ///
+  /// For more information, see the [Robot API](https://docs.viam.com/appendix/apis/robot/).
+  Future<UploadDataFromPathResponse> uploadDataFromPath(String path, {$7.UploadMetadata? uploadMetadata, Map<String, dynamic>? extra}) async {
+    final request = UploadDataFromPathRequest()..path = path;
+    if (uploadMetadata != null) {
+      request.uploadMetadata = uploadMetadata;
+    }
+    if (extra != null) {
+      request.extra = extra.toStruct();
+    }
+    return await _client.uploadDataFromPath(request);
   }
 }

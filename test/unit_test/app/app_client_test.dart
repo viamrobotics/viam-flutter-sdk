@@ -10,6 +10,8 @@ import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import 'package:viam_sdk/viam_sdk.dart' hide APIKey;
+import 'package:viam_sdk/src/gen/app/v1/app.pbenum.dart';
+import 'package:viam_sdk/src/gen/app/v1/app.pb.dart' show AllowedLoginMethods, DeprecatedStatus, RegistryItemBilling, RegistryItemCostByResource;
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
@@ -145,8 +147,21 @@ void main() {
       ).thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
       final fragmentList = [FragmentImport()..fragmentId = 'fragmentId'];
       final fragmentImportList = FragmentImportList()..fragments.addAll(fragmentList);
-      final response = await appClient.updateOrganization('organizationId', defaultFragments: fragmentImportList);
+      final response = await appClient.updateOrganization(
+        'organizationId',
+        defaultFragments: fragmentImportList,
+        allowedLoginMethods: AllowedLoginMethods()..methods.add(LoginMethod.LOGIN_METHOD_PASSWORD),
+      );
       expect(response, equals(expected));
+      verify(serviceClient.updateOrganization(
+        argThat(
+          isA<UpdateOrganizationRequest>().having(
+            (req) => req.allowedLoginMethods,
+            'allowedLoginMethods',
+            AllowedLoginMethods()..methods.add(LoginMethod.LOGIN_METHOD_PASSWORD),
+          ),
+        ),
+      )).called(1);
     });
 
     test('deleteOrganization', () async {
@@ -745,8 +760,18 @@ void main() {
         [Visibility.VISIBILITY_UNSPECIFIED],
         ['platforms'],
         [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED],
+        showOwnedDeprecated: true,
       );
       expect(response, equals(expected));
+      verify(serviceClient.listRegistryItems(
+        argThat(
+          isA<ListRegistryItemsRequest>().having(
+            (req) => req.showOwnedDeprecated,
+            'showOwnedDeprecated',
+            true,
+          ),
+        ),
+      )).called(1);
     });
 
     test('deleteRegistryItem', () async {
@@ -754,6 +779,34 @@ void main() {
       when(serviceClient.deleteRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       await appClient.deleteRegistryItem('itemId');
       verify(serviceClient.deleteRegistryItem(any)).called(1);
+    });
+
+    test('deprecateRegistryItem', () async {
+      final expected = DeprecateRegistryItemResponse();
+      when(serviceClient.deprecateRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deprecateRegistryItem('itemId', message: 'This item is deprecated');
+      verify(serviceClient.deprecateRegistryItem(argThat(isA<DeprecateRegistryItemRequest>().having((req) => req.itemId, 'itemId', 'itemId').having((req) => req.message, 'message', 'This item is deprecated')))).called(1);
+    });
+
+    test('undeprecateRegistryItem', () async {
+      final expected = UndeprecateRegistryItemResponse();
+      when(serviceClient.undeprecateRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.undeprecateRegistryItem('itemId');
+      verify(serviceClient.undeprecateRegistryItem(argThat(isA<UndeprecateRegistryItemRequest>().having((req) => req.itemId, 'itemId', 'itemId')))).called(1);
+    });
+
+    test('deprecateRegistryItemVersion', () async {
+      final expected = DeprecateRegistryItemVersionResponse();
+      when(serviceClient.deprecateRegistryItemVersion(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deprecateRegistryItemVersion('itemId', '1.0.0', message: 'This version is deprecated');
+      verify(serviceClient.deprecateRegistryItemVersion(argThat(isA<DeprecateRegistryItemVersionRequest>().having((req) => req.itemId, 'itemId', 'itemId').having((req) => req.version, 'version', '1.0.0').having((req) => req.message, 'message', 'This version is deprecated')))).called(1);
+    });
+
+    test('undeprecateRegistryItemVersion', () async {
+      final expected = UndeprecateRegistryItemVersionResponse();
+      when(serviceClient.undeprecateRegistryItemVersion(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.undeprecateRegistryItemVersion('itemId', '1.0.0');
+      verify(serviceClient.undeprecateRegistryItemVersion(argThat(isA<UndeprecateRegistryItemVersionRequest>().having((req) => req.itemId, 'itemId', 'itemId').having((req) => req.version, 'version', '1.0.0')))).called(1);
     });
 
     test('createModule', () async {

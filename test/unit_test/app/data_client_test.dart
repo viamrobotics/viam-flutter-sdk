@@ -609,6 +609,14 @@ void main() {
         await dataClient.deleteIndex(orgId, collectionType, indexName);
         verify(serviceClient.deleteIndex(any)).called(1);
       });
+
+      test('getSequenceBinaryData', () async {
+        final expectedBinaryData = [BinaryData()..binary = [1, 2, 3], BinaryData()..binary = [4, 5, 6]];
+        when(serviceClient.getSequenceBinaryData(any)).thenAnswer((_) => MockResponseFuture.value(GetSequenceBinaryDataResponse()..data.addAll(expectedBinaryData)..nextPageToken = 'nextPage'));
+        final response = await dataClient.getSequenceBinaryData('sequenceId', pageToken: 'token', pageSize: 10);
+        expect(response, equals(expectedBinaryData));
+        verify(serviceClient.getSequenceBinaryData(argThat(isA<GetSequenceBinaryDataRequest>().having((req) => req.sequenceId, 'sequenceId', 'sequenceId').having((req) => req.pageToken, 'pageToken', 'token').having((req) => req.pageSize, 'pageSize', 10)))).called(1);
+      });
     });
 
     group('DataSync Tests', () {

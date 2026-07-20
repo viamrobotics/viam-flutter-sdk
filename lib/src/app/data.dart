@@ -14,6 +14,7 @@ import '../gen/google/protobuf/any.pb.dart';
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../media/image.dart';
 import '../utils.dart';
+import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart' show BinaryData;
 
 /// {@category App}
 typedef DatabaseConnection = GetDatabaseConnectionResponse;
@@ -298,7 +299,7 @@ class DataClient {
   ///    sqlQuery
   ///  });
   ///
-  ///  final limit = BsonCodec.serialize({"\$limit": 1});
+  ///  final limit = BsonCodec.serialize({"$limit": 1});
   ///
   ///  final pipeline = [query.byteList, sort.byteList, limit.byteList];
   ///  _responseData = await dataClient.tabularDataByMql(
@@ -1749,6 +1750,35 @@ class DataClient {
       request.pipelineName = pipelineName;
     }
     await _dataClient.deleteIndex(request);
+  }
+
+  /// Returns a list of binary data for a given sequence ID.
+  ///
+  /// The data will be paginated into pages of `pageSize` items, and the `pageToken` will be included in
+  /// the returned response.
+  ///
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///    final sequenceId = '<YOUR-SEQUENCE-ID>';
+  ///    final response = await dataClient.getSequenceBinaryData(sequenceId);
+  ///    print('Successfully retrieved sequence binary data: ${response.length} items');
+  ///  } catch (e) {
+  ///    print('Error retrieving sequence binary data: $e');
+  ///  }
+  /// ```
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  Future<List<BinaryData>> getSequenceBinaryData(String sequenceId, {String? pageToken, int? pageSize}) async {
+    final request = GetSequenceBinaryDataRequest()..sequenceId = sequenceId;
+    if (pageToken != null) request.pageToken = pageToken;
+    if (pageSize != null) request.pageSize = pageSize;
+    final response = await _dataClient.getSequenceBinaryData(request);
+    return response.data;
   }
 }
 
