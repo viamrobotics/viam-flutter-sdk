@@ -1843,3 +1843,34 @@ final $typed_data.Uint8List sequencesByDatasetIDResponseDescriptor = $convert.ba
     '0uYXBwLmRhdGEudjEuU2VxdWVuY2VSCXNlcXVlbmNlcxImCg9uZXh0X3BhZ2VfdG9rZW4YAiAB'
     'KAlSDW5leHRQYWdlVG9rZW4=');
 
+@$core.Deprecated('Use getSequenceBinaryDataRequestDescriptor instead')
+const GetSequenceBinaryDataRequest$json = {
+  '1': 'GetSequenceBinaryDataRequest',
+  '2': [
+    {'1': 'sequence_id', '3': 1, '4': 1, '5': 9, '10': 'sequenceId'},
+    {'1': 'page_token', '3': 2, '4': 1, '5': 9, '10': 'pageToken'},
+    {'1': 'page_size', '3': 3, '4': 1, '5': 13, '10': 'pageSize'},
+  ],
+};
+
+/// Descriptor for `GetSequenceBinaryDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSequenceBinaryDataRequestDescriptor = $convert.base64Decode(
+    'ChxHZXRTZXF1ZW5jZUJpbmFyeURhdGFSZXF1ZXN0Eh8KC3NlcXVlbmNlX2lkGAEgASgJUgpzZX'
+    'F1ZW5jZUlkEh0KCnBhZ2VfdG9rZW4YAiABKAlSCXBhZ2VUb2tlbhIbCglwYWdlX3NpemUYAyAB'
+    'KA1SCHBhZ2VTaXpl');
+
+@$core.Deprecated('Use getSequenceBinaryDataResponseDescriptor instead')
+const GetSequenceBinaryDataResponse$json = {
+  '1': 'GetSequenceBinaryDataResponse',
+  '2': [
+    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryData', '10': 'data'},
+    {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
+  ],
+};
+
+/// Descriptor for `GetSequenceBinaryDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSequenceBinaryDataResponseDescriptor = $convert.base64Decode(
+    'Ch1HZXRTZXF1ZW5jZUJpbmFyeURhdGFSZXNwb25zZRIwCgRkYXRhGAEgAygLMhwudmlhbS5hcH'
+    'AuZGF0YS52MS5CaW5hcnlEYXRhUgRkYXRhEiYKD25leHRfcGFnZV90b2tlbhgCIAEoCVINbmV4'
+    'dFBhZ2VUb2tlbg==');
+

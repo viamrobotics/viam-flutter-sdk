@@ -7214,6 +7214,142 @@ class SequencesByDatasetIDResponse extends $pb.GeneratedMessage {
   void clearNextPageToken() => clearField(2);
 }
 
+class GetSequenceBinaryDataRequest extends $pb.GeneratedMessage {
+  factory GetSequenceBinaryDataRequest({
+    $core.String? sequenceId,
+    $core.String? pageToken,
+    $core.int? pageSize,
+  }) {
+    final $result = create();
+    if (sequenceId != null) {
+      $result.sequenceId = sequenceId;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    if (pageSize != null) {
+      $result.pageSize = pageSize;
+    }
+    return $result;
+  }
+  GetSequenceBinaryDataRequest._() : super();
+  factory GetSequenceBinaryDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSequenceBinaryDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSequenceBinaryDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sequenceId')
+    ..aOS(2, _omitFieldNames ? '' : 'pageToken')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSequenceBinaryDataRequest clone() => GetSequenceBinaryDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSequenceBinaryDataRequest copyWith(void Function(GetSequenceBinaryDataRequest) updates) => super.copyWith((message) => updates(message as GetSequenceBinaryDataRequest)) as GetSequenceBinaryDataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceBinaryDataRequest create() => GetSequenceBinaryDataRequest._();
+  GetSequenceBinaryDataRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSequenceBinaryDataRequest> createRepeated() => $pb.PbList<GetSequenceBinaryDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceBinaryDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSequenceBinaryDataRequest>(create);
+  static GetSequenceBinaryDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sequenceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sequenceId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSequenceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSequenceId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get pageSize => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set pageSize($core.int v) { $_setUnsignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPageSize() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageSize() => clearField(3);
+}
+
+class GetSequenceBinaryDataResponse extends $pb.GeneratedMessage {
+  factory GetSequenceBinaryDataResponse({
+    $core.Iterable<BinaryData>? data,
+    $core.String? nextPageToken,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
+    }
+    return $result;
+  }
+  GetSequenceBinaryDataResponse._() : super();
+  factory GetSequenceBinaryDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSequenceBinaryDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSequenceBinaryDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<BinaryData>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: BinaryData.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSequenceBinaryDataResponse clone() => GetSequenceBinaryDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSequenceBinaryDataResponse copyWith(void Function(GetSequenceBinaryDataResponse) updates) => super.copyWith((message) => updates(message as GetSequenceBinaryDataResponse)) as GetSequenceBinaryDataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceBinaryDataResponse create() => GetSequenceBinaryDataResponse._();
+  GetSequenceBinaryDataResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSequenceBinaryDataResponse> createRepeated() => $pb.PbList<GetSequenceBinaryDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSequenceBinaryDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSequenceBinaryDataResponse>(create);
+  static GetSequenceBinaryDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<BinaryData> get data => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
