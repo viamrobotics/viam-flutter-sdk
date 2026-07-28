@@ -37,6 +37,14 @@ class FakeSensor extends Sensor {
     this.extra = extra;
     return sensorReadings;
   }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
+  }
 }
 
 void main() {
@@ -62,6 +70,11 @@ void main() {
     test('getStatus', () async {
       final result = await sensor.getStatus();
       expect(result, sensor.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await sensor.getGeometries();
+      expect(result, sensor.geometries);
     });
 
     test('extra', () async {
@@ -124,6 +137,12 @@ void main() {
         expect(response.result.toMap(), sensor.statusResult);
       });
 
+      test('getGeometries', () async {
+        final client = SensorServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, sensor.geometries);
+      });
+
       test('extra', () async {
         expect(sensor.extra, null);
 
@@ -154,6 +173,12 @@ void main() {
         final client = SensorClient(name, channel);
         final result = await client.getStatus();
         expect(result, sensor.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = SensorClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, sensor.geometries);
       });
 
       test('extra', () async {

@@ -123,6 +123,14 @@ class FakeBoard extends Board {
     final queue = tickCallbackMap[tick.pinName];
     queue?.add(tick);
   }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
+  }
 }
 
 void main() {
@@ -203,6 +211,11 @@ void main() {
     test('getStatus', () async {
       final result = await board.getStatus();
       expect(result, board.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await board.getGeometries();
+      expect(result, board.geometries);
     });
 
     test('extra', () async {
@@ -397,6 +410,12 @@ void main() {
         expect(response.result.toMap(), board.statusResult);
       });
 
+      test('getGeometries', () async {
+        final client = BoardServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, board.geometries);
+      });
+
       test('extra', () async {
         final client = BoardServiceClient(channel);
         expect(board.extra, null);
@@ -506,6 +525,12 @@ void main() {
         final client = BoardClient(name, channel);
         final result = await client.getStatus();
         expect(result, board.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = BoardClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, board.geometries);
       });
 
       test('extra', () async {

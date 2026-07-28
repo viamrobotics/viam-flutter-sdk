@@ -58,11 +58,13 @@ class InputControllerClient extends InputController with RPCDebugLoggerMixin imp
     await client.triggerEvent(request, options: callOptions);
   }
 
-  Future<common_pb.GetGeometriesResponse> getGeometries({Map<String, dynamic>? extra}) async {
+  @override
+  Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
     final request = common_pb.GetGeometriesRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    return await client.getGeometries(request, options: callOptions);
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
   }
 
   @override

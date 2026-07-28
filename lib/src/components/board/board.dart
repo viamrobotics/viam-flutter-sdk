@@ -145,6 +145,15 @@ abstract class Board extends Resource {
   /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#writeanalog).
   Future<void> writeAnalog(String pin, int value, {Map<String, dynamic>? extra});
 
+  /// Get all geometries associated with the [Board]
+  ///
+  /// ```
+  /// final geometries = await myBoard.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#getgeometries).
+  Future<List<common.Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [ResourceName] for this [Board] with the given [name]
   ///
   /// ```

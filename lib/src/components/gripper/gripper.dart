@@ -79,6 +79,15 @@ abstract class Gripper extends Resource {
   /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#getkinematics).
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra});
 
+  /// Get all geometries associated with the [Gripper]
+  ///
+  /// ```
+  /// final geometries = await myGripper.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#getgeometries).
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [ResourceName] for the [Gripper] with the given [name]
   ///
   /// ```

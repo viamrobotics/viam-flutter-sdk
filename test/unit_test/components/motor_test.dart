@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/motor/service.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' show GetStatusRequest;
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' show Geometry, GetGeometriesRequest, GetStatusRequest;
 import 'package:viam_sdk/src/gen/component/motor/v1/motor.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -17,6 +17,7 @@ class FakeMotor extends Motor {
   bool powered = false;
   Map<String, dynamic>? extra;
   Map<String, dynamic> statusResult = {'status': 'ok'};
+  List<Geometry> geometries = [Geometry()..label = 'test'];
 
   @override
   String name;
@@ -97,6 +98,12 @@ class FakeMotor extends Motor {
   Future<void> stop({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     isStopped = true;
+  }
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
   }
 }
 
@@ -197,6 +204,11 @@ void main() {
     test('getStatus', () async {
       final result = await motor.getStatus();
       expect(result, motor.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await motor.getGeometries();
+      expect(result, motor.geometries);
     });
 
     test('extra', () async {
@@ -382,6 +394,12 @@ void main() {
         expect(response.result.toMap(), motor.statusResult);
       });
 
+      test('getGeometries', () async {
+        final client = MotorServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, motor.geometries);
+      });
+
       test('extra', () async {
         expect(motor.extra, null);
 
@@ -497,6 +515,12 @@ void main() {
         final client = MotorClient(name, channel);
         final result = await client.getStatus();
         expect(result, motor.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = MotorClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, motor.geometries);
       });
 
       test('extra', () async {

@@ -29,9 +29,10 @@ class GenericService extends GenericServiceBase {
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) async {
+    final generic = _fromManager(request.name);
+    final geometries = await generic.getGeometries(extra: request.extra.toMap());
+    return GetGeometriesResponse()..geometries.addAll(geometries);
   }
 
   @override

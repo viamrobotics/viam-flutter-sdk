@@ -12,6 +12,7 @@ class FakeServo extends Servo {
   bool isStopped = true;
   Map<String, dynamic>? extra;
   Map<String, dynamic> statusResult = {'status': 'ok'};
+  List<Geometry> geometries = [Geometry()..label = 'test'];
 
   @override
   String name;
@@ -50,6 +51,12 @@ class FakeServo extends Servo {
   @override
   Future<Map<String, dynamic>> getStatus() async {
     return statusResult;
+  }
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
   }
 }
 
@@ -104,6 +111,11 @@ void main() {
     test('getStatus', () async {
       final result = await servo.getStatus();
       expect(result, servo.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await servo.getGeometries();
+      expect(result, servo.geometries);
     });
   });
 
@@ -189,6 +201,12 @@ void main() {
         final response = await client.getStatus(GetStatusRequest()..name = name);
         expect(response.result.toMap(), servo.statusResult);
       });
+
+      test('getGeometries', () async {
+        final client = ServoServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, servo.geometries);
+      });
     });
     group('Servo Client Tests', () {
       test('move should move the servo to new given position', () async {
@@ -227,6 +245,12 @@ void main() {
         final client = ServoClient(servo.name, channel);
         final result = await client.getStatus();
         expect(result, servo.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = ServoClient(servo.name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, servo.geometries);
       });
     });
   });

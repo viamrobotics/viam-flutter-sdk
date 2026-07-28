@@ -79,6 +79,14 @@ class FakeGripper extends Gripper {
     goToInputsValues = values;
     this.extra = extra;
   }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
+  }
 }
 
 void main() {
@@ -138,6 +146,11 @@ void main() {
     test('getStatus', () async {
       final result = await gripper.getStatus();
       expect(result, gripper.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await gripper.getGeometries();
+      expect(result, gripper.geometries);
     });
 
     test('extra', () async {
@@ -282,6 +295,12 @@ void main() {
         expect(response.result.toMap(), gripper.statusResult);
       });
 
+      test('getGeometries', () async {
+        final client = GripperServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, gripper.geometries);
+      });
+
       test('extra', () async {
         expect(gripper.extra, null);
 
@@ -370,6 +389,12 @@ void main() {
         final client = GripperClient(name, channel);
         final result = await client.getStatus();
         expect(result, gripper.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = GripperClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, gripper.geometries);
       });
 
       test('extra', () async {
