@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:viam_example_widgets/viam_example_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets.dart';
 
 class MotorScreen extends StatelessWidget {
   final Motor motor;

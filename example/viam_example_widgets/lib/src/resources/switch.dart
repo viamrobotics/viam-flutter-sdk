@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide Switch;
 
-import '../../viam_sdk.dart';
+import 'package:viam_sdk/viam_sdk.dart';
 
 class ViamSwitchWidget extends StatefulWidget {
   final Switch nswitch;

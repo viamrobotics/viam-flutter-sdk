@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../viam_sdk.dart';
-import '../../widgets.dart';
+import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/widgets.dart';
 
 class ViamServoWidget extends StatefulWidget {
   final Servo servo;

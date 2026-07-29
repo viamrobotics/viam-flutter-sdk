@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:viam_example_widgets/viam_example_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets/resources/board.dart';
 
 class BoardScreen extends StatelessWidget {
   final Board board;

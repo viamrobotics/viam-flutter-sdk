@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'button.dart';
+import 'package:viam_sdk/widgets.dart';
 
 /// A widget to display data from a [Map]
 ///

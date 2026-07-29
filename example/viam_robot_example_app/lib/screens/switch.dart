@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart' hide Switch;
 import 'package:flutter/services.dart';
 
+import 'package:viam_example_widgets/viam_example_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets.dart';
 
 class SwitchScreen extends StatelessWidget {
   final Switch nswitch;

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grpc/grpc.dart';
 
-import '../../../protos/common/common.dart';
-import '../../../src/utils.dart';
-import '../../../viam_sdk.dart' as viam;
+import 'package:viam_sdk/protos/common/common.dart';
+import 'package:viam_sdk/viam_sdk.dart' as viam;
+
+import '../../error_dialog.dart';
 import '../arm.dart';
 
 class _TextControlStruct {

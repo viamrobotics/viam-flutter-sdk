@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:viam_example_widgets/viam_example_widgets.dart';
 import 'package:viam_sdk/widgets.dart';
 
-import '../test_utils.dart';
-import '../unit_test/components/sensor_test.dart';
+import 'test_utils.dart';
 
 void main() {
   group('ViamRefreshableDataTableTest', () {

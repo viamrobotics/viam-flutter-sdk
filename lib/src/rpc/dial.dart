@@ -170,6 +170,11 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
 
   if (opts.attemptMdns) {
     final mdnsSW = Stopwatch()..start();
+    // Remember the caller's WebRTC options so they can be restored if the mDNS
+    // attempt fails. Otherwise the fallback below (and any subsequent retry from
+    // dialInitial) would keep pointing at the local signaling address.
+    final priorWebRtcOptions = opts.webRtcOptions;
+    final priorSignalingServerAddress = priorWebRtcOptions?.signalingServerAddress;
     try {
       final mdnsUri = await _searchMdns(address);
       // Let downstream calls know when mdns was used. This is helpful to inform
@@ -185,6 +190,9 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
     } catch (e) {
       _logger.d('Error dialing with mDNS; falling back to other methods', error: e);
     }
+    opts._usingMdns = false;
+    opts.webRtcOptions = priorWebRtcOptions;
+    priorWebRtcOptions?.signalingServerAddress = priorSignalingServerAddress;
     mdnsSW.stop();
     _logger.d('STATS: mDNS discovery took ${mdnsSW.elapsed}');
   }

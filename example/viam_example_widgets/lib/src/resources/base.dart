@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../viam_sdk.dart';
+import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/widgets.dart';
+
 import '../joystick.dart';
-import '../multi_camera_stream.dart';
 
 /// A widget to control a [Base].
 ///
