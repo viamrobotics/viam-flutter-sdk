@@ -17,3 +17,4 @@ export 'src/resources/power_sensor.dart';
 export 'src/resources/sensor.dart';
 export 'src/resources/servo.dart';
 export 'src/resources/switch.dart';
+export 'src/resources/vision.dart';

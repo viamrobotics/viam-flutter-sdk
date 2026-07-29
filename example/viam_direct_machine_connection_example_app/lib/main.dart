@@ -81,24 +81,51 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   bool _isNavigable(ResourceName rname) {
+    // The generic service shares the 'generic' subtype with the generic
+    // component, so only navigate to the component.
+    if (rname.subtype == Generic.subtype.resourceSubtype) {
+      return rname.type == resourceTypeComponent;
+    }
     return [
+      Arm.subtype.resourceSubtype,
+      AudioIn.subtype.resourceSubtype,
+      AudioOut.subtype.resourceSubtype,
       Base.subtype.resourceSubtype,
       Board.subtype.resourceSubtype,
       Button.subtype.resourceSubtype,
       Camera.subtype.resourceSubtype,
+      Encoder.subtype.resourceSubtype,
+      Gantry.subtype.resourceSubtype,
       Gripper.subtype.resourceSubtype,
+      InputController.subtype.resourceSubtype,
       Motor.subtype.resourceSubtype,
       MovementSensor.subtype.resourceSubtype,
       PowerSensor.subtype.resourceSubtype,
       Sensor.subtype.resourceSubtype,
       Servo.subtype.resourceSubtype,
       Switch.subtype.resourceSubtype,
+      VisionClient.subtype.resourceSubtype,
     ].contains(rname.subtype);
+  }
+
+  /// The names of every camera on this machine, which the vision service
+  /// can be run against.
+  List<String> get _cameraNames {
+    return _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => e.name).toList();
   }
 
   Widget? _getScreen(ResourceName rname) {
     if (!_isNavigable(rname)) {
       return null;
+    }
+    if (rname.subtype == Arm.subtype.resourceSubtype) {
+      return ArmScreen(arm: Arm.fromRobot(_robot, rname.name), resourceName: rname);
+    }
+    if (rname.subtype == AudioIn.subtype.resourceSubtype) {
+      return AudioInScreen(audioIn: AudioIn.fromRobot(_robot, rname.name), resourceName: rname);
+    }
+    if (rname.subtype == AudioOut.subtype.resourceSubtype) {
+      return AudioOutScreen(audioOut: AudioOut.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != null) {
       return BaseScreen(
@@ -117,6 +144,15 @@ class _MyHomePageState extends State<MyHomePage> {
     if (rname.subtype == Camera.subtype.resourceSubtype) {
       return StreamScreen(camera: Camera.fromRobot(_robot, rname.name), client: _getStream(rname), resourceName: rname);
     }
+    if (rname.subtype == Encoder.subtype.resourceSubtype) {
+      return EncoderScreen(encoder: Encoder.fromRobot(_robot, rname.name), resourceName: rname);
+    }
+    if (rname.subtype == Gantry.subtype.resourceSubtype) {
+      return GantryScreen(gantry: Gantry.fromRobot(_robot, rname.name), resourceName: rname);
+    }
+    if (rname.subtype == Generic.subtype.resourceSubtype) {
+      return GenericScreen(generic: Generic.fromRobot(_robot, rname.name), resourceName: rname);
+    }
     if (rname.subtype == Gripper.subtype.resourceSubtype) {
       return GripperScreen(
         gripper: Gripper.fromRobot(_robot, rname.name),
@@ -124,6 +160,9 @@ class _MyHomePageState extends State<MyHomePage> {
             _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
         robot: _robot,
       );
+    }
+    if (rname.subtype == InputController.subtype.resourceSubtype) {
+      return InputControllerScreen(inputController: InputController.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Motor.subtype.resourceSubtype) {
       return MotorScreen(motor: Motor.fromRobot(_robot, rname.name), resourceName: rname);
@@ -139,6 +178,9 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == MovementSensor.subtype.resourceSubtype) {
       return MovementSensorScreen(movementSensor: MovementSensor.fromRobot(_robot, rname.name), resourceName: rname);
+    }
+    if (rname.subtype == VisionClient.subtype.resourceSubtype) {
+      return VisionScreen(vision: VisionClient.fromRobot(_robot, rname.name), resourceName: rname, cameraNames: _cameraNames);
     }
     return SensorScreen(sensor: Sensor.fromRobot(_robot, rname.name), resourceName: rname);
   }

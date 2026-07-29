@@ -1,6 +1,13 @@
+export 'arm.dart';
+export 'audio_in.dart';
+export 'audio_out.dart';
 export 'base.dart';
 export 'board.dart';
+export 'encoder.dart';
+export 'gantry.dart';
+export 'generic.dart';
 export 'gripper.dart';
+export 'input_controller.dart';
 export 'motor.dart';
 export 'movement_sensor.dart';
 export 'power_sensor.dart';
@@ -8,3 +15,4 @@ export 'sensor.dart';
 export 'servo.dart';
 export 'stream.dart';
 export 'switch.dart';
+export 'vision.dart';

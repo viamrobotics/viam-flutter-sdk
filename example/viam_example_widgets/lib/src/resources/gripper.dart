@@ -5,7 +5,6 @@ import 'package:flutter/widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets.dart';
 
-
 /// A widget to control a [Gripper].
 ///
 /// This widget provides open and grab functionality for a [Gripper],
