@@ -181,10 +181,10 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
       // when determining if we want to use the external auth credentials for the signaling
       // in cases where the external signaling is the same as the external auth. For mdns
       // this isn't the case.
-      final dialOptsCopy = opts.._usingMdns = true;
-      dialOptsCopy.webRtcOptions ??= DialWebRtcOptions();
-      dialOptsCopy.webRtcOptions?.signalingServerAddress = mdnsUri;
-      return await _dialWebRtc(address, dialOptsCopy, sessionCallback);
+      opts._usingMdns = true;
+      opts.webRtcOptions ??= DialWebRtcOptions();
+      opts.webRtcOptions?.signalingServerAddress = mdnsUri;
+      return await _dialWebRtc(address, opts, sessionCallback);
     } on NotLocalAddressException catch (e) {
       _logger.d(e.toString());
     } catch (e) {
