@@ -13,6 +13,64 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use iCECandidateTypeDescriptor instead')
+const ICECandidateType$json = {
+  '1': 'ICECandidateType',
+  '2': [
+    {'1': 'ICE_CANDIDATE_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'ICE_CANDIDATE_TYPE_HOST', '2': 1},
+    {'1': 'ICE_CANDIDATE_TYPE_STUN', '2': 2},
+    {'1': 'ICE_CANDIDATE_TYPE_RELAY', '2': 3},
+  ],
+};
+
+/// Descriptor for `ICECandidateType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List iCECandidateTypeDescriptor = $convert.base64Decode(
+    'ChBJQ0VDYW5kaWRhdGVUeXBlEiIKHklDRV9DQU5ESURBVEVfVFlQRV9VTlNQRUNJRklFRBAAEh'
+    'sKF0lDRV9DQU5ESURBVEVfVFlQRV9IT1NUEAESGwoXSUNFX0NBTkRJREFURV9UWVBFX1NUVU4Q'
+    'AhIcChhJQ0VfQ0FORElEQVRFX1RZUEVfUkVMQVkQAw==');
+
+@$core.Deprecated('Use dialStageDescriptor instead')
+const DialStage$json = {
+  '1': 'DialStage',
+  '2': [
+    {'1': 'DIAL_STAGE_UNSPECIFIED', '2': 0},
+    {'1': 'DIAL_STAGE_SIGNALING_CONNECTED', '2': 1},
+    {'1': 'DIAL_STAGE_CONFIG_FETCHED', '2': 2},
+    {'1': 'DIAL_STAGE_OFFER_SENT', '2': 3},
+    {'1': 'DIAL_STAGE_ANSWER_RECEIVED', '2': 4},
+    {'1': 'DIAL_STAGE_ICE_CONNECTED', '2': 5},
+    {'1': 'DIAL_STAGE_DTLS_CONNECTED', '2': 6},
+    {'1': 'DIAL_STAGE_READY', '2': 7},
+  ],
+};
+
+/// Descriptor for `DialStage`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List dialStageDescriptor = $convert.base64Decode(
+    'CglEaWFsU3RhZ2USGgoWRElBTF9TVEFHRV9VTlNQRUNJRklFRBAAEiIKHkRJQUxfU1RBR0VfU0'
+    'lHTkFMSU5HX0NPTk5FQ1RFRBABEh0KGURJQUxfU1RBR0VfQ09ORklHX0ZFVENIRUQQAhIZChVE'
+    'SUFMX1NUQUdFX09GRkVSX1NFTlQQAxIeChpESUFMX1NUQUdFX0FOU1dFUl9SRUNFSVZFRBAEEh'
+    'wKGERJQUxfU1RBR0VfSUNFX0NPTk5FQ1RFRBAFEh0KGURJQUxfU1RBR0VfRFRMU19DT05ORUNU'
+    'RUQQBhIUChBESUFMX1NUQUdFX1JFQURZEAc=');
+
+@$core.Deprecated('Use connectionSignalingPathDescriptor instead')
+const ConnectionSignalingPath$json = {
+  '1': 'ConnectionSignalingPath',
+  '2': [
+    {'1': 'CONNECTION_SIGNALING_PATH_UNSPECIFIED', '2': 0},
+    {'1': 'CONNECTION_SIGNALING_PATH_CLOUD_SIGNALED', '2': 1},
+    {'1': 'CONNECTION_SIGNALING_PATH_MDNS_LOCAL', '2': 2},
+    {'1': 'CONNECTION_SIGNALING_PATH_LOCAL', '2': 3},
+  ],
+};
+
+/// Descriptor for `ConnectionSignalingPath`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List connectionSignalingPathDescriptor = $convert.base64Decode(
+    'ChdDb25uZWN0aW9uU2lnbmFsaW5nUGF0aBIpCiVDT05ORUNUSU9OX1NJR05BTElOR19QQVRIX1'
+    'VOU1BFQ0lGSUVEEAASLAooQ09OTkVDVElPTl9TSUdOQUxJTkdfUEFUSF9DTE9VRF9TSUdOQUxF'
+    'RBABEigKJENPTk5FQ1RJT05fU0lHTkFMSU5HX1BBVEhfTUROU19MT0NBTBACEiMKH0NPTk5FQ1'
+    'RJT05fU0lHTkFMSU5HX1BBVEhfTE9DQUwQAw==');
+
 @$core.Deprecated('Use iCECandidateDescriptor instead')
 const ICECandidate$json = {
   '1': 'ICECandidate',
@@ -339,4 +397,51 @@ const OptionalWebRTCConfigResponse$json = {
 final $typed_data.Uint8List optionalWebRTCConfigResponseDescriptor = $convert.base64Decode(
     'ChxPcHRpb25hbFdlYlJUQ0NvbmZpZ1Jlc3BvbnNlEjkKBmNvbmZpZxgBIAEoCzIhLnByb3RvLn'
     'JwYy53ZWJydGMudjEuV2ViUlRDQ29uZmlnUgZjb25maWc=');
+
+@$core.Deprecated('Use connectionCandidateDescriptor instead')
+const ConnectionCandidate$json = {
+  '1': 'ConnectionCandidate',
+  '2': [
+    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.proto.rpc.webrtc.v1.ICECandidateType', '10': 'type'},
+    {'1': 'relay_address', '3': 2, '4': 1, '5': 9, '10': 'relayAddress'},
+  ],
+};
+
+/// Descriptor for `ConnectionCandidate`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List connectionCandidateDescriptor = $convert.base64Decode(
+    'ChNDb25uZWN0aW9uQ2FuZGlkYXRlEjkKBHR5cGUYASABKA4yJS5wcm90by5ycGMud2VicnRjLn'
+    'YxLklDRUNhbmRpZGF0ZVR5cGVSBHR5cGUSIwoNcmVsYXlfYWRkcmVzcxgCIAEoCVIMcmVsYXlB'
+    'ZGRyZXNz');
+
+@$core.Deprecated('Use reportConnectionMetadataRequestDescriptor instead')
+const ReportConnectionMetadataRequest$json = {
+  '1': 'ReportConnectionMetadataRequest',
+  '2': [
+    {'1': 'local', '3': 1, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.ConnectionCandidate', '10': 'local'},
+    {'1': 'remote', '3': 2, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.ConnectionCandidate', '10': 'remote'},
+    {'1': 'reached_stage', '3': 3, '4': 1, '5': 14, '6': '.proto.rpc.webrtc.v1.DialStage', '10': 'reachedStage'},
+    {'1': 'duration_ms', '3': 4, '4': 1, '5': 13, '10': 'durationMs'},
+    {'1': 'signaling_path', '3': 5, '4': 1, '5': 14, '6': '.proto.rpc.webrtc.v1.ConnectionSignalingPath', '10': 'signalingPath'},
+    {'1': 'failure_code', '3': 6, '4': 1, '5': 5, '10': 'failureCode'},
+  ],
+};
+
+/// Descriptor for `ReportConnectionMetadataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportConnectionMetadataRequestDescriptor = $convert.base64Decode(
+    'Ch9SZXBvcnRDb25uZWN0aW9uTWV0YWRhdGFSZXF1ZXN0Ej4KBWxvY2FsGAEgASgLMigucHJvdG'
+    '8ucnBjLndlYnJ0Yy52MS5Db25uZWN0aW9uQ2FuZGlkYXRlUgVsb2NhbBJACgZyZW1vdGUYAiAB'
+    'KAsyKC5wcm90by5ycGMud2VicnRjLnYxLkNvbm5lY3Rpb25DYW5kaWRhdGVSBnJlbW90ZRJDCg'
+    '1yZWFjaGVkX3N0YWdlGAMgASgOMh4ucHJvdG8ucnBjLndlYnJ0Yy52MS5EaWFsU3RhZ2VSDHJl'
+    'YWNoZWRTdGFnZRIfCgtkdXJhdGlvbl9tcxgEIAEoDVIKZHVyYXRpb25NcxJTCg5zaWduYWxpbm'
+    'dfcGF0aBgFIAEoDjIsLnByb3RvLnJwYy53ZWJydGMudjEuQ29ubmVjdGlvblNpZ25hbGluZ1Bh'
+    'dGhSDXNpZ25hbGluZ1BhdGgSIQoMZmFpbHVyZV9jb2RlGAYgASgFUgtmYWlsdXJlQ29kZQ==');
+
+@$core.Deprecated('Use reportConnectionMetadataResponseDescriptor instead')
+const ReportConnectionMetadataResponse$json = {
+  '1': 'ReportConnectionMetadataResponse',
+};
+
+/// Descriptor for `ReportConnectionMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportConnectionMetadataResponseDescriptor = $convert.base64Decode(
+    'CiBSZXBvcnRDb25uZWN0aW9uTWV0YWRhdGFSZXNwb25zZQ==');
 

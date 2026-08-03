@@ -6042,6 +6042,8 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? limit,
     $core.String? source,
     $core.bool? userFacingOnly,
+    LogOrder? order,
+    $core.String? range,
   }) {
     final $result = create();
     if (id != null) {
@@ -6075,6 +6077,12 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     if (userFacingOnly != null) {
       $result.userFacingOnly = userFacingOnly;
     }
+    if (order != null) {
+      $result.order = order;
+    }
+    if (range != null) {
+      $result.range = range;
+    }
     return $result;
   }
   GetRobotPartLogsRequest._() : super();
@@ -6092,6 +6100,8 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     ..aInt64(8, _omitFieldNames ? '' : 'limit')
     ..aOS(9, _omitFieldNames ? '' : 'source')
     ..aOB(10, _omitFieldNames ? '' : 'userFacingOnly')
+    ..e<LogOrder>(11, _omitFieldNames ? '' : 'order', $pb.PbFieldType.OE, defaultOrMaker: LogOrder.LOG_ORDER_UNSPECIFIED, valueOf: LogOrder.valueOf, enumValues: LogOrder.values)
+    ..aOS(12, _omitFieldNames ? '' : 'range')
     ..hasRequiredFields = false
   ;
 
@@ -6209,6 +6219,31 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
   $core.bool hasUserFacingOnly() => $_has(9);
   @$pb.TagNumber(10)
   void clearUserFacingOnly() => clearField(10);
+
+  /// logs are returned newest first when the order field is empty
+  @$pb.TagNumber(11)
+  LogOrder get order => $_getN(10);
+  @$pb.TagNumber(11)
+  set order(LogOrder v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasOrder() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearOrder() => clearField(11);
+
+  /// range is a duration string in minutes, hours, or days (e.g. "10m", "10h", "10d")
+  /// that is resolved against whichever of start and end is present:
+  ///   end only:     [end - range, end]
+  ///   start only:   [start, start + range]
+  ///   neither:      [now - range, now]
+  /// Specifying range together with both start and end is an error.
+  @$pb.TagNumber(12)
+  $core.String get range => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set range($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasRange() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRange() => clearField(12);
 }
 
 class GetRobotPartLogsResponse extends $pb.GeneratedMessage {

@@ -37,6 +37,10 @@ class SignalingServiceClient extends $grpc.Client {
       '/proto.rpc.webrtc.v1.SignalingService/OptionalWebRTCConfig',
       ($3.OptionalWebRTCConfigRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.OptionalWebRTCConfigResponse.fromBuffer(value));
+  static final _$reportConnectionMetadata = $grpc.ClientMethod<$3.ReportConnectionMetadataRequest, $3.ReportConnectionMetadataResponse>(
+      '/proto.rpc.webrtc.v1.SignalingService/ReportConnectionMetadata',
+      ($3.ReportConnectionMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.ReportConnectionMetadataResponse.fromBuffer(value));
 
   SignalingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class SignalingServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$3.OptionalWebRTCConfigResponse> optionalWebRTCConfig($3.OptionalWebRTCConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$optionalWebRTCConfig, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.ReportConnectionMetadataResponse> reportConnectionMetadata($3.ReportConnectionMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$reportConnectionMetadata, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class SignalingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.OptionalWebRTCConfigRequest.fromBuffer(value),
         ($3.OptionalWebRTCConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.ReportConnectionMetadataRequest, $3.ReportConnectionMetadataResponse>(
+        'ReportConnectionMetadata',
+        reportConnectionMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.ReportConnectionMetadataRequest.fromBuffer(value),
+        ($3.ReportConnectionMetadataResponse value) => value.writeToBuffer()));
   }
 
   $async.Stream<$3.CallResponse> call_Pre($grpc.ServiceCall call, $async.Future<$3.CallRequest> request) async* {
@@ -108,8 +123,13 @@ abstract class SignalingServiceBase extends $grpc.Service {
     return optionalWebRTCConfig(call, await request);
   }
 
+  $async.Future<$3.ReportConnectionMetadataResponse> reportConnectionMetadata_Pre($grpc.ServiceCall call, $async.Future<$3.ReportConnectionMetadataRequest> request) async {
+    return reportConnectionMetadata(call, await request);
+  }
+
   $async.Stream<$3.CallResponse> call($grpc.ServiceCall call, $3.CallRequest request);
   $async.Future<$3.CallUpdateResponse> callUpdate($grpc.ServiceCall call, $3.CallUpdateRequest request);
   $async.Stream<$3.AnswerRequest> answer($grpc.ServiceCall call, $async.Stream<$3.AnswerResponse> request);
   $async.Future<$3.OptionalWebRTCConfigResponse> optionalWebRTCConfig($grpc.ServiceCall call, $3.OptionalWebRTCConfigRequest request);
+  $async.Future<$3.ReportConnectionMetadataResponse> reportConnectionMetadata($grpc.ServiceCall call, $3.ReportConnectionMetadataRequest request);
 }

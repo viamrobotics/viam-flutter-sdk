@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $9;
+import '../../../google/protobuf/duration.pb.dart' as $48;
 import '../../../google/protobuf/struct.pb.dart' as $49;
 
 class GetEndPositionRequest extends $pb.GeneratedMessage {
@@ -180,6 +181,98 @@ class JointPositions extends $pb.GeneratedMessage {
 
   /// A list of joint positions. Rotations values are in degrees, translational values in mm.
   /// There should be 1 entry in the list per joint DOF, ordered spatially from the base toward the end effector of the arm
+  @$pb.TagNumber(1)
+  $core.List<$core.double> get values => $_getList(0);
+}
+
+class JointVelocities extends $pb.GeneratedMessage {
+  factory JointVelocities({
+    $core.Iterable<$core.double>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
+  JointVelocities._() : super();
+  factory JointVelocities.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JointVelocities.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointVelocities', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..p<$core.double>(1, _omitFieldNames ? '' : 'values', $pb.PbFieldType.KD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JointVelocities clone() => JointVelocities()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JointVelocities copyWith(void Function(JointVelocities) updates) => super.copyWith((message) => updates(message as JointVelocities)) as JointVelocities;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JointVelocities create() => JointVelocities._();
+  JointVelocities createEmptyInstance() => create();
+  static $pb.PbList<JointVelocities> createRepeated() => $pb.PbList<JointVelocities>();
+  @$core.pragma('dart2js:noInline')
+  static JointVelocities getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointVelocities>(create);
+  static JointVelocities? _defaultInstance;
+
+  /// A list of joint velocities. Rotational values are in degrees per second, translational values in mm per second.
+  /// There should be 1 entry in the list per joint DOF, ordered spatially from the base toward the end effector of the arm.
+  @$pb.TagNumber(1)
+  $core.List<$core.double> get values => $_getList(0);
+}
+
+class JointAccelerations extends $pb.GeneratedMessage {
+  factory JointAccelerations({
+    $core.Iterable<$core.double>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
+  JointAccelerations._() : super();
+  factory JointAccelerations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JointAccelerations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointAccelerations', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..p<$core.double>(1, _omitFieldNames ? '' : 'values', $pb.PbFieldType.KD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JointAccelerations clone() => JointAccelerations()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JointAccelerations copyWith(void Function(JointAccelerations) updates) => super.copyWith((message) => updates(message as JointAccelerations)) as JointAccelerations;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JointAccelerations create() => JointAccelerations._();
+  JointAccelerations createEmptyInstance() => create();
+  static $pb.PbList<JointAccelerations> createRepeated() => $pb.PbList<JointAccelerations>();
+  @$core.pragma('dart2js:noInline')
+  static JointAccelerations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointAccelerations>(create);
+  static JointAccelerations? _defaultInstance;
+
+  /// A list of joint accelerations. Rotational values are in degrees per second squared, translational values in mm per second squared.
+  /// There should be 1 entry in the list per joint DOF, ordered spatially from the base toward the end effector of the arm.
   @$pb.TagNumber(1)
   $core.List<$core.double> get values => $_getList(0);
 }
@@ -667,6 +760,495 @@ class MoveThroughJointPositionsResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static MoveThroughJointPositionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveThroughJointPositionsResponse>(create);
   static MoveThroughJointPositionsResponse? _defaultInstance;
+}
+
+class TrajectoryPoint_KinematicConstraints extends $pb.GeneratedMessage {
+  factory TrajectoryPoint_KinematicConstraints({
+    JointVelocities? velocities,
+    JointAccelerations? accelerations,
+  }) {
+    final $result = create();
+    if (velocities != null) {
+      $result.velocities = velocities;
+    }
+    if (accelerations != null) {
+      $result.accelerations = accelerations;
+    }
+    return $result;
+  }
+  TrajectoryPoint_KinematicConstraints._() : super();
+  factory TrajectoryPoint_KinematicConstraints.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TrajectoryPoint_KinematicConstraints.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TrajectoryPoint.KinematicConstraints', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOM<JointVelocities>(1, _omitFieldNames ? '' : 'velocities', subBuilder: JointVelocities.create)
+    ..aOM<JointAccelerations>(2, _omitFieldNames ? '' : 'accelerations', subBuilder: JointAccelerations.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TrajectoryPoint_KinematicConstraints clone() => TrajectoryPoint_KinematicConstraints()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TrajectoryPoint_KinematicConstraints copyWith(void Function(TrajectoryPoint_KinematicConstraints) updates) => super.copyWith((message) => updates(message as TrajectoryPoint_KinematicConstraints)) as TrajectoryPoint_KinematicConstraints;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TrajectoryPoint_KinematicConstraints create() => TrajectoryPoint_KinematicConstraints._();
+  TrajectoryPoint_KinematicConstraints createEmptyInstance() => create();
+  static $pb.PbList<TrajectoryPoint_KinematicConstraints> createRepeated() => $pb.PbList<TrajectoryPoint_KinematicConstraints>();
+  @$core.pragma('dart2js:noInline')
+  static TrajectoryPoint_KinematicConstraints getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TrajectoryPoint_KinematicConstraints>(create);
+  static TrajectoryPoint_KinematicConstraints? _defaultInstance;
+
+  /// Target joint velocities at this waypoint. If provided, the first point of the stream (the t=0 sample)
+  /// must have zero velocity. Server implementations should validate this constraint.
+  @$pb.TagNumber(1)
+  JointVelocities get velocities => $_getN(0);
+  @$pb.TagNumber(1)
+  set velocities(JointVelocities v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasVelocities() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVelocities() => clearField(1);
+  @$pb.TagNumber(1)
+  JointVelocities ensureVelocities() => $_ensure(0);
+
+  /// Optional target joint accelerations at this waypoint.
+  @$pb.TagNumber(2)
+  JointAccelerations get accelerations => $_getN(1);
+  @$pb.TagNumber(2)
+  set accelerations(JointAccelerations v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccelerations() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccelerations() => clearField(2);
+  @$pb.TagNumber(2)
+  JointAccelerations ensureAccelerations() => $_ensure(1);
+}
+
+/// One waypoint in a streamed joint-space trajectory.
+class TrajectoryPoint extends $pb.GeneratedMessage {
+  factory TrajectoryPoint({
+    $48.Duration? time,
+    JointPositions? positions,
+    TrajectoryPoint_KinematicConstraints? constraints,
+  }) {
+    final $result = create();
+    if (time != null) {
+      $result.time = time;
+    }
+    if (positions != null) {
+      $result.positions = positions;
+    }
+    if (constraints != null) {
+      $result.constraints = constraints;
+    }
+    return $result;
+  }
+  TrajectoryPoint._() : super();
+  factory TrajectoryPoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TrajectoryPoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TrajectoryPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOM<$48.Duration>(1, _omitFieldNames ? '' : 'time', subBuilder: $48.Duration.create)
+    ..aOM<JointPositions>(2, _omitFieldNames ? '' : 'positions', subBuilder: JointPositions.create)
+    ..aOM<TrajectoryPoint_KinematicConstraints>(3, _omitFieldNames ? '' : 'constraints', subBuilder: TrajectoryPoint_KinematicConstraints.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TrajectoryPoint clone() => TrajectoryPoint()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TrajectoryPoint copyWith(void Function(TrajectoryPoint) updates) => super.copyWith((message) => updates(message as TrajectoryPoint)) as TrajectoryPoint;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TrajectoryPoint create() => TrajectoryPoint._();
+  TrajectoryPoint createEmptyInstance() => create();
+  static $pb.PbList<TrajectoryPoint> createRepeated() => $pb.PbList<TrajectoryPoint>();
+  @$core.pragma('dart2js:noInline')
+  static TrajectoryPoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TrajectoryPoint>(create);
+  static TrajectoryPoint? _defaultInstance;
+
+  /// Time from the start of the motion at which this waypoint should be reached. Must be zero
+  /// for the first point of the stream and strictly increasing thereafter. Server implementations
+  /// should validate these constraints.
+  @$pb.TagNumber(1)
+  $48.Duration get time => $_getN(0);
+  @$pb.TagNumber(1)
+  set time($48.Duration v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTime() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTime() => clearField(1);
+  @$pb.TagNumber(1)
+  $48.Duration ensureTime() => $_ensure(0);
+
+  /// Joint positions at this waypoint.
+  @$pb.TagNumber(2)
+  JointPositions get positions => $_getN(1);
+  @$pb.TagNumber(2)
+  set positions(JointPositions v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPositions() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPositions() => clearField(2);
+  @$pb.TagNumber(2)
+  JointPositions ensurePositions() => $_ensure(1);
+
+  /// Optional target kinematic constraints at this waypoint.
+  @$pb.TagNumber(3)
+  TrajectoryPoint_KinematicConstraints get constraints => $_getN(2);
+  @$pb.TagNumber(3)
+  set constraints(TrajectoryPoint_KinematicConstraints v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasConstraints() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConstraints() => clearField(3);
+  @$pb.TagNumber(3)
+  TrajectoryPoint_KinematicConstraints ensureConstraints() => $_ensure(2);
+}
+
+class MoveThroughJointPositionsStreamedRequest_Init extends $pb.GeneratedMessage {
+  factory MoveThroughJointPositionsStreamedRequest_Init({
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  MoveThroughJointPositionsStreamedRequest_Init._() : super();
+  factory MoveThroughJointPositionsStreamedRequest_Init.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveThroughJointPositionsStreamedRequest_Init.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveThroughJointPositionsStreamedRequest.Init', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedRequest_Init clone() => MoveThroughJointPositionsStreamedRequest_Init()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedRequest_Init copyWith(void Function(MoveThroughJointPositionsStreamedRequest_Init) updates) => super.copyWith((message) => updates(message as MoveThroughJointPositionsStreamedRequest_Init)) as MoveThroughJointPositionsStreamedRequest_Init;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedRequest_Init create() => MoveThroughJointPositionsStreamedRequest_Init._();
+  MoveThroughJointPositionsStreamedRequest_Init createEmptyInstance() => create();
+  static $pb.PbList<MoveThroughJointPositionsStreamedRequest_Init> createRepeated() => $pb.PbList<MoveThroughJointPositionsStreamedRequest_Init>();
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedRequest_Init getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveThroughJointPositionsStreamedRequest_Init>(create);
+  static MoveThroughJointPositionsStreamedRequest_Init? _defaultInstance;
+
+  /// Additional sticky arguments to the method.
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(0);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(0);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(0);
+}
+
+class MoveThroughJointPositionsStreamedRequest_TrajectoryBatch extends $pb.GeneratedMessage {
+  factory MoveThroughJointPositionsStreamedRequest_TrajectoryBatch({
+    $core.Iterable<TrajectoryPoint>? points,
+  }) {
+    final $result = create();
+    if (points != null) {
+      $result.points.addAll(points);
+    }
+    return $result;
+  }
+  MoveThroughJointPositionsStreamedRequest_TrajectoryBatch._() : super();
+  factory MoveThroughJointPositionsStreamedRequest_TrajectoryBatch.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveThroughJointPositionsStreamedRequest_TrajectoryBatch.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveThroughJointPositionsStreamedRequest.TrajectoryBatch', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..pc<TrajectoryPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: TrajectoryPoint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedRequest_TrajectoryBatch clone() => MoveThroughJointPositionsStreamedRequest_TrajectoryBatch()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedRequest_TrajectoryBatch copyWith(void Function(MoveThroughJointPositionsStreamedRequest_TrajectoryBatch) updates) => super.copyWith((message) => updates(message as MoveThroughJointPositionsStreamedRequest_TrajectoryBatch)) as MoveThroughJointPositionsStreamedRequest_TrajectoryBatch;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedRequest_TrajectoryBatch create() => MoveThroughJointPositionsStreamedRequest_TrajectoryBatch._();
+  MoveThroughJointPositionsStreamedRequest_TrajectoryBatch createEmptyInstance() => create();
+  static $pb.PbList<MoveThroughJointPositionsStreamedRequest_TrajectoryBatch> createRepeated() => $pb.PbList<MoveThroughJointPositionsStreamedRequest_TrajectoryBatch>();
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedRequest_TrajectoryBatch getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveThroughJointPositionsStreamedRequest_TrajectoryBatch>(create);
+  static MoveThroughJointPositionsStreamedRequest_TrajectoryBatch? _defaultInstance;
+
+  /// Trajectory points to append to the motion, in order. Append-only; points cannot be
+  /// replaced or revoked.
+  @$pb.TagNumber(1)
+  $core.List<TrajectoryPoint> get points => $_getList(0);
+}
+
+enum MoveThroughJointPositionsStreamedRequest_Message {
+  init, 
+  batch, 
+  notSet
+}
+
+class MoveThroughJointPositionsStreamedRequest extends $pb.GeneratedMessage {
+  factory MoveThroughJointPositionsStreamedRequest({
+    $core.String? name,
+    MoveThroughJointPositionsStreamedRequest_Init? init,
+    MoveThroughJointPositionsStreamedRequest_TrajectoryBatch? batch,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (init != null) {
+      $result.init = init;
+    }
+    if (batch != null) {
+      $result.batch = batch;
+    }
+    return $result;
+  }
+  MoveThroughJointPositionsStreamedRequest._() : super();
+  factory MoveThroughJointPositionsStreamedRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveThroughJointPositionsStreamedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, MoveThroughJointPositionsStreamedRequest_Message> _MoveThroughJointPositionsStreamedRequest_MessageByTag = {
+    2 : MoveThroughJointPositionsStreamedRequest_Message.init,
+    3 : MoveThroughJointPositionsStreamedRequest_Message.batch,
+    0 : MoveThroughJointPositionsStreamedRequest_Message.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveThroughJointPositionsStreamedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..oo(0, [2, 3])
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<MoveThroughJointPositionsStreamedRequest_Init>(2, _omitFieldNames ? '' : 'init', subBuilder: MoveThroughJointPositionsStreamedRequest_Init.create)
+    ..aOM<MoveThroughJointPositionsStreamedRequest_TrajectoryBatch>(3, _omitFieldNames ? '' : 'batch', subBuilder: MoveThroughJointPositionsStreamedRequest_TrajectoryBatch.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedRequest clone() => MoveThroughJointPositionsStreamedRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedRequest copyWith(void Function(MoveThroughJointPositionsStreamedRequest) updates) => super.copyWith((message) => updates(message as MoveThroughJointPositionsStreamedRequest)) as MoveThroughJointPositionsStreamedRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedRequest create() => MoveThroughJointPositionsStreamedRequest._();
+  MoveThroughJointPositionsStreamedRequest createEmptyInstance() => create();
+  static $pb.PbList<MoveThroughJointPositionsStreamedRequest> createRepeated() => $pb.PbList<MoveThroughJointPositionsStreamedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveThroughJointPositionsStreamedRequest>(create);
+  static MoveThroughJointPositionsStreamedRequest? _defaultInstance;
+
+  MoveThroughJointPositionsStreamedRequest_Message whichMessage() => _MoveThroughJointPositionsStreamedRequest_MessageByTag[$_whichOneof(0)]!;
+  void clearMessage() => clearField($_whichOneof(0));
+
+  /// Name of the arm to control.
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Stream initiation. Sent exactly once and must be the first message on the stream.
+  @$pb.TagNumber(2)
+  MoveThroughJointPositionsStreamedRequest_Init get init => $_getN(1);
+  @$pb.TagNumber(2)
+  set init(MoveThroughJointPositionsStreamedRequest_Init v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasInit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInit() => clearField(2);
+  @$pb.TagNumber(2)
+  MoveThroughJointPositionsStreamedRequest_Init ensureInit() => $_ensure(1);
+
+  /// A batch of trajectory points to append to the running motion. Sent N times after init.
+  @$pb.TagNumber(3)
+  MoveThroughJointPositionsStreamedRequest_TrajectoryBatch get batch => $_getN(2);
+  @$pb.TagNumber(3)
+  set batch(MoveThroughJointPositionsStreamedRequest_TrajectoryBatch v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBatch() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBatch() => clearField(3);
+  @$pb.TagNumber(3)
+  MoveThroughJointPositionsStreamedRequest_TrajectoryBatch ensureBatch() => $_ensure(2);
+}
+
+/// BatchAck is returned by arm implementations to ack a
+/// `TrajectoryBatch`. Due to the lack of actionable payload in
+/// `BatchAck`, Arm implementations are not currently obligated to
+/// ack every batch, or even any batch. It is currently unspecified
+/// whether ack'ing a batch indicates its acceptance, issue to the
+/// arm, or completion. These very relaxed requirements may become
+/// tighter if and when `BatchAck` messages begin carrying meaningful
+/// payloads back to the client. For now, the recommended practice
+/// for arm implementors is to ack each batch that has been
+/// successfully issued/enqueued to the arm.
+class MoveThroughJointPositionsStreamedResponse_BatchAck extends $pb.GeneratedMessage {
+  factory MoveThroughJointPositionsStreamedResponse_BatchAck({
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  MoveThroughJointPositionsStreamedResponse_BatchAck._() : super();
+  factory MoveThroughJointPositionsStreamedResponse_BatchAck.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveThroughJointPositionsStreamedResponse_BatchAck.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveThroughJointPositionsStreamedResponse.BatchAck', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedResponse_BatchAck clone() => MoveThroughJointPositionsStreamedResponse_BatchAck()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedResponse_BatchAck copyWith(void Function(MoveThroughJointPositionsStreamedResponse_BatchAck) updates) => super.copyWith((message) => updates(message as MoveThroughJointPositionsStreamedResponse_BatchAck)) as MoveThroughJointPositionsStreamedResponse_BatchAck;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedResponse_BatchAck create() => MoveThroughJointPositionsStreamedResponse_BatchAck._();
+  MoveThroughJointPositionsStreamedResponse_BatchAck createEmptyInstance() => create();
+  static $pb.PbList<MoveThroughJointPositionsStreamedResponse_BatchAck> createRepeated() => $pb.PbList<MoveThroughJointPositionsStreamedResponse_BatchAck>();
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedResponse_BatchAck getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveThroughJointPositionsStreamedResponse_BatchAck>(create);
+  static MoveThroughJointPositionsStreamedResponse_BatchAck? _defaultInstance;
+
+  /// Additional reply data
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(0);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(0);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(0);
+}
+
+enum MoveThroughJointPositionsStreamedResponse_Message {
+  ack, 
+  notSet
+}
+
+/// Streamed back to the client while an arm is performing a streaming move.
+class MoveThroughJointPositionsStreamedResponse extends $pb.GeneratedMessage {
+  factory MoveThroughJointPositionsStreamedResponse({
+    MoveThroughJointPositionsStreamedResponse_BatchAck? ack,
+  }) {
+    final $result = create();
+    if (ack != null) {
+      $result.ack = ack;
+    }
+    return $result;
+  }
+  MoveThroughJointPositionsStreamedResponse._() : super();
+  factory MoveThroughJointPositionsStreamedResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveThroughJointPositionsStreamedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, MoveThroughJointPositionsStreamedResponse_Message> _MoveThroughJointPositionsStreamedResponse_MessageByTag = {
+    1 : MoveThroughJointPositionsStreamedResponse_Message.ack,
+    0 : MoveThroughJointPositionsStreamedResponse_Message.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveThroughJointPositionsStreamedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..oo(0, [1])
+    ..aOM<MoveThroughJointPositionsStreamedResponse_BatchAck>(1, _omitFieldNames ? '' : 'ack', subBuilder: MoveThroughJointPositionsStreamedResponse_BatchAck.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedResponse clone() => MoveThroughJointPositionsStreamedResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsStreamedResponse copyWith(void Function(MoveThroughJointPositionsStreamedResponse) updates) => super.copyWith((message) => updates(message as MoveThroughJointPositionsStreamedResponse)) as MoveThroughJointPositionsStreamedResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedResponse create() => MoveThroughJointPositionsStreamedResponse._();
+  MoveThroughJointPositionsStreamedResponse createEmptyInstance() => create();
+  static $pb.PbList<MoveThroughJointPositionsStreamedResponse> createRepeated() => $pb.PbList<MoveThroughJointPositionsStreamedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsStreamedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveThroughJointPositionsStreamedResponse>(create);
+  static MoveThroughJointPositionsStreamedResponse? _defaultInstance;
+
+  MoveThroughJointPositionsStreamedResponse_Message whichMessage() => _MoveThroughJointPositionsStreamedResponse_MessageByTag[$_whichOneof(0)]!;
+  void clearMessage() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  MoveThroughJointPositionsStreamedResponse_BatchAck get ack => $_getN(0);
+  @$pb.TagNumber(1)
+  set ack(MoveThroughJointPositionsStreamedResponse_BatchAck v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAck() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAck() => clearField(1);
+  @$pb.TagNumber(1)
+  MoveThroughJointPositionsStreamedResponse_BatchAck ensureAck() => $_ensure(0);
 }
 
 class StopRequest extends $pb.GeneratedMessage {

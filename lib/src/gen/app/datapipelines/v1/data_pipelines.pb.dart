@@ -1071,6 +1071,7 @@ class DataPipelineRun extends $pb.GeneratedMessage {
     $50.Timestamp? dataEndTime,
     DataPipelineRunStatus? status,
     $core.String? errorMessage,
+    $4.TabularDataSourceType? dataSourceType,
   }) {
     final $result = create();
     if (id != null) {
@@ -1094,6 +1095,9 @@ class DataPipelineRun extends $pb.GeneratedMessage {
     if (errorMessage != null) {
       $result.errorMessage = errorMessage;
     }
+    if (dataSourceType != null) {
+      $result.dataSourceType = dataSourceType;
+    }
     return $result;
   }
   DataPipelineRun._() : super();
@@ -1108,6 +1112,7 @@ class DataPipelineRun extends $pb.GeneratedMessage {
     ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'dataEndTime', subBuilder: $50.Timestamp.create)
     ..e<DataPipelineRunStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DataPipelineRunStatus.DATA_PIPELINE_RUN_STATUS_UNSPECIFIED, valueOf: DataPipelineRunStatus.valueOf, enumValues: DataPipelineRunStatus.values)
     ..aOS(7, _omitFieldNames ? '' : 'errorMessage')
+    ..e<$4.TabularDataSourceType>(8, _omitFieldNames ? '' : 'dataSourceType', $pb.PbFieldType.OE, defaultOrMaker: $4.TabularDataSourceType.TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED, valueOf: $4.TabularDataSourceType.valueOf, enumValues: $4.TabularDataSourceType.values)
     ..hasRequiredFields = false
   ;
 
@@ -1209,6 +1214,17 @@ class DataPipelineRun extends $pb.GeneratedMessage {
   $core.bool hasErrorMessage() => $_has(6);
   @$pb.TagNumber(7)
   void clearErrorMessage() => clearField(7);
+
+  /// The data source type the run executed against. Runs that predate this field
+  /// report the pipeline's configured data source type.
+  @$pb.TagNumber(8)
+  $4.TabularDataSourceType get dataSourceType => $_getN(7);
+  @$pb.TagNumber(8)
+  set dataSourceType($4.TabularDataSourceType v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasDataSourceType() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDataSourceType() => clearField(8);
 }
 
 

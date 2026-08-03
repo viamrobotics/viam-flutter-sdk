@@ -7083,6 +7083,7 @@ class SequencesByDatasetIDRequest extends $pb.GeneratedMessage {
     $core.String? datasetId,
     $core.String? pageToken,
     $core.int? pageSize,
+    $core.bool? countOnly,
   }) {
     final $result = create();
     if (datasetId != null) {
@@ -7094,6 +7095,9 @@ class SequencesByDatasetIDRequest extends $pb.GeneratedMessage {
     if (pageSize != null) {
       $result.pageSize = pageSize;
     }
+    if (countOnly != null) {
+      $result.countOnly = countOnly;
+    }
     return $result;
   }
   SequencesByDatasetIDRequest._() : super();
@@ -7104,6 +7108,7 @@ class SequencesByDatasetIDRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'datasetId')
     ..aOS(2, _omitFieldNames ? '' : 'pageToken')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.OU3)
+    ..aOB(4, _omitFieldNames ? '' : 'countOnly')
     ..hasRequiredFields = false
   ;
 
@@ -7154,12 +7159,22 @@ class SequencesByDatasetIDRequest extends $pb.GeneratedMessage {
   $core.bool hasPageSize() => $_has(2);
   @$pb.TagNumber(3)
   void clearPageSize() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get countOnly => $_getBF(3);
+  @$pb.TagNumber(4)
+  set countOnly($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCountOnly() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCountOnly() => clearField(4);
 }
 
 class SequencesByDatasetIDResponse extends $pb.GeneratedMessage {
   factory SequencesByDatasetIDResponse({
     $core.Iterable<Sequence>? sequences,
     $core.String? nextPageToken,
+    $fixnum.Int64? count,
   }) {
     final $result = create();
     if (sequences != null) {
@@ -7167,6 +7182,9 @@ class SequencesByDatasetIDResponse extends $pb.GeneratedMessage {
     }
     if (nextPageToken != null) {
       $result.nextPageToken = nextPageToken;
+    }
+    if (count != null) {
+      $result.count = count;
     }
     return $result;
   }
@@ -7177,6 +7195,7 @@ class SequencesByDatasetIDResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SequencesByDatasetIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pc<Sequence>(1, _omitFieldNames ? '' : 'sequences', $pb.PbFieldType.PM, subBuilder: Sequence.create)
     ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'count', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -7212,6 +7231,15 @@ class SequencesByDatasetIDResponse extends $pb.GeneratedMessage {
   $core.bool hasNextPageToken() => $_has(1);
   @$pb.TagNumber(2)
   void clearNextPageToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get count => $_getI64(2);
+  @$pb.TagNumber(3)
+  set count($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCount() => clearField(3);
 }
 
 class GetSequenceBinaryDataRequest extends $pb.GeneratedMessage {

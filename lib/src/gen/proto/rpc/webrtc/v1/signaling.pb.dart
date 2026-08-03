@@ -15,6 +15,9 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../google/protobuf/timestamp.pb.dart' as $6;
 import '../../../../google/rpc/status.pb.dart' as $5;
+import 'signaling.pbenum.dart';
+
+export 'signaling.pbenum.dart';
 
 /// ICECandidate represents an ICE candidate.
 /// From https://github.com/pion/webrtc/blob/5f6baf73255598a7b4a7c9400bb0381acc9aa3dc/icecandidateinit.go
@@ -1490,6 +1493,238 @@ class OptionalWebRTCConfigResponse extends $pb.GeneratedMessage {
   void clearConfig() => clearField(1);
   @$pb.TagNumber(1)
   WebRTCConfig ensureConfig() => $_ensure(0);
+}
+
+/// ConnectionCandidate describes the selected ICE candidate for one side of a WebRTC connection.
+class ConnectionCandidate extends $pb.GeneratedMessage {
+  factory ConnectionCandidate({
+    ICECandidateType? type,
+    $core.String? relayAddress,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (relayAddress != null) {
+      $result.relayAddress = relayAddress;
+    }
+    return $result;
+  }
+  ConnectionCandidate._() : super();
+  factory ConnectionCandidate.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ConnectionCandidate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConnectionCandidate', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..e<ICECandidateType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: ICECandidateType.ICE_CANDIDATE_TYPE_UNSPECIFIED, valueOf: ICECandidateType.valueOf, enumValues: ICECandidateType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'relayAddress')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ConnectionCandidate clone() => ConnectionCandidate()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ConnectionCandidate copyWith(void Function(ConnectionCandidate) updates) => super.copyWith((message) => updates(message as ConnectionCandidate)) as ConnectionCandidate;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConnectionCandidate create() => ConnectionCandidate._();
+  ConnectionCandidate createEmptyInstance() => create();
+  static $pb.PbList<ConnectionCandidate> createRepeated() => $pb.PbList<ConnectionCandidate>();
+  @$core.pragma('dart2js:noInline')
+  static ConnectionCandidate getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConnectionCandidate>(create);
+  static ConnectionCandidate? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ICECandidateType get type => $_getN(0);
+  @$pb.TagNumber(1)
+  set type(ICECandidateType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearType() => clearField(1);
+
+  /// relay_address is the relay server address of this candidate; set only when type is
+  /// RELAY, so the signaling server can classify the provider by matching against known
+  /// coturn addresses.
+  @$pb.TagNumber(2)
+  $core.String get relayAddress => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set relayAddress($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRelayAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRelayAddress() => clearField(2);
+}
+
+/// ReportConnectionMetadataRequest reports metadata about a WebRTC dial, per side: local is the
+/// dialing SDK and remote is the robot.
+class ReportConnectionMetadataRequest extends $pb.GeneratedMessage {
+  factory ReportConnectionMetadataRequest({
+    ConnectionCandidate? local,
+    ConnectionCandidate? remote,
+    DialStage? reachedStage,
+    $core.int? durationMs,
+    ConnectionSignalingPath? signalingPath,
+    $core.int? failureCode,
+  }) {
+    final $result = create();
+    if (local != null) {
+      $result.local = local;
+    }
+    if (remote != null) {
+      $result.remote = remote;
+    }
+    if (reachedStage != null) {
+      $result.reachedStage = reachedStage;
+    }
+    if (durationMs != null) {
+      $result.durationMs = durationMs;
+    }
+    if (signalingPath != null) {
+      $result.signalingPath = signalingPath;
+    }
+    if (failureCode != null) {
+      $result.failureCode = failureCode;
+    }
+    return $result;
+  }
+  ReportConnectionMetadataRequest._() : super();
+  factory ReportConnectionMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReportConnectionMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportConnectionMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..aOM<ConnectionCandidate>(1, _omitFieldNames ? '' : 'local', subBuilder: ConnectionCandidate.create)
+    ..aOM<ConnectionCandidate>(2, _omitFieldNames ? '' : 'remote', subBuilder: ConnectionCandidate.create)
+    ..e<DialStage>(3, _omitFieldNames ? '' : 'reachedStage', $pb.PbFieldType.OE, defaultOrMaker: DialStage.DIAL_STAGE_UNSPECIFIED, valueOf: DialStage.valueOf, enumValues: DialStage.values)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'durationMs', $pb.PbFieldType.OU3)
+    ..e<ConnectionSignalingPath>(5, _omitFieldNames ? '' : 'signalingPath', $pb.PbFieldType.OE, defaultOrMaker: ConnectionSignalingPath.CONNECTION_SIGNALING_PATH_UNSPECIFIED, valueOf: ConnectionSignalingPath.valueOf, enumValues: ConnectionSignalingPath.values)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'failureCode', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReportConnectionMetadataRequest clone() => ReportConnectionMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReportConnectionMetadataRequest copyWith(void Function(ReportConnectionMetadataRequest) updates) => super.copyWith((message) => updates(message as ReportConnectionMetadataRequest)) as ReportConnectionMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportConnectionMetadataRequest create() => ReportConnectionMetadataRequest._();
+  ReportConnectionMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<ReportConnectionMetadataRequest> createRepeated() => $pb.PbList<ReportConnectionMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ReportConnectionMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportConnectionMetadataRequest>(create);
+  static ReportConnectionMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ConnectionCandidate get local => $_getN(0);
+  @$pb.TagNumber(1)
+  set local(ConnectionCandidate v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLocal() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocal() => clearField(1);
+  @$pb.TagNumber(1)
+  ConnectionCandidate ensureLocal() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  ConnectionCandidate get remote => $_getN(1);
+  @$pb.TagNumber(2)
+  set remote(ConnectionCandidate v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRemote() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRemote() => clearField(2);
+  @$pb.TagNumber(2)
+  ConnectionCandidate ensureRemote() => $_ensure(1);
+
+  /// reached_stage is the furthest dial checkpoint reached. READY indicates success; any earlier
+  /// value is where a failed dial stopped.
+  @$pb.TagNumber(3)
+  DialStage get reachedStage => $_getN(2);
+  @$pb.TagNumber(3)
+  set reachedStage(DialStage v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasReachedStage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReachedStage() => clearField(3);
+
+  /// duration_ms is the wall-clock time from dial start to connection ready or to the failure.
+  @$pb.TagNumber(4)
+  $core.int get durationMs => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set durationMs($core.int v) { $_setUnsignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDurationMs() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDurationMs() => clearField(4);
+
+  /// signaling_path is how the dial was signaled (cloud / local / mDNS); reported regardless of outcome.
+  @$pb.TagNumber(5)
+  ConnectionSignalingPath get signalingPath => $_getN(4);
+  @$pb.TagNumber(5)
+  set signalingPath(ConnectionSignalingPath v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSignalingPath() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSignalingPath() => clearField(5);
+
+  /// failure_code is the gRPC status code of a failed dial
+  @$pb.TagNumber(6)
+  $core.int get failureCode => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set failureCode($core.int v) { $_setSignedInt32(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasFailureCode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFailureCode() => clearField(6);
+}
+
+/// ReportConnectionMetadataResponse is empty.
+class ReportConnectionMetadataResponse extends $pb.GeneratedMessage {
+  factory ReportConnectionMetadataResponse() => create();
+  ReportConnectionMetadataResponse._() : super();
+  factory ReportConnectionMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReportConnectionMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportConnectionMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReportConnectionMetadataResponse clone() => ReportConnectionMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReportConnectionMetadataResponse copyWith(void Function(ReportConnectionMetadataResponse) updates) => super.copyWith((message) => updates(message as ReportConnectionMetadataResponse)) as ReportConnectionMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportConnectionMetadataResponse create() => ReportConnectionMetadataResponse._();
+  ReportConnectionMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<ReportConnectionMetadataResponse> createRepeated() => $pb.PbList<ReportConnectionMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ReportConnectionMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportConnectionMetadataResponse>(create);
+  static ReportConnectionMetadataResponse? _defaultInstance;
 }
 
 
