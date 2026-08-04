@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets.dart';
+
+import '../button.dart';
 
 /// A widget to control a [Board].
 ///

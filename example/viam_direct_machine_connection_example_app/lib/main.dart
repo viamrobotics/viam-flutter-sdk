@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart' hide Switch;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:viam_example_widgets/viam_example_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets.dart';
 
-import 'screens/button.dart';
 import 'screens/screens.dart';
 
 void main() async {

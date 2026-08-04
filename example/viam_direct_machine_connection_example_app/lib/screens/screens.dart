@@ -3,6 +3,7 @@ export 'audio_in.dart';
 export 'audio_out.dart';
 export 'base.dart';
 export 'board.dart';
+export 'button.dart';
 export 'encoder.dart';
 export 'gantry.dart';
 export 'generic.dart';

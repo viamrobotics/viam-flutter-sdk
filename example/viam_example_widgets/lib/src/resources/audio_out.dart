@@ -2,10 +2,10 @@ import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-
 import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets.dart';
+
+import '../button.dart';
 
 /// A widget to play audio on an [AudioOut] device.
 ///
