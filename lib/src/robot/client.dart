@@ -107,7 +107,7 @@ class RobotClient {
     final client = RobotClient._();
     client._address = url;
     client._options = options;
-    client._channel = await dialInitial(url, options.dialOptions, () => client._sessionsClient.metadata());
+    client._channel = await dialInitial(url, options.dialOptions, () => client._sessionsClient.sessionId());
     client._sessionsClient = SessionsClient(client._channel, options.enableSessions, url);
     client._sessionsClient.start();
     client._client = rpb.RobotServiceClient(client._channel);
@@ -211,21 +211,21 @@ class RobotClient {
     while (!_connected) {
       _sessionsClient.stop();
       try {
-        final channel = await dial(_address, _options.dialOptions, () => _sessionsClient.metadata());
+        final channel = await dial(_address, _options.dialOptions, _sessionsClient.sessionId);
         final client = rpb.RobotServiceClient(channel);
         await client.resourceNames(rpb.ResourceNamesRequest());
 
         _channel = channel;
         _streamManager.channel = _channel as WebRtcClientChannel;
         _client = client;
-        _sessionsClient = SessionsClient(_channel, _options.enableSessions, this._address);
+        _sessionsClient = SessionsClient(_channel, _options.enableSessions, _address);
         await refresh();
         _connected = true;
         _logger.i('Successfully reconnected to robot');
         _startCheckConnectionTask();
       } catch (e) {
         await _channel.shutdown();
-        _sessionsClient.reset();
+        await _sessionsClient.reset();
         if (!_shouldAttemptReconnection) {
           _logger.i('Failed to reconnect. No more attempts to reconnect will be made.');
           break;
