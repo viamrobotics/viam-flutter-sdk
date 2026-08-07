@@ -22,6 +22,13 @@ abstract class AudioIn extends Resource {
   /// Get the audio properties of this audio in device
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra});
 
+  /// Get all geometries associated with the [AudioIn]
+  ///
+  /// ```
+  /// final geometries = await myAudioIn.getGeometries();
+  /// ```
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [ResourceName] for this [AudioIn] with the given [name]
   static ResourceName getResourceName(String name) {
     return AudioIn.subtype.getResourceName(name);

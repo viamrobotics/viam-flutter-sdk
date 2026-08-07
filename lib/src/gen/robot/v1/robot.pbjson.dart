@@ -51,6 +51,45 @@ const SendTracesResponse$json = {
 final $typed_data.Uint8List sendTracesResponseDescriptor = $convert.base64Decode(
     'ChJTZW5kVHJhY2VzUmVzcG9uc2U=');
 
+@$core.Deprecated('Use uploadDataFromPathRequestDescriptor instead')
+const UploadDataFromPathRequest$json = {
+  '1': 'UploadDataFromPathRequest',
+  '2': [
+    {'1': 'path', '3': 1, '4': 1, '5': 9, '10': 'path'},
+    {'1': 'upload_metadata', '3': 2, '4': 1, '5': 11, '6': '.viam.app.datasync.v1.UploadMetadata', '9': 0, '10': 'uploadMetadata', '17': true},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+  '8': [
+    {'1': '_upload_metadata'},
+  ],
+};
+
+/// Descriptor for `UploadDataFromPathRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List uploadDataFromPathRequestDescriptor = $convert.base64Decode(
+    'ChlVcGxvYWREYXRhRnJvbVBhdGhSZXF1ZXN0EhIKBHBhdGgYASABKAlSBHBhdGgSUgoPdXBsb2'
+    'FkX21ldGFkYXRhGAIgASgLMiQudmlhbS5hcHAuZGF0YXN5bmMudjEuVXBsb2FkTWV0YWRhdGFI'
+    'AFIOdXBsb2FkTWV0YWRhdGGIAQESLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3'
+    'RydWN0UgVleHRyYUISChBfdXBsb2FkX21ldGFkYXRh');
+
+@$core.Deprecated('Use uploadDataFromPathResponseDescriptor instead')
+const UploadDataFromPathResponse$json = {
+  '1': 'UploadDataFromPathResponse',
+  '2': [
+    {'1': 'files_uploaded', '3': 1, '4': 1, '5': 4, '10': 'filesUploaded'},
+    {'1': 'files_failed', '3': 2, '4': 1, '5': 4, '10': 'filesFailed'},
+    {'1': 'bytes_uploaded', '3': 3, '4': 1, '5': 4, '10': 'bytesUploaded'},
+    {'1': 'bytes_total', '3': 4, '4': 1, '5': 4, '10': 'bytesTotal'},
+    {'1': 'ids', '3': 5, '4': 3, '5': 9, '10': 'ids'},
+  ],
+};
+
+/// Descriptor for `UploadDataFromPathResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List uploadDataFromPathResponseDescriptor = $convert.base64Decode(
+    'ChpVcGxvYWREYXRhRnJvbVBhdGhSZXNwb25zZRIlCg5maWxlc191cGxvYWRlZBgBIAEoBFINZm'
+    'lsZXNVcGxvYWRlZBIhCgxmaWxlc19mYWlsZWQYAiABKARSC2ZpbGVzRmFpbGVkEiUKDmJ5dGVz'
+    'X3VwbG9hZGVkGAMgASgEUg1ieXRlc1VwbG9hZGVkEh8KC2J5dGVzX3RvdGFsGAQgASgEUgpieX'
+    'Rlc1RvdGFsEhAKA2lkcxgFIAMoCVIDaWRz');
+
 @$core.Deprecated('Use tunnelRequestDescriptor instead')
 const TunnelRequest$json = {
   '1': 'TunnelRequest',
@@ -649,27 +688,23 @@ final $typed_data.Uint8List getCloudMetadataRequestDescriptor = $convert.base64D
 const GetCloudMetadataResponse$json = {
   '1': 'GetCloudMetadataResponse',
   '2': [
-    {
-      '1': 'robot_part_id',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'robotPartId',
-    },
     {'1': 'primary_org_id', '3': 2, '4': 1, '5': 9, '10': 'primaryOrgId'},
     {'1': 'location_id', '3': 3, '4': 1, '5': 9, '10': 'locationId'},
     {'1': 'machine_id', '3': 4, '4': 1, '5': 9, '10': 'machineId'},
     {'1': 'machine_part_id', '3': 5, '4': 1, '5': 9, '10': 'machinePartId'},
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['robot_part_id'],
 };
 
 /// Descriptor for `GetCloudMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getCloudMetadataResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRDbG91ZE1ldGFkYXRhUmVzcG9uc2USJgoNcm9ib3RfcGFydF9pZBgBIAEoCUICGAFSC3'
-    'JvYm90UGFydElkEiQKDnByaW1hcnlfb3JnX2lkGAIgASgJUgxwcmltYXJ5T3JnSWQSHwoLbG9j'
-    'YXRpb25faWQYAyABKAlSCmxvY2F0aW9uSWQSHQoKbWFjaGluZV9pZBgEIAEoCVIJbWFjaGluZU'
-    'lkEiYKD21hY2hpbmVfcGFydF9pZBgFIAEoCVINbWFjaGluZVBhcnRJZA==');
+    'ChhHZXRDbG91ZE1ldGFkYXRhUmVzcG9uc2USJAoOcHJpbWFyeV9vcmdfaWQYAiABKAlSDHByaW'
+    '1hcnlPcmdJZBIfCgtsb2NhdGlvbl9pZBgDIAEoCVIKbG9jYXRpb25JZBIdCgptYWNoaW5lX2lk'
+    'GAQgASgJUgltYWNoaW5lSWQSJgoPbWFjaGluZV9wYXJ0X2lkGAUgASgJUg1tYWNoaW5lUGFydE'
+    'lkSgQIARACUg1yb2JvdF9wYXJ0X2lk');
 
 @$core.Deprecated('Use restartModuleRequestDescriptor instead')
 const RestartModuleRequest$json = {
@@ -732,6 +767,8 @@ const GetMachineStatusResponse$json = {
     {'1': 'config', '3': 2, '4': 1, '5': 11, '6': '.viam.robot.v1.ConfigStatus', '10': 'config'},
     {'1': 'state', '3': 3, '4': 1, '5': 14, '6': '.viam.robot.v1.GetMachineStatusResponse.State', '10': 'state'},
     {'1': 'job_statuses', '3': 4, '4': 3, '5': 11, '6': '.viam.robot.v1.JobStatus', '10': 'jobStatuses'},
+    {'1': 'modules', '3': 5, '4': 3, '5': 11, '6': '.viam.robot.v1.ModuleStatus', '10': 'modules'},
+    {'1': 'packages', '3': 6, '4': 3, '5': 11, '6': '.viam.robot.v1.PackageStatus', '10': 'packages'},
   ],
   '4': [GetMachineStatusResponse_State$json],
 };
@@ -752,9 +789,11 @@ final $typed_data.Uint8List getMachineStatusResponseDescriptor = $convert.base64
     'JvdC52MS5SZXNvdXJjZVN0YXR1c1IJcmVzb3VyY2VzEjMKBmNvbmZpZxgCIAEoCzIbLnZpYW0u'
     'cm9ib3QudjEuQ29uZmlnU3RhdHVzUgZjb25maWcSQwoFc3RhdGUYAyABKA4yLS52aWFtLnJvYm'
     '90LnYxLkdldE1hY2hpbmVTdGF0dXNSZXNwb25zZS5TdGF0ZVIFc3RhdGUSOwoMam9iX3N0YXR1'
-    'c2VzGAQgAygLMhgudmlhbS5yb2JvdC52MS5Kb2JTdGF0dXNSC2pvYlN0YXR1c2VzIkkKBVN0YX'
-    'RlEhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFgoSU1RBVEVfSU5JVElBTElaSU5HEAESEQoNU1RB'
-    'VEVfUlVOTklORxAC');
+    'c2VzGAQgAygLMhgudmlhbS5yb2JvdC52MS5Kb2JTdGF0dXNSC2pvYlN0YXR1c2VzEjUKB21vZH'
+    'VsZXMYBSADKAsyGy52aWFtLnJvYm90LnYxLk1vZHVsZVN0YXR1c1IHbW9kdWxlcxI4CghwYWNr'
+    'YWdlcxgGIAMoCzIcLnZpYW0ucm9ib3QudjEuUGFja2FnZVN0YXR1c1IIcGFja2FnZXMiSQoFU3'
+    'RhdGUSFQoRU1RBVEVfVU5TUEVDSUZJRUQQABIWChJTVEFURV9JTklUSUFMSVpJTkcQARIRCg1T'
+    'VEFURV9SVU5OSU5HEAI=');
 
 @$core.Deprecated('Use jobStatusDescriptor instead')
 const JobStatus$json = {
@@ -814,6 +853,83 @@ final $typed_data.Uint8List resourceStatusDescriptor = $convert.base64Decode(
     'EhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFgoSU1RBVEVfVU5DT05GSUdVUkVEEAESFQoRU1RBVE'
     'VfQ09ORklHVVJJTkcQAhIPCgtTVEFURV9SRUFEWRADEhIKDlNUQVRFX1JFTU9WSU5HEAQSEwoP'
     'U1RBVEVfVU5IRUFMVEhZEAVCEQoPX2Nsb3VkX21ldGFkYXRh');
+
+@$core.Deprecated('Use moduleStatusDescriptor instead')
+const ModuleStatus$json = {
+  '1': 'ModuleStatus',
+  '2': [
+    {'1': 'module_name', '3': 1, '4': 1, '5': 9, '10': 'moduleName'},
+    {'1': 'state', '3': 2, '4': 1, '5': 14, '6': '.viam.robot.v1.ModuleStatus.State', '10': 'state'},
+    {'1': 'last_updated', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastUpdated'},
+    {'1': 'error', '3': 4, '4': 1, '5': 9, '10': 'error'},
+    {'1': 'consecutive_failures', '3': 5, '4': 1, '5': 13, '10': 'consecutiveFailures'},
+  ],
+  '4': [ModuleStatus_State$json],
+};
+
+@$core.Deprecated('Use moduleStatusDescriptor instead')
+const ModuleStatus_State$json = {
+  '1': 'State',
+  '2': [
+    {'1': 'STATE_UNSPECIFIED', '2': 0},
+    {'1': 'STATE_PENDING', '2': 1},
+    {'1': 'STATE_STARTING', '2': 2},
+    {'1': 'STATE_READY', '2': 3},
+    {'1': 'STATE_UNHEALTHY', '2': 4},
+    {'1': 'STATE_CLOSING', '2': 5},
+  ],
+};
+
+/// Descriptor for `ModuleStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moduleStatusDescriptor = $convert.base64Decode(
+    'CgxNb2R1bGVTdGF0dXMSHwoLbW9kdWxlX25hbWUYASABKAlSCm1vZHVsZU5hbWUSNwoFc3RhdG'
+    'UYAiABKA4yIS52aWFtLnJvYm90LnYxLk1vZHVsZVN0YXR1cy5TdGF0ZVIFc3RhdGUSPQoMbGFz'
+    'dF91cGRhdGVkGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILbGFzdFVwZGF0ZW'
+    'QSFAoFZXJyb3IYBCABKAlSBWVycm9yEjEKFGNvbnNlY3V0aXZlX2ZhaWx1cmVzGAUgASgNUhNj'
+    'b25zZWN1dGl2ZUZhaWx1cmVzIn4KBVN0YXRlEhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASEQoNU1'
+    'RBVEVfUEVORElORxABEhIKDlNUQVRFX1NUQVJUSU5HEAISDwoLU1RBVEVfUkVBRFkQAxITCg9T'
+    'VEFURV9VTkhFQUxUSFkQBBIRCg1TVEFURV9DTE9TSU5HEAU=');
+
+@$core.Deprecated('Use packageStatusDescriptor instead')
+const PackageStatus$json = {
+  '1': 'PackageStatus',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.packages.v1.PackageType', '10': 'type'},
+    {'1': 'state', '3': 3, '4': 1, '5': 14, '6': '.viam.robot.v1.PackageStatus.State', '10': 'state'},
+    {'1': 'error', '3': 4, '4': 1, '5': 9, '10': 'error'},
+    {'1': 'last_updated', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastUpdated'},
+    {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'bytes_downloaded', '3': 7, '4': 1, '5': 4, '10': 'bytesDownloaded'},
+    {'1': 'total_bytes', '3': 8, '4': 1, '5': 4, '10': 'totalBytes'},
+  ],
+  '4': [PackageStatus_State$json],
+};
+
+@$core.Deprecated('Use packageStatusDescriptor instead')
+const PackageStatus_State$json = {
+  '1': 'State',
+  '2': [
+    {'1': 'STATE_UNSPECIFIED', '2': 0},
+    {'1': 'STATE_DOWNLOADING', '2': 1},
+    {'1': 'STATE_LOADING', '2': 2},
+    {'1': 'STATE_FIRST_RUN', '2': 3},
+    {'1': 'STATE_READY', '2': 4},
+    {'1': 'STATE_FAILED', '2': 5},
+  ],
+};
+
+/// Descriptor for `PackageStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List packageStatusDescriptor = $convert.base64Decode(
+    'Cg1QYWNrYWdlU3RhdHVzEhIKBG5hbWUYASABKAlSBG5hbWUSNQoEdHlwZRgCIAEoDjIhLnZpYW'
+    '0uYXBwLnBhY2thZ2VzLnYxLlBhY2thZ2VUeXBlUgR0eXBlEjgKBXN0YXRlGAMgASgOMiIudmlh'
+    'bS5yb2JvdC52MS5QYWNrYWdlU3RhdHVzLlN0YXRlUgVzdGF0ZRIUCgVlcnJvchgEIAEoCVIFZX'
+    'Jyb3ISPQoMbGFzdF91cGRhdGVkGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIL'
+    'bGFzdFVwZGF0ZWQSGAoHdmVyc2lvbhgGIAEoCVIHdmVyc2lvbhIpChBieXRlc19kb3dubG9hZG'
+    'VkGAcgASgEUg9ieXRlc0Rvd25sb2FkZWQSHwoLdG90YWxfYnl0ZXMYCCABKARSCnRvdGFsQnl0'
+    'ZXMigAEKBVN0YXRlEhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFQoRU1RBVEVfRE9XTkxPQURJTk'
+    'cQARIRCg1TVEFURV9MT0FESU5HEAISEwoPU1RBVEVfRklSU1RfUlVOEAMSDwoLU1RBVEVfUkVB'
+    'RFkQBBIQCgxTVEFURV9GQUlMRUQQBQ==');
 
 @$core.Deprecated('Use configStatusDescriptor instead')
 const ConfigStatus$json = {

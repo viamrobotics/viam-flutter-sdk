@@ -381,6 +381,31 @@ final $typed_data.Uint8List doCommandResponseDescriptor = $convert.base64Decode(
     'ChFEb0NvbW1hbmRSZXNwb25zZRIvCgZyZXN1bHQYASABKAsyFy5nb29nbGUucHJvdG9idWYuU3'
     'RydWN0UgZyZXN1bHQ=');
 
+@$core.Deprecated('Use getStatusRequestDescriptor instead')
+const GetStatusRequest$json = {
+  '1': 'GetStatusRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getStatusRequestDescriptor = $convert.base64Decode(
+    'ChBHZXRTdGF0dXNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWU=');
+
+@$core.Deprecated('Use getStatusResponseDescriptor instead')
+const GetStatusResponse$json = {
+  '1': 'GetStatusResponse',
+  '2': [
+    {'1': 'result', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'result'},
+  ],
+};
+
+/// Descriptor for `GetStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getStatusResponseDescriptor = $convert.base64Decode(
+    'ChFHZXRTdGF0dXNSZXNwb25zZRIvCgZyZXN1bHQYASABKAsyFy5nb29nbGUucHJvdG9idWYuU3'
+    'RydWN0UgZyZXN1bHQ=');
+
 @$core.Deprecated('Use getKinematicsRequestDescriptor instead')
 const GetKinematicsRequest$json = {
   '1': 'GetKinematicsRequest',
@@ -492,6 +517,19 @@ final $typed_data.Uint8List get3DModelsResponseDescriptor = $convert.base64Decod
     'dldDNETW9kZWxzUmVzcG9uc2UuTW9kZWxzRW50cnlSBm1vZGVscxpPCgtNb2RlbHNFbnRyeRIQ'
     'CgNrZXkYASABKAlSA2tleRIqCgV2YWx1ZRgCIAEoCzIULnZpYW0uY29tbW9uLnYxLk1lc2hSBX'
     'ZhbHVlOgI4AQ==');
+
+@$core.Deprecated('Use getWorldPoseResponseDescriptor instead')
+const GetWorldPoseResponse$json = {
+  '1': 'GetWorldPoseResponse',
+  '2': [
+    {'1': 'pose', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'pose'},
+  ],
+};
+
+/// Descriptor for `GetWorldPoseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getWorldPoseResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRXb3JsZFBvc2VSZXNwb25zZRIoCgRwb3NlGAEgASgLMhQudmlhbS5jb21tb24udjEuUG'
+    '9zZVIEcG9zZQ==');
 
 @$core.Deprecated('Use getReadingsRequestDescriptor instead')
 const GetReadingsRequest$json = {

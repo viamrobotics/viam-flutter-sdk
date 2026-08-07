@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/switch/service.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/component/nswitch/v1/switch.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -11,6 +12,7 @@ class FakeSwitch extends Switch {
   int numberOfPositions = 4;
   Map<String, dynamic>? extra;
   List<String> labels = ['Off', 'Low', 'Medium', 'High'];
+  Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
   String name;
@@ -37,6 +39,11 @@ class FakeSwitch extends Switch {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 }
 
@@ -79,6 +86,11 @@ void main() {
       const command = {'command': 'args'};
       final result = await nswitch.doCommand(command);
       expect(result, {'command': command});
+    });
+
+    test('getStatus', () async {
+      final result = await nswitch.getStatus();
+      expect(result, nswitch.statusResult);
     });
   });
 
@@ -153,6 +165,12 @@ void main() {
         final response = await client.doCommand(request);
         expect(response.result.toMap(), {'command': command});
       });
+
+      test('getStatus', () async {
+        final client = SwitchServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), nswitch.statusResult);
+      });
     });
     group('Switch Client Tests', () {
       test('setPosition should update the switch to new given position', () async {
@@ -179,6 +197,12 @@ void main() {
         final Map<String, String> command = {'command': 'args'};
         final response = await client.doCommand(command);
         expect(response, {'command': command});
+      });
+
+      test('getStatus', () async {
+        final client = SwitchClient(nswitch.name, channel);
+        final result = await client.getStatus();
+        expect(result, nswitch.statusResult);
       });
     });
   });

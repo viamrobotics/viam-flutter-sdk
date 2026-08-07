@@ -107,6 +107,15 @@ void main() {
       expect(response, equals(expectedResult));
     });
 
+    test('getStatus', () async {
+      final expected = {'status': 'ok'};
+      when(
+        serviceClient.getStatus(any, options: anyNamed('options')),
+      ).thenAnswer((_) => MockResponseFuture.value(GetStatusResponse()..result = expected.toStruct()));
+      final response = await client.getStatus();
+      expect(response, equals(expected));
+    });
+
     test('getResourceName', () {
       final resourceName = VideoClient.getResourceName('my-video');
 

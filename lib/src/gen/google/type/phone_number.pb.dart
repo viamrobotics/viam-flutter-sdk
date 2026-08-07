@@ -16,12 +16,13 @@ import 'package:protobuf/protobuf.dart' as $pb;
 ///  An object representing a short code, which is a phone number that is
 ///  typically much shorter than regular phone numbers and can be used to
 ///  address messages in MMS and SMS systems, as well as for abbreviated dialing
-///  (e.g. "Text 611 to see how many minutes you have remaining on your plan.").
+///  (For example "Text 611 to see how many minutes you have remaining on your
+///  plan.").
 ///
 ///  Short codes are restricted to a region and are not internationally
 ///  dialable, which means the same short code can exist in different regions,
 ///  with different usage and pricing, even if those regions share the same
-///  country calling code (e.g. US and CA).
+///  country calling code (For example: US and CA).
 class PhoneNumber_ShortCode extends $pb.GeneratedMessage {
   factory PhoneNumber_ShortCode({
     $core.String? regionCode,
@@ -82,7 +83,7 @@ class PhoneNumber_ShortCode extends $pb.GeneratedMessage {
   void clearRegionCode() => clearField(1);
 
   /// Required. The short code digits, without a leading plus ('+') or country
-  /// calling code, e.g. "611".
+  /// calling code. For example "611".
   @$pb.TagNumber(2)
   $core.String get number => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -115,13 +116,13 @@ enum PhoneNumber_Kind {
 ///
 ///  For instance, in Java this would be:
 ///
-///     com.google.type.PhoneNumber wireProto =
-///         com.google.type.PhoneNumber.newBuilder().build();
-///     com.google.i18n.phonenumbers.Phonenumber.PhoneNumber phoneNumber =
-///         PhoneNumberUtil.getInstance().parse(wireProto.getE164Number(), "ZZ");
-///     if (!wireProto.getExtension().isEmpty()) {
-///       phoneNumber.setExtension(wireProto.getExtension());
-///     }
+///      com.google.type.PhoneNumber wireProto =
+///          com.google.type.PhoneNumber.newBuilder().build();
+///      com.google.i18n.phonenumbers.Phonenumber.PhoneNumber phoneNumber =
+///          PhoneNumberUtil.getInstance().parse(wireProto.getE164Number(), "ZZ");
+///      if (!wireProto.getExtension().isEmpty()) {
+///        phoneNumber.setExtension(wireProto.getExtension());
+///      }
 ///
 ///   Reference(s):
 ///    - https://github.com/google/libphonenumber
@@ -187,17 +188,22 @@ class PhoneNumber extends $pb.GeneratedMessage {
   ///  The phone number, represented as a leading plus sign ('+'), followed by a
   ///  phone number that uses a relaxed ITU E.164 format consisting of the
   ///  country calling code (1 to 3 digits) and the subscriber number, with no
-  ///  additional spaces or formatting, e.g.:
+  ///  additional spaces or formatting. For example:
+  ///
   ///   - correct: "+15552220123"
-  ///   - incorrect: "+1 (555) 222-01234 x123".
+  ///
+  ///   - incorrect: "+1 (555) 222-01234 x123"
   ///
   ///  The ITU E.164 format limits the latter to 12 digits, but in practice not
   ///  all countries respect that, so we relax that restriction here.
   ///  National-only numbers are not allowed.
   ///
   ///  References:
+  ///
   ///   - https://www.itu.int/rec/T-REC-E.164-201011-I
+  ///
   ///   - https://en.wikipedia.org/wiki/E.164.
+  ///
   ///   - https://en.wikipedia.org/wiki/List_of_country_calling_codes
   @$pb.TagNumber(1)
   $core.String get e164Number => $_getSZ(0);
@@ -211,7 +217,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   ///  A short code.
   ///
   ///  Reference(s):
-  ///   - https://en.wikipedia.org/wiki/Short_code
+  ///   - https://wikipedia.org/wiki/Short_code
   @$pb.TagNumber(2)
   PhoneNumber_ShortCode get shortCode => $_getN(1);
   @$pb.TagNumber(2)

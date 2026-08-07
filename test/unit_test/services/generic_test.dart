@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/service/generic.dart' as generic_pb;
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' show GetStatusRequest, GetStatusResponse;
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -32,6 +33,15 @@ void main() {
         serviceClient.doCommand(any, options: anyNamed('options')),
       ).thenAnswer((_) => MockResponseFuture.value(DoCommandResponse(result: expected.toStruct())));
       final response = await client.doCommand(expected);
+      expect(response, equals(expected));
+    });
+
+    test('getStatus', () async {
+      final expected = {'status': 'ok'};
+      when(
+        serviceClient.getStatus(any, options: anyNamed('options')),
+      ).thenAnswer((_) => MockResponseFuture.value(GetStatusResponse(result: expected.toStruct())));
+      final response = await client.getStatus();
       expect(response, equals(expected));
     });
   });

@@ -29,9 +29,24 @@ class GripperService extends GripperServiceBase {
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) async {
+    final gripper = _fromManager(request.name);
+    final geometries = await gripper.getGeometries(extra: request.extra.toMap());
+    return GetGeometriesResponse()..geometries.addAll(geometries);
+  }
+
+  @override
+  Future<GetCurrentInputsResponse> getCurrentInputs(ServiceCall call, GetCurrentInputsRequest request) async {
+    final gripper = _fromManager(request.name);
+    final values = await gripper.getCurrentInputs(extra: request.extra.toMap());
+    return GetCurrentInputsResponse()..values.addAll(values);
+  }
+
+  @override
+  Future<GoToInputsResponse> goToInputs(ServiceCall call, GoToInputsRequest request) async {
+    final gripper = _fromManager(request.name);
+    await gripper.goToInputs(request.values, extra: request.extra.toMap());
+    return GoToInputsResponse();
   }
 
   @override
@@ -78,5 +93,12 @@ class GripperService extends GripperServiceBase {
     return IsHoldingSomethingResponse()
       ..isHoldingSomething = response.isHoldingSomething
       ..meta = response.meta.toStruct();
+  }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final gripper = _fromManager(request.name);
+    final result = await gripper.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
   }
 }

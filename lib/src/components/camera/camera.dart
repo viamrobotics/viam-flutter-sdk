@@ -87,6 +87,15 @@ abstract class Camera extends Resource {
   /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getimages).
   Future<GetImagesResult> getImages({List<String>? filterSourceNames, Map<String, dynamic>? extra});
 
+  /// Get all geometries associated with the [Camera]
+  ///
+  /// ```
+  /// final geometries = await myCamera.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getgeometries).
+  Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [common_pb.ResourceName] for this [Camera] with the given [name]
   ///
   /// ```

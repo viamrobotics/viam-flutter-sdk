@@ -85,4 +85,11 @@ class GantryService extends GantryServiceBase {
       ..format = response.format
       ..kinematicsData = response.raw;
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final gantry = _fromManager(request.name);
+    final result = await gantry.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }

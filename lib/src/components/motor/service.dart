@@ -101,8 +101,16 @@ class MotorService extends MotorServiceBase {
   }
 
   @override
-  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) async {
+    final motor = _fromManager(request.name);
+    final geometries = await motor.getGeometries(extra: request.extra.toMap());
+    return common_pb.GetGeometriesResponse()..geometries.addAll(geometries);
+  }
+
+  @override
+  Future<common_pb.GetStatusResponse> getStatus(ServiceCall call, common_pb.GetStatusRequest request) async {
+    final motor = _fromManager(request.name);
+    final result = await motor.getStatus();
+    return common_pb.GetStatusResponse()..result = result.toStruct();
   }
 }

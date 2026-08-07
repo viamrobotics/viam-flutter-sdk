@@ -2,7 +2,6 @@ import 'package:grpc/grpc.dart';
 
 import '../../gen/common/v1/common.pb.dart' as proto;
 import '../../gen/component/camera/v1/camera.pbgrpc.dart';
-import '../../gen/google/api/httpbody.pb.dart';
 import '../../gen/google/protobuf/timestamp.pb.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
@@ -31,12 +30,6 @@ class CameraService extends CameraServiceBase {
   }
 
   @override
-  Future<GetImageResponse> getImage(ServiceCall call, GetImageRequest request) async {
-    // Deprecated: Use getImages instead.
-    throw UnimplementedError();
-  }
-
-  @override
   Future<GetPointCloudResponse> getPointCloud(ServiceCall call, GetPointCloudRequest request) async {
     final camera = _fromManager(request.name);
     final image = await camera.pointCloud(extra: request.extra.toMap());
@@ -53,15 +46,10 @@ class CameraService extends CameraServiceBase {
   }
 
   @override
-  Future<HttpBody> renderFrame(ServiceCall call, RenderFrameRequest request) async {
-    // Deprecated: Use getImages instead.
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<proto.GetGeometriesResponse> getGeometries(ServiceCall call, proto.GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<proto.GetGeometriesResponse> getGeometries(ServiceCall call, proto.GetGeometriesRequest request) async {
+    final camera = _fromManager(request.name);
+    final geometries = await camera.getGeometries(extra: request.extra.toMap());
+    return proto.GetGeometriesResponse()..geometries.addAll(geometries);
   }
 
   @override
@@ -85,5 +73,12 @@ class CameraService extends CameraServiceBase {
     }
 
     return response;
+  }
+
+  @override
+  Future<proto.GetStatusResponse> getStatus(ServiceCall call, proto.GetStatusRequest request) async {
+    final camera = _fromManager(request.name);
+    final result = await camera.getStatus();
+    return proto.GetStatusResponse()..result = result.toStruct();
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/servo/service.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/component/servo/v1/servo.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -10,6 +11,8 @@ class FakeServo extends Servo {
   int angle = 0;
   bool isStopped = true;
   Map<String, dynamic>? extra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
+  List<Geometry> geometries = [Geometry()..label = 'test'];
 
   @override
   String name;
@@ -43,6 +46,17 @@ class FakeServo extends Servo {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
+  }
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
   }
 }
 
@@ -92,6 +106,16 @@ void main() {
       const command = {'command': 'args'};
       final result = await servo.doCommand(command);
       expect(result, {'command': command});
+    });
+
+    test('getStatus', () async {
+      final result = await servo.getStatus();
+      expect(result, servo.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await servo.getGeometries();
+      expect(result, servo.geometries);
     });
   });
 
@@ -171,6 +195,18 @@ void main() {
         final response = await client.doCommand(request);
         expect(response.result.toMap(), {'command': command});
       });
+
+      test('getStatus', () async {
+        final client = ServoServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), servo.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = ServoServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, servo.geometries);
+      });
     });
     group('Servo Client Tests', () {
       test('move should move the servo to new given position', () async {
@@ -203,6 +239,18 @@ void main() {
         final Map<String, String> command = {'command': 'args'};
         final response = await client.doCommand(command);
         expect(response, {'command': command});
+      });
+
+      test('getStatus', () async {
+        final client = ServoClient(servo.name, channel);
+        final result = await client.getStatus();
+        expect(result, servo.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = ServoClient(servo.name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, servo.geometries);
       });
     });
   });

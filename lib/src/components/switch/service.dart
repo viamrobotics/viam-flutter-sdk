@@ -47,4 +47,11 @@ class SwitchService extends SwitchServiceBase {
     final nswitch = _fromManager(request.name);
     return nswitch.getNumberOfPositionsWithLabels();
   }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final nswitch = _fromManager(request.name);
+    final result = await nswitch.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
 }

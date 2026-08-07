@@ -15,25 +15,29 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
-import 'data_manager.pb.dart' as $38;
+import '../../../common/v1/common.pb.dart' as $9;
+import 'data_manager.pb.dart' as $37;
 
 export 'data_manager.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.datamanager.v1.DataManagerService')
 class DataManagerServiceClient extends $grpc.Client {
-  static final _$sync = $grpc.ClientMethod<$38.SyncRequest, $38.SyncResponse>(
+  static final _$sync = $grpc.ClientMethod<$37.SyncRequest, $37.SyncResponse>(
       '/viam.service.datamanager.v1.DataManagerService/Sync',
-      ($38.SyncRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $38.SyncResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+      ($37.SyncRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $37.SyncResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.service.datamanager.v1.DataManagerService/DoCommand',
-      ($16.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
-  static final _$uploadBinaryDataToDatasets = $grpc.ClientMethod<$38.UploadBinaryDataToDatasetsRequest, $38.UploadBinaryDataToDatasetsResponse>(
+      ($9.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DoCommandResponse.fromBuffer(value));
+  static final _$getStatus = $grpc.ClientMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+      '/viam.service.datamanager.v1.DataManagerService/GetStatus',
+      ($9.GetStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetStatusResponse.fromBuffer(value));
+  static final _$uploadBinaryDataToDatasets = $grpc.ClientMethod<$37.UploadBinaryDataToDatasetsRequest, $37.UploadBinaryDataToDatasetsResponse>(
       '/viam.service.datamanager.v1.DataManagerService/UploadBinaryDataToDatasets',
-      ($38.UploadBinaryDataToDatasetsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $38.UploadBinaryDataToDatasetsResponse.fromBuffer(value));
+      ($37.UploadBinaryDataToDatasetsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $37.UploadBinaryDataToDatasetsResponse.fromBuffer(value));
 
   DataManagerServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -41,15 +45,19 @@ class DataManagerServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$38.SyncResponse> sync($38.SyncRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$37.SyncResponse> sync($37.SyncRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sync, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DoCommandResponse> doCommand($9.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$38.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets($38.UploadBinaryDataToDatasetsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetStatusResponse> getStatus($9.GetStatusRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getStatus, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$37.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets($37.UploadBinaryDataToDatasetsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$uploadBinaryDataToDatasets, request, options: options);
   }
 }
@@ -59,42 +67,54 @@ abstract class DataManagerServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.datamanager.v1.DataManagerService';
 
   DataManagerServiceBase() {
-    $addMethod($grpc.ServiceMethod<$38.SyncRequest, $38.SyncResponse>(
+    $addMethod($grpc.ServiceMethod<$37.SyncRequest, $37.SyncResponse>(
         'Sync',
         sync_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $38.SyncRequest.fromBuffer(value),
-        ($38.SyncResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
+        ($core.List<$core.int> value) => $37.SyncRequest.fromBuffer(value),
+        ($37.SyncResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
-        ($16.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$38.UploadBinaryDataToDatasetsRequest, $38.UploadBinaryDataToDatasetsResponse>(
+        ($core.List<$core.int> value) => $9.DoCommandRequest.fromBuffer(value),
+        ($9.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetStatusRequest, $9.GetStatusResponse>(
+        'GetStatus',
+        getStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.GetStatusRequest.fromBuffer(value),
+        ($9.GetStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$37.UploadBinaryDataToDatasetsRequest, $37.UploadBinaryDataToDatasetsResponse>(
         'UploadBinaryDataToDatasets',
         uploadBinaryDataToDatasets_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $38.UploadBinaryDataToDatasetsRequest.fromBuffer(value),
-        ($38.UploadBinaryDataToDatasetsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $37.UploadBinaryDataToDatasetsRequest.fromBuffer(value),
+        ($37.UploadBinaryDataToDatasetsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$38.SyncResponse> sync_Pre($grpc.ServiceCall call, $async.Future<$38.SyncRequest> request) async {
+  $async.Future<$37.SyncResponse> sync_Pre($grpc.ServiceCall call, $async.Future<$37.SyncRequest> request) async {
     return sync(call, await request);
   }
 
-  $async.Future<$16.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$16.DoCommandRequest> request) async {
+  $async.Future<$9.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$9.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$38.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets_Pre($grpc.ServiceCall call, $async.Future<$38.UploadBinaryDataToDatasetsRequest> request) async {
+  $async.Future<$9.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$9.GetStatusRequest> request) async {
+    return getStatus(call, await request);
+  }
+
+  $async.Future<$37.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets_Pre($grpc.ServiceCall call, $async.Future<$37.UploadBinaryDataToDatasetsRequest> request) async {
     return uploadBinaryDataToDatasets(call, await request);
   }
 
-  $async.Future<$38.SyncResponse> sync($grpc.ServiceCall call, $38.SyncRequest request);
-  $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
-  $async.Future<$38.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets($grpc.ServiceCall call, $38.UploadBinaryDataToDatasetsRequest request);
+  $async.Future<$37.SyncResponse> sync($grpc.ServiceCall call, $37.SyncRequest request);
+  $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
+  $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
+  $async.Future<$37.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets($grpc.ServiceCall call, $37.UploadBinaryDataToDatasetsRequest request);
 }

@@ -22,6 +22,15 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
   GripperClient(this.name, this.channel);
 
   @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<void> grab({Map<String, dynamic>? extra}) async {
     final request = GrabRequest()
       ..name = name
@@ -62,6 +71,13 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
   }
 
   @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
+
+  @override
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
     final request = GetKinematicsRequest()
       ..name = name
@@ -77,5 +93,23 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.isHoldingSomething(request, options: callOptions);
     return HoldingStatus.fromProto(response);
+  }
+
+  @override
+  Future<List<double>> getCurrentInputs({Map<String, dynamic>? extra}) async {
+    final request = GetCurrentInputsRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getCurrentInputs(request, options: callOptions);
+    return response.values;
+  }
+
+  @override
+  Future<void> goToInputs(List<double> values, {Map<String, dynamic>? extra}) async {
+    final request = GoToInputsRequest()
+      ..name = name
+      ..values.addAll(values)
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.goToInputs(request, options: callOptions);
   }
 }

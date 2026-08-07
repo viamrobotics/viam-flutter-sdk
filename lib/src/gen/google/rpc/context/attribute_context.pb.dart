@@ -398,6 +398,7 @@ class AttributeContext_Request extends $pb.GeneratedMessage {
     $core.String? protocol,
     $core.String? reason,
     AttributeContext_Auth? auth,
+    $core.String? origin,
   }) {
     final $result = create();
     if (id != null) {
@@ -436,6 +437,9 @@ class AttributeContext_Request extends $pb.GeneratedMessage {
     if (auth != null) {
       $result.auth = auth;
     }
+    if (origin != null) {
+      $result.origin = origin;
+    }
     return $result;
   }
   AttributeContext_Request._() : super();
@@ -455,6 +459,7 @@ class AttributeContext_Request extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'protocol')
     ..aOS(12, _omitFieldNames ? '' : 'reason')
     ..aOM<AttributeContext_Auth>(13, _omitFieldNames ? '' : 'auth', subBuilder: AttributeContext_Auth.create)
+    ..aOS(14, _omitFieldNames ? '' : 'origin')
     ..hasRequiredFields = false
   ;
 
@@ -607,6 +612,19 @@ class AttributeContext_Request extends $pb.GeneratedMessage {
   void clearAuth() => clearField(13);
   @$pb.TagNumber(13)
   AttributeContext_Auth ensureAuth() => $_ensure(11);
+
+  /// The values from Origin header from the HTTP request, such as
+  /// "https://console.cloud.google.com". Modern browsers can only have one
+  /// origin. Special browsers and/or HTTP clients may require multiple
+  /// origins.
+  @$pb.TagNumber(14)
+  $core.String get origin => $_getSZ(12);
+  @$pb.TagNumber(14)
+  set origin($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasOrigin() => $_has(12);
+  @$pb.TagNumber(14)
+  void clearOrigin() => clearField(14);
 }
 
 /// This message defines attributes for a typical network response. It

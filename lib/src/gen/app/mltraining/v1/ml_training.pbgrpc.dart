@@ -15,44 +15,44 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'ml_training.pb.dart' as $10;
+import 'ml_training.pb.dart' as $11;
 
 export 'ml_training.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.mltraining.v1.MLTrainingService')
 class MLTrainingServiceClient extends $grpc.Client {
-  static final _$submitTrainingJob = $grpc.ClientMethod<$10.SubmitTrainingJobRequest, $10.SubmitTrainingJobResponse>(
+  static final _$submitTrainingJob = $grpc.ClientMethod<$11.SubmitTrainingJobRequest, $11.SubmitTrainingJobResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/SubmitTrainingJob',
-      ($10.SubmitTrainingJobRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.SubmitTrainingJobResponse.fromBuffer(value));
-  static final _$submitCustomTrainingJob = $grpc.ClientMethod<$10.SubmitCustomTrainingJobRequest, $10.SubmitCustomTrainingJobResponse>(
+      ($11.SubmitTrainingJobRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.SubmitTrainingJobResponse.fromBuffer(value));
+  static final _$submitCustomTrainingJob = $grpc.ClientMethod<$11.SubmitCustomTrainingJobRequest, $11.SubmitCustomTrainingJobResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/SubmitCustomTrainingJob',
-      ($10.SubmitCustomTrainingJobRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.SubmitCustomTrainingJobResponse.fromBuffer(value));
-  static final _$getTrainingJob = $grpc.ClientMethod<$10.GetTrainingJobRequest, $10.GetTrainingJobResponse>(
+      ($11.SubmitCustomTrainingJobRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.SubmitCustomTrainingJobResponse.fromBuffer(value));
+  static final _$getTrainingJob = $grpc.ClientMethod<$11.GetTrainingJobRequest, $11.GetTrainingJobResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/GetTrainingJob',
-      ($10.GetTrainingJobRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.GetTrainingJobResponse.fromBuffer(value));
-  static final _$listTrainingJobs = $grpc.ClientMethod<$10.ListTrainingJobsRequest, $10.ListTrainingJobsResponse>(
+      ($11.GetTrainingJobRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.GetTrainingJobResponse.fromBuffer(value));
+  static final _$listTrainingJobs = $grpc.ClientMethod<$11.ListTrainingJobsRequest, $11.ListTrainingJobsResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/ListTrainingJobs',
-      ($10.ListTrainingJobsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.ListTrainingJobsResponse.fromBuffer(value));
-  static final _$cancelTrainingJob = $grpc.ClientMethod<$10.CancelTrainingJobRequest, $10.CancelTrainingJobResponse>(
+      ($11.ListTrainingJobsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.ListTrainingJobsResponse.fromBuffer(value));
+  static final _$cancelTrainingJob = $grpc.ClientMethod<$11.CancelTrainingJobRequest, $11.CancelTrainingJobResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/CancelTrainingJob',
-      ($10.CancelTrainingJobRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.CancelTrainingJobResponse.fromBuffer(value));
-  static final _$deleteCompletedTrainingJob = $grpc.ClientMethod<$10.DeleteCompletedTrainingJobRequest, $10.DeleteCompletedTrainingJobResponse>(
+      ($11.CancelTrainingJobRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.CancelTrainingJobResponse.fromBuffer(value));
+  static final _$deleteCompletedTrainingJob = $grpc.ClientMethod<$11.DeleteCompletedTrainingJobRequest, $11.DeleteCompletedTrainingJobResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/DeleteCompletedTrainingJob',
-      ($10.DeleteCompletedTrainingJobRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.DeleteCompletedTrainingJobResponse.fromBuffer(value));
-  static final _$getTrainingJobLogs = $grpc.ClientMethod<$10.GetTrainingJobLogsRequest, $10.GetTrainingJobLogsResponse>(
+      ($11.DeleteCompletedTrainingJobRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.DeleteCompletedTrainingJobResponse.fromBuffer(value));
+  static final _$getTrainingJobLogs = $grpc.ClientMethod<$11.GetTrainingJobLogsRequest, $11.GetTrainingJobLogsResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/GetTrainingJobLogs',
-      ($10.GetTrainingJobLogsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.GetTrainingJobLogsResponse.fromBuffer(value));
-  static final _$listSupportedContainers = $grpc.ClientMethod<$10.ListSupportedContainersRequest, $10.ListSupportedContainersResponse>(
+      ($11.GetTrainingJobLogsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.GetTrainingJobLogsResponse.fromBuffer(value));
+  static final _$listSupportedContainers = $grpc.ClientMethod<$11.ListSupportedContainersRequest, $11.ListSupportedContainersResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/ListSupportedContainers',
-      ($10.ListSupportedContainersRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.ListSupportedContainersResponse.fromBuffer(value));
+      ($11.ListSupportedContainersRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.ListSupportedContainersResponse.fromBuffer(value));
 
   MLTrainingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -60,35 +60,35 @@ class MLTrainingServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$10.SubmitTrainingJobResponse> submitTrainingJob($10.SubmitTrainingJobRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.SubmitTrainingJobResponse> submitTrainingJob($11.SubmitTrainingJobRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$submitTrainingJob, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.SubmitCustomTrainingJobResponse> submitCustomTrainingJob($10.SubmitCustomTrainingJobRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.SubmitCustomTrainingJobResponse> submitCustomTrainingJob($11.SubmitCustomTrainingJobRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$submitCustomTrainingJob, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.GetTrainingJobResponse> getTrainingJob($10.GetTrainingJobRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.GetTrainingJobResponse> getTrainingJob($11.GetTrainingJobRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getTrainingJob, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.ListTrainingJobsResponse> listTrainingJobs($10.ListTrainingJobsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.ListTrainingJobsResponse> listTrainingJobs($11.ListTrainingJobsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listTrainingJobs, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.CancelTrainingJobResponse> cancelTrainingJob($10.CancelTrainingJobRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.CancelTrainingJobResponse> cancelTrainingJob($11.CancelTrainingJobRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$cancelTrainingJob, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob($10.DeleteCompletedTrainingJobRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob($11.DeleteCompletedTrainingJobRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteCompletedTrainingJob, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.GetTrainingJobLogsResponse> getTrainingJobLogs($10.GetTrainingJobLogsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.GetTrainingJobLogsResponse> getTrainingJobLogs($11.GetTrainingJobLogsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getTrainingJobLogs, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.ListSupportedContainersResponse> listSupportedContainers($10.ListSupportedContainersRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.ListSupportedContainersResponse> listSupportedContainers($11.ListSupportedContainersRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listSupportedContainers, request, options: options);
   }
 }
@@ -98,102 +98,102 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.mltraining.v1.MLTrainingService';
 
   MLTrainingServiceBase() {
-    $addMethod($grpc.ServiceMethod<$10.SubmitTrainingJobRequest, $10.SubmitTrainingJobResponse>(
+    $addMethod($grpc.ServiceMethod<$11.SubmitTrainingJobRequest, $11.SubmitTrainingJobResponse>(
         'SubmitTrainingJob',
         submitTrainingJob_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.SubmitTrainingJobRequest.fromBuffer(value),
-        ($10.SubmitTrainingJobResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.SubmitCustomTrainingJobRequest, $10.SubmitCustomTrainingJobResponse>(
+        ($core.List<$core.int> value) => $11.SubmitTrainingJobRequest.fromBuffer(value),
+        ($11.SubmitTrainingJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.SubmitCustomTrainingJobRequest, $11.SubmitCustomTrainingJobResponse>(
         'SubmitCustomTrainingJob',
         submitCustomTrainingJob_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.SubmitCustomTrainingJobRequest.fromBuffer(value),
-        ($10.SubmitCustomTrainingJobResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.GetTrainingJobRequest, $10.GetTrainingJobResponse>(
+        ($core.List<$core.int> value) => $11.SubmitCustomTrainingJobRequest.fromBuffer(value),
+        ($11.SubmitCustomTrainingJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.GetTrainingJobRequest, $11.GetTrainingJobResponse>(
         'GetTrainingJob',
         getTrainingJob_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.GetTrainingJobRequest.fromBuffer(value),
-        ($10.GetTrainingJobResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.ListTrainingJobsRequest, $10.ListTrainingJobsResponse>(
+        ($core.List<$core.int> value) => $11.GetTrainingJobRequest.fromBuffer(value),
+        ($11.GetTrainingJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.ListTrainingJobsRequest, $11.ListTrainingJobsResponse>(
         'ListTrainingJobs',
         listTrainingJobs_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.ListTrainingJobsRequest.fromBuffer(value),
-        ($10.ListTrainingJobsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.CancelTrainingJobRequest, $10.CancelTrainingJobResponse>(
+        ($core.List<$core.int> value) => $11.ListTrainingJobsRequest.fromBuffer(value),
+        ($11.ListTrainingJobsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.CancelTrainingJobRequest, $11.CancelTrainingJobResponse>(
         'CancelTrainingJob',
         cancelTrainingJob_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.CancelTrainingJobRequest.fromBuffer(value),
-        ($10.CancelTrainingJobResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.DeleteCompletedTrainingJobRequest, $10.DeleteCompletedTrainingJobResponse>(
+        ($core.List<$core.int> value) => $11.CancelTrainingJobRequest.fromBuffer(value),
+        ($11.CancelTrainingJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.DeleteCompletedTrainingJobRequest, $11.DeleteCompletedTrainingJobResponse>(
         'DeleteCompletedTrainingJob',
         deleteCompletedTrainingJob_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.DeleteCompletedTrainingJobRequest.fromBuffer(value),
-        ($10.DeleteCompletedTrainingJobResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.GetTrainingJobLogsRequest, $10.GetTrainingJobLogsResponse>(
+        ($core.List<$core.int> value) => $11.DeleteCompletedTrainingJobRequest.fromBuffer(value),
+        ($11.DeleteCompletedTrainingJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.GetTrainingJobLogsRequest, $11.GetTrainingJobLogsResponse>(
         'GetTrainingJobLogs',
         getTrainingJobLogs_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.GetTrainingJobLogsRequest.fromBuffer(value),
-        ($10.GetTrainingJobLogsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.ListSupportedContainersRequest, $10.ListSupportedContainersResponse>(
+        ($core.List<$core.int> value) => $11.GetTrainingJobLogsRequest.fromBuffer(value),
+        ($11.GetTrainingJobLogsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.ListSupportedContainersRequest, $11.ListSupportedContainersResponse>(
         'ListSupportedContainers',
         listSupportedContainers_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.ListSupportedContainersRequest.fromBuffer(value),
-        ($10.ListSupportedContainersResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $11.ListSupportedContainersRequest.fromBuffer(value),
+        ($11.ListSupportedContainersResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$10.SubmitTrainingJobResponse> submitTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$10.SubmitTrainingJobRequest> request) async {
+  $async.Future<$11.SubmitTrainingJobResponse> submitTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$11.SubmitTrainingJobRequest> request) async {
     return submitTrainingJob(call, await request);
   }
 
-  $async.Future<$10.SubmitCustomTrainingJobResponse> submitCustomTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$10.SubmitCustomTrainingJobRequest> request) async {
+  $async.Future<$11.SubmitCustomTrainingJobResponse> submitCustomTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$11.SubmitCustomTrainingJobRequest> request) async {
     return submitCustomTrainingJob(call, await request);
   }
 
-  $async.Future<$10.GetTrainingJobResponse> getTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$10.GetTrainingJobRequest> request) async {
+  $async.Future<$11.GetTrainingJobResponse> getTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$11.GetTrainingJobRequest> request) async {
     return getTrainingJob(call, await request);
   }
 
-  $async.Future<$10.ListTrainingJobsResponse> listTrainingJobs_Pre($grpc.ServiceCall call, $async.Future<$10.ListTrainingJobsRequest> request) async {
+  $async.Future<$11.ListTrainingJobsResponse> listTrainingJobs_Pre($grpc.ServiceCall call, $async.Future<$11.ListTrainingJobsRequest> request) async {
     return listTrainingJobs(call, await request);
   }
 
-  $async.Future<$10.CancelTrainingJobResponse> cancelTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$10.CancelTrainingJobRequest> request) async {
+  $async.Future<$11.CancelTrainingJobResponse> cancelTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$11.CancelTrainingJobRequest> request) async {
     return cancelTrainingJob(call, await request);
   }
 
-  $async.Future<$10.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$10.DeleteCompletedTrainingJobRequest> request) async {
+  $async.Future<$11.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$11.DeleteCompletedTrainingJobRequest> request) async {
     return deleteCompletedTrainingJob(call, await request);
   }
 
-  $async.Future<$10.GetTrainingJobLogsResponse> getTrainingJobLogs_Pre($grpc.ServiceCall call, $async.Future<$10.GetTrainingJobLogsRequest> request) async {
+  $async.Future<$11.GetTrainingJobLogsResponse> getTrainingJobLogs_Pre($grpc.ServiceCall call, $async.Future<$11.GetTrainingJobLogsRequest> request) async {
     return getTrainingJobLogs(call, await request);
   }
 
-  $async.Future<$10.ListSupportedContainersResponse> listSupportedContainers_Pre($grpc.ServiceCall call, $async.Future<$10.ListSupportedContainersRequest> request) async {
+  $async.Future<$11.ListSupportedContainersResponse> listSupportedContainers_Pre($grpc.ServiceCall call, $async.Future<$11.ListSupportedContainersRequest> request) async {
     return listSupportedContainers(call, await request);
   }
 
-  $async.Future<$10.SubmitTrainingJobResponse> submitTrainingJob($grpc.ServiceCall call, $10.SubmitTrainingJobRequest request);
-  $async.Future<$10.SubmitCustomTrainingJobResponse> submitCustomTrainingJob($grpc.ServiceCall call, $10.SubmitCustomTrainingJobRequest request);
-  $async.Future<$10.GetTrainingJobResponse> getTrainingJob($grpc.ServiceCall call, $10.GetTrainingJobRequest request);
-  $async.Future<$10.ListTrainingJobsResponse> listTrainingJobs($grpc.ServiceCall call, $10.ListTrainingJobsRequest request);
-  $async.Future<$10.CancelTrainingJobResponse> cancelTrainingJob($grpc.ServiceCall call, $10.CancelTrainingJobRequest request);
-  $async.Future<$10.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob($grpc.ServiceCall call, $10.DeleteCompletedTrainingJobRequest request);
-  $async.Future<$10.GetTrainingJobLogsResponse> getTrainingJobLogs($grpc.ServiceCall call, $10.GetTrainingJobLogsRequest request);
-  $async.Future<$10.ListSupportedContainersResponse> listSupportedContainers($grpc.ServiceCall call, $10.ListSupportedContainersRequest request);
+  $async.Future<$11.SubmitTrainingJobResponse> submitTrainingJob($grpc.ServiceCall call, $11.SubmitTrainingJobRequest request);
+  $async.Future<$11.SubmitCustomTrainingJobResponse> submitCustomTrainingJob($grpc.ServiceCall call, $11.SubmitCustomTrainingJobRequest request);
+  $async.Future<$11.GetTrainingJobResponse> getTrainingJob($grpc.ServiceCall call, $11.GetTrainingJobRequest request);
+  $async.Future<$11.ListTrainingJobsResponse> listTrainingJobs($grpc.ServiceCall call, $11.ListTrainingJobsRequest request);
+  $async.Future<$11.CancelTrainingJobResponse> cancelTrainingJob($grpc.ServiceCall call, $11.CancelTrainingJobRequest request);
+  $async.Future<$11.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob($grpc.ServiceCall call, $11.DeleteCompletedTrainingJobRequest request);
+  $async.Future<$11.GetTrainingJobLogsResponse> getTrainingJobLogs($grpc.ServiceCall call, $11.GetTrainingJobLogsRequest request);
+  $async.Future<$11.ListSupportedContainersResponse> listSupportedContainers($grpc.ServiceCall call, $11.ListSupportedContainersRequest request);
 }

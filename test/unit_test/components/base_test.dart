@@ -2,6 +2,7 @@ import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/base/service.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' show Geometry, GetGeometriesRequest, GetStatusRequest;
 import 'package:viam_sdk/src/gen/component/base/v1/base.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -92,6 +93,21 @@ class FakeBase extends Base {
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     return {'command': command};
   }
+
+  Map<String, dynamic> statusResult = {'status': 'ok'};
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
+  }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
+  }
 }
 
 void main() {
@@ -179,6 +195,16 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await base.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await base.getStatus();
+      expect(result, base.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await base.getGeometries();
+      expect(result, base.geometries);
     });
 
     test('extra', () async {
@@ -339,6 +365,18 @@ void main() {
         expect(resp.result.toMap(), {'command': cmd});
       });
 
+      test('getStatus', () async {
+        final client = BaseServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), base.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = BaseServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, base.geometries);
+      });
+
       test('extra', () async {
         expect(base.extra, null);
 
@@ -441,6 +479,18 @@ void main() {
         final client = BaseClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = BaseClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, base.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = BaseClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, base.geometries);
       });
 
       test('extra', () async {

@@ -41,12 +41,14 @@ const StartBuildRequest$json = {
     {'1': 'token', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'token', '17': true},
     {'1': 'workdir', '3': 7, '4': 1, '5': 9, '9': 2, '10': 'workdir', '17': true},
     {'1': 'distro', '3': 8, '4': 1, '5': 9, '9': 3, '10': 'distro', '17': true},
+    {'1': 'builder', '3': 9, '4': 1, '5': 9, '9': 4, '10': 'builder', '17': true},
   ],
   '8': [
     {'1': '_ref'},
     {'1': '_token'},
     {'1': '_workdir'},
     {'1': '_distro'},
+    {'1': '_builder'},
   ],
 };
 
@@ -56,20 +58,26 @@ final $typed_data.Uint8List startBuildRequestDescriptor = $convert.base64Decode(
     'NyZWaIAQESHAoJcGxhdGZvcm1zGAMgAygJUglwbGF0Zm9ybXMSGwoJbW9kdWxlX2lkGAQgASgJ'
     'Ughtb2R1bGVJZBIlCg5tb2R1bGVfdmVyc2lvbhgFIAEoCVINbW9kdWxlVmVyc2lvbhIZCgV0b2'
     'tlbhgGIAEoCUgBUgV0b2tlbogBARIdCgd3b3JrZGlyGAcgASgJSAJSB3dvcmtkaXKIAQESGwoG'
-    'ZGlzdHJvGAggASgJSANSBmRpc3Ryb4gBAUIGCgRfcmVmQggKBl90b2tlbkIKCghfd29ya2Rpck'
-    'IJCgdfZGlzdHJv');
+    'ZGlzdHJvGAggASgJSANSBmRpc3Ryb4gBARIdCgdidWlsZGVyGAkgASgJSARSB2J1aWxkZXKIAQ'
+    'FCBgoEX3JlZkIICgZfdG9rZW5CCgoIX3dvcmtkaXJCCQoHX2Rpc3Ryb0IKCghfYnVpbGRlcg==');
 
 @$core.Deprecated('Use startBuildResponseDescriptor instead')
 const StartBuildResponse$json = {
   '1': 'StartBuildResponse',
   '2': [
     {'1': 'build_id', '3': 1, '4': 1, '5': 9, '10': 'buildId'},
+    {'1': 'builder_fallback_message', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'builderFallbackMessage', '17': true},
+  ],
+  '8': [
+    {'1': '_builder_fallback_message'},
   ],
 };
 
 /// Descriptor for `StartBuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List startBuildResponseDescriptor = $convert.base64Decode(
-    'ChJTdGFydEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aWxkSWQ=');
+    'ChJTdGFydEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aWxkSWQSPQoYYnVpbG'
+    'Rlcl9mYWxsYmFja19tZXNzYWdlGAIgASgJSABSFmJ1aWxkZXJGYWxsYmFja01lc3NhZ2WIAQFC'
+    'GwoZX2J1aWxkZXJfZmFsbGJhY2tfbWVzc2FnZQ==');
 
 @$core.Deprecated('Use getLogsRequestDescriptor instead')
 const GetLogsRequest$json = {
@@ -92,17 +100,19 @@ const ReloadBuildInfo$json = {
     {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
     {'1': 'workdir', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'workdir', '17': true},
     {'1': 'module_id', '3': 3, '4': 1, '5': 9, '10': 'moduleId'},
+    {'1': 'distro', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'distro', '17': true},
   ],
   '8': [
     {'1': '_workdir'},
+    {'1': '_distro'},
   ],
 };
 
 /// Descriptor for `ReloadBuildInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List reloadBuildInfoDescriptor = $convert.base64Decode(
     'Cg9SZWxvYWRCdWlsZEluZm8SGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3JtEh0KB3dvcmtkaX'
-    'IYAiABKAlIAFIHd29ya2RpcogBARIbCgltb2R1bGVfaWQYAyABKAlSCG1vZHVsZUlkQgoKCF93'
-    'b3JrZGly');
+    'IYAiABKAlIAFIHd29ya2RpcogBARIbCgltb2R1bGVfaWQYAyABKAlSCG1vZHVsZUlkEhsKBmRp'
+    'c3RybxgEIAEoCUgBUgZkaXN0cm+IAQFCCgoIX3dvcmtkaXJCCQoHX2Rpc3Rybw==');
 
 @$core.Deprecated('Use startReloadBuildRequestDescriptor instead')
 const StartReloadBuildRequest$json = {
@@ -110,9 +120,11 @@ const StartReloadBuildRequest$json = {
   '2': [
     {'1': 'package', '3': 1, '4': 1, '5': 11, '6': '.viam.app.packages.v1.CreatePackageRequest', '9': 0, '10': 'package'},
     {'1': 'build_info', '3': 2, '4': 1, '5': 11, '6': '.viam.app.build.v1.ReloadBuildInfo', '9': 0, '10': 'buildInfo'},
+    {'1': 'builder', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'builder', '17': true},
   ],
   '8': [
     {'1': 'cloud_build'},
+    {'1': '_builder'},
   ],
 };
 
@@ -120,20 +132,89 @@ const StartReloadBuildRequest$json = {
 final $typed_data.Uint8List startReloadBuildRequestDescriptor = $convert.base64Decode(
     'ChdTdGFydFJlbG9hZEJ1aWxkUmVxdWVzdBJGCgdwYWNrYWdlGAEgASgLMioudmlhbS5hcHAucG'
     'Fja2FnZXMudjEuQ3JlYXRlUGFja2FnZVJlcXVlc3RIAFIHcGFja2FnZRJDCgpidWlsZF9pbmZv'
-    'GAIgASgLMiIudmlhbS5hcHAuYnVpbGQudjEuUmVsb2FkQnVpbGRJbmZvSABSCWJ1aWxkSW5mb0'
-    'INCgtjbG91ZF9idWlsZA==');
+    'GAIgASgLMiIudmlhbS5hcHAuYnVpbGQudjEuUmVsb2FkQnVpbGRJbmZvSABSCWJ1aWxkSW5mbx'
+    'IdCgdidWlsZGVyGAMgASgJSAFSB2J1aWxkZXKIAQFCDQoLY2xvdWRfYnVpbGRCCgoIX2J1aWxk'
+    'ZXI=');
 
 @$core.Deprecated('Use startReloadBuildResponseDescriptor instead')
 const StartReloadBuildResponse$json = {
   '1': 'StartReloadBuildResponse',
   '2': [
     {'1': 'build_id', '3': 1, '4': 1, '5': 9, '10': 'buildId'},
+    {'1': 'builder_fallback_message', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'builderFallbackMessage', '17': true},
+  ],
+  '8': [
+    {'1': '_builder_fallback_message'},
   ],
 };
 
 /// Descriptor for `StartReloadBuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List startReloadBuildResponseDescriptor = $convert.base64Decode(
-    'ChhTdGFydFJlbG9hZEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aWxkSWQ=');
+    'ChhTdGFydFJlbG9hZEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aWxkSWQSPQ'
+    'oYYnVpbGRlcl9mYWxsYmFja19tZXNzYWdlGAIgASgJSABSFmJ1aWxkZXJGYWxsYmFja01lc3Nh'
+    'Z2WIAQFCGwoZX2J1aWxkZXJfZmFsbGJhY2tfbWVzc2FnZQ==');
+
+@$core.Deprecated('Use sourceUploadBuildInfoDescriptor instead')
+const SourceUploadBuildInfo$json = {
+  '1': 'SourceUploadBuildInfo',
+  '2': [
+    {'1': 'platforms', '3': 1, '4': 3, '5': 9, '10': 'platforms'},
+    {'1': 'workdir', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'workdir', '17': true},
+    {'1': 'module_id', '3': 3, '4': 1, '5': 9, '10': 'moduleId'},
+    {'1': 'distro', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'distro', '17': true},
+  ],
+  '8': [
+    {'1': '_workdir'},
+    {'1': '_distro'},
+  ],
+};
+
+/// Descriptor for `SourceUploadBuildInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sourceUploadBuildInfoDescriptor = $convert.base64Decode(
+    'ChVTb3VyY2VVcGxvYWRCdWlsZEluZm8SHAoJcGxhdGZvcm1zGAEgAygJUglwbGF0Zm9ybXMSHQ'
+    'oHd29ya2RpchgCIAEoCUgAUgd3b3JrZGlyiAEBEhsKCW1vZHVsZV9pZBgDIAEoCVIIbW9kdWxl'
+    'SWQSGwoGZGlzdHJvGAQgASgJSAFSBmRpc3Ryb4gBAUIKCghfd29ya2RpckIJCgdfZGlzdHJv');
+
+@$core.Deprecated('Use startSourceUploadBuildRequestDescriptor instead')
+const StartSourceUploadBuildRequest$json = {
+  '1': 'StartSourceUploadBuildRequest',
+  '2': [
+    {'1': 'package', '3': 1, '4': 1, '5': 11, '6': '.viam.app.packages.v1.CreatePackageRequest', '9': 0, '10': 'package'},
+    {'1': 'build_info', '3': 2, '4': 1, '5': 11, '6': '.viam.app.build.v1.SourceUploadBuildInfo', '9': 0, '10': 'buildInfo'},
+    {'1': 'module_version', '3': 3, '4': 1, '5': 9, '10': 'moduleVersion'},
+    {'1': 'builder', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'builder', '17': true},
+  ],
+  '8': [
+    {'1': 'cloud_build'},
+    {'1': '_builder'},
+  ],
+};
+
+/// Descriptor for `StartSourceUploadBuildRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startSourceUploadBuildRequestDescriptor = $convert.base64Decode(
+    'Ch1TdGFydFNvdXJjZVVwbG9hZEJ1aWxkUmVxdWVzdBJGCgdwYWNrYWdlGAEgASgLMioudmlhbS'
+    '5hcHAucGFja2FnZXMudjEuQ3JlYXRlUGFja2FnZVJlcXVlc3RIAFIHcGFja2FnZRJJCgpidWls'
+    'ZF9pbmZvGAIgASgLMigudmlhbS5hcHAuYnVpbGQudjEuU291cmNlVXBsb2FkQnVpbGRJbmZvSA'
+    'BSCWJ1aWxkSW5mbxIlCg5tb2R1bGVfdmVyc2lvbhgDIAEoCVINbW9kdWxlVmVyc2lvbhIdCgdi'
+    'dWlsZGVyGAQgASgJSAFSB2J1aWxkZXKIAQFCDQoLY2xvdWRfYnVpbGRCCgoIX2J1aWxkZXI=');
+
+@$core.Deprecated('Use startSourceUploadBuildResponseDescriptor instead')
+const StartSourceUploadBuildResponse$json = {
+  '1': 'StartSourceUploadBuildResponse',
+  '2': [
+    {'1': 'build_id', '3': 1, '4': 1, '5': 9, '10': 'buildId'},
+    {'1': 'builder_fallback_message', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'builderFallbackMessage', '17': true},
+  ],
+  '8': [
+    {'1': '_builder_fallback_message'},
+  ],
+};
+
+/// Descriptor for `StartSourceUploadBuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startSourceUploadBuildResponseDescriptor = $convert.base64Decode(
+    'Ch5TdGFydFNvdXJjZVVwbG9hZEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aW'
+    'xkSWQSPQoYYnVpbGRlcl9mYWxsYmFja19tZXNzYWdlGAIgASgJSABSFmJ1aWxkZXJGYWxsYmFj'
+    'a01lc3NhZ2WIAQFCGwoZX2J1aWxkZXJfZmFsbGJhY2tfbWVzc2FnZQ==');
 
 @$core.Deprecated('Use startPackageBuildRequestDescriptor instead')
 const StartPackageBuildRequest$json = {
@@ -143,6 +224,10 @@ const StartPackageBuildRequest$json = {
     {'1': 'package_version', '3': 2, '4': 1, '5': 9, '10': 'packageVersion'},
     {'1': 'module_version', '3': 3, '4': 1, '5': 9, '10': 'moduleVersion'},
     {'1': 'platforms', '3': 4, '4': 3, '5': 9, '10': 'platforms'},
+    {'1': 'distro', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'distro', '17': true},
+  ],
+  '8': [
+    {'1': '_distro'},
   ],
 };
 
@@ -150,7 +235,8 @@ const StartPackageBuildRequest$json = {
 final $typed_data.Uint8List startPackageBuildRequestDescriptor = $convert.base64Decode(
     'ChhTdGFydFBhY2thZ2VCdWlsZFJlcXVlc3QSGwoJbW9kdWxlX2lkGAEgASgJUghtb2R1bGVJZB'
     'InCg9wYWNrYWdlX3ZlcnNpb24YAiABKAlSDnBhY2thZ2VWZXJzaW9uEiUKDm1vZHVsZV92ZXJz'
-    'aW9uGAMgASgJUg1tb2R1bGVWZXJzaW9uEhwKCXBsYXRmb3JtcxgEIAMoCVIJcGxhdGZvcm1z');
+    'aW9uGAMgASgJUg1tb2R1bGVWZXJzaW9uEhwKCXBsYXRmb3JtcxgEIAMoCVIJcGxhdGZvcm1zEh'
+    'sKBmRpc3RybxgFIAEoCUgAUgZkaXN0cm+IAQFCCQoHX2Rpc3Rybw==');
 
 @$core.Deprecated('Use startPackageBuildResponseDescriptor instead')
 const StartPackageBuildResponse$json = {

@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/movement_sensor/service.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' show Geometry, GetGeometriesRequest, GetStatusRequest;
 import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -26,6 +27,13 @@ class FakeMovementSensor extends MovementSensor {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  Map<String, dynamic> statusResult = {'status': 'ok'};
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -82,6 +90,14 @@ class FakeMovementSensor extends MovementSensor {
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return sensorReadings;
+  }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
   }
 }
 
@@ -142,6 +158,16 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await movementSensor.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await movementSensor.getStatus();
+      expect(result, movementSensor.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await movementSensor.getGeometries();
+      expect(result, movementSensor.geometries);
     });
 
     test('extra', () async {
@@ -244,6 +270,18 @@ void main() {
         expect(resp.result.toMap()['command'], cmd);
       });
 
+      test('getStatus', () async {
+        final client = MovementSensorServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), movementSensor.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = MovementSensorServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, movementSensor.geometries);
+      });
+
       test('extra', () async {
         expect(movementSensor.extra, null);
 
@@ -328,6 +366,18 @@ void main() {
         final cmd = {'foo': 'bar'};
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = MovementSensorClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, movementSensor.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = MovementSensorClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, movementSensor.geometries);
       });
 
       test('extra', () async {

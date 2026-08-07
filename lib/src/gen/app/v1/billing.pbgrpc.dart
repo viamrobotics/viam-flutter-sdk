@@ -15,56 +15,56 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'billing.pb.dart' as $12;
+import 'billing.pb.dart' as $13;
 
 export 'billing.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.v1.BillingService')
 class BillingServiceClient extends $grpc.Client {
-  static final _$getCurrentMonthUsage = $grpc.ClientMethod<$12.GetCurrentMonthUsageRequest, $12.GetCurrentMonthUsageResponse>(
+  static final _$getCurrentMonthUsage = $grpc.ClientMethod<$13.GetCurrentMonthUsageRequest, $13.GetCurrentMonthUsageResponse>(
       '/viam.app.v1.BillingService/GetCurrentMonthUsage',
-      ($12.GetCurrentMonthUsageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.GetCurrentMonthUsageResponse.fromBuffer(value));
-  static final _$getOrgBillingInformation = $grpc.ClientMethod<$12.GetOrgBillingInformationRequest, $12.GetOrgBillingInformationResponse>(
+      ($13.GetCurrentMonthUsageRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetCurrentMonthUsageResponse.fromBuffer(value));
+  static final _$getOrgBillingInformation = $grpc.ClientMethod<$13.GetOrgBillingInformationRequest, $13.GetOrgBillingInformationResponse>(
       '/viam.app.v1.BillingService/GetOrgBillingInformation',
-      ($12.GetOrgBillingInformationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.GetOrgBillingInformationResponse.fromBuffer(value));
-  static final _$getInvoicesSummary = $grpc.ClientMethod<$12.GetInvoicesSummaryRequest, $12.GetInvoicesSummaryResponse>(
+      ($13.GetOrgBillingInformationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetOrgBillingInformationResponse.fromBuffer(value));
+  static final _$getInvoicesSummary = $grpc.ClientMethod<$13.GetInvoicesSummaryRequest, $13.GetInvoicesSummaryResponse>(
       '/viam.app.v1.BillingService/GetInvoicesSummary',
-      ($12.GetInvoicesSummaryRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.GetInvoicesSummaryResponse.fromBuffer(value));
-  static final _$getInvoicePdf = $grpc.ClientMethod<$12.GetInvoicePdfRequest, $12.GetInvoicePdfResponse>(
+      ($13.GetInvoicesSummaryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetInvoicesSummaryResponse.fromBuffer(value));
+  static final _$getInvoicePdf = $grpc.ClientMethod<$13.GetInvoicePdfRequest, $13.GetInvoicePdfResponse>(
       '/viam.app.v1.BillingService/GetInvoicePdf',
-      ($12.GetInvoicePdfRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.GetInvoicePdfResponse.fromBuffer(value));
-  static final _$sendPaymentRequiredEmail = $grpc.ClientMethod<$12.SendPaymentRequiredEmailRequest, $12.SendPaymentRequiredEmailResponse>(
+      ($13.GetInvoicePdfRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetInvoicePdfResponse.fromBuffer(value));
+  static final _$sendPaymentRequiredEmail = $grpc.ClientMethod<$13.SendPaymentRequiredEmailRequest, $13.SendPaymentRequiredEmailResponse>(
       '/viam.app.v1.BillingService/SendPaymentRequiredEmail',
-      ($12.SendPaymentRequiredEmailRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.SendPaymentRequiredEmailResponse.fromBuffer(value));
-  static final _$getAvailableBillingTiers = $grpc.ClientMethod<$12.GetAvailableBillingTiersRequest, $12.GetAvailableBillingTiersResponse>(
+      ($13.SendPaymentRequiredEmailRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.SendPaymentRequiredEmailResponse.fromBuffer(value));
+  static final _$getAvailableBillingTiers = $grpc.ClientMethod<$13.GetAvailableBillingTiersRequest, $13.GetAvailableBillingTiersResponse>(
       '/viam.app.v1.BillingService/GetAvailableBillingTiers',
-      ($12.GetAvailableBillingTiersRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.GetAvailableBillingTiersResponse.fromBuffer(value));
-  static final _$updateOrganizationBillingTier = $grpc.ClientMethod<$12.UpdateOrganizationBillingTierRequest, $12.UpdateOrganizationBillingTierResponse>(
+      ($13.GetAvailableBillingTiersRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetAvailableBillingTiersResponse.fromBuffer(value));
+  static final _$updateOrganizationBillingTier = $grpc.ClientMethod<$13.UpdateOrganizationBillingTierRequest, $13.UpdateOrganizationBillingTierResponse>(
       '/viam.app.v1.BillingService/UpdateOrganizationBillingTier',
-      ($12.UpdateOrganizationBillingTierRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.UpdateOrganizationBillingTierResponse.fromBuffer(value));
-  static final _$getLocationBillingOrganization = $grpc.ClientMethod<$12.GetLocationBillingOrganizationRequest, $12.GetLocationBillingOrganizationResponse>(
+      ($13.UpdateOrganizationBillingTierRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.UpdateOrganizationBillingTierResponse.fromBuffer(value));
+  static final _$getLocationBillingOrganization = $grpc.ClientMethod<$13.GetLocationBillingOrganizationRequest, $13.GetLocationBillingOrganizationResponse>(
       '/viam.app.v1.BillingService/GetLocationBillingOrganization',
-      ($12.GetLocationBillingOrganizationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.GetLocationBillingOrganizationResponse.fromBuffer(value));
-  static final _$updateLocationBillingOrganization = $grpc.ClientMethod<$12.UpdateLocationBillingOrganizationRequest, $12.UpdateLocationBillingOrganizationResponse>(
+      ($13.GetLocationBillingOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetLocationBillingOrganizationResponse.fromBuffer(value));
+  static final _$updateLocationBillingOrganization = $grpc.ClientMethod<$13.UpdateLocationBillingOrganizationRequest, $13.UpdateLocationBillingOrganizationResponse>(
       '/viam.app.v1.BillingService/UpdateLocationBillingOrganization',
-      ($12.UpdateLocationBillingOrganizationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.UpdateLocationBillingOrganizationResponse.fromBuffer(value));
-  static final _$chargeOrganization = $grpc.ClientMethod<$12.ChargeOrganizationRequest, $12.ChargeOrganizationResponse>(
+      ($13.UpdateLocationBillingOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.UpdateLocationBillingOrganizationResponse.fromBuffer(value));
+  static final _$chargeOrganization = $grpc.ClientMethod<$13.ChargeOrganizationRequest, $13.ChargeOrganizationResponse>(
       '/viam.app.v1.BillingService/ChargeOrganization',
-      ($12.ChargeOrganizationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.ChargeOrganizationResponse.fromBuffer(value));
-  static final _$createInvoiceAndChargeImmediately = $grpc.ClientMethod<$12.CreateInvoiceAndChargeImmediatelyRequest, $12.CreateInvoiceAndChargeImmediatelyResponse>(
+      ($13.ChargeOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.ChargeOrganizationResponse.fromBuffer(value));
+  static final _$createInvoiceAndChargeImmediately = $grpc.ClientMethod<$13.CreateInvoiceAndChargeImmediatelyRequest, $13.CreateInvoiceAndChargeImmediatelyResponse>(
       '/viam.app.v1.BillingService/CreateInvoiceAndChargeImmediately',
-      ($12.CreateInvoiceAndChargeImmediatelyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.CreateInvoiceAndChargeImmediatelyResponse.fromBuffer(value));
+      ($13.CreateInvoiceAndChargeImmediatelyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.CreateInvoiceAndChargeImmediatelyResponse.fromBuffer(value));
 
   BillingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -72,47 +72,47 @@ class BillingServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$12.GetCurrentMonthUsageResponse> getCurrentMonthUsage($12.GetCurrentMonthUsageRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetCurrentMonthUsageResponse> getCurrentMonthUsage($13.GetCurrentMonthUsageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getCurrentMonthUsage, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.GetOrgBillingInformationResponse> getOrgBillingInformation($12.GetOrgBillingInformationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetOrgBillingInformationResponse> getOrgBillingInformation($13.GetOrgBillingInformationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOrgBillingInformation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.GetInvoicesSummaryResponse> getInvoicesSummary($12.GetInvoicesSummaryRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetInvoicesSummaryResponse> getInvoicesSummary($13.GetInvoicesSummaryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getInvoicesSummary, request, options: options);
   }
 
-  $grpc.ResponseStream<$12.GetInvoicePdfResponse> getInvoicePdf($12.GetInvoicePdfRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$13.GetInvoicePdfResponse> getInvoicePdf($13.GetInvoicePdfRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$getInvoicePdf, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$12.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($12.SendPaymentRequiredEmailRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($13.SendPaymentRequiredEmailRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sendPaymentRequiredEmail, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.GetAvailableBillingTiersResponse> getAvailableBillingTiers($12.GetAvailableBillingTiersRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetAvailableBillingTiersResponse> getAvailableBillingTiers($13.GetAvailableBillingTiersRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAvailableBillingTiers, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($12.UpdateOrganizationBillingTierRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($13.UpdateOrganizationBillingTierRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateOrganizationBillingTier, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.GetLocationBillingOrganizationResponse> getLocationBillingOrganization($12.GetLocationBillingOrganizationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetLocationBillingOrganizationResponse> getLocationBillingOrganization($13.GetLocationBillingOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLocationBillingOrganization, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization($12.UpdateLocationBillingOrganizationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization($13.UpdateLocationBillingOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateLocationBillingOrganization, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.ChargeOrganizationResponse> chargeOrganization($12.ChargeOrganizationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.ChargeOrganizationResponse> chargeOrganization($13.ChargeOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$chargeOrganization, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately($12.CreateInvoiceAndChargeImmediatelyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately($13.CreateInvoiceAndChargeImmediatelyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createInvoiceAndChargeImmediately, request, options: options);
   }
 }
@@ -122,138 +122,138 @@ abstract class BillingServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.v1.BillingService';
 
   BillingServiceBase() {
-    $addMethod($grpc.ServiceMethod<$12.GetCurrentMonthUsageRequest, $12.GetCurrentMonthUsageResponse>(
+    $addMethod($grpc.ServiceMethod<$13.GetCurrentMonthUsageRequest, $13.GetCurrentMonthUsageResponse>(
         'GetCurrentMonthUsage',
         getCurrentMonthUsage_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.GetCurrentMonthUsageRequest.fromBuffer(value),
-        ($12.GetCurrentMonthUsageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.GetOrgBillingInformationRequest, $12.GetOrgBillingInformationResponse>(
+        ($core.List<$core.int> value) => $13.GetCurrentMonthUsageRequest.fromBuffer(value),
+        ($13.GetCurrentMonthUsageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetOrgBillingInformationRequest, $13.GetOrgBillingInformationResponse>(
         'GetOrgBillingInformation',
         getOrgBillingInformation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.GetOrgBillingInformationRequest.fromBuffer(value),
-        ($12.GetOrgBillingInformationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.GetInvoicesSummaryRequest, $12.GetInvoicesSummaryResponse>(
+        ($core.List<$core.int> value) => $13.GetOrgBillingInformationRequest.fromBuffer(value),
+        ($13.GetOrgBillingInformationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetInvoicesSummaryRequest, $13.GetInvoicesSummaryResponse>(
         'GetInvoicesSummary',
         getInvoicesSummary_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.GetInvoicesSummaryRequest.fromBuffer(value),
-        ($12.GetInvoicesSummaryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.GetInvoicePdfRequest, $12.GetInvoicePdfResponse>(
+        ($core.List<$core.int> value) => $13.GetInvoicesSummaryRequest.fromBuffer(value),
+        ($13.GetInvoicesSummaryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetInvoicePdfRequest, $13.GetInvoicePdfResponse>(
         'GetInvoicePdf',
         getInvoicePdf_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $12.GetInvoicePdfRequest.fromBuffer(value),
-        ($12.GetInvoicePdfResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.SendPaymentRequiredEmailRequest, $12.SendPaymentRequiredEmailResponse>(
+        ($core.List<$core.int> value) => $13.GetInvoicePdfRequest.fromBuffer(value),
+        ($13.GetInvoicePdfResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.SendPaymentRequiredEmailRequest, $13.SendPaymentRequiredEmailResponse>(
         'SendPaymentRequiredEmail',
         sendPaymentRequiredEmail_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.SendPaymentRequiredEmailRequest.fromBuffer(value),
-        ($12.SendPaymentRequiredEmailResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.GetAvailableBillingTiersRequest, $12.GetAvailableBillingTiersResponse>(
+        ($core.List<$core.int> value) => $13.SendPaymentRequiredEmailRequest.fromBuffer(value),
+        ($13.SendPaymentRequiredEmailResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetAvailableBillingTiersRequest, $13.GetAvailableBillingTiersResponse>(
         'GetAvailableBillingTiers',
         getAvailableBillingTiers_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.GetAvailableBillingTiersRequest.fromBuffer(value),
-        ($12.GetAvailableBillingTiersResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.UpdateOrganizationBillingTierRequest, $12.UpdateOrganizationBillingTierResponse>(
+        ($core.List<$core.int> value) => $13.GetAvailableBillingTiersRequest.fromBuffer(value),
+        ($13.GetAvailableBillingTiersResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.UpdateOrganizationBillingTierRequest, $13.UpdateOrganizationBillingTierResponse>(
         'UpdateOrganizationBillingTier',
         updateOrganizationBillingTier_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.UpdateOrganizationBillingTierRequest.fromBuffer(value),
-        ($12.UpdateOrganizationBillingTierResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.GetLocationBillingOrganizationRequest, $12.GetLocationBillingOrganizationResponse>(
+        ($core.List<$core.int> value) => $13.UpdateOrganizationBillingTierRequest.fromBuffer(value),
+        ($13.UpdateOrganizationBillingTierResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetLocationBillingOrganizationRequest, $13.GetLocationBillingOrganizationResponse>(
         'GetLocationBillingOrganization',
         getLocationBillingOrganization_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.GetLocationBillingOrganizationRequest.fromBuffer(value),
-        ($12.GetLocationBillingOrganizationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.UpdateLocationBillingOrganizationRequest, $12.UpdateLocationBillingOrganizationResponse>(
+        ($core.List<$core.int> value) => $13.GetLocationBillingOrganizationRequest.fromBuffer(value),
+        ($13.GetLocationBillingOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.UpdateLocationBillingOrganizationRequest, $13.UpdateLocationBillingOrganizationResponse>(
         'UpdateLocationBillingOrganization',
         updateLocationBillingOrganization_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.UpdateLocationBillingOrganizationRequest.fromBuffer(value),
-        ($12.UpdateLocationBillingOrganizationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.ChargeOrganizationRequest, $12.ChargeOrganizationResponse>(
+        ($core.List<$core.int> value) => $13.UpdateLocationBillingOrganizationRequest.fromBuffer(value),
+        ($13.UpdateLocationBillingOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.ChargeOrganizationRequest, $13.ChargeOrganizationResponse>(
         'ChargeOrganization',
         chargeOrganization_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.ChargeOrganizationRequest.fromBuffer(value),
-        ($12.ChargeOrganizationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.CreateInvoiceAndChargeImmediatelyRequest, $12.CreateInvoiceAndChargeImmediatelyResponse>(
+        ($core.List<$core.int> value) => $13.ChargeOrganizationRequest.fromBuffer(value),
+        ($13.ChargeOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.CreateInvoiceAndChargeImmediatelyRequest, $13.CreateInvoiceAndChargeImmediatelyResponse>(
         'CreateInvoiceAndChargeImmediately',
         createInvoiceAndChargeImmediately_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.CreateInvoiceAndChargeImmediatelyRequest.fromBuffer(value),
-        ($12.CreateInvoiceAndChargeImmediatelyResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $13.CreateInvoiceAndChargeImmediatelyRequest.fromBuffer(value),
+        ($13.CreateInvoiceAndChargeImmediatelyResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$12.GetCurrentMonthUsageResponse> getCurrentMonthUsage_Pre($grpc.ServiceCall call, $async.Future<$12.GetCurrentMonthUsageRequest> request) async {
+  $async.Future<$13.GetCurrentMonthUsageResponse> getCurrentMonthUsage_Pre($grpc.ServiceCall call, $async.Future<$13.GetCurrentMonthUsageRequest> request) async {
     return getCurrentMonthUsage(call, await request);
   }
 
-  $async.Future<$12.GetOrgBillingInformationResponse> getOrgBillingInformation_Pre($grpc.ServiceCall call, $async.Future<$12.GetOrgBillingInformationRequest> request) async {
+  $async.Future<$13.GetOrgBillingInformationResponse> getOrgBillingInformation_Pre($grpc.ServiceCall call, $async.Future<$13.GetOrgBillingInformationRequest> request) async {
     return getOrgBillingInformation(call, await request);
   }
 
-  $async.Future<$12.GetInvoicesSummaryResponse> getInvoicesSummary_Pre($grpc.ServiceCall call, $async.Future<$12.GetInvoicesSummaryRequest> request) async {
+  $async.Future<$13.GetInvoicesSummaryResponse> getInvoicesSummary_Pre($grpc.ServiceCall call, $async.Future<$13.GetInvoicesSummaryRequest> request) async {
     return getInvoicesSummary(call, await request);
   }
 
-  $async.Stream<$12.GetInvoicePdfResponse> getInvoicePdf_Pre($grpc.ServiceCall call, $async.Future<$12.GetInvoicePdfRequest> request) async* {
+  $async.Stream<$13.GetInvoicePdfResponse> getInvoicePdf_Pre($grpc.ServiceCall call, $async.Future<$13.GetInvoicePdfRequest> request) async* {
     yield* getInvoicePdf(call, await request);
   }
 
-  $async.Future<$12.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail_Pre($grpc.ServiceCall call, $async.Future<$12.SendPaymentRequiredEmailRequest> request) async {
+  $async.Future<$13.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail_Pre($grpc.ServiceCall call, $async.Future<$13.SendPaymentRequiredEmailRequest> request) async {
     return sendPaymentRequiredEmail(call, await request);
   }
 
-  $async.Future<$12.GetAvailableBillingTiersResponse> getAvailableBillingTiers_Pre($grpc.ServiceCall call, $async.Future<$12.GetAvailableBillingTiersRequest> request) async {
+  $async.Future<$13.GetAvailableBillingTiersResponse> getAvailableBillingTiers_Pre($grpc.ServiceCall call, $async.Future<$13.GetAvailableBillingTiersRequest> request) async {
     return getAvailableBillingTiers(call, await request);
   }
 
-  $async.Future<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier_Pre($grpc.ServiceCall call, $async.Future<$12.UpdateOrganizationBillingTierRequest> request) async {
+  $async.Future<$13.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier_Pre($grpc.ServiceCall call, $async.Future<$13.UpdateOrganizationBillingTierRequest> request) async {
     return updateOrganizationBillingTier(call, await request);
   }
 
-  $async.Future<$12.GetLocationBillingOrganizationResponse> getLocationBillingOrganization_Pre($grpc.ServiceCall call, $async.Future<$12.GetLocationBillingOrganizationRequest> request) async {
+  $async.Future<$13.GetLocationBillingOrganizationResponse> getLocationBillingOrganization_Pre($grpc.ServiceCall call, $async.Future<$13.GetLocationBillingOrganizationRequest> request) async {
     return getLocationBillingOrganization(call, await request);
   }
 
-  $async.Future<$12.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization_Pre($grpc.ServiceCall call, $async.Future<$12.UpdateLocationBillingOrganizationRequest> request) async {
+  $async.Future<$13.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization_Pre($grpc.ServiceCall call, $async.Future<$13.UpdateLocationBillingOrganizationRequest> request) async {
     return updateLocationBillingOrganization(call, await request);
   }
 
-  $async.Future<$12.ChargeOrganizationResponse> chargeOrganization_Pre($grpc.ServiceCall call, $async.Future<$12.ChargeOrganizationRequest> request) async {
+  $async.Future<$13.ChargeOrganizationResponse> chargeOrganization_Pre($grpc.ServiceCall call, $async.Future<$13.ChargeOrganizationRequest> request) async {
     return chargeOrganization(call, await request);
   }
 
-  $async.Future<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately_Pre($grpc.ServiceCall call, $async.Future<$12.CreateInvoiceAndChargeImmediatelyRequest> request) async {
+  $async.Future<$13.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately_Pre($grpc.ServiceCall call, $async.Future<$13.CreateInvoiceAndChargeImmediatelyRequest> request) async {
     return createInvoiceAndChargeImmediately(call, await request);
   }
 
-  $async.Future<$12.GetCurrentMonthUsageResponse> getCurrentMonthUsage($grpc.ServiceCall call, $12.GetCurrentMonthUsageRequest request);
-  $async.Future<$12.GetOrgBillingInformationResponse> getOrgBillingInformation($grpc.ServiceCall call, $12.GetOrgBillingInformationRequest request);
-  $async.Future<$12.GetInvoicesSummaryResponse> getInvoicesSummary($grpc.ServiceCall call, $12.GetInvoicesSummaryRequest request);
-  $async.Stream<$12.GetInvoicePdfResponse> getInvoicePdf($grpc.ServiceCall call, $12.GetInvoicePdfRequest request);
-  $async.Future<$12.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($grpc.ServiceCall call, $12.SendPaymentRequiredEmailRequest request);
-  $async.Future<$12.GetAvailableBillingTiersResponse> getAvailableBillingTiers($grpc.ServiceCall call, $12.GetAvailableBillingTiersRequest request);
-  $async.Future<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($grpc.ServiceCall call, $12.UpdateOrganizationBillingTierRequest request);
-  $async.Future<$12.GetLocationBillingOrganizationResponse> getLocationBillingOrganization($grpc.ServiceCall call, $12.GetLocationBillingOrganizationRequest request);
-  $async.Future<$12.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization($grpc.ServiceCall call, $12.UpdateLocationBillingOrganizationRequest request);
-  $async.Future<$12.ChargeOrganizationResponse> chargeOrganization($grpc.ServiceCall call, $12.ChargeOrganizationRequest request);
-  $async.Future<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately($grpc.ServiceCall call, $12.CreateInvoiceAndChargeImmediatelyRequest request);
+  $async.Future<$13.GetCurrentMonthUsageResponse> getCurrentMonthUsage($grpc.ServiceCall call, $13.GetCurrentMonthUsageRequest request);
+  $async.Future<$13.GetOrgBillingInformationResponse> getOrgBillingInformation($grpc.ServiceCall call, $13.GetOrgBillingInformationRequest request);
+  $async.Future<$13.GetInvoicesSummaryResponse> getInvoicesSummary($grpc.ServiceCall call, $13.GetInvoicesSummaryRequest request);
+  $async.Stream<$13.GetInvoicePdfResponse> getInvoicePdf($grpc.ServiceCall call, $13.GetInvoicePdfRequest request);
+  $async.Future<$13.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($grpc.ServiceCall call, $13.SendPaymentRequiredEmailRequest request);
+  $async.Future<$13.GetAvailableBillingTiersResponse> getAvailableBillingTiers($grpc.ServiceCall call, $13.GetAvailableBillingTiersRequest request);
+  $async.Future<$13.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($grpc.ServiceCall call, $13.UpdateOrganizationBillingTierRequest request);
+  $async.Future<$13.GetLocationBillingOrganizationResponse> getLocationBillingOrganization($grpc.ServiceCall call, $13.GetLocationBillingOrganizationRequest request);
+  $async.Future<$13.UpdateLocationBillingOrganizationResponse> updateLocationBillingOrganization($grpc.ServiceCall call, $13.UpdateLocationBillingOrganizationRequest request);
+  $async.Future<$13.ChargeOrganizationResponse> chargeOrganization($grpc.ServiceCall call, $13.ChargeOrganizationRequest request);
+  $async.Future<$13.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately($grpc.ServiceCall call, $13.CreateInvoiceAndChargeImmediatelyRequest request);
 }

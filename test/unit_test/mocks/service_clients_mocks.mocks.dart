@@ -38,6 +38,10 @@ import 'package:viam_sdk/src/gen/service/generic/v1/generic.pbgrpc.dart'
     as _i29;
 import 'package:viam_sdk/src/gen/service/video/v1/video.pb.dart' as _i31;
 import 'package:viam_sdk/src/gen/service/video/v1/video.pbgrpc.dart' as _i30;
+import 'package:viam_sdk/src/gen/service/navigation/v1/navigation.pb.dart'
+    as _i33;
+import 'package:viam_sdk/src/gen/service/navigation/v1/navigation.pbgrpc.dart'
+    as _i32;
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pb.dart' as _i19;
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart' as _i18;
 
@@ -2384,6 +2388,36 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
       ) as _i4.ResponseFuture<_i13.ListOAuthAppsResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.CreateOAuthAppUserResponse> createOAuthAppUser(
+    _i13.CreateOAuthAppUserRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #createOAuthAppUser,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.CreateOAuthAppUserResponse>(
+          this,
+          Invocation.method(
+            #createOAuthAppUser,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.CreateOAuthAppUserResponse>(
+          this,
+          Invocation.method(
+            #createOAuthAppUser,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.CreateOAuthAppUserResponse>);
+
+  @override
   _i4.ResponseFuture<_i13.CreateLocationResponse> createLocation(
     _i13.CreateLocationRequest? request, {
     _i3.CallOptions? options,
@@ -4641,6 +4675,186 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
       ) as _i4.ResponseFuture<_i13.GetAppBrandingResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.UploadDevicePushTokenResponse> uploadDevicePushToken(
+    _i13.UploadDevicePushTokenRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #uploadDevicePushToken,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.UploadDevicePushTokenResponse>(
+          this,
+          Invocation.method(
+            #uploadDevicePushToken,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.UploadDevicePushTokenResponse>(
+          this,
+          Invocation.method(
+            #uploadDevicePushToken,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.UploadDevicePushTokenResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.DeleteDevicePushTokenResponse> deleteDevicePushToken(
+    _i13.DeleteDevicePushTokenRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteDevicePushToken,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.DeleteDevicePushTokenResponse>(
+          this,
+          Invocation.method(
+            #deleteDevicePushToken,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.DeleteDevicePushTokenResponse>(
+          this,
+          Invocation.method(
+            #deleteDevicePushToken,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.DeleteDevicePushTokenResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.GetDevicePushTokensResponse> getDevicePushTokens(
+    _i13.GetDevicePushTokensRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getDevicePushTokens,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.GetDevicePushTokensResponse>(
+          this,
+          Invocation.method(
+            #getDevicePushTokens,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.GetDevicePushTokensResponse>(
+          this,
+          Invocation.method(
+            #getDevicePushTokens,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.GetDevicePushTokensResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.SetFirebaseConfigResponse> setFirebaseConfig(
+    _i13.SetFirebaseConfigRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setFirebaseConfig,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.SetFirebaseConfigResponse>(
+          this,
+          Invocation.method(
+            #setFirebaseConfig,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.SetFirebaseConfigResponse>(
+          this,
+          Invocation.method(
+            #setFirebaseConfig,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.SetFirebaseConfigResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.GetFirebaseConfigResponse> getFirebaseConfig(
+    _i13.GetFirebaseConfigRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getFirebaseConfig,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.GetFirebaseConfigResponse>(
+          this,
+          Invocation.method(
+            #getFirebaseConfig,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.GetFirebaseConfigResponse>(
+          this,
+          Invocation.method(
+            #getFirebaseConfig,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.GetFirebaseConfigResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.DeleteFirebaseConfigResponse> deleteFirebaseConfig(
+    _i13.DeleteFirebaseConfigRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteFirebaseConfig,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.DeleteFirebaseConfigResponse>(
+          this,
+          Invocation.method(
+            #deleteFirebaseConfig,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.DeleteFirebaseConfigResponse>(
+          this,
+          Invocation.method(
+            #deleteFirebaseConfig,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.DeleteFirebaseConfigResponse>);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {
@@ -5748,6 +5962,156 @@ class MockDataServiceClient extends _i1.Mock implements _i14.DataServiceClient {
           ) as _i4.ResponseFuture<_i15.CreateBinaryDataSignedURLResponse>);
 
   @override
+  _i4.ResponseFuture<_i15.CreateSequenceResponse> createSequence(
+    _i15.CreateSequenceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #createSequence,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.CreateSequenceResponse>(
+          this,
+          Invocation.method(
+            #createSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.CreateSequenceResponse>(
+          this,
+          Invocation.method(
+            #createSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.CreateSequenceResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.GetSequenceResponse> getSequence(
+    _i15.GetSequenceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSequence,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.GetSequenceResponse>(
+          this,
+          Invocation.method(
+            #getSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.GetSequenceResponse>(
+          this,
+          Invocation.method(
+            #getSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.GetSequenceResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.UpdateSequenceResponse> updateSequence(
+    _i15.UpdateSequenceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateSequence,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.UpdateSequenceResponse>(
+          this,
+          Invocation.method(
+            #updateSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.UpdateSequenceResponse>(
+          this,
+          Invocation.method(
+            #updateSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.UpdateSequenceResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.DeleteSequenceResponse> deleteSequence(
+    _i15.DeleteSequenceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteSequence,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.DeleteSequenceResponse>(
+          this,
+          Invocation.method(
+            #deleteSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.DeleteSequenceResponse>(
+          this,
+          Invocation.method(
+            #deleteSequence,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.DeleteSequenceResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.ListSequencesResponse> listSequences(
+    _i15.ListSequencesRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #listSequences,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.ListSequencesResponse>(
+          this,
+          Invocation.method(
+            #listSequences,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.ListSequencesResponse>(
+          this,
+          Invocation.method(
+            #listSequences,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.ListSequencesResponse>);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {
@@ -6390,6 +6754,486 @@ class MockVisionServiceClient extends _i1.Mock
       ) as _i4.ResponseFuture<_i20.DoCommandResponse>);
 
   @override
+  _i4.ResponseFuture<_i20.GetStatusResponse> getStatus(
+    _i20.GetStatusRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getStatus,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i20.GetStatusResponse>);
+
+  @override
+  _i3.ClientCall<Q, R> $createCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i3.ClientCall<Q, R>);
+
+  @override
+  _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    Q? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createUnaryCall,
+          [
+            method,
+            request,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<R>);
+
+  @override
+  _i4.ResponseStream<R> $createStreamingCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createStreamingCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseStream<R>);
+}
+
+/// A class which mocks [NavigationServiceClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockNavigationServiceClient extends _i1.Mock
+    implements _i32.NavigationServiceClient {
+  @override
+  _i4.ResponseFuture<_i33.GetModeResponse> getMode(
+    _i33.GetModeRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getMode,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.GetModeResponse>(
+          this,
+          Invocation.method(
+            #getMode,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i33.GetModeResponse>(
+          this,
+          Invocation.method(
+            #getMode,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.GetModeResponse>);
+
+  @override
+  _i4.ResponseFuture<_i33.SetModeResponse> setMode(
+    _i33.SetModeRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setMode,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.SetModeResponse>(
+          this,
+          Invocation.method(
+            #setMode,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i33.SetModeResponse>(
+          this,
+          Invocation.method(
+            #setMode,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.SetModeResponse>);
+
+  @override
+  _i4.ResponseFuture<_i33.GetLocationResponse> getLocation(
+    _i33.GetLocationRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getLocation,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.GetLocationResponse>(
+          this,
+          Invocation.method(
+            #getLocation,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i33.GetLocationResponse>(
+          this,
+          Invocation.method(
+            #getLocation,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.GetLocationResponse>);
+
+  @override
+  _i4.ResponseFuture<_i33.GetWaypointsResponse> getWaypoints(
+    _i33.GetWaypointsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getWaypoints,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.GetWaypointsResponse>(
+          this,
+          Invocation.method(
+            #getWaypoints,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i33.GetWaypointsResponse>(
+          this,
+          Invocation.method(
+            #getWaypoints,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.GetWaypointsResponse>);
+
+  @override
+  _i4.ResponseFuture<_i33.AddWaypointResponse> addWaypoint(
+    _i33.AddWaypointRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addWaypoint,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.AddWaypointResponse>(
+          this,
+          Invocation.method(
+            #addWaypoint,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i33.AddWaypointResponse>(
+          this,
+          Invocation.method(
+            #addWaypoint,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.AddWaypointResponse>);
+
+  @override
+  _i4.ResponseFuture<_i33.RemoveWaypointResponse> removeWaypoint(
+    _i33.RemoveWaypointRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #removeWaypoint,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.RemoveWaypointResponse>(
+          this,
+          Invocation.method(
+            #removeWaypoint,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i33.RemoveWaypointResponse>(
+          this,
+          Invocation.method(
+            #removeWaypoint,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.RemoveWaypointResponse>);
+
+  @override
+  _i4.ResponseFuture<_i33.GetObstaclesResponse> getObstacles(
+    _i33.GetObstaclesRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getObstacles,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.GetObstaclesResponse>(
+          this,
+          Invocation.method(
+            #getObstacles,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i33.GetObstaclesResponse>(
+          this,
+          Invocation.method(
+            #getObstacles,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.GetObstaclesResponse>);
+
+  @override
+  _i4.ResponseFuture<_i33.GetPathsResponse> getPaths(
+    _i33.GetPathsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getPaths,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.GetPathsResponse>(
+          this,
+          Invocation.method(
+            #getPaths,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i33.GetPathsResponse>(
+          this,
+          Invocation.method(
+            #getPaths,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.GetPathsResponse>);
+
+  @override
+  _i4.ResponseFuture<_i33.GetPropertiesResponse> getProperties(
+    _i33.GetPropertiesRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getProperties,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i33.GetPropertiesResponse>(
+          this,
+          Invocation.method(
+            #getProperties,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i33.GetPropertiesResponse>(
+          this,
+          Invocation.method(
+            #getProperties,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i33.GetPropertiesResponse>);
+
+  @override
+  _i4.ResponseFuture<_i20.DoCommandResponse> doCommand(
+    _i20.DoCommandRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #doCommand,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i20.DoCommandResponse>(
+          this,
+          Invocation.method(
+            #doCommand,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i20.DoCommandResponse>(
+          this,
+          Invocation.method(
+            #doCommand,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i20.DoCommandResponse>);
+
+  @override
+  _i4.ResponseFuture<_i20.GetStatusResponse> getStatus(
+    _i20.GetStatusRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getStatus,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i20.GetStatusResponse>);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {
@@ -6729,6 +7573,102 @@ class MockBillingServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i22.UpdateOrganizationBillingTierResponse>);
+
+  @override
+  _i4.ResponseFuture<
+      _i22
+      .GetLocationBillingOrganizationResponse> getLocationBillingOrganization(
+    _i22.GetLocationBillingOrganizationRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getLocationBillingOrganization,
+          [request],
+          {#options: options},
+        ),
+        returnValue:
+            _FakeResponseFuture_2<_i22.GetLocationBillingOrganizationResponse>(
+          this,
+          Invocation.method(
+            #getLocationBillingOrganization,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i22.GetLocationBillingOrganizationResponse>(
+          this,
+          Invocation.method(
+            #getLocationBillingOrganization,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i22.GetLocationBillingOrganizationResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.UpdateLocationBillingOrganizationResponse>
+      updateLocationBillingOrganization(
+    _i22.UpdateLocationBillingOrganizationRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #updateLocationBillingOrganization,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<
+                _i22.UpdateLocationBillingOrganizationResponse>(
+              this,
+              Invocation.method(
+                #updateLocationBillingOrganization,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<
+                _i22.UpdateLocationBillingOrganizationResponse>(
+              this,
+              Invocation.method(
+                #updateLocationBillingOrganization,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4
+              .ResponseFuture<_i22.UpdateLocationBillingOrganizationResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.ChargeOrganizationResponse> chargeOrganization(
+    _i22.ChargeOrganizationRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #chargeOrganization,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i22.ChargeOrganizationResponse>(
+          this,
+          Invocation.method(
+            #chargeOrganization,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i22.ChargeOrganizationResponse>(
+          this,
+          Invocation.method(
+            #chargeOrganization,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i22.ChargeOrganizationResponse>);
 
   @override
   _i4.ResponseFuture<_i22.CreateInvoiceAndChargeImmediatelyResponse>
@@ -7621,6 +8561,36 @@ class MockDiscoveryServiceClient extends _i1.Mock
       ) as _i4.ResponseFuture<_i20.DoCommandResponse>);
 
   @override
+  _i4.ResponseFuture<_i20.GetStatusResponse> getStatus(
+    _i20.GetStatusRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getStatus,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i20.GetStatusResponse>);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {
@@ -7772,6 +8742,36 @@ class MockGenericServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i20.DoCommandResponse>);
+
+  @override
+  _i4.ResponseFuture<_i20.GetStatusResponse> getStatus(
+    _i20.GetStatusRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getStatus,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i20.GetStatusResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
@@ -7954,6 +8954,36 @@ class MockVideoServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i20.DoCommandResponse>);
+
+  @override
+  _i4.ResponseFuture<_i20.GetStatusResponse> getStatus(
+    _i20.GetStatusRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getStatus,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i20.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i20.GetStatusResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(

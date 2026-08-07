@@ -12,7 +12,9 @@ import '../../test_utils.dart';
 class FakeGripper extends Gripper {
   bool isOpen = false;
   bool isStopped = true;
+  List<double> goToInputsValues = [];
   Map<String, dynamic>? extra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
   String name;
@@ -33,6 +35,11 @@ class FakeGripper extends Gripper {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -59,6 +66,26 @@ class FakeGripper extends Gripper {
   Future<HoldingStatus> isHoldingSomething({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return HoldingStatus(true, {'foo': 'bar'});
+  }
+
+  @override
+  Future<List<double>> getCurrentInputs({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return [1.0, 2.0, 3.0];
+  }
+
+  @override
+  Future<void> goToInputs(List<double> values, {Map<String, dynamic>? extra}) async {
+    goToInputsValues = values;
+    this.extra = extra;
+  }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
   }
 }
 
@@ -116,6 +143,16 @@ void main() {
       expect(resp['command'], cmd);
     });
 
+    test('getStatus', () async {
+      final result = await gripper.getStatus();
+      expect(result, gripper.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await gripper.getGeometries();
+      expect(result, gripper.geometries);
+    });
+
     test('extra', () async {
       expect(gripper.extra, null);
       await gripper.stop(extra: {'foo': 'bar'});
@@ -126,6 +163,17 @@ void main() {
       final response = await gripper.isHoldingSomething();
       expect(response.isHoldingSomething, true);
       expect(response.meta, {'foo': 'bar'});
+    });
+
+    test('getCurrentInputs', () async {
+      final values = await gripper.getCurrentInputs();
+      expect(values, [1.0, 2.0, 3.0]);
+    });
+
+    test('goToInputs', () async {
+      final values = [0.5, 1.0, 1.5];
+      await gripper.goToInputs(values);
+      expect(gripper.goToInputsValues, values);
     });
   });
 
@@ -212,6 +260,23 @@ void main() {
         expect(resp.meta.toMap(), {'foo': 'bar'});
       });
 
+      test('getCurrentInputs', () async {
+        final client = GripperServiceClient(channel);
+        final resp = await client.getCurrentInputs(GetCurrentInputsRequest()..name = name);
+        expect(resp.values, [1.0, 2.0, 3.0]);
+      });
+
+      test('goToInputs', () async {
+        final client = GripperServiceClient(channel);
+        final values = [0.5, 1.0, 1.5];
+        await client.goToInputs(
+          GoToInputsRequest()
+            ..name = name
+            ..values.addAll(values),
+        );
+        expect(gripper.goToInputsValues, values);
+      });
+
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
 
@@ -222,6 +287,18 @@ void main() {
             ..command = cmd.toStruct(),
         );
         expect(resp.result.toMap()['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = GripperServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), gripper.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = GripperServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, gripper.geometries);
       });
 
       test('extra', () async {
@@ -288,11 +365,36 @@ void main() {
         expect(kd.raw, [1, 2, 3]);
       });
 
+      test('getCurrentInputs', () async {
+        final client = GripperClient(name, channel);
+        final values = await client.getCurrentInputs();
+        expect(values, [1.0, 2.0, 3.0]);
+      });
+
+      test('goToInputs', () async {
+        final client = GripperClient(name, channel);
+        final values = [0.5, 1.0, 1.5];
+        await client.goToInputs(values);
+        expect(gripper.goToInputsValues, values);
+      });
+
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
         final client = GripperClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = GripperClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, gripper.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = GripperClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, gripper.geometries);
       });
 
       test('extra', () async {

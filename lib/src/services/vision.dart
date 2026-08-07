@@ -141,6 +141,13 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
     return response.result.toMap();
   }
 
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = common_pb.GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
+
   /// Get the [common_pb.ResourceName] for this [VisionClient] with the given [name]
   ///
   /// ```

@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../common/v1/common.pb.dart' as $9;
+import '../../../google/protobuf/struct.pb.dart' as $49;
 
 class GetEndPositionRequest extends $pb.GeneratedMessage {
   factory GetEndPositionRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -36,7 +36,7 @@ class GetEndPositionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEndPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -73,20 +73,20 @@ class GetEndPositionRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $49.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $49.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetEndPositionResponse extends $pb.GeneratedMessage {
   factory GetEndPositionResponse({
-    $16.Pose? pose,
+    $9.Pose? pose,
   }) {
     final $result = create();
     if (pose != null) {
@@ -99,7 +99,7 @@ class GetEndPositionResponse extends $pb.GeneratedMessage {
   factory GetEndPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEndPositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
-    ..aOM<$16.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $16.Pose.create)
+    ..aOM<$9.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $9.Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -127,15 +127,15 @@ class GetEndPositionResponse extends $pb.GeneratedMessage {
   /// Returns 6d pose of the end effector relative to the base, represented by X,Y,Z coordinates which express
   /// millimeters and theta, ox, oy, oz coordinates which express an orientation vector
   @$pb.TagNumber(1)
-  $16.Pose get pose => $_getN(0);
+  $9.Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($16.Pose v) { setField(1, v); }
+  set pose($9.Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $16.Pose ensurePose() => $_ensure(0);
+  $9.Pose ensurePose() => $_ensure(0);
 }
 
 class JointPositions extends $pb.GeneratedMessage {
@@ -187,7 +187,7 @@ class JointPositions extends $pb.GeneratedMessage {
 class GetJointPositionsRequest extends $pb.GeneratedMessage {
   factory GetJointPositionsRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -204,7 +204,7 @@ class GetJointPositionsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetJointPositionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -241,15 +241,15 @@ class GetJointPositionsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $49.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $49.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetJointPositionsResponse extends $pb.GeneratedMessage {
@@ -311,8 +311,8 @@ class GetJointPositionsResponse extends $pb.GeneratedMessage {
 class MoveToPositionRequest extends $pb.GeneratedMessage {
   factory MoveToPositionRequest({
     $core.String? name,
-    $16.Pose? to,
-    $50.Struct? extra,
+    $9.Pose? to,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -332,8 +332,8 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveToPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$16.Pose>(2, _omitFieldNames ? '' : 'to', subBuilder: $16.Pose.create)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$9.Pose>(2, _omitFieldNames ? '' : 'to', subBuilder: $9.Pose.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -370,27 +370,27 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
 
   /// The destination to move the arm to; this is from the reference frame of the arm.
   @$pb.TagNumber(2)
-  $16.Pose get to => $_getN(1);
+  $9.Pose get to => $_getN(1);
   @$pb.TagNumber(2)
-  set to($16.Pose v) { setField(2, v); }
+  set to($9.Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTo() => $_has(1);
   @$pb.TagNumber(2)
   void clearTo() => clearField(2);
   @$pb.TagNumber(2)
-  $16.Pose ensureTo() => $_ensure(1);
+  $9.Pose ensureTo() => $_ensure(1);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $49.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $49.Struct ensureExtra() => $_ensure(2);
 }
 
 class MoveToPositionResponse extends $pb.GeneratedMessage {
@@ -429,7 +429,7 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
   factory MoveToJointPositionsRequest({
     $core.String? name,
     JointPositions? positions,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -450,7 +450,7 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveToJointPositionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<JointPositions>(2, _omitFieldNames ? '' : 'positions', subBuilder: JointPositions.create)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -500,15 +500,15 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $49.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $49.Struct ensureExtra() => $_ensure(2);
 }
 
 class MoveToJointPositionsResponse extends $pb.GeneratedMessage {
@@ -548,7 +548,7 @@ class MoveThroughJointPositionsRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<JointPositions>? positions,
     MoveOptions? options,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -573,7 +573,7 @@ class MoveThroughJointPositionsRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..pc<JointPositions>(2, _omitFieldNames ? '' : 'positions', $pb.PbFieldType.PM, subBuilder: JointPositions.create)
     ..aOM<MoveOptions>(3, _omitFieldNames ? '' : 'options', subBuilder: MoveOptions.create)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -626,15 +626,15 @@ class MoveThroughJointPositionsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $49.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $49.Struct ensureExtra() => $_ensure(3);
 }
 
 class MoveThroughJointPositionsResponse extends $pb.GeneratedMessage {
@@ -672,7 +672,7 @@ class MoveThroughJointPositionsResponse extends $pb.GeneratedMessage {
 class StopRequest extends $pb.GeneratedMessage {
   factory StopRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -689,7 +689,7 @@ class StopRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -726,15 +726,15 @@ class StopRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $49.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $49.Struct ensureExtra() => $_ensure(1);
 }
 
 class StopResponse extends $pb.GeneratedMessage {
@@ -771,7 +771,7 @@ class StopResponse extends $pb.GeneratedMessage {
 
 class Status extends $pb.GeneratedMessage {
   factory Status({
-    $16.Pose? endPosition,
+    $9.Pose? endPosition,
     JointPositions? jointPositions,
     $core.bool? isMoving,
   }) {
@@ -792,7 +792,7 @@ class Status extends $pb.GeneratedMessage {
   factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
-    ..aOM<$16.Pose>(1, _omitFieldNames ? '' : 'endPosition', subBuilder: $16.Pose.create)
+    ..aOM<$9.Pose>(1, _omitFieldNames ? '' : 'endPosition', subBuilder: $9.Pose.create)
     ..aOM<JointPositions>(2, _omitFieldNames ? '' : 'jointPositions', subBuilder: JointPositions.create)
     ..aOB(3, _omitFieldNames ? '' : 'isMoving')
     ..hasRequiredFields = false
@@ -820,15 +820,15 @@ class Status extends $pb.GeneratedMessage {
   static Status? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $16.Pose get endPosition => $_getN(0);
+  $9.Pose get endPosition => $_getN(0);
   @$pb.TagNumber(1)
-  set endPosition($16.Pose v) { setField(1, v); }
+  set endPosition($9.Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasEndPosition() => $_has(0);
   @$pb.TagNumber(1)
   void clearEndPosition() => clearField(1);
   @$pb.TagNumber(1)
-  $16.Pose ensureEndPosition() => $_ensure(0);
+  $9.Pose ensureEndPosition() => $_ensure(0);
 
   @$pb.TagNumber(2)
   JointPositions get jointPositions => $_getN(1);
@@ -951,12 +951,17 @@ class IsMovingResponse extends $pb.GeneratedMessage {
   void clearIsMoving() => clearField(1);
 }
 
+/// MoveOptions specifies kinematic constraints for an arm motion. All fields
+/// are optional ceilings; any combination may be set. Every constraint that
+/// is set is respected at every point along the executed trajectory.
+/// The limiting constraint may change throughout execution.
 class MoveOptions extends $pb.GeneratedMessage {
   factory MoveOptions({
     $core.double? maxVelDegsPerSec,
     $core.double? maxAccDegsPerSec2,
     $core.Iterable<$core.double>? maxVelDegsPerSecJoints,
     $core.Iterable<$core.double>? maxAccDegsPerSec2Joints,
+    $core.double? maxTcpSpeed,
   }) {
     final $result = create();
     if (maxVelDegsPerSec != null) {
@@ -971,6 +976,9 @@ class MoveOptions extends $pb.GeneratedMessage {
     if (maxAccDegsPerSec2Joints != null) {
       $result.maxAccDegsPerSec2Joints.addAll(maxAccDegsPerSec2Joints);
     }
+    if (maxTcpSpeed != null) {
+      $result.maxTcpSpeed = maxTcpSpeed;
+    }
     return $result;
   }
   MoveOptions._() : super();
@@ -982,6 +990,7 @@ class MoveOptions extends $pb.GeneratedMessage {
     ..a<$core.double>(2, _omitFieldNames ? '' : 'maxAccDegsPerSec2', $pb.PbFieldType.OD)
     ..p<$core.double>(3, _omitFieldNames ? '' : 'maxVelDegsPerSecJoints', $pb.PbFieldType.KD)
     ..p<$core.double>(4, _omitFieldNames ? '' : 'maxAccDegsPerSec2Joints', $pb.PbFieldType.KD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'maxTcpSpeed', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -1007,6 +1016,7 @@ class MoveOptions extends $pb.GeneratedMessage {
   static MoveOptions? _defaultInstance;
 
   /// Maximum allowable velocity of an arm joint, in degrees per second.
+  /// The arm driver will move as fast as possible up to the set value.
   /// Ignored when max_vel_degs_per_sec_joints is set.
   @$pb.TagNumber(1)
   $core.double get maxVelDegsPerSec => $_getN(0);
@@ -1018,6 +1028,7 @@ class MoveOptions extends $pb.GeneratedMessage {
   void clearMaxVelDegsPerSec() => clearField(1);
 
   /// Maximum allowable acceleration of an arm joint, in degrees per second squared.
+  /// The arm driver will accelerate as fast as possible up to the set value.
   /// ignored when max_acc_degs_per_sec2_joints is set.
   @$pb.TagNumber(2)
   $core.double get maxAccDegsPerSec2 => $_getN(1);
@@ -1029,12 +1040,25 @@ class MoveOptions extends $pb.GeneratedMessage {
   void clearMaxAccDegsPerSec2() => clearField(2);
 
   /// Per-joint maximum velocity in degrees per second.
+  /// The arm driver will move each joint as fast as possible up to its respective set value.
   @$pb.TagNumber(3)
   $core.List<$core.double> get maxVelDegsPerSecJoints => $_getList(2);
 
   /// Per-joint maximum acceleration in degrees per second squared.
+  /// The arm driver will accelerate each joint as fast as possible up to its respective set value.
   @$pb.TagNumber(4)
   $core.List<$core.double> get maxAccDegsPerSec2Joints => $_getList(3);
+
+  /// Maximum allowable speed of an arm's tool center point in meters per second.
+  /// The arm driver will move the tool center point as fast as possible up to this set value.
+  @$pb.TagNumber(5)
+  $core.double get maxTcpSpeed => $_getN(4);
+  @$pb.TagNumber(5)
+  set maxTcpSpeed($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMaxTcpSpeed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMaxTcpSpeed() => clearField(5);
 }
 
 

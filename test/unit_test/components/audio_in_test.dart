@@ -16,6 +16,7 @@ class FakeAudioIn extends AudioIn {
   Int64? previousTimestampNanoseconds;
   Map<String, dynamic>? extra;
   Map<String, dynamic>? propertiesExtra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
   String name;
@@ -25,6 +26,11 @@ class FakeAudioIn extends AudioIn {
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
     return {'command': command};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
   }
 
   @override
@@ -60,6 +66,14 @@ class FakeAudioIn extends AudioIn {
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra}) async {
     propertiesExtra = extra;
     return GetPropertiesResponse();
+  }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
   }
 }
 
@@ -121,6 +135,16 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await audioIn.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await audioIn.getStatus();
+      expect(result, audioIn.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await audioIn.getGeometries();
+      expect(result, audioIn.geometries);
     });
   });
 
@@ -220,6 +244,18 @@ void main() {
         );
         expect(resp.result.toMap()['command'], cmd);
       });
+
+      test('getStatus', () async {
+        final client = AudioInServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), audioIn.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = AudioInServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, audioIn.geometries);
+      });
     });
 
     group('AudioIn Client Tests', () {
@@ -277,6 +313,18 @@ void main() {
         final client = AudioInClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = AudioInClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, audioIn.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = AudioInClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, audioIn.geometries);
       });
     });
   });

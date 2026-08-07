@@ -2,7 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/service/discovery.dart';
 import 'package:viam_sdk/src/gen/app/v1/robot.pb.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' show GetStatusRequest, GetStatusResponse;
 import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart';
+import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 import '../mocks/mock_response_future.dart';
@@ -33,6 +35,15 @@ void main() {
         serviceClient.discoverResources(any, options: anyNamed('options')),
       ).thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
       final response = await client.discoverResources();
+      expect(response, equals(expected));
+    });
+
+    test('getStatus', () async {
+      final expected = {'status': 'ok'};
+      when(
+        serviceClient.getStatus(any, options: anyNamed('options')),
+      ).thenAnswer((_) => MockResponseFuture.value(GetStatusResponse()..result = expected.toStruct()));
+      final response = await client.getStatus();
       expect(response, equals(expected));
     });
   });

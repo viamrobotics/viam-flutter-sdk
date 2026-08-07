@@ -95,9 +95,10 @@ class BoardService extends BoardServiceBase {
   }
 
   @override
-  Future<common.GetGeometriesResponse> getGeometries(ServiceCall call, common.GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<common.GetGeometriesResponse> getGeometries(ServiceCall call, common.GetGeometriesRequest request) async {
+    final board = _fromManager(request.name);
+    final geometries = await board.getGeometries(extra: request.extra.toMap());
+    return common.GetGeometriesResponse()..geometries.addAll(geometries);
   }
 
   @override
@@ -126,5 +127,12 @@ class BoardService extends BoardServiceBase {
     } catch (error) {
       rethrow;
     }
+  }
+
+  @override
+  Future<common.GetStatusResponse> getStatus(ServiceCall call, common.GetStatusRequest request) async {
+    final board = _fromManager(request.name);
+    final result = await board.getStatus();
+    return common.GetStatusResponse()..result = result.toStruct();
   }
 }

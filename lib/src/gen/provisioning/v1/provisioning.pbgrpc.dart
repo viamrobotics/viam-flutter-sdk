@@ -15,32 +15,32 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'provisioning.pb.dart' as $37;
+import 'provisioning.pb.dart' as $36;
 
 export 'provisioning.pb.dart';
 
 @$pb.GrpcServiceName('viam.provisioning.v1.ProvisioningService')
 class ProvisioningServiceClient extends $grpc.Client {
-  static final _$getSmartMachineStatus = $grpc.ClientMethod<$37.GetSmartMachineStatusRequest, $37.GetSmartMachineStatusResponse>(
+  static final _$getSmartMachineStatus = $grpc.ClientMethod<$36.GetSmartMachineStatusRequest, $36.GetSmartMachineStatusResponse>(
       '/viam.provisioning.v1.ProvisioningService/GetSmartMachineStatus',
-      ($37.GetSmartMachineStatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetSmartMachineStatusResponse.fromBuffer(value));
-  static final _$setNetworkCredentials = $grpc.ClientMethod<$37.SetNetworkCredentialsRequest, $37.SetNetworkCredentialsResponse>(
+      ($36.GetSmartMachineStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $36.GetSmartMachineStatusResponse.fromBuffer(value));
+  static final _$setNetworkCredentials = $grpc.ClientMethod<$36.SetNetworkCredentialsRequest, $36.SetNetworkCredentialsResponse>(
       '/viam.provisioning.v1.ProvisioningService/SetNetworkCredentials',
-      ($37.SetNetworkCredentialsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.SetNetworkCredentialsResponse.fromBuffer(value));
-  static final _$setSmartMachineCredentials = $grpc.ClientMethod<$37.SetSmartMachineCredentialsRequest, $37.SetSmartMachineCredentialsResponse>(
+      ($36.SetNetworkCredentialsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $36.SetNetworkCredentialsResponse.fromBuffer(value));
+  static final _$setSmartMachineCredentials = $grpc.ClientMethod<$36.SetSmartMachineCredentialsRequest, $36.SetSmartMachineCredentialsResponse>(
       '/viam.provisioning.v1.ProvisioningService/SetSmartMachineCredentials',
-      ($37.SetSmartMachineCredentialsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.SetSmartMachineCredentialsResponse.fromBuffer(value));
-  static final _$getNetworkList = $grpc.ClientMethod<$37.GetNetworkListRequest, $37.GetNetworkListResponse>(
+      ($36.SetSmartMachineCredentialsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $36.SetSmartMachineCredentialsResponse.fromBuffer(value));
+  static final _$getNetworkList = $grpc.ClientMethod<$36.GetNetworkListRequest, $36.GetNetworkListResponse>(
       '/viam.provisioning.v1.ProvisioningService/GetNetworkList',
-      ($37.GetNetworkListRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetNetworkListResponse.fromBuffer(value));
-  static final _$exitProvisioning = $grpc.ClientMethod<$37.ExitProvisioningRequest, $37.ExitProvisioningResponse>(
+      ($36.GetNetworkListRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $36.GetNetworkListResponse.fromBuffer(value));
+  static final _$exitProvisioning = $grpc.ClientMethod<$36.ExitProvisioningRequest, $36.ExitProvisioningResponse>(
       '/viam.provisioning.v1.ProvisioningService/ExitProvisioning',
-      ($37.ExitProvisioningRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.ExitProvisioningResponse.fromBuffer(value));
+      ($36.ExitProvisioningRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $36.ExitProvisioningResponse.fromBuffer(value));
 
   ProvisioningServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -48,23 +48,23 @@ class ProvisioningServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$37.GetSmartMachineStatusResponse> getSmartMachineStatus($37.GetSmartMachineStatusRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$36.GetSmartMachineStatusResponse> getSmartMachineStatus($36.GetSmartMachineStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getSmartMachineStatus, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.SetNetworkCredentialsResponse> setNetworkCredentials($37.SetNetworkCredentialsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$36.SetNetworkCredentialsResponse> setNetworkCredentials($36.SetNetworkCredentialsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setNetworkCredentials, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.SetSmartMachineCredentialsResponse> setSmartMachineCredentials($37.SetSmartMachineCredentialsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$36.SetSmartMachineCredentialsResponse> setSmartMachineCredentials($36.SetSmartMachineCredentialsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setSmartMachineCredentials, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.GetNetworkListResponse> getNetworkList($37.GetNetworkListRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$36.GetNetworkListResponse> getNetworkList($36.GetNetworkListRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getNetworkList, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.ExitProvisioningResponse> exitProvisioning($37.ExitProvisioningRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$36.ExitProvisioningResponse> exitProvisioning($36.ExitProvisioningRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$exitProvisioning, request, options: options);
   }
 }
@@ -74,66 +74,66 @@ abstract class ProvisioningServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.provisioning.v1.ProvisioningService';
 
   ProvisioningServiceBase() {
-    $addMethod($grpc.ServiceMethod<$37.GetSmartMachineStatusRequest, $37.GetSmartMachineStatusResponse>(
+    $addMethod($grpc.ServiceMethod<$36.GetSmartMachineStatusRequest, $36.GetSmartMachineStatusResponse>(
         'GetSmartMachineStatus',
         getSmartMachineStatus_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetSmartMachineStatusRequest.fromBuffer(value),
-        ($37.GetSmartMachineStatusResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.SetNetworkCredentialsRequest, $37.SetNetworkCredentialsResponse>(
+        ($core.List<$core.int> value) => $36.GetSmartMachineStatusRequest.fromBuffer(value),
+        ($36.GetSmartMachineStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$36.SetNetworkCredentialsRequest, $36.SetNetworkCredentialsResponse>(
         'SetNetworkCredentials',
         setNetworkCredentials_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.SetNetworkCredentialsRequest.fromBuffer(value),
-        ($37.SetNetworkCredentialsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.SetSmartMachineCredentialsRequest, $37.SetSmartMachineCredentialsResponse>(
+        ($core.List<$core.int> value) => $36.SetNetworkCredentialsRequest.fromBuffer(value),
+        ($36.SetNetworkCredentialsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$36.SetSmartMachineCredentialsRequest, $36.SetSmartMachineCredentialsResponse>(
         'SetSmartMachineCredentials',
         setSmartMachineCredentials_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.SetSmartMachineCredentialsRequest.fromBuffer(value),
-        ($37.SetSmartMachineCredentialsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.GetNetworkListRequest, $37.GetNetworkListResponse>(
+        ($core.List<$core.int> value) => $36.SetSmartMachineCredentialsRequest.fromBuffer(value),
+        ($36.SetSmartMachineCredentialsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$36.GetNetworkListRequest, $36.GetNetworkListResponse>(
         'GetNetworkList',
         getNetworkList_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetNetworkListRequest.fromBuffer(value),
-        ($37.GetNetworkListResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.ExitProvisioningRequest, $37.ExitProvisioningResponse>(
+        ($core.List<$core.int> value) => $36.GetNetworkListRequest.fromBuffer(value),
+        ($36.GetNetworkListResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$36.ExitProvisioningRequest, $36.ExitProvisioningResponse>(
         'ExitProvisioning',
         exitProvisioning_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.ExitProvisioningRequest.fromBuffer(value),
-        ($37.ExitProvisioningResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $36.ExitProvisioningRequest.fromBuffer(value),
+        ($36.ExitProvisioningResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$37.GetSmartMachineStatusResponse> getSmartMachineStatus_Pre($grpc.ServiceCall call, $async.Future<$37.GetSmartMachineStatusRequest> request) async {
+  $async.Future<$36.GetSmartMachineStatusResponse> getSmartMachineStatus_Pre($grpc.ServiceCall call, $async.Future<$36.GetSmartMachineStatusRequest> request) async {
     return getSmartMachineStatus(call, await request);
   }
 
-  $async.Future<$37.SetNetworkCredentialsResponse> setNetworkCredentials_Pre($grpc.ServiceCall call, $async.Future<$37.SetNetworkCredentialsRequest> request) async {
+  $async.Future<$36.SetNetworkCredentialsResponse> setNetworkCredentials_Pre($grpc.ServiceCall call, $async.Future<$36.SetNetworkCredentialsRequest> request) async {
     return setNetworkCredentials(call, await request);
   }
 
-  $async.Future<$37.SetSmartMachineCredentialsResponse> setSmartMachineCredentials_Pre($grpc.ServiceCall call, $async.Future<$37.SetSmartMachineCredentialsRequest> request) async {
+  $async.Future<$36.SetSmartMachineCredentialsResponse> setSmartMachineCredentials_Pre($grpc.ServiceCall call, $async.Future<$36.SetSmartMachineCredentialsRequest> request) async {
     return setSmartMachineCredentials(call, await request);
   }
 
-  $async.Future<$37.GetNetworkListResponse> getNetworkList_Pre($grpc.ServiceCall call, $async.Future<$37.GetNetworkListRequest> request) async {
+  $async.Future<$36.GetNetworkListResponse> getNetworkList_Pre($grpc.ServiceCall call, $async.Future<$36.GetNetworkListRequest> request) async {
     return getNetworkList(call, await request);
   }
 
-  $async.Future<$37.ExitProvisioningResponse> exitProvisioning_Pre($grpc.ServiceCall call, $async.Future<$37.ExitProvisioningRequest> request) async {
+  $async.Future<$36.ExitProvisioningResponse> exitProvisioning_Pre($grpc.ServiceCall call, $async.Future<$36.ExitProvisioningRequest> request) async {
     return exitProvisioning(call, await request);
   }
 
-  $async.Future<$37.GetSmartMachineStatusResponse> getSmartMachineStatus($grpc.ServiceCall call, $37.GetSmartMachineStatusRequest request);
-  $async.Future<$37.SetNetworkCredentialsResponse> setNetworkCredentials($grpc.ServiceCall call, $37.SetNetworkCredentialsRequest request);
-  $async.Future<$37.SetSmartMachineCredentialsResponse> setSmartMachineCredentials($grpc.ServiceCall call, $37.SetSmartMachineCredentialsRequest request);
-  $async.Future<$37.GetNetworkListResponse> getNetworkList($grpc.ServiceCall call, $37.GetNetworkListRequest request);
-  $async.Future<$37.ExitProvisioningResponse> exitProvisioning($grpc.ServiceCall call, $37.ExitProvisioningRequest request);
+  $async.Future<$36.GetSmartMachineStatusResponse> getSmartMachineStatus($grpc.ServiceCall call, $36.GetSmartMachineStatusRequest request);
+  $async.Future<$36.SetNetworkCredentialsResponse> setNetworkCredentials($grpc.ServiceCall call, $36.SetNetworkCredentialsRequest request);
+  $async.Future<$36.SetSmartMachineCredentialsResponse> setSmartMachineCredentials($grpc.ServiceCall call, $36.SetSmartMachineCredentialsRequest request);
+  $async.Future<$36.GetNetworkListResponse> getNetworkList($grpc.ServiceCall call, $36.GetNetworkListRequest request);
+  $async.Future<$36.ExitProvisioningResponse> exitProvisioning($grpc.ServiceCall call, $36.ExitProvisioningRequest request);
 }

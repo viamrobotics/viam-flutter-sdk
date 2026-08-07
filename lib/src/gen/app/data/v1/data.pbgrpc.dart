@@ -113,6 +113,14 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/RemoveBinaryDataFromDatasetByIDs',
       ($4.RemoveBinaryDataFromDatasetByIDsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.RemoveBinaryDataFromDatasetByIDsResponse.fromBuffer(value));
+  static final _$addSequencesToDataset = $grpc.ClientMethod<$4.AddSequencesToDatasetRequest, $4.AddSequencesToDatasetResponse>(
+      '/viam.app.data.v1.DataService/AddSequencesToDataset',
+      ($4.AddSequencesToDatasetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.AddSequencesToDatasetResponse.fromBuffer(value));
+  static final _$removeSequencesFromDataset = $grpc.ClientMethod<$4.RemoveSequencesFromDatasetRequest, $4.RemoveSequencesFromDatasetResponse>(
+      '/viam.app.data.v1.DataService/RemoveSequencesFromDataset',
+      ($4.RemoveSequencesFromDatasetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.RemoveSequencesFromDatasetResponse.fromBuffer(value));
   static final _$createIndex = $grpc.ClientMethod<$4.CreateIndexRequest, $4.CreateIndexResponse>(
       '/viam.app.data.v1.DataService/CreateIndex',
       ($4.CreateIndexRequest value) => value.writeToBuffer(),
@@ -149,6 +157,34 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/CreateBinaryDataSignedURL',
       ($4.CreateBinaryDataSignedURLRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.CreateBinaryDataSignedURLResponse.fromBuffer(value));
+  static final _$createSequence = $grpc.ClientMethod<$4.CreateSequenceRequest, $4.CreateSequenceResponse>(
+      '/viam.app.data.v1.DataService/CreateSequence',
+      ($4.CreateSequenceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CreateSequenceResponse.fromBuffer(value));
+  static final _$getSequence = $grpc.ClientMethod<$4.GetSequenceRequest, $4.GetSequenceResponse>(
+      '/viam.app.data.v1.DataService/GetSequence',
+      ($4.GetSequenceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetSequenceResponse.fromBuffer(value));
+  static final _$updateSequence = $grpc.ClientMethod<$4.UpdateSequenceRequest, $4.UpdateSequenceResponse>(
+      '/viam.app.data.v1.DataService/UpdateSequence',
+      ($4.UpdateSequenceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UpdateSequenceResponse.fromBuffer(value));
+  static final _$deleteSequence = $grpc.ClientMethod<$4.DeleteSequenceRequest, $4.DeleteSequenceResponse>(
+      '/viam.app.data.v1.DataService/DeleteSequence',
+      ($4.DeleteSequenceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.DeleteSequenceResponse.fromBuffer(value));
+  static final _$listSequences = $grpc.ClientMethod<$4.ListSequencesRequest, $4.ListSequencesResponse>(
+      '/viam.app.data.v1.DataService/ListSequences',
+      ($4.ListSequencesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ListSequencesResponse.fromBuffer(value));
+  static final _$sequencesByDatasetID = $grpc.ClientMethod<$4.SequencesByDatasetIDRequest, $4.SequencesByDatasetIDResponse>(
+      '/viam.app.data.v1.DataService/SequencesByDatasetID',
+      ($4.SequencesByDatasetIDRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SequencesByDatasetIDResponse.fromBuffer(value));
+  static final _$getSequenceBinaryData = $grpc.ClientMethod<$4.GetSequenceBinaryDataRequest, $4.GetSequenceBinaryDataResponse>(
+      '/viam.app.data.v1.DataService/GetSequenceBinaryData',
+      ($4.GetSequenceBinaryDataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetSequenceBinaryDataResponse.fromBuffer(value));
 
   DataServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -248,6 +284,14 @@ class DataServiceClient extends $grpc.Client {
     return $createUnaryCall(_$removeBinaryDataFromDatasetByIDs, request, options: options);
   }
 
+  $grpc.ResponseFuture<$4.AddSequencesToDatasetResponse> addSequencesToDataset($4.AddSequencesToDatasetRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addSequencesToDataset, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.RemoveSequencesFromDatasetResponse> removeSequencesFromDataset($4.RemoveSequencesFromDatasetRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeSequencesFromDataset, request, options: options);
+  }
+
   $grpc.ResponseFuture<$4.CreateIndexResponse> createIndex($4.CreateIndexRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createIndex, request, options: options);
   }
@@ -282,6 +326,34 @@ class DataServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.CreateBinaryDataSignedURLResponse> createBinaryDataSignedURL($4.CreateBinaryDataSignedURLRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createBinaryDataSignedURL, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.CreateSequenceResponse> createSequence($4.CreateSequenceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createSequence, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetSequenceResponse> getSequence($4.GetSequenceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getSequence, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.UpdateSequenceResponse> updateSequence($4.UpdateSequenceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateSequence, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.DeleteSequenceResponse> deleteSequence($4.DeleteSequenceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteSequence, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.ListSequencesResponse> listSequences($4.ListSequencesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listSequences, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SequencesByDatasetIDResponse> sequencesByDatasetID($4.SequencesByDatasetIDRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$sequencesByDatasetID, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetSequenceBinaryDataResponse> getSequenceBinaryData($4.GetSequenceBinaryDataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getSequenceBinaryData, request, options: options);
   }
 }
 
@@ -451,6 +523,20 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer(value),
         ($4.RemoveBinaryDataFromDatasetByIDsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.AddSequencesToDatasetRequest, $4.AddSequencesToDatasetResponse>(
+        'AddSequencesToDataset',
+        addSequencesToDataset_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.AddSequencesToDatasetRequest.fromBuffer(value),
+        ($4.AddSequencesToDatasetResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.RemoveSequencesFromDatasetRequest, $4.RemoveSequencesFromDatasetResponse>(
+        'RemoveSequencesFromDataset',
+        removeSequencesFromDataset_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.RemoveSequencesFromDatasetRequest.fromBuffer(value),
+        ($4.RemoveSequencesFromDatasetResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.CreateIndexRequest, $4.CreateIndexResponse>(
         'CreateIndex',
         createIndex_Pre,
@@ -514,6 +600,55 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.CreateBinaryDataSignedURLRequest.fromBuffer(value),
         ($4.CreateBinaryDataSignedURLResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CreateSequenceRequest, $4.CreateSequenceResponse>(
+        'CreateSequence',
+        createSequence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.CreateSequenceRequest.fromBuffer(value),
+        ($4.CreateSequenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetSequenceRequest, $4.GetSequenceResponse>(
+        'GetSequence',
+        getSequence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetSequenceRequest.fromBuffer(value),
+        ($4.GetSequenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UpdateSequenceRequest, $4.UpdateSequenceResponse>(
+        'UpdateSequence',
+        updateSequence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.UpdateSequenceRequest.fromBuffer(value),
+        ($4.UpdateSequenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.DeleteSequenceRequest, $4.DeleteSequenceResponse>(
+        'DeleteSequence',
+        deleteSequence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.DeleteSequenceRequest.fromBuffer(value),
+        ($4.DeleteSequenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ListSequencesRequest, $4.ListSequencesResponse>(
+        'ListSequences',
+        listSequences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.ListSequencesRequest.fromBuffer(value),
+        ($4.ListSequencesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SequencesByDatasetIDRequest, $4.SequencesByDatasetIDResponse>(
+        'SequencesByDatasetID',
+        sequencesByDatasetID_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.SequencesByDatasetIDRequest.fromBuffer(value),
+        ($4.SequencesByDatasetIDResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetSequenceBinaryDataRequest, $4.GetSequenceBinaryDataResponse>(
+        'GetSequenceBinaryData',
+        getSequenceBinaryData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetSequenceBinaryDataRequest.fromBuffer(value),
+        ($4.GetSequenceBinaryDataResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$4.TabularDataByFilterResponse> tabularDataByFilter_Pre($grpc.ServiceCall call, $async.Future<$4.TabularDataByFilterRequest> request) async {
@@ -608,6 +743,14 @@ abstract class DataServiceBase extends $grpc.Service {
     return removeBinaryDataFromDatasetByIDs(call, await request);
   }
 
+  $async.Future<$4.AddSequencesToDatasetResponse> addSequencesToDataset_Pre($grpc.ServiceCall call, $async.Future<$4.AddSequencesToDatasetRequest> request) async {
+    return addSequencesToDataset(call, await request);
+  }
+
+  $async.Future<$4.RemoveSequencesFromDatasetResponse> removeSequencesFromDataset_Pre($grpc.ServiceCall call, $async.Future<$4.RemoveSequencesFromDatasetRequest> request) async {
+    return removeSequencesFromDataset(call, await request);
+  }
+
   $async.Future<$4.CreateIndexResponse> createIndex_Pre($grpc.ServiceCall call, $async.Future<$4.CreateIndexRequest> request) async {
     return createIndex(call, await request);
   }
@@ -644,6 +787,34 @@ abstract class DataServiceBase extends $grpc.Service {
     return createBinaryDataSignedURL(call, await request);
   }
 
+  $async.Future<$4.CreateSequenceResponse> createSequence_Pre($grpc.ServiceCall call, $async.Future<$4.CreateSequenceRequest> request) async {
+    return createSequence(call, await request);
+  }
+
+  $async.Future<$4.GetSequenceResponse> getSequence_Pre($grpc.ServiceCall call, $async.Future<$4.GetSequenceRequest> request) async {
+    return getSequence(call, await request);
+  }
+
+  $async.Future<$4.UpdateSequenceResponse> updateSequence_Pre($grpc.ServiceCall call, $async.Future<$4.UpdateSequenceRequest> request) async {
+    return updateSequence(call, await request);
+  }
+
+  $async.Future<$4.DeleteSequenceResponse> deleteSequence_Pre($grpc.ServiceCall call, $async.Future<$4.DeleteSequenceRequest> request) async {
+    return deleteSequence(call, await request);
+  }
+
+  $async.Future<$4.ListSequencesResponse> listSequences_Pre($grpc.ServiceCall call, $async.Future<$4.ListSequencesRequest> request) async {
+    return listSequences(call, await request);
+  }
+
+  $async.Future<$4.SequencesByDatasetIDResponse> sequencesByDatasetID_Pre($grpc.ServiceCall call, $async.Future<$4.SequencesByDatasetIDRequest> request) async {
+    return sequencesByDatasetID(call, await request);
+  }
+
+  $async.Future<$4.GetSequenceBinaryDataResponse> getSequenceBinaryData_Pre($grpc.ServiceCall call, $async.Future<$4.GetSequenceBinaryDataRequest> request) async {
+    return getSequenceBinaryData(call, await request);
+  }
+
   $async.Future<$4.TabularDataByFilterResponse> tabularDataByFilter($grpc.ServiceCall call, $4.TabularDataByFilterRequest request);
   $async.Future<$4.TabularDataBySQLResponse> tabularDataBySQL($grpc.ServiceCall call, $4.TabularDataBySQLRequest request);
   $async.Future<$4.TabularDataByMQLResponse> tabularDataByMQL($grpc.ServiceCall call, $4.TabularDataByMQLRequest request);
@@ -667,6 +838,8 @@ abstract class DataServiceBase extends $grpc.Service {
   $async.Future<$4.ConfigureDatabaseUserResponse> configureDatabaseUser($grpc.ServiceCall call, $4.ConfigureDatabaseUserRequest request);
   $async.Future<$4.AddBinaryDataToDatasetByIDsResponse> addBinaryDataToDatasetByIDs($grpc.ServiceCall call, $4.AddBinaryDataToDatasetByIDsRequest request);
   $async.Future<$4.RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs($grpc.ServiceCall call, $4.RemoveBinaryDataFromDatasetByIDsRequest request);
+  $async.Future<$4.AddSequencesToDatasetResponse> addSequencesToDataset($grpc.ServiceCall call, $4.AddSequencesToDatasetRequest request);
+  $async.Future<$4.RemoveSequencesFromDatasetResponse> removeSequencesFromDataset($grpc.ServiceCall call, $4.RemoveSequencesFromDatasetRequest request);
   $async.Future<$4.CreateIndexResponse> createIndex($grpc.ServiceCall call, $4.CreateIndexRequest request);
   $async.Future<$4.ListIndexesResponse> listIndexes($grpc.ServiceCall call, $4.ListIndexesRequest request);
   $async.Future<$4.DeleteIndexResponse> deleteIndex($grpc.ServiceCall call, $4.DeleteIndexRequest request);
@@ -676,4 +849,11 @@ abstract class DataServiceBase extends $grpc.Service {
   $async.Future<$4.DeleteSavedQueryResponse> deleteSavedQuery($grpc.ServiceCall call, $4.DeleteSavedQueryRequest request);
   $async.Future<$4.ListSavedQueriesResponse> listSavedQueries($grpc.ServiceCall call, $4.ListSavedQueriesRequest request);
   $async.Future<$4.CreateBinaryDataSignedURLResponse> createBinaryDataSignedURL($grpc.ServiceCall call, $4.CreateBinaryDataSignedURLRequest request);
+  $async.Future<$4.CreateSequenceResponse> createSequence($grpc.ServiceCall call, $4.CreateSequenceRequest request);
+  $async.Future<$4.GetSequenceResponse> getSequence($grpc.ServiceCall call, $4.GetSequenceRequest request);
+  $async.Future<$4.UpdateSequenceResponse> updateSequence($grpc.ServiceCall call, $4.UpdateSequenceRequest request);
+  $async.Future<$4.DeleteSequenceResponse> deleteSequence($grpc.ServiceCall call, $4.DeleteSequenceRequest request);
+  $async.Future<$4.ListSequencesResponse> listSequences($grpc.ServiceCall call, $4.ListSequencesRequest request);
+  $async.Future<$4.SequencesByDatasetIDResponse> sequencesByDatasetID($grpc.ServiceCall call, $4.SequencesByDatasetIDRequest request);
+  $async.Future<$4.GetSequenceBinaryDataResponse> getSequenceBinaryData($grpc.ServiceCall call, $4.GetSequenceBinaryDataRequest request);
 }

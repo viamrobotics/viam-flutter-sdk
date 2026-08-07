@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $51;
+import '../../../google/protobuf/timestamp.pb.dart' as $50;
 import '../../packages/v1/packages.pb.dart' as $1;
 import 'build.pbenum.dart';
 
@@ -29,6 +29,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     $core.String? token,
     $core.String? workdir,
     $core.String? distro,
+    $core.String? builder,
   }) {
     final $result = create();
     if (repo != null) {
@@ -55,6 +56,9 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     if (distro != null) {
       $result.distro = distro;
     }
+    if (builder != null) {
+      $result.builder = builder;
+    }
     return $result;
   }
   StartBuildRequest._() : super();
@@ -70,6 +74,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'token')
     ..aOS(7, _omitFieldNames ? '' : 'workdir')
     ..aOS(8, _omitFieldNames ? '' : 'distro')
+    ..aOS(9, _omitFieldNames ? '' : 'builder')
     ..hasRequiredFields = false
   ;
 
@@ -159,7 +164,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearWorkdir() => clearField(7);
 
-  /// optional distro for linux platforms. defaults to bullseye.
+  /// optional distro for linux platforms.
   /// must be bookworm for cpp module builds.
   @$pb.TagNumber(8)
   $core.String get distro => $_getSZ(7);
@@ -169,15 +174,30 @@ class StartBuildRequest extends $pb.GeneratedMessage {
   $core.bool hasDistro() => $_has(7);
   @$pb.TagNumber(8)
   void clearDistro() => clearField(8);
+
+  /// optional target builder. defaults to 'default'.
+  /// use 'viam-cloudbuild-test' to target the new Viam build service (org must be whitelisted).
+  @$pb.TagNumber(9)
+  $core.String get builder => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set builder($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasBuilder() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearBuilder() => clearField(9);
 }
 
 class StartBuildResponse extends $pb.GeneratedMessage {
   factory StartBuildResponse({
     $core.String? buildId,
+    $core.String? builderFallbackMessage,
   }) {
     final $result = create();
     if (buildId != null) {
       $result.buildId = buildId;
+    }
+    if (builderFallbackMessage != null) {
+      $result.builderFallbackMessage = builderFallbackMessage;
     }
     return $result;
   }
@@ -187,6 +207,7 @@ class StartBuildResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartBuildResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'buildId')
+    ..aOS(2, _omitFieldNames ? '' : 'builderFallbackMessage')
     ..hasRequiredFields = false
   ;
 
@@ -219,6 +240,16 @@ class StartBuildResponse extends $pb.GeneratedMessage {
   $core.bool hasBuildId() => $_has(0);
   @$pb.TagNumber(1)
   void clearBuildId() => clearField(1);
+
+  /// present when the requested builder was unavailable for this org and the default builder was used instead.
+  @$pb.TagNumber(2)
+  $core.String get builderFallbackMessage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set builderFallbackMessage($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBuilderFallbackMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBuilderFallbackMessage() => clearField(2);
 }
 
 class GetLogsRequest extends $pb.GeneratedMessage {
@@ -290,6 +321,7 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? workdir,
     $core.String? moduleId,
+    $core.String? distro,
   }) {
     final $result = create();
     if (platform != null) {
@@ -301,6 +333,9 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     if (moduleId != null) {
       $result.moduleId = moduleId;
     }
+    if (distro != null) {
+      $result.distro = distro;
+    }
     return $result;
   }
   ReloadBuildInfo._() : super();
@@ -311,6 +346,7 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'platform')
     ..aOS(2, _omitFieldNames ? '' : 'workdir')
     ..aOS(3, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(4, _omitFieldNames ? '' : 'distro')
     ..hasRequiredFields = false
   ;
 
@@ -364,6 +400,17 @@ class ReloadBuildInfo extends $pb.GeneratedMessage {
   $core.bool hasModuleId() => $_has(2);
   @$pb.TagNumber(3)
   void clearModuleId() => clearField(3);
+
+  /// optional distro for linux platforms.
+  /// must be bookworm for cpp module builds.
+  @$pb.TagNumber(4)
+  $core.String get distro => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set distro($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDistro() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDistro() => clearField(4);
 }
 
 enum StartReloadBuildRequest_CloudBuild {
@@ -376,6 +423,7 @@ class StartReloadBuildRequest extends $pb.GeneratedMessage {
   factory StartReloadBuildRequest({
     $1.CreatePackageRequest? package,
     ReloadBuildInfo? buildInfo,
+    $core.String? builder,
   }) {
     final $result = create();
     if (package != null) {
@@ -383,6 +431,9 @@ class StartReloadBuildRequest extends $pb.GeneratedMessage {
     }
     if (buildInfo != null) {
       $result.buildInfo = buildInfo;
+    }
+    if (builder != null) {
+      $result.builder = builder;
     }
     return $result;
   }
@@ -399,6 +450,7 @@ class StartReloadBuildRequest extends $pb.GeneratedMessage {
     ..oo(0, [1, 2])
     ..aOM<$1.CreatePackageRequest>(1, _omitFieldNames ? '' : 'package', subBuilder: $1.CreatePackageRequest.create)
     ..aOM<ReloadBuildInfo>(2, _omitFieldNames ? '' : 'buildInfo', subBuilder: ReloadBuildInfo.create)
+    ..aOS(3, _omitFieldNames ? '' : 'builder')
     ..hasRequiredFields = false
   ;
 
@@ -447,15 +499,30 @@ class StartReloadBuildRequest extends $pb.GeneratedMessage {
   void clearBuildInfo() => clearField(2);
   @$pb.TagNumber(2)
   ReloadBuildInfo ensureBuildInfo() => $_ensure(1);
+
+  /// optional target builder. defaults to 'default'.
+  /// use 'viam-cloudbuild-test' to target the new Viam build service (org must be whitelisted).
+  @$pb.TagNumber(3)
+  $core.String get builder => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set builder($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBuilder() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBuilder() => clearField(3);
 }
 
 class StartReloadBuildResponse extends $pb.GeneratedMessage {
   factory StartReloadBuildResponse({
     $core.String? buildId,
+    $core.String? builderFallbackMessage,
   }) {
     final $result = create();
     if (buildId != null) {
       $result.buildId = buildId;
+    }
+    if (builderFallbackMessage != null) {
+      $result.builderFallbackMessage = builderFallbackMessage;
     }
     return $result;
   }
@@ -465,6 +532,7 @@ class StartReloadBuildResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartReloadBuildResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'buildId')
+    ..aOS(2, _omitFieldNames ? '' : 'builderFallbackMessage')
     ..hasRequiredFields = false
   ;
 
@@ -497,6 +565,285 @@ class StartReloadBuildResponse extends $pb.GeneratedMessage {
   $core.bool hasBuildId() => $_has(0);
   @$pb.TagNumber(1)
   void clearBuildId() => clearField(1);
+
+  /// present when the requested builder was unavailable for this org and the default builder was used instead.
+  @$pb.TagNumber(2)
+  $core.String get builderFallbackMessage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set builderFallbackMessage($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBuilderFallbackMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBuilderFallbackMessage() => clearField(2);
+}
+
+class SourceUploadBuildInfo extends $pb.GeneratedMessage {
+  factory SourceUploadBuildInfo({
+    $core.Iterable<$core.String>? platforms,
+    $core.String? workdir,
+    $core.String? moduleId,
+    $core.String? distro,
+  }) {
+    final $result = create();
+    if (platforms != null) {
+      $result.platforms.addAll(platforms);
+    }
+    if (workdir != null) {
+      $result.workdir = workdir;
+    }
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (distro != null) {
+      $result.distro = distro;
+    }
+    return $result;
+  }
+  SourceUploadBuildInfo._() : super();
+  factory SourceUploadBuildInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SourceUploadBuildInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SourceUploadBuildInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'platforms')
+    ..aOS(2, _omitFieldNames ? '' : 'workdir')
+    ..aOS(3, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(4, _omitFieldNames ? '' : 'distro')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SourceUploadBuildInfo clone() => SourceUploadBuildInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SourceUploadBuildInfo copyWith(void Function(SourceUploadBuildInfo) updates) => super.copyWith((message) => updates(message as SourceUploadBuildInfo)) as SourceUploadBuildInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SourceUploadBuildInfo create() => SourceUploadBuildInfo._();
+  SourceUploadBuildInfo createEmptyInstance() => create();
+  static $pb.PbList<SourceUploadBuildInfo> createRepeated() => $pb.PbList<SourceUploadBuildInfo>();
+  @$core.pragma('dart2js:noInline')
+  static SourceUploadBuildInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SourceUploadBuildInfo>(create);
+  static SourceUploadBuildInfo? _defaultInstance;
+
+  /// platforms to build the module for
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get platforms => $_getList(0);
+
+  /// optional working directory. defaults to repo root.
+  @$pb.TagNumber(2)
+  $core.String get workdir => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workdir($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWorkdir() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkdir() => clearField(2);
+
+  /// org id/namespace and module name
+  @$pb.TagNumber(3)
+  $core.String get moduleId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set moduleId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasModuleId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearModuleId() => clearField(3);
+
+  /// optional distro for linux platforms.
+  /// must be bookworm for cpp module builds.
+  @$pb.TagNumber(4)
+  $core.String get distro => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set distro($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDistro() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDistro() => clearField(4);
+}
+
+enum StartSourceUploadBuildRequest_CloudBuild {
+  package, 
+  buildInfo, 
+  notSet
+}
+
+class StartSourceUploadBuildRequest extends $pb.GeneratedMessage {
+  factory StartSourceUploadBuildRequest({
+    $1.CreatePackageRequest? package,
+    SourceUploadBuildInfo? buildInfo,
+    $core.String? moduleVersion,
+    $core.String? builder,
+  }) {
+    final $result = create();
+    if (package != null) {
+      $result.package = package;
+    }
+    if (buildInfo != null) {
+      $result.buildInfo = buildInfo;
+    }
+    if (moduleVersion != null) {
+      $result.moduleVersion = moduleVersion;
+    }
+    if (builder != null) {
+      $result.builder = builder;
+    }
+    return $result;
+  }
+  StartSourceUploadBuildRequest._() : super();
+  factory StartSourceUploadBuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StartSourceUploadBuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, StartSourceUploadBuildRequest_CloudBuild> _StartSourceUploadBuildRequest_CloudBuildByTag = {
+    1 : StartSourceUploadBuildRequest_CloudBuild.package,
+    2 : StartSourceUploadBuildRequest_CloudBuild.buildInfo,
+    0 : StartSourceUploadBuildRequest_CloudBuild.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartSourceUploadBuildRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOM<$1.CreatePackageRequest>(1, _omitFieldNames ? '' : 'package', subBuilder: $1.CreatePackageRequest.create)
+    ..aOM<SourceUploadBuildInfo>(2, _omitFieldNames ? '' : 'buildInfo', subBuilder: SourceUploadBuildInfo.create)
+    ..aOS(3, _omitFieldNames ? '' : 'moduleVersion')
+    ..aOS(4, _omitFieldNames ? '' : 'builder')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StartSourceUploadBuildRequest clone() => StartSourceUploadBuildRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StartSourceUploadBuildRequest copyWith(void Function(StartSourceUploadBuildRequest) updates) => super.copyWith((message) => updates(message as StartSourceUploadBuildRequest)) as StartSourceUploadBuildRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartSourceUploadBuildRequest create() => StartSourceUploadBuildRequest._();
+  StartSourceUploadBuildRequest createEmptyInstance() => create();
+  static $pb.PbList<StartSourceUploadBuildRequest> createRepeated() => $pb.PbList<StartSourceUploadBuildRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StartSourceUploadBuildRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartSourceUploadBuildRequest>(create);
+  static StartSourceUploadBuildRequest? _defaultInstance;
+
+  StartSourceUploadBuildRequest_CloudBuild whichCloudBuild() => _StartSourceUploadBuildRequest_CloudBuildByTag[$_whichOneof(0)]!;
+  void clearCloudBuild() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  $1.CreatePackageRequest get package => $_getN(0);
+  @$pb.TagNumber(1)
+  set package($1.CreatePackageRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPackage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPackage() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.CreatePackageRequest ensurePackage() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  SourceUploadBuildInfo get buildInfo => $_getN(1);
+  @$pb.TagNumber(2)
+  set buildInfo(SourceUploadBuildInfo v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBuildInfo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBuildInfo() => clearField(2);
+  @$pb.TagNumber(2)
+  SourceUploadBuildInfo ensureBuildInfo() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get moduleVersion => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set moduleVersion($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasModuleVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearModuleVersion() => clearField(3);
+
+  /// optional target builder. defaults to 'default'.
+  /// use 'viam-cloudbuild-test' to target the new Viam build service (org must be whitelisted).
+  @$pb.TagNumber(4)
+  $core.String get builder => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set builder($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBuilder() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBuilder() => clearField(4);
+}
+
+class StartSourceUploadBuildResponse extends $pb.GeneratedMessage {
+  factory StartSourceUploadBuildResponse({
+    $core.String? buildId,
+    $core.String? builderFallbackMessage,
+  }) {
+    final $result = create();
+    if (buildId != null) {
+      $result.buildId = buildId;
+    }
+    if (builderFallbackMessage != null) {
+      $result.builderFallbackMessage = builderFallbackMessage;
+    }
+    return $result;
+  }
+  StartSourceUploadBuildResponse._() : super();
+  factory StartSourceUploadBuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StartSourceUploadBuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartSourceUploadBuildResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'buildId')
+    ..aOS(2, _omitFieldNames ? '' : 'builderFallbackMessage')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StartSourceUploadBuildResponse clone() => StartSourceUploadBuildResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StartSourceUploadBuildResponse copyWith(void Function(StartSourceUploadBuildResponse) updates) => super.copyWith((message) => updates(message as StartSourceUploadBuildResponse)) as StartSourceUploadBuildResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartSourceUploadBuildResponse create() => StartSourceUploadBuildResponse._();
+  StartSourceUploadBuildResponse createEmptyInstance() => create();
+  static $pb.PbList<StartSourceUploadBuildResponse> createRepeated() => $pb.PbList<StartSourceUploadBuildResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StartSourceUploadBuildResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartSourceUploadBuildResponse>(create);
+  static StartSourceUploadBuildResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get buildId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set buildId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBuildId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBuildId() => clearField(1);
+
+  /// present when the requested builder was unavailable for this org and the default builder was used instead.
+  @$pb.TagNumber(2)
+  $core.String get builderFallbackMessage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set builderFallbackMessage($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBuilderFallbackMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBuilderFallbackMessage() => clearField(2);
 }
 
 class StartPackageBuildRequest extends $pb.GeneratedMessage {
@@ -505,6 +852,7 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     $core.String? packageVersion,
     $core.String? moduleVersion,
     $core.Iterable<$core.String>? platforms,
+    $core.String? distro,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -519,6 +867,9 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     if (platforms != null) {
       $result.platforms.addAll(platforms);
     }
+    if (distro != null) {
+      $result.distro = distro;
+    }
     return $result;
   }
   StartPackageBuildRequest._() : super();
@@ -530,6 +881,7 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'packageVersion')
     ..aOS(3, _omitFieldNames ? '' : 'moduleVersion')
     ..pPS(4, _omitFieldNames ? '' : 'platforms')
+    ..aOS(5, _omitFieldNames ? '' : 'distro')
     ..hasRequiredFields = false
   ;
 
@@ -587,6 +939,17 @@ class StartPackageBuildRequest extends $pb.GeneratedMessage {
   /// specify the platforms to build for (ex: linux/arm64)
   @$pb.TagNumber(4)
   $core.List<$core.String> get platforms => $_getList(3);
+
+  /// optional distro for linux platforms.
+  /// must be bookworm for cpp module builds.
+  @$pb.TagNumber(5)
+  $core.String get distro => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set distro($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDistro() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDistro() => clearField(5);
 }
 
 class StartPackageBuildResponse extends $pb.GeneratedMessage {
@@ -713,8 +1076,8 @@ class JobInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? version,
     JobStatus? status,
-    $51.Timestamp? startTime,
-    $51.Timestamp? endTime,
+    $50.Timestamp? startTime,
+    $50.Timestamp? endTime,
     $core.String? buildStep,
   }) {
     final $result = create();
@@ -750,8 +1113,8 @@ class JobInfo extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'platform')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..e<JobStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: JobStatus.JOB_STATUS_UNSPECIFIED, valueOf: JobStatus.valueOf, enumValues: JobStatus.values)
-    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $50.Timestamp.create)
     ..aOS(7, _omitFieldNames ? '' : 'buildStep')
     ..hasRequiredFields = false
   ;
@@ -814,26 +1177,26 @@ class JobInfo extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $51.Timestamp get startTime => $_getN(4);
+  $50.Timestamp get startTime => $_getN(4);
   @$pb.TagNumber(5)
-  set startTime($51.Timestamp v) { setField(5, v); }
+  set startTime($50.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $51.Timestamp ensureStartTime() => $_ensure(4);
+  $50.Timestamp ensureStartTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $51.Timestamp get endTime => $_getN(5);
+  $50.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($51.Timestamp v) { setField(6, v); }
+  set endTime($50.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $51.Timestamp ensureEndTime() => $_ensure(5);
+  $50.Timestamp ensureEndTime() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get buildStep => $_getSZ(6);

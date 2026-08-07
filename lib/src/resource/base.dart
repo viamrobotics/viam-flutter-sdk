@@ -83,6 +83,11 @@ abstract class Resource {
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) {
     throw UnimplementedError();
   }
+
+  /// Get the status of the [Resource]
+  Future<Map<String, dynamic>> getStatus() async {
+    return {};
+  }
 }
 
 /// {@category Viam SDK}

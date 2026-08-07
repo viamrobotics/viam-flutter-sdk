@@ -34,3 +34,7 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 
 **/Podfile.lock
+
+# Claude Code
+.claude/worktrees
+.claude/settings.local.json

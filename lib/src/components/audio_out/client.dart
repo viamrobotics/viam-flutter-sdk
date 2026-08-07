@@ -23,6 +23,15 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
   AudioOutClient(this.name, this.channel);
 
   @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request);
+    return response.geometries;
+  }
+
+  @override
   Future<PlayResponse> play({required Uint8List audioData, required AudioInfo audioInfo, Map<String, dynamic>? extra}) async {
     final request = PlayRequest()
       ..name = name
@@ -30,6 +39,28 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
       ..audioInfo = audioInfo
       ..extra = extra?.toStruct() ?? Struct();
     return await client.play(request);
+  }
+
+  @override
+  Future<PlayStreamResponse> playStream({
+    required AudioInfo audioInfo,
+    required Stream<Uint8List> audioStream,
+    Map<String, dynamic>? extra,
+  }) async {
+    final init = PlayStreamRequest()
+      ..init = (PlayStreamInit()
+        ..name = name
+        ..audioInfo = audioInfo
+        ..extra = extra?.toStruct() ?? Struct());
+
+    Stream<PlayStreamRequest> requests() async* {
+      yield init;
+      await for (final chunk in audioStream) {
+        yield PlayStreamRequest()..audioChunk = (PlayStreamChunk()..audioData = chunk);
+      }
+    }
+
+    return await client.playStream(requests());
   }
 
   @override
@@ -46,6 +77,13 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request);
+    return response.result.toMap();
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = GetStatusRequest()..name = name;
+    final response = await client.getStatus(request);
     return response.result.toMap();
   }
 }

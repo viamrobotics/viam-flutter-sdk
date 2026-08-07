@@ -13,12 +13,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../app/v1/robot.pb.dart' as $14;
-import '../../robot/v1/robot.pb.dart' as $35;
+import '../../app/v1/robot.pb.dart' as $15;
+import '../../robot/v1/robot.pb.dart' as $34;
 
 class AddResourceRequest extends $pb.GeneratedMessage {
   factory AddResourceRequest({
-    $14.ComponentConfig? config,
+    $15.ComponentConfig? config,
     $core.Iterable<$core.String>? dependencies,
   }) {
     final $result = create();
@@ -35,7 +35,7 @@ class AddResourceRequest extends $pb.GeneratedMessage {
   factory AddResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
-    ..aOM<$14.ComponentConfig>(1, _omitFieldNames ? '' : 'config', subBuilder: $14.ComponentConfig.create)
+    ..aOM<$15.ComponentConfig>(1, _omitFieldNames ? '' : 'config', subBuilder: $15.ComponentConfig.create)
     ..pPS(2, _omitFieldNames ? '' : 'dependencies')
     ..hasRequiredFields = false
   ;
@@ -62,15 +62,15 @@ class AddResourceRequest extends $pb.GeneratedMessage {
   static AddResourceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $14.ComponentConfig get config => $_getN(0);
+  $15.ComponentConfig get config => $_getN(0);
   @$pb.TagNumber(1)
-  set config($14.ComponentConfig v) { setField(1, v); }
+  set config($15.ComponentConfig v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasConfig() => $_has(0);
   @$pb.TagNumber(1)
   void clearConfig() => clearField(1);
   @$pb.TagNumber(1)
-  $14.ComponentConfig ensureConfig() => $_ensure(0);
+  $15.ComponentConfig ensureConfig() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get dependencies => $_getList(1);
@@ -110,7 +110,7 @@ class AddResourceResponse extends $pb.GeneratedMessage {
 
 class ReconfigureResourceRequest extends $pb.GeneratedMessage {
   factory ReconfigureResourceRequest({
-    $14.ComponentConfig? config,
+    $15.ComponentConfig? config,
     $core.Iterable<$core.String>? dependencies,
   }) {
     final $result = create();
@@ -127,7 +127,7 @@ class ReconfigureResourceRequest extends $pb.GeneratedMessage {
   factory ReconfigureResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReconfigureResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
-    ..aOM<$14.ComponentConfig>(1, _omitFieldNames ? '' : 'config', subBuilder: $14.ComponentConfig.create)
+    ..aOM<$15.ComponentConfig>(1, _omitFieldNames ? '' : 'config', subBuilder: $15.ComponentConfig.create)
     ..pPS(2, _omitFieldNames ? '' : 'dependencies')
     ..hasRequiredFields = false
   ;
@@ -154,15 +154,15 @@ class ReconfigureResourceRequest extends $pb.GeneratedMessage {
   static ReconfigureResourceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $14.ComponentConfig get config => $_getN(0);
+  $15.ComponentConfig get config => $_getN(0);
   @$pb.TagNumber(1)
-  set config($14.ComponentConfig v) { setField(1, v); }
+  set config($15.ComponentConfig v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasConfig() => $_has(0);
   @$pb.TagNumber(1)
   void clearConfig() => clearField(1);
   @$pb.TagNumber(1)
-  $14.ComponentConfig ensureConfig() => $_ensure(0);
+  $15.ComponentConfig ensureConfig() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get dependencies => $_getList(1);
@@ -284,7 +284,7 @@ class RemoveResourceResponse extends $pb.GeneratedMessage {
 
 class HandlerDefinition extends $pb.GeneratedMessage {
   factory HandlerDefinition({
-    $35.ResourceRPCSubtype? subtype,
+    $34.ResourceRPCSubtype? subtype,
     $core.Iterable<$core.String>? models,
   }) {
     final $result = create();
@@ -301,7 +301,7 @@ class HandlerDefinition extends $pb.GeneratedMessage {
   factory HandlerDefinition.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HandlerDefinition', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
-    ..aOM<$35.ResourceRPCSubtype>(1, _omitFieldNames ? '' : 'subtype', subBuilder: $35.ResourceRPCSubtype.create)
+    ..aOM<$34.ResourceRPCSubtype>(1, _omitFieldNames ? '' : 'subtype', subBuilder: $34.ResourceRPCSubtype.create)
     ..pPS(2, _omitFieldNames ? '' : 'models')
     ..hasRequiredFields = false
   ;
@@ -328,15 +328,15 @@ class HandlerDefinition extends $pb.GeneratedMessage {
   static HandlerDefinition? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $35.ResourceRPCSubtype get subtype => $_getN(0);
+  $34.ResourceRPCSubtype get subtype => $_getN(0);
   @$pb.TagNumber(1)
-  set subtype($35.ResourceRPCSubtype v) { setField(1, v); }
+  set subtype($34.ResourceRPCSubtype v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSubtype() => $_has(0);
   @$pb.TagNumber(1)
   void clearSubtype() => clearField(1);
   @$pb.TagNumber(1)
-  $35.ResourceRPCSubtype ensureSubtype() => $_ensure(0);
+  $34.ResourceRPCSubtype ensureSubtype() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get models => $_getList(1);
@@ -388,15 +388,21 @@ class HandlerMap extends $pb.GeneratedMessage {
 
 class ReadyRequest extends $pb.GeneratedMessage {
   factory ReadyRequest({
+  @$core.Deprecated('This field is deprecated.')
     $core.String? parentAddress,
     $core.String? webrtcOffer,
+    $core.String? rawParentAddress,
   }) {
     final $result = create();
     if (parentAddress != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.parentAddress = parentAddress;
     }
     if (webrtcOffer != null) {
       $result.webrtcOffer = webrtcOffer;
+    }
+    if (rawParentAddress != null) {
+      $result.rawParentAddress = rawParentAddress;
     }
     return $result;
   }
@@ -407,6 +413,7 @@ class ReadyRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'parentAddress')
     ..aOS(2, _omitFieldNames ? '' : 'webrtcOffer')
+    ..aOS(3, _omitFieldNames ? '' : 'rawParentAddress')
     ..hasRequiredFields = false
   ;
 
@@ -431,12 +438,16 @@ class ReadyRequest extends $pb.GeneratedMessage {
   static ReadyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReadyRequest>(create);
   static ReadyRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get parentAddress => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set parentAddress($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasParentAddress() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearParentAddress() => clearField(1);
 
@@ -448,6 +459,15 @@ class ReadyRequest extends $pb.GeneratedMessage {
   $core.bool hasWebrtcOffer() => $_has(1);
   @$pb.TagNumber(2)
   void clearWebrtcOffer() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get rawParentAddress => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set rawParentAddress($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRawParentAddress() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRawParentAddress() => clearField(3);
 }
 
 class ReadyResponse extends $pb.GeneratedMessage {
@@ -532,7 +552,7 @@ class ReadyResponse extends $pb.GeneratedMessage {
 
 class ValidateConfigRequest extends $pb.GeneratedMessage {
   factory ValidateConfigRequest({
-    $14.ComponentConfig? config,
+    $15.ComponentConfig? config,
   }) {
     final $result = create();
     if (config != null) {
@@ -545,7 +565,7 @@ class ValidateConfigRequest extends $pb.GeneratedMessage {
   factory ValidateConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ValidateConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
-    ..aOM<$14.ComponentConfig>(1, _omitFieldNames ? '' : 'config', subBuilder: $14.ComponentConfig.create)
+    ..aOM<$15.ComponentConfig>(1, _omitFieldNames ? '' : 'config', subBuilder: $15.ComponentConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -571,15 +591,15 @@ class ValidateConfigRequest extends $pb.GeneratedMessage {
   static ValidateConfigRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $14.ComponentConfig get config => $_getN(0);
+  $15.ComponentConfig get config => $_getN(0);
   @$pb.TagNumber(1)
-  set config($14.ComponentConfig v) { setField(1, v); }
+  set config($15.ComponentConfig v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasConfig() => $_has(0);
   @$pb.TagNumber(1)
   void clearConfig() => clearField(1);
   @$pb.TagNumber(1)
-  $14.ComponentConfig ensureConfig() => $_ensure(0);
+  $15.ComponentConfig ensureConfig() => $_ensure(0);
 }
 
 class ValidateConfigResponse extends $pb.GeneratedMessage {

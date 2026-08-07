@@ -76,6 +76,7 @@ const UsageCostType$json = {
     {'1': 'USAGE_COST_TYPE_BINARY_DATA_CROSS_REGION_EGRESS', '2': 24},
     {'1': 'USAGE_COST_TYPE_PIPELINE_SINK_CLOUD_STORAGE', '2': 25},
     {'1': 'USAGE_COST_TYPE_PIPELINE_SINK_COMPUTE', '2': 26},
+    {'1': 'USAGE_COST_TYPE_PREMIUM_MODULE', '2': 27},
   ],
 };
 
@@ -101,7 +102,8 @@ final $typed_data.Uint8List usageCostTypeDescriptor = $convert.base64Decode(
     'VfQ0xPVURfU1RPUkFHRRAWEjEKLVVTQUdFX0NPU1RfVFlQRV9UQUJVTEFSX0RBVEFfREFUQUJB'
     'U0VfQ09NUFVURRAXEjMKL1VTQUdFX0NPU1RfVFlQRV9CSU5BUllfREFUQV9DUk9TU19SRUdJT0'
     '5fRUdSRVNTEBgSLworVVNBR0VfQ09TVF9UWVBFX1BJUEVMSU5FX1NJTktfQ0xPVURfU1RPUkFH'
-    'RRAZEikKJVVTQUdFX0NPU1RfVFlQRV9QSVBFTElORV9TSU5LX0NPTVBVVEUQGg==');
+    'RRAZEikKJVVTQUdFX0NPU1RfVFlQRV9QSVBFTElORV9TSU5LX0NPTVBVVEUQGhIiCh5VU0FHRV'
+    '9DT1NUX1RZUEVfUFJFTUlVTV9NT0RVTEUQGw==');
 
 @$core.Deprecated('Use sourceTypeDescriptor instead')
 const SourceType$json = {
@@ -128,6 +130,8 @@ const InvoiceSummary$json = {
     {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
     {'1': 'due_date', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'dueDate'},
     {'1': 'paid_date', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'paidDate'},
+    {'1': 'last_payment_failure_reason', '3': 7, '4': 1, '5': 9, '10': 'lastPaymentFailureReason'},
+    {'1': 'last_payment_failure_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastPaymentFailureAt'},
   ],
 };
 
@@ -137,7 +141,10 @@ final $typed_data.Uint8List invoiceSummaryDescriptor = $convert.base64Decode(
     'ouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILaW52b2ljZURhdGUSJQoOaW52b2ljZV9hbW91'
     'bnQYAyABKAFSDWludm9pY2VBbW91bnQSFgoGc3RhdHVzGAQgASgJUgZzdGF0dXMSNQoIZHVlX2'
     'RhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgdkdWVEYXRlEjcKCXBhaWRf'
-    'ZGF0ZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCHBhaWREYXRl');
+    'ZGF0ZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCHBhaWREYXRlEj0KG2xhc3'
+    'RfcGF5bWVudF9mYWlsdXJlX3JlYXNvbhgHIAEoCVIYbGFzdFBheW1lbnRGYWlsdXJlUmVhc29u'
+    'ElEKF2xhc3RfcGF5bWVudF9mYWlsdXJlX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcFIUbGFzdFBheW1lbnRGYWlsdXJlQXQ=');
 
 @$core.Deprecated('Use paymentMethodCardDescriptor instead')
 const PaymentMethodCard$json = {

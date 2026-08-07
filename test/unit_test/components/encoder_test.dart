@@ -33,6 +33,13 @@ class FakeEncoder extends Encoder {
     return {'command': command};
   }
 
+  Map<String, dynamic> statusResult = {'status': 'ok'};
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
+  }
+
   @override
   Future<(double, PositionType)> position({PositionType? positionType, Map<String, dynamic>? extra}) async {
     this.extra = extra;
@@ -97,6 +104,11 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await encoder.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await encoder.getStatus();
+      expect(result, encoder.statusResult);
     });
 
     test('getGeometries', () async {
@@ -179,6 +191,12 @@ void main() {
         expect(resp.result.toMap()['command'], cmd);
       });
 
+      test('getStatus', () async {
+        final client = EncoderServiceClient(channel);
+        final response = await client.getStatus(common_pb.GetStatusRequest()..name = name);
+        expect(response.result.toMap(), encoder.statusResult);
+      });
+
       test('extra', () async {
         expect(encoder.extra, null);
 
@@ -231,6 +249,12 @@ void main() {
         final client = EncoderClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = EncoderClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, encoder.statusResult);
       });
 
       test('extra', () async {

@@ -59,7 +59,8 @@ class LocalizedText extends $pb.GeneratedMessage {
   static LocalizedText getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LocalizedText>(create);
   static LocalizedText? _defaultInstance;
 
-  /// Localized string in the language corresponding to `language_code' below.
+  /// Localized string in the language corresponding to
+  /// [language_code][google.type.LocalizedText.language_code] below.
   @$pb.TagNumber(1)
   $core.String get text => $_getSZ(0);
   @$pb.TagNumber(1)

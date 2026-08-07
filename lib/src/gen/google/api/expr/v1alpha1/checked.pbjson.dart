@@ -203,6 +203,7 @@ const Decl_FunctionDecl$json = {
   '1': 'FunctionDecl',
   '2': [
     {'1': 'overloads', '3': 1, '4': 3, '5': 11, '6': '.google.api.expr.v1alpha1.Decl.FunctionDecl.Overload', '10': 'overloads'},
+    {'1': 'doc', '3': 2, '4': 1, '5': 9, '10': 'doc'},
   ],
   '3': [Decl_FunctionDecl_Overload$json],
 };
@@ -227,14 +228,14 @@ final $typed_data.Uint8List declDescriptor = $convert.base64Decode(
     'Ky5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRGVjbC5GdW5jdGlvbkRlY2xIAFIIZnVuY3Rpb2'
     '4aiwEKCUlkZW50RGVjbBIyCgR0eXBlGAEgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGEx'
     'LlR5cGVSBHR5cGUSOAoFdmFsdWUYAiABKAsyIi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuQ2'
-    '9uc3RhbnRSBXZhbHVlEhAKA2RvYxgDIAEoCVIDZG9jGu4CCgxGdW5jdGlvbkRlY2wSUgoJb3Zl'
+    '9uc3RhbnRSBXZhbHVlEhAKA2RvYxgDIAEoCVIDZG9jGoADCgxGdW5jdGlvbkRlY2wSUgoJb3Zl'
     'cmxvYWRzGAEgAygLMjQuZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkRlY2wuRnVuY3Rpb25EZW'
-    'NsLk92ZXJsb2FkUglvdmVybG9hZHMaiQIKCE92ZXJsb2FkEh8KC292ZXJsb2FkX2lkGAEgASgJ'
-    'UgpvdmVybG9hZElkEjYKBnBhcmFtcxgCIAMoCzIeLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS'
-    '5UeXBlUgZwYXJhbXMSHwoLdHlwZV9wYXJhbXMYAyADKAlSCnR5cGVQYXJhbXMSPwoLcmVzdWx0'
-    'X3R5cGUYBCABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuVHlwZVIKcmVzdWx0VHlwZR'
-    'IwChRpc19pbnN0YW5jZV9mdW5jdGlvbhgFIAEoCFISaXNJbnN0YW5jZUZ1bmN0aW9uEhAKA2Rv'
-    'YxgGIAEoCVIDZG9jQgsKCWRlY2xfa2luZA==');
+    'NsLk92ZXJsb2FkUglvdmVybG9hZHMSEAoDZG9jGAIgASgJUgNkb2MaiQIKCE92ZXJsb2FkEh8K'
+    'C292ZXJsb2FkX2lkGAEgASgJUgpvdmVybG9hZElkEjYKBnBhcmFtcxgCIAMoCzIeLmdvb2dsZS'
+    '5hcGkuZXhwci52MWFscGhhMS5UeXBlUgZwYXJhbXMSHwoLdHlwZV9wYXJhbXMYAyADKAlSCnR5'
+    'cGVQYXJhbXMSPwoLcmVzdWx0X3R5cGUYBCABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYT'
+    'EuVHlwZVIKcmVzdWx0VHlwZRIwChRpc19pbnN0YW5jZV9mdW5jdGlvbhgFIAEoCFISaXNJbnN0'
+    'YW5jZUZ1bmN0aW9uEhAKA2RvYxgGIAEoCVIDZG9jQgsKCWRlY2xfa2luZA==');
 
 @$core.Deprecated('Use referenceDescriptor instead')
 const Reference$json = {

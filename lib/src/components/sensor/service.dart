@@ -36,8 +36,16 @@ class SensorService extends SensorServiceBase {
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) async {
+    final sensor = _fromManager(request.name);
+    final geometries = await sensor.getGeometries(extra: request.extra.toMap());
+    return GetGeometriesResponse()..geometries.addAll(geometries);
+  }
+
+  @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final sensor = _fromManager(request.name);
+    final result = await sensor.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
   }
 }

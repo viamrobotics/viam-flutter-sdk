@@ -29,6 +29,13 @@ class ArmService extends ArmServiceBase {
   }
 
   @override
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final arm = _armFromManager(request.name);
+    final result = await arm.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
+
+  @override
   Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
     final arm = _armFromManager(request.name);
     final isMoving = await arm.isMoving();

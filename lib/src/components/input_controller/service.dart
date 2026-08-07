@@ -45,9 +45,10 @@ class InputControllerService extends InputControllerServiceBase {
   }
 
   @override
-  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) async {
+    final inputController = _fromManager(request.name);
+    final geometries = await inputController.getGeometries(extra: request.extra.toMap());
+    return common_pb.GetGeometriesResponse()..geometries.addAll(geometries);
   }
 
   @override
@@ -92,5 +93,12 @@ class InputControllerService extends InputControllerServiceBase {
     } finally {
       await eventController.close();
     }
+  }
+
+  @override
+  Future<common_pb.GetStatusResponse> getStatus(ServiceCall call, common_pb.GetStatusRequest request) async {
+    final inputController = _fromManager(request.name);
+    final result = await inputController.getStatus();
+    return common_pb.GetStatusResponse()..result = result.toStruct();
   }
 }

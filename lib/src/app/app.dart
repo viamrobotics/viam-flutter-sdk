@@ -833,6 +833,30 @@ class AppClient {
     return await _client.createKeyFromExistingKeyAuthorizations(request);
   }
 
+  /// Create a new user for an OAuth application.
+  ///
+  /// Returns the [CreateOAuthAppUserResponse] containing the generated `authToken`,
+  /// `registrationId`, `userId`, and `refreshToken` for the newly created user.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<CreateOAuthAppUserResponse> createOAuthAppUser({
+    required String orgId,
+    required String applicationId,
+    required String email,
+    required String firstName,
+    required String lastName,
+    required String password,
+  }) async {
+    final request = CreateOAuthAppUserRequest()
+      ..orgId = orgId
+      ..applicationId = applicationId
+      ..email = email
+      ..firstName = firstName
+      ..lastName = lastName
+      ..password = password;
+    return await _client.createOAuthAppUser(request);
+  }
+
   /// Retrieves user-defined [Metadata] for an organization.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
@@ -903,5 +927,37 @@ class AppClient {
       ..id = robotPartId
       ..data = data.toStruct();
     await _client.updateRobotPartMetadata(request);
+  }
+
+  /// Upload a device push token for the user.
+  ///
+  /// Associates a device token with the user and app ID so that
+  /// push notifications can be sent to this device when triggers fire.
+  Future<void> uploadDevicePushToken(String appId, String deviceUuid, String deviceToken) async {
+    final request = UploadDevicePushTokenRequest()
+      ..appId = appId
+      ..deviceUuid = deviceUuid
+      ..deviceToken = deviceToken;
+    await _client.uploadDevicePushToken(request);
+  }
+
+  /// Delete a device push token for the user.
+  ///
+  /// Removes a previously registered device token, stopping push notifications
+  /// for this device.
+  Future<void> deleteDevicePushToken(String appId, String deviceUuid) async {
+    final request = DeleteDevicePushTokenRequest()
+      ..appId = appId
+      ..deviceUuid = deviceUuid;
+    await _client.deleteDevicePushToken(request);
+  }
+
+  /// Get all device push tokens for the user.
+  ///
+  /// Returns a list of device tokens registered for the authenticated user and app ID.
+  Future<List<String>> getDevicePushTokens(String appId) async {
+    final request = GetDevicePushTokensRequest()..appId = appId;
+    final GetDevicePushTokensResponse response = await _client.getDevicePushTokens(request);
+    return response.deviceTokens;
   }
 }

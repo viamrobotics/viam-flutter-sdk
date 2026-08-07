@@ -43,6 +43,13 @@ class DiscoveryClient extends Resource with RPCDebugLoggerMixin implements Resou
     return response.result.toMap();
   }
 
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
+
   /// Get the [ResourceName] for this [DiscoveryClient] with the given [name]
   static ResourceName getResourceName(String name) {
     return DiscoveryClient.subtype.getResourceName(name);

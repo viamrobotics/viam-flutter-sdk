@@ -54,7 +54,16 @@ class AudioInService extends AudioInServiceBase {
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
-    throw UnimplementedError();
+  Future<GetStatusResponse> getStatus(ServiceCall call, GetStatusRequest request) async {
+    final audioIn = _fromManager(request.name);
+    final result = await audioIn.getStatus();
+    return GetStatusResponse()..result = result.toStruct();
+  }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) async {
+    final audioIn = _fromManager(request.name);
+    final geometries = await audioIn.getGeometries(extra: request.extra.toMap());
+    return GetGeometriesResponse()..geometries.addAll(geometries);
   }
 }

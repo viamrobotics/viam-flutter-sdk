@@ -14,10 +14,10 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../common/v1/common.pb.dart' as $16;
-import '../../google/protobuf/struct.pb.dart' as $50;
-import '../../google/protobuf/timestamp.pb.dart' as $51;
-import '../mltraining/v1/ml_training.pbenum.dart' as $10;
+import '../../common/v1/common.pb.dart' as $9;
+import '../../google/protobuf/struct.pb.dart' as $49;
+import '../../google/protobuf/timestamp.pb.dart' as $50;
+import '../mltraining/v1/ml_training.pbenum.dart' as $11;
 import '../packages/v1/packages.pbenum.dart' as $1;
 import 'app.pbenum.dart';
 
@@ -28,8 +28,8 @@ class Robot extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.String? location,
-    $51.Timestamp? lastAccess,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? lastAccess,
+    $50.Timestamp? createdOn,
     OnlineState? onlineState,
     $fixnum.Int64? secondsSinceOnline,
   }) {
@@ -65,8 +65,8 @@ class Robot extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'location')
-    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'lastAccess', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'lastAccess', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..e<OnlineState>(6, _omitFieldNames ? '' : 'onlineState', $pb.PbFieldType.OE, defaultOrMaker: OnlineState.ONLINE_STATE_UNSPECIFIED, valueOf: OnlineState.valueOf, enumValues: OnlineState.values)
     ..aInt64(7, _omitFieldNames ? '' : 'secondsSinceOnline')
     ..hasRequiredFields = false
@@ -121,26 +121,26 @@ class Robot extends $pb.GeneratedMessage {
   void clearLocation() => clearField(3);
 
   @$pb.TagNumber(4)
-  $51.Timestamp get lastAccess => $_getN(3);
+  $50.Timestamp get lastAccess => $_getN(3);
   @$pb.TagNumber(4)
-  set lastAccess($51.Timestamp v) { setField(4, v); }
+  set lastAccess($50.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastAccess() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastAccess() => clearField(4);
   @$pb.TagNumber(4)
-  $51.Timestamp ensureLastAccess() => $_ensure(3);
+  $50.Timestamp ensureLastAccess() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $51.Timestamp get createdOn => $_getN(4);
+  $50.Timestamp get createdOn => $_getN(4);
   @$pb.TagNumber(5)
-  set createdOn($51.Timestamp v) { setField(5, v); }
+  set createdOn($50.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedOn() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedOn() => clearField(5);
   @$pb.TagNumber(5)
-  $51.Timestamp ensureCreatedOn() => $_ensure(4);
+  $50.Timestamp ensureCreatedOn() => $_ensure(4);
 
   @$pb.TagNumber(6)
   OnlineState get onlineState => $_getN(5);
@@ -167,19 +167,20 @@ class RobotPart extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? secret,
     $core.String? robot,
-    $50.Struct? robotConfig,
-    $51.Timestamp? lastAccess,
-    $50.Struct? userSuppliedInfo,
+    $49.Struct? robotConfig,
+    $50.Timestamp? lastAccess,
+    $49.Struct? userSuppliedInfo,
     $core.bool? mainPart,
     $core.String? fqdn,
     $core.String? dnsName,
     $core.String? localFqdn,
     $core.String? locationId,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
     $core.Iterable<SharedSecret>? secrets,
-    $51.Timestamp? lastUpdated,
+    $50.Timestamp? lastUpdated,
     OnlineState? onlineState,
     $fixnum.Int64? secondsSinceOnline,
+    $core.String? robotConfigJson,
   }) {
     final $result = create();
     if (id != null) {
@@ -233,6 +234,9 @@ class RobotPart extends $pb.GeneratedMessage {
     if (secondsSinceOnline != null) {
       $result.secondsSinceOnline = secondsSinceOnline;
     }
+    if (robotConfigJson != null) {
+      $result.robotConfigJson = robotConfigJson;
+    }
     return $result;
   }
   RobotPart._() : super();
@@ -244,19 +248,20 @@ class RobotPart extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'secret')
     ..aOS(4, _omitFieldNames ? '' : 'robot')
-    ..aOM<$50.Struct>(5, _omitFieldNames ? '' : 'robotConfig', subBuilder: $50.Struct.create)
-    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'lastAccess', subBuilder: $51.Timestamp.create)
-    ..aOM<$50.Struct>(7, _omitFieldNames ? '' : 'userSuppliedInfo', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(5, _omitFieldNames ? '' : 'robotConfig', subBuilder: $49.Struct.create)
+    ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'lastAccess', subBuilder: $50.Timestamp.create)
+    ..aOM<$49.Struct>(7, _omitFieldNames ? '' : 'userSuppliedInfo', subBuilder: $49.Struct.create)
     ..aOB(8, _omitFieldNames ? '' : 'mainPart')
     ..aOS(9, _omitFieldNames ? '' : 'fqdn')
     ..aOS(10, _omitFieldNames ? '' : 'dnsName')
     ..aOS(11, _omitFieldNames ? '' : 'localFqdn')
     ..aOS(12, _omitFieldNames ? '' : 'locationId')
-    ..aOM<$51.Timestamp>(13, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(13, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..pc<SharedSecret>(14, _omitFieldNames ? '' : 'secrets', $pb.PbFieldType.PM, subBuilder: SharedSecret.create)
-    ..aOM<$51.Timestamp>(15, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(15, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $50.Timestamp.create)
     ..e<OnlineState>(16, _omitFieldNames ? '' : 'onlineState', $pb.PbFieldType.OE, defaultOrMaker: OnlineState.ONLINE_STATE_UNSPECIFIED, valueOf: OnlineState.valueOf, enumValues: OnlineState.values)
     ..aInt64(17, _omitFieldNames ? '' : 'secondsSinceOnline')
+    ..aOS(18, _omitFieldNames ? '' : 'robotConfigJson')
     ..hasRequiredFields = false
   ;
 
@@ -318,37 +323,37 @@ class RobotPart extends $pb.GeneratedMessage {
   void clearRobot() => clearField(4);
 
   @$pb.TagNumber(5)
-  $50.Struct get robotConfig => $_getN(4);
+  $49.Struct get robotConfig => $_getN(4);
   @$pb.TagNumber(5)
-  set robotConfig($50.Struct v) { setField(5, v); }
+  set robotConfig($49.Struct v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasRobotConfig() => $_has(4);
   @$pb.TagNumber(5)
   void clearRobotConfig() => clearField(5);
   @$pb.TagNumber(5)
-  $50.Struct ensureRobotConfig() => $_ensure(4);
+  $49.Struct ensureRobotConfig() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $51.Timestamp get lastAccess => $_getN(5);
+  $50.Timestamp get lastAccess => $_getN(5);
   @$pb.TagNumber(6)
-  set lastAccess($51.Timestamp v) { setField(6, v); }
+  set lastAccess($50.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasLastAccess() => $_has(5);
   @$pb.TagNumber(6)
   void clearLastAccess() => clearField(6);
   @$pb.TagNumber(6)
-  $51.Timestamp ensureLastAccess() => $_ensure(5);
+  $50.Timestamp ensureLastAccess() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $50.Struct get userSuppliedInfo => $_getN(6);
+  $49.Struct get userSuppliedInfo => $_getN(6);
   @$pb.TagNumber(7)
-  set userSuppliedInfo($50.Struct v) { setField(7, v); }
+  set userSuppliedInfo($49.Struct v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasUserSuppliedInfo() => $_has(6);
   @$pb.TagNumber(7)
   void clearUserSuppliedInfo() => clearField(7);
   @$pb.TagNumber(7)
-  $50.Struct ensureUserSuppliedInfo() => $_ensure(6);
+  $49.Struct ensureUserSuppliedInfo() => $_ensure(6);
 
   @$pb.TagNumber(8)
   $core.bool get mainPart => $_getBF(7);
@@ -399,15 +404,15 @@ class RobotPart extends $pb.GeneratedMessage {
   void clearLocationId() => clearField(12);
 
   @$pb.TagNumber(13)
-  $51.Timestamp get createdOn => $_getN(12);
+  $50.Timestamp get createdOn => $_getN(12);
   @$pb.TagNumber(13)
-  set createdOn($51.Timestamp v) { setField(13, v); }
+  set createdOn($50.Timestamp v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasCreatedOn() => $_has(12);
   @$pb.TagNumber(13)
   void clearCreatedOn() => clearField(13);
   @$pb.TagNumber(13)
-  $51.Timestamp ensureCreatedOn() => $_ensure(12);
+  $50.Timestamp ensureCreatedOn() => $_ensure(12);
 
   /// List of secrets allowed for authentication.
   @$pb.TagNumber(14)
@@ -415,15 +420,15 @@ class RobotPart extends $pb.GeneratedMessage {
 
   /// latest timestamp when a robot part was updated
   @$pb.TagNumber(15)
-  $51.Timestamp get lastUpdated => $_getN(14);
+  $50.Timestamp get lastUpdated => $_getN(14);
   @$pb.TagNumber(15)
-  set lastUpdated($51.Timestamp v) { setField(15, v); }
+  set lastUpdated($50.Timestamp v) { setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasLastUpdated() => $_has(14);
   @$pb.TagNumber(15)
   void clearLastUpdated() => clearField(15);
   @$pb.TagNumber(15)
-  $51.Timestamp ensureLastUpdated() => $_ensure(14);
+  $50.Timestamp ensureLastUpdated() => $_ensure(14);
 
   @$pb.TagNumber(16)
   OnlineState get onlineState => $_getN(15);
@@ -442,13 +447,23 @@ class RobotPart extends $pb.GeneratedMessage {
   $core.bool hasSecondsSinceOnline() => $_has(16);
   @$pb.TagNumber(17)
   void clearSecondsSinceOnline() => clearField(17);
+
+  /// robot_config_json is the raw JSON string of the robot config, preserving user-defined key order.
+  @$pb.TagNumber(18)
+  $core.String get robotConfigJson => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set robotConfigJson($core.String v) { $_setString(17, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasRobotConfigJson() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearRobotConfigJson() => clearField(18);
 }
 
 class RobotPartHistoryEntry extends $pb.GeneratedMessage {
   factory RobotPartHistoryEntry({
     $core.String? part,
     $core.String? robot,
-    $51.Timestamp? when,
+    $50.Timestamp? when,
     RobotPart? old,
     AuthenticatorInfo? editedBy,
   }) {
@@ -477,7 +492,7 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotPartHistoryEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'part')
     ..aOS(2, _omitFieldNames ? '' : 'robot')
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'when', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'when', subBuilder: $50.Timestamp.create)
     ..aOM<RobotPart>(4, _omitFieldNames ? '' : 'old', subBuilder: RobotPart.create)
     ..aOM<AuthenticatorInfo>(5, _omitFieldNames ? '' : 'editedBy', subBuilder: AuthenticatorInfo.create)
     ..hasRequiredFields = false
@@ -523,15 +538,15 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
   void clearRobot() => clearField(2);
 
   @$pb.TagNumber(3)
-  $51.Timestamp get when => $_getN(2);
+  $50.Timestamp get when => $_getN(2);
   @$pb.TagNumber(3)
-  set when($51.Timestamp v) { setField(3, v); }
+  set when($50.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasWhen() => $_has(2);
   @$pb.TagNumber(3)
   void clearWhen() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureWhen() => $_ensure(2);
+  $50.Timestamp ensureWhen() => $_ensure(2);
 
   @$pb.TagNumber(4)
   RobotPart get old => $_getN(3);
@@ -666,15 +681,61 @@ class ListOrganizationsRequest extends $pb.GeneratedMessage {
   static ListOrganizationsRequest? _defaultInstance;
 }
 
+/// An empty list means that all methods are allowed.
+class AllowedLoginMethods extends $pb.GeneratedMessage {
+  factory AllowedLoginMethods({
+    $core.Iterable<LoginMethod>? methods,
+  }) {
+    final $result = create();
+    if (methods != null) {
+      $result.methods.addAll(methods);
+    }
+    return $result;
+  }
+  AllowedLoginMethods._() : super();
+  factory AllowedLoginMethods.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AllowedLoginMethods.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AllowedLoginMethods', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<LoginMethod>(1, _omitFieldNames ? '' : 'methods', $pb.PbFieldType.KE, valueOf: LoginMethod.valueOf, enumValues: LoginMethod.values, defaultEnumValue: LoginMethod.LOGIN_METHOD_UNSPECIFIED)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AllowedLoginMethods clone() => AllowedLoginMethods()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AllowedLoginMethods copyWith(void Function(AllowedLoginMethods) updates) => super.copyWith((message) => updates(message as AllowedLoginMethods)) as AllowedLoginMethods;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AllowedLoginMethods create() => AllowedLoginMethods._();
+  AllowedLoginMethods createEmptyInstance() => create();
+  static $pb.PbList<AllowedLoginMethods> createRepeated() => $pb.PbList<AllowedLoginMethods>();
+  @$core.pragma('dart2js:noInline')
+  static AllowedLoginMethods getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AllowedLoginMethods>(create);
+  static AllowedLoginMethods? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<LoginMethod> get methods => $_getList(0);
+}
+
 class Organization extends $pb.GeneratedMessage {
   factory Organization({
     $core.String? id,
     $core.String? name,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
     $core.String? publicNamespace,
     $core.String? defaultRegion,
     $core.String? cid,
     FragmentImportList? defaultFragments,
+    AllowedLoginMethods? allowedLoginMethods,
   }) {
     final $result = create();
     if (id != null) {
@@ -698,6 +759,9 @@ class Organization extends $pb.GeneratedMessage {
     if (defaultFragments != null) {
       $result.defaultFragments = defaultFragments;
     }
+    if (allowedLoginMethods != null) {
+      $result.allowedLoginMethods = allowedLoginMethods;
+    }
     return $result;
   }
   Organization._() : super();
@@ -707,11 +771,12 @@ class Organization extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Organization', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(5, _omitFieldNames ? '' : 'defaultRegion')
     ..aOS(6, _omitFieldNames ? '' : 'cid')
     ..aOM<FragmentImportList>(7, _omitFieldNames ? '' : 'defaultFragments', subBuilder: FragmentImportList.create)
+    ..aOM<AllowedLoginMethods>(8, _omitFieldNames ? '' : 'allowedLoginMethods', subBuilder: AllowedLoginMethods.create)
     ..hasRequiredFields = false
   ;
 
@@ -755,15 +820,15 @@ class Organization extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $51.Timestamp get createdOn => $_getN(2);
+  $50.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($51.Timestamp v) { setField(3, v); }
+  set createdOn($50.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureCreatedOn() => $_ensure(2);
+  $50.Timestamp ensureCreatedOn() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get publicNamespace => $_getSZ(3);
@@ -804,15 +869,26 @@ class Organization extends $pb.GeneratedMessage {
   void clearDefaultFragments() => clearField(7);
   @$pb.TagNumber(7)
   FragmentImportList ensureDefaultFragments() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  AllowedLoginMethods get allowedLoginMethods => $_getN(7);
+  @$pb.TagNumber(8)
+  set allowedLoginMethods(AllowedLoginMethods v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAllowedLoginMethods() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAllowedLoginMethods() => clearField(8);
+  @$pb.TagNumber(8)
+  AllowedLoginMethods ensureAllowedLoginMethods() => $_ensure(7);
 }
 
 class OrganizationMember extends $pb.GeneratedMessage {
   factory OrganizationMember({
     $core.String? userId,
     $core.Iterable<$core.String>? emails,
-    $51.Timestamp? dateAdded,
-    $51.Timestamp? lastLogin,
-    $51.Timestamp? lastAccess,
+    $50.Timestamp? dateAdded,
+    $50.Timestamp? lastLogin,
+    $50.Timestamp? lastAccess,
   }) {
     final $result = create();
     if (userId != null) {
@@ -839,9 +915,9 @@ class OrganizationMember extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrganizationMember', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..pPS(2, _omitFieldNames ? '' : 'emails')
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'dateAdded', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'lastLogin', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'lastAccess', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'dateAdded', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'lastLogin', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'lastAccess', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -879,37 +955,37 @@ class OrganizationMember extends $pb.GeneratedMessage {
   $core.List<$core.String> get emails => $_getList(1);
 
   @$pb.TagNumber(3)
-  $51.Timestamp get dateAdded => $_getN(2);
+  $50.Timestamp get dateAdded => $_getN(2);
   @$pb.TagNumber(3)
-  set dateAdded($51.Timestamp v) { setField(3, v); }
+  set dateAdded($50.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDateAdded() => $_has(2);
   @$pb.TagNumber(3)
   void clearDateAdded() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureDateAdded() => $_ensure(2);
+  $50.Timestamp ensureDateAdded() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $51.Timestamp get lastLogin => $_getN(3);
+  $50.Timestamp get lastLogin => $_getN(3);
   @$pb.TagNumber(4)
-  set lastLogin($51.Timestamp v) { setField(4, v); }
+  set lastLogin($50.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastLogin() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastLogin() => clearField(4);
   @$pb.TagNumber(4)
-  $51.Timestamp ensureLastLogin() => $_ensure(3);
+  $50.Timestamp ensureLastLogin() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $51.Timestamp get lastAccess => $_getN(4);
+  $50.Timestamp get lastAccess => $_getN(4);
   @$pb.TagNumber(5)
-  set lastAccess($51.Timestamp v) { setField(5, v); }
+  set lastAccess($50.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLastAccess() => $_has(4);
   @$pb.TagNumber(5)
   void clearLastAccess() => clearField(5);
   @$pb.TagNumber(5)
-  $51.Timestamp ensureLastAccess() => $_ensure(4);
+  $50.Timestamp ensureLastAccess() => $_ensure(4);
 }
 
 class ListOrganizationsResponse extends $pb.GeneratedMessage {
@@ -960,7 +1036,7 @@ class OrganizationInvite extends $pb.GeneratedMessage {
   factory OrganizationInvite({
     $core.String? organizationId,
     $core.String? email,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
     $core.Iterable<Authorization>? authorizations,
   }) {
     final $result = create();
@@ -985,7 +1061,7 @@ class OrganizationInvite extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrganizationInvite', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'email')
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..pc<Authorization>(4, _omitFieldNames ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
     ..hasRequiredFields = false
   ;
@@ -1030,15 +1106,15 @@ class OrganizationInvite extends $pb.GeneratedMessage {
   void clearEmail() => clearField(2);
 
   @$pb.TagNumber(3)
-  $51.Timestamp get createdOn => $_getN(2);
+  $50.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($51.Timestamp v) { setField(3, v); }
+  set createdOn($50.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureCreatedOn() => $_ensure(2);
+  $50.Timestamp ensureCreatedOn() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.List<Authorization> get authorizations => $_getList(3);
@@ -1414,6 +1490,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     $core.String? region,
     $core.String? cid,
     FragmentImportList? defaultFragments,
+    AllowedLoginMethods? allowedLoginMethods,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1434,6 +1511,9 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     if (defaultFragments != null) {
       $result.defaultFragments = defaultFragments;
     }
+    if (allowedLoginMethods != null) {
+      $result.allowedLoginMethods = allowedLoginMethods;
+    }
     return $result;
   }
   UpdateOrganizationRequest._() : super();
@@ -1447,6 +1527,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'region')
     ..aOS(5, _omitFieldNames ? '' : 'cid')
     ..aOM<FragmentImportList>(6, _omitFieldNames ? '' : 'defaultFragments', subBuilder: FragmentImportList.create)
+    ..aOM<AllowedLoginMethods>(7, _omitFieldNames ? '' : 'allowedLoginMethods', subBuilder: AllowedLoginMethods.create)
     ..hasRequiredFields = false
   ;
 
@@ -1527,6 +1608,17 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   void clearDefaultFragments() => clearField(6);
   @$pb.TagNumber(6)
   FragmentImportList ensureDefaultFragments() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  AllowedLoginMethods get allowedLoginMethods => $_getN(6);
+  @$pb.TagNumber(7)
+  set allowedLoginMethods(AllowedLoginMethods v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAllowedLoginMethods() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAllowedLoginMethods() => clearField(7);
+  @$pb.TagNumber(7)
+  AllowedLoginMethods ensureAllowedLoginMethods() => $_ensure(6);
 }
 
 class UpdateOrganizationResponse extends $pb.GeneratedMessage {
@@ -1831,7 +1923,7 @@ class GetOrganizationMetadataRequest extends $pb.GeneratedMessage {
 
 class GetOrganizationMetadataResponse extends $pb.GeneratedMessage {
   factory GetOrganizationMetadataResponse({
-    $50.Struct? data,
+    $49.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
@@ -1844,7 +1936,7 @@ class GetOrganizationMetadataResponse extends $pb.GeneratedMessage {
   factory GetOrganizationMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrganizationMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$50.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1870,21 +1962,21 @@ class GetOrganizationMetadataResponse extends $pb.GeneratedMessage {
   static GetOrganizationMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $50.Struct get data => $_getN(0);
+  $49.Struct get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($50.Struct v) { setField(1, v); }
+  set data($49.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $50.Struct ensureData() => $_ensure(0);
+  $49.Struct ensureData() => $_ensure(0);
 }
 
 class UpdateOrganizationMetadataRequest extends $pb.GeneratedMessage {
   factory UpdateOrganizationMetadataRequest({
     $core.String? organizationId,
-    $50.Struct? data,
+    $49.Struct? data,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1901,7 +1993,7 @@ class UpdateOrganizationMetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
-    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1936,15 +2028,15 @@ class UpdateOrganizationMetadataRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $50.Struct get data => $_getN(1);
+  $49.Struct get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($50.Struct v) { setField(2, v); }
+  set data($49.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
-  $50.Struct ensureData() => $_ensure(1);
+  $49.Struct ensureData() => $_ensure(1);
 }
 
 class UpdateOrganizationMetadataResponse extends $pb.GeneratedMessage {
@@ -3699,7 +3791,7 @@ class Location extends $pb.GeneratedMessage {
   factory Location({
     $core.String? id,
     $core.String? name,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
     $core.String? parentLocationId,
     LocationAuth? auth,
     $core.Iterable<LocationOrganization>? organizations,
@@ -3744,7 +3836,7 @@ class Location extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Location', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'parentLocationId')
     ..aOM<LocationAuth>(5, _omitFieldNames ? '' : 'auth', subBuilder: LocationAuth.create)
     ..pc<LocationOrganization>(6, _omitFieldNames ? '' : 'organizations', $pb.PbFieldType.PM, subBuilder: LocationOrganization.create)
@@ -3797,15 +3889,15 @@ class Location extends $pb.GeneratedMessage {
 
   /// Location creation timestamp.
   @$pb.TagNumber(3)
-  $51.Timestamp get createdOn => $_getN(2);
+  $50.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($51.Timestamp v) { setField(3, v); }
+  set createdOn($50.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureCreatedOn() => $_ensure(2);
+  $50.Timestamp ensureCreatedOn() => $_ensure(2);
 
   /// Location ID of the parent location.
   @$pb.TagNumber(4)
@@ -3872,7 +3964,7 @@ class SharedSecret extends $pb.GeneratedMessage {
   factory SharedSecret({
     $core.String? id,
     $core.String? secret,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
     SharedSecret_State? state,
   }) {
     final $result = create();
@@ -3897,7 +3989,7 @@ class SharedSecret extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SharedSecret', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'secret')
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..e<SharedSecret_State>(4, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: SharedSecret_State.STATE_UNSPECIFIED, valueOf: SharedSecret_State.valueOf, enumValues: SharedSecret_State.values)
     ..hasRequiredFields = false
   ;
@@ -3944,15 +4036,15 @@ class SharedSecret extends $pb.GeneratedMessage {
 
   /// Date/time the secret was first created.
   @$pb.TagNumber(3)
-  $51.Timestamp get createdOn => $_getN(2);
+  $50.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($51.Timestamp v) { setField(3, v); }
+  set createdOn($50.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureCreatedOn() => $_ensure(2);
+  $50.Timestamp ensureCreatedOn() => $_ensure(2);
 
   /// State of the shared secret. In most cases it should be enabled. We may support
   /// disabling a specific secret while keeping it in the database.
@@ -4488,7 +4580,7 @@ class GetLocationMetadataRequest extends $pb.GeneratedMessage {
 
 class GetLocationMetadataResponse extends $pb.GeneratedMessage {
   factory GetLocationMetadataResponse({
-    $50.Struct? data,
+    $49.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
@@ -4501,7 +4593,7 @@ class GetLocationMetadataResponse extends $pb.GeneratedMessage {
   factory GetLocationMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$50.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -4527,21 +4619,21 @@ class GetLocationMetadataResponse extends $pb.GeneratedMessage {
   static GetLocationMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $50.Struct get data => $_getN(0);
+  $49.Struct get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($50.Struct v) { setField(1, v); }
+  set data($49.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $50.Struct ensureData() => $_ensure(0);
+  $49.Struct ensureData() => $_ensure(0);
 }
 
 class UpdateLocationMetadataRequest extends $pb.GeneratedMessage {
   factory UpdateLocationMetadataRequest({
     $core.String? locationId,
-    $50.Struct? data,
+    $49.Struct? data,
   }) {
     final $result = create();
     if (locationId != null) {
@@ -4558,7 +4650,7 @@ class UpdateLocationMetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLocationMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'locationId')
-    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -4593,15 +4685,15 @@ class UpdateLocationMetadataRequest extends $pb.GeneratedMessage {
   void clearLocationId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $50.Struct get data => $_getN(1);
+  $49.Struct get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($50.Struct v) { setField(2, v); }
+  set data($49.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
-  $50.Struct ensureData() => $_ensure(1);
+  $49.Struct ensureData() => $_ensure(1);
 }
 
 class UpdateLocationMetadataResponse extends $pb.GeneratedMessage {
@@ -5945,8 +6037,8 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     $core.String? filter,
     $core.String? pageToken,
     $core.Iterable<$core.String>? levels,
-    $51.Timestamp? start,
-    $51.Timestamp? end,
+    $50.Timestamp? start,
+    $50.Timestamp? end,
     $fixnum.Int64? limit,
     $core.String? source,
     $core.bool? userFacingOnly,
@@ -5995,8 +6087,8 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'filter')
     ..aOS(4, _omitFieldNames ? '' : 'pageToken')
     ..pPS(5, _omitFieldNames ? '' : 'levels')
-    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'start', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(7, _omitFieldNames ? '' : 'end', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'start', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(7, _omitFieldNames ? '' : 'end', subBuilder: $50.Timestamp.create)
     ..aInt64(8, _omitFieldNames ? '' : 'limit')
     ..aOS(9, _omitFieldNames ? '' : 'source')
     ..aOB(10, _omitFieldNames ? '' : 'userFacingOnly')
@@ -6070,26 +6162,26 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get levels => $_getList(4);
 
   @$pb.TagNumber(6)
-  $51.Timestamp get start => $_getN(5);
+  $50.Timestamp get start => $_getN(5);
   @$pb.TagNumber(6)
-  set start($51.Timestamp v) { setField(6, v); }
+  set start($50.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasStart() => $_has(5);
   @$pb.TagNumber(6)
   void clearStart() => clearField(6);
   @$pb.TagNumber(6)
-  $51.Timestamp ensureStart() => $_ensure(5);
+  $50.Timestamp ensureStart() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $51.Timestamp get end => $_getN(6);
+  $50.Timestamp get end => $_getN(6);
   @$pb.TagNumber(7)
-  set end($51.Timestamp v) { setField(7, v); }
+  set end($50.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasEnd() => $_has(6);
   @$pb.TagNumber(7)
   void clearEnd() => clearField(7);
   @$pb.TagNumber(7)
-  $51.Timestamp ensureEnd() => $_ensure(6);
+  $50.Timestamp ensureEnd() => $_ensure(6);
 
   @$pb.TagNumber(8)
   $fixnum.Int64 get limit => $_getI64(7);
@@ -6121,7 +6213,7 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
 
 class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory GetRobotPartLogsResponse({
-    $core.Iterable<$16.LogEntry>? logs,
+    $core.Iterable<$9.LogEntry>? logs,
     $core.String? nextPageToken,
   }) {
     final $result = create();
@@ -6138,7 +6230,7 @@ class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory GetRobotPartLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartLogsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<$16.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $16.LogEntry.create)
+    ..pc<$9.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $9.LogEntry.create)
     ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false
   ;
@@ -6165,7 +6257,7 @@ class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   static GetRobotPartLogsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$16.LogEntry> get logs => $_getList(0);
+  $core.List<$9.LogEntry> get logs => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.String get nextPageToken => $_getSZ(1);
@@ -6257,7 +6349,7 @@ class TailRobotPartLogsRequest extends $pb.GeneratedMessage {
 
 class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory TailRobotPartLogsResponse({
-    $core.Iterable<$16.LogEntry>? logs,
+    $core.Iterable<$9.LogEntry>? logs,
   }) {
     final $result = create();
     if (logs != null) {
@@ -6270,7 +6362,7 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory TailRobotPartLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TailRobotPartLogsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<$16.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $16.LogEntry.create)
+    ..pc<$9.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $9.LogEntry.create)
     ..hasRequiredFields = false
   ;
 
@@ -6296,16 +6388,32 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   static TailRobotPartLogsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$16.LogEntry> get logs => $_getList(0);
+  $core.List<$9.LogEntry> get logs => $_getList(0);
 }
 
 class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
   factory GetRobotPartHistoryRequest({
     $core.String? id,
+    $core.String? pageToken,
+    $fixnum.Int64? pageLimit,
+    $50.Timestamp? start,
+    $50.Timestamp? end,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    if (pageLimit != null) {
+      $result.pageLimit = pageLimit;
+    }
+    if (start != null) {
+      $result.start = start;
+    }
+    if (end != null) {
+      $result.end = end;
     }
     return $result;
   }
@@ -6315,6 +6423,10 @@ class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartHistoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'pageToken')
+    ..aInt64(3, _omitFieldNames ? '' : 'pageLimit')
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'start', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'end', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -6347,15 +6459,59 @@ class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get pageLimit => $_getI64(2);
+  @$pb.TagNumber(3)
+  set pageLimit($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPageLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageLimit() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $50.Timestamp get start => $_getN(3);
+  @$pb.TagNumber(4)
+  set start($50.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStart() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStart() => clearField(4);
+  @$pb.TagNumber(4)
+  $50.Timestamp ensureStart() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $50.Timestamp get end => $_getN(4);
+  @$pb.TagNumber(5)
+  set end($50.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEnd() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEnd() => clearField(5);
+  @$pb.TagNumber(5)
+  $50.Timestamp ensureEnd() => $_ensure(4);
 }
 
 class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
   factory GetRobotPartHistoryResponse({
     $core.Iterable<RobotPartHistoryEntry>? history,
+    $core.String? nextPageToken,
   }) {
     final $result = create();
     if (history != null) {
       $result.history.addAll(history);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
     }
     return $result;
   }
@@ -6365,6 +6521,7 @@ class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartHistoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pc<RobotPartHistoryEntry>(1, _omitFieldNames ? '' : 'history', $pb.PbFieldType.PM, subBuilder: RobotPartHistoryEntry.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false
   ;
 
@@ -6391,14 +6548,24 @@ class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<RobotPartHistoryEntry> get history => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => clearField(2);
 }
 
 class UpdateRobotPartRequest extends $pb.GeneratedMessage {
   factory UpdateRobotPartRequest({
     $core.String? id,
     $core.String? name,
-    $50.Struct? robotConfig,
-    $51.Timestamp? lastKnownUpdate,
+    $49.Struct? robotConfig,
+    $50.Timestamp? lastKnownUpdate,
+    $core.String? robotConfigJson,
   }) {
     final $result = create();
     if (id != null) {
@@ -6413,6 +6580,9 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
     if (lastKnownUpdate != null) {
       $result.lastKnownUpdate = lastKnownUpdate;
     }
+    if (robotConfigJson != null) {
+      $result.robotConfigJson = robotConfigJson;
+    }
     return $result;
   }
   UpdateRobotPartRequest._() : super();
@@ -6422,8 +6592,9 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotPartRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(3, _omitFieldNames ? '' : 'robotConfig', subBuilder: $50.Struct.create)
-    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'lastKnownUpdate', subBuilder: $51.Timestamp.create)
+    ..aOM<$49.Struct>(3, _omitFieldNames ? '' : 'robotConfig', subBuilder: $49.Struct.create)
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'lastKnownUpdate', subBuilder: $50.Timestamp.create)
+    ..aOS(5, _omitFieldNames ? '' : 'robotConfigJson')
     ..hasRequiredFields = false
   ;
 
@@ -6467,26 +6638,37 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $50.Struct get robotConfig => $_getN(2);
+  $49.Struct get robotConfig => $_getN(2);
   @$pb.TagNumber(3)
-  set robotConfig($50.Struct v) { setField(3, v); }
+  set robotConfig($49.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRobotConfig() => $_has(2);
   @$pb.TagNumber(3)
   void clearRobotConfig() => clearField(3);
   @$pb.TagNumber(3)
-  $50.Struct ensureRobotConfig() => $_ensure(2);
+  $49.Struct ensureRobotConfig() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $51.Timestamp get lastKnownUpdate => $_getN(3);
+  $50.Timestamp get lastKnownUpdate => $_getN(3);
   @$pb.TagNumber(4)
-  set lastKnownUpdate($51.Timestamp v) { setField(4, v); }
+  set lastKnownUpdate($50.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastKnownUpdate() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastKnownUpdate() => clearField(4);
   @$pb.TagNumber(4)
-  $51.Timestamp ensureLastKnownUpdate() => $_ensure(3);
+  $50.Timestamp ensureLastKnownUpdate() => $_ensure(3);
+
+  /// robot_config_json is the raw JSON string of the robot config, preserving user-defined key order.
+  /// When set, this takes precedence over robot_config for storage purposes.
+  @$pb.TagNumber(5)
+  $core.String get robotConfigJson => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set robotConfigJson($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRobotConfigJson() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRobotConfigJson() => clearField(5);
 }
 
 class UpdateRobotPartResponse extends $pb.GeneratedMessage {
@@ -6757,7 +6939,7 @@ class GetRobotPartMetadataRequest extends $pb.GeneratedMessage {
 
 class GetRobotPartMetadataResponse extends $pb.GeneratedMessage {
   factory GetRobotPartMetadataResponse({
-    $50.Struct? data,
+    $49.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
@@ -6770,7 +6952,7 @@ class GetRobotPartMetadataResponse extends $pb.GeneratedMessage {
   factory GetRobotPartMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$50.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -6796,21 +6978,21 @@ class GetRobotPartMetadataResponse extends $pb.GeneratedMessage {
   static GetRobotPartMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $50.Struct get data => $_getN(0);
+  $49.Struct get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($50.Struct v) { setField(1, v); }
+  set data($49.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $50.Struct ensureData() => $_ensure(0);
+  $49.Struct ensureData() => $_ensure(0);
 }
 
 class UpdateRobotPartMetadataRequest extends $pb.GeneratedMessage {
   factory UpdateRobotPartMetadataRequest({
     $core.String? id,
-    $50.Struct? data,
+    $49.Struct? data,
   }) {
     final $result = create();
     if (id != null) {
@@ -6827,7 +7009,7 @@ class UpdateRobotPartMetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotPartMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -6862,15 +7044,15 @@ class UpdateRobotPartMetadataRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $50.Struct get data => $_getN(1);
+  $49.Struct get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($50.Struct v) { setField(2, v); }
+  set data($49.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
-  $50.Struct ensureData() => $_ensure(1);
+  $49.Struct ensureData() => $_ensure(1);
 }
 
 class UpdateRobotPartMetadataResponse extends $pb.GeneratedMessage {
@@ -6960,7 +7142,7 @@ class APIKey extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? key,
     $core.String? name,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
   }) {
     final $result = create();
     if (id != null) {
@@ -6985,7 +7167,7 @@ class APIKey extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'key')
     ..aOS(3, _omitFieldNames ? '' : 'name')
-    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(4, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -7038,15 +7220,15 @@ class APIKey extends $pb.GeneratedMessage {
   void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $51.Timestamp get createdOn => $_getN(3);
+  $50.Timestamp get createdOn => $_getN(3);
   @$pb.TagNumber(4)
-  set createdOn($51.Timestamp v) { setField(4, v); }
+  set createdOn($50.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCreatedOn() => $_has(3);
   @$pb.TagNumber(4)
   void clearCreatedOn() => clearField(4);
   @$pb.TagNumber(4)
-  $51.Timestamp ensureCreatedOn() => $_ensure(3);
+  $50.Timestamp ensureCreatedOn() => $_ensure(3);
 }
 
 class GetRobotAPIKeysResponse extends $pb.GeneratedMessage {
@@ -7129,17 +7311,18 @@ class Fragment extends $pb.GeneratedMessage {
   factory Fragment({
     $core.String? id,
     $core.String? name,
-    $50.Struct? fragment,
+    $49.Struct? fragment,
     $core.String? organizationOwner,
     $core.bool? public,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
     $core.String? organizationName,
     $core.int? robotPartCount,
     $core.int? organizationCount,
     $core.bool? onlyUsedByOwner,
     FragmentVisibility? visibility,
-    $51.Timestamp? lastUpdated,
+    $50.Timestamp? lastUpdated,
     $core.String? revision,
+    $core.String? publicNamespace,
   }) {
     final $result = create();
     if (id != null) {
@@ -7181,6 +7364,9 @@ class Fragment extends $pb.GeneratedMessage {
     if (revision != null) {
       $result.revision = revision;
     }
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
     return $result;
   }
   Fragment._() : super();
@@ -7190,17 +7376,18 @@ class Fragment extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Fragment', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(3, _omitFieldNames ? '' : 'fragment', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(3, _omitFieldNames ? '' : 'fragment', subBuilder: $49.Struct.create)
     ..aOS(4, _omitFieldNames ? '' : 'organizationOwner')
     ..aOB(5, _omitFieldNames ? '' : 'public')
-    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..aOS(7, _omitFieldNames ? '' : 'organizationName')
     ..a<$core.int>(9, _omitFieldNames ? '' : 'robotPartCount', $pb.PbFieldType.O3)
     ..a<$core.int>(10, _omitFieldNames ? '' : 'organizationCount', $pb.PbFieldType.O3)
     ..aOB(11, _omitFieldNames ? '' : 'onlyUsedByOwner')
     ..e<FragmentVisibility>(12, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: FragmentVisibility.FRAGMENT_VISIBILITY_UNSPECIFIED, valueOf: FragmentVisibility.valueOf, enumValues: FragmentVisibility.values)
-    ..aOM<$51.Timestamp>(13, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(13, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $50.Timestamp.create)
     ..aOS(14, _omitFieldNames ? '' : 'revision')
+    ..aOS(15, _omitFieldNames ? '' : 'publicNamespace')
     ..hasRequiredFields = false
   ;
 
@@ -7244,15 +7431,15 @@ class Fragment extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $50.Struct get fragment => $_getN(2);
+  $49.Struct get fragment => $_getN(2);
   @$pb.TagNumber(3)
-  set fragment($50.Struct v) { setField(3, v); }
+  set fragment($49.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFragment() => $_has(2);
   @$pb.TagNumber(3)
   void clearFragment() => clearField(3);
   @$pb.TagNumber(3)
-  $50.Struct ensureFragment() => $_ensure(2);
+  $49.Struct ensureFragment() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get organizationOwner => $_getSZ(3);
@@ -7273,15 +7460,15 @@ class Fragment extends $pb.GeneratedMessage {
   void clearPublic() => clearField(5);
 
   @$pb.TagNumber(6)
-  $51.Timestamp get createdOn => $_getN(5);
+  $50.Timestamp get createdOn => $_getN(5);
   @$pb.TagNumber(6)
-  set createdOn($51.Timestamp v) { setField(6, v); }
+  set createdOn($50.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCreatedOn() => $_has(5);
   @$pb.TagNumber(6)
   void clearCreatedOn() => clearField(6);
   @$pb.TagNumber(6)
-  $51.Timestamp ensureCreatedOn() => $_ensure(5);
+  $50.Timestamp ensureCreatedOn() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get organizationName => $_getSZ(6);
@@ -7334,15 +7521,15 @@ class Fragment extends $pb.GeneratedMessage {
 
   /// latest timestamp when fragment was updated
   @$pb.TagNumber(13)
-  $51.Timestamp get lastUpdated => $_getN(11);
+  $50.Timestamp get lastUpdated => $_getN(11);
   @$pb.TagNumber(13)
-  set lastUpdated($51.Timestamp v) { setField(13, v); }
+  set lastUpdated($50.Timestamp v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasLastUpdated() => $_has(11);
   @$pb.TagNumber(13)
   void clearLastUpdated() => clearField(13);
   @$pb.TagNumber(13)
-  $51.Timestamp ensureLastUpdated() => $_ensure(11);
+  $50.Timestamp ensureLastUpdated() => $_ensure(11);
 
   @$pb.TagNumber(14)
   $core.String get revision => $_getSZ(12);
@@ -7352,16 +7539,25 @@ class Fragment extends $pb.GeneratedMessage {
   $core.bool hasRevision() => $_has(12);
   @$pb.TagNumber(14)
   void clearRevision() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get publicNamespace => $_getSZ(13);
+  @$pb.TagNumber(15)
+  set publicNamespace($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasPublicNamespace() => $_has(13);
+  @$pb.TagNumber(15)
+  void clearPublicNamespace() => clearField(15);
 }
 
 class FragmentHistoryEntry extends $pb.GeneratedMessage {
   factory FragmentHistoryEntry({
     $core.String? fragment,
-    $51.Timestamp? editedOn,
+    $50.Timestamp? editedOn,
     Fragment? old,
     AuthenticatorInfo? editedBy,
     $core.String? revision,
-    $50.Struct? config,
+    $49.Struct? config,
   }) {
     final $result = create();
     if (fragment != null) {
@@ -7390,11 +7586,11 @@ class FragmentHistoryEntry extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentHistoryEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'fragment')
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'editedOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(2, _omitFieldNames ? '' : 'editedOn', subBuilder: $50.Timestamp.create)
     ..aOM<Fragment>(3, _omitFieldNames ? '' : 'old', subBuilder: Fragment.create)
     ..aOM<AuthenticatorInfo>(4, _omitFieldNames ? '' : 'editedBy', subBuilder: AuthenticatorInfo.create)
     ..aOS(5, _omitFieldNames ? '' : 'revision')
-    ..aOM<$50.Struct>(6, _omitFieldNames ? '' : 'config', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(6, _omitFieldNames ? '' : 'config', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -7429,15 +7625,15 @@ class FragmentHistoryEntry extends $pb.GeneratedMessage {
   void clearFragment() => clearField(1);
 
   @$pb.TagNumber(2)
-  $51.Timestamp get editedOn => $_getN(1);
+  $50.Timestamp get editedOn => $_getN(1);
   @$pb.TagNumber(2)
-  set editedOn($51.Timestamp v) { setField(2, v); }
+  set editedOn($50.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEditedOn() => $_has(1);
   @$pb.TagNumber(2)
   void clearEditedOn() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureEditedOn() => $_ensure(1);
+  $50.Timestamp ensureEditedOn() => $_ensure(1);
 
   @$pb.TagNumber(3)
   Fragment get old => $_getN(2);
@@ -7471,21 +7667,21 @@ class FragmentHistoryEntry extends $pb.GeneratedMessage {
   void clearRevision() => clearField(5);
 
   @$pb.TagNumber(6)
-  $50.Struct get config => $_getN(5);
+  $49.Struct get config => $_getN(5);
   @$pb.TagNumber(6)
-  set config($50.Struct v) { setField(6, v); }
+  set config($49.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasConfig() => $_has(5);
   @$pb.TagNumber(6)
   void clearConfig() => clearField(6);
   @$pb.TagNumber(6)
-  $50.Struct ensureConfig() => $_ensure(5);
+  $49.Struct ensureConfig() => $_ensure(5);
 }
 
 class FragmentRevision extends $pb.GeneratedMessage {
   factory FragmentRevision({
     $core.String? revision,
-    $51.Timestamp? createdAt,
+    $50.Timestamp? createdAt,
   }) {
     final $result = create();
     if (revision != null) {
@@ -7502,7 +7698,7 @@ class FragmentRevision extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentRevision', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'revision')
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'createdAt', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(2, _omitFieldNames ? '' : 'createdAt', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -7537,15 +7733,15 @@ class FragmentRevision extends $pb.GeneratedMessage {
   void clearRevision() => clearField(1);
 
   @$pb.TagNumber(2)
-  $51.Timestamp get createdAt => $_getN(1);
+  $50.Timestamp get createdAt => $_getN(1);
   @$pb.TagNumber(2)
-  set createdAt($51.Timestamp v) { setField(2, v); }
+  set createdAt($50.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreatedAt() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreatedAt() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureCreatedAt() => $_ensure(1);
+  $50.Timestamp ensureCreatedAt() => $_ensure(1);
 }
 
 class FragmentTag extends $pb.GeneratedMessage {
@@ -7802,7 +7998,9 @@ class FragmentImport extends $pb.GeneratedMessage {
     $core.String? fragmentId,
     $core.String? version,
     $core.String? prefix,
+  @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, $core.String>? variables,
+    $49.Struct? fragmentVariables,
   }) {
     final $result = create();
     if (fragmentId != null) {
@@ -7815,7 +8013,11 @@ class FragmentImport extends $pb.GeneratedMessage {
       $result.prefix = prefix;
     }
     if (variables != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.variables.addAll(variables);
+    }
+    if (fragmentVariables != null) {
+      $result.fragmentVariables = fragmentVariables;
     }
     return $result;
   }
@@ -7828,6 +8030,7 @@ class FragmentImport extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'version')
     ..aOS(3, _omitFieldNames ? '' : 'prefix')
     ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'variables', entryClassName: 'FragmentImport.VariablesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$49.Struct>(5, _omitFieldNames ? '' : 'fragmentVariables', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -7879,14 +8082,27 @@ class FragmentImport extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPrefix() => clearField(3);
 
+  /// Deprecated: use fragment_variables
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.Map<$core.String, $core.String> get variables => $_getMap(3);
+
+  @$pb.TagNumber(5)
+  $49.Struct get fragmentVariables => $_getN(4);
+  @$pb.TagNumber(5)
+  set fragmentVariables($49.Struct v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFragmentVariables() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFragmentVariables() => clearField(5);
+  @$pb.TagNumber(5)
+  $49.Struct ensureFragmentVariables() => $_ensure(4);
 }
 
 class ResolvedFragment extends $pb.GeneratedMessage {
   factory ResolvedFragment({
     $core.String? fragmentId,
-    $50.Struct? resolvedConfig,
+    $49.Struct? resolvedConfig,
     FragmentError? error,
     $core.String? revision,
   }) {
@@ -7911,7 +8127,7 @@ class ResolvedFragment extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResolvedFragment', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'fragmentId')
-    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'resolvedConfig', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(2, _omitFieldNames ? '' : 'resolvedConfig', subBuilder: $49.Struct.create)
     ..aOM<FragmentError>(3, _omitFieldNames ? '' : 'error', subBuilder: FragmentError.create)
     ..aOS(4, _omitFieldNames ? '' : 'revision')
     ..hasRequiredFields = false
@@ -7948,15 +8164,15 @@ class ResolvedFragment extends $pb.GeneratedMessage {
   void clearFragmentId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $50.Struct get resolvedConfig => $_getN(1);
+  $49.Struct get resolvedConfig => $_getN(1);
   @$pb.TagNumber(2)
-  set resolvedConfig($50.Struct v) { setField(2, v); }
+  set resolvedConfig($49.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasResolvedConfig() => $_has(1);
   @$pb.TagNumber(2)
   void clearResolvedConfig() => clearField(2);
   @$pb.TagNumber(2)
-  $50.Struct ensureResolvedConfig() => $_ensure(1);
+  $49.Struct ensureResolvedConfig() => $_ensure(1);
 
   @$pb.TagNumber(3)
   FragmentError get error => $_getN(2);
@@ -8268,7 +8484,7 @@ class GetFragmentResponse extends $pb.GeneratedMessage {
 class CreateFragmentRequest extends $pb.GeneratedMessage {
   factory CreateFragmentRequest({
     $core.String? name,
-    $50.Struct? config,
+    $49.Struct? config,
     $core.String? organizationId,
     FragmentVisibility? visibility,
   }) {
@@ -8293,7 +8509,7 @@ class CreateFragmentRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFragmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'config', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(2, _omitFieldNames ? '' : 'config', subBuilder: $49.Struct.create)
     ..aOS(3, _omitFieldNames ? '' : 'organizationId')
     ..e<FragmentVisibility>(4, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: FragmentVisibility.FRAGMENT_VISIBILITY_UNSPECIFIED, valueOf: FragmentVisibility.valueOf, enumValues: FragmentVisibility.values)
     ..hasRequiredFields = false
@@ -8330,15 +8546,15 @@ class CreateFragmentRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $50.Struct get config => $_getN(1);
+  $49.Struct get config => $_getN(1);
   @$pb.TagNumber(2)
-  set config($50.Struct v) { setField(2, v); }
+  set config($49.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasConfig() => $_has(1);
   @$pb.TagNumber(2)
   void clearConfig() => clearField(2);
   @$pb.TagNumber(2)
-  $50.Struct ensureConfig() => $_ensure(1);
+  $49.Struct ensureConfig() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.String get organizationId => $_getSZ(2);
@@ -8415,10 +8631,10 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   factory UpdateFragmentRequest({
     $core.String? id,
     $core.String? name,
-    $50.Struct? config,
+    $49.Struct? config,
     $core.bool? public,
     FragmentVisibility? visibility,
-    $51.Timestamp? lastKnownUpdate,
+    $50.Timestamp? lastKnownUpdate,
   }) {
     final $result = create();
     if (id != null) {
@@ -8448,10 +8664,10 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFragmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(3, _omitFieldNames ? '' : 'config', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(3, _omitFieldNames ? '' : 'config', subBuilder: $49.Struct.create)
     ..aOB(4, _omitFieldNames ? '' : 'public')
     ..e<FragmentVisibility>(5, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: FragmentVisibility.FRAGMENT_VISIBILITY_UNSPECIFIED, valueOf: FragmentVisibility.valueOf, enumValues: FragmentVisibility.values)
-    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'lastKnownUpdate', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'lastKnownUpdate', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -8495,15 +8711,15 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $50.Struct get config => $_getN(2);
+  $49.Struct get config => $_getN(2);
   @$pb.TagNumber(3)
-  set config($50.Struct v) { setField(3, v); }
+  set config($49.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasConfig() => $_has(2);
   @$pb.TagNumber(3)
   void clearConfig() => clearField(3);
   @$pb.TagNumber(3)
-  $50.Struct ensureConfig() => $_ensure(2);
+  $49.Struct ensureConfig() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.bool get public => $_getBF(3);
@@ -8524,15 +8740,15 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   void clearVisibility() => clearField(5);
 
   @$pb.TagNumber(6)
-  $51.Timestamp get lastKnownUpdate => $_getN(5);
+  $50.Timestamp get lastKnownUpdate => $_getN(5);
   @$pb.TagNumber(6)
-  set lastKnownUpdate($51.Timestamp v) { setField(6, v); }
+  set lastKnownUpdate($50.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasLastKnownUpdate() => $_has(5);
   @$pb.TagNumber(6)
   void clearLastKnownUpdate() => clearField(6);
   @$pb.TagNumber(6)
-  $51.Timestamp ensureLastKnownUpdate() => $_ensure(5);
+  $50.Timestamp ensureLastKnownUpdate() => $_ensure(5);
 }
 
 class UpdateFragmentResponse extends $pb.GeneratedMessage {
@@ -10068,7 +10284,7 @@ class PartSummary extends $pb.GeneratedMessage {
   factory PartSummary({
     $core.String? partId,
     $core.String? partName,
-    $51.Timestamp? lastOnline,
+    $50.Timestamp? lastOnline,
     ViamServerVersion? viamServerVersion,
     ViamAgentVersion? viamAgentVersion,
     $core.String? os,
@@ -10079,7 +10295,7 @@ class PartSummary extends $pb.GeneratedMessage {
     $core.bool? isMainPart,
     OnlineState? onlineState,
     $fixnum.Int64? secondsSinceOnline,
-    $51.Timestamp? lastAccess,
+    $50.Timestamp? lastAccess,
   }) {
     final $result = create();
     if (partId != null) {
@@ -10133,7 +10349,7 @@ class PartSummary extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PartSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'partId')
     ..aOS(2, _omitFieldNames ? '' : 'partName')
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'lastOnline', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'lastOnline', subBuilder: $50.Timestamp.create)
     ..aOM<ViamServerVersion>(4, _omitFieldNames ? '' : 'viamServerVersion', subBuilder: ViamServerVersion.create)
     ..aOM<ViamAgentVersion>(5, _omitFieldNames ? '' : 'viamAgentVersion', subBuilder: ViamAgentVersion.create)
     ..aOS(6, _omitFieldNames ? '' : 'os')
@@ -10144,7 +10360,7 @@ class PartSummary extends $pb.GeneratedMessage {
     ..aOB(11, _omitFieldNames ? '' : 'isMainPart')
     ..e<OnlineState>(12, _omitFieldNames ? '' : 'onlineState', $pb.PbFieldType.OE, defaultOrMaker: OnlineState.ONLINE_STATE_UNSPECIFIED, valueOf: OnlineState.valueOf, enumValues: OnlineState.values)
     ..aInt64(13, _omitFieldNames ? '' : 'secondsSinceOnline')
-    ..aOM<$51.Timestamp>(14, _omitFieldNames ? '' : 'lastAccess', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(14, _omitFieldNames ? '' : 'lastAccess', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -10188,15 +10404,15 @@ class PartSummary extends $pb.GeneratedMessage {
   void clearPartName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $51.Timestamp get lastOnline => $_getN(2);
+  $50.Timestamp get lastOnline => $_getN(2);
   @$pb.TagNumber(3)
-  set lastOnline($51.Timestamp v) { setField(3, v); }
+  set lastOnline($50.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLastOnline() => $_has(2);
   @$pb.TagNumber(3)
   void clearLastOnline() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureLastOnline() => $_ensure(2);
+  $50.Timestamp ensureLastOnline() => $_ensure(2);
 
   @$pb.TagNumber(4)
   ViamServerVersion get viamServerVersion => $_getN(3);
@@ -10287,15 +10503,15 @@ class PartSummary extends $pb.GeneratedMessage {
   void clearSecondsSinceOnline() => clearField(13);
 
   @$pb.TagNumber(14)
-  $51.Timestamp get lastAccess => $_getN(13);
+  $50.Timestamp get lastAccess => $_getN(13);
   @$pb.TagNumber(14)
-  set lastAccess($51.Timestamp v) { setField(14, v); }
+  set lastAccess($50.Timestamp v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasLastAccess() => $_has(13);
   @$pb.TagNumber(14)
   void clearLastAccess() => clearField(14);
   @$pb.TagNumber(14)
-  $51.Timestamp ensureLastAccess() => $_ensure(13);
+  $50.Timestamp ensureLastAccess() => $_ensure(13);
 }
 
 class ListRobotsResponse extends $pb.GeneratedMessage {
@@ -10808,7 +11024,7 @@ class GetRobotMetadataRequest extends $pb.GeneratedMessage {
 
 class GetRobotMetadataResponse extends $pb.GeneratedMessage {
   factory GetRobotMetadataResponse({
-    $50.Struct? data,
+    $49.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
@@ -10821,7 +11037,7 @@ class GetRobotMetadataResponse extends $pb.GeneratedMessage {
   factory GetRobotMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$50.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -10847,21 +11063,21 @@ class GetRobotMetadataResponse extends $pb.GeneratedMessage {
   static GetRobotMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $50.Struct get data => $_getN(0);
+  $49.Struct get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($50.Struct v) { setField(1, v); }
+  set data($49.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $50.Struct ensureData() => $_ensure(0);
+  $49.Struct ensureData() => $_ensure(0);
 }
 
 class UpdateRobotMetadataRequest extends $pb.GeneratedMessage {
   factory UpdateRobotMetadataRequest({
     $core.String? id,
-    $50.Struct? data,
+    $49.Struct? data,
   }) {
     final $result = create();
     if (id != null) {
@@ -10878,7 +11094,7 @@ class UpdateRobotMetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -10913,15 +11129,15 @@ class UpdateRobotMetadataRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $50.Struct get data => $_getN(1);
+  $49.Struct get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($50.Struct v) { setField(2, v); }
+  set data($49.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
-  $50.Struct ensureData() => $_ensure(1);
+  $49.Struct ensureData() => $_ensure(1);
 }
 
 class UpdateRobotMetadataResponse extends $pb.GeneratedMessage {
@@ -11993,6 +12209,8 @@ class ModuleVersion extends $pb.GeneratedMessage {
     $core.String? firstRun,
     $core.String? markdownDescription,
     $core.Iterable<App>? apps,
+    DeprecatedStatus? deprecatedStatus,
+    $core.String? minViamServerVersion,
   }) {
     final $result = create();
     if (version != null) {
@@ -12016,6 +12234,12 @@ class ModuleVersion extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (deprecatedStatus != null) {
+      $result.deprecatedStatus = deprecatedStatus;
+    }
+    if (minViamServerVersion != null) {
+      $result.minViamServerVersion = minViamServerVersion;
+    }
     return $result;
   }
   ModuleVersion._() : super();
@@ -12030,6 +12254,8 @@ class ModuleVersion extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'firstRun')
     ..aOS(6, _omitFieldNames ? '' : 'markdownDescription')
     ..pc<App>(7, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..aOM<DeprecatedStatus>(8, _omitFieldNames ? '' : 'deprecatedStatus', subBuilder: DeprecatedStatus.create)
+    ..aOS(9, _omitFieldNames ? '' : 'minViamServerVersion')
     ..hasRequiredFields = false
   ;
 
@@ -12105,6 +12331,28 @@ class ModuleVersion extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(7)
   $core.List<App> get apps => $_getList(6);
+
+  /// When set, marks this specific version as deprecated
+  @$pb.TagNumber(8)
+  DeprecatedStatus get deprecatedStatus => $_getN(7);
+  @$pb.TagNumber(8)
+  set deprecatedStatus(DeprecatedStatus v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasDeprecatedStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDeprecatedStatus() => clearField(8);
+  @$pb.TagNumber(8)
+  DeprecatedStatus ensureDeprecatedStatus() => $_ensure(7);
+
+  /// The minimum version of viam-server required to run this version of the module.
+  @$pb.TagNumber(9)
+  $core.String get minViamServerVersion => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set minViamServerVersion($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMinViamServerVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMinViamServerVersion() => clearField(9);
 }
 
 class ModuleMetadata extends $pb.GeneratedMessage {
@@ -12117,6 +12365,7 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     $core.Iterable<App>? apps,
     ModuleSourceType? sourceType,
     ModuleLanguage? language,
+    $core.String? minViamServerVersion,
   }) {
     final $result = create();
     if (models != null) {
@@ -12143,6 +12392,9 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     if (language != null) {
       $result.language = language;
     }
+    if (minViamServerVersion != null) {
+      $result.minViamServerVersion = minViamServerVersion;
+    }
     return $result;
   }
   ModuleMetadata._() : super();
@@ -12158,6 +12410,7 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     ..pc<App>(6, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..e<ModuleSourceType>(7, _omitFieldNames ? '' : 'sourceType', $pb.PbFieldType.OE, defaultOrMaker: ModuleSourceType.MODULE_SOURCE_TYPE_UNSPECIFIED, valueOf: ModuleSourceType.valueOf, enumValues: ModuleSourceType.values)
     ..e<ModuleLanguage>(8, _omitFieldNames ? '' : 'language', $pb.PbFieldType.OE, defaultOrMaker: ModuleLanguage.MODULE_LANGUAGE_UNSPECIFIED, valueOf: ModuleLanguage.valueOf, enumValues: ModuleLanguage.values)
+    ..aOS(9, _omitFieldNames ? '' : 'minViamServerVersion')
     ..hasRequiredFields = false
   ;
 
@@ -12244,12 +12497,22 @@ class ModuleMetadata extends $pb.GeneratedMessage {
   $core.bool hasLanguage() => $_has(7);
   @$pb.TagNumber(8)
   void clearLanguage() => clearField(8);
+
+  /// The minimum version of viam-server required to run the module.
+  @$pb.TagNumber(9)
+  $core.String get minViamServerVersion => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set minViamServerVersion($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMinViamServerVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMinViamServerVersion() => clearField(9);
 }
 
 class MLModelVersion extends $pb.GeneratedMessage {
   factory MLModelVersion({
     $core.String? version,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
   }) {
     final $result = create();
     if (version != null) {
@@ -12266,7 +12529,7 @@ class MLModelVersion extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLModelVersion', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'version')
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(2, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -12301,23 +12564,23 @@ class MLModelVersion extends $pb.GeneratedMessage {
   void clearVersion() => clearField(1);
 
   @$pb.TagNumber(2)
-  $51.Timestamp get createdOn => $_getN(1);
+  $50.Timestamp get createdOn => $_getN(1);
   @$pb.TagNumber(2)
-  set createdOn($51.Timestamp v) { setField(2, v); }
+  set createdOn($50.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreatedOn() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreatedOn() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureCreatedOn() => $_ensure(1);
+  $50.Timestamp ensureCreatedOn() => $_ensure(1);
 }
 
 class MLModelMetadata extends $pb.GeneratedMessage {
   factory MLModelMetadata({
   @$core.Deprecated('This field is deprecated.')
     $core.Iterable<$core.String>? versions,
-    $10.ModelType? modelType,
-    $10.ModelFramework? modelFramework,
+    $11.ModelType? modelType,
+    $11.ModelFramework? modelFramework,
     $core.Iterable<MLModelVersion>? detailedVersions,
   }) {
     final $result = create();
@@ -12342,8 +12605,8 @@ class MLModelMetadata extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLModelMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'versions')
-    ..e<$10.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $10.ModelType.valueOf, enumValues: $10.ModelType.values)
-    ..e<$10.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $10.ModelFramework.valueOf, enumValues: $10.ModelFramework.values)
+    ..e<$11.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $11.ModelType.valueOf, enumValues: $11.ModelType.values)
+    ..e<$11.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $11.ModelFramework.valueOf, enumValues: $11.ModelFramework.values)
     ..pc<MLModelVersion>(4, _omitFieldNames ? '' : 'detailedVersions', $pb.PbFieldType.PM, subBuilder: MLModelVersion.create)
     ..hasRequiredFields = false
   ;
@@ -12375,18 +12638,18 @@ class MLModelMetadata extends $pb.GeneratedMessage {
   $core.List<$core.String> get versions => $_getList(0);
 
   @$pb.TagNumber(2)
-  $10.ModelType get modelType => $_getN(1);
+  $11.ModelType get modelType => $_getN(1);
   @$pb.TagNumber(2)
-  set modelType($10.ModelType v) { setField(2, v); }
+  set modelType($11.ModelType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelType() => $_has(1);
   @$pb.TagNumber(2)
   void clearModelType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $10.ModelFramework get modelFramework => $_getN(2);
+  $11.ModelFramework get modelFramework => $_getN(2);
   @$pb.TagNumber(3)
-  set modelFramework($10.ModelFramework v) { setField(3, v); }
+  set modelFramework($11.ModelFramework v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasModelFramework() => $_has(2);
   @$pb.TagNumber(3)
@@ -12399,7 +12662,7 @@ class MLModelMetadata extends $pb.GeneratedMessage {
 class MLTrainingVersion extends $pb.GeneratedMessage {
   factory MLTrainingVersion({
     $core.String? version,
-    $51.Timestamp? createdOn,
+    $50.Timestamp? createdOn,
   }) {
     final $result = create();
     if (version != null) {
@@ -12416,7 +12679,7 @@ class MLTrainingVersion extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLTrainingVersion', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'version')
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'createdOn', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(2, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -12451,21 +12714,21 @@ class MLTrainingVersion extends $pb.GeneratedMessage {
   void clearVersion() => clearField(1);
 
   @$pb.TagNumber(2)
-  $51.Timestamp get createdOn => $_getN(1);
+  $50.Timestamp get createdOn => $_getN(1);
   @$pb.TagNumber(2)
-  set createdOn($51.Timestamp v) { setField(2, v); }
+  set createdOn($50.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreatedOn() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreatedOn() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureCreatedOn() => $_ensure(1);
+  $50.Timestamp ensureCreatedOn() => $_ensure(1);
 }
 
 class MLTrainingMetadata extends $pb.GeneratedMessage {
   factory MLTrainingMetadata({
-    $10.ModelType? modelType,
-    $10.ModelFramework? modelFramework,
+    $11.ModelType? modelType,
+    $11.ModelFramework? modelFramework,
     $core.bool? draft,
     $core.Iterable<MLTrainingVersion>? versions,
   }) {
@@ -12489,8 +12752,8 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   factory MLTrainingMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLTrainingMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..e<$10.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $10.ModelType.valueOf, enumValues: $10.ModelType.values)
-    ..e<$10.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $10.ModelFramework.valueOf, enumValues: $10.ModelFramework.values)
+    ..e<$11.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $11.ModelType.valueOf, enumValues: $11.ModelType.values)
+    ..e<$11.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $11.ModelFramework.valueOf, enumValues: $11.ModelFramework.values)
     ..aOB(4, _omitFieldNames ? '' : 'draft')
     ..pc<MLTrainingVersion>(5, _omitFieldNames ? '' : 'versions', $pb.PbFieldType.PM, subBuilder: MLTrainingVersion.create)
     ..hasRequiredFields = false
@@ -12518,18 +12781,18 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   static MLTrainingMetadata? _defaultInstance;
 
   @$pb.TagNumber(2)
-  $10.ModelType get modelType => $_getN(0);
+  $11.ModelType get modelType => $_getN(0);
   @$pb.TagNumber(2)
-  set modelType($10.ModelType v) { setField(2, v); }
+  set modelType($11.ModelType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelType() => $_has(0);
   @$pb.TagNumber(2)
   void clearModelType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $10.ModelFramework get modelFramework => $_getN(1);
+  $11.ModelFramework get modelFramework => $_getN(1);
   @$pb.TagNumber(3)
-  set modelFramework($10.ModelFramework v) { setField(3, v); }
+  set modelFramework($11.ModelFramework v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasModelFramework() => $_has(1);
   @$pb.TagNumber(3)
@@ -12547,6 +12810,218 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   /// A list of package versions for ML training source distribution
   @$pb.TagNumber(5)
   $core.List<MLTrainingVersion> get versions => $_getList(3);
+}
+
+/// note: current project will only support deprecation of modules;
+/// Training Script and ML Model aren't supported yet.
+class DeprecatedStatus extends $pb.GeneratedMessage {
+  factory DeprecatedStatus({
+    $50.Timestamp? deprecatedAt,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (deprecatedAt != null) {
+      $result.deprecatedAt = deprecatedAt;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
+  DeprecatedStatus._() : super();
+  factory DeprecatedStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecatedStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecatedStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<$50.Timestamp>(1, _omitFieldNames ? '' : 'deprecatedAt', subBuilder: $50.Timestamp.create)
+    ..aOS(2, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecatedStatus clone() => DeprecatedStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecatedStatus copyWith(void Function(DeprecatedStatus) updates) => super.copyWith((message) => updates(message as DeprecatedStatus)) as DeprecatedStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecatedStatus create() => DeprecatedStatus._();
+  DeprecatedStatus createEmptyInstance() => create();
+  static $pb.PbList<DeprecatedStatus> createRepeated() => $pb.PbList<DeprecatedStatus>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecatedStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecatedStatus>(create);
+  static DeprecatedStatus? _defaultInstance;
+
+  /// time of deprecation
+  @$pb.TagNumber(1)
+  $50.Timestamp get deprecatedAt => $_getN(0);
+  @$pb.TagNumber(1)
+  set deprecatedAt($50.Timestamp v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDeprecatedAt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeprecatedAt() => clearField(1);
+  @$pb.TagNumber(1)
+  $50.Timestamp ensureDeprecatedAt() => $_ensure(0);
+
+  /// msg explaining reason for deprecation
+  @$pb.TagNumber(2)
+  $core.String get message => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set message($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessage() => clearField(2);
+}
+
+enum RegistryItemBilling_Frequency {
+  costPerMonth, 
+  costPerYear, 
+  notSet
+}
+
+/// RegistryItemBilling stores usage cost information for a registry item. Its shape mirrors the
+/// billing block used by fragments so that billing jobs can consume registry item costs the same
+/// way. For now only cost_per_month.per_machine is supported; the additional fields that fragment
+/// billing supports (cost_per_year, tier_name, in_arrears, etc.) are intentionally omitted.
+class RegistryItemBilling extends $pb.GeneratedMessage {
+  factory RegistryItemBilling({
+    RegistryItemCostByResource? costPerMonth,
+    RegistryItemCostByResource? costPerYear,
+  }) {
+    final $result = create();
+    if (costPerMonth != null) {
+      $result.costPerMonth = costPerMonth;
+    }
+    if (costPerYear != null) {
+      $result.costPerYear = costPerYear;
+    }
+    return $result;
+  }
+  RegistryItemBilling._() : super();
+  factory RegistryItemBilling.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegistryItemBilling.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, RegistryItemBilling_Frequency> _RegistryItemBilling_FrequencyByTag = {
+    1 : RegistryItemBilling_Frequency.costPerMonth,
+    2 : RegistryItemBilling_Frequency.costPerYear,
+    0 : RegistryItemBilling_Frequency.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegistryItemBilling', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOM<RegistryItemCostByResource>(1, _omitFieldNames ? '' : 'costPerMonth', subBuilder: RegistryItemCostByResource.create)
+    ..aOM<RegistryItemCostByResource>(2, _omitFieldNames ? '' : 'costPerYear', subBuilder: RegistryItemCostByResource.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegistryItemBilling clone() => RegistryItemBilling()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegistryItemBilling copyWith(void Function(RegistryItemBilling) updates) => super.copyWith((message) => updates(message as RegistryItemBilling)) as RegistryItemBilling;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegistryItemBilling create() => RegistryItemBilling._();
+  RegistryItemBilling createEmptyInstance() => create();
+  static $pb.PbList<RegistryItemBilling> createRepeated() => $pb.PbList<RegistryItemBilling>();
+  @$core.pragma('dart2js:noInline')
+  static RegistryItemBilling getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegistryItemBilling>(create);
+  static RegistryItemBilling? _defaultInstance;
+
+  RegistryItemBilling_Frequency whichFrequency() => _RegistryItemBilling_FrequencyByTag[$_whichOneof(0)]!;
+  void clearFrequency() => clearField($_whichOneof(0));
+
+  /// The recurring monthly cost of the item, broken down by billable resource.
+  @$pb.TagNumber(1)
+  RegistryItemCostByResource get costPerMonth => $_getN(0);
+  @$pb.TagNumber(1)
+  set costPerMonth(RegistryItemCostByResource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCostPerMonth() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCostPerMonth() => clearField(1);
+  @$pb.TagNumber(1)
+  RegistryItemCostByResource ensureCostPerMonth() => $_ensure(0);
+
+  /// The recurring yearly cost of the item, broken down by billable resource.
+  @$pb.TagNumber(2)
+  RegistryItemCostByResource get costPerYear => $_getN(1);
+  @$pb.TagNumber(2)
+  set costPerYear(RegistryItemCostByResource v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCostPerYear() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCostPerYear() => clearField(2);
+  @$pb.TagNumber(2)
+  RegistryItemCostByResource ensureCostPerYear() => $_ensure(1);
+}
+
+/// RegistryItemCostByResource holds the cost of a registry item broken down by billable resource.
+/// Only the per_machine resource is currently supported.
+class RegistryItemCostByResource extends $pb.GeneratedMessage {
+  factory RegistryItemCostByResource({
+    $core.double? perMachine,
+  }) {
+    final $result = create();
+    if (perMachine != null) {
+      $result.perMachine = perMachine;
+    }
+    return $result;
+  }
+  RegistryItemCostByResource._() : super();
+  factory RegistryItemCostByResource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegistryItemCostByResource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegistryItemCostByResource', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'perMachine', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegistryItemCostByResource clone() => RegistryItemCostByResource()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegistryItemCostByResource copyWith(void Function(RegistryItemCostByResource) updates) => super.copyWith((message) => updates(message as RegistryItemCostByResource)) as RegistryItemCostByResource;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegistryItemCostByResource create() => RegistryItemCostByResource._();
+  RegistryItemCostByResource createEmptyInstance() => create();
+  static $pb.PbList<RegistryItemCostByResource> createRepeated() => $pb.PbList<RegistryItemCostByResource>();
+  @$core.pragma('dart2js:noInline')
+  static RegistryItemCostByResource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegistryItemCostByResource>(create);
+  static RegistryItemCostByResource? _defaultInstance;
+
+  /// The cost charged per machine using the item, in USD.
+  @$pb.TagNumber(1)
+  $core.double get perMachine => $_getN(0);
+  @$pb.TagNumber(1)
+  set perMachine($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPerMachine() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPerMachine() => clearField(1);
 }
 
 enum RegistryItem_Metadata {
@@ -12572,9 +13047,11 @@ class RegistryItem extends $pb.GeneratedMessage {
     MLModelMetadata? mlModelMetadata,
     $fixnum.Int64? totalExternalRobotUsage,
     $fixnum.Int64? totalExternalOrganizationUsage,
-    $51.Timestamp? createdAt,
-    $51.Timestamp? updatedAt,
+    $50.Timestamp? createdAt,
+    $50.Timestamp? updatedAt,
+    DeprecatedStatus? deprecatedStatus,
     MLTrainingMetadata? mlTrainingMetadata,
+    RegistryItemBilling? billing,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -12625,8 +13102,14 @@ class RegistryItem extends $pb.GeneratedMessage {
     if (updatedAt != null) {
       $result.updatedAt = updatedAt;
     }
+    if (deprecatedStatus != null) {
+      $result.deprecatedStatus = deprecatedStatus;
+    }
     if (mlTrainingMetadata != null) {
       $result.mlTrainingMetadata = mlTrainingMetadata;
+    }
+    if (billing != null) {
+      $result.billing = billing;
     }
     return $result;
   }
@@ -12656,9 +13139,11 @@ class RegistryItem extends $pb.GeneratedMessage {
     ..aOM<MLModelMetadata>(12, _omitFieldNames ? '' : 'mlModelMetadata', subBuilder: MLModelMetadata.create)
     ..aInt64(13, _omitFieldNames ? '' : 'totalExternalRobotUsage')
     ..aInt64(14, _omitFieldNames ? '' : 'totalExternalOrganizationUsage')
-    ..aOM<$51.Timestamp>(15, _omitFieldNames ? '' : 'createdAt', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(16, _omitFieldNames ? '' : 'updatedAt', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(15, _omitFieldNames ? '' : 'createdAt', subBuilder: $50.Timestamp.create)
+    ..aOM<$50.Timestamp>(16, _omitFieldNames ? '' : 'updatedAt', subBuilder: $50.Timestamp.create)
+    ..aOM<DeprecatedStatus>(17, _omitFieldNames ? '' : 'deprecatedStatus', subBuilder: DeprecatedStatus.create)
     ..aOM<MLTrainingMetadata>(18, _omitFieldNames ? '' : 'mlTrainingMetadata', subBuilder: MLTrainingMetadata.create)
+    ..aOM<RegistryItemBilling>(19, _omitFieldNames ? '' : 'billing', subBuilder: RegistryItemBilling.create)
     ..hasRequiredFields = false
   ;
 
@@ -12833,38 +13318,63 @@ class RegistryItem extends $pb.GeneratedMessage {
 
   /// When the item was created
   @$pb.TagNumber(15)
-  $51.Timestamp get createdAt => $_getN(14);
+  $50.Timestamp get createdAt => $_getN(14);
   @$pb.TagNumber(15)
-  set createdAt($51.Timestamp v) { setField(15, v); }
+  set createdAt($50.Timestamp v) { setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasCreatedAt() => $_has(14);
   @$pb.TagNumber(15)
   void clearCreatedAt() => clearField(15);
   @$pb.TagNumber(15)
-  $51.Timestamp ensureCreatedAt() => $_ensure(14);
+  $50.Timestamp ensureCreatedAt() => $_ensure(14);
 
   /// When the item was last updated, either through an update or upload.
   @$pb.TagNumber(16)
-  $51.Timestamp get updatedAt => $_getN(15);
+  $50.Timestamp get updatedAt => $_getN(15);
   @$pb.TagNumber(16)
-  set updatedAt($51.Timestamp v) { setField(16, v); }
+  set updatedAt($50.Timestamp v) { setField(16, v); }
   @$pb.TagNumber(16)
   $core.bool hasUpdatedAt() => $_has(15);
   @$pb.TagNumber(16)
   void clearUpdatedAt() => clearField(16);
   @$pb.TagNumber(16)
-  $51.Timestamp ensureUpdatedAt() => $_ensure(15);
+  $50.Timestamp ensureUpdatedAt() => $_ensure(15);
+
+  /// Whether the item is deprecated
+  @$pb.TagNumber(17)
+  DeprecatedStatus get deprecatedStatus => $_getN(16);
+  @$pb.TagNumber(17)
+  set deprecatedStatus(DeprecatedStatus v) { setField(17, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasDeprecatedStatus() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearDeprecatedStatus() => clearField(17);
+  @$pb.TagNumber(17)
+  DeprecatedStatus ensureDeprecatedStatus() => $_ensure(16);
 
   @$pb.TagNumber(18)
-  MLTrainingMetadata get mlTrainingMetadata => $_getN(16);
+  MLTrainingMetadata get mlTrainingMetadata => $_getN(17);
   @$pb.TagNumber(18)
   set mlTrainingMetadata(MLTrainingMetadata v) { setField(18, v); }
   @$pb.TagNumber(18)
-  $core.bool hasMlTrainingMetadata() => $_has(16);
+  $core.bool hasMlTrainingMetadata() => $_has(17);
   @$pb.TagNumber(18)
   void clearMlTrainingMetadata() => clearField(18);
   @$pb.TagNumber(18)
-  MLTrainingMetadata ensureMlTrainingMetadata() => $_ensure(16);
+  MLTrainingMetadata ensureMlTrainingMetadata() => $_ensure(17);
+
+  /// Usage cost information used by billing jobs to bill for monthly usage of the item.
+  /// This is unset when no cost has been configured for the item.
+  @$pb.TagNumber(19)
+  RegistryItemBilling get billing => $_getN(18);
+  @$pb.TagNumber(19)
+  set billing(RegistryItemBilling v) { setField(19, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasBilling() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearBilling() => clearField(19);
+  @$pb.TagNumber(19)
+  RegistryItemBilling ensureBilling() => $_ensure(18);
 }
 
 class GetRegistryItemRequest extends $pb.GeneratedMessage {
@@ -13114,6 +13624,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     UpdateMLModelMetadata? updateMlModelMetadata,
     UpdateMLTrainingMetadata? updateMlTrainingMetadata,
     $core.String? markdownDescription,
+    RegistryItemBilling? billing,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -13143,6 +13654,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     if (markdownDescription != null) {
       $result.markdownDescription = markdownDescription;
     }
+    if (billing != null) {
+      $result.billing = billing;
+    }
     return $result;
   }
   UpdateRegistryItemRequest._() : super();
@@ -13166,6 +13680,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     ..aOM<UpdateMLModelMetadata>(7, _omitFieldNames ? '' : 'updateMlModelMetadata', subBuilder: UpdateMLModelMetadata.create)
     ..aOM<UpdateMLTrainingMetadata>(8, _omitFieldNames ? '' : 'updateMlTrainingMetadata', subBuilder: UpdateMLTrainingMetadata.create)
     ..aOS(9, _omitFieldNames ? '' : 'markdownDescription')
+    ..aOM<RegistryItemBilling>(10, _omitFieldNames ? '' : 'billing', subBuilder: RegistryItemBilling.create)
     ..hasRequiredFields = false
   ;
 
@@ -13279,6 +13794,19 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   $core.bool hasMarkdownDescription() => $_has(8);
   @$pb.TagNumber(9)
   void clearMarkdownDescription() => clearField(9);
+
+  /// The usage cost information to store on the item. When unset, the existing billing
+  /// configuration is left unchanged.
+  @$pb.TagNumber(10)
+  RegistryItemBilling get billing => $_getN(9);
+  @$pb.TagNumber(10)
+  set billing(RegistryItemBilling v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasBilling() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearBilling() => clearField(10);
+  @$pb.TagNumber(10)
+  RegistryItemBilling ensureBilling() => $_ensure(9);
 }
 
 class UpdateRegistryItemResponse extends $pb.GeneratedMessage {
@@ -13326,6 +13854,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     $core.bool? includeMarkdownDocumentation,
     $core.Iterable<ModuleSourceType>? moduleSourceTypes,
     $core.Iterable<ModuleLanguage>? moduleLanguages,
+    $core.bool? showOwnedDeprecated,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -13361,6 +13890,9 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     if (moduleLanguages != null) {
       $result.moduleLanguages.addAll(moduleLanguages);
     }
+    if (showOwnedDeprecated != null) {
+      $result.showOwnedDeprecated = showOwnedDeprecated;
+    }
     return $result;
   }
   ListRegistryItemsRequest._() : super();
@@ -13379,6 +13911,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     ..aOB(9, _omitFieldNames ? '' : 'includeMarkdownDocumentation')
     ..pc<ModuleSourceType>(10, _omitFieldNames ? '' : 'moduleSourceTypes', $pb.PbFieldType.KE, valueOf: ModuleSourceType.valueOf, enumValues: ModuleSourceType.values, defaultEnumValue: ModuleSourceType.MODULE_SOURCE_TYPE_UNSPECIFIED)
     ..pc<ModuleLanguage>(11, _omitFieldNames ? '' : 'moduleLanguages', $pb.PbFieldType.KE, valueOf: ModuleLanguage.valueOf, enumValues: ModuleLanguage.values, defaultEnumValue: ModuleLanguage.MODULE_LANGUAGE_UNSPECIFIED)
+    ..aOB(12, _omitFieldNames ? '' : 'showOwnedDeprecated')
     ..hasRequiredFields = false
   ;
 
@@ -13461,6 +13994,15 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(11)
   $core.List<ModuleLanguage> get moduleLanguages => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.bool get showOwnedDeprecated => $_getBF(11);
+  @$pb.TagNumber(12)
+  set showOwnedDeprecated($core.bool v) { $_setBool(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasShowOwnedDeprecated() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearShowOwnedDeprecated() => clearField(12);
 }
 
 class ListRegistryItemsResponse extends $pb.GeneratedMessage {
@@ -13802,6 +14344,184 @@ class TransferRegistryItemResponse extends $pb.GeneratedMessage {
   static TransferRegistryItemResponse? _defaultInstance;
 }
 
+class DeprecateRegistryItemRequest extends $pb.GeneratedMessage {
+  factory DeprecateRegistryItemRequest({
+    $core.String? itemId,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
+  DeprecateRegistryItemRequest._() : super();
+  factory DeprecateRegistryItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecateRegistryItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecateRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemRequest clone() => DeprecateRegistryItemRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemRequest copyWith(void Function(DeprecateRegistryItemRequest) updates) => super.copyWith((message) => updates(message as DeprecateRegistryItemRequest)) as DeprecateRegistryItemRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemRequest create() => DeprecateRegistryItemRequest._();
+  DeprecateRegistryItemRequest createEmptyInstance() => create();
+  static $pb.PbList<DeprecateRegistryItemRequest> createRepeated() => $pb.PbList<DeprecateRegistryItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecateRegistryItemRequest>(create);
+  static DeprecateRegistryItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get message => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set message($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessage() => clearField(2);
+}
+
+class DeprecateRegistryItemResponse extends $pb.GeneratedMessage {
+  factory DeprecateRegistryItemResponse() => create();
+  DeprecateRegistryItemResponse._() : super();
+  factory DeprecateRegistryItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecateRegistryItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecateRegistryItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemResponse clone() => DeprecateRegistryItemResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemResponse copyWith(void Function(DeprecateRegistryItemResponse) updates) => super.copyWith((message) => updates(message as DeprecateRegistryItemResponse)) as DeprecateRegistryItemResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemResponse create() => DeprecateRegistryItemResponse._();
+  DeprecateRegistryItemResponse createEmptyInstance() => create();
+  static $pb.PbList<DeprecateRegistryItemResponse> createRepeated() => $pb.PbList<DeprecateRegistryItemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecateRegistryItemResponse>(create);
+  static DeprecateRegistryItemResponse? _defaultInstance;
+}
+
+class UndeprecateRegistryItemRequest extends $pb.GeneratedMessage {
+  factory UndeprecateRegistryItemRequest({
+    $core.String? itemId,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    return $result;
+  }
+  UndeprecateRegistryItemRequest._() : super();
+  factory UndeprecateRegistryItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UndeprecateRegistryItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UndeprecateRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemRequest clone() => UndeprecateRegistryItemRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemRequest copyWith(void Function(UndeprecateRegistryItemRequest) updates) => super.copyWith((message) => updates(message as UndeprecateRegistryItemRequest)) as UndeprecateRegistryItemRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemRequest create() => UndeprecateRegistryItemRequest._();
+  UndeprecateRegistryItemRequest createEmptyInstance() => create();
+  static $pb.PbList<UndeprecateRegistryItemRequest> createRepeated() => $pb.PbList<UndeprecateRegistryItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UndeprecateRegistryItemRequest>(create);
+  static UndeprecateRegistryItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+}
+
+class UndeprecateRegistryItemResponse extends $pb.GeneratedMessage {
+  factory UndeprecateRegistryItemResponse() => create();
+  UndeprecateRegistryItemResponse._() : super();
+  factory UndeprecateRegistryItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UndeprecateRegistryItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UndeprecateRegistryItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemResponse clone() => UndeprecateRegistryItemResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemResponse copyWith(void Function(UndeprecateRegistryItemResponse) updates) => super.copyWith((message) => updates(message as UndeprecateRegistryItemResponse)) as UndeprecateRegistryItemResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemResponse create() => UndeprecateRegistryItemResponse._();
+  UndeprecateRegistryItemResponse createEmptyInstance() => create();
+  static $pb.PbList<UndeprecateRegistryItemResponse> createRepeated() => $pb.PbList<UndeprecateRegistryItemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UndeprecateRegistryItemResponse>(create);
+  static UndeprecateRegistryItemResponse? _defaultInstance;
+}
+
 /// Modules
 class CreateModuleRequest extends $pb.GeneratedMessage {
   factory CreateModuleRequest({
@@ -14094,6 +14814,50 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   void clearMarkdownDescription() => clearField(9);
 }
 
+class AllowedOrgIDs extends $pb.GeneratedMessage {
+  factory AllowedOrgIDs({
+    $core.Iterable<$core.String>? ids,
+  }) {
+    final $result = create();
+    if (ids != null) {
+      $result.ids.addAll(ids);
+    }
+    return $result;
+  }
+  AllowedOrgIDs._() : super();
+  factory AllowedOrgIDs.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AllowedOrgIDs.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AllowedOrgIDs', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'ids')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AllowedOrgIDs clone() => AllowedOrgIDs()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AllowedOrgIDs copyWith(void Function(AllowedOrgIDs) updates) => super.copyWith((message) => updates(message as AllowedOrgIDs)) as AllowedOrgIDs;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AllowedOrgIDs create() => AllowedOrgIDs._();
+  AllowedOrgIDs createEmptyInstance() => create();
+  static $pb.PbList<AllowedOrgIDs> createRepeated() => $pb.PbList<AllowedOrgIDs>();
+  @$core.pragma('dart2js:noInline')
+  static AllowedOrgIDs getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AllowedOrgIDs>(create);
+  static AllowedOrgIDs? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get ids => $_getList(0);
+}
+
 class App extends $pb.GeneratedMessage {
   factory App({
     $core.String? name,
@@ -14102,6 +14866,7 @@ class App extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? fragmentIds,
     $core.String? logoPath,
     AppCustomizations? customizations,
+    AllowedOrgIDs? allowedOrgIds,
   }) {
     final $result = create();
     if (name != null) {
@@ -14122,6 +14887,9 @@ class App extends $pb.GeneratedMessage {
     if (customizations != null) {
       $result.customizations = customizations;
     }
+    if (allowedOrgIds != null) {
+      $result.allowedOrgIds = allowedOrgIds;
+    }
     return $result;
   }
   App._() : super();
@@ -14135,6 +14903,7 @@ class App extends $pb.GeneratedMessage {
     ..pPS(4, _omitFieldNames ? '' : 'fragmentIds')
     ..aOS(5, _omitFieldNames ? '' : 'logoPath')
     ..aOM<AppCustomizations>(6, _omitFieldNames ? '' : 'customizations', subBuilder: AppCustomizations.create)
+    ..aOM<AllowedOrgIDs>(7, _omitFieldNames ? '' : 'allowedOrgIds', subBuilder: AllowedOrgIDs.create)
     ..hasRequiredFields = false
   ;
 
@@ -14214,6 +14983,18 @@ class App extends $pb.GeneratedMessage {
   void clearCustomizations() => clearField(6);
   @$pb.TagNumber(6)
   AppCustomizations ensureCustomizations() => $_ensure(5);
+
+  /// Optional: list of org IDs that are allowed to use this app; if empty, all orgs are allowed
+  @$pb.TagNumber(7)
+  AllowedOrgIDs get allowedOrgIds => $_getN(6);
+  @$pb.TagNumber(7)
+  set allowedOrgIds(AllowedOrgIDs v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAllowedOrgIds() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAllowedOrgIds() => clearField(7);
+  @$pb.TagNumber(7)
+  AllowedOrgIDs ensureAllowedOrgIds() => $_ensure(6);
 }
 
 class UpdateModuleResponse extends $pb.GeneratedMessage {
@@ -14274,6 +15055,7 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
     $core.Iterable<App>? apps,
     ModuleSourceType? sourceType,
     ModuleLanguage? language,
+    $core.String? minViamServerVersion,
   }) {
     final $result = create();
     if (models != null) {
@@ -14291,6 +15073,9 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
     if (language != null) {
       $result.language = language;
     }
+    if (minViamServerVersion != null) {
+      $result.minViamServerVersion = minViamServerVersion;
+    }
     return $result;
   }
   UpdateModuleMetadata._() : super();
@@ -14303,6 +15088,7 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
     ..pc<App>(3, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..e<ModuleSourceType>(4, _omitFieldNames ? '' : 'sourceType', $pb.PbFieldType.OE, defaultOrMaker: ModuleSourceType.MODULE_SOURCE_TYPE_UNSPECIFIED, valueOf: ModuleSourceType.valueOf, enumValues: ModuleSourceType.values)
     ..e<ModuleLanguage>(5, _omitFieldNames ? '' : 'language', $pb.PbFieldType.OE, defaultOrMaker: ModuleLanguage.MODULE_LANGUAGE_UNSPECIFIED, valueOf: ModuleLanguage.valueOf, enumValues: ModuleLanguage.values)
+    ..aOS(6, _omitFieldNames ? '' : 'minViamServerVersion')
     ..hasRequiredFields = false
   ;
 
@@ -14364,12 +15150,22 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
   $core.bool hasLanguage() => $_has(4);
   @$pb.TagNumber(5)
   void clearLanguage() => clearField(5);
+
+  /// The minimum version of viam-server required to run the module.
+  @$pb.TagNumber(6)
+  $core.String get minViamServerVersion => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set minViamServerVersion($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMinViamServerVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMinViamServerVersion() => clearField(6);
 }
 
 class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   factory UpdateMLModelMetadata({
-    $10.ModelType? modelType,
-    $10.ModelFramework? modelFramework,
+    $11.ModelType? modelType,
+    $11.ModelFramework? modelFramework,
   }) {
     final $result = create();
     if (modelType != null) {
@@ -14385,8 +15181,8 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   factory UpdateMLModelMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMLModelMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..e<$10.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $10.ModelType.valueOf, enumValues: $10.ModelType.values)
-    ..e<$10.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $10.ModelFramework.valueOf, enumValues: $10.ModelFramework.values)
+    ..e<$11.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $11.ModelType.valueOf, enumValues: $11.ModelType.values)
+    ..e<$11.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $11.ModelFramework.valueOf, enumValues: $11.ModelFramework.values)
     ..hasRequiredFields = false
   ;
 
@@ -14412,18 +15208,18 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   static UpdateMLModelMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $10.ModelType get modelType => $_getN(0);
+  $11.ModelType get modelType => $_getN(0);
   @$pb.TagNumber(1)
-  set modelType($10.ModelType v) { setField(1, v); }
+  set modelType($11.ModelType v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasModelType() => $_has(0);
   @$pb.TagNumber(1)
   void clearModelType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $10.ModelFramework get modelFramework => $_getN(1);
+  $11.ModelFramework get modelFramework => $_getN(1);
   @$pb.TagNumber(2)
-  set modelFramework($10.ModelFramework v) { setField(2, v); }
+  set modelFramework($11.ModelFramework v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelFramework() => $_has(1);
   @$pb.TagNumber(2)
@@ -14432,8 +15228,8 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
 
 class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
   factory UpdateMLTrainingMetadata({
-    $10.ModelType? modelType,
-    $10.ModelFramework? modelFramework,
+    $11.ModelType? modelType,
+    $11.ModelFramework? modelFramework,
     $core.bool? draft,
   }) {
     final $result = create();
@@ -14453,8 +15249,8 @@ class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
   factory UpdateMLTrainingMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMLTrainingMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..e<$10.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $10.ModelType.valueOf, enumValues: $10.ModelType.values)
-    ..e<$10.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $10.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $10.ModelFramework.valueOf, enumValues: $10.ModelFramework.values)
+    ..e<$11.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $11.ModelType.valueOf, enumValues: $11.ModelType.values)
+    ..e<$11.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $11.ModelFramework.valueOf, enumValues: $11.ModelFramework.values)
     ..aOB(3, _omitFieldNames ? '' : 'draft')
     ..hasRequiredFields = false
   ;
@@ -14481,18 +15277,18 @@ class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
   static UpdateMLTrainingMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $10.ModelType get modelType => $_getN(0);
+  $11.ModelType get modelType => $_getN(0);
   @$pb.TagNumber(1)
-  set modelType($10.ModelType v) { setField(1, v); }
+  set modelType($11.ModelType v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasModelType() => $_has(0);
   @$pb.TagNumber(1)
   void clearModelType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $10.ModelFramework get modelFramework => $_getN(1);
+  $11.ModelFramework get modelFramework => $_getN(1);
   @$pb.TagNumber(2)
-  set modelFramework($10.ModelFramework v) { setField(2, v); }
+  set modelFramework($11.ModelFramework v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelFramework() => $_has(1);
   @$pb.TagNumber(2)
@@ -14974,6 +15770,7 @@ class Module extends $pb.GeneratedMessage {
     $core.String? firstRun,
     $core.String? markdownDescription,
     $core.Iterable<App>? apps,
+    DeprecatedStatus? deprecatedStatus,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -15021,6 +15818,9 @@ class Module extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (deprecatedStatus != null) {
+      $result.deprecatedStatus = deprecatedStatus;
+    }
     return $result;
   }
   Module._() : super();
@@ -15043,6 +15843,7 @@ class Module extends $pb.GeneratedMessage {
     ..aOS(13, _omitFieldNames ? '' : 'firstRun')
     ..aOS(14, _omitFieldNames ? '' : 'markdownDescription')
     ..pc<App>(15, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..aOM<DeprecatedStatus>(16, _omitFieldNames ? '' : 'deprecatedStatus', subBuilder: DeprecatedStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -15200,6 +16001,18 @@ class Module extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(15)
   $core.List<App> get apps => $_getList(14);
+
+  /// Deprecated status of an individual module
+  @$pb.TagNumber(16)
+  DeprecatedStatus get deprecatedStatus => $_getN(15);
+  @$pb.TagNumber(16)
+  set deprecatedStatus(DeprecatedStatus v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasDeprecatedStatus() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearDeprecatedStatus() => clearField(16);
+  @$pb.TagNumber(16)
+  DeprecatedStatus ensureDeprecatedStatus() => $_ensure(15);
 }
 
 class VersionHistory extends $pb.GeneratedMessage {
@@ -15211,6 +16024,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     $core.String? firstRun,
     $core.String? markdownDescription,
     $core.Iterable<App>? apps,
+    DeprecatedStatus? deprecatedStatus,
   }) {
     final $result = create();
     if (version != null) {
@@ -15234,6 +16048,9 @@ class VersionHistory extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (deprecatedStatus != null) {
+      $result.deprecatedStatus = deprecatedStatus;
+    }
     return $result;
   }
   VersionHistory._() : super();
@@ -15248,6 +16065,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'firstRun')
     ..aOS(6, _omitFieldNames ? '' : 'markdownDescription')
     ..pc<App>(7, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..aOM<DeprecatedStatus>(8, _omitFieldNames ? '' : 'deprecatedStatus', subBuilder: DeprecatedStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -15323,12 +16141,24 @@ class VersionHistory extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(7)
   $core.List<App> get apps => $_getList(6);
+
+  /// Deprecated status of an individual module version
+  @$pb.TagNumber(8)
+  DeprecatedStatus get deprecatedStatus => $_getN(7);
+  @$pb.TagNumber(8)
+  set deprecatedStatus(DeprecatedStatus v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasDeprecatedStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDeprecatedStatus() => clearField(8);
+  @$pb.TagNumber(8)
+  DeprecatedStatus ensureDeprecatedStatus() => $_ensure(7);
 }
 
 class Uploads extends $pb.GeneratedMessage {
   factory Uploads({
     $core.String? platform,
-    $51.Timestamp? uploadedAt,
+    $50.Timestamp? uploadedAt,
   }) {
     final $result = create();
     if (platform != null) {
@@ -15345,7 +16175,7 @@ class Uploads extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Uploads', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'platform')
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'uploadedAt', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(2, _omitFieldNames ? '' : 'uploadedAt', subBuilder: $50.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -15382,15 +16212,15 @@ class Uploads extends $pb.GeneratedMessage {
 
   /// The time when the file was uploaded
   @$pb.TagNumber(2)
-  $51.Timestamp get uploadedAt => $_getN(1);
+  $50.Timestamp get uploadedAt => $_getN(1);
   @$pb.TagNumber(2)
-  set uploadedAt($51.Timestamp v) { setField(2, v); }
+  set uploadedAt($50.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasUploadedAt() => $_has(1);
   @$pb.TagNumber(2)
   void clearUploadedAt() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureUploadedAt() => $_ensure(1);
+  $50.Timestamp ensureUploadedAt() => $_ensure(1);
 }
 
 class ListModulesRequest extends $pb.GeneratedMessage {
@@ -15501,6 +16331,216 @@ class ListModulesResponse extends $pb.GeneratedMessage {
   /// A listed of modules. When authenticated, this API will return modules that are private for this org. Public modules are always returned.
   @$pb.TagNumber(1)
   $core.List<Module> get modules => $_getList(0);
+}
+
+/// Deprecates a specific version of a registry item.
+class DeprecateRegistryItemVersionRequest extends $pb.GeneratedMessage {
+  factory DeprecateRegistryItemVersionRequest({
+    $core.String? itemId,
+    $core.String? version,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
+  DeprecateRegistryItemVersionRequest._() : super();
+  factory DeprecateRegistryItemVersionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecateRegistryItemVersionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecateRegistryItemVersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..aOS(3, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemVersionRequest clone() => DeprecateRegistryItemVersionRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemVersionRequest copyWith(void Function(DeprecateRegistryItemVersionRequest) updates) => super.copyWith((message) => updates(message as DeprecateRegistryItemVersionRequest)) as DeprecateRegistryItemVersionRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemVersionRequest create() => DeprecateRegistryItemVersionRequest._();
+  DeprecateRegistryItemVersionRequest createEmptyInstance() => create();
+  static $pb.PbList<DeprecateRegistryItemVersionRequest> createRepeated() => $pb.PbList<DeprecateRegistryItemVersionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemVersionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecateRegistryItemVersionRequest>(create);
+  static DeprecateRegistryItemVersionRequest? _defaultInstance;
+
+  /// The id of the registry item
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+
+  /// The semver string of the version to deprecate.
+  @$pb.TagNumber(2)
+  $core.String get version => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set version($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => clearField(2);
+
+  /// msg explaining reason for deprecation
+  @$pb.TagNumber(3)
+  $core.String get message => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set message($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMessage() => clearField(3);
+}
+
+class DeprecateRegistryItemVersionResponse extends $pb.GeneratedMessage {
+  factory DeprecateRegistryItemVersionResponse() => create();
+  DeprecateRegistryItemVersionResponse._() : super();
+  factory DeprecateRegistryItemVersionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeprecateRegistryItemVersionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeprecateRegistryItemVersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemVersionResponse clone() => DeprecateRegistryItemVersionResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeprecateRegistryItemVersionResponse copyWith(void Function(DeprecateRegistryItemVersionResponse) updates) => super.copyWith((message) => updates(message as DeprecateRegistryItemVersionResponse)) as DeprecateRegistryItemVersionResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemVersionResponse create() => DeprecateRegistryItemVersionResponse._();
+  DeprecateRegistryItemVersionResponse createEmptyInstance() => create();
+  static $pb.PbList<DeprecateRegistryItemVersionResponse> createRepeated() => $pb.PbList<DeprecateRegistryItemVersionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeprecateRegistryItemVersionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeprecateRegistryItemVersionResponse>(create);
+  static DeprecateRegistryItemVersionResponse? _defaultInstance;
+}
+
+class UndeprecateRegistryItemVersionRequest extends $pb.GeneratedMessage {
+  factory UndeprecateRegistryItemVersionRequest({
+    $core.String? itemId,
+    $core.String? version,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    return $result;
+  }
+  UndeprecateRegistryItemVersionRequest._() : super();
+  factory UndeprecateRegistryItemVersionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UndeprecateRegistryItemVersionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UndeprecateRegistryItemVersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemVersionRequest clone() => UndeprecateRegistryItemVersionRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemVersionRequest copyWith(void Function(UndeprecateRegistryItemVersionRequest) updates) => super.copyWith((message) => updates(message as UndeprecateRegistryItemVersionRequest)) as UndeprecateRegistryItemVersionRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemVersionRequest create() => UndeprecateRegistryItemVersionRequest._();
+  UndeprecateRegistryItemVersionRequest createEmptyInstance() => create();
+  static $pb.PbList<UndeprecateRegistryItemVersionRequest> createRepeated() => $pb.PbList<UndeprecateRegistryItemVersionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemVersionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UndeprecateRegistryItemVersionRequest>(create);
+  static UndeprecateRegistryItemVersionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get version => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set version($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => clearField(2);
+}
+
+class UndeprecateRegistryItemVersionResponse extends $pb.GeneratedMessage {
+  factory UndeprecateRegistryItemVersionResponse() => create();
+  UndeprecateRegistryItemVersionResponse._() : super();
+  factory UndeprecateRegistryItemVersionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UndeprecateRegistryItemVersionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UndeprecateRegistryItemVersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemVersionResponse clone() => UndeprecateRegistryItemVersionResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UndeprecateRegistryItemVersionResponse copyWith(void Function(UndeprecateRegistryItemVersionResponse) updates) => super.copyWith((message) => updates(message as UndeprecateRegistryItemVersionResponse)) as UndeprecateRegistryItemVersionResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemVersionResponse create() => UndeprecateRegistryItemVersionResponse._();
+  UndeprecateRegistryItemVersionResponse createEmptyInstance() => create();
+  static $pb.PbList<UndeprecateRegistryItemVersionResponse> createRepeated() => $pb.PbList<UndeprecateRegistryItemVersionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UndeprecateRegistryItemVersionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UndeprecateRegistryItemVersionResponse>(create);
+  static UndeprecateRegistryItemVersionResponse? _defaultInstance;
 }
 
 class GetUserIDByEmailRequest extends $pb.GeneratedMessage {
@@ -17879,6 +18919,218 @@ class ListOAuthAppsResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get clientIds => $_getList(0);
 }
 
+class CreateOAuthAppUserRequest extends $pb.GeneratedMessage {
+  factory CreateOAuthAppUserRequest({
+    $core.String? orgId,
+    $core.String? applicationId,
+    $core.String? email,
+    $core.String? firstName,
+    $core.String? lastName,
+    $core.String? password,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (applicationId != null) {
+      $result.applicationId = applicationId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (firstName != null) {
+      $result.firstName = firstName;
+    }
+    if (lastName != null) {
+      $result.lastName = lastName;
+    }
+    if (password != null) {
+      $result.password = password;
+    }
+    return $result;
+  }
+  CreateOAuthAppUserRequest._() : super();
+  factory CreateOAuthAppUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateOAuthAppUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateOAuthAppUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'applicationId')
+    ..aOS(3, _omitFieldNames ? '' : 'email')
+    ..aOS(4, _omitFieldNames ? '' : 'firstName')
+    ..aOS(5, _omitFieldNames ? '' : 'lastName')
+    ..aOS(6, _omitFieldNames ? '' : 'password')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateOAuthAppUserRequest clone() => CreateOAuthAppUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateOAuthAppUserRequest copyWith(void Function(CreateOAuthAppUserRequest) updates) => super.copyWith((message) => updates(message as CreateOAuthAppUserRequest)) as CreateOAuthAppUserRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOAuthAppUserRequest create() => CreateOAuthAppUserRequest._();
+  CreateOAuthAppUserRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateOAuthAppUserRequest> createRepeated() => $pb.PbList<CreateOAuthAppUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateOAuthAppUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOAuthAppUserRequest>(create);
+  static CreateOAuthAppUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get applicationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set applicationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasApplicationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApplicationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get email => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set email($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEmail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEmail() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get firstName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set firstName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFirstName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFirstName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get lastName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set lastName($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLastName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get password => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set password($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPassword() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPassword() => clearField(6);
+}
+
+class CreateOAuthAppUserResponse extends $pb.GeneratedMessage {
+  factory CreateOAuthAppUserResponse({
+    $core.String? authToken,
+    $core.String? registrationId,
+    $core.String? userId,
+    $core.String? refreshToken,
+  }) {
+    final $result = create();
+    if (authToken != null) {
+      $result.authToken = authToken;
+    }
+    if (registrationId != null) {
+      $result.registrationId = registrationId;
+    }
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (refreshToken != null) {
+      $result.refreshToken = refreshToken;
+    }
+    return $result;
+  }
+  CreateOAuthAppUserResponse._() : super();
+  factory CreateOAuthAppUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateOAuthAppUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateOAuthAppUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'authToken')
+    ..aOS(2, _omitFieldNames ? '' : 'registrationId')
+    ..aOS(3, _omitFieldNames ? '' : 'userId')
+    ..aOS(4, _omitFieldNames ? '' : 'refreshToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateOAuthAppUserResponse clone() => CreateOAuthAppUserResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateOAuthAppUserResponse copyWith(void Function(CreateOAuthAppUserResponse) updates) => super.copyWith((message) => updates(message as CreateOAuthAppUserResponse)) as CreateOAuthAppUserResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOAuthAppUserResponse create() => CreateOAuthAppUserResponse._();
+  CreateOAuthAppUserResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateOAuthAppUserResponse> createRepeated() => $pb.PbList<CreateOAuthAppUserResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateOAuthAppUserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOAuthAppUserResponse>(create);
+  static CreateOAuthAppUserResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get authToken => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set authToken($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAuthToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuthToken() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get registrationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set registrationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRegistrationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRegistrationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get userId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set userId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get refreshToken => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set refreshToken($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRefreshToken() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRefreshToken() => clearField(4);
+}
+
 class OAuthConfig extends $pb.GeneratedMessage {
   factory OAuthConfig({
     ClientAuthentication? clientAuthentication,
@@ -18123,6 +19375,7 @@ class GetAppBrandingResponse extends $pb.GeneratedMessage {
     $core.String? logoPath,
     $core.Map<$core.String, TextOverrides>? textCustomizations,
     $core.Iterable<$core.String>? fragmentIds,
+    $core.Iterable<$core.String>? allowedOrgIds,
   }) {
     final $result = create();
     if (logoPath != null) {
@@ -18134,6 +19387,9 @@ class GetAppBrandingResponse extends $pb.GeneratedMessage {
     if (fragmentIds != null) {
       $result.fragmentIds.addAll(fragmentIds);
     }
+    if (allowedOrgIds != null) {
+      $result.allowedOrgIds.addAll(allowedOrgIds);
+    }
     return $result;
   }
   GetAppBrandingResponse._() : super();
@@ -18144,6 +19400,7 @@ class GetAppBrandingResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'logoPath')
     ..m<$core.String, TextOverrides>(2, _omitFieldNames ? '' : 'textCustomizations', entryClassName: 'GetAppBrandingResponse.TextCustomizationsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: TextOverrides.create, valueDefaultOrMaker: TextOverrides.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
     ..pPS(3, _omitFieldNames ? '' : 'fragmentIds')
+    ..pPS(4, _omitFieldNames ? '' : 'allowedOrgIds')
     ..hasRequiredFields = false
   ;
 
@@ -18182,6 +19439,9 @@ class GetAppBrandingResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<$core.String> get fragmentIds => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get allowedOrgIds => $_getList(3);
 }
 
 class AppCustomizations extends $pb.GeneratedMessage {
@@ -18298,6 +19558,612 @@ class MachinePickerCustomizations extends $pb.GeneratedMessage {
   $core.bool hasSubheading() => $_has(1);
   @$pb.TagNumber(2)
   void clearSubheading() => clearField(2);
+}
+
+class UploadDevicePushTokenRequest extends $pb.GeneratedMessage {
+  factory UploadDevicePushTokenRequest({
+    $core.String? appId,
+    $core.String? deviceToken,
+    $core.String? deviceUuid,
+  }) {
+    final $result = create();
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    if (deviceToken != null) {
+      $result.deviceToken = deviceToken;
+    }
+    if (deviceUuid != null) {
+      $result.deviceUuid = deviceUuid;
+    }
+    return $result;
+  }
+  UploadDevicePushTokenRequest._() : super();
+  factory UploadDevicePushTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadDevicePushTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadDevicePushTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceToken')
+    ..aOS(3, _omitFieldNames ? '' : 'deviceUuid')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadDevicePushTokenRequest clone() => UploadDevicePushTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadDevicePushTokenRequest copyWith(void Function(UploadDevicePushTokenRequest) updates) => super.copyWith((message) => updates(message as UploadDevicePushTokenRequest)) as UploadDevicePushTokenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadDevicePushTokenRequest create() => UploadDevicePushTokenRequest._();
+  UploadDevicePushTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<UploadDevicePushTokenRequest> createRepeated() => $pb.PbList<UploadDevicePushTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UploadDevicePushTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadDevicePushTokenRequest>(create);
+  static UploadDevicePushTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deviceUuid => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deviceUuid($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDeviceUuid() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeviceUuid() => clearField(3);
+}
+
+class UploadDevicePushTokenResponse extends $pb.GeneratedMessage {
+  factory UploadDevicePushTokenResponse() => create();
+  UploadDevicePushTokenResponse._() : super();
+  factory UploadDevicePushTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadDevicePushTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadDevicePushTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadDevicePushTokenResponse clone() => UploadDevicePushTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadDevicePushTokenResponse copyWith(void Function(UploadDevicePushTokenResponse) updates) => super.copyWith((message) => updates(message as UploadDevicePushTokenResponse)) as UploadDevicePushTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadDevicePushTokenResponse create() => UploadDevicePushTokenResponse._();
+  UploadDevicePushTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<UploadDevicePushTokenResponse> createRepeated() => $pb.PbList<UploadDevicePushTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UploadDevicePushTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadDevicePushTokenResponse>(create);
+  static UploadDevicePushTokenResponse? _defaultInstance;
+}
+
+class DeleteDevicePushTokenRequest extends $pb.GeneratedMessage {
+  factory DeleteDevicePushTokenRequest({
+    $core.String? appId,
+    $core.String? deviceUuid,
+  }) {
+    final $result = create();
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    if (deviceUuid != null) {
+      $result.deviceUuid = deviceUuid;
+    }
+    return $result;
+  }
+  DeleteDevicePushTokenRequest._() : super();
+  factory DeleteDevicePushTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteDevicePushTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteDevicePushTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceUuid')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteDevicePushTokenRequest clone() => DeleteDevicePushTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteDevicePushTokenRequest copyWith(void Function(DeleteDevicePushTokenRequest) updates) => super.copyWith((message) => updates(message as DeleteDevicePushTokenRequest)) as DeleteDevicePushTokenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteDevicePushTokenRequest create() => DeleteDevicePushTokenRequest._();
+  DeleteDevicePushTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteDevicePushTokenRequest> createRepeated() => $pb.PbList<DeleteDevicePushTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteDevicePushTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteDevicePushTokenRequest>(create);
+  static DeleteDevicePushTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceUuid => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceUuid($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceUuid() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceUuid() => clearField(2);
+}
+
+class DeleteDevicePushTokenResponse extends $pb.GeneratedMessage {
+  factory DeleteDevicePushTokenResponse() => create();
+  DeleteDevicePushTokenResponse._() : super();
+  factory DeleteDevicePushTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteDevicePushTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteDevicePushTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteDevicePushTokenResponse clone() => DeleteDevicePushTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteDevicePushTokenResponse copyWith(void Function(DeleteDevicePushTokenResponse) updates) => super.copyWith((message) => updates(message as DeleteDevicePushTokenResponse)) as DeleteDevicePushTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteDevicePushTokenResponse create() => DeleteDevicePushTokenResponse._();
+  DeleteDevicePushTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteDevicePushTokenResponse> createRepeated() => $pb.PbList<DeleteDevicePushTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteDevicePushTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteDevicePushTokenResponse>(create);
+  static DeleteDevicePushTokenResponse? _defaultInstance;
+}
+
+class GetDevicePushTokensRequest extends $pb.GeneratedMessage {
+  factory GetDevicePushTokensRequest({
+    $core.String? appId,
+  }) {
+    final $result = create();
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    return $result;
+  }
+  GetDevicePushTokensRequest._() : super();
+  factory GetDevicePushTokensRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDevicePushTokensRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicePushTokensRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDevicePushTokensRequest clone() => GetDevicePushTokensRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDevicePushTokensRequest copyWith(void Function(GetDevicePushTokensRequest) updates) => super.copyWith((message) => updates(message as GetDevicePushTokensRequest)) as GetDevicePushTokensRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDevicePushTokensRequest create() => GetDevicePushTokensRequest._();
+  GetDevicePushTokensRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDevicePushTokensRequest> createRepeated() => $pb.PbList<GetDevicePushTokensRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDevicePushTokensRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicePushTokensRequest>(create);
+  static GetDevicePushTokensRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+}
+
+class GetDevicePushTokensResponse extends $pb.GeneratedMessage {
+  factory GetDevicePushTokensResponse({
+    $core.Iterable<$core.String>? deviceTokens,
+  }) {
+    final $result = create();
+    if (deviceTokens != null) {
+      $result.deviceTokens.addAll(deviceTokens);
+    }
+    return $result;
+  }
+  GetDevicePushTokensResponse._() : super();
+  factory GetDevicePushTokensResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDevicePushTokensResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicePushTokensResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'deviceTokens')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDevicePushTokensResponse clone() => GetDevicePushTokensResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDevicePushTokensResponse copyWith(void Function(GetDevicePushTokensResponse) updates) => super.copyWith((message) => updates(message as GetDevicePushTokensResponse)) as GetDevicePushTokensResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDevicePushTokensResponse create() => GetDevicePushTokensResponse._();
+  GetDevicePushTokensResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDevicePushTokensResponse> createRepeated() => $pb.PbList<GetDevicePushTokensResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDevicePushTokensResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicePushTokensResponse>(create);
+  static GetDevicePushTokensResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get deviceTokens => $_getList(0);
+}
+
+class SetFirebaseConfigRequest extends $pb.GeneratedMessage {
+  factory SetFirebaseConfigRequest({
+    $core.String? orgId,
+    $core.String? appId,
+    $core.String? configJson,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    if (configJson != null) {
+      $result.configJson = configJson;
+    }
+    return $result;
+  }
+  SetFirebaseConfigRequest._() : super();
+  factory SetFirebaseConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetFirebaseConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetFirebaseConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'appId')
+    ..aOS(3, _omitFieldNames ? '' : 'configJson')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetFirebaseConfigRequest clone() => SetFirebaseConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetFirebaseConfigRequest copyWith(void Function(SetFirebaseConfigRequest) updates) => super.copyWith((message) => updates(message as SetFirebaseConfigRequest)) as SetFirebaseConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetFirebaseConfigRequest create() => SetFirebaseConfigRequest._();
+  SetFirebaseConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<SetFirebaseConfigRequest> createRepeated() => $pb.PbList<SetFirebaseConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetFirebaseConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetFirebaseConfigRequest>(create);
+  static SetFirebaseConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get appId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set appId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAppId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAppId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get configJson => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set configJson($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasConfigJson() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConfigJson() => clearField(3);
+}
+
+class SetFirebaseConfigResponse extends $pb.GeneratedMessage {
+  factory SetFirebaseConfigResponse() => create();
+  SetFirebaseConfigResponse._() : super();
+  factory SetFirebaseConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetFirebaseConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetFirebaseConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetFirebaseConfigResponse clone() => SetFirebaseConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetFirebaseConfigResponse copyWith(void Function(SetFirebaseConfigResponse) updates) => super.copyWith((message) => updates(message as SetFirebaseConfigResponse)) as SetFirebaseConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetFirebaseConfigResponse create() => SetFirebaseConfigResponse._();
+  SetFirebaseConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<SetFirebaseConfigResponse> createRepeated() => $pb.PbList<SetFirebaseConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetFirebaseConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetFirebaseConfigResponse>(create);
+  static SetFirebaseConfigResponse? _defaultInstance;
+}
+
+class GetFirebaseConfigRequest extends $pb.GeneratedMessage {
+  factory GetFirebaseConfigRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
+  GetFirebaseConfigRequest._() : super();
+  factory GetFirebaseConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFirebaseConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFirebaseConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetFirebaseConfigRequest clone() => GetFirebaseConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetFirebaseConfigRequest copyWith(void Function(GetFirebaseConfigRequest) updates) => super.copyWith((message) => updates(message as GetFirebaseConfigRequest)) as GetFirebaseConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetFirebaseConfigRequest create() => GetFirebaseConfigRequest._();
+  GetFirebaseConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<GetFirebaseConfigRequest> createRepeated() => $pb.PbList<GetFirebaseConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetFirebaseConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFirebaseConfigRequest>(create);
+  static GetFirebaseConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+}
+
+class GetFirebaseConfigResponse extends $pb.GeneratedMessage {
+  factory GetFirebaseConfigResponse({
+    $core.String? appId,
+  }) {
+    final $result = create();
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    return $result;
+  }
+  GetFirebaseConfigResponse._() : super();
+  factory GetFirebaseConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFirebaseConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFirebaseConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetFirebaseConfigResponse clone() => GetFirebaseConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetFirebaseConfigResponse copyWith(void Function(GetFirebaseConfigResponse) updates) => super.copyWith((message) => updates(message as GetFirebaseConfigResponse)) as GetFirebaseConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetFirebaseConfigResponse create() => GetFirebaseConfigResponse._();
+  GetFirebaseConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<GetFirebaseConfigResponse> createRepeated() => $pb.PbList<GetFirebaseConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetFirebaseConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFirebaseConfigResponse>(create);
+  static GetFirebaseConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+}
+
+class DeleteFirebaseConfigRequest extends $pb.GeneratedMessage {
+  factory DeleteFirebaseConfigRequest({
+    $core.String? orgId,
+    $core.String? appId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    return $result;
+  }
+  DeleteFirebaseConfigRequest._() : super();
+  factory DeleteFirebaseConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteFirebaseConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteFirebaseConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'appId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteFirebaseConfigRequest clone() => DeleteFirebaseConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteFirebaseConfigRequest copyWith(void Function(DeleteFirebaseConfigRequest) updates) => super.copyWith((message) => updates(message as DeleteFirebaseConfigRequest)) as DeleteFirebaseConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteFirebaseConfigRequest create() => DeleteFirebaseConfigRequest._();
+  DeleteFirebaseConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteFirebaseConfigRequest> createRepeated() => $pb.PbList<DeleteFirebaseConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteFirebaseConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteFirebaseConfigRequest>(create);
+  static DeleteFirebaseConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get appId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set appId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAppId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAppId() => clearField(2);
+}
+
+class DeleteFirebaseConfigResponse extends $pb.GeneratedMessage {
+  factory DeleteFirebaseConfigResponse() => create();
+  DeleteFirebaseConfigResponse._() : super();
+  factory DeleteFirebaseConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteFirebaseConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteFirebaseConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteFirebaseConfigResponse clone() => DeleteFirebaseConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteFirebaseConfigResponse copyWith(void Function(DeleteFirebaseConfigResponse) updates) => super.copyWith((message) => updates(message as DeleteFirebaseConfigResponse)) as DeleteFirebaseConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteFirebaseConfigResponse create() => DeleteFirebaseConfigResponse._();
+  DeleteFirebaseConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteFirebaseConfigResponse> createRepeated() => $pb.PbList<DeleteFirebaseConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteFirebaseConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteFirebaseConfigResponse>(create);
+  static DeleteFirebaseConfigResponse? _defaultInstance;
 }
 
 

@@ -110,11 +110,27 @@ class MotorClient extends Motor with RPCDebugLoggerMixin implements ResourceRPCC
   }
 
   @override
+  Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = common_pb.GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     final request = common_pb.DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request, options: callOptions);
+    return response.result.toMap();
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = common_pb.GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
     return response.result.toMap();
   }
 }

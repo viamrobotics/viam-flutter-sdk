@@ -34,8 +34,8 @@ enum DateTime_TimeOffset {
 ///
 ///  The date is relative to the Proleptic Gregorian Calendar.
 ///
-///  If year is 0, the DateTime is considered not to have a specific year. month
-///  and day must have valid, non-zero values.
+///  If year, month, or day are 0, the DateTime is considered not to have a
+///  specific year, month, or day respectively.
 ///
 ///  This type may also be used to represent a physical time if all the date and
 ///  time fields are set and either case of the `time_offset` oneof is set.
@@ -145,7 +145,8 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearYear() => clearField(1);
 
-  /// Required. Month of year. Must be from 1 to 12.
+  /// Optional. Month of year. Must be from 1 to 12, or 0 if specifying a
+  /// datetime without a month.
   @$pb.TagNumber(2)
   $core.int get month => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -155,8 +156,8 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMonth() => clearField(2);
 
-  /// Required. Day of month. Must be from 1 to 31 and valid for the year and
-  /// month.
+  /// Optional. Day of month. Must be from 1 to 31 and valid for the year and
+  /// month, or 0 if specifying a datetime without a day.
   @$pb.TagNumber(3)
   $core.int get day => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -166,9 +167,9 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDay() => clearField(3);
 
-  /// Required. Hours of day in 24 hour format. Should be from 0 to 23. An API
-  /// may choose to allow the value "24:00:00" for scenarios like business
-  /// closing time.
+  /// Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults
+  /// to 0 (midnight). An API may choose to allow the value "24:00:00" for
+  /// scenarios like business closing time.
   @$pb.TagNumber(4)
   $core.int get hours => $_getIZ(3);
   @$pb.TagNumber(4)
@@ -178,7 +179,7 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearHours() => clearField(4);
 
-  /// Required. Minutes of hour of day. Must be from 0 to 59.
+  /// Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0.
   @$pb.TagNumber(5)
   $core.int get minutes => $_getIZ(4);
   @$pb.TagNumber(5)
@@ -188,8 +189,8 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearMinutes() => clearField(5);
 
-  /// Required. Seconds of minutes of the time. Must normally be from 0 to 59. An
-  /// API may allow the value 60 if it allows leap-seconds.
+  /// Optional. Seconds of minutes of the time. Must normally be from 0 to 59,
+  /// defaults to 0. An API may allow the value 60 if it allows leap-seconds.
   @$pb.TagNumber(6)
   $core.int get seconds => $_getIZ(5);
   @$pb.TagNumber(6)
@@ -199,8 +200,8 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearSeconds() => clearField(6);
 
-  /// Required. Fractions of seconds in nanoseconds. Must be from 0 to
-  /// 999,999,999.
+  /// Optional. Fractions of seconds in nanoseconds. Must be from 0 to
+  /// 999,999,999, defaults to 0.
   @$pb.TagNumber(7)
   $core.int get nanos => $_getIZ(6);
   @$pb.TagNumber(7)
@@ -284,7 +285,7 @@ class TimeZone extends $pb.GeneratedMessage {
   static TimeZone getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeZone>(create);
   static TimeZone? _defaultInstance;
 
-  /// IANA Time Zone Database time zone, e.g. "America/New_York".
+  /// IANA Time Zone Database time zone. For example "America/New_York".
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -294,7 +295,7 @@ class TimeZone extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
-  /// Optional. IANA Time Zone Database version number, e.g. "2019a".
+  /// Optional. IANA Time Zone Database version number. For example "2019a".
   @$pb.TagNumber(2)
   $core.String get version => $_getSZ(1);
   @$pb.TagNumber(2)

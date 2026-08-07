@@ -30,6 +30,13 @@ class GenericServiceClient extends Resource with RPCDebugLoggerMixin implements 
     return response.result.toMap();
   }
 
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
+
   /// Get the [ResourceName] for this [GenericServiceClient] with the given [name]
   static ResourceName getResourceName(String name) {
     return GenericServiceClient.subtype.getResourceName(name);

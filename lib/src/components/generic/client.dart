@@ -2,6 +2,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/generic/v1/generic.pbgrpc.dart';
+import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
 import '../../utils.dart';
 import 'generic.dart';
@@ -21,11 +22,27 @@ class GenericClient extends Generic with RPCDebugLoggerMixin implements Resource
   GenericClient(this.name, this.channel);
 
   @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request, options: callOptions);
+    return response.result.toMap();
+  }
+
+  @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
     return response.result.toMap();
   }
 }

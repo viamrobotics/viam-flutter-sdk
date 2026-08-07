@@ -13,53 +13,6 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use formatDescriptor instead')
-const Format$json = {
-  '1': 'Format',
-  '2': [
-    {'1': 'FORMAT_UNSPECIFIED', '2': 0},
-    {'1': 'FORMAT_RAW_RGBA', '2': 1},
-    {'1': 'FORMAT_RAW_DEPTH', '2': 2},
-    {'1': 'FORMAT_JPEG', '2': 3},
-    {'1': 'FORMAT_PNG', '2': 4},
-  ],
-};
-
-/// Descriptor for `Format`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List formatDescriptor = $convert.base64Decode(
-    'CgZGb3JtYXQSFgoSRk9STUFUX1VOU1BFQ0lGSUVEEAASEwoPRk9STUFUX1JBV19SR0JBEAESFA'
-    'oQRk9STUFUX1JBV19ERVBUSBACEg8KC0ZPUk1BVF9KUEVHEAMSDgoKRk9STUFUX1BORxAE');
-
-@$core.Deprecated('Use getImageRequestDescriptor instead')
-const GetImageRequest$json = {
-  '1': 'GetImageRequest',
-  '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
-    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
-  ],
-};
-
-/// Descriptor for `GetImageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getImageRequestDescriptor = $convert.base64Decode(
-    'Cg9HZXRJbWFnZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIbCgltaW1lX3R5cGUYAiABKA'
-    'lSCG1pbWVUeXBlEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0'
-    'cmE=');
-
-@$core.Deprecated('Use getImageResponseDescriptor instead')
-const GetImageResponse$json = {
-  '1': 'GetImageResponse',
-  '2': [
-    {'1': 'mime_type', '3': 1, '4': 1, '5': 9, '10': 'mimeType'},
-    {'1': 'image', '3': 2, '4': 1, '5': 12, '10': 'image'},
-  ],
-};
-
-/// Descriptor for `GetImageResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getImageResponseDescriptor = $convert.base64Decode(
-    'ChBHZXRJbWFnZVJlc3BvbnNlEhsKCW1pbWVfdHlwZRgBIAEoCVIIbWltZVR5cGUSFAoFaW1hZ2'
-    'UYAiABKAxSBWltYWdl');
-
 @$core.Deprecated('Use getImagesRequestDescriptor instead')
 const GetImagesRequest$json = {
   '1': 'GetImagesRequest',
@@ -96,35 +49,20 @@ const Image$json = {
   '1': 'Image',
   '2': [
     {'1': 'source_name', '3': 1, '4': 1, '5': 9, '10': 'sourceName'},
-    {'1': 'format', '3': 2, '4': 1, '5': 14, '6': '.viam.component.camera.v1.Format', '10': 'format'},
     {'1': 'image', '3': 3, '4': 1, '5': 12, '10': 'image'},
     {'1': 'mime_type', '3': 4, '4': 1, '5': 9, '10': 'mimeType'},
     {'1': 'annotations', '3': 5, '4': 1, '5': 11, '6': '.viam.app.data.v1.Annotations', '10': 'annotations'},
+  ],
+  '9': [
+    {'1': 2, '2': 3},
   ],
 };
 
 /// Descriptor for `Image`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List imageDescriptor = $convert.base64Decode(
-    'CgVJbWFnZRIfCgtzb3VyY2VfbmFtZRgBIAEoCVIKc291cmNlTmFtZRI4CgZmb3JtYXQYAiABKA'
-    '4yIC52aWFtLmNvbXBvbmVudC5jYW1lcmEudjEuRm9ybWF0UgZmb3JtYXQSFAoFaW1hZ2UYAyAB'
-    'KAxSBWltYWdlEhsKCW1pbWVfdHlwZRgEIAEoCVIIbWltZVR5cGUSPwoLYW5ub3RhdGlvbnMYBS'
-    'ABKAsyHS52aWFtLmFwcC5kYXRhLnYxLkFubm90YXRpb25zUgthbm5vdGF0aW9ucw==');
-
-@$core.Deprecated('Use renderFrameRequestDescriptor instead')
-const RenderFrameRequest$json = {
-  '1': 'RenderFrameRequest',
-  '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
-    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
-  ],
-};
-
-/// Descriptor for `RenderFrameRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List renderFrameRequestDescriptor = $convert.base64Decode(
-    'ChJSZW5kZXJGcmFtZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIbCgltaW1lX3R5cGUYAi'
-    'ABKAlSCG1pbWVUeXBlEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIF'
-    'ZXh0cmE=');
+    'CgVJbWFnZRIfCgtzb3VyY2VfbmFtZRgBIAEoCVIKc291cmNlTmFtZRIUCgVpbWFnZRgDIAEoDF'
+    'IFaW1hZ2USGwoJbWltZV90eXBlGAQgASgJUghtaW1lVHlwZRI/Cgthbm5vdGF0aW9ucxgFIAEo'
+    'CzIdLnZpYW0uYXBwLmRhdGEudjEuQW5ub3RhdGlvbnNSC2Fubm90YXRpb25zSgQIAhAD');
 
 @$core.Deprecated('Use getPointCloudRequestDescriptor instead')
 const GetPointCloudRequest$json = {

@@ -45,6 +45,14 @@ class DatasetServiceClient extends $grpc.Client {
       '/viam.app.dataset.v1.DatasetService/MergeDatasets',
       ($6.MergeDatasetsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.MergeDatasetsResponse.fromBuffer(value));
+  static final _$startSequenceDatasetExport = $grpc.ClientMethod<$6.StartSequenceDatasetExportRequest, $6.StartSequenceDatasetExportResponse>(
+      '/viam.app.dataset.v1.DatasetService/StartSequenceDatasetExport',
+      ($6.StartSequenceDatasetExportRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.StartSequenceDatasetExportResponse.fromBuffer(value));
+  static final _$getSequenceDatasetExport = $grpc.ClientMethod<$6.GetSequenceDatasetExportRequest, $6.GetSequenceDatasetExportResponse>(
+      '/viam.app.dataset.v1.DatasetService/GetSequenceDatasetExport',
+      ($6.GetSequenceDatasetExportRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.GetSequenceDatasetExportResponse.fromBuffer(value));
 
   DatasetServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -74,6 +82,14 @@ class DatasetServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$6.MergeDatasetsResponse> mergeDatasets($6.MergeDatasetsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$mergeDatasets, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.StartSequenceDatasetExportResponse> startSequenceDatasetExport($6.StartSequenceDatasetExportRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$startSequenceDatasetExport, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.GetSequenceDatasetExportResponse> getSequenceDatasetExport($6.GetSequenceDatasetExportRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getSequenceDatasetExport, request, options: options);
   }
 }
 
@@ -124,6 +140,20 @@ abstract class DatasetServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $6.MergeDatasetsRequest.fromBuffer(value),
         ($6.MergeDatasetsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.StartSequenceDatasetExportRequest, $6.StartSequenceDatasetExportResponse>(
+        'StartSequenceDatasetExport',
+        startSequenceDatasetExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.StartSequenceDatasetExportRequest.fromBuffer(value),
+        ($6.StartSequenceDatasetExportResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.GetSequenceDatasetExportRequest, $6.GetSequenceDatasetExportResponse>(
+        'GetSequenceDatasetExport',
+        getSequenceDatasetExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.GetSequenceDatasetExportRequest.fromBuffer(value),
+        ($6.GetSequenceDatasetExportResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$6.CreateDatasetResponse> createDataset_Pre($grpc.ServiceCall call, $async.Future<$6.CreateDatasetRequest> request) async {
@@ -150,10 +180,20 @@ abstract class DatasetServiceBase extends $grpc.Service {
     return mergeDatasets(call, await request);
   }
 
+  $async.Future<$6.StartSequenceDatasetExportResponse> startSequenceDatasetExport_Pre($grpc.ServiceCall call, $async.Future<$6.StartSequenceDatasetExportRequest> request) async {
+    return startSequenceDatasetExport(call, await request);
+  }
+
+  $async.Future<$6.GetSequenceDatasetExportResponse> getSequenceDatasetExport_Pre($grpc.ServiceCall call, $async.Future<$6.GetSequenceDatasetExportRequest> request) async {
+    return getSequenceDatasetExport(call, await request);
+  }
+
   $async.Future<$6.CreateDatasetResponse> createDataset($grpc.ServiceCall call, $6.CreateDatasetRequest request);
   $async.Future<$6.DeleteDatasetResponse> deleteDataset($grpc.ServiceCall call, $6.DeleteDatasetRequest request);
   $async.Future<$6.RenameDatasetResponse> renameDataset($grpc.ServiceCall call, $6.RenameDatasetRequest request);
   $async.Future<$6.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID($grpc.ServiceCall call, $6.ListDatasetsByOrganizationIDRequest request);
   $async.Future<$6.ListDatasetsByIDsResponse> listDatasetsByIDs($grpc.ServiceCall call, $6.ListDatasetsByIDsRequest request);
   $async.Future<$6.MergeDatasetsResponse> mergeDatasets($grpc.ServiceCall call, $6.MergeDatasetsRequest request);
+  $async.Future<$6.StartSequenceDatasetExportResponse> startSequenceDatasetExport($grpc.ServiceCall call, $6.StartSequenceDatasetExportRequest request);
+  $async.Future<$6.GetSequenceDatasetExportResponse> getSequenceDatasetExport($grpc.ServiceCall call, $6.GetSequenceDatasetExportRequest request);
 }

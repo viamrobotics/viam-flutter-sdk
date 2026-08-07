@@ -14,6 +14,10 @@ class FakeAudioOut extends AudioOut {
   AudioInfo? audioInfo;
   Map<String, dynamic>? extra;
   Map<String, dynamic>? propertiesExtra;
+  Map<String, dynamic> statusResult = {'status': 'ok'};
+  AudioInfo? streamedAudioInfo;
+  List<Uint8List> streamedChunks = [];
+  Map<String, dynamic>? streamedExtra;
 
   @override
   String name;
@@ -26,6 +30,11 @@ class FakeAudioOut extends AudioOut {
   }
 
   @override
+  Future<Map<String, dynamic>> getStatus() async {
+    return statusResult;
+  }
+
+  @override
   Future<PlayResponse> play({required Uint8List audioData, required AudioInfo audioInfo, Map<String, dynamic>? extra}) async {
     this.audioData = audioData;
     this.audioInfo = audioInfo;
@@ -34,9 +43,32 @@ class FakeAudioOut extends AudioOut {
   }
 
   @override
+  Future<PlayStreamResponse> playStream({
+    required AudioInfo audioInfo,
+    required Stream<Uint8List> audioStream,
+    Map<String, dynamic>? extra,
+  }) async {
+    streamedAudioInfo = audioInfo;
+    streamedExtra = extra;
+    streamedChunks = [];
+    await for (final chunk in audioStream) {
+      streamedChunks.add(chunk);
+    }
+    return PlayStreamResponse();
+  }
+
+  @override
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra}) async {
     propertiesExtra = extra;
     return GetPropertiesResponse()..supportedCodecs.addAll([AudioCodec.mp3, AudioCodec.pcm16, AudioCodec.aac]);
+  }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
   }
 }
 
@@ -76,6 +108,36 @@ void main() {
       expect(audioOut.extra, null);
     });
 
+    test('playStream drains chunks', () async {
+      final audioInfo = AudioInfo()
+        ..codec = AudioCodec.pcm16
+        ..sampleRateHz = 22050
+        ..numChannels = 1;
+      final chunks = [
+        Uint8List.fromList([1, 2, 3]),
+        Uint8List.fromList([4, 5, 6]),
+        Uint8List.fromList([7, 8, 9]),
+      ];
+
+      final result = await audioOut.playStream(
+        audioInfo: audioInfo,
+        audioStream: Stream.fromIterable(chunks),
+      );
+
+      expect(result, isA<PlayStreamResponse>());
+      expect(audioOut.streamedAudioInfo, audioInfo);
+      expect(audioOut.streamedChunks, chunks);
+    });
+
+    test('playStream with empty stream', () async {
+      final audioInfo = AudioInfo()..codec = AudioCodec.pcm16;
+
+      await audioOut.playStream(audioInfo: audioInfo, audioStream: const Stream.empty());
+
+      expect(audioOut.streamedAudioInfo, audioInfo);
+      expect(audioOut.streamedChunks, isEmpty);
+    });
+
     test('getProperties', () async {
       final result = await audioOut.getProperties();
       expect(result, isA<GetPropertiesResponse>());
@@ -93,6 +155,16 @@ void main() {
       final cmd = {'foo': 'bar'};
       final resp = await audioOut.doCommand(cmd);
       expect(resp['command'], cmd);
+    });
+
+    test('getStatus', () async {
+      final result = await audioOut.getStatus();
+      expect(result, audioOut.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await audioOut.getGeometries();
+      expect(result, audioOut.geometries);
     });
   });
 
@@ -148,6 +220,36 @@ void main() {
         expect(audioOut.audioInfo?.sampleRateHz, 48000);
         expect(audioOut.extra, extra);
       });
+      test('playStream', () async {
+        final audioInfo = AudioInfo()
+          ..codec = AudioCodec.pcm16
+          ..numChannels = 1
+          ..sampleRateHz = 22050;
+        final chunks = [
+          Uint8List.fromList([10, 11, 12]),
+          Uint8List.fromList([13, 14, 15]),
+        ];
+        final extra = {'session': 'abc'};
+
+        final client = AudioOutServiceClient(channel);
+        final requests = Stream<PlayStreamRequest>.fromIterable([
+          PlayStreamRequest()
+            ..init = (PlayStreamInit()
+              ..name = name
+              ..audioInfo = audioInfo
+              ..extra = extra.toStruct()),
+          for (final chunk in chunks) PlayStreamRequest()..audioChunk = (PlayStreamChunk()..audioData = chunk),
+        ]);
+
+        final result = await client.playStream(requests);
+
+        expect(result, isA<PlayStreamResponse>());
+        expect(audioOut.streamedAudioInfo?.codec, AudioCodec.pcm16);
+        expect(audioOut.streamedAudioInfo?.sampleRateHz, 22050);
+        expect(audioOut.streamedChunks, chunks);
+        expect(audioOut.streamedExtra, extra);
+      });
+
       test('getProperties', () async {
         final client = AudioOutServiceClient(channel);
         final result = await client.getProperties(GetPropertiesRequest()..name = name);
@@ -176,6 +278,18 @@ void main() {
         );
         expect(resp.result.toMap()['command'], cmd);
       });
+
+      test('getStatus', () async {
+        final client = AudioOutServiceClient(channel);
+        final response = await client.getStatus(GetStatusRequest()..name = name);
+        expect(response.result.toMap(), audioOut.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = AudioOutServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, audioOut.geometries);
+      });
     });
 
     group('AudioOut Client Tests', () {
@@ -198,6 +312,32 @@ void main() {
         expect(audioOut.extra, extra);
       });
 
+      test('playStream', () async {
+        final audioInfo = AudioInfo()
+          ..codec = AudioCodec.opus
+          ..numChannels = 2
+          ..sampleRateHz = 48000;
+        final chunks = [
+          Uint8List.fromList([100, 101]),
+          Uint8List.fromList([102, 103]),
+        ];
+        final extra = {'k': 'v'};
+
+        final client = AudioOutClient(name, channel);
+        final result = await client.playStream(
+          audioInfo: audioInfo,
+          audioStream: Stream.fromIterable(chunks),
+          extra: extra,
+        );
+
+        expect(result, isA<PlayStreamResponse>());
+        expect(audioOut.streamedAudioInfo?.codec, AudioCodec.opus);
+        expect(audioOut.streamedAudioInfo?.numChannels, 2);
+        expect(audioOut.streamedAudioInfo?.sampleRateHz, 48000);
+        expect(audioOut.streamedChunks, chunks);
+        expect(audioOut.streamedExtra, extra);
+      });
+
       test('getProperties', () async {
         final client = AudioOutClient(name, channel);
         final result = await client.getProperties();
@@ -217,6 +357,18 @@ void main() {
         final client = AudioOutClient(name, channel);
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getStatus', () async {
+        final client = AudioOutClient(name, channel);
+        final result = await client.getStatus();
+        expect(result, audioOut.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = AudioOutClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, audioOut.geometries);
       });
     });
   });

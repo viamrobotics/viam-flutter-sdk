@@ -57,6 +57,13 @@ class EncoderClient extends Encoder with RPCDebugLoggerMixin implements Resource
   }
 
   @override
+  Future<Map<String, dynamic>> getStatus() async {
+    final request = common_pb.GetStatusRequest()..name = name;
+    final response = await client.getStatus(request, options: callOptions);
+    return response.result.toMap();
+  }
+
+  @override
   Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
     final request = common_pb.GetGeometriesRequest()
       ..name = name

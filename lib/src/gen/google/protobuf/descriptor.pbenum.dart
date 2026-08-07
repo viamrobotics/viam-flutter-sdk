@@ -21,6 +21,7 @@ class Edition extends $pb.ProtobufEnum {
   static const Edition EDITION_PROTO3 = Edition._(999, _omitEnumNames ? '' : 'EDITION_PROTO3');
   static const Edition EDITION_2023 = Edition._(1000, _omitEnumNames ? '' : 'EDITION_2023');
   static const Edition EDITION_2024 = Edition._(1001, _omitEnumNames ? '' : 'EDITION_2024');
+  static const Edition EDITION_2026 = Edition._(1002, _omitEnumNames ? '' : 'EDITION_2026');
   static const Edition EDITION_UNSTABLE = Edition._(9999, _omitEnumNames ? '' : 'EDITION_UNSTABLE');
   static const Edition EDITION_1_TEST_ONLY = Edition._(1, _omitEnumNames ? '' : 'EDITION_1_TEST_ONLY');
   static const Edition EDITION_2_TEST_ONLY = Edition._(2, _omitEnumNames ? '' : 'EDITION_2_TEST_ONLY');
@@ -36,6 +37,7 @@ class Edition extends $pb.ProtobufEnum {
     EDITION_PROTO3,
     EDITION_2023,
     EDITION_2024,
+    EDITION_2026,
     EDITION_UNSTABLE,
     EDITION_1_TEST_ONLY,
     EDITION_2_TEST_ONLY,
@@ -385,11 +387,13 @@ class FeatureSet_EnforceNamingStyle extends $pb.ProtobufEnum {
   static const FeatureSet_EnforceNamingStyle ENFORCE_NAMING_STYLE_UNKNOWN = FeatureSet_EnforceNamingStyle._(0, _omitEnumNames ? '' : 'ENFORCE_NAMING_STYLE_UNKNOWN');
   static const FeatureSet_EnforceNamingStyle STYLE2024 = FeatureSet_EnforceNamingStyle._(1, _omitEnumNames ? '' : 'STYLE2024');
   static const FeatureSet_EnforceNamingStyle STYLE_LEGACY = FeatureSet_EnforceNamingStyle._(2, _omitEnumNames ? '' : 'STYLE_LEGACY');
+  static const FeatureSet_EnforceNamingStyle STYLE2026 = FeatureSet_EnforceNamingStyle._(3, _omitEnumNames ? '' : 'STYLE2026');
 
   static const $core.List<FeatureSet_EnforceNamingStyle> values = <FeatureSet_EnforceNamingStyle> [
     ENFORCE_NAMING_STYLE_UNKNOWN,
     STYLE2024,
     STYLE_LEGACY,
+    STYLE2026,
   ];
 
   static final $core.Map<$core.int, FeatureSet_EnforceNamingStyle> _byValue = $pb.ProtobufEnum.initByValue(values);

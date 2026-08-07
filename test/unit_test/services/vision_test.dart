@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/service/vision.dart';
 import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' as common_pb;
+import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -85,6 +86,15 @@ void main() {
         serviceClient.getObjectPointClouds(any, options: anyNamed('options')),
       ).thenAnswer((_) => MockResponseFuture.value(GetObjectPointCloudsResponse(objects: expected, mimeType: MimeType.pcd.name)));
       final response = await client.objectPointClouds('cameraName');
+      expect(response, equals(expected));
+    });
+
+    test('getStatus', () async {
+      final expected = {'status': 'ok'};
+      when(
+        serviceClient.getStatus(any, options: anyNamed('options')),
+      ).thenAnswer((_) => MockResponseFuture.value(common_pb.GetStatusResponse()..result = expected.toStruct()));
+      final response = await client.getStatus();
       expect(response, equals(expected));
     });
   });

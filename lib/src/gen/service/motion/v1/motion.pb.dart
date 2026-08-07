@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $50;
-import '../../../google/protobuf/timestamp.pb.dart' as $51;
+import '../../../common/v1/common.pb.dart' as $9;
+import '../../../google/protobuf/struct.pb.dart' as $49;
+import '../../../google/protobuf/timestamp.pb.dart' as $50;
 import 'motion.pbenum.dart';
 
 export 'motion.pbenum.dart';
@@ -24,13 +24,13 @@ export 'motion.pbenum.dart';
 class MoveRequest extends $pb.GeneratedMessage {
   factory MoveRequest({
     $core.String? name,
-    $16.PoseInFrame? destination,
+    $9.PoseInFrame? destination,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? componentNameDeprecated,
-    $16.WorldState? worldState,
+    $9.ResourceName? componentNameDeprecated,
+    $9.WorldState? worldState,
     Constraints? constraints,
     $core.String? componentName,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -63,12 +63,12 @@ class MoveRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$16.PoseInFrame>(2, _omitFieldNames ? '' : 'destination', subBuilder: $16.PoseInFrame.create)
-    ..aOM<$16.ResourceName>(3, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
-    ..aOM<$16.WorldState>(4, _omitFieldNames ? '' : 'worldState', subBuilder: $16.WorldState.create)
+    ..aOM<$9.PoseInFrame>(2, _omitFieldNames ? '' : 'destination', subBuilder: $9.PoseInFrame.create)
+    ..aOM<$9.ResourceName>(3, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $9.ResourceName.create)
+    ..aOM<$9.WorldState>(4, _omitFieldNames ? '' : 'worldState', subBuilder: $9.WorldState.create)
     ..aOM<Constraints>(5, _omitFieldNames ? '' : 'constraints', subBuilder: Constraints.create)
     ..aOS(6, _omitFieldNames ? '' : 'componentName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -105,23 +105,23 @@ class MoveRequest extends $pb.GeneratedMessage {
 
   /// Destination to move to, which can a pose in the reference frame of any frame in the robot's frame system
   @$pb.TagNumber(2)
-  $16.PoseInFrame get destination => $_getN(1);
+  $9.PoseInFrame get destination => $_getN(1);
   @$pb.TagNumber(2)
-  set destination($16.PoseInFrame v) { setField(2, v); }
+  set destination($9.PoseInFrame v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDestination() => $_has(1);
   @$pb.TagNumber(2)
   void clearDestination() => clearField(2);
   @$pb.TagNumber(2)
-  $16.PoseInFrame ensureDestination() => $_ensure(1);
+  $9.PoseInFrame ensureDestination() => $_ensure(1);
 
   /// Deprecated, use component_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  $16.ResourceName get componentNameDeprecated => $_getN(2);
+  $9.ResourceName get componentNameDeprecated => $_getN(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  set componentNameDeprecated($16.ResourceName v) { setField(3, v); }
+  set componentNameDeprecated($9.ResourceName v) { setField(3, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasComponentNameDeprecated() => $_has(2);
@@ -130,20 +130,20 @@ class MoveRequest extends $pb.GeneratedMessage {
   void clearComponentNameDeprecated() => clearField(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  $16.ResourceName ensureComponentNameDeprecated() => $_ensure(2);
+  $9.ResourceName ensureComponentNameDeprecated() => $_ensure(2);
 
   /// Avoid obstacles by specifying their geometries in the world state
   /// Augment the frame system of the robot by specifying additional transforms to add to it for the duration of the Move
   @$pb.TagNumber(4)
-  $16.WorldState get worldState => $_getN(3);
+  $9.WorldState get worldState => $_getN(3);
   @$pb.TagNumber(4)
-  set worldState($16.WorldState v) { setField(4, v); }
+  set worldState($9.WorldState v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasWorldState() => $_has(3);
   @$pb.TagNumber(4)
   void clearWorldState() => clearField(4);
   @$pb.TagNumber(4)
-  $16.WorldState ensureWorldState() => $_ensure(3);
+  $9.WorldState ensureWorldState() => $_ensure(3);
 
   /// Constrain the way the robot will move
   @$pb.TagNumber(5)
@@ -169,15 +169,15 @@ class MoveRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(6);
+  $49.Struct get extra => $_getN(6);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(6);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(6);
+  $49.Struct ensureExtra() => $_ensure(6);
 }
 
 class MoveResponse extends $pb.GeneratedMessage {
@@ -233,16 +233,16 @@ class MoveResponse extends $pb.GeneratedMessage {
 class MoveOnMapRequest extends $pb.GeneratedMessage {
   factory MoveOnMapRequest({
     $core.String? name,
-    $16.Pose? destination,
+    $9.Pose? destination,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? componentNameDeprecated,
+    $9.ResourceName? componentNameDeprecated,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? slamServiceNameDeprecated,
+    $9.ResourceName? slamServiceNameDeprecated,
     MotionConfiguration? motionConfiguration,
-    $core.Iterable<$16.Geometry>? obstacles,
+    $core.Iterable<$9.Geometry>? obstacles,
     $core.String? componentName,
     $core.String? slamServiceName,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -282,14 +282,14 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnMapRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$16.Pose>(2, _omitFieldNames ? '' : 'destination', subBuilder: $16.Pose.create)
-    ..aOM<$16.ResourceName>(3, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
-    ..aOM<$16.ResourceName>(4, _omitFieldNames ? '' : 'slamServiceNameDeprecated', subBuilder: $16.ResourceName.create)
+    ..aOM<$9.Pose>(2, _omitFieldNames ? '' : 'destination', subBuilder: $9.Pose.create)
+    ..aOM<$9.ResourceName>(3, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $9.ResourceName.create)
+    ..aOM<$9.ResourceName>(4, _omitFieldNames ? '' : 'slamServiceNameDeprecated', subBuilder: $9.ResourceName.create)
     ..aOM<MotionConfiguration>(5, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
-    ..pc<$16.Geometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $16.Geometry.create)
+    ..pc<$9.Geometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $9.Geometry.create)
     ..aOS(7, _omitFieldNames ? '' : 'componentName')
     ..aOS(8, _omitFieldNames ? '' : 'slamServiceName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -326,23 +326,23 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 
   /// Specify a destination to, which can be any pose with respect to the SLAM map's origin
   @$pb.TagNumber(2)
-  $16.Pose get destination => $_getN(1);
+  $9.Pose get destination => $_getN(1);
   @$pb.TagNumber(2)
-  set destination($16.Pose v) { setField(2, v); }
+  set destination($9.Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDestination() => $_has(1);
   @$pb.TagNumber(2)
   void clearDestination() => clearField(2);
   @$pb.TagNumber(2)
-  $16.Pose ensureDestination() => $_ensure(1);
+  $9.Pose ensureDestination() => $_ensure(1);
 
   /// Deprecated, use component_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  $16.ResourceName get componentNameDeprecated => $_getN(2);
+  $9.ResourceName get componentNameDeprecated => $_getN(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  set componentNameDeprecated($16.ResourceName v) { setField(3, v); }
+  set componentNameDeprecated($9.ResourceName v) { setField(3, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasComponentNameDeprecated() => $_has(2);
@@ -351,15 +351,15 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   void clearComponentNameDeprecated() => clearField(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  $16.ResourceName ensureComponentNameDeprecated() => $_ensure(2);
+  $9.ResourceName ensureComponentNameDeprecated() => $_ensure(2);
 
   /// Deprecated, use slam_service_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $16.ResourceName get slamServiceNameDeprecated => $_getN(3);
+  $9.ResourceName get slamServiceNameDeprecated => $_getN(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  set slamServiceNameDeprecated($16.ResourceName v) { setField(4, v); }
+  set slamServiceNameDeprecated($9.ResourceName v) { setField(4, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.bool hasSlamServiceNameDeprecated() => $_has(3);
@@ -368,7 +368,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   void clearSlamServiceNameDeprecated() => clearField(4);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $16.ResourceName ensureSlamServiceNameDeprecated() => $_ensure(3);
+  $9.ResourceName ensureSlamServiceNameDeprecated() => $_ensure(3);
 
   /// Optional set of motion configuration options
   @$pb.TagNumber(5)
@@ -384,7 +384,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 
   /// Obstacles to be considered for motion planning
   @$pb.TagNumber(6)
-  $core.List<$16.Geometry> get obstacles => $_getList(5);
+  $core.List<$9.Geometry> get obstacles => $_getList(5);
 
   /// Component on the robot to move to the specified destination
   @$pb.TagNumber(7)
@@ -408,15 +408,15 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(8);
+  $49.Struct get extra => $_getN(8);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(8);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(8);
+  $49.Struct ensureExtra() => $_ensure(8);
 }
 
 class MoveOnMapResponse extends $pb.GeneratedMessage {
@@ -476,9 +476,9 @@ class MoveOnMapResponse extends $pb.GeneratedMessage {
 class ObstacleDetector extends $pb.GeneratedMessage {
   factory ObstacleDetector({
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? visionServiceDeprecated,
+    $9.ResourceName? visionServiceDeprecated,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? cameraDeprecated,
+    $9.ResourceName? cameraDeprecated,
     $core.String? visionService,
     $core.String? camera,
   }) {
@@ -504,8 +504,8 @@ class ObstacleDetector extends $pb.GeneratedMessage {
   factory ObstacleDetector.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ObstacleDetector', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOM<$16.ResourceName>(1, _omitFieldNames ? '' : 'visionServiceDeprecated', subBuilder: $16.ResourceName.create)
-    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'cameraDeprecated', subBuilder: $16.ResourceName.create)
+    ..aOM<$9.ResourceName>(1, _omitFieldNames ? '' : 'visionServiceDeprecated', subBuilder: $9.ResourceName.create)
+    ..aOM<$9.ResourceName>(2, _omitFieldNames ? '' : 'cameraDeprecated', subBuilder: $9.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'visionService')
     ..aOS(4, _omitFieldNames ? '' : 'camera')
     ..hasRequiredFields = false
@@ -534,10 +534,10 @@ class ObstacleDetector extends $pb.GeneratedMessage {
 
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
-  $16.ResourceName get visionServiceDeprecated => $_getN(0);
+  $9.ResourceName get visionServiceDeprecated => $_getN(0);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
-  set visionServiceDeprecated($16.ResourceName v) { setField(1, v); }
+  set visionServiceDeprecated($9.ResourceName v) { setField(1, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasVisionServiceDeprecated() => $_has(0);
@@ -546,14 +546,14 @@ class ObstacleDetector extends $pb.GeneratedMessage {
   void clearVisionServiceDeprecated() => clearField(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
-  $16.ResourceName ensureVisionServiceDeprecated() => $_ensure(0);
+  $9.ResourceName ensureVisionServiceDeprecated() => $_ensure(0);
 
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName get cameraDeprecated => $_getN(1);
+  $9.ResourceName get cameraDeprecated => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  set cameraDeprecated($16.ResourceName v) { setField(2, v); }
+  set cameraDeprecated($9.ResourceName v) { setField(2, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasCameraDeprecated() => $_has(1);
@@ -562,7 +562,7 @@ class ObstacleDetector extends $pb.GeneratedMessage {
   void clearCameraDeprecated() => clearField(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName ensureCameraDeprecated() => $_ensure(1);
+  $9.ResourceName ensureCameraDeprecated() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.String get visionService => $_getSZ(2);
@@ -706,18 +706,18 @@ class MotionConfiguration extends $pb.GeneratedMessage {
 class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   factory MoveOnGlobeRequest({
     $core.String? name,
-    $16.GeoPoint? destination,
+    $9.GeoPoint? destination,
     $core.double? heading,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? componentNameDeprecated,
+    $9.ResourceName? componentNameDeprecated,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? movementSensorNameDeprecated,
-    $core.Iterable<$16.GeoGeometry>? obstacles,
+    $9.ResourceName? movementSensorNameDeprecated,
+    $core.Iterable<$9.GeoGeometry>? obstacles,
     MotionConfiguration? motionConfiguration,
-    $core.Iterable<$16.GeoGeometry>? boundingRegions,
+    $core.Iterable<$9.GeoGeometry>? boundingRegions,
     $core.String? componentName,
     $core.String? movementSensorName,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -763,16 +763,16 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnGlobeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$16.GeoPoint>(2, _omitFieldNames ? '' : 'destination', subBuilder: $16.GeoPoint.create)
+    ..aOM<$9.GeoPoint>(2, _omitFieldNames ? '' : 'destination', subBuilder: $9.GeoPoint.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'heading', $pb.PbFieldType.OD)
-    ..aOM<$16.ResourceName>(4, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
-    ..aOM<$16.ResourceName>(5, _omitFieldNames ? '' : 'movementSensorNameDeprecated', subBuilder: $16.ResourceName.create)
-    ..pc<$16.GeoGeometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $16.GeoGeometry.create)
+    ..aOM<$9.ResourceName>(4, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $9.ResourceName.create)
+    ..aOM<$9.ResourceName>(5, _omitFieldNames ? '' : 'movementSensorNameDeprecated', subBuilder: $9.ResourceName.create)
+    ..pc<$9.GeoGeometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $9.GeoGeometry.create)
     ..aOM<MotionConfiguration>(7, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
-    ..pc<$16.GeoGeometry>(8, _omitFieldNames ? '' : 'boundingRegions', $pb.PbFieldType.PM, subBuilder: $16.GeoGeometry.create)
+    ..pc<$9.GeoGeometry>(8, _omitFieldNames ? '' : 'boundingRegions', $pb.PbFieldType.PM, subBuilder: $9.GeoGeometry.create)
     ..aOS(9, _omitFieldNames ? '' : 'componentName')
     ..aOS(10, _omitFieldNames ? '' : 'movementSensorName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -809,15 +809,15 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   /// Destination, encoded as a GeoPoint
   @$pb.TagNumber(2)
-  $16.GeoPoint get destination => $_getN(1);
+  $9.GeoPoint get destination => $_getN(1);
   @$pb.TagNumber(2)
-  set destination($16.GeoPoint v) { setField(2, v); }
+  set destination($9.GeoPoint v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDestination() => $_has(1);
   @$pb.TagNumber(2)
   void clearDestination() => clearField(2);
   @$pb.TagNumber(2)
-  $16.GeoPoint ensureDestination() => $_ensure(1);
+  $9.GeoPoint ensureDestination() => $_ensure(1);
 
   /// Optional compass heading to achieve at the destination, in degrees [0-360)
   @$pb.TagNumber(3)
@@ -832,10 +832,10 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   /// Deprecated, use component_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $16.ResourceName get componentNameDeprecated => $_getN(3);
+  $9.ResourceName get componentNameDeprecated => $_getN(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  set componentNameDeprecated($16.ResourceName v) { setField(4, v); }
+  set componentNameDeprecated($9.ResourceName v) { setField(4, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.bool hasComponentNameDeprecated() => $_has(3);
@@ -844,15 +844,15 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   void clearComponentNameDeprecated() => clearField(4);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $16.ResourceName ensureComponentNameDeprecated() => $_ensure(3);
+  $9.ResourceName ensureComponentNameDeprecated() => $_ensure(3);
 
   /// Deprecated, use movement_sensor_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  $16.ResourceName get movementSensorNameDeprecated => $_getN(4);
+  $9.ResourceName get movementSensorNameDeprecated => $_getN(4);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  set movementSensorNameDeprecated($16.ResourceName v) { setField(5, v); }
+  set movementSensorNameDeprecated($9.ResourceName v) { setField(5, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.bool hasMovementSensorNameDeprecated() => $_has(4);
@@ -861,11 +861,11 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   void clearMovementSensorNameDeprecated() => clearField(5);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  $16.ResourceName ensureMovementSensorNameDeprecated() => $_ensure(4);
+  $9.ResourceName ensureMovementSensorNameDeprecated() => $_ensure(4);
 
   /// Obstacles to be considered for motion planning
   @$pb.TagNumber(6)
-  $core.List<$16.GeoGeometry> get obstacles => $_getList(5);
+  $core.List<$9.GeoGeometry> get obstacles => $_getList(5);
 
   /// Optional set of motion configuration options
   @$pb.TagNumber(7)
@@ -881,7 +881,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   /// Set of obstacles which the robot must remain within while navigating
   @$pb.TagNumber(8)
-  $core.List<$16.GeoGeometry> get boundingRegions => $_getList(7);
+  $core.List<$9.GeoGeometry> get boundingRegions => $_getList(7);
 
   /// Component on the robot to move to the specified destination
   @$pb.TagNumber(9)
@@ -905,15 +905,15 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(10);
+  $49.Struct get extra => $_getN(10);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(10);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(10);
+  $49.Struct ensureExtra() => $_ensure(10);
 }
 
 class MoveOnGlobeResponse extends $pb.GeneratedMessage {
@@ -973,11 +973,11 @@ class GetPoseRequest extends $pb.GeneratedMessage {
   factory GetPoseRequest({
     $core.String? name,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? componentNameDeprecated,
+    $9.ResourceName? componentNameDeprecated,
     $core.String? destinationFrame,
-    $core.Iterable<$16.Transform>? supplementalTransforms,
+    $core.Iterable<$9.Transform>? supplementalTransforms,
     $core.String? componentName,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1007,11 +1007,11 @@ class GetPoseRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPoseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
+    ..aOM<$9.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $9.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'destinationFrame')
-    ..pc<$16.Transform>(4, _omitFieldNames ? '' : 'supplementalTransforms', $pb.PbFieldType.PM, subBuilder: $16.Transform.create)
+    ..pc<$9.Transform>(4, _omitFieldNames ? '' : 'supplementalTransforms', $pb.PbFieldType.PM, subBuilder: $9.Transform.create)
     ..aOS(5, _omitFieldNames ? '' : 'componentName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1048,10 +1048,10 @@ class GetPoseRequest extends $pb.GeneratedMessage {
   /// Deprecated, use component_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName get componentNameDeprecated => $_getN(1);
+  $9.ResourceName get componentNameDeprecated => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  set componentNameDeprecated($16.ResourceName v) { setField(2, v); }
+  set componentNameDeprecated($9.ResourceName v) { setField(2, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasComponentNameDeprecated() => $_has(1);
@@ -1060,7 +1060,7 @@ class GetPoseRequest extends $pb.GeneratedMessage {
   void clearComponentNameDeprecated() => clearField(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
+  $9.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
 
   /// the reference frame in which the component's pose
   /// should be provided, if unset this defaults
@@ -1077,7 +1077,7 @@ class GetPoseRequest extends $pb.GeneratedMessage {
   /// pose information on any additional reference frames that are needed
   /// to compute the component's pose
   @$pb.TagNumber(4)
-  $core.List<$16.Transform> get supplementalTransforms => $_getList(3);
+  $core.List<$9.Transform> get supplementalTransforms => $_getList(3);
 
   /// the component whose pose is being requested
   @$pb.TagNumber(5)
@@ -1091,20 +1091,20 @@ class GetPoseRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(5);
+  $49.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(5);
+  $49.Struct ensureExtra() => $_ensure(5);
 }
 
 class GetPoseResponse extends $pb.GeneratedMessage {
   factory GetPoseResponse({
-    $16.PoseInFrame? pose,
+    $9.PoseInFrame? pose,
   }) {
     final $result = create();
     if (pose != null) {
@@ -1117,7 +1117,7 @@ class GetPoseResponse extends $pb.GeneratedMessage {
   factory GetPoseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPoseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOM<$16.PoseInFrame>(1, _omitFieldNames ? '' : 'pose', subBuilder: $16.PoseInFrame.create)
+    ..aOM<$9.PoseInFrame>(1, _omitFieldNames ? '' : 'pose', subBuilder: $9.PoseInFrame.create)
     ..hasRequiredFields = false
   ;
 
@@ -1143,24 +1143,24 @@ class GetPoseResponse extends $pb.GeneratedMessage {
   static GetPoseResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $16.PoseInFrame get pose => $_getN(0);
+  $9.PoseInFrame get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($16.PoseInFrame v) { setField(1, v); }
+  set pose($9.PoseInFrame v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $16.PoseInFrame ensurePose() => $_ensure(0);
+  $9.PoseInFrame ensurePose() => $_ensure(0);
 }
 
 class StopPlanRequest extends $pb.GeneratedMessage {
   factory StopPlanRequest({
     $core.String? name,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? componentNameDeprecated,
+    $9.ResourceName? componentNameDeprecated,
     $core.String? componentName,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1184,9 +1184,9 @@ class StopPlanRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
+    ..aOM<$9.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $9.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'componentName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1224,10 +1224,10 @@ class StopPlanRequest extends $pb.GeneratedMessage {
   /// Deprecated, use component_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName get componentNameDeprecated => $_getN(1);
+  $9.ResourceName get componentNameDeprecated => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  set componentNameDeprecated($16.ResourceName v) { setField(2, v); }
+  set componentNameDeprecated($9.ResourceName v) { setField(2, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasComponentNameDeprecated() => $_has(1);
@@ -1236,7 +1236,7 @@ class StopPlanRequest extends $pb.GeneratedMessage {
   void clearComponentNameDeprecated() => clearField(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
+  $9.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
 
   /// The component of the currently executing plan to stop
   @$pb.TagNumber(3)
@@ -1250,15 +1250,15 @@ class StopPlanRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $49.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $49.Struct ensureExtra() => $_ensure(3);
 }
 
 class StopPlanResponse extends $pb.GeneratedMessage {
@@ -1297,7 +1297,7 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   factory ListPlanStatusesRequest({
     $core.String? name,
     $core.bool? onlyActivePlans,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1318,7 +1318,7 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlanStatusesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOB(2, _omitFieldNames ? '' : 'onlyActivePlans')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1366,15 +1366,15 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $49.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $49.Struct ensureExtra() => $_ensure(2);
 }
 
 /// Status of all executed / executing plan statuses with associated IDs within the 24 hour TTL
@@ -1428,11 +1428,11 @@ class GetPlanRequest extends $pb.GeneratedMessage {
   factory GetPlanRequest({
     $core.String? name,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? componentNameDeprecated,
+    $9.ResourceName? componentNameDeprecated,
     $core.bool? lastPlanOnly,
     $core.String? executionId,
     $core.String? componentName,
-    $50.Struct? extra,
+    $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1462,11 +1462,11 @@ class GetPlanRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
+    ..aOM<$9.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $9.ResourceName.create)
     ..aOB(3, _omitFieldNames ? '' : 'lastPlanOnly')
     ..aOS(4, _omitFieldNames ? '' : 'executionId')
     ..aOS(5, _omitFieldNames ? '' : 'componentName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1504,10 +1504,10 @@ class GetPlanRequest extends $pb.GeneratedMessage {
   /// Deprecated, use component_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName get componentNameDeprecated => $_getN(1);
+  $9.ResourceName get componentNameDeprecated => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  set componentNameDeprecated($16.ResourceName v) { setField(2, v); }
+  set componentNameDeprecated($9.ResourceName v) { setField(2, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasComponentNameDeprecated() => $_has(1);
@@ -1516,7 +1516,7 @@ class GetPlanRequest extends $pb.GeneratedMessage {
   void clearComponentNameDeprecated() => clearField(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
+  $9.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
 
   /// If supplied, the response will only return
   /// the the last plan for the component / execution
@@ -1551,15 +1551,15 @@ class GetPlanRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(5);
+  $49.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(5);
+  $49.Struct ensureExtra() => $_ensure(5);
 }
 
 class GetPlanResponse extends $pb.GeneratedMessage {
@@ -2083,7 +2083,7 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
   factory PlanStatusWithID({
     $core.String? planId,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? componentNameDeprecated,
+    $9.ResourceName? componentNameDeprecated,
     $core.String? executionId,
     PlanStatus? status,
     $core.String? componentName,
@@ -2113,7 +2113,7 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatusWithID', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'planId')
-    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
+    ..aOM<$9.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $9.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'executionId')
     ..aOM<PlanStatus>(4, _omitFieldNames ? '' : 'status', subBuilder: PlanStatus.create)
     ..aOS(5, _omitFieldNames ? '' : 'componentName')
@@ -2154,10 +2154,10 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
   /// Deprecated, use component_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName get componentNameDeprecated => $_getN(1);
+  $9.ResourceName get componentNameDeprecated => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  set componentNameDeprecated($16.ResourceName v) { setField(2, v); }
+  set componentNameDeprecated($9.ResourceName v) { setField(2, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasComponentNameDeprecated() => $_has(1);
@@ -2166,7 +2166,7 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
   void clearComponentNameDeprecated() => clearField(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
+  $9.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
 
   /// The unique ID which identifies the plan execution.
   /// Multiple plans will share the same execution_id if they were
@@ -2210,7 +2210,7 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
 class PlanStatus extends $pb.GeneratedMessage {
   factory PlanStatus({
     PlanState? state,
-    $51.Timestamp? timestamp,
+    $50.Timestamp? timestamp,
     $core.String? reason,
   }) {
     final $result = create();
@@ -2231,7 +2231,7 @@ class PlanStatus extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..e<PlanState>(1, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: PlanState.PLAN_STATE_UNSPECIFIED, valueOf: PlanState.valueOf, enumValues: PlanState.values)
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $51.Timestamp.create)
+    ..aOM<$50.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $50.Timestamp.create)
     ..aOS(3, _omitFieldNames ? '' : 'reason')
     ..hasRequiredFields = false
   ;
@@ -2269,15 +2269,15 @@ class PlanStatus extends $pb.GeneratedMessage {
 
   /// The time the executing plan transtioned to the state
   @$pb.TagNumber(2)
-  $51.Timestamp get timestamp => $_getN(1);
+  $50.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set timestamp($51.Timestamp v) { setField(2, v); }
+  set timestamp($50.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureTimestamp() => $_ensure(1);
+  $50.Timestamp ensureTimestamp() => $_ensure(1);
 
   /// The reason for the state change. If motion plan failed
   /// this will return the error message.
@@ -2298,7 +2298,7 @@ class Plan extends $pb.GeneratedMessage {
   factory Plan({
     $core.String? id,
   @$core.Deprecated('This field is deprecated.')
-    $16.ResourceName? componentNameDeprecated,
+    $9.ResourceName? componentNameDeprecated,
     $core.String? executionId,
     $core.Iterable<PlanStep>? steps,
     $core.String? componentName,
@@ -2328,7 +2328,7 @@ class Plan extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Plan', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
+    ..aOM<$9.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $9.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'executionId')
     ..pc<PlanStep>(4, _omitFieldNames ? '' : 'steps', $pb.PbFieldType.PM, subBuilder: PlanStep.create)
     ..aOS(5, _omitFieldNames ? '' : 'componentName')
@@ -2369,10 +2369,10 @@ class Plan extends $pb.GeneratedMessage {
   /// Deprecated, use component_name field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName get componentNameDeprecated => $_getN(1);
+  $9.ResourceName get componentNameDeprecated => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  set componentNameDeprecated($16.ResourceName v) { setField(2, v); }
+  set componentNameDeprecated($9.ResourceName v) { setField(2, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasComponentNameDeprecated() => $_has(1);
@@ -2381,7 +2381,7 @@ class Plan extends $pb.GeneratedMessage {
   void clearComponentNameDeprecated() => clearField(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $16.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
+  $9.ResourceName ensureComponentNameDeprecated() => $_ensure(1);
 
   /// The unique ID which identifies the execution.
   /// Multiple plans will share the same execution_id if they were
@@ -2464,7 +2464,7 @@ class PlanStep extends $pb.GeneratedMessage {
 /// A pose
 class ComponentState extends $pb.GeneratedMessage {
   factory ComponentState({
-    $16.Pose? pose,
+    $9.Pose? pose,
   }) {
     final $result = create();
     if (pose != null) {
@@ -2477,7 +2477,7 @@ class ComponentState extends $pb.GeneratedMessage {
   factory ComponentState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComponentState', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOM<$16.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $16.Pose.create)
+    ..aOM<$9.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $9.Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -2503,15 +2503,15 @@ class ComponentState extends $pb.GeneratedMessage {
   static ComponentState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $16.Pose get pose => $_getN(0);
+  $9.Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($16.Pose v) { setField(1, v); }
+  set pose($9.Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $16.Pose ensurePose() => $_ensure(0);
+  $9.Pose ensurePose() => $_ensure(0);
 }
 
 
