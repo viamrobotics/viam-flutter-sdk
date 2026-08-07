@@ -58,7 +58,7 @@
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/4.1.0/grpc_connection_interface/ClientChannelBase-class.html">ClientChannelBase</a></span>&gt;</span></span>
 <span class="name ">dialInitial</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="dialInitial-param-address"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">address</span>, </span></li>
 <li><span class="parameter" id="dialInitial-param-options"><span class="type-annotation"><a href="../viam_sdk/DialOptions-class.html">DialOptions</a>?</span> <span class="parameter-name">options</span>, </span></li>
-<li><span class="parameter" id="dialInitial-param-sessionCallback"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">sessionCallback</span>()</span></li>
+<li><span class="parameter" id="dialInitial-param-sessionId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">sessionId</span>()</span></li>
 </ol>)
 
         
@@ -73,7 +73,7 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;ClientChannelBase&gt; dialInitial(String address, DialOptions? options, String Function() sessionCallback) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;ClientChannelBase&gt; dialInitial(String address, DialOptions? options, String Function() sessionId) async {
   final opts = options ?? DialOptions();
 
   int numAttempts = opts.initialConnectionAttempts;
@@ -86,7 +86,7 @@
 
   while (numAttempts != 0) {
     try {
-      final channel = await dial(address, opts, sessionCallback);
+      final channel = await dial(address, opts, sessionId);
       opts.timeout = timeout;
       return channel;
     } catch (e) {
