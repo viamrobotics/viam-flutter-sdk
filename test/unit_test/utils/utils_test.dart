@@ -7,8 +7,6 @@ import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/utils.dart';
 
-import '../../test_utils.dart';
-
 void main() {
   group('utils', () {
     group('NullableStringUtils', () {

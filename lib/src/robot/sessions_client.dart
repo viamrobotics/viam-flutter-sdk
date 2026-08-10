@@ -26,6 +26,11 @@ class SessionsClient implements ResourceRPCClient {
   RobotServiceClient get client => RobotServiceClient(channel);
 
   String _currentId = '';
+  String sessionId() {
+    return _currentId;
+  }
+
+  bool _sessionStarted = false;
   final bool _enabled;
   bool? _supported;
   Duration _heartbeatInterval = Duration(seconds: 1);
@@ -36,56 +41,51 @@ class SessionsClient implements ResourceRPCClient {
   }
 
   /// Retrieve metadata associated with the session (e.g. whether sessions are supported, the current ID of the session)
-  String metadata() {
-    if (!_enabled) return '';
-    if (_supported == false) return '';
+  Future<void> metadata() async {
+    if (!_enabled) {
+      _currentId = '';
+      return;
+    }
+    if (_supported == false) {
+      _currentId = '';
+      return;
+    }
 
-    if (_currentId != '') return _currentId;
+    if (_currentId != '') return;
 
     final request = StartSessionRequest();
     try {
-      final future = client.startSession(request);
+      final response = await client.startSession(request);
+      _supported = true;
+      _currentId = response.id;
 
-      future.then(
-        (response) {
-          _supported = true;
-          _currentId = response.id;
-
-          // We send heartbeats slightly faster than the interval window to
-          // ensure that we don't fall outside of it and expire the session.
-          _heartbeatInterval = Duration(
-            seconds: response.heartbeatWindow.seconds.toInt() ~/ 1.8,
-            microseconds: response.heartbeatWindow.nanos ~/ 1.8,
-          );
-
-          return _currentId;
-        },
-        onError: (error, _) {
-          if (error is GrpcError && error.code == Code.UNIMPLEMENTED.value) {
-            _supported = false;
-          } else {
-            _logger.e('Error starting session: $error');
-          }
-          return '';
-        },
+      // We send heartbeats slightly faster than the interval window to
+      // ensure that we don't fall outside of it and expire the session.
+      _heartbeatInterval = Duration(
+        seconds: response.heartbeatWindow.seconds.toInt() ~/ 1.8,
+        microseconds: response.heartbeatWindow.nanos ~/ 1.8,
       );
-    } catch (e) {
-      _logger.e('Error starting session: $e');
-      reset();
+    } on GrpcError catch (error) {
+      if (error.code == Code.UNIMPLEMENTED.value) {
+        _supported = false;
+      } else {
+        _logger.e('Error starting session: $error');
+      }
+      _currentId = '';
+    } catch (error) {
+      _logger.e('Error starting session: $error');
+      await reset();
     }
-
-    return '';
   }
 
   /// Reset the current session and re-obtain metadata
-  void reset() {
+  Future<void> reset() async {
     if (!_enabled) return;
     _logger.d('Resetting current session with ID: $_currentId');
     _currentId = '';
     _supported = null;
-    metadata();
-    _heartbeatTask();
-    _applyHeartbeatMonitoredMethods();
+    await metadata();
+    unawaited(_applyHeartbeatMonitoredMethods());
   }
 
   /// Stop the session client and heartbeat tasks
@@ -98,11 +98,13 @@ class SessionsClient implements ResourceRPCClient {
 
   /// Start the session client
   void start() {
-    reset();
+    if (!_enabled) return;
+    if (_sessionStarted) return;
+    _sessionStarted = true;
+    metadata().then((_) => _heartbeatTask());
   }
 
   Future<void> _heartbeatTask() async {
-    if (!_enabled) return;
     while (_supported != false) {
       await _heartbeatTick();
       await Future.delayed(_heartbeatInterval);
@@ -119,7 +121,7 @@ class SessionsClient implements ResourceRPCClient {
       await client.sendSessionHeartbeat(request);
     } on GrpcError catch (e) {
       _logger.d('Session terminated: $e');
-      reset();
+      await reset();
     }
   }
 

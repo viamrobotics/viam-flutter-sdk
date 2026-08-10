@@ -46,9 +46,10 @@ class CameraService extends CameraServiceBase {
   }
 
   @override
-  Future<proto.GetGeometriesResponse> getGeometries(ServiceCall call, proto.GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<proto.GetGeometriesResponse> getGeometries(ServiceCall call, proto.GetGeometriesRequest request) async {
+    final camera = _fromManager(request.name);
+    final geometries = await camera.getGeometries(extra: request.extra.toMap());
+    return proto.GetGeometriesResponse()..geometries.addAll(geometries);
   }
 
   @override

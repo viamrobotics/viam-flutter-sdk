@@ -22,6 +22,15 @@ class SensorClient extends Sensor with RPCDebugLoggerMixin implements ResourceRP
   SensorClient(this.name, this.channel);
 
   @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    final request = GetGeometriesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGeometries(request, options: callOptions);
+    return response.geometries;
+  }
+
+  @override
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
     final request = GetReadingsRequest()
       ..name = name

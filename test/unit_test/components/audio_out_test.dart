@@ -62,6 +62,14 @@ class FakeAudioOut extends AudioOut {
     propertiesExtra = extra;
     return GetPropertiesResponse()..supportedCodecs.addAll([AudioCodec.mp3, AudioCodec.pcm16, AudioCodec.aac]);
   }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
+  }
 }
 
 void main() {
@@ -152,6 +160,11 @@ void main() {
     test('getStatus', () async {
       final result = await audioOut.getStatus();
       expect(result, audioOut.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await audioOut.getGeometries();
+      expect(result, audioOut.geometries);
     });
   });
 
@@ -271,6 +284,12 @@ void main() {
         final response = await client.getStatus(GetStatusRequest()..name = name);
         expect(response.result.toMap(), audioOut.statusResult);
       });
+
+      test('getGeometries', () async {
+        final client = AudioOutServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, audioOut.geometries);
+      });
     });
 
     group('AudioOut Client Tests', () {
@@ -344,6 +363,12 @@ void main() {
         final client = AudioOutClient(name, channel);
         final result = await client.getStatus();
         expect(result, audioOut.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = AudioOutClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, audioOut.geometries);
       });
     });
   });

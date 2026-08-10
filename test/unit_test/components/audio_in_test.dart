@@ -67,6 +67,14 @@ class FakeAudioIn extends AudioIn {
     propertiesExtra = extra;
     return GetPropertiesResponse();
   }
+
+  List<Geometry> geometries = [Geometry()..label = 'test'];
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return geometries;
+  }
 }
 
 void main() {
@@ -132,6 +140,11 @@ void main() {
     test('getStatus', () async {
       final result = await audioIn.getStatus();
       expect(result, audioIn.statusResult);
+    });
+
+    test('getGeometries', () async {
+      final result = await audioIn.getGeometries();
+      expect(result, audioIn.geometries);
     });
   });
 
@@ -237,6 +250,12 @@ void main() {
         final response = await client.getStatus(GetStatusRequest()..name = name);
         expect(response.result.toMap(), audioIn.statusResult);
       });
+
+      test('getGeometries', () async {
+        final client = AudioInServiceClient(channel);
+        final response = await client.getGeometries(GetGeometriesRequest()..name = name);
+        expect(response.geometries, audioIn.geometries);
+      });
     });
 
     group('AudioIn Client Tests', () {
@@ -300,6 +319,12 @@ void main() {
         final client = AudioInClient(name, channel);
         final result = await client.getStatus();
         expect(result, audioIn.statusResult);
+      });
+
+      test('getGeometries', () async {
+        final client = AudioInClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries, audioIn.geometries);
       });
     });
   });

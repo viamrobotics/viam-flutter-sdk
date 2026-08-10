@@ -99,9 +99,10 @@ class MovementSensorService extends MovementSensorServiceBase {
   }
 
   @override
-  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) async {
+    final movementSensor = _fromManager(request.name);
+    final geometries = await movementSensor.getGeometries(extra: request.extra.toMap());
+    return common_pb.GetGeometriesResponse()..geometries.addAll(geometries);
   }
 
   @override
