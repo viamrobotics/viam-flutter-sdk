@@ -82,21 +82,29 @@
 
   if (opts.attemptMdns) {
     final mdnsSW = Stopwatch()..start();
+    &#47;&#47; Remember the caller&#39;s WebRTC options so they can be restored if the mDNS
+    &#47;&#47; attempt fails. Otherwise the fallback below (and any subsequent retry from
+    &#47;&#47; dialInitial) would keep pointing at the local signaling address.
+    final priorWebRtcOptions = opts.webRtcOptions;
+    final priorSignalingServerAddress = priorWebRtcOptions?.signalingServerAddress;
     try {
       final mdnsUri = await _searchMdns(address);
       &#47;&#47; Let downstream calls know when mdns was used. This is helpful to inform
       &#47;&#47; when determining if we want to use the external auth credentials for the signaling
       &#47;&#47; in cases where the external signaling is the same as the external auth. For mdns
       &#47;&#47; this isn&#39;t the case.
-      final dialOptsCopy = opts.._usingMdns = true;
-      dialOptsCopy.webRtcOptions ??= DialWebRtcOptions();
-      dialOptsCopy.webRtcOptions?.signalingServerAddress = mdnsUri;
-      return await _dialWebRtc(address, dialOptsCopy, sessionId);
+      opts._usingMdns = true;
+      opts.webRtcOptions ??= DialWebRtcOptions();
+      opts.webRtcOptions?.signalingServerAddress = mdnsUri;
+      return await _dialWebRtc(address, opts, sessionId);
     } on NotLocalAddressException catch (e) {
       _logger.d(e.toString());
     } catch (e) {
       _logger.d(&#39;Error dialing with mDNS; falling back to other methods&#39;, error: e);
     }
+    opts._usingMdns = false;
+    opts.webRtcOptions = priorWebRtcOptions;
+    priorWebRtcOptions?.signalingServerAddress = priorSignalingServerAddress;
     mdnsSW.stop();
     _logger.d(&#39;STATS: mDNS discovery took ${mdnsSW.elapsed}&#39;);
   }
