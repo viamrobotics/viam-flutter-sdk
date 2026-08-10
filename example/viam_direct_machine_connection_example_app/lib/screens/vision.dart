@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+
+import 'package:viam_example_widgets/viam_example_widgets.dart';
+import 'package:viam_sdk/viam_sdk.dart';
+
+class VisionScreen extends StatelessWidget {
+  final VisionClient vision;
+  final ResourceName resourceName;
+  final List<String> cameraNames;
+
+  const VisionScreen({super.key, required this.vision, required this.resourceName, required this.cameraNames});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(resourceName.name.toUpperCase())),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 8),
+            Text(
+              '${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}',
+              style: const TextStyle(fontWeight: FontWeight.w300),
+            ),
+            const SizedBox(height: 8),
+            ViamVisionWidget(vision: vision, cameraNames: cameraNames),
+          ],
+        ),
+      ),
+    );
+  }
+}
