@@ -42,6 +42,10 @@ class ArmServiceClient extends $grpc.Client {
       '/viam.component.arm.v1.ArmService/MoveThroughJointPositions',
       ($16.MoveThroughJointPositionsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $16.MoveThroughJointPositionsResponse.fromBuffer(value));
+  static final _$moveThroughJointPositionsStreamed = $grpc.ClientMethod<$16.MoveThroughJointPositionsStreamedRequest, $16.MoveThroughJointPositionsStreamedResponse>(
+      '/viam.component.arm.v1.ArmService/MoveThroughJointPositionsStreamed',
+      ($16.MoveThroughJointPositionsStreamedRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.MoveThroughJointPositionsStreamedResponse.fromBuffer(value));
   static final _$stop = $grpc.ClientMethod<$16.StopRequest, $16.StopResponse>(
       '/viam.component.arm.v1.ArmService/Stop',
       ($16.StopRequest value) => value.writeToBuffer(),
@@ -95,6 +99,10 @@ class ArmServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$16.MoveThroughJointPositionsResponse> moveThroughJointPositions($16.MoveThroughJointPositionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveThroughJointPositions, request, options: options);
+  }
+
+  $grpc.ResponseStream<$16.MoveThroughJointPositionsStreamedResponse> moveThroughJointPositionsStreamed($async.Stream<$16.MoveThroughJointPositionsStreamedRequest> request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$moveThroughJointPositionsStreamed, request, options: options);
   }
 
   $grpc.ResponseFuture<$16.StopResponse> stop($16.StopRequest request, {$grpc.CallOptions? options}) {
@@ -166,6 +174,13 @@ abstract class ArmServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $16.MoveThroughJointPositionsRequest.fromBuffer(value),
         ($16.MoveThroughJointPositionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.MoveThroughJointPositionsStreamedRequest, $16.MoveThroughJointPositionsStreamedResponse>(
+        'MoveThroughJointPositionsStreamed',
+        moveThroughJointPositionsStreamed,
+        true,
+        true,
+        ($core.List<$core.int> value) => $16.MoveThroughJointPositionsStreamedRequest.fromBuffer(value),
+        ($16.MoveThroughJointPositionsStreamedResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$16.StopRequest, $16.StopResponse>(
         'Stop',
         stop_Pre,
@@ -270,6 +285,7 @@ abstract class ArmServiceBase extends $grpc.Service {
   $async.Future<$16.GetJointPositionsResponse> getJointPositions($grpc.ServiceCall call, $16.GetJointPositionsRequest request);
   $async.Future<$16.MoveToJointPositionsResponse> moveToJointPositions($grpc.ServiceCall call, $16.MoveToJointPositionsRequest request);
   $async.Future<$16.MoveThroughJointPositionsResponse> moveThroughJointPositions($grpc.ServiceCall call, $16.MoveThroughJointPositionsRequest request);
+  $async.Stream<$16.MoveThroughJointPositionsStreamedResponse> moveThroughJointPositionsStreamed($grpc.ServiceCall call, $async.Stream<$16.MoveThroughJointPositionsStreamedRequest> request);
   $async.Future<$16.StopResponse> stop($grpc.ServiceCall call, $16.StopRequest request);
   $async.Future<$16.IsMovingResponse> isMoving($grpc.ServiceCall call, $16.IsMovingRequest request);
   $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);

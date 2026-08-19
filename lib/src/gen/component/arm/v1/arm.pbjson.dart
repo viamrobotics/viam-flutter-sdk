@@ -52,6 +52,30 @@ const JointPositions$json = {
 final $typed_data.Uint8List jointPositionsDescriptor = $convert.base64Decode(
     'Cg5Kb2ludFBvc2l0aW9ucxIWCgZ2YWx1ZXMYASADKAFSBnZhbHVlcw==');
 
+@$core.Deprecated('Use jointVelocitiesDescriptor instead')
+const JointVelocities$json = {
+  '1': 'JointVelocities',
+  '2': [
+    {'1': 'values', '3': 1, '4': 3, '5': 1, '10': 'values'},
+  ],
+};
+
+/// Descriptor for `JointVelocities`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jointVelocitiesDescriptor = $convert.base64Decode(
+    'Cg9Kb2ludFZlbG9jaXRpZXMSFgoGdmFsdWVzGAEgAygBUgZ2YWx1ZXM=');
+
+@$core.Deprecated('Use jointAccelerationsDescriptor instead')
+const JointAccelerations$json = {
+  '1': 'JointAccelerations',
+  '2': [
+    {'1': 'values', '3': 1, '4': 3, '5': 1, '10': 'values'},
+  ],
+};
+
+/// Descriptor for `JointAccelerations`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jointAccelerationsDescriptor = $convert.base64Decode(
+    'ChJKb2ludEFjY2VsZXJhdGlvbnMSFgoGdmFsdWVzGAEgAygBUgZ2YWx1ZXM=');
+
 @$core.Deprecated('Use getJointPositionsRequestDescriptor instead')
 const GetJointPositionsRequest$json = {
   '1': 'GetJointPositionsRequest',
@@ -159,6 +183,112 @@ const MoveThroughJointPositionsResponse$json = {
 /// Descriptor for `MoveThroughJointPositionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moveThroughJointPositionsResponseDescriptor = $convert.base64Decode(
     'CiFNb3ZlVGhyb3VnaEpvaW50UG9zaXRpb25zUmVzcG9uc2U=');
+
+@$core.Deprecated('Use trajectoryPointDescriptor instead')
+const TrajectoryPoint$json = {
+  '1': 'TrajectoryPoint',
+  '2': [
+    {'1': 'time', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'time'},
+    {'1': 'positions', '3': 2, '4': 1, '5': 11, '6': '.viam.component.arm.v1.JointPositions', '10': 'positions'},
+    {'1': 'constraints', '3': 3, '4': 1, '5': 11, '6': '.viam.component.arm.v1.TrajectoryPoint.KinematicConstraints', '9': 0, '10': 'constraints', '17': true},
+  ],
+  '3': [TrajectoryPoint_KinematicConstraints$json],
+  '8': [
+    {'1': '_constraints'},
+  ],
+};
+
+@$core.Deprecated('Use trajectoryPointDescriptor instead')
+const TrajectoryPoint_KinematicConstraints$json = {
+  '1': 'KinematicConstraints',
+  '2': [
+    {'1': 'velocities', '3': 1, '4': 1, '5': 11, '6': '.viam.component.arm.v1.JointVelocities', '10': 'velocities'},
+    {'1': 'accelerations', '3': 2, '4': 1, '5': 11, '6': '.viam.component.arm.v1.JointAccelerations', '9': 0, '10': 'accelerations', '17': true},
+  ],
+  '8': [
+    {'1': '_accelerations'},
+  ],
+};
+
+/// Descriptor for `TrajectoryPoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List trajectoryPointDescriptor = $convert.base64Decode(
+    'Cg9UcmFqZWN0b3J5UG9pbnQSLQoEdGltZRgBIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdG'
+    'lvblIEdGltZRJDCglwb3NpdGlvbnMYAiABKAsyJS52aWFtLmNvbXBvbmVudC5hcm0udjEuSm9p'
+    'bnRQb3NpdGlvbnNSCXBvc2l0aW9ucxJiCgtjb25zdHJhaW50cxgDIAEoCzI7LnZpYW0uY29tcG'
+    '9uZW50LmFybS52MS5UcmFqZWN0b3J5UG9pbnQuS2luZW1hdGljQ29uc3RyYWludHNIAFILY29u'
+    'c3RyYWludHOIAQEaxgEKFEtpbmVtYXRpY0NvbnN0cmFpbnRzEkYKCnZlbG9jaXRpZXMYASABKA'
+    'syJi52aWFtLmNvbXBvbmVudC5hcm0udjEuSm9pbnRWZWxvY2l0aWVzUgp2ZWxvY2l0aWVzElQK'
+    'DWFjY2VsZXJhdGlvbnMYAiABKAsyKS52aWFtLmNvbXBvbmVudC5hcm0udjEuSm9pbnRBY2NlbG'
+    'VyYXRpb25zSABSDWFjY2VsZXJhdGlvbnOIAQFCEAoOX2FjY2VsZXJhdGlvbnNCDgoMX2NvbnN0'
+    'cmFpbnRz');
+
+@$core.Deprecated('Use moveThroughJointPositionsStreamedRequestDescriptor instead')
+const MoveThroughJointPositionsStreamedRequest$json = {
+  '1': 'MoveThroughJointPositionsStreamedRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'init', '3': 2, '4': 1, '5': 11, '6': '.viam.component.arm.v1.MoveThroughJointPositionsStreamedRequest.Init', '9': 0, '10': 'init'},
+    {'1': 'batch', '3': 3, '4': 1, '5': 11, '6': '.viam.component.arm.v1.MoveThroughJointPositionsStreamedRequest.TrajectoryBatch', '9': 0, '10': 'batch'},
+  ],
+  '3': [MoveThroughJointPositionsStreamedRequest_Init$json, MoveThroughJointPositionsStreamedRequest_TrajectoryBatch$json],
+  '8': [
+    {'1': 'message'},
+  ],
+};
+
+@$core.Deprecated('Use moveThroughJointPositionsStreamedRequestDescriptor instead')
+const MoveThroughJointPositionsStreamedRequest_Init$json = {
+  '1': 'Init',
+  '2': [
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+@$core.Deprecated('Use moveThroughJointPositionsStreamedRequestDescriptor instead')
+const MoveThroughJointPositionsStreamedRequest_TrajectoryBatch$json = {
+  '1': 'TrajectoryBatch',
+  '2': [
+    {'1': 'points', '3': 1, '4': 3, '5': 11, '6': '.viam.component.arm.v1.TrajectoryPoint', '10': 'points'},
+  ],
+};
+
+/// Descriptor for `MoveThroughJointPositionsStreamedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveThroughJointPositionsStreamedRequestDescriptor = $convert.base64Decode(
+    'CihNb3ZlVGhyb3VnaEpvaW50UG9zaXRpb25zU3RyZWFtZWRSZXF1ZXN0EhIKBG5hbWUYASABKA'
+    'lSBG5hbWUSWgoEaW5pdBgCIAEoCzJELnZpYW0uY29tcG9uZW50LmFybS52MS5Nb3ZlVGhyb3Vn'
+    'aEpvaW50UG9zaXRpb25zU3RyZWFtZWRSZXF1ZXN0LkluaXRIAFIEaW5pdBJnCgViYXRjaBgDIA'
+    'EoCzJPLnZpYW0uY29tcG9uZW50LmFybS52MS5Nb3ZlVGhyb3VnaEpvaW50UG9zaXRpb25zU3Ry'
+    'ZWFtZWRSZXF1ZXN0LlRyYWplY3RvcnlCYXRjaEgAUgViYXRjaBo1CgRJbml0Ei0KBWV4dHJhGG'
+    'MgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmEaUQoPVHJhamVjdG9yeUJhdGNo'
+    'Ej4KBnBvaW50cxgBIAMoCzImLnZpYW0uY29tcG9uZW50LmFybS52MS5UcmFqZWN0b3J5UG9pbn'
+    'RSBnBvaW50c0IJCgdtZXNzYWdl');
+
+@$core.Deprecated('Use moveThroughJointPositionsStreamedResponseDescriptor instead')
+const MoveThroughJointPositionsStreamedResponse$json = {
+  '1': 'MoveThroughJointPositionsStreamedResponse',
+  '2': [
+    {'1': 'ack', '3': 1, '4': 1, '5': 11, '6': '.viam.component.arm.v1.MoveThroughJointPositionsStreamedResponse.BatchAck', '9': 0, '10': 'ack'},
+  ],
+  '3': [MoveThroughJointPositionsStreamedResponse_BatchAck$json],
+  '8': [
+    {'1': 'message'},
+  ],
+};
+
+@$core.Deprecated('Use moveThroughJointPositionsStreamedResponseDescriptor instead')
+const MoveThroughJointPositionsStreamedResponse_BatchAck$json = {
+  '1': 'BatchAck',
+  '2': [
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `MoveThroughJointPositionsStreamedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveThroughJointPositionsStreamedResponseDescriptor = $convert.base64Decode(
+    'CilNb3ZlVGhyb3VnaEpvaW50UG9zaXRpb25zU3RyZWFtZWRSZXNwb25zZRJdCgNhY2sYASABKA'
+    'sySS52aWFtLmNvbXBvbmVudC5hcm0udjEuTW92ZVRocm91Z2hKb2ludFBvc2l0aW9uc1N0cmVh'
+    'bWVkUmVzcG9uc2UuQmF0Y2hBY2tIAFIDYWNrGjkKCEJhdGNoQWNrEi0KBWV4dHJhGGMgASgLMh'
+    'cuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmFCCQoHbWVzc2FnZQ==');
 
 @$core.Deprecated('Use stopRequestDescriptor instead')
 const StopRequest$json = {

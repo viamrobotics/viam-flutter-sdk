@@ -106,4 +106,11 @@ class ArmService extends ArmServiceBase {
     // TODO: implement moveThroughJointPositions
     throw UnimplementedError();
   }
+
+  @override
+  Stream<MoveThroughJointPositionsStreamedResponse> moveThroughJointPositionsStreamed(
+      ServiceCall call, Stream<MoveThroughJointPositionsStreamedRequest> request) {
+    // TODO: implement moveThroughJointPositionsStreamed
+    throw UnimplementedError();
+  }
 }

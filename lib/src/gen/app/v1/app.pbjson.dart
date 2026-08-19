@@ -67,6 +67,21 @@ final $typed_data.Uint8List loginMethodDescriptor = $convert.base64Decode(
     'RIT0RfUEFTU1dPUkQQARIXChNMT0dJTl9NRVRIT0RfR09PR0xFEAISFwoTTE9HSU5fTUVUSE9E'
     'X0dJVEhVQhADEhYKEkxPR0lOX01FVEhPRF9BUFBMRRAE');
 
+@$core.Deprecated('Use logOrderDescriptor instead')
+const LogOrder$json = {
+  '1': 'LogOrder',
+  '2': [
+    {'1': 'LOG_ORDER_UNSPECIFIED', '2': 0},
+    {'1': 'LOG_ORDER_ASCENDING', '2': 1},
+    {'1': 'LOG_ORDER_DESCENDING', '2': 2},
+  ],
+};
+
+/// Descriptor for `LogOrder`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List logOrderDescriptor = $convert.base64Decode(
+    'CghMb2dPcmRlchIZChVMT0dfT1JERVJfVU5TUEVDSUZJRUQQABIXChNMT0dfT1JERVJfQVNDRU'
+    '5ESU5HEAESGAoUTE9HX09SREVSX0RFU0NFTkRJTkcQAg==');
+
 @$core.Deprecated('Use fragmentVisibilityDescriptor instead')
 const FragmentVisibility$json = {
   '1': 'FragmentVisibility',
@@ -1704,6 +1719,8 @@ const GetRobotPartLogsRequest$json = {
     {'1': 'limit', '3': 8, '4': 1, '5': 3, '9': 4, '10': 'limit', '17': true},
     {'1': 'source', '3': 9, '4': 1, '5': 9, '9': 5, '10': 'source', '17': true},
     {'1': 'user_facing_only', '3': 10, '4': 1, '5': 8, '9': 6, '10': 'userFacingOnly', '17': true},
+    {'1': 'order', '3': 11, '4': 1, '5': 14, '6': '.viam.app.v1.LogOrder', '9': 7, '10': 'order', '17': true},
+    {'1': 'range', '3': 12, '4': 1, '5': 9, '9': 8, '10': 'range', '17': true},
   ],
   '8': [
     {'1': '_filter'},
@@ -1713,6 +1730,8 @@ const GetRobotPartLogsRequest$json = {
     {'1': '_limit'},
     {'1': '_source'},
     {'1': '_user_facing_only'},
+    {'1': '_order'},
+    {'1': '_range'},
   ],
 };
 
@@ -1724,9 +1743,11 @@ final $typed_data.Uint8List getRobotPartLogsRequestDescriptor = $convert.base64D
     'MSNQoFc3RhcnQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAJSBXN0YXJ0iAEB'
     'EjEKA2VuZBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIA1IDZW5kiAEBEhkKBW'
     'xpbWl0GAggASgDSARSBWxpbWl0iAEBEhsKBnNvdXJjZRgJIAEoCUgFUgZzb3VyY2WIAQESLQoQ'
-    'dXNlcl9mYWNpbmdfb25seRgKIAEoCEgGUg51c2VyRmFjaW5nT25seYgBAUIJCgdfZmlsdGVyQg'
-    '0KC19wYWdlX3Rva2VuQggKBl9zdGFydEIGCgRfZW5kQggKBl9saW1pdEIJCgdfc291cmNlQhMK'
-    'EV91c2VyX2ZhY2luZ19vbmx5');
+    'dXNlcl9mYWNpbmdfb25seRgKIAEoCEgGUg51c2VyRmFjaW5nT25seYgBARIwCgVvcmRlchgLIA'
+    'EoDjIVLnZpYW0uYXBwLnYxLkxvZ09yZGVySAdSBW9yZGVyiAEBEhkKBXJhbmdlGAwgASgJSAhS'
+    'BXJhbmdliAEBQgkKB19maWx0ZXJCDQoLX3BhZ2VfdG9rZW5CCAoGX3N0YXJ0QgYKBF9lbmRCCA'
+    'oGX2xpbWl0QgkKB19zb3VyY2VCEwoRX3VzZXJfZmFjaW5nX29ubHlCCAoGX29yZGVyQggKBl9y'
+    'YW5nZQ==');
 
 @$core.Deprecated('Use getRobotPartLogsResponseDescriptor instead')
 const GetRobotPartLogsResponse$json = {

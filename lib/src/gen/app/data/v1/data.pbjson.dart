@@ -1819,6 +1819,7 @@ const SequencesByDatasetIDRequest$json = {
     {'1': 'dataset_id', '3': 1, '4': 1, '5': 9, '10': 'datasetId'},
     {'1': 'page_token', '3': 2, '4': 1, '5': 9, '10': 'pageToken'},
     {'1': 'page_size', '3': 3, '4': 1, '5': 13, '10': 'pageSize'},
+    {'1': 'count_only', '3': 4, '4': 1, '5': 8, '10': 'countOnly'},
   ],
 };
 
@@ -1826,7 +1827,7 @@ const SequencesByDatasetIDRequest$json = {
 final $typed_data.Uint8List sequencesByDatasetIDRequestDescriptor = $convert.base64Decode(
     'ChtTZXF1ZW5jZXNCeURhdGFzZXRJRFJlcXVlc3QSHQoKZGF0YXNldF9pZBgBIAEoCVIJZGF0YX'
     'NldElkEh0KCnBhZ2VfdG9rZW4YAiABKAlSCXBhZ2VUb2tlbhIbCglwYWdlX3NpemUYAyABKA1S'
-    'CHBhZ2VTaXpl');
+    'CHBhZ2VTaXplEh0KCmNvdW50X29ubHkYBCABKAhSCWNvdW50T25seQ==');
 
 @$core.Deprecated('Use sequencesByDatasetIDResponseDescriptor instead')
 const SequencesByDatasetIDResponse$json = {
@@ -1834,6 +1835,7 @@ const SequencesByDatasetIDResponse$json = {
   '2': [
     {'1': 'sequences', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.Sequence', '10': 'sequences'},
     {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
+    {'1': 'count', '3': 3, '4': 1, '5': 4, '10': 'count'},
   ],
 };
 
@@ -1841,7 +1843,7 @@ const SequencesByDatasetIDResponse$json = {
 final $typed_data.Uint8List sequencesByDatasetIDResponseDescriptor = $convert.base64Decode(
     'ChxTZXF1ZW5jZXNCeURhdGFzZXRJRFJlc3BvbnNlEjgKCXNlcXVlbmNlcxgBIAMoCzIaLnZpYW'
     '0uYXBwLmRhdGEudjEuU2VxdWVuY2VSCXNlcXVlbmNlcxImCg9uZXh0X3BhZ2VfdG9rZW4YAiAB'
-    'KAlSDW5leHRQYWdlVG9rZW4=');
+    'KAlSDW5leHRQYWdlVG9rZW4SFAoFY291bnQYAyABKARSBWNvdW50');
 
 @$core.Deprecated('Use getSequenceBinaryDataRequestDescriptor instead')
 const GetSequenceBinaryDataRequest$json = {

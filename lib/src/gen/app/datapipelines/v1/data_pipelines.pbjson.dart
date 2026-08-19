@@ -280,6 +280,7 @@ const DataPipelineRun$json = {
     {'1': 'data_end_time', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'dataEndTime'},
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.viam.app.datapipelines.v1.DataPipelineRunStatus', '10': 'status'},
     {'1': 'error_message', '3': 7, '4': 1, '5': 9, '10': 'errorMessage'},
+    {'1': 'data_source_type', '3': 8, '4': 1, '5': 14, '6': '.viam.app.data.v1.TabularDataSourceType', '10': 'dataSourceType'},
   ],
 };
 
@@ -292,5 +293,6 @@ final $typed_data.Uint8List dataPipelineRunDescriptor = $convert.base64Decode(
     'YV9lbmRfdGltZRgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2RhdGFFbmRUaW'
     '1lEkgKBnN0YXR1cxgGIAEoDjIwLnZpYW0uYXBwLmRhdGFwaXBlbGluZXMudjEuRGF0YVBpcGVs'
     'aW5lUnVuU3RhdHVzUgZzdGF0dXMSIwoNZXJyb3JfbWVzc2FnZRgHIAEoCVIMZXJyb3JNZXNzYW'
-    'dl');
+    'dlElEKEGRhdGFfc291cmNlX3R5cGUYCCABKA4yJy52aWFtLmFwcC5kYXRhLnYxLlRhYnVsYXJE'
+    'YXRhU291cmNlVHlwZVIOZGF0YVNvdXJjZVR5cGU=');
 

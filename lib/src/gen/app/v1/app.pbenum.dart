@@ -75,6 +75,24 @@ class LoginMethod extends $pb.ProtobufEnum {
   const LoginMethod._($core.int v, $core.String n) : super(v, n);
 }
 
+/// LogOrder is the order in which logs are returned, by time.
+class LogOrder extends $pb.ProtobufEnum {
+  static const LogOrder LOG_ORDER_UNSPECIFIED = LogOrder._(0, _omitEnumNames ? '' : 'LOG_ORDER_UNSPECIFIED');
+  static const LogOrder LOG_ORDER_ASCENDING = LogOrder._(1, _omitEnumNames ? '' : 'LOG_ORDER_ASCENDING');
+  static const LogOrder LOG_ORDER_DESCENDING = LogOrder._(2, _omitEnumNames ? '' : 'LOG_ORDER_DESCENDING');
+
+  static const $core.List<LogOrder> values = <LogOrder> [
+    LOG_ORDER_UNSPECIFIED,
+    LOG_ORDER_ASCENDING,
+    LOG_ORDER_DESCENDING,
+  ];
+
+  static final $core.Map<$core.int, LogOrder> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static LogOrder? valueOf($core.int value) => _byValue[value];
+
+  const LogOrder._($core.int v, $core.String n) : super(v, n);
+}
+
 class FragmentVisibility extends $pb.ProtobufEnum {
   static const FragmentVisibility FRAGMENT_VISIBILITY_UNSPECIFIED = FragmentVisibility._(0, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_UNSPECIFIED');
   static const FragmentVisibility FRAGMENT_VISIBILITY_PRIVATE = FragmentVisibility._(1, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_PRIVATE');
