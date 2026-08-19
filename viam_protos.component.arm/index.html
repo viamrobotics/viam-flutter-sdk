@@ -132,8 +132,24 @@
   
 </dd>
 
+          <dt id="JointAccelerations">
+  <span class="name "><a href="../viam_protos.component.arm/JointAccelerations-class.html">JointAccelerations</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
           <dt id="JointPositions">
   <span class="name "><a href="../viam_protos.component.arm/JointPositions-class.html">JointPositions</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="JointVelocities">
+  <span class="name "><a href="../viam_protos.component.arm/JointVelocities-class.html">JointVelocities</a></span> 
 
 </dt>
 <dd>
@@ -165,6 +181,55 @@ The limiting constraint may change throughout execution.
 </dt>
 <dd>
   
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedRequest">
+  <span class="name "><a href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedRequest-class.html">MoveThroughJointPositionsStreamedRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedRequest_Init">
+  <span class="name "><a href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedRequest_Init-class.html">MoveThroughJointPositionsStreamedRequest_Init</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedRequest_TrajectoryBatch">
+  <span class="name "><a href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedRequest_TrajectoryBatch-class.html">MoveThroughJointPositionsStreamedRequest_TrajectoryBatch</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedResponse">
+  <span class="name "><a href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedResponse-class.html">MoveThroughJointPositionsStreamedResponse</a></span> 
+
+</dt>
+<dd>
+  Streamed back to the client while an arm is performing a streaming move.
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedResponse_BatchAck">
+  <span class="name "><a href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedResponse_BatchAck-class.html">MoveThroughJointPositionsStreamedResponse_BatchAck</a></span> 
+
+</dt>
+<dd>
+  BatchAck is returned by arm implementations to ack a
+<code>TrajectoryBatch</code>. Due to the lack of actionable payload in
+<code>BatchAck</code>, Arm implementations are not currently obligated to
+ack every batch, or even any batch. It is currently unspecified
+whether ack'ing a batch indicates its acceptance, issue to the
+arm, or completion. These very relaxed requirements may become
+tighter if and when <code>BatchAck</code> messages begin carrying meaningful
+payloads back to the client. For now, the recommended practice
+for arm implementors is to ack each batch that has been
+successfully issued/enqueued to the arm.
 </dd>
 
           <dt id="MoveToJointPositionsRequest">
@@ -225,9 +290,46 @@ message is specified.
   
 </dd>
 
+          <dt id="TrajectoryPoint">
+  <span class="name "><a href="../viam_protos.component.arm/TrajectoryPoint-class.html">TrajectoryPoint</a></span> 
+
+</dt>
+<dd>
+  One waypoint in a streamed joint-space trajectory.
+</dd>
+
+          <dt id="TrajectoryPoint_KinematicConstraints">
+  <span class="name "><a href="../viam_protos.component.arm/TrajectoryPoint_KinematicConstraints-class.html">TrajectoryPoint_KinematicConstraints</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
       </dl>
     </section>
 
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+      <dl>
+          <dt id="MoveThroughJointPositionsStreamedRequest_Message">
+  <span class="name "><a href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedRequest_Message.html">MoveThroughJointPositionsStreamedRequest_Message</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedResponse_Message">
+  <span class="name "><a href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedResponse_Message.html">MoveThroughJointPositionsStreamedResponse_Message</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
 
 
 
@@ -307,8 +409,32 @@ message is specified.
 
 </dd>
 
+          <dt id="JointAccelerations$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/JointAccelerations$json-constant.html">JointAccelerations$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="JointPositions$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/JointPositions$json-constant.html">JointPositions$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="JointVelocities$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/JointVelocities$json-constant.html">JointVelocities$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -346,6 +472,66 @@ message is specified.
           <dt id="MoveThroughJointPositionsResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/MoveThroughJointPositionsResponse$json-constant.html">MoveThroughJointPositionsResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedRequest$json-constant.html">MoveThroughJointPositionsStreamedRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedRequest_Init$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedRequest_Init$json-constant.html">MoveThroughJointPositionsStreamedRequest_Init$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedRequest_TrajectoryBatch$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedRequest_TrajectoryBatch$json-constant.html">MoveThroughJointPositionsStreamedRequest_TrajectoryBatch$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedResponse$json-constant.html">MoveThroughJointPositionsStreamedResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="MoveThroughJointPositionsStreamedResponse_BatchAck$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/MoveThroughJointPositionsStreamedResponse_BatchAck$json-constant.html">MoveThroughJointPositionsStreamedResponse_BatchAck$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
 </dt>
@@ -439,6 +625,30 @@ message is specified.
 
 </dd>
 
+          <dt id="TrajectoryPoint$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/TrajectoryPoint$json-constant.html">TrajectoryPoint$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="TrajectoryPoint_KinematicConstraints$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.arm/TrajectoryPoint_KinematicConstraints$json-constant.html">TrajectoryPoint_KinematicConstraints$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
       </dl>
     </section>
 
@@ -517,6 +727,18 @@ message is specified.
 
 </dd>
 
+          <dt id="jointAccelerationsDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.component.arm/jointAccelerationsDescriptor.html">jointAccelerationsDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>JointAccelerations</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="jointPositionsDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.arm/jointPositionsDescriptor.html">jointPositionsDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -525,6 +747,18 @@ message is specified.
 </dt>
 <dd>
   Descriptor for <code>JointPositions</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="jointVelocitiesDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.component.arm/jointVelocitiesDescriptor.html">jointVelocitiesDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>JointVelocities</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -561,6 +795,30 @@ message is specified.
 </dt>
 <dd>
   Descriptor for <code>MoveThroughJointPositionsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="moveThroughJointPositionsStreamedRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.component.arm/moveThroughJointPositionsStreamedRequestDescriptor.html">moveThroughJointPositionsStreamedRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>MoveThroughJointPositionsStreamedRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="moveThroughJointPositionsStreamedResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.component.arm/moveThroughJointPositionsStreamedResponseDescriptor.html">moveThroughJointPositionsStreamedResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>MoveThroughJointPositionsStreamedResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -645,6 +903,18 @@ message is specified.
 </dt>
 <dd>
   Descriptor for <code>StopResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="trajectoryPointDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.component.arm/trajectoryPointDescriptor.html">trajectoryPointDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>TrajectoryPoint</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

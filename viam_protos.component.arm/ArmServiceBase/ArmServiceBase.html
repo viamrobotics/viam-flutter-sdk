@@ -98,6 +98,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $16.MoveThroughJointPositionsRequest.fromBuffer(value),
       ($16.MoveThroughJointPositionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$16.MoveThroughJointPositionsStreamedRequest, $16.MoveThroughJointPositionsStreamedResponse&gt;(
+      &#39;MoveThroughJointPositionsStreamed&#39;,
+      moveThroughJointPositionsStreamed,
+      true,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $16.MoveThroughJointPositionsStreamedRequest.fromBuffer(value),
+      ($16.MoveThroughJointPositionsStreamedResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$16.StopRequest, $16.StopResponse&gt;(
       &#39;Stop&#39;,
       stop_Pre,
