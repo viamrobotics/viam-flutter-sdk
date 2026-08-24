@@ -371,6 +371,7 @@ const AuthConfig$json = {
     {'1': 'handlers', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.AuthHandlerConfig', '10': 'handlers'},
     {'1': 'tls_auth_entities', '3': 2, '4': 3, '5': 9, '10': 'tlsAuthEntities'},
     {'1': 'external_auth_config', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.ExternalAuthConfig', '9': 0, '10': 'externalAuthConfig', '17': true},
+    {'1': 'user_permissions', '3': 4, '4': 3, '5': 11, '6': '.viam.app.v1.UserPermission', '10': 'userPermissions'},
   ],
   '8': [
     {'1': '_external_auth_config'},
@@ -382,8 +383,51 @@ final $typed_data.Uint8List authConfigDescriptor = $convert.base64Decode(
     'CgpBdXRoQ29uZmlnEjoKCGhhbmRsZXJzGAEgAygLMh4udmlhbS5hcHAudjEuQXV0aEhhbmRsZX'
     'JDb25maWdSCGhhbmRsZXJzEioKEXRsc19hdXRoX2VudGl0aWVzGAIgAygJUg90bHNBdXRoRW50'
     'aXRpZXMSVgoUZXh0ZXJuYWxfYXV0aF9jb25maWcYAyABKAsyHy52aWFtLmFwcC52MS5FeHRlcm'
-    '5hbEF1dGhDb25maWdIAFISZXh0ZXJuYWxBdXRoQ29uZmlniAEBQhcKFV9leHRlcm5hbF9hdXRo'
-    'X2NvbmZpZw==');
+    '5hbEF1dGhDb25maWdIAFISZXh0ZXJuYWxBdXRoQ29uZmlniAEBEkYKEHVzZXJfcGVybWlzc2lv'
+    'bnMYBCADKAsyGy52aWFtLmFwcC52MS5Vc2VyUGVybWlzc2lvblIPdXNlclBlcm1pc3Npb25zQh'
+    'cKFV9leHRlcm5hbF9hdXRoX2NvbmZpZw==');
+
+@$core.Deprecated('Use userPermissionDescriptor instead')
+const UserPermission$json = {
+  '1': 'UserPermission',
+  '2': [
+    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.User', '10': 'user'},
+    {'1': 'permissions', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.Permission', '10': 'permissions'},
+  ],
+};
+
+/// Descriptor for `UserPermission`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userPermissionDescriptor = $convert.base64Decode(
+    'Cg5Vc2VyUGVybWlzc2lvbhIlCgR1c2VyGAEgASgLMhEudmlhbS5hcHAudjEuVXNlclIEdXNlch'
+    'I5CgtwZXJtaXNzaW9ucxgCIAMoCzIXLnZpYW0uYXBwLnYxLlBlcm1pc3Npb25SC3Blcm1pc3Np'
+    'b25z');
+
+@$core.Deprecated('Use userDescriptor instead')
+const User$json = {
+  '1': 'User',
+  '2': [
+    {'1': 'type', '3': 1, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'id', '3': 2, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
+    'CgRVc2VyEhIKBHR5cGUYASABKAlSBHR5cGUSDgoCaWQYAiABKAlSAmlk');
+
+@$core.Deprecated('Use permissionDescriptor instead')
+const Permission$json = {
+  '1': 'Permission',
+  '2': [
+    {'1': 'resources', '3': 1, '4': 3, '5': 9, '10': 'resources'},
+    {'1': 'allowed_methods', '3': 2, '4': 3, '5': 9, '10': 'allowedMethods'},
+  ],
+};
+
+/// Descriptor for `Permission`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List permissionDescriptor = $convert.base64Decode(
+    'CgpQZXJtaXNzaW9uEhwKCXJlc291cmNlcxgBIAMoCVIJcmVzb3VyY2VzEicKD2FsbG93ZWRfbW'
+    'V0aG9kcxgCIAMoCVIOYWxsb3dlZE1ldGhvZHM=');
 
 @$core.Deprecated('Use jWKSFileDescriptor instead')
 const JWKSFile$json = {

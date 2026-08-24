@@ -3324,6 +3324,38 @@ class FeatureSet_VisibilityFeature extends $pb.GeneratedMessage {
   static FeatureSet_VisibilityFeature? _defaultInstance;
 }
 
+class FeatureSet_ProtoLimitsFeature extends $pb.GeneratedMessage {
+  factory FeatureSet_ProtoLimitsFeature() => create();
+  FeatureSet_ProtoLimitsFeature._() : super();
+  factory FeatureSet_ProtoLimitsFeature.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FeatureSet_ProtoLimitsFeature.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeatureSet.ProtoLimitsFeature', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.protobuf'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FeatureSet_ProtoLimitsFeature clone() => FeatureSet_ProtoLimitsFeature()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FeatureSet_ProtoLimitsFeature copyWith(void Function(FeatureSet_ProtoLimitsFeature) updates) => super.copyWith((message) => updates(message as FeatureSet_ProtoLimitsFeature)) as FeatureSet_ProtoLimitsFeature;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FeatureSet_ProtoLimitsFeature create() => FeatureSet_ProtoLimitsFeature._();
+  FeatureSet_ProtoLimitsFeature createEmptyInstance() => create();
+  static $pb.PbList<FeatureSet_ProtoLimitsFeature> createRepeated() => $pb.PbList<FeatureSet_ProtoLimitsFeature>();
+  @$core.pragma('dart2js:noInline')
+  static FeatureSet_ProtoLimitsFeature getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeatureSet_ProtoLimitsFeature>(create);
+  static FeatureSet_ProtoLimitsFeature? _defaultInstance;
+}
+
 /// TODO Enums in C++ gencode (and potentially other languages) are
 /// not well scoped.  This means that each of the feature enums below can clash
 /// with each other.  The short names we've chosen maximize call-site
@@ -3340,6 +3372,7 @@ class FeatureSet extends $pb.GeneratedMessage {
     FeatureSet_JsonFormat? jsonFormat,
     FeatureSet_EnforceNamingStyle? enforceNamingStyle,
     FeatureSet_VisibilityFeature_DefaultSymbolVisibility? defaultSymbolVisibility,
+    FeatureSet_ProtoLimitsFeature_EnforceProtoLimits? enforceProtoLimits,
   }) {
     final $result = create();
     if (fieldPresence != null) {
@@ -3366,6 +3399,9 @@ class FeatureSet extends $pb.GeneratedMessage {
     if (defaultSymbolVisibility != null) {
       $result.defaultSymbolVisibility = defaultSymbolVisibility;
     }
+    if (enforceProtoLimits != null) {
+      $result.enforceProtoLimits = enforceProtoLimits;
+    }
     return $result;
   }
   FeatureSet._() : super();
@@ -3381,6 +3417,7 @@ class FeatureSet extends $pb.GeneratedMessage {
     ..e<FeatureSet_JsonFormat>(6, _omitFieldNames ? '' : 'jsonFormat', $pb.PbFieldType.OE, defaultOrMaker: FeatureSet_JsonFormat.JSON_FORMAT_UNKNOWN, valueOf: FeatureSet_JsonFormat.valueOf, enumValues: FeatureSet_JsonFormat.values)
     ..e<FeatureSet_EnforceNamingStyle>(7, _omitFieldNames ? '' : 'enforceNamingStyle', $pb.PbFieldType.OE, defaultOrMaker: FeatureSet_EnforceNamingStyle.ENFORCE_NAMING_STYLE_UNKNOWN, valueOf: FeatureSet_EnforceNamingStyle.valueOf, enumValues: FeatureSet_EnforceNamingStyle.values)
     ..e<FeatureSet_VisibilityFeature_DefaultSymbolVisibility>(8, _omitFieldNames ? '' : 'defaultSymbolVisibility', $pb.PbFieldType.OE, defaultOrMaker: FeatureSet_VisibilityFeature_DefaultSymbolVisibility.DEFAULT_SYMBOL_VISIBILITY_UNKNOWN, valueOf: FeatureSet_VisibilityFeature_DefaultSymbolVisibility.valueOf, enumValues: FeatureSet_VisibilityFeature_DefaultSymbolVisibility.values)
+    ..e<FeatureSet_ProtoLimitsFeature_EnforceProtoLimits>(9, _omitFieldNames ? '' : 'enforceProtoLimits', $pb.PbFieldType.OE, defaultOrMaker: FeatureSet_ProtoLimitsFeature_EnforceProtoLimits.PROTO_LIMITS_UNKNOWN, valueOf: FeatureSet_ProtoLimitsFeature_EnforceProtoLimits.valueOf, enumValues: FeatureSet_ProtoLimitsFeature_EnforceProtoLimits.values)
     ..hasExtensions = true
   ;
 
@@ -3476,6 +3513,15 @@ class FeatureSet extends $pb.GeneratedMessage {
   $core.bool hasDefaultSymbolVisibility() => $_has(7);
   @$pb.TagNumber(8)
   void clearDefaultSymbolVisibility() => clearField(8);
+
+  @$pb.TagNumber(9)
+  FeatureSet_ProtoLimitsFeature_EnforceProtoLimits get enforceProtoLimits => $_getN(8);
+  @$pb.TagNumber(9)
+  set enforceProtoLimits(FeatureSet_ProtoLimitsFeature_EnforceProtoLimits v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasEnforceProtoLimits() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearEnforceProtoLimits() => clearField(9);
 }
 
 /// A map from every known edition with a unique set of defaults to its
@@ -3727,6 +3773,23 @@ class SourceCodeInfo_Location extends $pb.GeneratedMessage {
   ///    [ 4, 3, 2, 7 ]
   ///  this path refers to the whole field declaration (from the beginning
   ///  of the label to the terminating semicolon).
+  ///
+  ///  For options, the path refers to the interpreted option in the descriptor.
+  ///  E.g., for a custom option `(my_opt) = "foo"` on a message using extension
+  ///  number 10101, the path is:
+  ///    [ 4, 3, 7, 10101 ]
+  ///  refers to:
+  ///    file.message_type(3)     // 4, 3
+  ///        .options()           // 7
+  ///        .my_opt()            // 10101
+  ///
+  ///  Sub-locations corresponding to the interpreted option's corresponding
+  ///  `UninterpretedOption` are also appended to the interpreted option, which
+  ///  deviates from the actual FileDescriptorProto path. E.g.:
+  ///    [ 4, 3, 7, 10101, 2 ]
+  ///  refers to the option name `(my_opt)`, and:
+  ///    [ 4, 3, 7, 10101, 7 ]
+  ///  refers to the "foo" string value of the option.
   @$pb.TagNumber(1)
   $core.List<$core.int> get path => $_getList(0);
 

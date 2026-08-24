@@ -423,6 +423,23 @@ class FeatureSet_VisibilityFeature_DefaultSymbolVisibility extends $pb.ProtobufE
   const FeatureSet_VisibilityFeature_DefaultSymbolVisibility._($core.int v, $core.String n) : super(v, n);
 }
 
+class FeatureSet_ProtoLimitsFeature_EnforceProtoLimits extends $pb.ProtobufEnum {
+  static const FeatureSet_ProtoLimitsFeature_EnforceProtoLimits PROTO_LIMITS_UNKNOWN = FeatureSet_ProtoLimitsFeature_EnforceProtoLimits._(0, _omitEnumNames ? '' : 'PROTO_LIMITS_UNKNOWN');
+  static const FeatureSet_ProtoLimitsFeature_EnforceProtoLimits LEGACY_NO_EXPLICIT_LIMITS = FeatureSet_ProtoLimitsFeature_EnforceProtoLimits._(1, _omitEnumNames ? '' : 'LEGACY_NO_EXPLICIT_LIMITS');
+  static const FeatureSet_ProtoLimitsFeature_EnforceProtoLimits PROTO_LIMITS2026 = FeatureSet_ProtoLimitsFeature_EnforceProtoLimits._(2, _omitEnumNames ? '' : 'PROTO_LIMITS2026');
+
+  static const $core.List<FeatureSet_ProtoLimitsFeature_EnforceProtoLimits> values = <FeatureSet_ProtoLimitsFeature_EnforceProtoLimits> [
+    PROTO_LIMITS_UNKNOWN,
+    LEGACY_NO_EXPLICIT_LIMITS,
+    PROTO_LIMITS2026,
+  ];
+
+  static final $core.Map<$core.int, FeatureSet_ProtoLimitsFeature_EnforceProtoLimits> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FeatureSet_ProtoLimitsFeature_EnforceProtoLimits? valueOf($core.int value) => _byValue[value];
+
+  const FeatureSet_ProtoLimitsFeature_EnforceProtoLimits._($core.int v, $core.String n) : super(v, n);
+}
+
 /// Represents the identified object's effect on the element in the original
 /// .proto file.
 class GeneratedCodeInfo_Annotation_Semantic extends $pb.ProtobufEnum {

@@ -19,9 +19,9 @@ import 'package:protobuf/protobuf.dart' as $pb;
 ///  the null value for the `Value` type union.
 ///
 ///  A field of type `NullValue` with any value other than `0` is considered
-///  invalid. Most ProtoJSON serializers will emit a Value with a `null_value` set
-///  as a JSON `null` regardless of the integer value, and so will round trip to
-///  a `0` value.
+///  invalid. Most ProtoJSON serializers will emit a `Value` with a `null_value`
+///  set as a JSON `null` regardless of the integer value, and so will round trip
+///  to a `0` value.
 class NullValue extends $pb.ProtobufEnum {
   static const NullValue NULL_VALUE = NullValue._(0, _omitEnumNames ? '' : 'NULL_VALUE');
 
