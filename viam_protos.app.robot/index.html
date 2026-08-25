@@ -350,6 +350,14 @@ zero as the north/south pole is circled, the Roll will correct itself to remain 
   PackageConfig is the configration for deployed Packages.
 </dd>
 
+          <dt id="Permission">
+  <span class="name "><a href="../viam_protos.app.robot/Permission-class.html">Permission</a></span> 
+
+</dt>
+<dd>
+  A Permission describes a User's ability to invoke methods on resources.
+</dd>
+
           <dt id="ProcessConfig">
   <span class="name "><a href="../viam_protos.app.robot/ProcessConfig-class.html">ProcessConfig</a></span> 
 
@@ -459,6 +467,23 @@ where it will export them.
 </dt>
 <dd>
   
+</dd>
+
+          <dt id="User">
+  <span class="name "><a href="../viam_protos.app.robot/User-class.html">User</a></span> 
+
+</dt>
+<dd>
+  A User describes a single user that a set of Permissions applies to.
+</dd>
+
+          <dt id="UserPermission">
+  <span class="name "><a href="../viam_protos.app.robot/UserPermission-class.html">UserPermission</a></span> 
+
+</dt>
+<dd>
+  A UserPermission describes a User and the permissions granted to
+that user.
 </dd>
 
       </dl>
@@ -892,6 +917,18 @@ where it will export them.
 
 </dd>
 
+          <dt id="Permission$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/Permission$json-constant.html">Permission$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="ProcessConfig$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/ProcessConfig$json-constant.html">ProcessConfig$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -1026,6 +1063,30 @@ where it will export them.
 
           <dt id="Translation$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/Translation$json-constant.html">Translation$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="User$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/User$json-constant.html">User$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="UserPermission$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/UserPermission$json-constant.html">UserPermission$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -1366,6 +1427,18 @@ where it will export them.
 
 </dd>
 
+          <dt id="permissionDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.robot/permissionDescriptor.html">permissionDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>Permission</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="processConfigDescriptor" class="property">
   <span class="name"><a href="../viam_protos.app.robot/processConfigDescriptor.html">processConfigDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -1482,6 +1555,30 @@ where it will export them.
 </dt>
 <dd>
   Descriptor for <code>Translation</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="userDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.robot/userDescriptor.html">userDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>User</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="userPermissionDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.robot/userPermissionDescriptor.html">userPermissionDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>UserPermission</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

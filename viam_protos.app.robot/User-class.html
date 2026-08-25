@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the AuthConfig class from the viam_protos.app.robot library, for the Dart programming language.">
-  <title>AuthConfig class - viam_protos.app.robot library - Dart API</title>
+  <meta name="description" content="API docs for the User class from the viam_protos.app.robot library, for the Dart programming language.">
+  <title>User class - viam_protos.app.robot library - Dart API</title>
 
 
   
@@ -26,9 +26,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">viam_sdk</a></li>
     <li><a href="../viam_protos.app.robot/">protos&#47;app&#47;robot.dart</a></li>
-    <li class="self-crumb">AuthConfig class</li>
+    <li class="self-crumb">User class</li>
   </ol>
-  <div class="self-name">AuthConfig</div>
+  <div class="self-name">User</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,13 +46,16 @@
     id="dartdoc-main-content"
     class="main-content"
     data-above-sidebar="viam_protos.app.robot&#47;viam_protos.app.robot-library-sidebar.html"
-    data-below-sidebar="viam_protos.app.robot&#47;AuthConfig-class-sidebar.html">
+    data-below-sidebar="viam_protos.app.robot&#47;User-class-sidebar.html">
     <div>
-<h1><span class="kind-class">AuthConfig</span> class 
+<h1><span class="kind-class">User</span> class 
  
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>A User describes a single user that a set of Permissions applies to.</p>
+</section>
 
 
     <section>
@@ -63,7 +66,7 @@
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
         <li><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage-class.html">GeneratedMessage</a></li>
-      <li>AuthConfig</li>
+      <li>User</li>
     </ul>
   </dd>
 
@@ -86,22 +89,22 @@
   <section class="summary offset-anchor" id="constructors">
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
-        <dt id="AuthConfig.new" class="callable">
-          <span class="name"><a href="../viam_protos.app.robot/AuthConfig/AuthConfig.html">AuthConfig</a></span><span class="signature">({<span class="parameter" id="param-handlers"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/AuthHandlerConfig-class.html">AuthHandlerConfig</a></span>&gt;</span>?</span> <span class="parameter-name">handlers</span>, </span><span class="parameter" id="param-tlsAuthEntities"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tlsAuthEntities</span>, </span><span class="parameter" id="param-externalAuthConfig"><span class="type-annotation"><a href="../viam_protos.app.robot/ExternalAuthConfig-class.html">ExternalAuthConfig</a>?</span> <span class="parameter-name">externalAuthConfig</span>, </span><span class="parameter" id="param-userPermissions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/UserPermission-class.html">UserPermission</a></span>&gt;</span>?</span> <span class="parameter-name">userPermissions</span></span>})</span>
+        <dt id="User.new" class="callable">
+          <span class="name"><a href="../viam_protos.app.robot/User/User.html">User</a></span><span class="signature">({<span class="parameter" id="param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span></span>})</span>
         </dt>
         <dd>
           
             <div class="constructor-modifier features">factory</div>
         </dd>
-        <dt id="AuthConfig.fromBuffer" class="callable">
-          <span class="name"><a href="../viam_protos.app.robot/AuthConfig/AuthConfig.fromBuffer.html">AuthConfig.fromBuffer</a></span><span class="signature">(<span class="parameter" id="fromBuffer-param-i"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">i</span>, [</span><span class="parameter" id="fromBuffer-param-r"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/ExtensionRegistry-class.html">ExtensionRegistry</a></span> <span class="parameter-name">r</span> = <span class="default-value">$pb.ExtensionRegistry.EMPTY</span></span>])</span>
+        <dt id="User.fromBuffer" class="callable">
+          <span class="name"><a href="../viam_protos.app.robot/User/User.fromBuffer.html">User.fromBuffer</a></span><span class="signature">(<span class="parameter" id="fromBuffer-param-i"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">i</span>, [</span><span class="parameter" id="fromBuffer-param-r"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/ExtensionRegistry-class.html">ExtensionRegistry</a></span> <span class="parameter-name">r</span> = <span class="default-value">$pb.ExtensionRegistry.EMPTY</span></span>])</span>
         </dt>
         <dd>
           
             <div class="constructor-modifier features">factory</div>
         </dd>
-        <dt id="AuthConfig.fromJson" class="callable">
-          <span class="name"><a href="../viam_protos.app.robot/AuthConfig/AuthConfig.fromJson.html">AuthConfig.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-i"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">i</span>, [</span><span class="parameter" id="fromJson-param-r"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/ExtensionRegistry-class.html">ExtensionRegistry</a></span> <span class="parameter-name">r</span> = <span class="default-value">$pb.ExtensionRegistry.EMPTY</span></span>])</span>
+        <dt id="User.fromJson" class="callable">
+          <span class="name"><a href="../viam_protos.app.robot/User/User.fromJson.html">User.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-i"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">i</span>, [</span><span class="parameter" id="fromJson-param-r"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/ExtensionRegistry-class.html">ExtensionRegistry</a></span> <span class="parameter-name">r</span> = <span class="default-value">$pb.ExtensionRegistry.EMPTY</span></span>])</span>
         </dt>
         <dd>
           
@@ -128,30 +131,6 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="externalAuthConfig" class="property">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/externalAuthConfig.html">externalAuthConfig</a></span>
-  <span class="signature">&#8596; <a href="../viam_protos.app.robot/ExternalAuthConfig-class.html">ExternalAuthConfig</a></span>
-  
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">getter/setter pair</span></div>
-
-</dd>
-
-        <dt id="handlers" class="property">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/handlers.html">handlers</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/AuthHandlerConfig-class.html">AuthHandlerConfig</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">no setter</span></div>
-
-</dd>
-
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
@@ -164,8 +143,21 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="id" class="property">
+  <span class="name"><a href="../viam_protos.app.robot/User/id.html">id</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  id is the API Key ID if type is "api-key-id", the Viam app user ID if
+type is "app-user-id", and empty if type is "default".
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="info_" class="property">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/info_.html">info_</a></span>
+  <span class="name"><a href="../viam_protos.app.robot/User/info_.html">info_</a></span>
   <span class="signature">&#8594; <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/BuilderInfo-class.html">BuilderInfo</a></span>
   
 
@@ -200,15 +192,15 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="tlsAuthEntities" class="property">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/tlsAuthEntities.html">tlsAuthEntities</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+        <dt id="type" class="property">
+  <span class="name"><a href="../viam_protos.app.robot/User/type.html">type</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
-  
-  <div class="features"><span class="feature">no setter</span></div>
+  type is the type of user. Can be "api-key-id", "app-user-id", or "default".
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -221,19 +213,6 @@ to protobuf fields.
 <dd class="inherited">
   
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="userPermissions" class="property">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/userPermissions.html">userPermissions</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/UserPermission-class.html">UserPermission</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  user_permissions represents the map of Users to Permissions for
-this machine.
-  <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 
@@ -298,19 +277,6 @@ this machine.
 
 </dd>
 
-        <dt id="clearExternalAuthConfig" class="callable">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/clearExternalAuthConfig.html">clearExternalAuthConfig</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; void</span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  
-
-</dd>
-
         <dt id="clearField" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/clearField.html">clearField</a></span><span class="signature">(<wbr><span class="parameter" id="clearField-param-tagNumber"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">tagNumber</span></span>)
     <span class="returntype parameter">&#8594; void</span>
@@ -324,9 +290,35 @@ this machine.
 
 </dd>
 
+        <dt id="clearId" class="callable">
+  <span class="name"><a href="../viam_protos.app.robot/User/clearId.html">clearId</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearType" class="callable">
+  <span class="name"><a href="../viam_protos.app.robot/User/clearType.html">clearType</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clone" class="callable">
-  <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/AuthConfig/clone.html">clone</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></span>
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/User/clone.html">clone</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/User-class.html">User</a></span>
   </span>
   
 
@@ -339,8 +331,8 @@ this machine.
 </dd>
 
         <dt id="copyWith" class="callable">
-  <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/AuthConfig/copyWith.html">copyWith</a></span><span class="signature">(<wbr><span class="parameter" id="copyWith-param-updates"><span class="type-annotation">void</span> <span class="parameter-name">updates</span>(<span class="parameter" id="param-"><span class="type-annotation"><a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></span></span>)</span>)
-    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></span>
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/User/copyWith.html">copyWith</a></span><span class="signature">(<wbr><span class="parameter" id="copyWith-param-updates"><span class="type-annotation">void</span> <span class="parameter-name">updates</span>(<span class="parameter" id="param-"><span class="type-annotation"><a href="../viam_protos.app.robot/User-class.html">User</a></span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/User-class.html">User</a></span>
   </span>
   
 
@@ -352,8 +344,8 @@ this machine.
 </dd>
 
         <dt id="createEmptyInstance" class="callable">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/createEmptyInstance.html">createEmptyInstance</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></span>
+  <span class="name"><a href="../viam_protos.app.robot/User/createEmptyInstance.html">createEmptyInstance</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/User-class.html">User</a></span>
   </span>
   
 
@@ -403,19 +395,6 @@ this machine.
         provided by the <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions.html">GeneratedMessageGenericExtensions</a> extension</span>
       </p>
   Returns a writable deep copy of this message.
-  
-
-</dd>
-
-        <dt id="ensureExternalAuthConfig" class="callable">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/ensureExternalAuthConfig.html">ensureExternalAuthConfig</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/ExternalAuthConfig-class.html">ExternalAuthConfig</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  
   
 
 </dd>
@@ -525,19 +504,6 @@ default value if it is not set.
 
 </dd>
 
-        <dt id="hasExternalAuthConfig" class="callable">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/hasExternalAuthConfig.html">hasExternalAuthConfig</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  
-
-</dd>
-
         <dt id="hasField" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/hasField.html">hasField</a></span><span class="signature">(<wbr><span class="parameter" id="hasField-param-tagNumber"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">tagNumber</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -551,6 +517,19 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasId" class="callable">
+  <span class="name"><a href="../viam_protos.app.robot/User/hasId.html">hasId</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasRequiredFields" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/hasRequiredFields.html">hasRequiredFields</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -561,6 +540,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether the message has required fields.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasType" class="callable">
+  <span class="name"><a href="../viam_protos.app.robot/User/hasType.html">hasType</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -858,8 +850,8 @@ default value if it is not set.
     <h2>Static Methods</h2>
     <dl class="callables">
         <dt id="create" class="callable">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/create.html">create</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></span>
+  <span class="name"><a href="../viam_protos.app.robot/User/create.html">create</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/User-class.html">User</a></span>
   </span>
   
 
@@ -871,8 +863,8 @@ default value if it is not set.
 </dd>
 
         <dt id="createRepeated" class="callable">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/createRepeated.html">createRepeated</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/PbList-class.html">PbList</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.robot/User/createRepeated.html">createRepeated</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/PbList-class.html">PbList</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/User-class.html">User</a></span>&gt;</span></span>
   </span>
   
 
@@ -884,8 +876,8 @@ default value if it is not set.
 </dd>
 
         <dt id="getDefault" class="callable">
-  <span class="name"><a href="../viam_protos.app.robot/AuthConfig/getDefault.html">getDefault</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></span>
+  <span class="name"><a href="../viam_protos.app.robot/User/getDefault.html">getDefault</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/User-class.html">User</a></span>
   </span>
   
 
@@ -911,7 +903,7 @@ default value if it is not set.
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">viam_sdk</a></li>
     <li><a href="../viam_protos.app.robot/">viam_protos.app.robot</a></li>
-    <li class="self-crumb">AuthConfig class</li>
+    <li class="self-crumb">User class</li>
 </ol>
 
     <h5>viam_protos.app.robot library</h5>
