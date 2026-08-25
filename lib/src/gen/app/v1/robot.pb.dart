@@ -1716,6 +1716,7 @@ class AuthConfig extends $pb.GeneratedMessage {
     $core.Iterable<AuthHandlerConfig>? handlers,
     $core.Iterable<$core.String>? tlsAuthEntities,
     ExternalAuthConfig? externalAuthConfig,
+    $core.Iterable<UserPermission>? userPermissions,
   }) {
     final $result = create();
     if (handlers != null) {
@@ -1727,6 +1728,9 @@ class AuthConfig extends $pb.GeneratedMessage {
     if (externalAuthConfig != null) {
       $result.externalAuthConfig = externalAuthConfig;
     }
+    if (userPermissions != null) {
+      $result.userPermissions.addAll(userPermissions);
+    }
     return $result;
   }
   AuthConfig._() : super();
@@ -1737,6 +1741,7 @@ class AuthConfig extends $pb.GeneratedMessage {
     ..pc<AuthHandlerConfig>(1, _omitFieldNames ? '' : 'handlers', $pb.PbFieldType.PM, subBuilder: AuthHandlerConfig.create)
     ..pPS(2, _omitFieldNames ? '' : 'tlsAuthEntities')
     ..aOM<ExternalAuthConfig>(3, _omitFieldNames ? '' : 'externalAuthConfig', subBuilder: ExternalAuthConfig.create)
+    ..pc<UserPermission>(4, _omitFieldNames ? '' : 'userPermissions', $pb.PbFieldType.PM, subBuilder: UserPermission.create)
     ..hasRequiredFields = false
   ;
 
@@ -1777,6 +1782,202 @@ class AuthConfig extends $pb.GeneratedMessage {
   void clearExternalAuthConfig() => clearField(3);
   @$pb.TagNumber(3)
   ExternalAuthConfig ensureExternalAuthConfig() => $_ensure(2);
+
+  /// user_permissions represents the map of Users to Permissions for
+  /// this machine.
+  @$pb.TagNumber(4)
+  $core.List<UserPermission> get userPermissions => $_getList(3);
+}
+
+/// A UserPermission describes a User and the permissions granted to
+/// that user.
+class UserPermission extends $pb.GeneratedMessage {
+  factory UserPermission({
+    User? user,
+    $core.Iterable<Permission>? permissions,
+  }) {
+    final $result = create();
+    if (user != null) {
+      $result.user = user;
+    }
+    if (permissions != null) {
+      $result.permissions.addAll(permissions);
+    }
+    return $result;
+  }
+  UserPermission._() : super();
+  factory UserPermission.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserPermission.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserPermission', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<User>(1, _omitFieldNames ? '' : 'user', subBuilder: User.create)
+    ..pc<Permission>(2, _omitFieldNames ? '' : 'permissions', $pb.PbFieldType.PM, subBuilder: Permission.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UserPermission clone() => UserPermission()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserPermission copyWith(void Function(UserPermission) updates) => super.copyWith((message) => updates(message as UserPermission)) as UserPermission;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UserPermission create() => UserPermission._();
+  UserPermission createEmptyInstance() => create();
+  static $pb.PbList<UserPermission> createRepeated() => $pb.PbList<UserPermission>();
+  @$core.pragma('dart2js:noInline')
+  static UserPermission getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserPermission>(create);
+  static UserPermission? _defaultInstance;
+
+  /// user is the User this UserPermission applies to. A User can only be
+  /// listed in a single UserPermission for a set of UserPermissions.
+  @$pb.TagNumber(1)
+  User get user => $_getN(0);
+  @$pb.TagNumber(1)
+  set user(User v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUser() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUser() => clearField(1);
+  @$pb.TagNumber(1)
+  User ensureUser() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<Permission> get permissions => $_getList(1);
+}
+
+/// A User describes a single user that a set of Permissions applies to.
+class User extends $pb.GeneratedMessage {
+  factory User({
+    $core.String? type,
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  User._() : super();
+  factory User.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory User.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'User', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'type')
+    ..aOS(2, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  User clone() => User()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  User copyWith(void Function(User) updates) => super.copyWith((message) => updates(message as User)) as User;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static User create() => User._();
+  User createEmptyInstance() => create();
+  static $pb.PbList<User> createRepeated() => $pb.PbList<User>();
+  @$core.pragma('dart2js:noInline')
+  static User getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<User>(create);
+  static User? _defaultInstance;
+
+  /// type is the type of user. Can be "api-key-id", "app-user-id", or "default".
+  @$pb.TagNumber(1)
+  $core.String get type => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set type($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearType() => clearField(1);
+
+  /// id is the API Key ID if type is "api-key-id", the Viam app user ID if
+  /// type is "app-user-id", and empty if type is "default".
+  @$pb.TagNumber(2)
+  $core.String get id => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set id($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearId() => clearField(2);
+}
+
+/// A Permission describes a User's ability to invoke methods on resources.
+class Permission extends $pb.GeneratedMessage {
+  factory Permission({
+    $core.Iterable<$core.String>? resources,
+    $core.Iterable<$core.String>? allowedMethods,
+  }) {
+    final $result = create();
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (allowedMethods != null) {
+      $result.allowedMethods.addAll(allowedMethods);
+    }
+    return $result;
+  }
+  Permission._() : super();
+  factory Permission.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Permission.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Permission', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'resources')
+    ..pPS(2, _omitFieldNames ? '' : 'allowedMethods')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Permission clone() => Permission()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Permission copyWith(void Function(Permission) updates) => super.copyWith((message) => updates(message as Permission)) as Permission;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Permission create() => Permission._();
+  Permission createEmptyInstance() => create();
+  static $pb.PbList<Permission> createRepeated() => $pb.PbList<Permission>();
+  @$core.pragma('dart2js:noInline')
+  static Permission getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Permission>(create);
+  static Permission? _defaultInstance;
+
+  /// resources are the names of the resources this permission applies to,
+  /// e.g. ["cam1", "cam2", "cam3"].
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get resources => $_getList(0);
+
+  /// allowed_methods is a list of fully qualified gRPC methods the user
+  /// may invoke on the listed resources, e.g.
+  /// ["/viam.component.camera.v1.CameraService/GetImages",
+  /// "/viam.component.camera.v1.CameraService/GetProperties"].
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get allowedMethods => $_getList(1);
 }
 
 class JWKSFile extends $pb.GeneratedMessage {
