@@ -1,12 +1,18 @@
 # Changelog
 
-## [v0.19.5](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.5) (2026-07-10)
+## [v0.20.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.20.0) (2026-08-31)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.4...v0.19.5)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.5...v0.20.0)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#549](https://github.com/viamrobotics/viam-flutter-sdk/pull/549) ([viambot](https://github.com/viambot))
+- Clean up for v1.0  [\#548](https://github.com/viamrobotics/viam-flutter-sdk/pull/548) ([martha-johnston](https://github.com/martha-johnston))
+- Automated Protos Update [\#546](https://github.com/viamrobotics/viam-flutter-sdk/pull/546) ([viambot](https://github.com/viambot))
+- v0.19.5 [\#545](https://github.com/viamrobotics/viam-flutter-sdk/pull/545) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add NavigationClient for the navigation service [\#544](https://github.com/viamrobotics/viam-flutter-sdk/pull/544) ([erh](https://github.com/erh))
+- Automated Protos Update [\#542](https://github.com/viamrobotics/viam-flutter-sdk/pull/542) ([viambot](https://github.com/viambot))
+- RSDK-11037 Add geometries to every component [\#541](https://github.com/viamrobotics/viam-flutter-sdk/pull/541) ([ale7714](https://github.com/ale7714))
 - v0.19.4 [\#540](https://github.com/viamrobotics/viam-flutter-sdk/pull/540) ([github-actions[bot]](https://github.com/apps/github-actions))
 - update proto to v0.1.558 [\#539](https://github.com/viamrobotics/viam-flutter-sdk/pull/539) ([stuqdog](https://github.com/stuqdog))
 - chore: bump claude-ci-workflows to v2.1.0 [\#538](https://github.com/viamrobotics/viam-flutter-sdk/pull/538) ([ale7714](https://github.com/ale7714))
@@ -23,6 +29,7 @@
 - Automated Protos Update [\#522](https://github.com/viamrobotics/viam-flutter-sdk/pull/522) ([viambot](https://github.com/viambot))
 - v0.19.0 [\#521](https://github.com/viamrobotics/viam-flutter-sdk/pull/521) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#520](https://github.com/viamrobotics/viam-flutter-sdk/pull/520) ([viambot](https://github.com/viambot))
+- Avoid multiple heartbeat tasks [\#519](https://github.com/viamrobotics/viam-flutter-sdk/pull/519) ([kevin49999](https://github.com/kevin49999))
 - Automated Protos Update [\#515](https://github.com/viamrobotics/viam-flutter-sdk/pull/515) ([viambot](https://github.com/viambot))
 - RSDK-9800: Update uploadTabularData help  [\#514](https://github.com/viamrobotics/viam-flutter-sdk/pull/514) ([allisonschiang](https://github.com/allisonschiang))
 - RSDK-13626: Remove getImage and renderFrame from camera service [\#513](https://github.com/viamrobotics/viam-flutter-sdk/pull/513) ([hexbabe](https://github.com/hexbabe))
@@ -194,8 +201,8 @@
 - RSDK-9622: Add Discover Service and GetModelsFromModules to Flutter [\#321](https://github.com/viamrobotics/viam-flutter-sdk/pull/321) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#320](https://github.com/viamrobotics/viam-flutter-sdk/pull/320) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#319](https://github.com/viamrobotics/viam-flutter-sdk/pull/319) ([github-actions[bot]](https://github.com/apps/github-actions))
-- RSDK-9505: accept bson queries in mql function [\#318](https://github.com/viamrobotics/viam-flutter-sdk/pull/318) ([purplenicole730](https://github.com/purplenicole730))
-- RSDK-9518: upgrade upload artifact to v4 [\#317](https://github.com/viamrobotics/viam-flutter-sdk/pull/317) ([purplenicole730](https://github.com/purplenicole730))
+- RSDK-9505: accept bson queries in mql function [\#318](https://github.com/viamrobotics/viam-flutter-sdk/pull/318) ([itsnoelrae](https://github.com/itsnoelrae))
+- RSDK-9518: upgrade upload artifact to v4 [\#317](https://github.com/viamrobotics/viam-flutter-sdk/pull/317) ([itsnoelrae](https://github.com/itsnoelrae))
 - DATA-3446 Add exportTabularData to DataClient [\#316](https://github.com/viamrobotics/viam-flutter-sdk/pull/316) ([katiepeters](https://github.com/katiepeters))
 - v0.0.31 [\#315](https://github.com/viamrobotics/viam-flutter-sdk/pull/315) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#313](https://github.com/viamrobotics/viam-flutter-sdk/pull/313) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -228,6 +235,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.19.5](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.5) (2026-07-10)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.19.4...v0.19.5)
 
 ## [v0.19.4](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.19.4) (2026-06-15)
 
@@ -430,11 +441,11 @@
 - \[refactor\] order imports & prefer local import [\#269](https://github.com/viamrobotics/viam-flutter-sdk/pull/269) ([clintpurser](https://github.com/clintpurser))
 - flyby fix lint suggesting const [\#268](https://github.com/viamrobotics/viam-flutter-sdk/pull/268) ([clintpurser](https://github.com/clintpurser))
 - Remove deprecated lints [\#267](https://github.com/viamrobotics/viam-flutter-sdk/pull/267) ([clintpurser](https://github.com/clintpurser))
-- RSDK-7962: organize sections in docs [\#266](https://github.com/viamrobotics/viam-flutter-sdk/pull/266) ([purplenicole730](https://github.com/purplenicole730))
+- RSDK-7962: organize sections in docs [\#266](https://github.com/viamrobotics/viam-flutter-sdk/pull/266) ([itsnoelrae](https://github.com/itsnoelrae))
 - Bump protos [\#265](https://github.com/viamrobotics/viam-flutter-sdk/pull/265) ([njooma](https://github.com/njooma))
 - \[hotfix\] Fix proto generation workflow [\#264](https://github.com/viamrobotics/viam-flutter-sdk/pull/264) ([njooma](https://github.com/njooma))
 - v0.0.21 [\#263](https://github.com/viamrobotics/viam-flutter-sdk/pull/263) ([github-actions[bot]](https://github.com/apps/github-actions))
-- RSDK-7961: highlight viam sdk section [\#262](https://github.com/viamrobotics/viam-flutter-sdk/pull/262) ([purplenicole730](https://github.com/purplenicole730))
+- RSDK-7961: highlight viam sdk section [\#262](https://github.com/viamrobotics/viam-flutter-sdk/pull/262) ([itsnoelrae](https://github.com/itsnoelrae))
 - RSDK-8812: Add frame\_rate to flutter sdk [\#261](https://github.com/viamrobotics/viam-flutter-sdk/pull/261) ([jckras](https://github.com/jckras))
 - make RobotClientOptions properties \*not\* final [\#260](https://github.com/viamrobotics/viam-flutter-sdk/pull/260) ([clintpurser](https://github.com/clintpurser))
 - fix documentation comment [\#259](https://github.com/viamrobotics/viam-flutter-sdk/pull/259) ([clintpurser](https://github.com/clintpurser))
@@ -481,15 +492,15 @@
 - Automated Protos Update [\#217](https://github.com/viamrobotics/viam-flutter-sdk/pull/217) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#216](https://github.com/viamrobotics/viam-flutter-sdk/pull/216) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add license auditing [\#214](https://github.com/viamrobotics/viam-flutter-sdk/pull/214) ([njooma](https://github.com/njooma))
-- RSDK-7445: paginate data by filter methods [\#213](https://github.com/viamrobotics/viam-flutter-sdk/pull/213) ([purplenicole730](https://github.com/purplenicole730))
+- RSDK-7445: paginate data by filter methods [\#213](https://github.com/viamrobotics/viam-flutter-sdk/pull/213) ([itsnoelrae](https://github.com/itsnoelrae))
 - RSDK-4264 - Move to api gostream dependency [\#210](https://github.com/viamrobotics/viam-flutter-sdk/pull/210) ([stuqdog](https://github.com/stuqdog))
 - RSDK-6665 - add getCloudMetadata client method [\#209](https://github.com/viamrobotics/viam-flutter-sdk/pull/209) ([stuqdog](https://github.com/stuqdog))
 - RSDK-7405 - dataset wrappers [\#208](https://github.com/viamrobotics/viam-flutter-sdk/pull/208) ([stuqdog](https://github.com/stuqdog))
 - Automated Protos Update [\#207](https://github.com/viamrobotics/viam-flutter-sdk/pull/207) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-7220 - Ml training wrappers [\#206](https://github.com/viamrobotics/viam-flutter-sdk/pull/206) ([stuqdog](https://github.com/stuqdog))
-- RSDK-7219: add billing wrappers [\#205](https://github.com/viamrobotics/viam-flutter-sdk/pull/205) ([purplenicole730](https://github.com/purplenicole730))
+- RSDK-7219: add billing wrappers [\#205](https://github.com/viamrobotics/viam-flutter-sdk/pull/205) ([itsnoelrae](https://github.com/itsnoelrae))
 - Automated Protos Update [\#204](https://github.com/viamrobotics/viam-flutter-sdk/pull/204) ([github-actions[bot]](https://github.com/apps/github-actions))
-- RSDK-7216: add app wrappers [\#203](https://github.com/viamrobotics/viam-flutter-sdk/pull/203) ([purplenicole730](https://github.com/purplenicole730))
+- RSDK-7216: add app wrappers [\#203](https://github.com/viamrobotics/viam-flutter-sdk/pull/203) ([itsnoelrae](https://github.com/itsnoelrae))
 - RSDK-7218 - Data sync wrappers [\#202](https://github.com/viamrobotics/viam-flutter-sdk/pull/202) ([stuqdog](https://github.com/stuqdog))
 - RSDK-7217 - Data wrappers [\#201](https://github.com/viamrobotics/viam-flutter-sdk/pull/201) ([stuqdog](https://github.com/stuqdog))
 - v0.0.13 [\#200](https://github.com/viamrobotics/viam-flutter-sdk/pull/200) ([github-actions[bot]](https://github.com/apps/github-actions))
