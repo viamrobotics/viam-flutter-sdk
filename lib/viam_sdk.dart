@@ -67,6 +67,7 @@ export 'src/rpc/dial.dart';
 /// Services
 export 'src/services/discovery.dart';
 export 'src/services/generic.dart';
+export 'src/services/motion.dart';
 export 'src/services/navigation.dart';
 export 'src/services/vision.dart';
 
