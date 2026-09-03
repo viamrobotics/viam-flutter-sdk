@@ -102,6 +102,29 @@ class ArmService extends ArmServiceBase {
   }
 
   @override
+  Future<SetManualModeResponse> setManualMode(ServiceCall call, SetManualModeRequest request) async {
+    final arm = _armFromManager(request.name);
+    await arm.setManualMode(request.manualMode, enabledFor: request.enabledFor, extra: request.extra.toMap());
+    return SetManualModeResponse();
+  }
+
+  @override
+  Future<GetManualModeResponse> getManualMode(ServiceCall call, GetManualModeRequest request) async {
+    final arm = _armFromManager(request.name);
+    final manualMode = await arm.getManualMode(extra: request.extra.toMap());
+    return GetManualModeResponse()..manualMode = manualMode;
+  }
+
+  @override
+  Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
+    final arm = _armFromManager(request.name);
+    final properties = await arm.getProperties(extra: request.extra.toMap());
+    return GetPropertiesResponse()
+      ..supportManualMode = properties.supportManualMode
+      ..supportCartesianCommands = properties.supportCartesianCommands;
+  }
+
+  @override
   Future<MoveThroughJointPositionsResponse> moveThroughJointPositions(ServiceCall call, MoveThroughJointPositionsRequest request) {
     // TODO: implement moveThroughJointPositions
     throw UnimplementedError();

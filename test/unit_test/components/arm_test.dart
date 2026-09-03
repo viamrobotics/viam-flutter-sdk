@@ -32,6 +32,11 @@ class FakeArm extends Arm {
   @override
   String name;
 
+  // Added properties
+  bool manualMode = false;
+  bool supportManualMode = false;
+  bool supportCartesianCommands = false;
+
   FakeArm(this.name);
 
   @override
@@ -98,6 +103,26 @@ class FakeArm extends Arm {
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return Kinematics(armKinematics.format, armKinematics.raw, meshesByUrdfFilepath: armMeshesByUrdfFilepath);
+  }
+
+  // Added methods
+  @override
+  Future<void> setManualMode(bool manualMode, {int? enabledFor, Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    this.manualMode = manualMode;
+    // enabledFor is not stored in FakeArm, but would be handled by a real arm.
+  }
+
+  @override
+  Future<bool> getManualMode({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return manualMode;
+  }
+
+  @override
+  Future<ArmProperties> getProperties({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return ArmProperties(supportManualMode, supportCartesianCommands);
   }
 }
 
@@ -356,6 +381,36 @@ void main() {
         expect(response.geometries[0].box.dimsMm.y, 2);
         expect(response.geometries[0].box.dimsMm.z, 3);
       });
+
+      // Added tests
+      test('setManualMode', () async {
+        final client = ArmServiceClient(channel);
+        final request = SetManualModeRequest()
+          ..name = name
+          ..manualMode = true
+          ..enabledFor = 60;
+        await client.setManualMode(request);
+        expect(arm.manualMode, true);
+        expect(arm.extra, {}); // No extra provided in this test
+      });
+
+      test('getManualMode', () async {
+        final client = ArmServiceClient(channel);
+        final request = GetManualModeRequest()..name = name;
+        arm.manualMode = true;
+        final response = await client.getManualMode(request);
+        expect(response.manualMode, true);
+      });
+
+      test('getProperties', () async {
+        final client = ArmServiceClient(channel);
+        final request = GetPropertiesRequest()..name = name;
+        arm.supportManualMode = true;
+        arm.supportCartesianCommands = false;
+        final response = await client.getProperties(request);
+        expect(response.supportManualMode, true);
+        expect(response.supportCartesianCommands, false);
+      });
     });
 
     group('Arm Client Tests', () {
@@ -433,6 +488,32 @@ void main() {
         expect(arm.extra, null);
         final client = ArmClient(name, channel);
         await client.stop(extra: {'foo': 'bar'});
+        expect(arm.extra, {'foo': 'bar'});
+      });
+
+      // Added tests
+      test('setManualMode', () async {
+        final client = ArmClient(name, channel);
+        await client.setManualMode(true, enabledFor: 60, extra: {'foo': 'bar'});
+        expect(arm.manualMode, true);
+        expect(arm.extra, {'foo': 'bar'});
+      });
+
+      test('getManualMode', () async {
+        final client = ArmClient(name, channel);
+        arm.manualMode = true;
+        final isManualMode = await client.getManualMode(extra: {'foo': 'bar'});
+        expect(isManualMode, true);
+        expect(arm.extra, {'foo': 'bar'});
+      });
+
+      test('getProperties', () async {
+        final client = ArmClient(name, channel);
+        arm.supportManualMode = true;
+        arm.supportCartesianCommands = false;
+        final properties = await client.getProperties(extra: {'foo': 'bar'});
+        expect(properties.supportManualMode, true);
+        expect(properties.supportCartesianCommands, false);
         expect(arm.extra, {'foo': 'bar'});
       });
     });
