@@ -673,6 +673,8 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
     $core.String? sdp,
     WebRTCConfig? optionalConfig,
     $6.Timestamp? deadline,
+    $core.String? callerAuthEntity,
+    $core.Map<$core.String, $core.String>? callerAuthMetadata,
   }) {
     final $result = create();
     if (sdp != null) {
@@ -684,6 +686,12 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
     if (deadline != null) {
       $result.deadline = deadline;
     }
+    if (callerAuthEntity != null) {
+      $result.callerAuthEntity = callerAuthEntity;
+    }
+    if (callerAuthMetadata != null) {
+      $result.callerAuthMetadata.addAll(callerAuthMetadata);
+    }
     return $result;
   }
   AnswerRequestInitStage._() : super();
@@ -694,6 +702,8 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'sdp')
     ..aOM<WebRTCConfig>(2, _omitFieldNames ? '' : 'optionalConfig', subBuilder: WebRTCConfig.create)
     ..aOM<$6.Timestamp>(3, _omitFieldNames ? '' : 'deadline', subBuilder: $6.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'callerAuthEntity')
+    ..m<$core.String, $core.String>(5, _omitFieldNames ? '' : 'callerAuthMetadata', entryClassName: 'AnswerRequestInitStage.CallerAuthMetadataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('proto.rpc.webrtc.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -748,6 +758,24 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
   void clearDeadline() => clearField(3);
   @$pb.TagNumber(3)
   $6.Timestamp ensureDeadline() => $_ensure(2);
+
+  /// caller_auth_entity is the caller's authenticated entity (its JWT subject), extracted
+  /// from the caller's auth token by the signaling server. Only the caller's identity is
+  /// forwarded to the answerer, not its bearer token. Empty when the caller was
+  /// unauthenticated.
+  @$pb.TagNumber(4)
+  $core.String get callerAuthEntity => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set callerAuthEntity($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCallerAuthEntity() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCallerAuthEntity() => clearField(4);
+
+  /// caller_auth_metadata is the caller's auth metadata (its rpc_auth_md claim), extracted
+  /// from the caller's auth token by the signaling server.
+  @$pb.TagNumber(5)
+  $core.Map<$core.String, $core.String> get callerAuthMetadata => $_getMap(4);
 }
 
 /// AnswerRequestUpdateStage is multiply used to trickle in ICE candidates to

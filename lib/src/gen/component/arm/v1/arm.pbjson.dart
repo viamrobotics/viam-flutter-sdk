@@ -381,3 +381,85 @@ final $typed_data.Uint8List moveOptionsDescriptor = $convert.base64Decode(
     'BTcGVlZIgBAUIXChVfbWF4X3ZlbF9kZWdzX3Blcl9zZWNCGAoWX21heF9hY2NfZGVnc19wZXJf'
     'c2VjMkIQCg5fbWF4X3RjcF9zcGVlZA==');
 
+@$core.Deprecated('Use setManualModeRequestDescriptor instead')
+const SetManualModeRequest$json = {
+  '1': 'SetManualModeRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'manual_mode', '3': 2, '4': 1, '5': 8, '10': 'manualMode'},
+    {'1': 'enabled_for', '3': 3, '4': 1, '5': 5, '10': 'enabledFor'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `SetManualModeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setManualModeRequestDescriptor = $convert.base64Decode(
+    'ChRTZXRNYW51YWxNb2RlUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEh8KC21hbnVhbF9tb2'
+    'RlGAIgASgIUgptYW51YWxNb2RlEh8KC2VuYWJsZWRfZm9yGAMgASgFUgplbmFibGVkRm9yEi0K'
+    'BWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+
+@$core.Deprecated('Use setManualModeResponseDescriptor instead')
+const SetManualModeResponse$json = {
+  '1': 'SetManualModeResponse',
+};
+
+/// Descriptor for `SetManualModeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setManualModeResponseDescriptor = $convert.base64Decode(
+    'ChVTZXRNYW51YWxNb2RlUmVzcG9uc2U=');
+
+@$core.Deprecated('Use getManualModeRequestDescriptor instead')
+const GetManualModeRequest$json = {
+  '1': 'GetManualModeRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetManualModeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getManualModeRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRNYW51YWxNb2RlUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGGMgAS'
+    'gLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+
+@$core.Deprecated('Use getManualModeResponseDescriptor instead')
+const GetManualModeResponse$json = {
+  '1': 'GetManualModeResponse',
+  '2': [
+    {'1': 'manual_mode', '3': 1, '4': 1, '5': 8, '10': 'manualMode'},
+  ],
+};
+
+/// Descriptor for `GetManualModeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getManualModeResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRNYW51YWxNb2RlUmVzcG9uc2USHwoLbWFudWFsX21vZGUYASABKAhSCm1hbnVhbE1vZG'
+    'U=');
+
+@$core.Deprecated('Use getPropertiesRequestDescriptor instead')
+const GetPropertiesRequest$json = {
+  '1': 'GetPropertiesRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRQcm9wZXJ0aWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGGMgAS'
+    'gLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+
+@$core.Deprecated('Use getPropertiesResponseDescriptor instead')
+const GetPropertiesResponse$json = {
+  '1': 'GetPropertiesResponse',
+  '2': [
+    {'1': 'support_manual_mode', '3': 1, '4': 1, '5': 8, '10': 'supportManualMode'},
+    {'1': 'support_cartesian_commands', '3': 2, '4': 1, '5': 8, '10': 'supportCartesianCommands'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USLgoTc3VwcG9ydF9tYW51YWxfbW9kZRgBIAEoCFIRc3'
+    'VwcG9ydE1hbnVhbE1vZGUSPAoac3VwcG9ydF9jYXJ0ZXNpYW5fY29tbWFuZHMYAiABKAhSGHN1'
+    'cHBvcnRDYXJ0ZXNpYW5Db21tYW5kcw==');
+
