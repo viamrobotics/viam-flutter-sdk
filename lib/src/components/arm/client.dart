@@ -116,4 +116,34 @@ class ArmClient extends Arm with RPCDebugLoggerMixin implements ResourceRPCClien
     final response = await client.getGeometries(request, options: callOptions);
     return response.geometries;
   }
+
+  @override
+  Future<void> setManualMode(bool manualMode, {int? enabledFor, Map<String, dynamic>? extra}) async {
+    final request = SetManualModeRequest()
+      ..name = name
+      ..manualMode = manualMode
+      ..extra = extra?.toStruct() ?? Struct();
+    if (enabledFor != null) {
+      request.enabledFor = enabledFor;
+    }
+    await client.setManualMode(request, options: callOptions);
+  }
+
+  @override
+  Future<bool> getManualMode({Map<String, dynamic>? extra}) async {
+    final request = GetManualModeRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getManualMode(request, options: callOptions);
+    return response.manualMode;
+  }
+
+  @override
+  Future<ArmProperties> getProperties({Map<String, dynamic>? extra}) async {
+    final request = GetPropertiesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getProperties(request, options: callOptions);
+    return ArmProperties(response.supportManualMode, response.supportCartesianCommands);
+  }
 }

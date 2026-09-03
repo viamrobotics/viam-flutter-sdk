@@ -8,6 +8,34 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../utils.dart';
 
 /// {@category Components}
+/// Represents the properties of an arm.
+class ArmProperties {
+  /// True if the arm supports software-enabled manual mode.
+  final bool supportManualMode;
+
+  /// True if the arm supports direct cartesian commands (MoveToPosition is implemented).
+  final bool supportCartesianCommands;
+
+  ArmProperties(this.supportManualMode, this.supportCartesianCommands);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ArmProperties &&
+          runtimeType == other.runtimeType &&
+          supportManualMode == other.supportManualMode &&
+          supportCartesianCommands == other.supportCartesianCommands;
+
+  @override
+  int get hashCode => supportManualMode.hashCode ^ supportCartesianCommands.hashCode;
+
+  @override
+  String toString() {
+    return 'ArmProperties(supportManualMode: $supportManualMode, supportCartesianCommands: $supportCartesianCommands)';
+  }
+}
+
+/// {@category Components}
 /// Arm represents a physical robot arm that exists in three-dimensional space.
 ///
 /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/).
@@ -102,6 +130,34 @@ abstract class Arm extends Resource {
   ///
   /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getgeometries).
   Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
+  /// Set the manual mode for the arm.
+  ///
+  /// ```
+  /// await myArm.setManualMode(true, enabledFor: 60);
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#setmanualmode).
+  Future<void> setManualMode(bool manualMode, {int? enabledFor, Map<String, dynamic>? extra});
+
+  /// Get the current manual mode status of the arm.
+  ///
+  /// ```
+  /// final isManualMode = await myArm.getManualMode();
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getmanualmode).
+  Future<bool> getManualMode({Map<String, dynamic>? extra});
+
+  /// Get the properties of the arm.
+  ///
+  /// ```
+  /// final properties = await myArm.getProperties();
+  /// print('Supports manual mode: ${properties.supportManualMode}');
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getproperties).
+  Future<ArmProperties> getProperties({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Arm] with the given [name].
   ///
