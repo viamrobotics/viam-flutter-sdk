@@ -74,6 +74,18 @@ class ArmServiceClient extends $grpc.Client {
       '/viam.component.arm.v1.ArmService/Get3DModels',
       ($9.Get3DModelsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $9.Get3DModelsResponse.fromBuffer(value));
+  static final _$setManualMode = $grpc.ClientMethod<$16.SetManualModeRequest, $16.SetManualModeResponse>(
+      '/viam.component.arm.v1.ArmService/SetManualMode',
+      ($16.SetManualModeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.SetManualModeResponse.fromBuffer(value));
+  static final _$getManualMode = $grpc.ClientMethod<$16.GetManualModeRequest, $16.GetManualModeResponse>(
+      '/viam.component.arm.v1.ArmService/GetManualMode',
+      ($16.GetManualModeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.GetManualModeResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$16.GetPropertiesRequest, $16.GetPropertiesResponse>(
+      '/viam.component.arm.v1.ArmService/GetProperties',
+      ($16.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.GetPropertiesResponse.fromBuffer(value));
 
   ArmServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -131,6 +143,18 @@ class ArmServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$9.Get3DModelsResponse> get3DModels($9.Get3DModelsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$get3DModels, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$16.SetManualModeResponse> setManualMode($16.SetManualModeRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setManualMode, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$16.GetManualModeResponse> getManualMode($16.GetManualModeRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getManualMode, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$16.GetPropertiesResponse> getProperties($16.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getProperties, request, options: options);
   }
 }
 
@@ -230,6 +254,27 @@ abstract class ArmServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $9.Get3DModelsRequest.fromBuffer(value),
         ($9.Get3DModelsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.SetManualModeRequest, $16.SetManualModeResponse>(
+        'SetManualMode',
+        setManualMode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $16.SetManualModeRequest.fromBuffer(value),
+        ($16.SetManualModeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.GetManualModeRequest, $16.GetManualModeResponse>(
+        'GetManualMode',
+        getManualMode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $16.GetManualModeRequest.fromBuffer(value),
+        ($16.GetManualModeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.GetPropertiesRequest, $16.GetPropertiesResponse>(
+        'GetProperties',
+        getProperties_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $16.GetPropertiesRequest.fromBuffer(value),
+        ($16.GetPropertiesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$16.GetEndPositionResponse> getEndPosition_Pre($grpc.ServiceCall call, $async.Future<$16.GetEndPositionRequest> request) async {
@@ -280,6 +325,18 @@ abstract class ArmServiceBase extends $grpc.Service {
     return get3DModels(call, await request);
   }
 
+  $async.Future<$16.SetManualModeResponse> setManualMode_Pre($grpc.ServiceCall call, $async.Future<$16.SetManualModeRequest> request) async {
+    return setManualMode(call, await request);
+  }
+
+  $async.Future<$16.GetManualModeResponse> getManualMode_Pre($grpc.ServiceCall call, $async.Future<$16.GetManualModeRequest> request) async {
+    return getManualMode(call, await request);
+  }
+
+  $async.Future<$16.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$16.GetPropertiesRequest> request) async {
+    return getProperties(call, await request);
+  }
+
   $async.Future<$16.GetEndPositionResponse> getEndPosition($grpc.ServiceCall call, $16.GetEndPositionRequest request);
   $async.Future<$16.MoveToPositionResponse> moveToPosition($grpc.ServiceCall call, $16.MoveToPositionRequest request);
   $async.Future<$16.GetJointPositionsResponse> getJointPositions($grpc.ServiceCall call, $16.GetJointPositionsRequest request);
@@ -293,4 +350,7 @@ abstract class ArmServiceBase extends $grpc.Service {
   $async.Future<$9.GetKinematicsResponse> getKinematics($grpc.ServiceCall call, $9.GetKinematicsRequest request);
   $async.Future<$9.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $9.GetGeometriesRequest request);
   $async.Future<$9.Get3DModelsResponse> get3DModels($grpc.ServiceCall call, $9.Get3DModelsRequest request);
+  $async.Future<$16.SetManualModeResponse> setManualMode($grpc.ServiceCall call, $16.SetManualModeRequest request);
+  $async.Future<$16.GetManualModeResponse> getManualMode($grpc.ServiceCall call, $16.GetManualModeRequest request);
+  $async.Future<$16.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $16.GetPropertiesRequest request);
 }

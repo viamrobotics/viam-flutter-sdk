@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
-import 'package:viam_sdk/protos/common/common.dart';
+import 'package:viam_sdk/protos/common/common.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import 'package:viam_sdk/src/components/arm/service.dart';
 import 'package:viam_sdk/src/gen/component/arm/v1/arm.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
@@ -98,6 +98,24 @@ class FakeArm extends Arm {
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return Kinematics(armKinematics.format, armKinematics.raw, meshesByUrdfFilepath: armMeshesByUrdfFilepath);
+  }
+
+  @override
+  Future<ArmProperties> properties({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return ArmProperties()
+      ..supportManualMode = false
+      ..supportCartesianCommands = true;
+  }
+
+  @override
+  Future<void> setManualMode(bool manualMode, {Duration enabledFor = Duration.zero, Map<String, dynamic>? extra}) async {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool> manualMode({Map<String, dynamic>? extra}) async {
+    throw UnimplementedError();
   }
 }
 
@@ -198,6 +216,12 @@ void main() {
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
       expect(kinematics.meshesByUrdfFilepath, expectedMeshes);
+    });
+
+    test('properties', () async {
+      final properties = await arm.properties();
+      expect(properties.supportManualMode, false);
+      expect(properties.supportCartesianCommands, true);
     });
   });
 
@@ -356,6 +380,28 @@ void main() {
         expect(response.geometries[0].box.dimsMm.y, 2);
         expect(response.geometries[0].box.dimsMm.z, 3);
       });
+
+      test('getProperties', () async {
+        final client = ArmServiceClient(channel);
+        final request = GetPropertiesRequest()..name = name;
+        final response = await client.getProperties(request);
+        expect(response.supportManualMode, false);
+        expect(response.supportCartesianCommands, true);
+      });
+
+      test('setManualMode', () async {
+        final client = ArmServiceClient(channel);
+        final request = SetManualModeRequest()
+          ..name = name
+          ..manualMode = true;
+        expect(client.setManualMode(request), throwsA(isA<GrpcError>()));
+      });
+
+      test('getManualMode', () async {
+        final client = ArmServiceClient(channel);
+        final request = GetManualModeRequest()..name = name;
+        expect(client.getManualMode(request), throwsA(isA<GrpcError>()));
+      });
     });
 
     group('Arm Client Tests', () {
@@ -434,6 +480,23 @@ void main() {
         final client = ArmClient(name, channel);
         await client.stop(extra: {'foo': 'bar'});
         expect(arm.extra, {'foo': 'bar'});
+      });
+
+      test('properties', () async {
+        final client = ArmClient(name, channel);
+        final properties = await client.properties();
+        expect(properties.supportManualMode, false);
+        expect(properties.supportCartesianCommands, true);
+      });
+
+      test('setManualMode', () async {
+        final client = ArmClient(name, channel);
+        expect(client.setManualMode(true), throwsA(isA<GrpcError>()));
+      });
+
+      test('manualMode', () async {
+        final client = ArmClient(name, channel);
+        expect(client.manualMode(), throwsA(isA<GrpcError>()));
       });
     });
     test('getKinematics', () async {

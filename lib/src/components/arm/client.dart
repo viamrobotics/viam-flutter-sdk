@@ -1,6 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/arm/v1/arm.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
@@ -73,6 +73,33 @@ class ArmClient extends Arm with RPCDebugLoggerMixin implements ResourceRPCClien
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.get3DModels(request, options: callOptions);
     return response.models;
+  }
+
+  @override
+  Future<ArmProperties> properties({Map<String, dynamic>? extra}) async {
+    final request = GetPropertiesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    return await client.getProperties(request, options: callOptions);
+  }
+
+  @override
+  Future<void> setManualMode(bool manualMode, {Duration enabledFor = Duration.zero, Map<String, dynamic>? extra}) async {
+    final request = SetManualModeRequest()
+      ..name = name
+      ..manualMode = manualMode
+      ..enabledFor = enabledFor.inSeconds
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.setManualMode(request, options: callOptions);
+  }
+
+  @override
+  Future<bool> manualMode({Map<String, dynamic>? extra}) async {
+    final request = GetManualModeRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getManualMode(request, options: callOptions);
+    return response.manualMode;
   }
 
   @override

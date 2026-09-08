@@ -221,10 +221,23 @@ const AnswerRequestInitStage$json = {
     {'1': 'sdp', '3': 1, '4': 1, '5': 9, '10': 'sdp'},
     {'1': 'optional_config', '3': 2, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.WebRTCConfig', '10': 'optionalConfig'},
     {'1': 'deadline', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'deadline', '17': true},
+    {'1': 'caller_auth_entity', '3': 4, '4': 1, '5': 9, '10': 'callerAuthEntity'},
+    {'1': 'caller_auth_metadata', '3': 5, '4': 3, '5': 11, '6': '.proto.rpc.webrtc.v1.AnswerRequestInitStage.CallerAuthMetadataEntry', '10': 'callerAuthMetadata'},
   ],
+  '3': [AnswerRequestInitStage_CallerAuthMetadataEntry$json],
   '8': [
     {'1': '_deadline'},
   ],
+};
+
+@$core.Deprecated('Use answerRequestInitStageDescriptor instead')
+const AnswerRequestInitStage_CallerAuthMetadataEntry$json = {
+  '1': 'CallerAuthMetadataEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `AnswerRequestInitStage`. Decode as a `google.protobuf.DescriptorProto`.
@@ -232,7 +245,11 @@ final $typed_data.Uint8List answerRequestInitStageDescriptor = $convert.base64De
     'ChZBbnN3ZXJSZXF1ZXN0SW5pdFN0YWdlEhAKA3NkcBgBIAEoCVIDc2RwEkoKD29wdGlvbmFsX2'
     'NvbmZpZxgCIAEoCzIhLnByb3RvLnJwYy53ZWJydGMudjEuV2ViUlRDQ29uZmlnUg5vcHRpb25h'
     'bENvbmZpZxI7CghkZWFkbGluZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIAF'
-    'IIZGVhZGxpbmWIAQFCCwoJX2RlYWRsaW5l');
+    'IIZGVhZGxpbmWIAQESLAoSY2FsbGVyX2F1dGhfZW50aXR5GAQgASgJUhBjYWxsZXJBdXRoRW50'
+    'aXR5EnUKFGNhbGxlcl9hdXRoX21ldGFkYXRhGAUgAygLMkMucHJvdG8ucnBjLndlYnJ0Yy52MS'
+    '5BbnN3ZXJSZXF1ZXN0SW5pdFN0YWdlLkNhbGxlckF1dGhNZXRhZGF0YUVudHJ5UhJjYWxsZXJB'
+    'dXRoTWV0YWRhdGEaRQoXQ2FsbGVyQXV0aE1ldGFkYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZX'
+    'kSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4AUILCglfZGVhZGxpbmU=');
 
 @$core.Deprecated('Use answerRequestUpdateStageDescriptor instead')
 const AnswerRequestUpdateStage$json = {

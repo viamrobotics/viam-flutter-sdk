@@ -4,8 +4,12 @@ import 'dart:math';
 import 'package:flutter/services.dart';
 
 import '../../../viam_sdk.dart';
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
+import '../../gen/component/arm/v1/arm.pb.dart';
 import '../../utils.dart';
+
+/// {@category Viam SDK}
+typedef ArmProperties = GetPropertiesResponse;
 
 /// {@category Components}
 /// Arm represents a physical robot arm that exists in three-dimensional space.
@@ -102,6 +106,34 @@ abstract class Arm extends Resource {
   ///
   /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getgeometries).
   Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
+  /// Report which optional features this arm supports.
+  ///
+  /// ```
+  /// final properties = await myArm.properties();
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getproperties).
+  Future<ArmProperties> properties({Map<String, dynamic>? extra});
+
+  /// Enter or exit manual mode for an arm that supports it.
+  /// [enabledFor] limits how long the arm stays in manual mode; [Duration.zero] means no time limit.
+  ///
+  /// ```
+  /// await myArm.setManualMode(true, enabledFor: Duration(seconds: 30));
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#setmanualmode).
+  Future<void> setManualMode(bool manualMode, {Duration enabledFor = Duration.zero, Map<String, dynamic>? extra});
+
+  /// Whether the arm is currently in manual mode.
+  ///
+  /// ```
+  /// bool inManualMode = await myArm.manualMode();
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getmanualmode).
+  Future<bool> manualMode({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Arm] with the given [name].
   ///

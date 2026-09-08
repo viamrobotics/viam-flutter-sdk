@@ -1643,6 +1643,389 @@ class MoveOptions extends $pb.GeneratedMessage {
   void clearMaxTcpSpeed() => clearField(5);
 }
 
+class SetManualModeRequest extends $pb.GeneratedMessage {
+  factory SetManualModeRequest({
+    $core.String? name,
+    $core.bool? manualMode,
+    $core.int? enabledFor,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (manualMode != null) {
+      $result.manualMode = manualMode;
+    }
+    if (enabledFor != null) {
+      $result.enabledFor = enabledFor;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  SetManualModeRequest._() : super();
+  factory SetManualModeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetManualModeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetManualModeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOB(2, _omitFieldNames ? '' : 'manualMode')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'enabledFor', $pb.PbFieldType.O3)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetManualModeRequest clone() => SetManualModeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetManualModeRequest copyWith(void Function(SetManualModeRequest) updates) => super.copyWith((message) => updates(message as SetManualModeRequest)) as SetManualModeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetManualModeRequest create() => SetManualModeRequest._();
+  SetManualModeRequest createEmptyInstance() => create();
+  static $pb.PbList<SetManualModeRequest> createRepeated() => $pb.PbList<SetManualModeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetManualModeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetManualModeRequest>(create);
+  static SetManualModeRequest? _defaultInstance;
+
+  /// Name of an arm
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// True to enter manual mode, false to exit it
+  @$pb.TagNumber(2)
+  $core.bool get manualMode => $_getBF(1);
+  @$pb.TagNumber(2)
+  set manualMode($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasManualMode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearManualMode() => clearField(2);
+
+  /// How long to stay in manual mode, in seconds; 0 means no time limit
+  @$pb.TagNumber(3)
+  $core.int get enabledFor => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set enabledFor($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEnabledFor() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEnabledFor() => clearField(3);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(3);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(3);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(3);
+}
+
+class SetManualModeResponse extends $pb.GeneratedMessage {
+  factory SetManualModeResponse() => create();
+  SetManualModeResponse._() : super();
+  factory SetManualModeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetManualModeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetManualModeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetManualModeResponse clone() => SetManualModeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetManualModeResponse copyWith(void Function(SetManualModeResponse) updates) => super.copyWith((message) => updates(message as SetManualModeResponse)) as SetManualModeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetManualModeResponse create() => SetManualModeResponse._();
+  SetManualModeResponse createEmptyInstance() => create();
+  static $pb.PbList<SetManualModeResponse> createRepeated() => $pb.PbList<SetManualModeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetManualModeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetManualModeResponse>(create);
+  static SetManualModeResponse? _defaultInstance;
+}
+
+class GetManualModeRequest extends $pb.GeneratedMessage {
+  factory GetManualModeRequest({
+    $core.String? name,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GetManualModeRequest._() : super();
+  factory GetManualModeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetManualModeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetManualModeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetManualModeRequest clone() => GetManualModeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetManualModeRequest copyWith(void Function(GetManualModeRequest) updates) => super.copyWith((message) => updates(message as GetManualModeRequest)) as GetManualModeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetManualModeRequest create() => GetManualModeRequest._();
+  GetManualModeRequest createEmptyInstance() => create();
+  static $pb.PbList<GetManualModeRequest> createRepeated() => $pb.PbList<GetManualModeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetManualModeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetManualModeRequest>(create);
+  static GetManualModeRequest? _defaultInstance;
+
+  /// Name of an arm
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(1);
+}
+
+class GetManualModeResponse extends $pb.GeneratedMessage {
+  factory GetManualModeResponse({
+    $core.bool? manualMode,
+  }) {
+    final $result = create();
+    if (manualMode != null) {
+      $result.manualMode = manualMode;
+    }
+    return $result;
+  }
+  GetManualModeResponse._() : super();
+  factory GetManualModeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetManualModeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetManualModeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'manualMode')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetManualModeResponse clone() => GetManualModeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetManualModeResponse copyWith(void Function(GetManualModeResponse) updates) => super.copyWith((message) => updates(message as GetManualModeResponse)) as GetManualModeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetManualModeResponse create() => GetManualModeResponse._();
+  GetManualModeResponse createEmptyInstance() => create();
+  static $pb.PbList<GetManualModeResponse> createRepeated() => $pb.PbList<GetManualModeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetManualModeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetManualModeResponse>(create);
+  static GetManualModeResponse? _defaultInstance;
+
+  /// True if the arm is in manual mode
+  @$pb.TagNumber(1)
+  $core.bool get manualMode => $_getBF(0);
+  @$pb.TagNumber(1)
+  set manualMode($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasManualMode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearManualMode() => clearField(1);
+}
+
+class GetPropertiesRequest extends $pb.GeneratedMessage {
+  factory GetPropertiesRequest({
+    $core.String? name,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GetPropertiesRequest._() : super();
+  factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPropertiesRequest clone() => GetPropertiesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPropertiesRequest copyWith(void Function(GetPropertiesRequest) updates) => super.copyWith((message) => updates(message as GetPropertiesRequest)) as GetPropertiesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesRequest create() => GetPropertiesRequest._();
+  GetPropertiesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPropertiesRequest> createRepeated() => $pb.PbList<GetPropertiesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
+  static GetPropertiesRequest? _defaultInstance;
+
+  /// Name of an arm
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(1);
+}
+
+class GetPropertiesResponse extends $pb.GeneratedMessage {
+  factory GetPropertiesResponse({
+    $core.bool? supportManualMode,
+    $core.bool? supportCartesianCommands,
+  }) {
+    final $result = create();
+    if (supportManualMode != null) {
+      $result.supportManualMode = supportManualMode;
+    }
+    if (supportCartesianCommands != null) {
+      $result.supportCartesianCommands = supportCartesianCommands;
+    }
+    return $result;
+  }
+  GetPropertiesResponse._() : super();
+  factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'supportManualMode')
+    ..aOB(2, _omitFieldNames ? '' : 'supportCartesianCommands')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPropertiesResponse clone() => GetPropertiesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPropertiesResponse copyWith(void Function(GetPropertiesResponse) updates) => super.copyWith((message) => updates(message as GetPropertiesResponse)) as GetPropertiesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesResponse create() => GetPropertiesResponse._();
+  GetPropertiesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPropertiesResponse> createRepeated() => $pb.PbList<GetPropertiesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesResponse>(create);
+  static GetPropertiesResponse? _defaultInstance;
+
+  /// True if the arm supports software-enabled manual mode
+  @$pb.TagNumber(1)
+  $core.bool get supportManualMode => $_getBF(0);
+  @$pb.TagNumber(1)
+  set supportManualMode($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSupportManualMode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSupportManualMode() => clearField(1);
+
+  /// True if the arm supports direct cartesian commands (MoveToPosition is implemented)
+  @$pb.TagNumber(2)
+  $core.bool get supportCartesianCommands => $_getBF(1);
+  @$pb.TagNumber(2)
+  set supportCartesianCommands($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSupportCartesianCommands() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSupportCartesianCommands() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

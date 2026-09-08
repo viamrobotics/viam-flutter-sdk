@@ -1,6 +1,6 @@
 import 'package:grpc/grpc.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/arm/v1/arm.pbgrpc.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
@@ -99,6 +99,29 @@ class ArmService extends ArmServiceBase {
       ..format = response.format
       ..kinematicsData = response.raw
       ..meshesByUrdfFilepath.addAll(response.meshesByUrdfFilepath);
+  }
+
+  @override
+  Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
+    final arm = _armFromManager(request.name);
+    final properties = await arm.properties(extra: request.extra.toMap());
+    return GetPropertiesResponse()
+      ..supportManualMode = properties.supportManualMode
+      ..supportCartesianCommands = properties.supportCartesianCommands;
+  }
+
+  @override
+  Future<SetManualModeResponse> setManualMode(ServiceCall call, SetManualModeRequest request) async {
+    final arm = _armFromManager(request.name);
+    await arm.setManualMode(request.manualMode, enabledFor: Duration(seconds: request.enabledFor), extra: request.extra.toMap());
+    return SetManualModeResponse();
+  }
+
+  @override
+  Future<GetManualModeResponse> getManualMode(ServiceCall call, GetManualModeRequest request) async {
+    final arm = _armFromManager(request.name);
+    final manualMode = await arm.manualMode(extra: request.extra.toMap());
+    return GetManualModeResponse()..manualMode = manualMode;
   }
 
   @override
