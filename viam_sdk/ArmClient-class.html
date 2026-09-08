@@ -340,6 +340,19 @@ If no trace key is provided, a random one will be generated.
 
 </dd>
 
+        <dt id="manualMode" class="callable">
+  <span class="name"><a href="../viam_sdk/ArmClient/manualMode.html">manualMode</a></span><span class="signature">(<wbr>{<span class="parameter" id="manualMode-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Whether the arm is currently in manual mode.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
         <dt id="moveToJointPositions" class="callable">
   <span class="name"><a href="../viam_sdk/ArmClient/moveToJointPositions.html">moveToJointPositions</a></span><span class="signature">(<wbr><span class="parameter" id="moveToJointPositions-param-positions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span></span> <span class="parameter-name">positions</span>, {</span><span class="parameter" id="moveToJointPositions-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
@@ -376,6 +389,33 @@ If no trace key is provided, a random one will be generated.
 <dd class="inherited">
   Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="properties" class="callable">
+  <span class="name"><a href="../viam_sdk/ArmClient/properties.html">properties</a></span><span class="signature">(<wbr>{<span class="parameter" id="properties-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/ArmProperties.html">ArmProperties</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Report which optional features this arm supports.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="setManualMode" class="callable">
+  <span class="name"><a href="../viam_sdk/ArmClient/setManualMode.html">setManualMode</a></span><span class="signature">(<wbr><span class="parameter" id="setManualMode-param-manualMode"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">manualMode</span>, {</span><span class="parameter" id="setManualMode-param-enabledFor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Duration-class.html">Duration</a></span> <span class="parameter-name">enabledFor</span> = <span class="default-value">Duration.zero</span>, </span><span class="parameter" id="setManualMode-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Enter or exit manual mode for an arm that supports it.
+<code>enabledFor</code> limits how long the arm stays in manual mode; <a href="https://api.flutter.dev/flutter/dart-core/Duration/zero-constant.html">Duration.zero</a> means no time limit.
+  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 
