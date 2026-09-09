@@ -32,6 +32,10 @@ class FakeArm extends Arm {
   @override
   String name;
 
+  bool manualModeValue = false;
+  bool supportManualModeValue = false;
+  bool supportCartesianCommandsValue = true;
+
   FakeArm(this.name);
 
   @override
@@ -104,18 +108,20 @@ class FakeArm extends Arm {
   Future<ArmProperties> properties({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return ArmProperties()
-      ..supportManualMode = false
-      ..supportCartesianCommands = true;
+      ..supportManualMode = supportManualModeValue
+      ..supportCartesianCommands = supportCartesianCommandsValue;
   }
 
   @override
   Future<void> setManualMode(bool manualMode, {Duration enabledFor = Duration.zero, Map<String, dynamic>? extra}) async {
-    throw UnimplementedError();
+    this.extra = extra;
+    manualModeValue = manualMode;
   }
 
   @override
   Future<bool> manualMode({Map<String, dynamic>? extra}) async {
-    throw UnimplementedError();
+    this.extra = extra;
+    return manualModeValue;
   }
 }
 
@@ -219,9 +225,24 @@ void main() {
     });
 
     test('properties', () async {
+      arm.supportManualModeValue = true;
+      arm.supportCartesianCommandsValue = false;
       final properties = await arm.properties();
-      expect(properties.supportManualMode, false);
-      expect(properties.supportCartesianCommands, true);
+      expect(properties.supportManualMode, true);
+      expect(properties.supportCartesianCommands, false);
+    });
+
+    test('setManualMode', () async {
+      expect(arm.manualModeValue, false);
+      await arm.setManualMode(true, enabledFor: Duration(seconds: 10));
+      expect(arm.manualModeValue, true);
+      expect(arm.extra, null);
+    });
+
+    test('manualMode', () async {
+      expect(await arm.manualMode(), false);
+      arm.manualModeValue = true;
+      expect(await arm.manualMode(), true);
     });
   });
 
@@ -383,24 +404,30 @@ void main() {
 
       test('getProperties', () async {
         final client = ArmServiceClient(channel);
+        arm.supportManualModeValue = true;
+        arm.supportCartesianCommandsValue = false;
         final request = GetPropertiesRequest()..name = name;
         final response = await client.getProperties(request);
-        expect(response.supportManualMode, false);
-        expect(response.supportCartesianCommands, true);
+        expect(response.supportManualMode, true);
+        expect(response.supportCartesianCommands, false);
       });
 
       test('setManualMode', () async {
         final client = ArmServiceClient(channel);
         final request = SetManualModeRequest()
           ..name = name
-          ..manualMode = true;
-        expect(client.setManualMode(request), throwsA(isA<GrpcError>()));
+          ..manualMode = true
+          ..enabledFor = 10;
+        await client.setManualMode(request);
+        expect(arm.manualModeValue, true);
       });
 
       test('getManualMode', () async {
         final client = ArmServiceClient(channel);
+        arm.manualModeValue = true;
         final request = GetManualModeRequest()..name = name;
-        expect(client.getManualMode(request), throwsA(isA<GrpcError>()));
+        final response = await client.getManualMode(request);
+        expect(response.manualMode, true);
       });
     });
 
@@ -484,19 +511,24 @@ void main() {
 
       test('properties', () async {
         final client = ArmClient(name, channel);
+        arm.supportManualModeValue = true;
+        arm.supportCartesianCommandsValue = false;
         final properties = await client.properties();
-        expect(properties.supportManualMode, false);
-        expect(properties.supportCartesianCommands, true);
+        expect(properties.supportManualMode, true);
+        expect(properties.supportCartesianCommands, false);
       });
 
       test('setManualMode', () async {
         final client = ArmClient(name, channel);
-        expect(client.setManualMode(true), throwsA(isA<GrpcError>()));
+        expect(arm.manualModeValue, false);
+        await client.setManualMode(true, enabledFor: Duration(seconds: 10));
+        expect(arm.manualModeValue, true);
       });
 
       test('manualMode', () async {
         final client = ArmClient(name, channel);
-        expect(client.manualMode(), throwsA(isA<GrpcError>()));
+        arm.manualModeValue = true;
+        expect(await client.manualMode(), true);
       });
     });
     test('getKinematics', () async {
