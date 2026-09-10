@@ -70,6 +70,21 @@ final $typed_data.Uint8List trainingStatusDescriptor = $convert.base64Decode(
     'VEEAQSHAoYVFJBSU5JTkdfU1RBVFVTX0NBTkNFTEVEEAUSHQoZVFJBSU5JTkdfU1RBVFVTX0NB'
     'TkNFTElORxAG');
 
+@$core.Deprecated('Use visibilityDescriptor instead')
+const Visibility$json = {
+  '1': 'Visibility',
+  '2': [
+    {'1': 'VISIBILITY_UNSPECIFIED', '2': 0},
+    {'1': 'VISIBILITY_PRIVATE', '2': 1},
+    {'1': 'VISIBILITY_PUBLIC', '2': 2},
+  ],
+};
+
+/// Descriptor for `Visibility`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List visibilityDescriptor = $convert.base64Decode(
+    'CgpWaXNpYmlsaXR5EhoKFlZJU0lCSUxJVFlfVU5TUEVDSUZJRUQQABIWChJWSVNJQklMSVRZX1'
+    'BSSVZBVEUQARIVChFWSVNJQklMSVRZX1BVQkxJQxAC');
+
 @$core.Deprecated('Use submitTrainingJobRequestDescriptor instead')
 const SubmitTrainingJobRequest$json = {
   '1': 'SubmitTrainingJobRequest',
@@ -400,11 +415,15 @@ final $typed_data.Uint8List getTrainingJobLogsResponseDescriptor = $convert.base
 @$core.Deprecated('Use listSupportedContainersRequestDescriptor instead')
 const ListSupportedContainersRequest$json = {
   '1': 'ListSupportedContainersRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+  ],
 };
 
 /// Descriptor for `ListSupportedContainersRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listSupportedContainersRequestDescriptor = $convert.base64Decode(
-    'Ch5MaXN0U3VwcG9ydGVkQ29udGFpbmVyc1JlcXVlc3Q=');
+    'Ch5MaXN0U3VwcG9ydGVkQ29udGFpbmVyc1JlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgAS'
+    'gJUg5vcmdhbml6YXRpb25JZA==');
 
 @$core.Deprecated('Use listSupportedContainersResponseDescriptor instead')
 const ListSupportedContainersResponse$json = {
@@ -442,6 +461,10 @@ const Container$json = {
     {'1': 'framework', '3': 3, '4': 1, '5': 9, '10': 'framework'},
     {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
     {'1': 'eol', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'eol'},
+    {'1': 'organization_id', '3': 6, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'created_on', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
+    {'1': 'id', '3': 8, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'visibility', '3': 9, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.Visibility', '10': 'visibility'},
   ],
 };
 
@@ -449,5 +472,9 @@ const Container$json = {
 final $typed_data.Uint8List containerDescriptor = $convert.base64Decode(
     'CglDb250YWluZXISEAoDa2V5GAEgASgJUgNrZXkSEAoDdXJpGAIgASgJUgN1cmkSHAoJZnJhbW'
     'V3b3JrGAMgASgJUglmcmFtZXdvcmsSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9u'
-    'EiwKA2VvbBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSA2VvbA==');
+    'EiwKA2VvbBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSA2VvbBInCg9vcmdhbm'
+    'l6YXRpb25faWQYBiABKAlSDm9yZ2FuaXphdGlvbklkEjkKCmNyZWF0ZWRfb24YByABKAsyGi5n'
+    'b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkT24SDgoCaWQYCCABKAlSAmlkEkIKCn'
+    'Zpc2liaWxpdHkYCSABKA4yIi52aWFtLmFwcC5tbHRyYWluaW5nLnYxLlZpc2liaWxpdHlSCnZp'
+    'c2liaWxpdHk=');
 

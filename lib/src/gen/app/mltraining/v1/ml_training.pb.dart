@@ -1280,12 +1280,21 @@ class GetTrainingJobLogsResponse extends $pb.GeneratedMessage {
 }
 
 class ListSupportedContainersRequest extends $pb.GeneratedMessage {
-  factory ListSupportedContainersRequest() => create();
+  factory ListSupportedContainersRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   ListSupportedContainersRequest._() : super();
   factory ListSupportedContainersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListSupportedContainersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupportedContainersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1309,6 +1318,19 @@ class ListSupportedContainersRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static ListSupportedContainersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupportedContainersRequest>(create);
   static ListSupportedContainersRequest? _defaultInstance;
+
+  /// Optional. Scopes the response to the containers available to this
+  /// organization: the Viam-managed catalog plus the org's registered
+  /// custom training containers. If unset, only the Viam-managed catalog
+  /// is returned.
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
 }
 
 class ListSupportedContainersResponse extends $pb.GeneratedMessage {
@@ -1362,6 +1384,10 @@ class Container extends $pb.GeneratedMessage {
     $core.String? framework,
     $core.String? description,
     $50.Timestamp? eol,
+    $core.String? organizationId,
+    $50.Timestamp? createdOn,
+    $core.String? id,
+    Visibility? visibility,
   }) {
     final $result = create();
     if (key != null) {
@@ -1379,6 +1405,18 @@ class Container extends $pb.GeneratedMessage {
     if (eol != null) {
       $result.eol = eol;
     }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    if (visibility != null) {
+      $result.visibility = visibility;
+    }
     return $result;
   }
   Container._() : super();
@@ -1391,6 +1429,10 @@ class Container extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'framework')
     ..aOS(4, _omitFieldNames ? '' : 'description')
     ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'eol', subBuilder: $50.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'organizationId')
+    ..aOM<$50.Timestamp>(7, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
+    ..aOS(8, _omitFieldNames ? '' : 'id')
+    ..e<Visibility>(9, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: Visibility.VISIBILITY_UNSPECIFIED, valueOf: Visibility.valueOf, enumValues: Visibility.values)
     ..hasRequiredFields = false
   ;
 
@@ -1461,6 +1503,44 @@ class Container extends $pb.GeneratedMessage {
   void clearEol() => clearField(5);
   @$pb.TagNumber(5)
   $50.Timestamp ensureEol() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get organizationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set organizationId($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOrganizationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOrganizationId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $50.Timestamp get createdOn => $_getN(6);
+  @$pb.TagNumber(7)
+  set createdOn($50.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedOn() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedOn() => clearField(7);
+  @$pb.TagNumber(7)
+  $50.Timestamp ensureCreatedOn() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.String get id => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set id($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  Visibility get visibility => $_getN(8);
+  @$pb.TagNumber(9)
+  set visibility(Visibility v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasVisibility() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVisibility() => clearField(9);
 }
 
 
