@@ -29,8 +29,8 @@ buf:
 	#similarly, there's a an issue where protoc generates types named `switch`, not recognizing
 	# that it's a reserved keyword
 	mv lib/src/gen/component/switch lib/src/gen/component/nswitch
-	find . -type f -name '*.dart' -exec sed -i '' -e 's/viam_protos\.component\.switch/viam_protos\.component\.nswitch/g' {} \;
-	find . -type f -name '*.dart' -exec sed -i '' -e 's/\/src\/gen\/component\/switch/\/src\/gen\/component\/nswitch/g' {} \;
+	find . -type f -name '*.dart' -exec $(SED) -e 's/viam_protos\.component\.switch/viam_protos\.component\.nswitch/g' {} +
+	find . -type f -name '*.dart' -exec $(SED) -e 's/\/src\/gen\/component\/switch/\/src\/gen\/component\/nswitch/g' {} +
 
 setup:
 	dart pub global activate cider

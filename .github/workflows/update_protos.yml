@@ -2,20 +2,34 @@ name: Update Protos + Open PR
 
 on:
   workflow_dispatch:
+    inputs:
+      api_version:
+        description: "The API version, including the `v`"
+        type: string
+        required: true
   repository_dispatch:
     types:
       - protos-updated
+
+env:
+  PROTO_BRANCH: workflow/update-protos
+  WRAPPER_BRANCH: workflow/update-protos-ai
 
 jobs:
   update-protos:
     if: github.repository_owner == 'viamrobotics'
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/cirruslabs/flutter:latest
+    env:
+      API_VERSION: ${{ inputs.api_version || github.event.client_payload.tag }}
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.GIT_ACCESS_TOKEN }}
+      - uses: subosito/flutter-action@v2
       - uses: bufbuild/buf-setup-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -26,40 +40,331 @@ jobs:
       - name: Setup Flutter
         run: flutter pub get
 
+      - name: prune origin
+        run: git remote prune origin
+
+      # --- Bottom of the stack: generated protos ---
+
+      - name: Create proto branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b ${{ env.PROTO_BRANCH }}
+
       - name: Update Proto Tag
-        run: sed -i "s/apiTag = 'v[0-9]*\.[0-9]*\.[0-9]*'/apiTag = '${{ github.event.client_payload.tag }}'/" lib/src/utils.dart
+        run: sed -i "s/apiTag = 'v[0-9]*\.[0-9]*\.[0-9]*'/apiTag = '${{ env.API_VERSION }}'/" lib/src/utils.dart
 
       - name: Generate buf
         run: make buf
         env:
           BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
 
-      - name: Format
+      # `make format` rewrites files in place but exits non-zero when it changes anything,
+      # so failure here is expected and not fatal.
+      - name: Format generated protos
+        continue-on-error: true
         run: make format
 
-      - name: Add + Commit + Open PR
-        uses: peter-evans/create-pull-request@v5
+      - name: Commit generated buf files
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "[WORKFLOW] Updating protos from ${{ github.event.client_payload.repo_name }}, commit: ${{ github.event.client_payload.sha }}"
+
+      - name: Push proto branch and open PR
+        id: proto_pr
+        env:
+          GH_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
+        run: |
+          git push --force origin ${{ env.PROTO_BRANCH }}
+          BODY="This is an auto-generated PR to update proto definitions. Check the commits to see which repos and commits are responsible for the changes.
+
+          This is the **bottom** of a stack: the generated wrapper updates are in a follow-up PR based on this branch."
+          gh pr create \
+            --base main \
+            --head ${{ env.PROTO_BRANCH }} \
+            --title "Automated Protos Update" \
+            --body "$BODY" \
+            --reviewer viamrobotics/sdk \
+            || gh pr edit ${{ env.PROTO_BRANCH }} \
+              --title "Automated Protos Update" \
+              --body "$BODY"
+          echo "url=$(gh pr view ${{ env.PROTO_BRANCH }} --json url -q .url)" >> "$GITHUB_OUTPUT"
+
+      # --- Top of the stack: AI-generated wrapper updates ---
+
+      - name: Create wrapper branch
+        run: git checkout -b ${{ env.WRAPPER_BRANCH }}
+
+      - name: Update Dart wrappers with Claude
+        uses: anthropics/claude-code-action@v1
         with:
-          commit-message: "[WORKFLOW] Updating protos from ${{ github.event.client_payload.repo_name }}, commit: ${{ github.event.client_payload.sha }}"
-          branch: "workflow/update-protos"
-          delete-branch: true
-          base: main
-          title: Automated Protos Update
-          body: This is an auto-generated PR to update proto definitions. Check the commits to see which repos and commits are responsible for the changes
-          assignees: viamrobotics/sdk-netcode
-          reviewers: viamrobotics/sdk-netcode
-          token: ${{ secrets.GIT_ACCESS_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          settings: .claude/settings.ci.json
+          claude_args: |
+            --model claude-sonnet-5
+            --allowed-tools "Edit,Read,Write,Glob,Grep,Bash(git diff*),Bash(git status*),Bash(git log*),Bash(git show*),Bash(make analyze*),Bash(make test*),Bash(make build_mocks*),Bash(dart *),Bash(flutter *)"
+          prompt: |
+            The protobuf definitions have been updated and compiled into Dart files in `lib/src/gen/`.
+
+            ## IMPORTANT: Use git diff to identify changes
+
+            Run `git diff ${{ github.sha }} -- lib/src/gen/ lib/protos/` to see what changed in the generated protobuf
+            files and their barrel exports.
+            DO NOT read through every generated file. ONLY look at the diff to understand what needs to be updated.
+
+            Based on the diff, update the corresponding Dart wrapper code to reflect ONLY the changes shown.
+
+            ## Context
+            This repository wraps protobuf messages and gRPC calls into native Dart functions for ergonomic,
+            idiomatic Dart/Flutter usage.
+
+            Generated code lives in `lib/src/gen/` and is re-exported through barrel files in `lib/protos/`.
+            Both are produced by `make buf` and MUST NOT be hand-edited.
+
+            The hand-written wrappers live in `lib/src/components/`, `lib/src/services/`, `lib/src/app/`,
+            and `lib/src/robot/`.
+
+            ## Wrapper Architecture
+
+            ### Components (`lib/src/components/<name>/`)
+            Each component is a directory with three files:
+            1. **Abstract base class** (`lib/src/components/<name>/<name>.dart`)
+               - `abstract class <Name> extends Resource` declaring the Dart API contract
+               - Declares `static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, '<name>')`
+               - Provides `static ResourceName getResourceName(String name)` and `static <Name> fromRobot(RobotClient robot, String name)`
+               - Every method carries a dartdoc comment with a runnable `///` example and a link to the
+                 matching section of https://docs.viam.com
+            2. **Client wrapper** (`lib/src/components/<name>/client.dart`)
+               - `class <Name>Client extends <Name> with RPCDebugLoggerMixin implements ResourceRPCClient`
+               - Wraps the generated `<Name>ServiceClient` gRPC stub
+            3. **Server wrapper** (`lib/src/components/<name>/service.dart`)
+               - `class <Name>Service extends <Name>ServiceBase`
+               - Handles incoming gRPC calls and delegates to the Dart implementation
+
+            Tests live in `test/unit_test/components/<name>_test.dart`.
+
+            ### Services (`lib/src/services/<name>.dart`)
+            Services are a single file containing only a client:
+            - `class <Name>Client extends Resource with RPCDebugLoggerMixin implements ResourceRPCClient`
+            - Declares `static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeService, '<name>')`
+            - There is no service (server) wrapper for services.
+
+            Tests live in `test/unit_test/services/<name>_test.dart`.
+
+            ### App API Clients (`lib/src/app/<name>.dart`)
+            Clients for the application API (app, billing, data, ml_training, provisioning, permissions, robot):
+            - Plain classes that hold a generated stub, e.g. `final BillingServiceClient _client;`
+            - Constructed with the stub: `BillingClient(this._client);`
+            - Methods build a request, call the stub, and usually return the protobuf response directly
+            - Do NOT extend `Resource` and do NOT take `extra`
+
+            Tests live in `test/unit_test/app/<name>_client_test.dart`.
+
+            ## Your Task
+
+            1. **First, check the diff**: run `git diff ${{ github.sha }} -- lib/src/gen/ lib/protos/`
+            2. **Identify affected wrappers**: based on the diff, determine which wrapper files need updates
+            3. **Apply changes**: for ONLY the proto changes shown in the diff:
+
+            ### For Components (`lib/src/components/`)
+            - **New RPC methods** in the diff -> add abstract method + client wrapper + server wrapper + tests
+            - **Modified RPC methods** in the diff -> update method signatures, parameters, and tests
+            - **Removed RPC methods** in the diff -> remove from base class, client, service, and tests
+
+            ### For Services (`lib/src/services/`)
+            - **New RPC methods** in the diff -> add method to the client + tests
+            - **Modified RPC methods** in the diff -> update method signatures and tests
+            - **Removed RPC methods** in the diff -> remove the method and tests
+
+            ### For App API Clients (`lib/src/app/`)
+            - **New RPC methods** in the diff -> add method to the client + tests
+            - **Modified RPC methods** in the diff -> update method signatures and tests
+            - **Removed RPC methods** in the diff -> remove the method and tests
+
+            ### For `lib/viam_sdk.dart`
+            - Add exports for any new public types/classes introduced
+            - Remove exports for any deleted types/classes
+            - Keep exports alphabetized within each section
+
+            ## Wrapper Patterns to Follow
+
+            ### Abstract base class pattern (`lib/src/components/<name>/<name>.dart`):
+            ```dart
+            /// Get the current [Pose] of the end of the arm.
+            ///
+            /// ```
+            /// final currentPose = await myArm.endPosition();
+            /// ```
+            ///
+            /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getendposition).
+            Future<Pose> endPosition({Map<String, dynamic>? extra});
+            ```
+
+            ### Client pattern (`lib/src/components/<name>/client.dart`):
+            ```dart
+            @override
+            Future<Pose> endPosition({Map<String, dynamic>? extra}) async {
+              final request = GetEndPositionRequest()
+                ..name = name
+                ..extra = extra?.toStruct() ?? Struct();
+              final response = await client.getEndPosition(request, options: callOptions);
+              return response.pose;
+            }
+            ```
+
+            ### Service (server) pattern (`lib/src/components/<name>/service.dart`):
+            ```dart
+            @override
+            Future<GetEndPositionResponse> getEndPosition(ServiceCall call, GetEndPositionRequest request) async {
+              final arm = _armFromManager(request.name);
+              final pose = await arm.endPosition(extra: request.extra.toMap());
+              return GetEndPositionResponse()..pose = pose;
+            }
+            ```
+
+            ### App client pattern (`lib/src/app/<name>.dart`):
+            ```dart
+            /// Get a detailed breakdown of current month's costs
+            ///
+            /// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+            Future<GetCurrentMonthUsageResponse> getCurrentMonthUsage(String orgId) async {
+              final request = GetCurrentMonthUsageRequest()..orgId = orgId;
+              return await _client.getCurrentMonthUsage(request);
+            }
+            ```
+
+            ### Component test pattern (`test/unit_test/components/<name>_test.dart`):
+            Component tests define a `Fake<Name> extends <Name>` implementation, then run two groups:
+            a `Fake<Name> Tests` group exercising the fake directly, and an `<Name> RPC Tests` group that
+            serves `<Name>Service` over a real in-process `Server` and calls it with the generated
+            `<Name>ServiceClient`:
+            ```dart
+            group('Arm RPC Tests', () {
+              setUp(() async {
+                arm = FakeArm(name);
+                final ResourceManager manager = ResourceManager();
+                manager.register(Arm.getResourceName(name), arm);
+                service = ArmService(manager);
+                server = Server.create(services: [service]);
+                await serveServerAtUnusedPort(server);
+                channel = ClientChannel('localhost', port: server.port!,
+                    options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+              });
+
+              test('endPosition', () async {
+                final client = ArmServiceClient(channel);
+                final request = GetEndPositionRequest()..name = name;
+                final response = await client.getEndPosition(request);
+                expect(response.pose, arm.armEndPosition);
+              });
+            });
+            ```
+            When you add a method to a component, you MUST also add the `@override` implementation to every
+            `Fake<Name>` in the test files, or the tests will not compile.
+
+            ### Service / app client test pattern (`test/unit_test/services/`, `test/unit_test/app/`):
+            These use `mockito` mocks of the generated stubs from
+            `test/unit_test/mocks/service_clients_mocks.mocks.dart`:
+            ```dart
+            test('getDetectionsFromCamera', () async {
+              final expected = [Detection(className: 'test')];
+              when(serviceClient.getDetectionsFromCamera(any, options: anyNamed('options')))
+                  .thenAnswer((_) => MockResponseFuture.value(GetDetectionsFromCameraResponse(detections: expected)));
+              final response = await client.detectionsFromCamera('cameraName');
+              expect(response, equals(expected));
+            });
+            ```
+            Service client tests subclass the real client to inject the mock stub:
+            ```dart
+            class FakeVisionClient extends VisionClient {
+              @override
+              VisionServiceClient get client => _client;
+              final MockVisionServiceClient _client;
+              FakeVisionClient(super.name, super.channel, this._client);
+            }
+            ```
+            If a brand new generated stub needs mocking, add a `MockSpec<...>()` entry to
+            `test/unit_test/mocks/service_clients_mocks.dart` and regenerate with `make build_mocks`.
+
+            ## Key Guidelines
+
+            - Use lowerCamelCase for Dart method names (converted from the PascalCase RPC names)
+            - Component and service methods take required positional params first, then named optional
+              params, ending with `{Map<String, dynamic>? extra}`
+            - Use `extra?.toStruct() ?? Struct()` when populating an `extra` field on a request
+            - Use `request.extra.toMap()` when reading `extra` off a request in a server wrapper
+            - Always pass `options: callOptions` on client stub calls so RPC debug logging works
+            - Import generated types from `../../gen/...` inside `lib/src/`, and from
+              `package:viam_sdk/protos/...` inside `test/`
+            - For methods that return nothing, return `Future<void>` and ignore the response
+            - For methods that return a value, extract and return the appropriate response field
+            - Streaming RPCs return a Dart `Stream`; see `getInvoicePdf` in `lib/src/app/billing.dart`
+            - Keep dartdoc comments, usage examples, and docs.viam.com links on every public method
+            - Format with a 140 character line length
+
+            ## Output Requirements
+            - Do NOT modify anything under `lib/src/gen/` or `lib/protos/` -- those are generated by `make buf`.
+            - Do NOT create new component or service directories for protos that do not already have wrappers.
+            - Make focused, surgical changes -- only modify what is necessary based on the git diff.
+            - Ensure all imports are updated to include new Request/Response types.
+            - Follow the established patterns in the repository.
+
+            ## Verification
+            Run `make analyze` and `make test` and fix any errors you introduced. Then verify that:
+            - All new RPC methods from the diff have corresponding Dart wrappers
+            - All updated RPC methods from the diff reflect the new message structure
+            - All removed RPC methods from the diff are deleted from the wrappers
+            - Every `Fake<Name>` in the tests implements the full abstract interface
+            - Tests are added/updated/removed for all wrapper changes
+            - `lib/viam_sdk.dart` exports are up to date
+
+      - name: Commit Dart wrapper updates
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "[WORKFLOW] Update Dart wrappers from ${{ github.event.client_payload.repo_name }}, commit: ${{ github.event.client_payload.sha }}"
+
+      - name: Format
+        continue-on-error: true
+        run: make format
+
+      - name: Commit formatting changes
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "[WORKFLOW] Apply formatting"
+
+      - name: Push wrapper branch and open stacked PR
+        env:
+          GH_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
+          PROTO_PR_URL: ${{ steps.proto_pr.outputs.url }}
+        run: |
+          if git diff --quiet ${{ env.PROTO_BRANCH }}..${{ env.WRAPPER_BRANCH }}; then
+            echo "Claude made no wrapper changes; skipping the stacked PR."
+            exit 0
+          fi
+          git push --force origin ${{ env.WRAPPER_BRANCH }}
+          BODY="This is an auto-generated PR updating the Dart wrappers for the proto changes in $PROTO_PR_URL.
+
+          This PR is **stacked on top of** \`${{ env.PROTO_BRANCH }}\`. Review and merge $PROTO_PR_URL first; this PR will retarget to \`main\` automatically."
+          gh pr create \
+            --base ${{ env.PROTO_BRANCH }} \
+            --head ${{ env.WRAPPER_BRANCH }} \
+            --title "Automated Protos Update: Dart wrappers" \
+            --body "$BODY" \
+            --reviewer viamrobotics/sdk \
+            || gh pr edit ${{ env.WRAPPER_BRANCH }} \
+              --base ${{ env.PROTO_BRANCH }} \
+              --title "Automated Protos Update: Dart wrappers" \
+              --body "$BODY"
 
       - name: Notify slack of failure
-        uses: slackapi/slack-github-action@v1.24.0
+        uses: slackapi/slack-github-action@v3
         if: ${{ failure() }}
         with:
+          webhook: ${{ secrets.SLACK_TEAM_SDK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
           payload: |
             {
               "text": "Flutter SDK update protos job has failed",
               "username": "Flutter SDK",
               "icon_url": "https://media.tenor.com/bZMubztJxGkAAAAe/charlie-brown-walking-charlie-brown.png"
             }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TEAM_SDK_WEBHOOK_URL }}
-
