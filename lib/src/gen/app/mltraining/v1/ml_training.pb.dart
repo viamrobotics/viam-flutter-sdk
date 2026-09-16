@@ -1280,12 +1280,21 @@ class GetTrainingJobLogsResponse extends $pb.GeneratedMessage {
 }
 
 class ListSupportedContainersRequest extends $pb.GeneratedMessage {
-  factory ListSupportedContainersRequest() => create();
+  factory ListSupportedContainersRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   ListSupportedContainersRequest._() : super();
   factory ListSupportedContainersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListSupportedContainersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupportedContainersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1309,6 +1318,19 @@ class ListSupportedContainersRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static ListSupportedContainersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupportedContainersRequest>(create);
   static ListSupportedContainersRequest? _defaultInstance;
+
+  /// Optional. Scopes the response to the containers available to this
+  /// organization: the Viam-managed catalog plus the org's registered
+  /// custom training containers. If unset, only the Viam-managed catalog
+  /// is returned.
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
 }
 
 class ListSupportedContainersResponse extends $pb.GeneratedMessage {
@@ -1355,6 +1377,217 @@ class ListSupportedContainersResponse extends $pb.GeneratedMessage {
   $core.Map<$core.String, Container> get containerMap => $_getMap(0);
 }
 
+class RegisterCustomTrainingContainerRequest extends $pb.GeneratedMessage {
+  factory RegisterCustomTrainingContainerRequest({
+    $core.String? organizationId,
+    $core.String? imageUri,
+    $core.String? description,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (imageUri != null) {
+      $result.imageUri = imageUri;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    return $result;
+  }
+  RegisterCustomTrainingContainerRequest._() : super();
+  factory RegisterCustomTrainingContainerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterCustomTrainingContainerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterCustomTrainingContainerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'imageUri')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterCustomTrainingContainerRequest clone() => RegisterCustomTrainingContainerRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterCustomTrainingContainerRequest copyWith(void Function(RegisterCustomTrainingContainerRequest) updates) => super.copyWith((message) => updates(message as RegisterCustomTrainingContainerRequest)) as RegisterCustomTrainingContainerRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterCustomTrainingContainerRequest create() => RegisterCustomTrainingContainerRequest._();
+  RegisterCustomTrainingContainerRequest createEmptyInstance() => create();
+  static $pb.PbList<RegisterCustomTrainingContainerRequest> createRepeated() => $pb.PbList<RegisterCustomTrainingContainerRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterCustomTrainingContainerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterCustomTrainingContainerRequest>(create);
+  static RegisterCustomTrainingContainerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  /// Docker Hub reference, official images normalize to docker.io/library/<image>:<tag>.
+  @$pb.TagNumber(2)
+  $core.String get imageUri => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set imageUri($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasImageUri() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearImageUri() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => clearField(3);
+}
+
+class RegisterCustomTrainingContainerResponse extends $pb.GeneratedMessage {
+  factory RegisterCustomTrainingContainerResponse({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  RegisterCustomTrainingContainerResponse._() : super();
+  factory RegisterCustomTrainingContainerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterCustomTrainingContainerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterCustomTrainingContainerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterCustomTrainingContainerResponse clone() => RegisterCustomTrainingContainerResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterCustomTrainingContainerResponse copyWith(void Function(RegisterCustomTrainingContainerResponse) updates) => super.copyWith((message) => updates(message as RegisterCustomTrainingContainerResponse)) as RegisterCustomTrainingContainerResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterCustomTrainingContainerResponse create() => RegisterCustomTrainingContainerResponse._();
+  RegisterCustomTrainingContainerResponse createEmptyInstance() => create();
+  static $pb.PbList<RegisterCustomTrainingContainerResponse> createRepeated() => $pb.PbList<RegisterCustomTrainingContainerResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterCustomTrainingContainerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterCustomTrainingContainerResponse>(create);
+  static RegisterCustomTrainingContainerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class DeleteCustomTrainingContainerRequest extends $pb.GeneratedMessage {
+  factory DeleteCustomTrainingContainerRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  DeleteCustomTrainingContainerRequest._() : super();
+  factory DeleteCustomTrainingContainerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteCustomTrainingContainerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCustomTrainingContainerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteCustomTrainingContainerRequest clone() => DeleteCustomTrainingContainerRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteCustomTrainingContainerRequest copyWith(void Function(DeleteCustomTrainingContainerRequest) updates) => super.copyWith((message) => updates(message as DeleteCustomTrainingContainerRequest)) as DeleteCustomTrainingContainerRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteCustomTrainingContainerRequest create() => DeleteCustomTrainingContainerRequest._();
+  DeleteCustomTrainingContainerRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteCustomTrainingContainerRequest> createRepeated() => $pb.PbList<DeleteCustomTrainingContainerRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteCustomTrainingContainerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteCustomTrainingContainerRequest>(create);
+  static DeleteCustomTrainingContainerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class DeleteCustomTrainingContainerResponse extends $pb.GeneratedMessage {
+  factory DeleteCustomTrainingContainerResponse() => create();
+  DeleteCustomTrainingContainerResponse._() : super();
+  factory DeleteCustomTrainingContainerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteCustomTrainingContainerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCustomTrainingContainerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteCustomTrainingContainerResponse clone() => DeleteCustomTrainingContainerResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteCustomTrainingContainerResponse copyWith(void Function(DeleteCustomTrainingContainerResponse) updates) => super.copyWith((message) => updates(message as DeleteCustomTrainingContainerResponse)) as DeleteCustomTrainingContainerResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteCustomTrainingContainerResponse create() => DeleteCustomTrainingContainerResponse._();
+  DeleteCustomTrainingContainerResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteCustomTrainingContainerResponse> createRepeated() => $pb.PbList<DeleteCustomTrainingContainerResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteCustomTrainingContainerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteCustomTrainingContainerResponse>(create);
+  static DeleteCustomTrainingContainerResponse? _defaultInstance;
+}
+
 class Container extends $pb.GeneratedMessage {
   factory Container({
     $core.String? key,
@@ -1362,6 +1595,10 @@ class Container extends $pb.GeneratedMessage {
     $core.String? framework,
     $core.String? description,
     $50.Timestamp? eol,
+    $core.String? organizationId,
+    $50.Timestamp? createdOn,
+    $core.String? id,
+    Visibility? visibility,
   }) {
     final $result = create();
     if (key != null) {
@@ -1379,6 +1616,18 @@ class Container extends $pb.GeneratedMessage {
     if (eol != null) {
       $result.eol = eol;
     }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    if (visibility != null) {
+      $result.visibility = visibility;
+    }
     return $result;
   }
   Container._() : super();
@@ -1391,6 +1640,10 @@ class Container extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'framework')
     ..aOS(4, _omitFieldNames ? '' : 'description')
     ..aOM<$50.Timestamp>(5, _omitFieldNames ? '' : 'eol', subBuilder: $50.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'organizationId')
+    ..aOM<$50.Timestamp>(7, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
+    ..aOS(8, _omitFieldNames ? '' : 'id')
+    ..e<Visibility>(9, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: Visibility.VISIBILITY_UNSPECIFIED, valueOf: Visibility.valueOf, enumValues: Visibility.values)
     ..hasRequiredFields = false
   ;
 
@@ -1461,6 +1714,44 @@ class Container extends $pb.GeneratedMessage {
   void clearEol() => clearField(5);
   @$pb.TagNumber(5)
   $50.Timestamp ensureEol() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get organizationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set organizationId($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOrganizationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOrganizationId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $50.Timestamp get createdOn => $_getN(6);
+  @$pb.TagNumber(7)
+  set createdOn($50.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedOn() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedOn() => clearField(7);
+  @$pb.TagNumber(7)
+  $50.Timestamp ensureCreatedOn() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.String get id => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set id($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  Visibility get visibility => $_getN(8);
+  @$pb.TagNumber(9)
+  set visibility(Visibility v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasVisibility() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVisibility() => clearField(9);
 }
 
 

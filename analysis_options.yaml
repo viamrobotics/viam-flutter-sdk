@@ -33,3 +33,4 @@ analyzer:
     - "**.pbenum.dart"
     - "**.pbjson.dart"
     - "**.pbgrpc.dart"
+    - build/**
