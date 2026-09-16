@@ -95,4 +95,29 @@ class MLTrainingClient {
     final request = DeleteCompletedTrainingJobRequest()..id = id;
     await _mlTrainingClient.deleteCompletedTrainingJob(request);
   }
+
+  /// Registers a custom training container for the given organization, so that it can be used as
+  /// a custom training job's container image.
+  ///
+  /// Returns the new container's ID.
+  ///
+  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  Future<String> registerCustomTrainingContainer(String orgId, String imageUri, {String? description}) async {
+    final request = RegisterCustomTrainingContainerRequest()
+      ..organizationId = orgId
+      ..imageUri = imageUri;
+    if (description != null) {
+      request.description = description;
+    }
+    final response = await _mlTrainingClient.registerCustomTrainingContainer(request);
+    return response.id;
+  }
+
+  /// Deletes a registered custom training container.
+  ///
+  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  Future<void> deleteCustomTrainingContainer(String id) async {
+    final request = DeleteCustomTrainingContainerRequest()..id = id;
+    await _mlTrainingClient.deleteCustomTrainingContainer(request);
+  }
 }
