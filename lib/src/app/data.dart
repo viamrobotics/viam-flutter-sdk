@@ -215,13 +215,13 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   ///  try {
-  ///   final binaryIDs = [
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///   final binaryDataIds = [
+  ///     '<YOUR-BINARY-DATA-ID>',
+  ///     '<YOUR-BINARY-DATA-ID>'
   ///   ];
   ///
   ///   final response = await dataClient.binaryDataByIds(
-  ///     binaryIDs,
+  ///     binaryDataIds,
   ///     includeBinary: true
   ///   );
   ///
@@ -237,9 +237,9 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
-  Future<BinaryDataByIDsResponse> binaryDataByIds(List<BinaryID> binaryIds, {bool includeBinary = false}) async {
+  Future<BinaryDataByIDsResponse> binaryDataByIds(List<String> binaryDataIds, {bool includeBinary = false}) async {
     final request = BinaryDataByIDsRequest()
-      ..binaryIds.addAll(binaryIds)
+      ..binaryDataIds.addAll(binaryDataIds)
       ..includeBinary = includeBinary;
     final response = await _dataClient.binaryDataByIDs(request);
     return response;
