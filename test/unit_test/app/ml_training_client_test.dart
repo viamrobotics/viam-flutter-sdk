@@ -73,5 +73,22 @@ void main() {
       await mlTrainingClient.deleteCompletedTrainingJob('id');
       verify(serviceClient.deleteCompletedTrainingJob(any)).called(1);
     });
+
+    test('registerCustomTrainingContainer', () async {
+      const expected = 'containerId';
+      when(
+        serviceClient.registerCustomTrainingContainer(any),
+      ).thenAnswer((_) => MockResponseFuture.value(RegisterCustomTrainingContainerResponse()..id = expected));
+      final response = await mlTrainingClient.registerCustomTrainingContainer('orgId', 'docker.io/library/image:tag', description: 'desc');
+      expect(response, equals(expected));
+    });
+
+    test('deleteCustomTrainingContainer', () async {
+      when(
+        serviceClient.deleteCustomTrainingContainer(any),
+      ).thenAnswer((_) => MockResponseFuture.value(DeleteCustomTrainingContainerResponse()));
+      await mlTrainingClient.deleteCustomTrainingContainer('id');
+      verify(serviceClient.deleteCustomTrainingContainer(any)).called(1);
+    });
   });
 }
