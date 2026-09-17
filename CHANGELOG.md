@@ -1,11 +1,18 @@
 # Changelog
 
-## [v0.21.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.21.0) (2026-09-02)
+## [v1.0.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v1.0.0) (2026-09-17)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.20.0...v0.21.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.21.0...v1.0.0)
 
 **Merged pull requests:**
 
+- Automated Protos Update: Dart wrappers [\#563](https://github.com/viamrobotics/viam-flutter-sdk/pull/563) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#562](https://github.com/viamrobotics/viam-flutter-sdk/pull/562) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update access tokens [\#561](https://github.com/viamrobotics/viam-flutter-sdk/pull/561) ([njooma](https://github.com/njooma))
+- Do not pass --base when updating the stacked wrapper PR [\#560](https://github.com/viamrobotics/viam-flutter-sdk/pull/560) ([njooma](https://github.com/njooma))
+- Inline AI proto updater, call Claude directly, open stacked PRs [\#557](https://github.com/viamrobotics/viam-flutter-sdk/pull/557) ([njooma](https://github.com/njooma))
+- v0.21.0 [\#553](https://github.com/viamrobotics/viam-flutter-sdk/pull/553) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-14457: Add manual mode arm API [\#552](https://github.com/viamrobotics/viam-flutter-sdk/pull/552) ([npmenard](https://github.com/npmenard))
 - \[APP-17674\] Add motion service to flutter sdk [\#551](https://github.com/viamrobotics/viam-flutter-sdk/pull/551) ([martha-johnston](https://github.com/martha-johnston))
 - v0.20.0 [\#550](https://github.com/viamrobotics/viam-flutter-sdk/pull/550) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#549](https://github.com/viamrobotics/viam-flutter-sdk/pull/549) ([viambot](https://github.com/viambot))
@@ -237,6 +244,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.21.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.21.0) (2026-09-02)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.20.0...v0.21.0)
 
 ## [v0.20.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.20.0) (2026-08-31)
 
@@ -499,6 +510,8 @@
 - Automated Protos Update [\#216](https://github.com/viamrobotics/viam-flutter-sdk/pull/216) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add license auditing [\#214](https://github.com/viamrobotics/viam-flutter-sdk/pull/214) ([njooma](https://github.com/njooma))
 - RSDK-7445: paginate data by filter methods [\#213](https://github.com/viamrobotics/viam-flutter-sdk/pull/213) ([itsnoelrae](https://github.com/itsnoelrae))
+- Automated Protos Update [\#212](https://github.com/viamrobotics/viam-flutter-sdk/pull/212) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.14 [\#211](https://github.com/viamrobotics/viam-flutter-sdk/pull/211) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-4264 - Move to api gostream dependency [\#210](https://github.com/viamrobotics/viam-flutter-sdk/pull/210) ([stuqdog](https://github.com/stuqdog))
 - RSDK-6665 - add getCloudMetadata client method [\#209](https://github.com/viamrobotics/viam-flutter-sdk/pull/209) ([stuqdog](https://github.com/stuqdog))
 - RSDK-7405 - dataset wrappers [\#208](https://github.com/viamrobotics/viam-flutter-sdk/pull/208) ([stuqdog](https://github.com/stuqdog))
