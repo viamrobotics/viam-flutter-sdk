@@ -59,6 +59,10 @@
 <li><span class="parameter" id="param-framework"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">framework</span>, </span></li>
 <li><span class="parameter" id="param-description"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">description</span>, </span></li>
 <li><span class="parameter" id="param-eol"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">eol</span>, </span></li>
+<li><span class="parameter" id="param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
+<li><span class="parameter" id="param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span></li>
+<li><span class="parameter" id="param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span></li>
+<li><span class="parameter" id="param-visibility"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/Visibility-class.html">Visibility</a>?</span> <span class="parameter-name">visibility</span>, </span></li>
 </ol>})
     </section>
     
@@ -73,6 +77,10 @@
   $core.String? framework,
   $core.String? description,
   $50.Timestamp? eol,
+  $core.String? organizationId,
+  $50.Timestamp? createdOn,
+  $core.String? id,
+  Visibility? visibility,
 }) {
   final $result = create();
   if (key != null) {
@@ -89,6 +97,18 @@
   }
   if (eol != null) {
     $result.eol = eol;
+  }
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (createdOn != null) {
+    $result.createdOn = createdOn;
+  }
+  if (id != null) {
+    $result.id = id;
+  }
+  if (visibility != null) {
+    $result.visibility = visibility;
   }
   return $result;
 }</code></pre>
