@@ -55,7 +55,7 @@
     <section class="multi-line-signature">
       
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.data/BinaryDataByIDsResponse-class.html">BinaryDataByIDsResponse</a></span>&gt;</span></span>
-<span class="name ">binaryDataByIds</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="binaryDataByIds-param-binaryIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.data/BinaryID-class.html">BinaryID</a></span>&gt;</span></span> <span class="parameter-name">binaryIds</span>, {</span></li>
+<span class="name ">binaryDataByIds</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="binaryDataByIds-param-binaryDataIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">binaryDataIds</span>, {</span></li>
 <li><span class="parameter" id="binaryDataByIds-param-includeBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">includeBinary</span> = <span class="default-value">false</span>, </span></li>
 </ol>})
 
@@ -72,13 +72,13 @@
  final dataClient = _viam.dataClient;
 
  try {
-  final binaryIDs = [
-   BinaryID(fileId: '&lt;YOUR-FILE-ID&gt;', organizationId: '&lt;YOUR-ORG-ID&gt;', locationId: '&lt;YOUR-LOCATION-ID&gt;'),
-   BinaryID(fileId: '&lt;YOUR-FILE-ID&gt;', organizationId: '&lt;YOUR-ORG-ID&gt;', locationId: '&lt;YOUR-LOCATION-ID&gt;')
+  final binaryDataIds = [
+    '&lt;YOUR-BINARY-DATA-ID&gt;',
+    '&lt;YOUR-BINARY-DATA-ID&gt;'
   ];
 
   final response = await dataClient.binaryDataByIds(
-    binaryIDs,
+    binaryDataIds,
     includeBinary: true
   );
 
@@ -99,9 +99,9 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;BinaryDataByIDsResponse&gt; binaryDataByIds(List&lt;BinaryID&gt; binaryIds, {bool includeBinary = false}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;BinaryDataByIDsResponse&gt; binaryDataByIds(List&lt;String&gt; binaryDataIds, {bool includeBinary = false}) async {
   final request = BinaryDataByIDsRequest()
-    ..binaryIds.addAll(binaryIds)
+    ..binaryDataIds.addAll(binaryDataIds)
     ..includeBinary = includeBinary;
   final response = await _dataClient.binaryDataByIDs(request);
   return response;
