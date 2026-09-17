@@ -151,12 +151,7 @@ void main() {
       });
 
       test('binaryDataByIds', () async {
-        final ids = [
-          BinaryID()
-            ..organizationId = 'orgid'
-            ..locationId = 'locationid'
-            ..fileId = 'fileid',
-        ];
+        final ids = ['id1', 'id2', 'id3'];
         final data = [
           BinaryData()..binary = [1, 2, 3, 4],
           BinaryData()..binary = [2, 3, 4, 5],
