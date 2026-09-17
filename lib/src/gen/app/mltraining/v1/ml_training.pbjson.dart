@@ -70,6 +70,21 @@ final $typed_data.Uint8List trainingStatusDescriptor = $convert.base64Decode(
     'VEEAQSHAoYVFJBSU5JTkdfU1RBVFVTX0NBTkNFTEVEEAUSHQoZVFJBSU5JTkdfU1RBVFVTX0NB'
     'TkNFTElORxAG');
 
+@$core.Deprecated('Use visibilityDescriptor instead')
+const Visibility$json = {
+  '1': 'Visibility',
+  '2': [
+    {'1': 'VISIBILITY_UNSPECIFIED', '2': 0},
+    {'1': 'VISIBILITY_PRIVATE', '2': 1},
+    {'1': 'VISIBILITY_PUBLIC', '2': 2},
+  ],
+};
+
+/// Descriptor for `Visibility`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List visibilityDescriptor = $convert.base64Decode(
+    'CgpWaXNpYmlsaXR5EhoKFlZJU0lCSUxJVFlfVU5TUEVDSUZJRUQQABIWChJWSVNJQklMSVRZX1'
+    'BSSVZBVEUQARIVChFWSVNJQklMSVRZX1BVQkxJQxAC');
+
 @$core.Deprecated('Use submitTrainingJobRequestDescriptor instead')
 const SubmitTrainingJobRequest$json = {
   '1': 'SubmitTrainingJobRequest',
@@ -400,11 +415,15 @@ final $typed_data.Uint8List getTrainingJobLogsResponseDescriptor = $convert.base
 @$core.Deprecated('Use listSupportedContainersRequestDescriptor instead')
 const ListSupportedContainersRequest$json = {
   '1': 'ListSupportedContainersRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+  ],
 };
 
 /// Descriptor for `ListSupportedContainersRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listSupportedContainersRequestDescriptor = $convert.base64Decode(
-    'Ch5MaXN0U3VwcG9ydGVkQ29udGFpbmVyc1JlcXVlc3Q=');
+    'Ch5MaXN0U3VwcG9ydGVkQ29udGFpbmVyc1JlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgAS'
+    'gJUg5vcmdhbml6YXRpb25JZA==');
 
 @$core.Deprecated('Use listSupportedContainersResponseDescriptor instead')
 const ListSupportedContainersResponse$json = {
@@ -433,6 +452,56 @@ final $typed_data.Uint8List listSupportedContainersResponseDescriptor = $convert
     'IQCgNrZXkYASABKAlSA2tleRI3CgV2YWx1ZRgCIAEoCzIhLnZpYW0uYXBwLm1sdHJhaW5pbmcu'
     'djEuQ29udGFpbmVyUgV2YWx1ZToCOAE=');
 
+@$core.Deprecated('Use registerCustomTrainingContainerRequestDescriptor instead')
+const RegisterCustomTrainingContainerRequest$json = {
+  '1': 'RegisterCustomTrainingContainerRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'image_uri', '3': 2, '4': 1, '5': 9, '10': 'imageUri'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `RegisterCustomTrainingContainerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerCustomTrainingContainerRequestDescriptor = $convert.base64Decode(
+    'CiZSZWdpc3RlckN1c3RvbVRyYWluaW5nQ29udGFpbmVyUmVxdWVzdBInCg9vcmdhbml6YXRpb2'
+    '5faWQYASABKAlSDm9yZ2FuaXphdGlvbklkEhsKCWltYWdlX3VyaRgCIAEoCVIIaW1hZ2VVcmkS'
+    'IAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9u');
+
+@$core.Deprecated('Use registerCustomTrainingContainerResponseDescriptor instead')
+const RegisterCustomTrainingContainerResponse$json = {
+  '1': 'RegisterCustomTrainingContainerResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `RegisterCustomTrainingContainerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerCustomTrainingContainerResponseDescriptor = $convert.base64Decode(
+    'CidSZWdpc3RlckN1c3RvbVRyYWluaW5nQ29udGFpbmVyUmVzcG9uc2USDgoCaWQYASABKAlSAm'
+    'lk');
+
+@$core.Deprecated('Use deleteCustomTrainingContainerRequestDescriptor instead')
+const DeleteCustomTrainingContainerRequest$json = {
+  '1': 'DeleteCustomTrainingContainerRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteCustomTrainingContainerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteCustomTrainingContainerRequestDescriptor = $convert.base64Decode(
+    'CiREZWxldGVDdXN0b21UcmFpbmluZ0NvbnRhaW5lclJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use deleteCustomTrainingContainerResponseDescriptor instead')
+const DeleteCustomTrainingContainerResponse$json = {
+  '1': 'DeleteCustomTrainingContainerResponse',
+};
+
+/// Descriptor for `DeleteCustomTrainingContainerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteCustomTrainingContainerResponseDescriptor = $convert.base64Decode(
+    'CiVEZWxldGVDdXN0b21UcmFpbmluZ0NvbnRhaW5lclJlc3BvbnNl');
+
 @$core.Deprecated('Use containerDescriptor instead')
 const Container$json = {
   '1': 'Container',
@@ -442,6 +511,10 @@ const Container$json = {
     {'1': 'framework', '3': 3, '4': 1, '5': 9, '10': 'framework'},
     {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
     {'1': 'eol', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'eol'},
+    {'1': 'organization_id', '3': 6, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'created_on', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
+    {'1': 'id', '3': 8, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'visibility', '3': 9, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.Visibility', '10': 'visibility'},
   ],
 };
 
@@ -449,5 +522,9 @@ const Container$json = {
 final $typed_data.Uint8List containerDescriptor = $convert.base64Decode(
     'CglDb250YWluZXISEAoDa2V5GAEgASgJUgNrZXkSEAoDdXJpGAIgASgJUgN1cmkSHAoJZnJhbW'
     'V3b3JrGAMgASgJUglmcmFtZXdvcmsSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9u'
-    'EiwKA2VvbBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSA2VvbA==');
+    'EiwKA2VvbBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSA2VvbBInCg9vcmdhbm'
+    'l6YXRpb25faWQYBiABKAlSDm9yZ2FuaXphdGlvbklkEjkKCmNyZWF0ZWRfb24YByABKAsyGi5n'
+    'b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkT24SDgoCaWQYCCABKAlSAmlkEkIKCn'
+    'Zpc2liaWxpdHkYCSABKA4yIi52aWFtLmFwcC5tbHRyYWluaW5nLnYxLlZpc2liaWxpdHlSCnZp'
+    'c2liaWxpdHk=');
 

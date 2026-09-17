@@ -78,5 +78,22 @@ class TrainingStatus extends $pb.ProtobufEnum {
   const TrainingStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+class Visibility extends $pb.ProtobufEnum {
+  static const Visibility VISIBILITY_UNSPECIFIED = Visibility._(0, _omitEnumNames ? '' : 'VISIBILITY_UNSPECIFIED');
+  static const Visibility VISIBILITY_PRIVATE = Visibility._(1, _omitEnumNames ? '' : 'VISIBILITY_PRIVATE');
+  static const Visibility VISIBILITY_PUBLIC = Visibility._(2, _omitEnumNames ? '' : 'VISIBILITY_PUBLIC');
+
+  static const $core.List<Visibility> values = <Visibility> [
+    VISIBILITY_UNSPECIFIED,
+    VISIBILITY_PRIVATE,
+    VISIBILITY_PUBLIC,
+  ];
+
+  static final $core.Map<$core.int, Visibility> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static Visibility? valueOf($core.int value) => _byValue[value];
+
+  const Visibility._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
