@@ -216,8 +216,8 @@ class DataClient {
   ///
   ///  try {
   ///   final binaryDataIds = [
-  ///    '<YOUR-BINARY-DATA-ID-1>',
-  ///    '<YOUR-BINARY-DATA-ID-2>'
+  ///     '<YOUR-BINARY-DATA-ID>',
+  ///     '<YOUR-BINARY-DATA-ID>'
   ///   ];
   ///
   ///   final response = await dataClient.binaryDataByIds(
