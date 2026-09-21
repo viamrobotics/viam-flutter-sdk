@@ -518,6 +518,15 @@ class AppClient {
     return response.robots;
   }
 
+  /// List the [Robot]s across all the provided [Location]s that the currently authenticated user has access to
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<List<Robot>> listRobotsForLocations(List<String> locationIds) async {
+    final listRobotsForLocationsRequest = ListRobotsForLocationsRequest()..locationIds.addAll(locationIds);
+    final ListRobotsForLocationsResponse response = await _client.listRobotsForLocations(listRobotsForLocationsRequest);
+    return response.robots;
+  }
+
   /// Create a new smart machine with the included [name] in the passed in [locationId]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).

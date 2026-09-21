@@ -514,6 +514,23 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('listRobotsForLocations', () async {
+      final expected = [
+        Robot()
+          ..id = 'id1'
+          ..name = 'name1',
+        Robot()
+          ..id = 'id2'
+          ..name = 'name2',
+      ];
+      final expectedResponse = ListRobotsForLocationsResponse()..robots.addAll(expected);
+      when(serviceClient.listRobotsForLocations(any)).thenAnswer((_) => MockResponseFuture.value(expectedResponse));
+      final response = await appClient.listRobotsForLocations(['locationId1', 'locationId2']);
+      final captured = verify(serviceClient.listRobotsForLocations(captureAny)).captured.single as ListRobotsForLocationsRequest;
+      expect(captured.locationIds, equals(['locationId1', 'locationId2']));
+      expect(response, equals(expected));
+    });
+
     test('newMachine', () async {
       final expected = NewRobotResponse();
       when(serviceClient.newRobot(any)).thenAnswer((_) => MockResponseFuture.value(expected));
