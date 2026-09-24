@@ -90,5 +90,14 @@ void main() {
       await mlTrainingClient.deleteCustomTrainingContainer('id');
       verify(serviceClient.deleteCustomTrainingContainer(any)).called(1);
     });
+
+    test('listContainers', () async {
+      final expected = [Container()..key = 'container'];
+      when(
+        serviceClient.listContainers(any),
+      ).thenAnswer((_) => MockResponseFuture.value(ListContainersResponse()..containers.addAll(expected)));
+      final response = await mlTrainingClient.listContainers('orgId');
+      expect(response, equals(expected));
+    });
   });
 }

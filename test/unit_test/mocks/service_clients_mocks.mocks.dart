@@ -7395,6 +7395,38 @@ class MockMotionServiceClient extends _i1.Mock
       ) as _i4.ResponseFuture<_i21.GetPlanResponse>);
 
   @override
+  _i4.ResponseStream<_i21.TempStreamArmJointPositionsResponse>
+      tempStreamArmJointPositions(
+    _i6.Stream<_i21.TempStreamArmJointPositionsRequest>? request, {
+    _i4.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #tempStreamArmJointPositions,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseStream_3<_i21.TempStreamArmJointPositionsResponse>(
+              this,
+              Invocation.method(
+                #tempStreamArmJointPositions,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseStream_3<_i21.TempStreamArmJointPositionsResponse>(
+              this,
+              Invocation.method(
+                #tempStreamArmJointPositions,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseStream<_i21.TempStreamArmJointPositionsResponse>);
+
+  @override
   _i4.ResponseFuture<_i19.DoCommandResponse> doCommand(
     _i19.DoCommandRequest? request, {
     _i4.CallOptions? options,
@@ -8742,6 +8774,36 @@ class MockMLTrainingServiceClient extends _i1.Mock
               ),
             ),
           ) as _i4.ResponseFuture<_i27.ListSupportedContainersResponse>);
+
+  @override
+  _i4.ResponseFuture<_i27.ListContainersResponse> listContainers(
+    _i27.ListContainersRequest? request, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #listContainers,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i27.ListContainersResponse>(
+          this,
+          Invocation.method(
+            #listContainers,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i27.ListContainersResponse>(
+          this,
+          Invocation.method(
+            #listContainers,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i27.ListContainersResponse>);
 
   @override
   _i4.ResponseFuture<

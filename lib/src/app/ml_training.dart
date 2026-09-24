@@ -120,4 +120,14 @@ class MLTrainingClient {
     final request = DeleteCustomTrainingContainerRequest()..id = id;
     await _mlTrainingClient.deleteCustomTrainingContainer(request);
   }
+
+  /// Lists the training containers available to the organization with the given [orgId]: the
+  /// Viam-managed catalog plus the organization's registered custom training containers.
+  ///
+  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  Future<List<Container>> listContainers(String orgId) async {
+    final request = ListContainersRequest()..organizationId = orgId;
+    final response = await _mlTrainingClient.listContainers(request);
+    return response.containers;
+  }
 }
