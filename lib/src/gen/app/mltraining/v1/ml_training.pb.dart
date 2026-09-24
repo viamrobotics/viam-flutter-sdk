@@ -1280,21 +1280,12 @@ class GetTrainingJobLogsResponse extends $pb.GeneratedMessage {
 }
 
 class ListSupportedContainersRequest extends $pb.GeneratedMessage {
-  factory ListSupportedContainersRequest({
-    $core.String? organizationId,
-  }) {
-    final $result = create();
-    if (organizationId != null) {
-      $result.organizationId = organizationId;
-    }
-    return $result;
-  }
+  factory ListSupportedContainersRequest() => create();
   ListSupportedContainersRequest._() : super();
   factory ListSupportedContainersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListSupportedContainersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupportedContainersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1318,19 +1309,6 @@ class ListSupportedContainersRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static ListSupportedContainersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupportedContainersRequest>(create);
   static ListSupportedContainersRequest? _defaultInstance;
-
-  /// Optional. Scopes the response to the containers available to this
-  /// organization: the Viam-managed catalog plus the org's registered
-  /// custom training containers. If unset, only the Viam-managed catalog
-  /// is returned.
-  @$pb.TagNumber(1)
-  $core.String get organizationId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set organizationId($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasOrganizationId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearOrganizationId() => clearField(1);
 }
 
 class ListSupportedContainersResponse extends $pb.GeneratedMessage {
@@ -1375,6 +1353,101 @@ class ListSupportedContainersResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.Map<$core.String, Container> get containerMap => $_getMap(0);
+}
+
+class ListContainersRequest extends $pb.GeneratedMessage {
+  factory ListContainersRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
+  ListContainersRequest._() : super();
+  factory ListContainersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListContainersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListContainersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListContainersRequest clone() => ListContainersRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListContainersRequest copyWith(void Function(ListContainersRequest) updates) => super.copyWith((message) => updates(message as ListContainersRequest)) as ListContainersRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListContainersRequest create() => ListContainersRequest._();
+  ListContainersRequest createEmptyInstance() => create();
+  static $pb.PbList<ListContainersRequest> createRepeated() => $pb.PbList<ListContainersRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListContainersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListContainersRequest>(create);
+  static ListContainersRequest? _defaultInstance;
+
+  /// The associated Viam organization ID.
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+}
+
+class ListContainersResponse extends $pb.GeneratedMessage {
+  factory ListContainersResponse({
+    $core.Iterable<Container>? containers,
+  }) {
+    final $result = create();
+    if (containers != null) {
+      $result.containers.addAll(containers);
+    }
+    return $result;
+  }
+  ListContainersResponse._() : super();
+  factory ListContainersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListContainersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListContainersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..pc<Container>(1, _omitFieldNames ? '' : 'containers', $pb.PbFieldType.PM, subBuilder: Container.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListContainersResponse clone() => ListContainersResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListContainersResponse copyWith(void Function(ListContainersResponse) updates) => super.copyWith((message) => updates(message as ListContainersResponse)) as ListContainersResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListContainersResponse create() => ListContainersResponse._();
+  ListContainersResponse createEmptyInstance() => create();
+  static $pb.PbList<ListContainersResponse> createRepeated() => $pb.PbList<ListContainersResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListContainersResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListContainersResponse>(create);
+  static ListContainersResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Container> get containers => $_getList(0);
 }
 
 class RegisterCustomTrainingContainerRequest extends $pb.GeneratedMessage {

@@ -116,6 +116,7 @@ const GetPropertiesResponse$json = {
     {'1': 'mime_types', '3': 4, '4': 3, '5': 9, '10': 'mimeTypes'},
     {'1': 'frame_rate', '3': 5, '4': 1, '5': 2, '9': 0, '10': 'frameRate', '17': true},
     {'1': 'extrinsic_parameters', '3': 6, '4': 1, '5': 11, '6': '.viam.component.camera.v1.ExtrinsicParameters', '10': 'extrinsicParameters'},
+    {'1': 'default_reference_frame', '3': 7, '4': 1, '5': 9, '10': 'defaultReferenceFrame'},
   ],
   '8': [
     {'1': '_frame_rate'},
@@ -131,7 +132,8 @@ final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Dec
     'aW9uUGFyYW1ldGVyc1IUZGlzdG9ydGlvblBhcmFtZXRlcnMSHQoKbWltZV90eXBlcxgEIAMoCV'
     'IJbWltZVR5cGVzEiIKCmZyYW1lX3JhdGUYBSABKAJIAFIJZnJhbWVSYXRliAEBEmAKFGV4dHJp'
     'bnNpY19wYXJhbWV0ZXJzGAYgASgLMi0udmlhbS5jb21wb25lbnQuY2FtZXJhLnYxLkV4dHJpbn'
-    'NpY1BhcmFtZXRlcnNSE2V4dHJpbnNpY1BhcmFtZXRlcnNCDQoLX2ZyYW1lX3JhdGU=');
+    'NpY1BhcmFtZXRlcnNSE2V4dHJpbnNpY1BhcmFtZXRlcnMSNgoXZGVmYXVsdF9yZWZlcmVuY2Vf'
+    'ZnJhbWUYByABKAlSFWRlZmF1bHRSZWZlcmVuY2VGcmFtZUINCgtfZnJhbWVfcmF0ZQ==');
 
 @$core.Deprecated('Use webcamsDescriptor instead')
 const Webcams$json = {
