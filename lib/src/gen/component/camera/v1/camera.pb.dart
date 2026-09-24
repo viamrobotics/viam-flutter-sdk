@@ -463,6 +463,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? mimeTypes,
     $core.double? frameRate,
     ExtrinsicParameters? extrinsicParameters,
+    $core.String? defaultReferenceFrame,
   }) {
     final $result = create();
     if (supportsPcd != null) {
@@ -483,6 +484,9 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     if (extrinsicParameters != null) {
       $result.extrinsicParameters = extrinsicParameters;
     }
+    if (defaultReferenceFrame != null) {
+      $result.defaultReferenceFrame = defaultReferenceFrame;
+    }
     return $result;
   }
   GetPropertiesResponse._() : super();
@@ -496,6 +500,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     ..pPS(4, _omitFieldNames ? '' : 'mimeTypes')
     ..a<$core.double>(5, _omitFieldNames ? '' : 'frameRate', $pb.PbFieldType.OF)
     ..aOM<ExtrinsicParameters>(6, _omitFieldNames ? '' : 'extrinsicParameters', subBuilder: ExtrinsicParameters.create)
+    ..aOS(7, _omitFieldNames ? '' : 'defaultReferenceFrame')
     ..hasRequiredFields = false
   ;
 
@@ -584,6 +589,17 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   void clearExtrinsicParameters() => clearField(6);
   @$pb.TagNumber(6)
   ExtrinsicParameters ensureExtrinsicParameters() => $_ensure(5);
+
+  /// Name of the reference frame that points returned by GetPointCloud are expressed in
+  /// An empty string means the frame is unknown; the frame is not guaranteed to exist in the frame system
+  @$pb.TagNumber(7)
+  $core.String get defaultReferenceFrame => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set defaultReferenceFrame($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasDefaultReferenceFrame() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDefaultReferenceFrame() => clearField(7);
 }
 
 class Webcams extends $pb.GeneratedMessage {

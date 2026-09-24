@@ -415,15 +415,14 @@ final $typed_data.Uint8List getTrainingJobLogsResponseDescriptor = $convert.base
 @$core.Deprecated('Use listSupportedContainersRequestDescriptor instead')
 const ListSupportedContainersRequest$json = {
   '1': 'ListSupportedContainersRequest',
-  '2': [
-    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+  '9': [
+    {'1': 1, '2': 2},
   ],
 };
 
 /// Descriptor for `ListSupportedContainersRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listSupportedContainersRequestDescriptor = $convert.base64Decode(
-    'Ch5MaXN0U3VwcG9ydGVkQ29udGFpbmVyc1JlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgAS'
-    'gJUg5vcmdhbml6YXRpb25JZA==');
+    'Ch5MaXN0U3VwcG9ydGVkQ29udGFpbmVyc1JlcXVlc3RKBAgBEAI=');
 
 @$core.Deprecated('Use listSupportedContainersResponseDescriptor instead')
 const ListSupportedContainersResponse$json = {
@@ -451,6 +450,32 @@ final $typed_data.Uint8List listSupportedContainersResponseDescriptor = $convert
     'c2UuQ29udGFpbmVyTWFwRW50cnlSDGNvbnRhaW5lck1hcBpiChFDb250YWluZXJNYXBFbnRyeR'
     'IQCgNrZXkYASABKAlSA2tleRI3CgV2YWx1ZRgCIAEoCzIhLnZpYW0uYXBwLm1sdHJhaW5pbmcu'
     'djEuQ29udGFpbmVyUgV2YWx1ZToCOAE=');
+
+@$core.Deprecated('Use listContainersRequestDescriptor instead')
+const ListContainersRequest$json = {
+  '1': 'ListContainersRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+  ],
+};
+
+/// Descriptor for `ListContainersRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listContainersRequestDescriptor = $convert.base64Decode(
+    'ChVMaXN0Q29udGFpbmVyc1JlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg5vcmdhbm'
+    'l6YXRpb25JZA==');
+
+@$core.Deprecated('Use listContainersResponseDescriptor instead')
+const ListContainersResponse$json = {
+  '1': 'ListContainersResponse',
+  '2': [
+    {'1': 'containers', '3': 1, '4': 3, '5': 11, '6': '.viam.app.mltraining.v1.Container', '10': 'containers'},
+  ],
+};
+
+/// Descriptor for `ListContainersResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listContainersResponseDescriptor = $convert.base64Decode(
+    'ChZMaXN0Q29udGFpbmVyc1Jlc3BvbnNlEkEKCmNvbnRhaW5lcnMYASADKAsyIS52aWFtLmFwcC'
+    '5tbHRyYWluaW5nLnYxLkNvbnRhaW5lclIKY29udGFpbmVycw==');
 
 @$core.Deprecated('Use registerCustomTrainingContainerRequestDescriptor instead')
 const RegisterCustomTrainingContainerRequest$json = {
