@@ -49,6 +49,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
     registerSubtype(ResourceRegistration(Switch.subtype, (name, channel) => SwitchClient(name, channel)));
+    registerSubtype(ResourceRegistration(DataManagerClient.subtype, (name, channel) => DataManagerClient(name, channel)));
     registerSubtype(ResourceRegistration(DiscoveryClient.subtype, (name, channel) => DiscoveryClient(name, channel)));
     registerSubtype(ResourceRegistration(GenericServiceClient.subtype, (name, channel) => GenericServiceClient(name, channel)));
     registerSubtype(ResourceRegistration(MotionClient.subtype, (name, channel) => MotionClient(name, channel)));
