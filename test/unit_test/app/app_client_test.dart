@@ -554,6 +554,37 @@ void main() {
       verify(serviceClient.deleteRobot(any)).called(1);
     });
 
+    test('addFavoriteMachine', () async {
+      final expected = FavoriteMachine()
+        ..machineId = 'machineId'
+        ..organizationId = 'organizationId';
+      when(
+        serviceClient.addFavoriteMachine(any),
+      ).thenAnswer((_) => MockResponseFuture.value(AddFavoriteMachineResponse()..favorite = expected));
+      final response = await appClient.addFavoriteMachine('machineId');
+      expect(response, equals(expected));
+    });
+
+    test('removeFavoriteMachine', () async {
+      final expected = RemoveFavoriteMachineResponse();
+      when(serviceClient.removeFavoriteMachine(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.removeFavoriteMachine('machineId');
+      verify(serviceClient.removeFavoriteMachine(any)).called(1);
+    });
+
+    test('listFavoriteMachines', () async {
+      final expected = [
+        FavoriteMachine()
+          ..machineId = 'machineId'
+          ..organizationId = 'organizationId',
+      ];
+      when(
+        serviceClient.listFavoriteMachines(any),
+      ).thenAnswer((_) => MockResponseFuture.value(ListFavoriteMachinesResponse()..favorites.addAll(expected)));
+      final response = await appClient.listFavoriteMachines();
+      expect(response, equals(expected));
+    });
+
     test('listFragments', () async {
       final expected = [
         Fragment()

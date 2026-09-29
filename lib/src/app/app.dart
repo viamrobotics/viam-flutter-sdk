@@ -558,6 +558,36 @@ class AppClient {
     await _client.deleteRobot(request);
   }
 
+  /// Add a [Robot] to the currently authenticated user's favorites.
+  ///
+  /// Favoriting a machine that is already a favorite returns the existing
+  /// [FavoriteMachine] rather than resetting its `createdOn`.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<FavoriteMachine> addFavoriteMachine(String machineId) async {
+    final request = AddFavoriteMachineRequest()..machineId = machineId;
+    final AddFavoriteMachineResponse response = await _client.addFavoriteMachine(request);
+    return response.favorite;
+  }
+
+  /// Remove a [Robot] from the currently authenticated user's favorites.
+  ///
+  /// Removing a machine that is not a favorite is a no-op.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> removeFavoriteMachine(String machineId) async {
+    final request = RemoveFavoriteMachineRequest()..machineId = machineId;
+    await _client.removeFavoriteMachine(request);
+  }
+
+  /// List the currently authenticated user's [FavoriteMachine]s across all [Organization]s.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<List<FavoriteMachine>> listFavoriteMachines() async {
+    final response = await _client.listFavoriteMachines(ListFavoriteMachinesRequest());
+    return response.favorites;
+  }
+
   /// Get a list of [Fragment]s in an [Organization]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
