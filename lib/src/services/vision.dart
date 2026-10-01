@@ -101,6 +101,20 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
     return response.classifications;
   }
 
+  /// Get a list of [Detection3D]s from the camera named [cameraName].
+  ///
+  /// ```
+  /// // Example:
+  /// var detections3D = await myVisionService.detections3D('myCamera');
+  /// ```
+  ///
+  /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getdetections3d).
+  Future<List<Detection3D>> detections3D(String cameraName, {Map<String, dynamic>? extra}) async {
+    final request = GetDetections3DRequest(name: name, cameraName: cameraName, extra: extra?.toStruct());
+    final response = await client.getDetections3D(request, options: callOptions);
+    return response.detections3d;
+  }
+
   /// Get a list of [common_pb.PointCloudObject]s from the camera named [cameraName].
   ///
   /// ```

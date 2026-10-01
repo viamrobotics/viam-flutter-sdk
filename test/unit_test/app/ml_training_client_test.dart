@@ -90,5 +90,21 @@ void main() {
       await mlTrainingClient.deleteCustomTrainingContainer('id');
       verify(serviceClient.deleteCustomTrainingContainer(any)).called(1);
     });
+
+    test('listContainers', () async {
+      final expected = [Container()..key = 'containerId'];
+      when(
+        serviceClient.listContainers(any),
+      ).thenAnswer((_) => MockResponseFuture.value(ListContainersResponse()..containers.addAll(expected)));
+      final response = await mlTrainingClient.listContainers('orgId');
+      expect(response, equals(expected));
+    });
+
+    test('getContainer', () async {
+      final expected = Container()..key = 'containerId';
+      when(serviceClient.getContainer(any)).thenAnswer((_) => MockResponseFuture.value(GetContainerResponse()..container = expected));
+      final response = await mlTrainingClient.getContainer('containerId');
+      expect(response, equals(expected));
+    });
   });
 }
