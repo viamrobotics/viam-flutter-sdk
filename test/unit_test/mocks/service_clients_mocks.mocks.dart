@@ -31,23 +31,23 @@ import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pbgrpc.dart'
 import 'package:viam_sdk/src/gen/robot/v1/robot.pb.dart' as _i8;
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart' as _i7;
 import 'package:viam_sdk/src/gen/service/datamanager/v1/data_manager.pb.dart'
-    as _i36;
-import 'package:viam_sdk/src/gen/service/datamanager/v1/data_manager.pbgrpc.dart'
-    as _i35;
-import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pb.dart'
     as _i31;
-import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart'
+import 'package:viam_sdk/src/gen/service/datamanager/v1/data_manager.pbgrpc.dart'
     as _i30;
-import 'package:viam_sdk/src/gen/service/generic/v1/generic.pbgrpc.dart'
+import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pb.dart'
+    as _i33;
+import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart'
     as _i32;
+import 'package:viam_sdk/src/gen/service/generic/v1/generic.pbgrpc.dart'
+    as _i34;
 import 'package:viam_sdk/src/gen/service/motion/v1/motion.pb.dart' as _i21;
 import 'package:viam_sdk/src/gen/service/motion/v1/motion.pbgrpc.dart' as _i20;
 import 'package:viam_sdk/src/gen/service/navigation/v1/navigation.pb.dart'
     as _i23;
 import 'package:viam_sdk/src/gen/service/navigation/v1/navigation.pbgrpc.dart'
     as _i22;
-import 'package:viam_sdk/src/gen/service/video/v1/video.pb.dart' as _i34;
-import 'package:viam_sdk/src/gen/service/video/v1/video.pbgrpc.dart' as _i33;
+import 'package:viam_sdk/src/gen/service/video/v1/video.pb.dart' as _i36;
+import 'package:viam_sdk/src/gen/service/video/v1/video.pbgrpc.dart' as _i35;
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pb.dart' as _i18;
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart' as _i17;
 
@@ -6920,6 +6920,36 @@ class MockVisionServiceClient extends _i1.Mock
       ) as _i4.ResponseFuture<_i18.GetClassificationsResponse>);
 
   @override
+  _i4.ResponseFuture<_i18.GetDetections3DResponse> getDetections3D(
+    _i18.GetDetections3DRequest? request, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getDetections3D,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i18.GetDetections3DResponse>(
+          this,
+          Invocation.method(
+            #getDetections3D,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i18.GetDetections3DResponse>(
+          this,
+          Invocation.method(
+            #getDetections3D,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i18.GetDetections3DResponse>);
+
+  @override
   _i4.ResponseFuture<_i18.GetObjectPointCloudsResponse> getObjectPointClouds(
     _i18.GetObjectPointCloudsRequest? request, {
     _i4.CallOptions? options,
@@ -7397,6 +7427,38 @@ class MockMotionServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i21.GetPlanResponse>);
+
+  @override
+  _i4.ResponseStream<_i21.TempStreamArmJointPositionsResponse>
+      tempStreamArmJointPositions(
+    _i6.Stream<_i21.TempStreamArmJointPositionsRequest>? request, {
+    _i4.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #tempStreamArmJointPositions,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseStream_3<_i21.TempStreamArmJointPositionsResponse>(
+              this,
+              Invocation.method(
+                #tempStreamArmJointPositions,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseStream_3<_i21.TempStreamArmJointPositionsResponse>(
+              this,
+              Invocation.method(
+                #tempStreamArmJointPositions,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseStream<_i21.TempStreamArmJointPositionsResponse>);
 
   @override
   _i4.ResponseFuture<_i19.DoCommandResponse> doCommand(
@@ -8748,6 +8810,66 @@ class MockMLTrainingServiceClient extends _i1.Mock
           ) as _i4.ResponseFuture<_i27.ListSupportedContainersResponse>);
 
   @override
+  _i4.ResponseFuture<_i27.ListContainersResponse> listContainers(
+    _i27.ListContainersRequest? request, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #listContainers,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i27.ListContainersResponse>(
+          this,
+          Invocation.method(
+            #listContainers,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i27.ListContainersResponse>(
+          this,
+          Invocation.method(
+            #listContainers,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i27.ListContainersResponse>);
+
+  @override
+  _i4.ResponseFuture<_i27.GetContainerResponse> getContainer(
+    _i27.GetContainerRequest? request, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getContainer,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i27.GetContainerResponse>(
+          this,
+          Invocation.method(
+            #getContainer,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i27.GetContainerResponse>(
+          this,
+          Invocation.method(
+            #getContainer,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i27.GetContainerResponse>);
+
+  @override
   _i4.ResponseFuture<
       _i27
       .RegisterCustomTrainingContainerResponse> registerCustomTrainingContainer(
@@ -9299,14 +9421,258 @@ class MockDatasetServiceClient extends _i1.Mock
       ) as _i4.ResponseStream<R>);
 }
 
+/// A class which mocks [DataManagerServiceClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockDataManagerServiceClient extends _i1.Mock
+    implements _i30.DataManagerServiceClient {
+  @override
+  _i4.ResponseFuture<_i31.SyncResponse> sync(
+    _i31.SyncRequest? request, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #sync,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i31.SyncResponse>(
+          this,
+          Invocation.method(
+            #sync,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i31.SyncResponse>(
+          this,
+          Invocation.method(
+            #sync,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i31.SyncResponse>);
+
+  @override
+  _i4.ResponseFuture<_i19.DoCommandResponse> doCommand(
+    _i19.DoCommandRequest? request, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #doCommand,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i19.DoCommandResponse>(
+          this,
+          Invocation.method(
+            #doCommand,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i19.DoCommandResponse>(
+          this,
+          Invocation.method(
+            #doCommand,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i19.DoCommandResponse>);
+
+  @override
+  _i4.ResponseFuture<_i19.GetStatusResponse> getStatus(
+    _i19.GetStatusRequest? request, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getStatus,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i19.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i19.GetStatusResponse>(
+          this,
+          Invocation.method(
+            #getStatus,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i19.GetStatusResponse>);
+
+  @override
+  _i4.ResponseFuture<_i31.UploadBinaryDataToDatasetsResponse>
+      uploadBinaryDataToDatasets(
+    _i31.UploadBinaryDataToDatasetsRequest? request, {
+    _i4.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #uploadBinaryDataToDatasets,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i31.UploadBinaryDataToDatasetsResponse>(
+              this,
+              Invocation.method(
+                #uploadBinaryDataToDatasets,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i31.UploadBinaryDataToDatasetsResponse>(
+              this,
+              Invocation.method(
+                #uploadBinaryDataToDatasets,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<_i31.UploadBinaryDataToDatasetsResponse>);
+
+  @override
+  _i3.ClientCall<Q, R> $createCall<Q, R>(
+    _i4.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i3.ClientCall<Q, R>);
+
+  @override
+  _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
+    _i4.ClientMethod<Q, R>? method,
+    Q? request, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createUnaryCall,
+          [
+            method,
+            request,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<R>);
+
+  @override
+  _i4.ResponseStream<R> $createStreamingCall<Q, R>(
+    _i4.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i4.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createStreamingCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseStream<R>);
+}
+
 /// A class which mocks [DiscoveryServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockDiscoveryServiceClient extends _i1.Mock
-    implements _i30.DiscoveryServiceClient {
+    implements _i32.DiscoveryServiceClient {
   @override
-  _i4.ResponseFuture<_i31.DiscoverResourcesResponse> discoverResources(
-    _i31.DiscoverResourcesRequest? request, {
+  _i4.ResponseFuture<_i33.DiscoverResourcesResponse> discoverResources(
+    _i33.DiscoverResourcesRequest? request, {
     _i4.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -9315,7 +9681,7 @@ class MockDiscoveryServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i31.DiscoverResourcesResponse>(
+        returnValue: _FakeResponseFuture_2<_i33.DiscoverResourcesResponse>(
           this,
           Invocation.method(
             #discoverResources,
@@ -9324,7 +9690,7 @@ class MockDiscoveryServiceClient extends _i1.Mock
           ),
         ),
         returnValueForMissingStub:
-            _FakeResponseFuture_2<_i31.DiscoverResourcesResponse>(
+            _FakeResponseFuture_2<_i33.DiscoverResourcesResponse>(
           this,
           Invocation.method(
             #discoverResources,
@@ -9332,7 +9698,7 @@ class MockDiscoveryServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i31.DiscoverResourcesResponse>);
+      ) as _i4.ResponseFuture<_i33.DiscoverResourcesResponse>);
 
   @override
   _i4.ResponseFuture<_i19.DoCommandResponse> doCommand(
@@ -9516,7 +9882,7 @@ class MockDiscoveryServiceClient extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockGenericServiceClient extends _i1.Mock
-    implements _i32.GenericServiceClient {
+    implements _i34.GenericServiceClient {
   @override
   _i4.ResponseFuture<_i19.DoCommandResponse> doCommand(
     _i19.DoCommandRequest? request, {
@@ -9699,10 +10065,10 @@ class MockGenericServiceClient extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockVideoServiceClient extends _i1.Mock
-    implements _i33.VideoServiceClient {
+    implements _i35.VideoServiceClient {
   @override
-  _i4.ResponseStream<_i34.GetVideoResponse> getVideo(
-    _i34.GetVideoRequest? request, {
+  _i4.ResponseStream<_i36.GetVideoResponse> getVideo(
+    _i36.GetVideoRequest? request, {
     _i4.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -9711,7 +10077,7 @@ class MockVideoServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseStream_3<_i34.GetVideoResponse>(
+        returnValue: _FakeResponseStream_3<_i36.GetVideoResponse>(
           this,
           Invocation.method(
             #getVideo,
@@ -9719,7 +10085,7 @@ class MockVideoServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub: _FakeResponseStream_3<_i34.GetVideoResponse>(
+        returnValueForMissingStub: _FakeResponseStream_3<_i36.GetVideoResponse>(
           this,
           Invocation.method(
             #getVideo,
@@ -9727,7 +10093,7 @@ class MockVideoServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseStream<_i34.GetVideoResponse>);
+      ) as _i4.ResponseStream<_i36.GetVideoResponse>);
 
   @override
   _i4.ResponseFuture<_i19.DoCommandResponse> doCommand(
@@ -9788,250 +10154,6 @@ class MockVideoServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i19.GetStatusResponse>);
-
-  @override
-  _i3.ClientCall<Q, R> $createCall<Q, R>(
-    _i4.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests, {
-    _i4.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #$createCall,
-          [
-            method,
-            requests,
-          ],
-          {#options: options},
-        ),
-        returnValue: _FakeClientCall_1<Q, R>(
-          this,
-          Invocation.method(
-            #$createCall,
-            [
-              method,
-              requests,
-            ],
-            {#options: options},
-          ),
-        ),
-        returnValueForMissingStub: _FakeClientCall_1<Q, R>(
-          this,
-          Invocation.method(
-            #$createCall,
-            [
-              method,
-              requests,
-            ],
-            {#options: options},
-          ),
-        ),
-      ) as _i3.ClientCall<Q, R>);
-
-  @override
-  _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
-    _i4.ClientMethod<Q, R>? method,
-    Q? request, {
-    _i4.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #$createUnaryCall,
-          [
-            method,
-            request,
-          ],
-          {#options: options},
-        ),
-        returnValue: _FakeResponseFuture_2<R>(
-          this,
-          Invocation.method(
-            #$createUnaryCall,
-            [
-              method,
-              request,
-            ],
-            {#options: options},
-          ),
-        ),
-        returnValueForMissingStub: _FakeResponseFuture_2<R>(
-          this,
-          Invocation.method(
-            #$createUnaryCall,
-            [
-              method,
-              request,
-            ],
-            {#options: options},
-          ),
-        ),
-      ) as _i4.ResponseFuture<R>);
-
-  @override
-  _i4.ResponseStream<R> $createStreamingCall<Q, R>(
-    _i4.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests, {
-    _i4.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #$createStreamingCall,
-          [
-            method,
-            requests,
-          ],
-          {#options: options},
-        ),
-        returnValue: _FakeResponseStream_3<R>(
-          this,
-          Invocation.method(
-            #$createStreamingCall,
-            [
-              method,
-              requests,
-            ],
-            {#options: options},
-          ),
-        ),
-        returnValueForMissingStub: _FakeResponseStream_3<R>(
-          this,
-          Invocation.method(
-            #$createStreamingCall,
-            [
-              method,
-              requests,
-            ],
-            {#options: options},
-          ),
-        ),
-      ) as _i4.ResponseStream<R>);
-}
-
-/// A class which mocks [DataManagerServiceClient].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockDataManagerServiceClient extends _i1.Mock
-    implements _i35.DataManagerServiceClient {
-  @override
-  _i4.ResponseFuture<_i36.SyncResponse> sync(
-    _i36.SyncRequest? request, {
-    _i4.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #sync,
-          [request],
-          {#options: options},
-        ),
-        returnValue: _FakeResponseFuture_2<_i36.SyncResponse>(
-          this,
-          Invocation.method(
-            #sync,
-            [request],
-            {#options: options},
-          ),
-        ),
-        returnValueForMissingStub: _FakeResponseFuture_2<_i36.SyncResponse>(
-          this,
-          Invocation.method(
-            #sync,
-            [request],
-            {#options: options},
-          ),
-        ),
-      ) as _i4.ResponseFuture<_i36.SyncResponse>);
-
-  @override
-  _i4.ResponseFuture<_i19.DoCommandResponse> doCommand(
-    _i19.DoCommandRequest? request, {
-    _i4.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #doCommand,
-          [request],
-          {#options: options},
-        ),
-        returnValue: _FakeResponseFuture_2<_i19.DoCommandResponse>(
-          this,
-          Invocation.method(
-            #doCommand,
-            [request],
-            {#options: options},
-          ),
-        ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i19.DoCommandResponse>(
-          this,
-          Invocation.method(
-            #doCommand,
-            [request],
-            {#options: options},
-          ),
-        ),
-      ) as _i4.ResponseFuture<_i19.DoCommandResponse>);
-
-  @override
-  _i4.ResponseFuture<_i19.GetStatusResponse> getStatus(
-    _i19.GetStatusRequest? request, {
-    _i4.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getStatus,
-          [request],
-          {#options: options},
-        ),
-        returnValue: _FakeResponseFuture_2<_i19.GetStatusResponse>(
-          this,
-          Invocation.method(
-            #getStatus,
-            [request],
-            {#options: options},
-          ),
-        ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i19.GetStatusResponse>(
-          this,
-          Invocation.method(
-            #getStatus,
-            [request],
-            {#options: options},
-          ),
-        ),
-      ) as _i4.ResponseFuture<_i19.GetStatusResponse>);
-
-  @override
-  _i4.ResponseFuture<_i36.UploadBinaryDataToDatasetsResponse>
-      uploadBinaryDataToDatasets(
-    _i36.UploadBinaryDataToDatasetsRequest? request, {
-    _i4.CallOptions? options,
-  }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #uploadBinaryDataToDatasets,
-              [request],
-              {#options: options},
-            ),
-            returnValue: _FakeResponseFuture_2<
-                _i36.UploadBinaryDataToDatasetsResponse>(
-              this,
-              Invocation.method(
-                #uploadBinaryDataToDatasets,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub: _FakeResponseFuture_2<
-                _i36.UploadBinaryDataToDatasetsResponse>(
-              this,
-              Invocation.method(
-                #uploadBinaryDataToDatasets,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i36.UploadBinaryDataToDatasetsResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
