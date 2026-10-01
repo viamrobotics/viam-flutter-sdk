@@ -895,6 +895,209 @@ class Classification extends $pb.GeneratedMessage {
   void clearConfidence() => clearField(2);
 }
 
+class GetDetections3DRequest extends $pb.GeneratedMessage {
+  factory GetDetections3DRequest({
+    $core.String? name,
+    $core.String? cameraName,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (cameraName != null) {
+      $result.cameraName = cameraName;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GetDetections3DRequest._() : super();
+  factory GetDetections3DRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDetections3DRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDetections3DRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.vision.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'cameraName')
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDetections3DRequest clone() => GetDetections3DRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDetections3DRequest copyWith(void Function(GetDetections3DRequest) updates) => super.copyWith((message) => updates(message as GetDetections3DRequest)) as GetDetections3DRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDetections3DRequest create() => GetDetections3DRequest._();
+  GetDetections3DRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDetections3DRequest> createRepeated() => $pb.PbList<GetDetections3DRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDetections3DRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDetections3DRequest>(create);
+  static GetDetections3DRequest? _defaultInstance;
+
+  /// name of the vision service
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// name of the camera to observe
+  @$pb.TagNumber(2)
+  $core.String get cameraName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cameraName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCameraName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCameraName() => clearField(2);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(2);
+}
+
+class GetDetections3DResponse extends $pb.GeneratedMessage {
+  factory GetDetections3DResponse({
+    $core.Iterable<Detection3D>? detections3d,
+  }) {
+    final $result = create();
+    if (detections3d != null) {
+      $result.detections3d.addAll(detections3d);
+    }
+    return $result;
+  }
+  GetDetections3DResponse._() : super();
+  factory GetDetections3DResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDetections3DResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDetections3DResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.vision.v1'), createEmptyInstance: create)
+    ..pc<Detection3D>(1, _omitFieldNames ? '' : 'detections3d', $pb.PbFieldType.PM, protoName: 'detections_3d', subBuilder: Detection3D.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDetections3DResponse clone() => GetDetections3DResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDetections3DResponse copyWith(void Function(GetDetections3DResponse) updates) => super.copyWith((message) => updates(message as GetDetections3DResponse)) as GetDetections3DResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDetections3DResponse create() => GetDetections3DResponse._();
+  GetDetections3DResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDetections3DResponse> createRepeated() => $pb.PbList<GetDetections3DResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDetections3DResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDetections3DResponse>(create);
+  static GetDetections3DResponse? _defaultInstance;
+
+  /// one entry per perceived object
+  @$pb.TagNumber(1)
+  $core.List<Detection3D> get detections3d => $_getList(0);
+}
+
+/// Detection3D is one perceived object, described as a tree of transforms.
+/// transforms[0] is the root, parented to a frame the robot already knows (e.g.
+/// the camera). Each later transform's parent is the root or an earlier entry.
+/// Each physical_object is expressed relative to its own transform's origin.
+class Detection3D extends $pb.GeneratedMessage {
+  factory Detection3D({
+    $core.Iterable<$9.Transform>? transforms,
+    $core.Iterable<Classification>? classifications,
+    $49.Struct? metadata,
+  }) {
+    final $result = create();
+    if (transforms != null) {
+      $result.transforms.addAll(transforms);
+    }
+    if (classifications != null) {
+      $result.classifications.addAll(classifications);
+    }
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    return $result;
+  }
+  Detection3D._() : super();
+  factory Detection3D.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Detection3D.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Detection3D', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.vision.v1'), createEmptyInstance: create)
+    ..pc<$9.Transform>(1, _omitFieldNames ? '' : 'transforms', $pb.PbFieldType.PM, subBuilder: $9.Transform.create)
+    ..pc<Classification>(2, _omitFieldNames ? '' : 'classifications', $pb.PbFieldType.PM, subBuilder: Classification.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'metadata', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Detection3D clone() => Detection3D()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Detection3D copyWith(void Function(Detection3D) updates) => super.copyWith((message) => updates(message as Detection3D)) as Detection3D;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Detection3D create() => Detection3D._();
+  Detection3D createEmptyInstance() => create();
+  static $pb.PbList<Detection3D> createRepeated() => $pb.PbList<Detection3D>();
+  @$core.pragma('dart2js:noInline')
+  static Detection3D getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Detection3D>(create);
+  static Detection3D? _defaultInstance;
+
+  /// frame tree of this object, root first
+  @$pb.TagNumber(1)
+  $core.List<$9.Transform> get transforms => $_getList(0);
+
+  /// class hypotheses for the object
+  @$pb.TagNumber(2)
+  $core.List<Classification> get classifications => $_getList(1);
+
+  /// implementation-specific data, e.g. source camera or model name
+  @$pb.TagNumber(99)
+  $49.Struct get metadata => $_getN(2);
+  @$pb.TagNumber(99)
+  set metadata($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasMetadata() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearMetadata() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureMetadata() => $_ensure(2);
+}
+
 class GetObjectPointCloudsRequest extends $pb.GeneratedMessage {
   factory GetObjectPointCloudsRequest({
     $core.String? name,
@@ -1128,6 +1331,7 @@ class CaptureAllFromCameraRequest extends $pb.GeneratedMessage {
     $core.bool? returnClassifications,
     $core.bool? returnDetections,
     $core.bool? returnObjectPointClouds,
+    $core.bool? returnDetections3d,
     $49.Struct? extra,
   }) {
     final $result = create();
@@ -1149,6 +1353,9 @@ class CaptureAllFromCameraRequest extends $pb.GeneratedMessage {
     if (returnObjectPointClouds != null) {
       $result.returnObjectPointClouds = returnObjectPointClouds;
     }
+    if (returnDetections3d != null) {
+      $result.returnDetections3d = returnDetections3d;
+    }
     if (extra != null) {
       $result.extra = extra;
     }
@@ -1165,6 +1372,7 @@ class CaptureAllFromCameraRequest extends $pb.GeneratedMessage {
     ..aOB(4, _omitFieldNames ? '' : 'returnClassifications')
     ..aOB(5, _omitFieldNames ? '' : 'returnDetections')
     ..aOB(6, _omitFieldNames ? '' : 'returnObjectPointClouds')
+    ..aOB(7, _omitFieldNames ? '' : 'returnDetections3d', protoName: 'return_detections_3d')
     ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -1250,16 +1458,26 @@ class CaptureAllFromCameraRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearReturnObjectPointClouds() => clearField(6);
 
+  /// whether or not including 3D detections in the response
+  @$pb.TagNumber(7)
+  $core.bool get returnDetections3d => $_getBF(6);
+  @$pb.TagNumber(7)
+  set returnDetections3d($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasReturnDetections3d() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReturnDetections3d() => clearField(7);
+
   @$pb.TagNumber(99)
-  $49.Struct get extra => $_getN(6);
+  $49.Struct get extra => $_getN(7);
   @$pb.TagNumber(99)
   set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(6);
+  $core.bool hasExtra() => $_has(7);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $49.Struct ensureExtra() => $_ensure(6);
+  $49.Struct ensureExtra() => $_ensure(7);
 }
 
 class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
@@ -1268,6 +1486,7 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
     $core.Iterable<Detection>? detections,
     $core.Iterable<Classification>? classifications,
     $core.Iterable<$9.PointCloudObject>? objects,
+    $core.Iterable<Detection3D>? detections3d,
     $49.Struct? extra,
   }) {
     final $result = create();
@@ -1283,6 +1502,9 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
     if (objects != null) {
       $result.objects.addAll(objects);
     }
+    if (detections3d != null) {
+      $result.detections3d.addAll(detections3d);
+    }
     if (extra != null) {
       $result.extra = extra;
     }
@@ -1297,6 +1519,7 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
     ..pc<Detection>(2, _omitFieldNames ? '' : 'detections', $pb.PbFieldType.PM, subBuilder: Detection.create)
     ..pc<Classification>(3, _omitFieldNames ? '' : 'classifications', $pb.PbFieldType.PM, subBuilder: Classification.create)
     ..pc<$9.PointCloudObject>(4, _omitFieldNames ? '' : 'objects', $pb.PbFieldType.PM, subBuilder: $9.PointCloudObject.create)
+    ..pc<Detection3D>(5, _omitFieldNames ? '' : 'detections3d', $pb.PbFieldType.PM, protoName: 'detections_3d', subBuilder: Detection3D.create)
     ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -1342,16 +1565,19 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.List<$9.PointCloudObject> get objects => $_getList(3);
 
+  @$pb.TagNumber(5)
+  $core.List<Detection3D> get detections3d => $_getList(4);
+
   @$pb.TagNumber(99)
-  $49.Struct get extra => $_getN(4);
+  $49.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
   set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(4);
+  $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $49.Struct ensureExtra() => $_ensure(4);
+  $49.Struct ensureExtra() => $_ensure(5);
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {
@@ -1360,6 +1586,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     $core.bool? detectionsSupported,
     $core.bool? objectPointCloudsSupported,
     $core.String? defaultCamera,
+    $core.bool? detections3dSupported,
   }) {
     final $result = create();
     if (classificationsSupported != null) {
@@ -1374,6 +1601,9 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     if (defaultCamera != null) {
       $result.defaultCamera = defaultCamera;
     }
+    if (detections3dSupported != null) {
+      $result.detections3dSupported = detections3dSupported;
+    }
     return $result;
   }
   GetPropertiesResponse._() : super();
@@ -1385,6 +1615,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     ..aOB(2, _omitFieldNames ? '' : 'detectionsSupported')
     ..aOB(3, _omitFieldNames ? '' : 'objectPointCloudsSupported')
     ..aOS(4, _omitFieldNames ? '' : 'defaultCamera')
+    ..aOB(5, _omitFieldNames ? '' : 'detections3dSupported', protoName: 'detections_3d_supported')
     ..hasRequiredFields = false
   ;
 
@@ -1448,6 +1679,16 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   $core.bool hasDefaultCamera() => $_has(3);
   @$pb.TagNumber(4)
   void clearDefaultCamera() => clearField(4);
+
+  /// whether or not GetDetections3D is supported by the vision service
+  @$pb.TagNumber(5)
+  $core.bool get detections3dSupported => $_getBF(4);
+  @$pb.TagNumber(5)
+  set detections3dSupported($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDetections3dSupported() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDetections3dSupported() => clearField(5);
 }
 
 

@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $9;
+import '../../../component/arm/v1/arm.pb.dart' as $16;
 import '../../../google/protobuf/struct.pb.dart' as $49;
 import '../../../google/protobuf/timestamp.pb.dart' as $50;
 import 'motion.pbenum.dart';
@@ -1837,10 +1838,14 @@ class PseudolinearConstraint extends $pb.GeneratedMessage {
 class OrientationConstraint extends $pb.GeneratedMessage {
   factory OrientationConstraint({
     $core.double? orientationToleranceDegs,
+    $core.bool? ignoreTheta,
   }) {
     final $result = create();
     if (orientationToleranceDegs != null) {
       $result.orientationToleranceDegs = orientationToleranceDegs;
+    }
+    if (ignoreTheta != null) {
+      $result.ignoreTheta = ignoreTheta;
     }
     return $result;
   }
@@ -1850,6 +1855,7 @@ class OrientationConstraint extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrientationConstraint', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..a<$core.double>(1, _omitFieldNames ? '' : 'orientationToleranceDegs', $pb.PbFieldType.OF)
+    ..aOB(2, _omitFieldNames ? '' : 'ignoreTheta')
     ..hasRequiredFields = false
   ;
 
@@ -1883,6 +1889,19 @@ class OrientationConstraint extends $pb.GeneratedMessage {
   $core.bool hasOrientationToleranceDegs() => $_has(0);
   @$pb.TagNumber(1)
   void clearOrientationToleranceDegs() => clearField(1);
+
+  /// When true, deviation is measured between orientation vectors alone, disregarding rotation about the
+  /// component's own pointing axis. Set this for payloads that are symmetric about that axis - an open
+  /// container spills when tipped, not when spun - so the tolerance does not pin a rotation that cannot
+  /// matter. Defaults to false, measuring the full orientation.
+  @$pb.TagNumber(2)
+  $core.bool get ignoreTheta => $_getBF(1);
+  @$pb.TagNumber(2)
+  set ignoreTheta($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIgnoreTheta() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIgnoreTheta() => clearField(2);
 }
 
 class CollisionSpecification_AllowedFrameCollisions extends $pb.GeneratedMessage {
@@ -2512,6 +2531,366 @@ class ComponentState extends $pb.GeneratedMessage {
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
   $9.Pose ensurePose() => $_ensure(0);
+}
+
+class TempStreamOptions extends $pb.GeneratedMessage {
+  factory TempStreamOptions({
+    $core.int? armSideTargetRunwayMs,
+    $core.int? sendToArmIntervalMs,
+    $core.int? diagnosticsWindowSecs,
+    $16.MoveOptions? moveOptions,
+  }) {
+    final $result = create();
+    if (armSideTargetRunwayMs != null) {
+      $result.armSideTargetRunwayMs = armSideTargetRunwayMs;
+    }
+    if (sendToArmIntervalMs != null) {
+      $result.sendToArmIntervalMs = sendToArmIntervalMs;
+    }
+    if (diagnosticsWindowSecs != null) {
+      $result.diagnosticsWindowSecs = diagnosticsWindowSecs;
+    }
+    if (moveOptions != null) {
+      $result.moveOptions = moveOptions;
+    }
+    return $result;
+  }
+  TempStreamOptions._() : super();
+  factory TempStreamOptions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TempStreamOptions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TempStreamOptions', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'armSideTargetRunwayMs', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'sendToArmIntervalMs', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'diagnosticsWindowSecs', $pb.PbFieldType.O3)
+    ..aOM<$16.MoveOptions>(4, _omitFieldNames ? '' : 'moveOptions', subBuilder: $16.MoveOptions.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TempStreamOptions clone() => TempStreamOptions()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TempStreamOptions copyWith(void Function(TempStreamOptions) updates) => super.copyWith((message) => updates(message as TempStreamOptions)) as TempStreamOptions;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TempStreamOptions create() => TempStreamOptions._();
+  TempStreamOptions createEmptyInstance() => create();
+  static $pb.PbList<TempStreamOptions> createRepeated() => $pb.PbList<TempStreamOptions>();
+  @$core.pragma('dart2js:noInline')
+  static TempStreamOptions getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TempStreamOptions>(create);
+  static TempStreamOptions? _defaultInstance;
+
+  /// How much trajectory the motion service tries to keep buffered on the arm's side.
+  @$pb.TagNumber(1)
+  $core.int get armSideTargetRunwayMs => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set armSideTargetRunwayMs($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasArmSideTargetRunwayMs() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArmSideTargetRunwayMs() => clearField(1);
+
+  /// How often the motion service aims to top up the arm's buffered runway.
+  @$pb.TagNumber(2)
+  $core.int get sendToArmIntervalMs => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set sendToArmIntervalMs($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSendToArmIntervalMs() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSendToArmIntervalMs() => clearField(2);
+
+  /// Size of the detailed diagnostics window.
+  @$pb.TagNumber(3)
+  $core.int get diagnosticsWindowSecs => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set diagnosticsWindowSecs($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDiagnosticsWindowSecs() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDiagnosticsWindowSecs() => clearField(3);
+
+  /// Kinematic limits for the session's trajectory.
+  @$pb.TagNumber(4)
+  $16.MoveOptions get moveOptions => $_getN(3);
+  @$pb.TagNumber(4)
+  set moveOptions($16.MoveOptions v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMoveOptions() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMoveOptions() => clearField(4);
+  @$pb.TagNumber(4)
+  $16.MoveOptions ensureMoveOptions() => $_ensure(3);
+}
+
+class TempStreamArmJointPositionsRequest_Init extends $pb.GeneratedMessage {
+  factory TempStreamArmJointPositionsRequest_Init({
+    $core.String? componentName,
+    TempStreamOptions? options,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (options != null) {
+      $result.options = options;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  TempStreamArmJointPositionsRequest_Init._() : super();
+  factory TempStreamArmJointPositionsRequest_Init.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TempStreamArmJointPositionsRequest_Init.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TempStreamArmJointPositionsRequest.Init', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'componentName')
+    ..aOM<TempStreamOptions>(2, _omitFieldNames ? '' : 'options', subBuilder: TempStreamOptions.create)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TempStreamArmJointPositionsRequest_Init clone() => TempStreamArmJointPositionsRequest_Init()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TempStreamArmJointPositionsRequest_Init copyWith(void Function(TempStreamArmJointPositionsRequest_Init) updates) => super.copyWith((message) => updates(message as TempStreamArmJointPositionsRequest_Init)) as TempStreamArmJointPositionsRequest_Init;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TempStreamArmJointPositionsRequest_Init create() => TempStreamArmJointPositionsRequest_Init._();
+  TempStreamArmJointPositionsRequest_Init createEmptyInstance() => create();
+  static $pb.PbList<TempStreamArmJointPositionsRequest_Init> createRepeated() => $pb.PbList<TempStreamArmJointPositionsRequest_Init>();
+  @$core.pragma('dart2js:noInline')
+  static TempStreamArmJointPositionsRequest_Init getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TempStreamArmJointPositionsRequest_Init>(create);
+  static TempStreamArmJointPositionsRequest_Init? _defaultInstance;
+
+  /// Name of the arm to stream joint positions to.
+  @$pb.TagNumber(1)
+  $core.String get componentName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set componentName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasComponentName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearComponentName() => clearField(1);
+
+  /// Configuration for this streaming session.
+  @$pb.TagNumber(2)
+  TempStreamOptions get options => $_getN(1);
+  @$pb.TagNumber(2)
+  set options(TempStreamOptions v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOptions() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOptions() => clearField(2);
+  @$pb.TagNumber(2)
+  TempStreamOptions ensureOptions() => $_ensure(1);
+
+  /// Additional arguments.
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(2);
+}
+
+class TempStreamArmJointPositionsRequest_Targets extends $pb.GeneratedMessage {
+  factory TempStreamArmJointPositionsRequest_Targets({
+    $core.Iterable<$16.JointPositions>? positions,
+  }) {
+    final $result = create();
+    if (positions != null) {
+      $result.positions.addAll(positions);
+    }
+    return $result;
+  }
+  TempStreamArmJointPositionsRequest_Targets._() : super();
+  factory TempStreamArmJointPositionsRequest_Targets.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TempStreamArmJointPositionsRequest_Targets.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TempStreamArmJointPositionsRequest.Targets', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..pc<$16.JointPositions>(1, _omitFieldNames ? '' : 'positions', $pb.PbFieldType.PM, subBuilder: $16.JointPositions.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TempStreamArmJointPositionsRequest_Targets clone() => TempStreamArmJointPositionsRequest_Targets()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TempStreamArmJointPositionsRequest_Targets copyWith(void Function(TempStreamArmJointPositionsRequest_Targets) updates) => super.copyWith((message) => updates(message as TempStreamArmJointPositionsRequest_Targets)) as TempStreamArmJointPositionsRequest_Targets;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TempStreamArmJointPositionsRequest_Targets create() => TempStreamArmJointPositionsRequest_Targets._();
+  TempStreamArmJointPositionsRequest_Targets createEmptyInstance() => create();
+  static $pb.PbList<TempStreamArmJointPositionsRequest_Targets> createRepeated() => $pb.PbList<TempStreamArmJointPositionsRequest_Targets>();
+  @$core.pragma('dart2js:noInline')
+  static TempStreamArmJointPositionsRequest_Targets getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TempStreamArmJointPositionsRequest_Targets>(create);
+  static TempStreamArmJointPositionsRequest_Targets? _defaultInstance;
+
+  /// Target joint positions to append to the session, in order.
+  @$pb.TagNumber(1)
+  $core.List<$16.JointPositions> get positions => $_getList(0);
+}
+
+enum TempStreamArmJointPositionsRequest_Message {
+  init, 
+  targets, 
+  notSet
+}
+
+class TempStreamArmJointPositionsRequest extends $pb.GeneratedMessage {
+  factory TempStreamArmJointPositionsRequest({
+    $core.String? name,
+    TempStreamArmJointPositionsRequest_Init? init,
+    TempStreamArmJointPositionsRequest_Targets? targets,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (init != null) {
+      $result.init = init;
+    }
+    if (targets != null) {
+      $result.targets = targets;
+    }
+    return $result;
+  }
+  TempStreamArmJointPositionsRequest._() : super();
+  factory TempStreamArmJointPositionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TempStreamArmJointPositionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, TempStreamArmJointPositionsRequest_Message> _TempStreamArmJointPositionsRequest_MessageByTag = {
+    2 : TempStreamArmJointPositionsRequest_Message.init,
+    3 : TempStreamArmJointPositionsRequest_Message.targets,
+    0 : TempStreamArmJointPositionsRequest_Message.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TempStreamArmJointPositionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..oo(0, [2, 3])
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<TempStreamArmJointPositionsRequest_Init>(2, _omitFieldNames ? '' : 'init', subBuilder: TempStreamArmJointPositionsRequest_Init.create)
+    ..aOM<TempStreamArmJointPositionsRequest_Targets>(3, _omitFieldNames ? '' : 'targets', subBuilder: TempStreamArmJointPositionsRequest_Targets.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TempStreamArmJointPositionsRequest clone() => TempStreamArmJointPositionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TempStreamArmJointPositionsRequest copyWith(void Function(TempStreamArmJointPositionsRequest) updates) => super.copyWith((message) => updates(message as TempStreamArmJointPositionsRequest)) as TempStreamArmJointPositionsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TempStreamArmJointPositionsRequest create() => TempStreamArmJointPositionsRequest._();
+  TempStreamArmJointPositionsRequest createEmptyInstance() => create();
+  static $pb.PbList<TempStreamArmJointPositionsRequest> createRepeated() => $pb.PbList<TempStreamArmJointPositionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TempStreamArmJointPositionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TempStreamArmJointPositionsRequest>(create);
+  static TempStreamArmJointPositionsRequest? _defaultInstance;
+
+  TempStreamArmJointPositionsRequest_Message whichMessage() => _TempStreamArmJointPositionsRequest_MessageByTag[$_whichOneof(0)]!;
+  void clearMessage() => clearField($_whichOneof(0));
+
+  /// Name of the motion service.
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Session initiation. Sent exactly once and must be the first message on the stream.
+  @$pb.TagNumber(2)
+  TempStreamArmJointPositionsRequest_Init get init => $_getN(1);
+  @$pb.TagNumber(2)
+  set init(TempStreamArmJointPositionsRequest_Init v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasInit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInit() => clearField(2);
+  @$pb.TagNumber(2)
+  TempStreamArmJointPositionsRequest_Init ensureInit() => $_ensure(1);
+
+  /// A batch of targets to append to the running session. Sent N times after init.
+  @$pb.TagNumber(3)
+  TempStreamArmJointPositionsRequest_Targets get targets => $_getN(2);
+  @$pb.TagNumber(3)
+  set targets(TempStreamArmJointPositionsRequest_Targets v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTargets() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargets() => clearField(3);
+  @$pb.TagNumber(3)
+  TempStreamArmJointPositionsRequest_Targets ensureTargets() => $_ensure(2);
+}
+
+class TempStreamArmJointPositionsResponse extends $pb.GeneratedMessage {
+  factory TempStreamArmJointPositionsResponse() => create();
+  TempStreamArmJointPositionsResponse._() : super();
+  factory TempStreamArmJointPositionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TempStreamArmJointPositionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TempStreamArmJointPositionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TempStreamArmJointPositionsResponse clone() => TempStreamArmJointPositionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TempStreamArmJointPositionsResponse copyWith(void Function(TempStreamArmJointPositionsResponse) updates) => super.copyWith((message) => updates(message as TempStreamArmJointPositionsResponse)) as TempStreamArmJointPositionsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TempStreamArmJointPositionsResponse create() => TempStreamArmJointPositionsResponse._();
+  TempStreamArmJointPositionsResponse createEmptyInstance() => create();
+  static $pb.PbList<TempStreamArmJointPositionsResponse> createRepeated() => $pb.PbList<TempStreamArmJointPositionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TempStreamArmJointPositionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TempStreamArmJointPositionsResponse>(create);
+  static TempStreamArmJointPositionsResponse? _defaultInstance;
 }
 
 
