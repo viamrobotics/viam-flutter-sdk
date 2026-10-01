@@ -193,6 +193,52 @@ final $typed_data.Uint8List classificationDescriptor = $convert.base64Decode(
     'Cg5DbGFzc2lmaWNhdGlvbhIdCgpjbGFzc19uYW1lGAEgASgJUgljbGFzc05hbWUSHgoKY29uZm'
     'lkZW5jZRgCIAEoAVIKY29uZmlkZW5jZQ==');
 
+@$core.Deprecated('Use getDetections3DRequestDescriptor instead')
+const GetDetections3DRequest$json = {
+  '1': 'GetDetections3DRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'camera_name', '3': 2, '4': 1, '5': 9, '10': 'cameraName'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetDetections3DRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDetections3DRequestDescriptor = $convert.base64Decode(
+    'ChZHZXREZXRlY3Rpb25zM0RSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSHwoLY2FtZXJhX2'
+    '5hbWUYAiABKAlSCmNhbWVyYU5hbWUSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYu'
+    'U3RydWN0UgVleHRyYQ==');
+
+@$core.Deprecated('Use getDetections3DResponseDescriptor instead')
+const GetDetections3DResponse$json = {
+  '1': 'GetDetections3DResponse',
+  '2': [
+    {'1': 'detections_3d', '3': 1, '4': 3, '5': 11, '6': '.viam.service.vision.v1.Detection3D', '10': 'detections3d'},
+  ],
+};
+
+/// Descriptor for `GetDetections3DResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDetections3DResponseDescriptor = $convert.base64Decode(
+    'ChdHZXREZXRlY3Rpb25zM0RSZXNwb25zZRJICg1kZXRlY3Rpb25zXzNkGAEgAygLMiMudmlhbS'
+    '5zZXJ2aWNlLnZpc2lvbi52MS5EZXRlY3Rpb24zRFIMZGV0ZWN0aW9uczNk');
+
+@$core.Deprecated('Use detection3DDescriptor instead')
+const Detection3D$json = {
+  '1': 'Detection3D',
+  '2': [
+    {'1': 'transforms', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.Transform', '10': 'transforms'},
+    {'1': 'classifications', '3': 2, '4': 3, '5': 11, '6': '.viam.service.vision.v1.Classification', '10': 'classifications'},
+    {'1': 'metadata', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'metadata'},
+  ],
+};
+
+/// Descriptor for `Detection3D`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List detection3DDescriptor = $convert.base64Decode(
+    'CgtEZXRlY3Rpb24zRBI5Cgp0cmFuc2Zvcm1zGAEgAygLMhkudmlhbS5jb21tb24udjEuVHJhbn'
+    'Nmb3JtUgp0cmFuc2Zvcm1zElAKD2NsYXNzaWZpY2F0aW9ucxgCIAMoCzImLnZpYW0uc2Vydmlj'
+    'ZS52aXNpb24udjEuQ2xhc3NpZmljYXRpb25SD2NsYXNzaWZpY2F0aW9ucxIzCghtZXRhZGF0YR'
+    'hjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSCG1ldGFkYXRh');
+
 @$core.Deprecated('Use getObjectPointCloudsRequestDescriptor instead')
 const GetObjectPointCloudsRequest$json = {
   '1': 'GetObjectPointCloudsRequest',
@@ -249,6 +295,7 @@ const CaptureAllFromCameraRequest$json = {
     {'1': 'return_classifications', '3': 4, '4': 1, '5': 8, '10': 'returnClassifications'},
     {'1': 'return_detections', '3': 5, '4': 1, '5': 8, '10': 'returnDetections'},
     {'1': 'return_object_point_clouds', '3': 6, '4': 1, '5': 8, '10': 'returnObjectPointClouds'},
+    {'1': 'return_detections_3d', '3': 7, '4': 1, '5': 8, '10': 'returnDetections3d'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
@@ -260,7 +307,8 @@ final $typed_data.Uint8List captureAllFromCameraRequestDescriptor = $convert.bas
     'bkltYWdlEjUKFnJldHVybl9jbGFzc2lmaWNhdGlvbnMYBCABKAhSFXJldHVybkNsYXNzaWZpY2'
     'F0aW9ucxIrChFyZXR1cm5fZGV0ZWN0aW9ucxgFIAEoCFIQcmV0dXJuRGV0ZWN0aW9ucxI7Chpy'
     'ZXR1cm5fb2JqZWN0X3BvaW50X2Nsb3VkcxgGIAEoCFIXcmV0dXJuT2JqZWN0UG9pbnRDbG91ZH'
-    'MSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
+    'MSMAoUcmV0dXJuX2RldGVjdGlvbnNfM2QYByABKAhSEnJldHVybkRldGVjdGlvbnMzZBItCgVl'
+    'eHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
 
 @$core.Deprecated('Use captureAllFromCameraResponseDescriptor instead')
 const CaptureAllFromCameraResponse$json = {
@@ -270,6 +318,7 @@ const CaptureAllFromCameraResponse$json = {
     {'1': 'detections', '3': 2, '4': 3, '5': 11, '6': '.viam.service.vision.v1.Detection', '10': 'detections'},
     {'1': 'classifications', '3': 3, '4': 3, '5': 11, '6': '.viam.service.vision.v1.Classification', '10': 'classifications'},
     {'1': 'objects', '3': 4, '4': 3, '5': 11, '6': '.viam.common.v1.PointCloudObject', '10': 'objects'},
+    {'1': 'detections_3d', '3': 5, '4': 3, '5': 11, '6': '.viam.service.vision.v1.Detection3D', '10': 'detections3d'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
@@ -281,8 +330,9 @@ final $typed_data.Uint8List captureAllFromCameraResponseDescriptor = $convert.ba
     'bS5zZXJ2aWNlLnZpc2lvbi52MS5EZXRlY3Rpb25SCmRldGVjdGlvbnMSUAoPY2xhc3NpZmljYX'
     'Rpb25zGAMgAygLMiYudmlhbS5zZXJ2aWNlLnZpc2lvbi52MS5DbGFzc2lmaWNhdGlvblIPY2xh'
     'c3NpZmljYXRpb25zEjoKB29iamVjdHMYBCADKAsyIC52aWFtLmNvbW1vbi52MS5Qb2ludENsb3'
-    'VkT2JqZWN0UgdvYmplY3RzEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVj'
-    'dFIFZXh0cmE=');
+    'VkT2JqZWN0UgdvYmplY3RzEkgKDWRldGVjdGlvbnNfM2QYBSADKAsyIy52aWFtLnNlcnZpY2Uu'
+    'dmlzaW9uLnYxLkRldGVjdGlvbjNEUgxkZXRlY3Rpb25zM2QSLQoFZXh0cmEYYyABKAsyFy5nb2'
+    '9nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
 
 @$core.Deprecated('Use getPropertiesResponseDescriptor instead')
 const GetPropertiesResponse$json = {
@@ -292,6 +342,7 @@ const GetPropertiesResponse$json = {
     {'1': 'detections_supported', '3': 2, '4': 1, '5': 8, '10': 'detectionsSupported'},
     {'1': 'object_point_clouds_supported', '3': 3, '4': 1, '5': 8, '10': 'objectPointCloudsSupported'},
     {'1': 'default_camera', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'defaultCamera', '17': true},
+    {'1': 'detections_3d_supported', '3': 5, '4': 1, '5': 8, '10': 'detections3dSupported'},
   ],
   '8': [
     {'1': '_default_camera'},
@@ -304,5 +355,6 @@ final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Dec
     'EoCFIYY2xhc3NpZmljYXRpb25zU3VwcG9ydGVkEjEKFGRldGVjdGlvbnNfc3VwcG9ydGVkGAIg'
     'ASgIUhNkZXRlY3Rpb25zU3VwcG9ydGVkEkEKHW9iamVjdF9wb2ludF9jbG91ZHNfc3VwcG9ydG'
     'VkGAMgASgIUhpvYmplY3RQb2ludENsb3Vkc1N1cHBvcnRlZBIqCg5kZWZhdWx0X2NhbWVyYRgE'
-    'IAEoCUgAUg1kZWZhdWx0Q2FtZXJhiAEBQhEKD19kZWZhdWx0X2NhbWVyYQ==');
+    'IAEoCUgAUg1kZWZhdWx0Q2FtZXJhiAEBEjYKF2RldGVjdGlvbnNfM2Rfc3VwcG9ydGVkGAUgAS'
+    'gIUhVkZXRlY3Rpb25zM2RTdXBwb3J0ZWRCEQoPX2RlZmF1bHRfY2FtZXJh');
 
