@@ -44,14 +44,18 @@ class MLTrainingClient {
     String datasetId,
     String modelName,
     String modelVersion,
-    String registryItemId,
-  ) async {
+    String registryItemId, {
+    String? containerId,
+  }) async {
     final request = SubmitCustomTrainingJobRequest()
       ..organizationId = orgId
       ..datasetId = datasetId
       ..modelName = modelName
       ..modelVersion = modelVersion
       ..registryItemId = registryItemId;
+    if (containerId != null) {
+      request.containerId = containerId;
+    }
     final response = await _mlTrainingClient.submitCustomTrainingJob(request);
     return response.id;
   }
@@ -119,5 +123,24 @@ class MLTrainingClient {
   Future<void> deleteCustomTrainingContainer(String id) async {
     final request = DeleteCustomTrainingContainerRequest()..id = id;
     await _mlTrainingClient.deleteCustomTrainingContainer(request);
+  }
+
+  /// Lists the containers available to the given organization: the Viam-managed catalog plus the
+  /// org's registered custom training containers.
+  ///
+  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  Future<List<Container>> listContainers(String orgId) async {
+    final request = ListContainersRequest()..organizationId = orgId;
+    final response = await _mlTrainingClient.listContainers(request);
+    return response.containers;
+  }
+
+  /// Retrieves a container by its ID.
+  ///
+  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  Future<Container> getContainer(String id) async {
+    final request = GetContainerRequest()..id = id;
+    final response = await _mlTrainingClient.getContainer(request);
+    return response.container;
   }
 }
