@@ -50,6 +50,10 @@ class MotionServiceClient extends $grpc.Client {
       '/viam.service.motion.v1.MotionService/GetPlan',
       ($39.GetPlanRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $39.GetPlanResponse.fromBuffer(value));
+  static final _$tempStreamArmJointPositions = $grpc.ClientMethod<$39.TempStreamArmJointPositionsRequest, $39.TempStreamArmJointPositionsResponse>(
+      '/viam.service.motion.v1.MotionService/TempStreamArmJointPositions',
+      ($39.TempStreamArmJointPositionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.TempStreamArmJointPositionsResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.service.motion.v1.MotionService/DoCommand',
       ($9.DoCommandRequest value) => value.writeToBuffer(),
@@ -91,6 +95,10 @@ class MotionServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$39.GetPlanResponse> getPlan($39.GetPlanRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPlan, request, options: options);
+  }
+
+  $grpc.ResponseStream<$39.TempStreamArmJointPositionsResponse> tempStreamArmJointPositions($async.Stream<$39.TempStreamArmJointPositionsRequest> request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$tempStreamArmJointPositions, request, options: options);
   }
 
   $grpc.ResponseFuture<$9.DoCommandResponse> doCommand($9.DoCommandRequest request, {$grpc.CallOptions? options}) {
@@ -156,6 +164,13 @@ abstract class MotionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $39.GetPlanRequest.fromBuffer(value),
         ($39.GetPlanResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.TempStreamArmJointPositionsRequest, $39.TempStreamArmJointPositionsResponse>(
+        'TempStreamArmJointPositions',
+        tempStreamArmJointPositions,
+        true,
+        true,
+        ($core.List<$core.int> value) => $39.TempStreamArmJointPositionsRequest.fromBuffer(value),
+        ($39.TempStreamArmJointPositionsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -215,6 +230,7 @@ abstract class MotionServiceBase extends $grpc.Service {
   $async.Future<$39.StopPlanResponse> stopPlan($grpc.ServiceCall call, $39.StopPlanRequest request);
   $async.Future<$39.ListPlanStatusesResponse> listPlanStatuses($grpc.ServiceCall call, $39.ListPlanStatusesRequest request);
   $async.Future<$39.GetPlanResponse> getPlan($grpc.ServiceCall call, $39.GetPlanRequest request);
+  $async.Stream<$39.TempStreamArmJointPositionsResponse> tempStreamArmJointPositions($grpc.ServiceCall call, $async.Stream<$39.TempStreamArmJointPositionsRequest> request);
   $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
   $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
 }
