@@ -100,6 +100,17 @@
   
 </dd>
 
+          <dt id="Detection3D">
+  <span class="name "><a href="../viam_protos.service.vision/Detection3D-class.html">Detection3D</a></span> 
+
+</dt>
+<dd>
+  Detection3D is one perceived object, described as a tree of transforms.
+transforms<code>0</code> is the root, parented to a frame the robot already knows (e.g.
+the camera). Each later transform's parent is the root or an earlier entry.
+Each physical_object is expressed relative to its own transform's origin.
+</dd>
+
           <dt id="GetClassificationsFromCameraRequest">
   <span class="name "><a href="../viam_protos.service.vision/GetClassificationsFromCameraRequest-class.html">GetClassificationsFromCameraRequest</a></span> 
 
@@ -126,6 +137,22 @@
 
           <dt id="GetClassificationsResponse">
   <span class="name "><a href="../viam_protos.service.vision/GetClassificationsResponse-class.html">GetClassificationsResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="GetDetections3DRequest">
+  <span class="name "><a href="../viam_protos.service.vision/GetDetections3DRequest-class.html">GetDetections3DRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="GetDetections3DResponse">
+  <span class="name "><a href="../viam_protos.service.vision/GetDetections3DResponse-class.html">GetDetections3DResponse</a></span> 
 
 </dt>
 <dd>
@@ -270,6 +297,18 @@
 
 </dd>
 
+          <dt id="Detection3D$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.vision/Detection3D$json-constant.html">Detection3D$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="GetClassificationsFromCameraRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.vision/GetClassificationsFromCameraRequest$json-constant.html">GetClassificationsFromCameraRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -308,6 +347,30 @@
 
           <dt id="GetClassificationsResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.vision/GetClassificationsResponse$json-constant.html">GetClassificationsResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="GetDetections3DRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.vision/GetDetections3DRequest$json-constant.html">GetDetections3DRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="GetDetections3DResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.vision/GetDetections3DResponse$json-constant.html">GetDetections3DResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -456,6 +519,18 @@
 
 </dd>
 
+          <dt id="detection3DDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.vision/detection3DDescriptor.html">detection3DDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>Detection3D</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="detectionDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.vision/detectionDescriptor.html">detectionDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -512,6 +587,30 @@
 </dt>
 <dd>
   Descriptor for <code>GetClassificationsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="getDetections3DRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.vision/getDetections3DRequestDescriptor.html">getDetections3DRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>GetDetections3DRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="getDetections3DResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.vision/getDetections3DResponseDescriptor.html">getDetections3DResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>GetDetections3DResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

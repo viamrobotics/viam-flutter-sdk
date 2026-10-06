@@ -60,6 +60,7 @@
 <li><span class="parameter" id="param-mimeTypes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">mimeTypes</span>, </span></li>
 <li><span class="parameter" id="param-frameRate"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">frameRate</span>, </span></li>
 <li><span class="parameter" id="param-extrinsicParameters"><span class="type-annotation"><a href="../../viam_protos.component.camera/ExtrinsicParameters-class.html">ExtrinsicParameters</a>?</span> <span class="parameter-name">extrinsicParameters</span>, </span></li>
+<li><span class="parameter" id="param-defaultReferenceFrame"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">defaultReferenceFrame</span>, </span></li>
 </ol>})
     </section>
     
@@ -75,6 +76,7 @@
   $core.Iterable&lt;$core.String&gt;? mimeTypes,
   $core.double? frameRate,
   ExtrinsicParameters? extrinsicParameters,
+  $core.String? defaultReferenceFrame,
 }) {
   final $result = create();
   if (supportsPcd != null) {
@@ -94,6 +96,9 @@
   }
   if (extrinsicParameters != null) {
     $result.extrinsicParameters = extrinsicParameters;
+  }
+  if (defaultReferenceFrame != null) {
+    $result.defaultReferenceFrame = defaultReferenceFrame;
   }
   return $result;
 }</code></pre>

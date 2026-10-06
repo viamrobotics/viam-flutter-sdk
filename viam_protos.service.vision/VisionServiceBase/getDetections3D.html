@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the hasOrganizationId method from the ListSupportedContainersRequest class, for the Dart programming language.">
-  <title>hasOrganizationId method - ListSupportedContainersRequest class - viam_protos.app.ml_training library - Dart API</title>
+  <meta name="description" content="API docs for the getDetections3D method from the VisionServiceBase class, for the Dart programming language.">
+  <title>getDetections3D method - VisionServiceBase class - viam_protos.service.vision library - Dart API</title>
 
 
   
@@ -25,11 +25,11 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.ml_training/">protos&#47;app&#47;ml_training.dart</a></li>
-    <li><a href="../../viam_protos.app.ml_training/ListSupportedContainersRequest-class.html">ListSupportedContainersRequest</a></li>
-    <li class="self-crumb">hasOrganizationId method</li>
+    <li><a href="../../viam_protos.service.vision/">protos&#47;service&#47;vision.dart</a></li>
+    <li><a href="../../viam_protos.service.vision/VisionServiceBase-class.html">VisionServiceBase</a></li>
+    <li class="self-crumb">getDetections3D abstract method</li>
   </ol>
-  <div class="self-name">hasOrganizationId</div>
+  <div class="self-name">getDetections3D</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,21 +46,18 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="viam_protos.app.ml_training&#47;ListSupportedContainersRequest-class-sidebar.html"
+    data-above-sidebar="viam_protos.service.vision&#47;VisionServiceBase-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">hasOrganizationId</span> method 
+<h1><span class="kind-method">getDetections3D</span> abstract method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-  <div>
-    <ol class="annotation-list">
-        <li>@<a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/TagNumber/TagNumber.html">TagNumber</a>(1)</li>
-    </ol>
-  </div>
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-<span class="name ">hasOrganizationId</span>(<wbr>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.vision/GetDetections3DResponse-class.html">GetDetections3DResponse</a></span>&gt;</span></span>
+<span class="name ">getDetections3D</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="getDetections3D-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/4.1.0/grpc/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span></li>
+<li><span class="parameter" id="getDetections3D-param-request"><span class="type-annotation"><a href="../../viam_protos.service.vision/GetDetections3DRequest-class.html">GetDetections3DRequest</a></span> <span class="parameter-name">request</span></span></li>
+</ol>)
 
       
 
@@ -71,8 +68,7 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@$pb.TagNumber(1)
-$core.bool hasOrganizationId() =&gt; $_has(0);</code></pre>
+  <pre class="language-dart"><code class="language-dart">$async.Future&lt;$45.GetDetections3DResponse&gt; getDetections3D($grpc.ServiceCall call, $45.GetDetections3DRequest request);</code></pre>
 </section>
 
 
@@ -86,12 +82,12 @@ $core.bool hasOrganizationId() =&gt; $_has(0);</code></pre>
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.ml_training/">viam_protos.app.ml_training</a></li>
-    <li><a href="../../viam_protos.app.ml_training/ListSupportedContainersRequest-class.html">ListSupportedContainersRequest</a></li>
-    <li class="self-crumb">hasOrganizationId method</li>
+    <li><a href="../../viam_protos.service.vision/">viam_protos.service.vision</a></li>
+    <li><a href="../../viam_protos.service.vision/VisionServiceBase-class.html">VisionServiceBase</a></li>
+    <li class="self-crumb">getDetections3D abstract method</li>
 </ol>
 
-    <h5>ListSupportedContainersRequest class</h5>
+    <h5>VisionServiceBase class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">

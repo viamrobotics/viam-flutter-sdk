@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="GetPropertiesResponse.new" class="callable">
-          <span class="name"><a href="../viam_protos.component.camera/GetPropertiesResponse/GetPropertiesResponse.html">GetPropertiesResponse</a></span><span class="signature">({<span class="parameter" id="param-supportsPcd"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">supportsPcd</span>, </span><span class="parameter" id="param-intrinsicParameters"><span class="type-annotation"><a href="../viam_protos.component.camera/IntrinsicParameters-class.html">IntrinsicParameters</a>?</span> <span class="parameter-name">intrinsicParameters</span>, </span><span class="parameter" id="param-distortionParameters"><span class="type-annotation"><a href="../viam_protos.component.camera/DistortionParameters-class.html">DistortionParameters</a>?</span> <span class="parameter-name">distortionParameters</span>, </span><span class="parameter" id="param-mimeTypes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">mimeTypes</span>, </span><span class="parameter" id="param-frameRate"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">frameRate</span>, </span><span class="parameter" id="param-extrinsicParameters"><span class="type-annotation"><a href="../viam_protos.component.camera/ExtrinsicParameters-class.html">ExtrinsicParameters</a>?</span> <span class="parameter-name">extrinsicParameters</span></span>})</span>
+          <span class="name"><a href="../viam_protos.component.camera/GetPropertiesResponse/GetPropertiesResponse.html">GetPropertiesResponse</a></span><span class="signature">({<span class="parameter" id="param-supportsPcd"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">supportsPcd</span>, </span><span class="parameter" id="param-intrinsicParameters"><span class="type-annotation"><a href="../viam_protos.component.camera/IntrinsicParameters-class.html">IntrinsicParameters</a>?</span> <span class="parameter-name">intrinsicParameters</span>, </span><span class="parameter" id="param-distortionParameters"><span class="type-annotation"><a href="../viam_protos.component.camera/DistortionParameters-class.html">DistortionParameters</a>?</span> <span class="parameter-name">distortionParameters</span>, </span><span class="parameter" id="param-mimeTypes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">mimeTypes</span>, </span><span class="parameter" id="param-frameRate"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">frameRate</span>, </span><span class="parameter" id="param-extrinsicParameters"><span class="type-annotation"><a href="../viam_protos.component.camera/ExtrinsicParameters-class.html">ExtrinsicParameters</a>?</span> <span class="parameter-name">extrinsicParameters</span>, </span><span class="parameter" id="param-defaultReferenceFrame"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">defaultReferenceFrame</span></span>})</span>
         </dt>
         <dd>
           
@@ -115,6 +115,19 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="defaultReferenceFrame" class="property">
+  <span class="name"><a href="../viam_protos.component.camera/GetPropertiesResponse/defaultReferenceFrame.html">defaultReferenceFrame</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  Name of the reference frame that points returned by GetPointCloud are expressed in
+An empty string means the frame is unknown; the frame is not guaranteed to exist in the frame system
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="distortionParameters" class="property">
   <span class="name"><a href="../viam_protos.component.camera/GetPropertiesResponse/distortionParameters.html">distortionParameters</a></span>
   <span class="signature">&#8596; <a href="../viam_protos.component.camera/DistortionParameters-class.html">DistortionParameters</a></span>
@@ -310,6 +323,19 @@ Initializing the parameters with 0-values is considered an error
 <dd class="inherited">
   Clears all data that was set in this message.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clearDefaultReferenceFrame" class="callable">
+  <span class="name"><a href="../viam_protos.component.camera/GetPropertiesResponse/clearDefaultReferenceFrame.html">clearDefaultReferenceFrame</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -615,6 +641,19 @@ default value if it is not set.
 <dd class="inherited">
   
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasDefaultReferenceFrame" class="callable">
+  <span class="name"><a href="../viam_protos.component.camera/GetPropertiesResponse/hasDefaultReferenceFrame.html">hasDefaultReferenceFrame</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 

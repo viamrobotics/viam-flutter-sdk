@@ -119,6 +119,20 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $11.ListSupportedContainersRequest.fromBuffer(value),
       ($11.ListSupportedContainersResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListContainersRequest, $11.ListContainersResponse&gt;(
+      &#39;ListContainers&#39;,
+      listContainers_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListContainersRequest.fromBuffer(value),
+      ($11.ListContainersResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetContainerRequest, $11.GetContainerResponse&gt;(
+      &#39;GetContainer&#39;,
+      getContainer_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetContainerRequest.fromBuffer(value),
+      ($11.GetContainerResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$11.RegisterCustomTrainingContainerRequest, $11.RegisterCustomTrainingContainerResponse&gt;(
       &#39;RegisterCustomTrainingContainer&#39;,
       registerCustomTrainingContainer_Pre,

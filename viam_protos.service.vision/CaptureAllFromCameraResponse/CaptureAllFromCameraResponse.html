@@ -58,6 +58,7 @@
 <li><span class="parameter" id="param-detections"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.vision/Detection-class.html">Detection</a></span>&gt;</span>?</span> <span class="parameter-name">detections</span>, </span></li>
 <li><span class="parameter" id="param-classifications"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.vision/Classification-class.html">Classification</a></span>&gt;</span>?</span> <span class="parameter-name">classifications</span>, </span></li>
 <li><span class="parameter" id="param-objects"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/PointCloudObject-class.html">PointCloudObject</a></span>&gt;</span>?</span> <span class="parameter-name">objects</span>, </span></li>
+<li><span class="parameter" id="param-detections3d"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.vision/Detection3D-class.html">Detection3D</a></span>&gt;</span>?</span> <span class="parameter-name">detections3d</span>, </span></li>
 <li><span class="parameter" id="param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
     </section>
@@ -72,6 +73,7 @@
   $core.Iterable&lt;Detection&gt;? detections,
   $core.Iterable&lt;Classification&gt;? classifications,
   $core.Iterable&lt;$9.PointCloudObject&gt;? objects,
+  $core.Iterable&lt;Detection3D&gt;? detections3d,
   $49.Struct? extra,
 }) {
   final $result = create();
@@ -86,6 +88,9 @@
   }
   if (objects != null) {
     $result.objects.addAll(objects);
+  }
+  if (detections3d != null) {
+    $result.detections3d.addAll(detections3d);
   }
   if (extra != null) {
     $result.extra = extra;

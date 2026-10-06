@@ -60,6 +60,7 @@
 <li><span class="parameter" id="param-returnClassifications"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">returnClassifications</span>, </span></li>
 <li><span class="parameter" id="param-returnDetections"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">returnDetections</span>, </span></li>
 <li><span class="parameter" id="param-returnObjectPointClouds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">returnObjectPointClouds</span>, </span></li>
+<li><span class="parameter" id="param-returnDetections3d"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">returnDetections3d</span>, </span></li>
 <li><span class="parameter" id="param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
     </section>
@@ -76,6 +77,7 @@
   $core.bool? returnClassifications,
   $core.bool? returnDetections,
   $core.bool? returnObjectPointClouds,
+  $core.bool? returnDetections3d,
   $49.Struct? extra,
 }) {
   final $result = create();
@@ -96,6 +98,9 @@
   }
   if (returnObjectPointClouds != null) {
     $result.returnObjectPointClouds = returnObjectPointClouds;
+  }
+  if (returnDetections3d != null) {
+    $result.returnDetections3d = returnDetections3d;
   }
   if (extra != null) {
     $result.extra = extra;

@@ -91,7 +91,7 @@ to the goal. It does not constrain the motion of components other than the <code
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="OrientationConstraint.new" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/OrientationConstraint/OrientationConstraint.html">OrientationConstraint</a></span><span class="signature">({<span class="parameter" id="param-orientationToleranceDegs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">orientationToleranceDegs</span></span>})</span>
+          <span class="name"><a href="../viam_protos.service.motion/OrientationConstraint/OrientationConstraint.html">OrientationConstraint</a></span><span class="signature">({<span class="parameter" id="param-orientationToleranceDegs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">orientationToleranceDegs</span>, </span><span class="parameter" id="param-ignoreTheta"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">ignoreTheta</span></span>})</span>
         </dt>
         <dd>
           
@@ -141,6 +141,21 @@ to protobuf fields.
 <dd class="inherited">
   Calculates a hash code based on the contents of the protobuf.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="ignoreTheta" class="property">
+  <span class="name"><a href="../viam_protos.service.motion/OrientationConstraint/ignoreTheta.html">ignoreTheta</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  When true, deviation is measured between orientation vectors alone, disregarding rotation about the
+component's own pointing axis. Set this for payloads that are symmetric about that axis - an open
+container spills when tipped, not when spun - so the tolerance does not pin a rotation that cannot
+matter. Defaults to false, measuring the full orientation.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -275,6 +290,19 @@ to protobuf fields.
 <dd class="inherited">
   Clears the contents of a given field.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clearIgnoreTheta" class="callable">
+  <span class="name"><a href="../viam_protos.service.motion/OrientationConstraint/clearIgnoreTheta.html">clearIgnoreTheta</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -489,6 +517,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether this message has a field associated with <code>tagNumber</code>.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasIgnoreTheta" class="callable">
+  <span class="name"><a href="../viam_protos.service.motion/OrientationConstraint/hasIgnoreTheta.html">hasIgnoreTheta</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
