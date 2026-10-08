@@ -34,6 +34,24 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('submitCustomTrainingJob with refreshDatasetCache', () async {
+      const expected = 'jobId';
+      when(
+        serviceClient.submitCustomTrainingJob(any),
+      ).thenAnswer((_) => MockResponseFuture.value(SubmitCustomTrainingJobResponse()..id = expected));
+      final response = await mlTrainingClient.submitCustomTrainingJob(
+        'orgId',
+        'datasetId',
+        'name',
+        'version',
+        'itemId',
+        refreshDatasetCache: true,
+      );
+      expect(response, equals(expected));
+      final captured = verify(serviceClient.submitCustomTrainingJob(captureAny)).captured.single as SubmitCustomTrainingJobRequest;
+      expect(captured.refreshDatasetCache, isTrue);
+    });
+
     test('getTrainingJob', () async {
       final expected = TrainingJobMetadata()
         ..id = 'id'

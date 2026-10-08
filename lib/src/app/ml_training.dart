@@ -35,6 +35,8 @@ class MLTrainingClient {
   }
 
   /// Submits a custom training job request.
+  /// If [refreshDatasetCache] is true, the dataset is exported fresh instead of reusing a cached export,
+  /// and the cached export is replaced with it.
   ///
   /// Returns the new job's ID.
   ///
@@ -46,13 +48,15 @@ class MLTrainingClient {
     String modelVersion,
     String registryItemId, {
     String? containerId,
+    bool refreshDatasetCache = false,
   }) async {
     final request = SubmitCustomTrainingJobRequest()
       ..organizationId = orgId
       ..datasetId = datasetId
       ..modelName = modelName
       ..modelVersion = modelVersion
-      ..registryItemId = registryItemId;
+      ..registryItemId = registryItemId
+      ..refreshDatasetCache = refreshDatasetCache;
     if (containerId != null) {
       request.containerId = containerId;
     }
