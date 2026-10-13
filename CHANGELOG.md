@@ -1,11 +1,15 @@
 # Changelog
 
-## [v0.22.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.22.0) (2026-09-21)
+## [v0.22.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.22.1) (2026-10-13)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.21.0...v0.22.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.22.0...v0.22.1)
 
 **Merged pull requests:**
 
+- \[APP-18040\] Add data manager service [\#572](https://github.com/viamrobotics/viam-flutter-sdk/pull/572) ([kevin49999](https://github.com/kevin49999))
+- Automated Protos Update: Dart wrappers [\#570](https://github.com/viamrobotics/viam-flutter-sdk/pull/570) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#569](https://github.com/viamrobotics/viam-flutter-sdk/pull/569) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.22.0 [\#568](https://github.com/viamrobotics/viam-flutter-sdk/pull/568) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add listRobotsForLocations to the app client [\#567](https://github.com/viamrobotics/viam-flutter-sdk/pull/567) ([ale7714](https://github.com/ale7714))
 - Data client binaryDataByIds use list of strings not deprecated field [\#566](https://github.com/viamrobotics/viam-flutter-sdk/pull/566) ([kevin49999](https://github.com/kevin49999))
 - Automated Protos Update: Dart wrappers [\#563](https://github.com/viamrobotics/viam-flutter-sdk/pull/563) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -246,6 +250,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.22.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.22.0) (2026-09-21)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.21.0...v0.22.0)
 
 ## [v0.21.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.21.0) (2026-09-02)
 
