@@ -435,6 +435,17 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('getRobotPartHistory with start, end, and pageLimit', () async {
+      when(serviceClient.getRobotPartHistory(any)).thenAnswer((_) => MockResponseFuture.value(GetRobotPartHistoryResponse()));
+      final start = DateTime.utc(2026, 1, 1);
+      final end = DateTime.utc(2026, 1, 2);
+      await appClient.getRobotPartHistory('id', start: start, end: end, pageLimit: 50);
+      final request = verify(serviceClient.getRobotPartHistory(captureAny)).captured.single as GetRobotPartHistoryRequest;
+      expect(request.start, equals(Timestamp.fromDateTime(start)));
+      expect(request.end, equals(Timestamp.fromDateTime(end)));
+      expect(request.pageLimit, equals(Int64(50)));
+    });
+
     test('updateRobotPart', () async {
       final expected = RobotPart()
         ..id = 'id'

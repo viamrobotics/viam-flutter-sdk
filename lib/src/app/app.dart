@@ -423,11 +423,18 @@ class AppClient {
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());
   }
 
-  /// Get a specific [RobotPart] history by ID
+  /// Get a specific [RobotPart] history by ID, newest first
+  ///
+  /// Optionally only return entries created between [start] and [end], up to [pageLimit] entries.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<List<RobotPartHistoryEntry>> getRobotPartHistory(String id) async {
-    final request = GetRobotPartHistoryRequest()..id = id;
+  Future<List<RobotPartHistoryEntry>> getRobotPartHistory(String id, {DateTime? start, DateTime? end, int? pageLimit}) async {
+    final request = GetRobotPartHistoryRequest(
+      id: id,
+      start: (start != null) ? Timestamp.fromDateTime(start) : null,
+      end: (end != null) ? Timestamp.fromDateTime(end) : null,
+      pageLimit: (pageLimit != null) ? Int64(pageLimit) : null,
+    );
     final GetRobotPartHistoryResponse response = await _client.getRobotPartHistory(request);
     return response.history;
   }
