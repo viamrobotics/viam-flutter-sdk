@@ -67,7 +67,7 @@ class RobotClient {
   late SessionsClient _sessionsClient;
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
-  StreamManager? _streamManager;
+  late final StreamManager _streamManager;
   Timer? _checkConnectionTask;
   bool _shouldAttemptReconnection = true;
 
@@ -111,31 +111,10 @@ class RobotClient {
     client._sessionsClient = SessionsClient(client._channel, options.enableSessions, url);
     client._sessionsClient.start();
     client._client = rpb.RobotServiceClient(client._channel);
-    client._attachStreamManager(client._channel);
+    client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
     await client.refresh();
     client._startCheckConnectionTask();
     return client;
-  }
-
-  /// Attaches (or retargets) the [StreamManager] when [channel] is a WebRTC
-  /// channel. Streams are a WebRTC-only feature, so a direct gRPC connection
-  /// simply leaves the manager unset rather than failing the whole connection.
-  void _attachStreamManager(ClientChannelBase channel) {
-    if (channel is! WebRtcClientChannel) return;
-    final streamManager = _streamManager;
-    if (streamManager == null) {
-      _streamManager = StreamManager(channel);
-    } else {
-      streamManager.channel = channel;
-    }
-  }
-
-  StreamManager get _requireStreamManager {
-    final streamManager = _streamManager;
-    if (streamManager == null) {
-      throw StateError('Streams are only available over a WebRTC connection; this client is connected over direct gRPC.');
-    }
-    return streamManager;
   }
 
   /// Refresh the resources of this robot
@@ -237,7 +216,7 @@ class RobotClient {
         await client.resourceNames(rpb.ResourceNamesRequest());
 
         _channel = channel;
-        _attachStreamManager(_channel);
+        _streamManager.channel = _channel as WebRtcClientChannel;
         _client = client;
         _sessionsClient = SessionsClient(_channel, _options.enableSessions, _address);
         await refresh();
@@ -273,7 +252,7 @@ class RobotClient {
       _checkConnectionTask?.cancel();
       _shouldAttemptReconnection = false;
       try {
-        await _streamManager?.closeAll();
+        await _streamManager.closeAll();
       } catch (_) {
         // Do nothing -- we don't care if this fails,
         // the server should clean up disconnected streams automatically.
@@ -292,22 +271,22 @@ class RobotClient {
 
   /// Get a WebRTC stream client with the given name.
   StreamClient getStream(String name) {
-    return _requireStreamManager.getStreamClient(name);
+    return _streamManager.getStreamClient(name);
   }
 
   /// Get the stream options for a stream with the given name.
   Future<List<Resolution>> getStreamOptions(String name) async {
-    return _requireStreamManager.getStreamOptions(name);
+    return _streamManager.getStreamOptions(name);
   }
 
   /// Set the options for a stream with the given name.
   Future<void> setStreamOptions(String name, int width, int height) {
-    return _requireStreamManager.setStreamOptions(name, width, height);
+    return _streamManager.setStreamOptions(name, width, height);
   }
 
   /// Reset the options for a stream with the given name.
   Future<void> resetStreamOptions(String name) {
-    return _requireStreamManager.resetStreamOptions(name);
+    return _streamManager.resetStreamOptions(name);
   }
 
   /// Get app-related information about the machine.
