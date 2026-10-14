@@ -17,6 +17,8 @@ class FakeArm extends Arm {
     ..y = 0
     ..z = 0;
   Map<String, dynamic>? extra;
+  bool? requestedIncludeCollisionMeshes;
+  bool? requestedIncludeVisualMeshes;
   Map<String, Mesh> arm3DModels = {};
   Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
   Map<String, Mesh> armMeshesByUrdfFilepath = {};
@@ -95,8 +97,14 @@ class FakeArm extends Arm {
   }
 
   @override
-  Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
+  Future<Kinematics> getKinematics({
+    bool includeCollisionMeshes = false,
+    bool includeVisualMeshes = false,
+    Map<String, dynamic>? extra,
+  }) async {
     this.extra = extra;
+    requestedIncludeCollisionMeshes = includeCollisionMeshes;
+    requestedIncludeVisualMeshes = includeVisualMeshes;
     return Kinematics(armKinematics.format, armKinematics.raw, meshesByUrdfFilepath: armMeshesByUrdfFilepath);
   }
 
@@ -364,11 +372,16 @@ void main() {
             ..mesh = [1, 2, 3],
         };
         arm.armMeshesByUrdfFilepath = expectedMeshes;
-        final request = GetKinematicsRequest()..name = name;
+        final request = GetKinematicsRequest()
+          ..name = name
+          ..includeCollisionMeshes = true
+          ..includeVisualMeshes = true;
         final response = await client.getKinematics(request);
         expect(response.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(response.kinematicsData, [1, 2, 3]);
         expect(response.meshesByUrdfFilepath, expectedMeshes);
+        expect(arm.requestedIncludeCollisionMeshes, true);
+        expect(arm.requestedIncludeVisualMeshes, true);
       });
 
       test('getGeometries', () async {
@@ -507,10 +520,12 @@ void main() {
           ..mesh = [1, 2, 3],
       };
       arm.armMeshesByUrdfFilepath = expectedMeshes;
-      final kinematics = await client.getKinematics();
+      final kinematics = await client.getKinematics(includeCollisionMeshes: true, includeVisualMeshes: true);
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
       expect(kinematics.meshesByUrdfFilepath, expectedMeshes);
+      expect(arm.requestedIncludeCollisionMeshes, true);
+      expect(arm.requestedIncludeVisualMeshes, true);
     });
 
     test('getGeometries', () async {

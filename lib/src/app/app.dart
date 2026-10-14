@@ -452,6 +452,15 @@ class AppClient {
     return response.part;
   }
 
+  /// Set configuration properties on a [RobotPart]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<List<ConfigPropertyChangeResult>> setConfigProperty(String robotPartId, List<ConfigPropertyChange> propertyChanges) async {
+    final request = SetConfigPropertyRequest(robotPartId: robotPartId, propertyChanges: propertyChanges);
+    final SetConfigPropertyResponse response = await _client.setConfigProperty(request);
+    return response.propertyChanges;
+  }
+
   /// Create a new [RobotPart]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
@@ -563,6 +572,31 @@ class AppClient {
   Future<void> deleteRobot(String id) async {
     final request = DeleteRobotRequest()..id = id;
     await _client.deleteRobot(request);
+  }
+
+  /// Add a [Robot] to the current user's favorite machines
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> addFavoriteMachine(String machineId) async {
+    final request = AddFavoriteMachineRequest()..machineId = machineId;
+    await _client.addFavoriteMachine(request);
+  }
+
+  /// Remove a [Robot] from the current user's favorite machines
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> removeFavoriteMachine(String machineId) async {
+    final request = RemoveFavoriteMachineRequest()..machineId = machineId;
+    await _client.removeFavoriteMachine(request);
+  }
+
+  /// List the current user's [FavoriteMachine]s
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<List<FavoriteMachine>> listFavoriteMachines() async {
+    final request = ListFavoriteMachinesRequest();
+    final ListFavoriteMachinesResponse response = await _client.listFavoriteMachines(request);
+    return response.favorites;
   }
 
   /// Get a list of [Fragment]s in an [Organization]

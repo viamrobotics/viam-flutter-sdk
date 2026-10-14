@@ -456,6 +456,19 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('setConfigProperty', () async {
+      final expected = [
+        ConfigPropertyChangeResult()
+          ..path = 'path'
+          ..success = true,
+      ];
+      when(
+        serviceClient.setConfigProperty(any),
+      ).thenAnswer((_) => MockResponseFuture.value(SetConfigPropertyResponse()..propertyChanges.addAll(expected)));
+      final response = await appClient.setConfigProperty('robotPartId', [ConfigPropertyChange()..path = 'path']);
+      expect(response, equals(expected));
+    });
+
     test('newRobotPart', () async {
       const expected = 'partId';
       when(serviceClient.newRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(NewRobotPartResponse()..partId = expected));
@@ -563,6 +576,34 @@ void main() {
       when(serviceClient.deleteRobot(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       await appClient.deleteRobot('id');
       verify(serviceClient.deleteRobot(any)).called(1);
+    });
+
+    test('addFavoriteMachine', () async {
+      final expected = AddFavoriteMachineResponse();
+      when(serviceClient.addFavoriteMachine(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.addFavoriteMachine('machineId');
+      verify(serviceClient.addFavoriteMachine(any)).called(1);
+    });
+
+    test('removeFavoriteMachine', () async {
+      final expected = RemoveFavoriteMachineResponse();
+      when(serviceClient.removeFavoriteMachine(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.removeFavoriteMachine('machineId');
+      verify(serviceClient.removeFavoriteMachine(any)).called(1);
+    });
+
+    test('listFavoriteMachines', () async {
+      final expected = [
+        FavoriteMachine()
+          ..machine = Robot()
+          ..organizationId = 'organizationId'
+          ..createdOn = Timestamp.create(),
+      ];
+      when(
+        serviceClient.listFavoriteMachines(any),
+      ).thenAnswer((_) => MockResponseFuture.value(ListFavoriteMachinesResponse()..favorites.addAll(expected)));
+      final response = await appClient.listFavoriteMachines();
+      expect(response, equals(expected));
     });
 
     test('listFragments', () async {

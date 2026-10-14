@@ -94,11 +94,12 @@ class ArmService extends ArmServiceBase {
   @override
   Future<GetKinematicsResponse> getKinematics(ServiceCall call, GetKinematicsRequest request) async {
     final arm = _armFromManager(request.name);
-    final response = await arm.getKinematics(extra: request.extra.toMap());
-    return GetKinematicsResponse()
-      ..format = response.format
-      ..kinematicsData = response.raw
-      ..meshesByUrdfFilepath.addAll(response.meshesByUrdfFilepath);
+    final response = await arm.getKinematics(
+      includeCollisionMeshes: request.includeCollisionMeshes,
+      includeVisualMeshes: request.includeVisualMeshes,
+      extra: request.extra.toMap(),
+    );
+    return response.toProto();
   }
 
   @override

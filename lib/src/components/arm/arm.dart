@@ -96,7 +96,11 @@ abstract class Arm extends Resource {
   /// ```
   ///
   /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getkinematics).
-  Future<Kinematics> getKinematics({Map<String, dynamic>? extra});
+  Future<Kinematics> getKinematics({
+    bool includeCollisionMeshes = false,
+    bool includeVisualMeshes = false,
+    Map<String, dynamic>? extra,
+  });
 
   /// Get all geometries associated with the [Arm]
   ///

@@ -15,6 +15,8 @@ class FakeGantry extends Gantry {
   List<double> mLengths;
   bool isStopped = true;
   Map<String, dynamic>? extra;
+  bool? requestedIncludeCollisionMeshes;
+  bool? requestedIncludeVisualMeshes;
   Map<String, dynamic> statusResult = {'status': 'ok'};
   Kinematics gantryKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
   List<Geometry> gantryGeometries = [
@@ -75,8 +77,14 @@ class FakeGantry extends Gantry {
   }
 
   @override
-  Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
+  Future<Kinematics> getKinematics({
+    bool includeCollisionMeshes = false,
+    bool includeVisualMeshes = false,
+    Map<String, dynamic>? extra,
+  }) async {
     this.extra = extra;
+    requestedIncludeCollisionMeshes = includeCollisionMeshes;
+    requestedIncludeVisualMeshes = includeVisualMeshes;
     return gantryKinematics;
   }
 
@@ -297,10 +305,15 @@ void main() {
 
       test('getKinematics', () async {
         final client = GantryServiceClient(channel);
-        final request = GetKinematicsRequest()..name = name;
+        final request = GetKinematicsRequest()
+          ..name = name
+          ..includeCollisionMeshes = true
+          ..includeVisualMeshes = true;
         final response = await client.getKinematics(request);
         expect(response.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(response.kinematicsData, [1, 2, 3]);
+        expect(gantry.requestedIncludeCollisionMeshes, true);
+        expect(gantry.requestedIncludeVisualMeshes, true);
       });
 
       test('getGeometries', () async {
@@ -380,9 +393,11 @@ void main() {
 
       test('getKinematics', () async {
         final client = GantryClient(name, channel);
-        final kinematics = await client.getKinematics();
+        final kinematics = await client.getKinematics(includeCollisionMeshes: true, includeVisualMeshes: true);
         expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(kinematics.raw, [1, 2, 3]);
+        expect(gantry.requestedIncludeCollisionMeshes, true);
+        expect(gantry.requestedIncludeVisualMeshes, true);
       });
 
       test('getGeometries', () async {
