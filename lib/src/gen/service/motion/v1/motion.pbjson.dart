@@ -505,17 +505,20 @@ const OrientationConstraint$json = {
   '1': 'OrientationConstraint',
   '2': [
     {'1': 'orientation_tolerance_degs', '3': 1, '4': 1, '5': 2, '9': 0, '10': 'orientationToleranceDegs', '17': true},
+    {'1': 'ignore_theta', '3': 2, '4': 1, '5': 8, '9': 1, '10': 'ignoreTheta', '17': true},
   ],
   '8': [
     {'1': '_orientation_tolerance_degs'},
+    {'1': '_ignore_theta'},
   ],
 };
 
 /// Descriptor for `OrientationConstraint`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List orientationConstraintDescriptor = $convert.base64Decode(
     'ChVPcmllbnRhdGlvbkNvbnN0cmFpbnQSQQoab3JpZW50YXRpb25fdG9sZXJhbmNlX2RlZ3MYAS'
-    'ABKAJIAFIYb3JpZW50YXRpb25Ub2xlcmFuY2VEZWdziAEBQh0KG19vcmllbnRhdGlvbl90b2xl'
-    'cmFuY2VfZGVncw==');
+    'ABKAJIAFIYb3JpZW50YXRpb25Ub2xlcmFuY2VEZWdziAEBEiYKDGlnbm9yZV90aGV0YRgCIAEo'
+    'CEgBUgtpZ25vcmVUaGV0YYgBAUIdChtfb3JpZW50YXRpb25fdG9sZXJhbmNlX2RlZ3NCDwoNX2'
+    'lnbm9yZV90aGV0YQ==');
 
 @$core.Deprecated('Use collisionSpecificationDescriptor instead')
 const CollisionSpecification$json = {
@@ -673,4 +676,88 @@ const ComponentState$json = {
 final $typed_data.Uint8List componentStateDescriptor = $convert.base64Decode(
     'Cg5Db21wb25lbnRTdGF0ZRIoCgRwb3NlGAEgASgLMhQudmlhbS5jb21tb24udjEuUG9zZVIEcG'
     '9zZQ==');
+
+@$core.Deprecated('Use tempStreamOptionsDescriptor instead')
+const TempStreamOptions$json = {
+  '1': 'TempStreamOptions',
+  '2': [
+    {'1': 'arm_side_target_runway_ms', '3': 1, '4': 1, '5': 5, '9': 0, '10': 'armSideTargetRunwayMs', '17': true},
+    {'1': 'send_to_arm_interval_ms', '3': 2, '4': 1, '5': 5, '9': 1, '10': 'sendToArmIntervalMs', '17': true},
+    {'1': 'diagnostics_window_secs', '3': 3, '4': 1, '5': 5, '9': 2, '10': 'diagnosticsWindowSecs', '17': true},
+    {'1': 'move_options', '3': 4, '4': 1, '5': 11, '6': '.viam.component.arm.v1.MoveOptions', '9': 3, '10': 'moveOptions', '17': true},
+  ],
+  '8': [
+    {'1': '_arm_side_target_runway_ms'},
+    {'1': '_send_to_arm_interval_ms'},
+    {'1': '_diagnostics_window_secs'},
+    {'1': '_move_options'},
+  ],
+};
+
+/// Descriptor for `TempStreamOptions`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tempStreamOptionsDescriptor = $convert.base64Decode(
+    'ChFUZW1wU3RyZWFtT3B0aW9ucxI9Chlhcm1fc2lkZV90YXJnZXRfcnVud2F5X21zGAEgASgFSA'
+    'BSFWFybVNpZGVUYXJnZXRSdW53YXlNc4gBARI5ChdzZW5kX3RvX2FybV9pbnRlcnZhbF9tcxgC'
+    'IAEoBUgBUhNzZW5kVG9Bcm1JbnRlcnZhbE1ziAEBEjsKF2RpYWdub3N0aWNzX3dpbmRvd19zZW'
+    'NzGAMgASgFSAJSFWRpYWdub3N0aWNzV2luZG93U2Vjc4gBARJKCgxtb3ZlX29wdGlvbnMYBCAB'
+    'KAsyIi52aWFtLmNvbXBvbmVudC5hcm0udjEuTW92ZU9wdGlvbnNIA1ILbW92ZU9wdGlvbnOIAQ'
+    'FCHAoaX2FybV9zaWRlX3RhcmdldF9ydW53YXlfbXNCGgoYX3NlbmRfdG9fYXJtX2ludGVydmFs'
+    'X21zQhoKGF9kaWFnbm9zdGljc193aW5kb3dfc2Vjc0IPCg1fbW92ZV9vcHRpb25z');
+
+@$core.Deprecated('Use tempStreamArmJointPositionsRequestDescriptor instead')
+const TempStreamArmJointPositionsRequest$json = {
+  '1': 'TempStreamArmJointPositionsRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'init', '3': 2, '4': 1, '5': 11, '6': '.viam.service.motion.v1.TempStreamArmJointPositionsRequest.Init', '9': 0, '10': 'init'},
+    {'1': 'targets', '3': 3, '4': 1, '5': 11, '6': '.viam.service.motion.v1.TempStreamArmJointPositionsRequest.Targets', '9': 0, '10': 'targets'},
+  ],
+  '3': [TempStreamArmJointPositionsRequest_Init$json, TempStreamArmJointPositionsRequest_Targets$json],
+  '8': [
+    {'1': 'message'},
+  ],
+};
+
+@$core.Deprecated('Use tempStreamArmJointPositionsRequestDescriptor instead')
+const TempStreamArmJointPositionsRequest_Init$json = {
+  '1': 'Init',
+  '2': [
+    {'1': 'component_name', '3': 1, '4': 1, '5': 9, '10': 'componentName'},
+    {'1': 'options', '3': 2, '4': 1, '5': 11, '6': '.viam.service.motion.v1.TempStreamOptions', '9': 0, '10': 'options', '17': true},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+  '8': [
+    {'1': '_options'},
+  ],
+};
+
+@$core.Deprecated('Use tempStreamArmJointPositionsRequestDescriptor instead')
+const TempStreamArmJointPositionsRequest_Targets$json = {
+  '1': 'Targets',
+  '2': [
+    {'1': 'positions', '3': 1, '4': 3, '5': 11, '6': '.viam.component.arm.v1.JointPositions', '10': 'positions'},
+  ],
+};
+
+/// Descriptor for `TempStreamArmJointPositionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tempStreamArmJointPositionsRequestDescriptor = $convert.base64Decode(
+    'CiJUZW1wU3RyZWFtQXJtSm9pbnRQb3NpdGlvbnNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbW'
+    'USVQoEaW5pdBgCIAEoCzI/LnZpYW0uc2VydmljZS5tb3Rpb24udjEuVGVtcFN0cmVhbUFybUpv'
+    'aW50UG9zaXRpb25zUmVxdWVzdC5Jbml0SABSBGluaXQSXgoHdGFyZ2V0cxgDIAEoCzJCLnZpYW'
+    '0uc2VydmljZS5tb3Rpb24udjEuVGVtcFN0cmVhbUFybUpvaW50UG9zaXRpb25zUmVxdWVzdC5U'
+    'YXJnZXRzSABSB3RhcmdldHMasgEKBEluaXQSJQoOY29tcG9uZW50X25hbWUYASABKAlSDWNvbX'
+    'BvbmVudE5hbWUSSAoHb3B0aW9ucxgCIAEoCzIpLnZpYW0uc2VydmljZS5tb3Rpb24udjEuVGVt'
+    'cFN0cmVhbU9wdGlvbnNIAFIHb3B0aW9uc4gBARItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm'
+    '90b2J1Zi5TdHJ1Y3RSBWV4dHJhQgoKCF9vcHRpb25zGk4KB1RhcmdldHMSQwoJcG9zaXRpb25z'
+    'GAEgAygLMiUudmlhbS5jb21wb25lbnQuYXJtLnYxLkpvaW50UG9zaXRpb25zUglwb3NpdGlvbn'
+    'NCCQoHbWVzc2FnZQ==');
+
+@$core.Deprecated('Use tempStreamArmJointPositionsResponseDescriptor instead')
+const TempStreamArmJointPositionsResponse$json = {
+  '1': 'TempStreamArmJointPositionsResponse',
+};
+
+/// Descriptor for `TempStreamArmJointPositionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tempStreamArmJointPositionsResponseDescriptor = $convert.base64Decode(
+    'CiNUZW1wU3RyZWFtQXJtSm9pbnRQb3NpdGlvbnNSZXNwb25zZQ==');
 

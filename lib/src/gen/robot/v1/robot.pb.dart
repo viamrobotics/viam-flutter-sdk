@@ -3443,7 +3443,7 @@ class PackageStatus extends $pb.GeneratedMessage {
   static PackageStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PackageStatus>(create);
   static PackageStatus? _defaultInstance;
 
-  /// the package name as declared in the robot config (PackageConfig.Name)
+  /// the package name as declared in the robot config (`PackageConfig.Name`)
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)

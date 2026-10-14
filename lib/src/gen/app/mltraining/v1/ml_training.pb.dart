@@ -207,6 +207,7 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     $core.String? registryItemVersion,
     $core.Map<$core.String, $core.String>? arguments,
     $core.String? containerVersion,
+    $core.String? containerId,
   }) {
     final $result = create();
     if (datasetId != null) {
@@ -233,6 +234,9 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     if (containerVersion != null) {
       $result.containerVersion = containerVersion;
     }
+    if (containerId != null) {
+      $result.containerId = containerId;
+    }
     return $result;
   }
   SubmitCustomTrainingJobRequest._() : super();
@@ -248,6 +252,7 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'registryItemVersion')
     ..m<$core.String, $core.String>(7, _omitFieldNames ? '' : 'arguments', entryClassName: 'SubmitCustomTrainingJobRequest.ArgumentsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.mltraining.v1'))
     ..aOS(8, _omitFieldNames ? '' : 'containerVersion')
+    ..aOS(9, _omitFieldNames ? '' : 'containerId')
     ..hasRequiredFields = false
   ;
 
@@ -337,6 +342,15 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
   $core.bool hasContainerVersion() => $_has(7);
   @$pb.TagNumber(8)
   void clearContainerVersion() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get containerId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set containerId($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasContainerId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearContainerId() => clearField(9);
 }
 
 class SubmitCustomTrainingJobResponse extends $pb.GeneratedMessage {
@@ -621,6 +635,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     $core.String? registryItemVersion,
     $core.Map<$core.String, $core.String>? arguments,
     $core.String? containerVersion,
+    $core.String? containerId,
   }) {
     final $result = create();
     if (status != null) {
@@ -683,6 +698,9 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     if (containerVersion != null) {
       $result.containerVersion = containerVersion;
     }
+    if (containerId != null) {
+      $result.containerId = containerId;
+    }
     return $result;
   }
   TrainingJobMetadata._() : super();
@@ -710,6 +728,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..aOS(20, _omitFieldNames ? '' : 'registryItemVersion')
     ..m<$core.String, $core.String>(21, _omitFieldNames ? '' : 'arguments', entryClassName: 'TrainingJobMetadata.ArgumentsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.mltraining.v1'))
     ..aOS(22, _omitFieldNames ? '' : 'containerVersion')
+    ..aOS(23, _omitFieldNames ? '' : 'containerId')
     ..hasRequiredFields = false
   ;
 
@@ -911,6 +930,15 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   $core.bool hasContainerVersion() => $_has(19);
   @$pb.TagNumber(22)
   void clearContainerVersion() => clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.String get containerId => $_getSZ(20);
+  @$pb.TagNumber(23)
+  set containerId($core.String v) { $_setString(20, v); }
+  @$pb.TagNumber(23)
+  $core.bool hasContainerId() => $_has(20);
+  @$pb.TagNumber(23)
+  void clearContainerId() => clearField(23);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {
@@ -1280,21 +1308,12 @@ class GetTrainingJobLogsResponse extends $pb.GeneratedMessage {
 }
 
 class ListSupportedContainersRequest extends $pb.GeneratedMessage {
-  factory ListSupportedContainersRequest({
-    $core.String? organizationId,
-  }) {
-    final $result = create();
-    if (organizationId != null) {
-      $result.organizationId = organizationId;
-    }
-    return $result;
-  }
+  factory ListSupportedContainersRequest() => create();
   ListSupportedContainersRequest._() : super();
   factory ListSupportedContainersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListSupportedContainersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupportedContainersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1318,19 +1337,6 @@ class ListSupportedContainersRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static ListSupportedContainersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupportedContainersRequest>(create);
   static ListSupportedContainersRequest? _defaultInstance;
-
-  /// Optional. Scopes the response to the containers available to this
-  /// organization: the Viam-managed catalog plus the org's registered
-  /// custom training containers. If unset, only the Viam-managed catalog
-  /// is returned.
-  @$pb.TagNumber(1)
-  $core.String get organizationId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set organizationId($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasOrganizationId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearOrganizationId() => clearField(1);
 }
 
 class ListSupportedContainersResponse extends $pb.GeneratedMessage {
@@ -1375,6 +1381,204 @@ class ListSupportedContainersResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.Map<$core.String, Container> get containerMap => $_getMap(0);
+}
+
+class ListContainersRequest extends $pb.GeneratedMessage {
+  factory ListContainersRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
+  ListContainersRequest._() : super();
+  factory ListContainersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListContainersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListContainersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListContainersRequest clone() => ListContainersRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListContainersRequest copyWith(void Function(ListContainersRequest) updates) => super.copyWith((message) => updates(message as ListContainersRequest)) as ListContainersRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListContainersRequest create() => ListContainersRequest._();
+  ListContainersRequest createEmptyInstance() => create();
+  static $pb.PbList<ListContainersRequest> createRepeated() => $pb.PbList<ListContainersRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListContainersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListContainersRequest>(create);
+  static ListContainersRequest? _defaultInstance;
+
+  /// The associated Viam organization ID.
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+}
+
+class ListContainersResponse extends $pb.GeneratedMessage {
+  factory ListContainersResponse({
+    $core.Iterable<Container>? containers,
+  }) {
+    final $result = create();
+    if (containers != null) {
+      $result.containers.addAll(containers);
+    }
+    return $result;
+  }
+  ListContainersResponse._() : super();
+  factory ListContainersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListContainersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListContainersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..pc<Container>(1, _omitFieldNames ? '' : 'containers', $pb.PbFieldType.PM, subBuilder: Container.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListContainersResponse clone() => ListContainersResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListContainersResponse copyWith(void Function(ListContainersResponse) updates) => super.copyWith((message) => updates(message as ListContainersResponse)) as ListContainersResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListContainersResponse create() => ListContainersResponse._();
+  ListContainersResponse createEmptyInstance() => create();
+  static $pb.PbList<ListContainersResponse> createRepeated() => $pb.PbList<ListContainersResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListContainersResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListContainersResponse>(create);
+  static ListContainersResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Container> get containers => $_getList(0);
+}
+
+class GetContainerRequest extends $pb.GeneratedMessage {
+  factory GetContainerRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  GetContainerRequest._() : super();
+  factory GetContainerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetContainerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetContainerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetContainerRequest clone() => GetContainerRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetContainerRequest copyWith(void Function(GetContainerRequest) updates) => super.copyWith((message) => updates(message as GetContainerRequest)) as GetContainerRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetContainerRequest create() => GetContainerRequest._();
+  GetContainerRequest createEmptyInstance() => create();
+  static $pb.PbList<GetContainerRequest> createRepeated() => $pb.PbList<GetContainerRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetContainerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetContainerRequest>(create);
+  static GetContainerRequest? _defaultInstance;
+
+  /// The ID of the container to retrieve.
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class GetContainerResponse extends $pb.GeneratedMessage {
+  factory GetContainerResponse({
+    Container? container,
+  }) {
+    final $result = create();
+    if (container != null) {
+      $result.container = container;
+    }
+    return $result;
+  }
+  GetContainerResponse._() : super();
+  factory GetContainerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetContainerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetContainerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOM<Container>(1, _omitFieldNames ? '' : 'container', subBuilder: Container.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetContainerResponse clone() => GetContainerResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetContainerResponse copyWith(void Function(GetContainerResponse) updates) => super.copyWith((message) => updates(message as GetContainerResponse)) as GetContainerResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetContainerResponse create() => GetContainerResponse._();
+  GetContainerResponse createEmptyInstance() => create();
+  static $pb.PbList<GetContainerResponse> createRepeated() => $pb.PbList<GetContainerResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetContainerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetContainerResponse>(create);
+  static GetContainerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Container get container => $_getN(0);
+  @$pb.TagNumber(1)
+  set container(Container v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasContainer() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContainer() => clearField(1);
+  @$pb.TagNumber(1)
+  Container ensureContainer() => $_ensure(0);
 }
 
 class RegisterCustomTrainingContainerRequest extends $pb.GeneratedMessage {

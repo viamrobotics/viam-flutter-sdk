@@ -38,6 +38,10 @@ class VisionServiceClient extends $grpc.Client {
       '/viam.service.vision.v1.VisionService/GetClassifications',
       ($45.GetClassificationsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $45.GetClassificationsResponse.fromBuffer(value));
+  static final _$getDetections3D = $grpc.ClientMethod<$45.GetDetections3DRequest, $45.GetDetections3DResponse>(
+      '/viam.service.vision.v1.VisionService/GetDetections3D',
+      ($45.GetDetections3DRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $45.GetDetections3DResponse.fromBuffer(value));
   static final _$getObjectPointClouds = $grpc.ClientMethod<$45.GetObjectPointCloudsRequest, $45.GetObjectPointCloudsResponse>(
       '/viam.service.vision.v1.VisionService/GetObjectPointClouds',
       ($45.GetObjectPointCloudsRequest value) => value.writeToBuffer(),
@@ -79,6 +83,10 @@ class VisionServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$45.GetClassificationsResponse> getClassifications($45.GetClassificationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getClassifications, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$45.GetDetections3DResponse> getDetections3D($45.GetDetections3DRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getDetections3D, request, options: options);
   }
 
   $grpc.ResponseFuture<$45.GetObjectPointCloudsResponse> getObjectPointClouds($45.GetObjectPointCloudsRequest request, {$grpc.CallOptions? options}) {
@@ -135,6 +143,13 @@ abstract class VisionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $45.GetClassificationsRequest.fromBuffer(value),
         ($45.GetClassificationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$45.GetDetections3DRequest, $45.GetDetections3DResponse>(
+        'GetDetections3D',
+        getDetections3D_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $45.GetDetections3DRequest.fromBuffer(value),
+        ($45.GetDetections3DResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$45.GetObjectPointCloudsRequest, $45.GetObjectPointCloudsResponse>(
         'GetObjectPointClouds',
         getObjectPointClouds_Pre,
@@ -188,6 +203,10 @@ abstract class VisionServiceBase extends $grpc.Service {
     return getClassifications(call, await request);
   }
 
+  $async.Future<$45.GetDetections3DResponse> getDetections3D_Pre($grpc.ServiceCall call, $async.Future<$45.GetDetections3DRequest> request) async {
+    return getDetections3D(call, await request);
+  }
+
   $async.Future<$45.GetObjectPointCloudsResponse> getObjectPointClouds_Pre($grpc.ServiceCall call, $async.Future<$45.GetObjectPointCloudsRequest> request) async {
     return getObjectPointClouds(call, await request);
   }
@@ -212,6 +231,7 @@ abstract class VisionServiceBase extends $grpc.Service {
   $async.Future<$45.GetDetectionsResponse> getDetections($grpc.ServiceCall call, $45.GetDetectionsRequest request);
   $async.Future<$45.GetClassificationsFromCameraResponse> getClassificationsFromCamera($grpc.ServiceCall call, $45.GetClassificationsFromCameraRequest request);
   $async.Future<$45.GetClassificationsResponse> getClassifications($grpc.ServiceCall call, $45.GetClassificationsRequest request);
+  $async.Future<$45.GetDetections3DResponse> getDetections3D($grpc.ServiceCall call, $45.GetDetections3DRequest request);
   $async.Future<$45.GetObjectPointCloudsResponse> getObjectPointClouds($grpc.ServiceCall call, $45.GetObjectPointCloudsRequest request);
   $async.Future<$45.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $45.GetPropertiesRequest request);
   $async.Future<$45.CaptureAllFromCameraResponse> captureAllFromCamera($grpc.ServiceCall call, $45.CaptureAllFromCameraRequest request);

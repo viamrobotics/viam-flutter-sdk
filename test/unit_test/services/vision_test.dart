@@ -72,6 +72,17 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('getDetections3D', () async {
+      final expected = [
+        Detection3D(transforms: [common_pb.Transform(referenceFrame: 'world')])
+      ];
+      when(
+        serviceClient.getDetections3D(any, options: anyNamed('options')),
+      ).thenAnswer((_) => MockResponseFuture.value(GetDetections3DResponse(detections3d: expected)));
+      final response = await client.detections3D('cameraName');
+      expect(response, equals(expected));
+    });
+
     test('getObjectPointClouds', () async {
       final expected = [
         common_pb.PointCloudObject(
