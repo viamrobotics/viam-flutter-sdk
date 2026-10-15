@@ -1875,6 +1875,65 @@ final $typed_data.Uint8List updateRobotPartResponseDescriptor = $convert.base64D
     'ChdVcGRhdGVSb2JvdFBhcnRSZXNwb25zZRIqCgRwYXJ0GAEgASgLMhYudmlhbS5hcHAudjEuUm'
     '9ib3RQYXJ0UgRwYXJ0');
 
+@$core.Deprecated('Use configPropertyChangeDescriptor instead')
+const ConfigPropertyChange$json = {
+  '1': 'ConfigPropertyChange',
+  '2': [
+    {'1': 'path', '3': 1, '4': 1, '5': 9, '10': 'path'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Value', '10': 'value'},
+  ],
+};
+
+/// Descriptor for `ConfigPropertyChange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List configPropertyChangeDescriptor = $convert.base64Decode(
+    'ChRDb25maWdQcm9wZXJ0eUNoYW5nZRISCgRwYXRoGAEgASgJUgRwYXRoEiwKBXZhbHVlGAIgAS'
+    'gLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZQ==');
+
+@$core.Deprecated('Use setConfigPropertyRequestDescriptor instead')
+const SetConfigPropertyRequest$json = {
+  '1': 'SetConfigPropertyRequest',
+  '2': [
+    {'1': 'robot_part_id', '3': 1, '4': 1, '5': 9, '10': 'robotPartId'},
+    {'1': 'property_changes', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.ConfigPropertyChange', '10': 'propertyChanges'},
+  ],
+};
+
+/// Descriptor for `SetConfigPropertyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setConfigPropertyRequestDescriptor = $convert.base64Decode(
+    'ChhTZXRDb25maWdQcm9wZXJ0eVJlcXVlc3QSIgoNcm9ib3RfcGFydF9pZBgBIAEoCVILcm9ib3'
+    'RQYXJ0SWQSTAoQcHJvcGVydHlfY2hhbmdlcxgCIAMoCzIhLnZpYW0uYXBwLnYxLkNvbmZpZ1By'
+    'b3BlcnR5Q2hhbmdlUg9wcm9wZXJ0eUNoYW5nZXM=');
+
+@$core.Deprecated('Use configPropertyChangeResultDescriptor instead')
+const ConfigPropertyChangeResult$json = {
+  '1': 'ConfigPropertyChangeResult',
+  '2': [
+    {'1': 'path', '3': 1, '4': 1, '5': 9, '10': 'path'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Value', '10': 'value'},
+    {'1': 'success', '3': 3, '4': 1, '5': 8, '10': 'success'},
+    {'1': 'error', '3': 4, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `ConfigPropertyChangeResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List configPropertyChangeResultDescriptor = $convert.base64Decode(
+    'ChpDb25maWdQcm9wZXJ0eUNoYW5nZVJlc3VsdBISCgRwYXRoGAEgASgJUgRwYXRoEiwKBXZhbH'
+    'VlGAIgASgLMhYuZ29vZ2xlLnByb3RvYnVmLlZhbHVlUgV2YWx1ZRIYCgdzdWNjZXNzGAMgASgI'
+    'UgdzdWNjZXNzEhQKBWVycm9yGAQgASgJUgVlcnJvcg==');
+
+@$core.Deprecated('Use setConfigPropertyResponseDescriptor instead')
+const SetConfigPropertyResponse$json = {
+  '1': 'SetConfigPropertyResponse',
+  '2': [
+    {'1': 'property_changes', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.ConfigPropertyChangeResult', '10': 'propertyChanges'},
+  ],
+};
+
+/// Descriptor for `SetConfigPropertyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setConfigPropertyResponseDescriptor = $convert.base64Decode(
+    'ChlTZXRDb25maWdQcm9wZXJ0eVJlc3BvbnNlElIKEHByb3BlcnR5X2NoYW5nZXMYASADKAsyJy'
+    '52aWFtLmFwcC52MS5Db25maWdQcm9wZXJ0eUNoYW5nZVJlc3VsdFIPcHJvcGVydHlDaGFuZ2Vz');
+
 @$core.Deprecated('Use newRobotPartRequestDescriptor instead')
 const NewRobotPartRequest$json = {
   '1': 'NewRobotPartRequest',
@@ -2030,9 +2089,11 @@ const Fragment$json = {
     {'1': 'last_updated', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'lastUpdated'},
     {'1': 'revision', '3': 14, '4': 1, '5': 9, '10': 'revision'},
     {'1': 'public_namespace', '3': 15, '4': 1, '5': 9, '9': 0, '10': 'publicNamespace', '17': true},
+    {'1': 'fragment_config_json', '3': 16, '4': 1, '5': 9, '9': 1, '10': 'fragmentConfigJson', '17': true},
   ],
   '8': [
     {'1': '_public_namespace'},
+    {'1': '_fragment_config_json'},
   ],
 };
 
@@ -2053,7 +2114,9 @@ final $typed_data.Uint8List fragmentDescriptor = $convert.base64Decode(
     'aXR5Ugp2aXNpYmlsaXR5EloKDGxhc3RfdXBkYXRlZBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
     '5UaW1lc3RhbXBCG5qEngMWYnNvbjoibGFzdF91cGRhdGVkX2F0IlILbGFzdFVwZGF0ZWQSGgoI'
     'cmV2aXNpb24YDiABKAlSCHJldmlzaW9uEi4KEHB1YmxpY19uYW1lc3BhY2UYDyABKAlIAFIPcH'
-    'VibGljTmFtZXNwYWNliAEBQhMKEV9wdWJsaWNfbmFtZXNwYWNl');
+    'VibGljTmFtZXNwYWNliAEBEjUKFGZyYWdtZW50X2NvbmZpZ19qc29uGBAgASgJSAFSEmZyYWdt'
+    'ZW50Q29uZmlnSnNvbogBAUITChFfcHVibGljX25hbWVzcGFjZUIXChVfZnJhZ21lbnRfY29uZm'
+    'lnX2pzb24=');
 
 @$core.Deprecated('Use fragmentHistoryEntryDescriptor instead')
 const FragmentHistoryEntry$json = {
@@ -2324,11 +2387,13 @@ const UpdateFragmentRequest$json = {
     {'1': 'public', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'public', '17': true},
     {'1': 'visibility', '3': 5, '4': 1, '5': 14, '6': '.viam.app.v1.FragmentVisibility', '9': 1, '10': 'visibility', '17': true},
     {'1': 'last_known_update', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 2, '10': 'lastKnownUpdate', '17': true},
+    {'1': 'fragment_config_json', '3': 7, '4': 1, '5': 9, '9': 3, '10': 'fragmentConfigJson', '17': true},
   ],
   '8': [
     {'1': '_public'},
     {'1': '_visibility'},
     {'1': '_last_known_update'},
+    {'1': '_fragment_config_json'},
   ],
 };
 
@@ -2339,7 +2404,9 @@ final $typed_data.Uint8List updateFragmentRequestDescriptor = $convert.base64Dec
     'BnB1YmxpYxgEIAEoCEgAUgZwdWJsaWOIAQESRAoKdmlzaWJpbGl0eRgFIAEoDjIfLnZpYW0uYX'
     'BwLnYxLkZyYWdtZW50VmlzaWJpbGl0eUgBUgp2aXNpYmlsaXR5iAEBEksKEWxhc3Rfa25vd25f'
     'dXBkYXRlGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgCUg9sYXN0S25vd25VcG'
-    'RhdGWIAQFCCQoHX3B1YmxpY0INCgtfdmlzaWJpbGl0eUIUChJfbGFzdF9rbm93bl91cGRhdGU=');
+    'RhdGWIAQESNQoUZnJhZ21lbnRfY29uZmlnX2pzb24YByABKAlIA1ISZnJhZ21lbnRDb25maWdK'
+    'c29uiAEBQgkKB19wdWJsaWNCDQoLX3Zpc2liaWxpdHlCFAoSX2xhc3Rfa25vd25fdXBkYXRlQh'
+    'cKFV9mcmFnbWVudF9jb25maWdfanNvbg==');
 
 @$core.Deprecated('Use updateFragmentResponseDescriptor instead')
 const UpdateFragmentResponse$json = {
@@ -2892,6 +2959,88 @@ const DeleteRobotResponse$json = {
 final $typed_data.Uint8List deleteRobotResponseDescriptor = $convert.base64Decode(
     'ChNEZWxldGVSb2JvdFJlc3BvbnNl');
 
+@$core.Deprecated('Use favoriteMachineDescriptor instead')
+const FavoriteMachine$json = {
+  '1': 'FavoriteMachine',
+  '2': [
+    {'1': 'machine', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.Robot', '10': 'machine'},
+    {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'created_on', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
+  ],
+};
+
+/// Descriptor for `FavoriteMachine`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List favoriteMachineDescriptor = $convert.base64Decode(
+    'Cg9GYXZvcml0ZU1hY2hpbmUSLAoHbWFjaGluZRgBIAEoCzISLnZpYW0uYXBwLnYxLlJvYm90Ug'
+    'dtYWNoaW5lEicKD29yZ2FuaXphdGlvbl9pZBgCIAEoCVIOb3JnYW5pemF0aW9uSWQSOQoKY3Jl'
+    'YXRlZF9vbhgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRPbg==');
+
+@$core.Deprecated('Use addFavoriteMachineRequestDescriptor instead')
+const AddFavoriteMachineRequest$json = {
+  '1': 'AddFavoriteMachineRequest',
+  '2': [
+    {'1': 'machine_id', '3': 1, '4': 1, '5': 9, '10': 'machineId'},
+  ],
+};
+
+/// Descriptor for `AddFavoriteMachineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addFavoriteMachineRequestDescriptor = $convert.base64Decode(
+    'ChlBZGRGYXZvcml0ZU1hY2hpbmVSZXF1ZXN0Eh0KCm1hY2hpbmVfaWQYASABKAlSCW1hY2hpbm'
+    'VJZA==');
+
+@$core.Deprecated('Use addFavoriteMachineResponseDescriptor instead')
+const AddFavoriteMachineResponse$json = {
+  '1': 'AddFavoriteMachineResponse',
+};
+
+/// Descriptor for `AddFavoriteMachineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addFavoriteMachineResponseDescriptor = $convert.base64Decode(
+    'ChpBZGRGYXZvcml0ZU1hY2hpbmVSZXNwb25zZQ==');
+
+@$core.Deprecated('Use removeFavoriteMachineRequestDescriptor instead')
+const RemoveFavoriteMachineRequest$json = {
+  '1': 'RemoveFavoriteMachineRequest',
+  '2': [
+    {'1': 'machine_id', '3': 1, '4': 1, '5': 9, '10': 'machineId'},
+  ],
+};
+
+/// Descriptor for `RemoveFavoriteMachineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeFavoriteMachineRequestDescriptor = $convert.base64Decode(
+    'ChxSZW1vdmVGYXZvcml0ZU1hY2hpbmVSZXF1ZXN0Eh0KCm1hY2hpbmVfaWQYASABKAlSCW1hY2'
+    'hpbmVJZA==');
+
+@$core.Deprecated('Use removeFavoriteMachineResponseDescriptor instead')
+const RemoveFavoriteMachineResponse$json = {
+  '1': 'RemoveFavoriteMachineResponse',
+};
+
+/// Descriptor for `RemoveFavoriteMachineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeFavoriteMachineResponseDescriptor = $convert.base64Decode(
+    'Ch1SZW1vdmVGYXZvcml0ZU1hY2hpbmVSZXNwb25zZQ==');
+
+@$core.Deprecated('Use listFavoriteMachinesRequestDescriptor instead')
+const ListFavoriteMachinesRequest$json = {
+  '1': 'ListFavoriteMachinesRequest',
+};
+
+/// Descriptor for `ListFavoriteMachinesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listFavoriteMachinesRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0RmF2b3JpdGVNYWNoaW5lc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listFavoriteMachinesResponseDescriptor instead')
+const ListFavoriteMachinesResponse$json = {
+  '1': 'ListFavoriteMachinesResponse',
+  '2': [
+    {'1': 'favorites', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.FavoriteMachine', '10': 'favorites'},
+  ],
+};
+
+/// Descriptor for `ListFavoriteMachinesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listFavoriteMachinesResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0RmF2b3JpdGVNYWNoaW5lc1Jlc3BvbnNlEjoKCWZhdm9yaXRlcxgBIAMoCzIcLnZpYW'
+    '0uYXBwLnYxLkZhdm9yaXRlTWFjaGluZVIJZmF2b3JpdGVz');
+
 @$core.Deprecated('Use getRobotMetadataRequestDescriptor instead')
 const GetRobotMetadataRequest$json = {
   '1': 'GetRobotMetadataRequest',
@@ -3293,6 +3442,7 @@ const MLModelMetadata$json = {
     {'1': 'model_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '10': 'modelType'},
     {'1': 'model_framework', '3': 3, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '10': 'modelFramework'},
     {'1': 'detailed_versions', '3': 4, '4': 3, '5': 11, '6': '.viam.app.v1.MLModelVersion', '10': 'detailedVersions'},
+    {'1': 'deployment_modular_resources', '3': 5, '4': 3, '5': 9, '10': 'deploymentModularResources'},
   ],
 };
 
@@ -3302,7 +3452,9 @@ final $typed_data.Uint8List mLModelMetadataDescriptor = $convert.base64Decode(
     'RlbF90eXBlGAIgASgOMiEudmlhbS5hcHAubWx0cmFpbmluZy52MS5Nb2RlbFR5cGVSCW1vZGVs'
     'VHlwZRJPCg9tb2RlbF9mcmFtZXdvcmsYAyABKA4yJi52aWFtLmFwcC5tbHRyYWluaW5nLnYxLk'
     '1vZGVsRnJhbWV3b3JrUg5tb2RlbEZyYW1ld29yaxJIChFkZXRhaWxlZF92ZXJzaW9ucxgEIAMo'
-    'CzIbLnZpYW0uYXBwLnYxLk1MTW9kZWxWZXJzaW9uUhBkZXRhaWxlZFZlcnNpb25z');
+    'CzIbLnZpYW0uYXBwLnYxLk1MTW9kZWxWZXJzaW9uUhBkZXRhaWxlZFZlcnNpb25zEkAKHGRlcG'
+    'xveW1lbnRfbW9kdWxhcl9yZXNvdXJjZXMYBSADKAlSGmRlcGxveW1lbnRNb2R1bGFyUmVzb3Vy'
+    'Y2Vz');
 
 @$core.Deprecated('Use mLTrainingVersionDescriptor instead')
 const MLTrainingVersion$json = {
@@ -3326,6 +3478,7 @@ const MLTrainingMetadata$json = {
     {'1': 'model_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '10': 'modelType'},
     {'1': 'model_framework', '3': 3, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '10': 'modelFramework'},
     {'1': 'draft', '3': 4, '4': 1, '5': 8, '10': 'draft'},
+    {'1': 'deployment_modular_resources', '3': 6, '4': 3, '5': 9, '10': 'deploymentModularResources'},
   ],
   '9': [
     {'1': 1, '2': 2},
@@ -3338,7 +3491,8 @@ final $typed_data.Uint8List mLTrainingMetadataDescriptor = $convert.base64Decode
     'RyYWluaW5nVmVyc2lvblIIdmVyc2lvbnMSQAoKbW9kZWxfdHlwZRgCIAEoDjIhLnZpYW0uYXBw'
     'Lm1sdHJhaW5pbmcudjEuTW9kZWxUeXBlUgltb2RlbFR5cGUSTwoPbW9kZWxfZnJhbWV3b3JrGA'
     'MgASgOMiYudmlhbS5hcHAubWx0cmFpbmluZy52MS5Nb2RlbEZyYW1ld29ya1IObW9kZWxGcmFt'
-    'ZXdvcmsSFAoFZHJhZnQYBCABKAhSBWRyYWZ0SgQIARAC');
+    'ZXdvcmsSFAoFZHJhZnQYBCABKAhSBWRyYWZ0EkAKHGRlcGxveW1lbnRfbW9kdWxhcl9yZXNvdX'
+    'JjZXMYBiADKAlSGmRlcGxveW1lbnRNb2R1bGFyUmVzb3VyY2VzSgQIARAC');
 
 @$core.Deprecated('Use deprecatedStatusDescriptor instead')
 const DeprecatedStatus$json = {
@@ -3861,6 +4015,7 @@ const UpdateMLModelMetadata$json = {
   '2': [
     {'1': 'model_type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '10': 'modelType'},
     {'1': 'model_framework', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '10': 'modelFramework'},
+    {'1': 'deployment_modular_resources', '3': 3, '4': 3, '5': 9, '10': 'deploymentModularResources'},
   ],
 };
 
@@ -3869,7 +4024,8 @@ final $typed_data.Uint8List updateMLModelMetadataDescriptor = $convert.base64Dec
     'ChVVcGRhdGVNTE1vZGVsTWV0YWRhdGESQAoKbW9kZWxfdHlwZRgBIAEoDjIhLnZpYW0uYXBwLm'
     '1sdHJhaW5pbmcudjEuTW9kZWxUeXBlUgltb2RlbFR5cGUSTwoPbW9kZWxfZnJhbWV3b3JrGAIg'
     'ASgOMiYudmlhbS5hcHAubWx0cmFpbmluZy52MS5Nb2RlbEZyYW1ld29ya1IObW9kZWxGcmFtZX'
-    'dvcms=');
+    'dvcmsSQAocZGVwbG95bWVudF9tb2R1bGFyX3Jlc291cmNlcxgDIAMoCVIaZGVwbG95bWVudE1v'
+    'ZHVsYXJSZXNvdXJjZXM=');
 
 @$core.Deprecated('Use updateMLTrainingMetadataDescriptor instead')
 const UpdateMLTrainingMetadata$json = {
@@ -3878,6 +4034,7 @@ const UpdateMLTrainingMetadata$json = {
     {'1': 'model_type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '10': 'modelType'},
     {'1': 'model_framework', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '10': 'modelFramework'},
     {'1': 'draft', '3': 3, '4': 1, '5': 8, '10': 'draft'},
+    {'1': 'deployment_modular_resources', '3': 4, '4': 3, '5': 9, '10': 'deploymentModularResources'},
   ],
 };
 
@@ -3886,7 +4043,8 @@ final $typed_data.Uint8List updateMLTrainingMetadataDescriptor = $convert.base64
     'ChhVcGRhdGVNTFRyYWluaW5nTWV0YWRhdGESQAoKbW9kZWxfdHlwZRgBIAEoDjIhLnZpYW0uYX'
     'BwLm1sdHJhaW5pbmcudjEuTW9kZWxUeXBlUgltb2RlbFR5cGUSTwoPbW9kZWxfZnJhbWV3b3Jr'
     'GAIgASgOMiYudmlhbS5hcHAubWx0cmFpbmluZy52MS5Nb2RlbEZyYW1ld29ya1IObW9kZWxGcm'
-    'FtZXdvcmsSFAoFZHJhZnQYAyABKAhSBWRyYWZ0');
+    'FtZXdvcmsSFAoFZHJhZnQYAyABKAhSBWRyYWZ0EkAKHGRlcGxveW1lbnRfbW9kdWxhcl9yZXNv'
+    'dXJjZXMYBCADKAlSGmRlcGxveW1lbnRNb2R1bGFyUmVzb3VyY2Vz');
 
 @$core.Deprecated('Use modelDescriptor instead')
 const Model$json = {

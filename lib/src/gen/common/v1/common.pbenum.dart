@@ -30,5 +30,24 @@ class KinematicsFileFormat extends $pb.ProtobufEnum {
   const KinematicsFileFormat._($core.int v, $core.String n) : super(v, n);
 }
 
+class JointType extends $pb.ProtobufEnum {
+  static const JointType JOINT_TYPE_UNSPECIFIED = JointType._(0, _omitEnumNames ? '' : 'JOINT_TYPE_UNSPECIFIED');
+  static const JointType JOINT_TYPE_REVOLUTE = JointType._(1, _omitEnumNames ? '' : 'JOINT_TYPE_REVOLUTE');
+  static const JointType JOINT_TYPE_PRISMATIC = JointType._(2, _omitEnumNames ? '' : 'JOINT_TYPE_PRISMATIC');
+  static const JointType JOINT_TYPE_CONTINUOUS = JointType._(3, _omitEnumNames ? '' : 'JOINT_TYPE_CONTINUOUS');
+
+  static const $core.List<JointType> values = <JointType> [
+    JOINT_TYPE_UNSPECIFIED,
+    JOINT_TYPE_REVOLUTE,
+    JOINT_TYPE_PRISMATIC,
+    JOINT_TYPE_CONTINUOUS,
+  ];
+
+  static final $core.Map<$core.int, JointType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static JointType? valueOf($core.int value) => _byValue[value];
+
+  const JointType._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

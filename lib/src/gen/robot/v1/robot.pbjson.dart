@@ -157,15 +157,25 @@ const FrameSystemConfig$json = {
   '1': 'FrameSystemConfig',
   '2': [
     {'1': 'frame', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Transform', '10': 'frame'},
-    {'1': 'kinematics', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'kinematics'},
+    {
+      '1': 'kinematics',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Struct',
+      '8': {'3': true},
+      '10': 'kinematics',
+    },
+    {'1': 'model', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.KinematicModel', '10': 'model'},
   ],
 };
 
 /// Descriptor for `FrameSystemConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List frameSystemConfigDescriptor = $convert.base64Decode(
     'ChFGcmFtZVN5c3RlbUNvbmZpZxIvCgVmcmFtZRgBIAEoCzIZLnZpYW0uY29tbW9uLnYxLlRyYW'
-    '5zZm9ybVIFZnJhbWUSNwoKa2luZW1hdGljcxgCIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1'
-    'Y3RSCmtpbmVtYXRpY3M=');
+    '5zZm9ybVIFZnJhbWUSOwoKa2luZW1hdGljcxgCIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1'
+    'Y3RCAhgBUgpraW5lbWF0aWNzEjQKBW1vZGVsGAMgASgLMh4udmlhbS5jb21tb24udjEuS2luZW'
+    '1hdGljTW9kZWxSBW1vZGVs');
 
 @$core.Deprecated('Use frameSystemConfigRequestDescriptor instead')
 const FrameSystemConfigRequest$json = {

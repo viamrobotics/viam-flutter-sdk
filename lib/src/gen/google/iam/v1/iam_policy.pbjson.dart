@@ -25,10 +25,10 @@ const SetIamPolicyRequest$json = {
 
 /// Descriptor for `SetIamPolicyRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List setIamPolicyRequestDescriptor = $convert.base64Decode(
-    'ChNTZXRJYW1Qb2xpY3lSZXF1ZXN0EiUKCHJlc291cmNlGAEgASgJQgngQQL6QQMKASpSCHJlc2'
-    '91cmNlEjIKBnBvbGljeRgCIAEoCzIVLmdvb2dsZS5pYW0udjEuUG9saWN5QgPgQQJSBnBvbGlj'
-    'eRI7Cgt1cGRhdGVfbWFzaxgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE1hc2tSCnVwZG'
-    'F0ZU1hc2s=');
+    'ChNTZXRJYW1Qb2xpY3lSZXF1ZXN0EiYKCHJlc291cmNlGAEgASgJQgriQQEC+kEDCgEqUghyZX'
+    'NvdXJjZRIzCgZwb2xpY3kYAiABKAsyFS5nb29nbGUuaWFtLnYxLlBvbGljeUIE4kEBAlIGcG9s'
+    'aWN5EjsKC3VwZGF0ZV9tYXNrGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFza1IKdX'
+    'BkYXRlTWFzaw==');
 
 @$core.Deprecated('Use getIamPolicyRequestDescriptor instead')
 const GetIamPolicyRequest$json = {
@@ -41,9 +41,9 @@ const GetIamPolicyRequest$json = {
 
 /// Descriptor for `GetIamPolicyRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getIamPolicyRequestDescriptor = $convert.base64Decode(
-    'ChNHZXRJYW1Qb2xpY3lSZXF1ZXN0EiUKCHJlc291cmNlGAEgASgJQgngQQL6QQMKASpSCHJlc2'
-    '91cmNlEjkKB29wdGlvbnMYAiABKAsyHy5nb29nbGUuaWFtLnYxLkdldFBvbGljeU9wdGlvbnNS'
-    'B29wdGlvbnM=');
+    'ChNHZXRJYW1Qb2xpY3lSZXF1ZXN0EiYKCHJlc291cmNlGAEgASgJQgriQQEC+kEDCgEqUghyZX'
+    'NvdXJjZRI5CgdvcHRpb25zGAIgASgLMh8uZ29vZ2xlLmlhbS52MS5HZXRQb2xpY3lPcHRpb25z'
+    'UgdvcHRpb25z');
 
 @$core.Deprecated('Use testIamPermissionsRequestDescriptor instead')
 const TestIamPermissionsRequest$json = {
@@ -56,8 +56,8 @@ const TestIamPermissionsRequest$json = {
 
 /// Descriptor for `TestIamPermissionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List testIamPermissionsRequestDescriptor = $convert.base64Decode(
-    'ChlUZXN0SWFtUGVybWlzc2lvbnNSZXF1ZXN0EiUKCHJlc291cmNlGAEgASgJQgngQQL6QQMKAS'
-    'pSCHJlc291cmNlEiUKC3Blcm1pc3Npb25zGAIgAygJQgPgQQJSC3Blcm1pc3Npb25z');
+    'ChlUZXN0SWFtUGVybWlzc2lvbnNSZXF1ZXN0EiYKCHJlc291cmNlGAEgASgJQgriQQEC+kEDCg'
+    'EqUghyZXNvdXJjZRImCgtwZXJtaXNzaW9ucxgCIAMoCUIE4kEBAlILcGVybWlzc2lvbnM=');
 
 @$core.Deprecated('Use testIamPermissionsResponseDescriptor instead')
 const TestIamPermissionsResponse$json = {

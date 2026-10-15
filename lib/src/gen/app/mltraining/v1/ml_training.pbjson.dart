@@ -39,6 +39,7 @@ const ModelFramework$json = {
     {'1': 'MODEL_FRAMEWORK_TENSORFLOW', '2': 2},
     {'1': 'MODEL_FRAMEWORK_PYTORCH', '2': 3},
     {'1': 'MODEL_FRAMEWORK_ONNX', '2': 4},
+    {'1': 'MODEL_FRAMEWORK_REGISTRY', '2': 5},
   ],
 };
 
@@ -46,7 +47,8 @@ const ModelFramework$json = {
 final $typed_data.Uint8List modelFrameworkDescriptor = $convert.base64Decode(
     'Cg5Nb2RlbEZyYW1ld29yaxIfChtNT0RFTF9GUkFNRVdPUktfVU5TUEVDSUZJRUQQABIaChZNT0'
     'RFTF9GUkFNRVdPUktfVEZMSVRFEAESHgoaTU9ERUxfRlJBTUVXT1JLX1RFTlNPUkZMT1cQAhIb'
-    'ChdNT0RFTF9GUkFNRVdPUktfUFlUT1JDSBADEhgKFE1PREVMX0ZSQU1FV09SS19PTk5YEAQ=');
+    'ChdNT0RFTF9GUkFNRVdPUktfUFlUT1JDSBADEhgKFE1PREVMX0ZSQU1FV09SS19PTk5YEAQSHA'
+    'oYTU9ERUxfRlJBTUVXT1JLX1JFR0lTVFJZEAU=');
 
 @$core.Deprecated('Use trainingStatusDescriptor instead')
 const TrainingStatus$json = {
@@ -265,6 +267,7 @@ const TrainingJobMetadata$json = {
     {'1': 'arguments', '3': 21, '4': 3, '5': 11, '6': '.viam.app.mltraining.v1.TrainingJobMetadata.ArgumentsEntry', '8': {}, '10': 'arguments'},
     {'1': 'container_version', '3': 22, '4': 1, '5': 9, '8': {}, '10': 'containerVersion'},
     {'1': 'container_id', '3': 23, '4': 1, '5': 9, '8': {}, '10': 'containerId'},
+    {'1': 'deployment_modular_resources', '3': 24, '4': 3, '5': 9, '8': {}, '10': 'deploymentModularResources'},
   ],
   '3': [TrainingJobMetadata_ArgumentsEntry$json],
   '9': [
@@ -322,9 +325,12 @@ final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decod
     'VudHMiIGpzb246ImFyZ3VtZW50cyJSCWFyZ3VtZW50cxJjChFjb250YWluZXJfdmVyc2lvbhgW'
     'IAEoCUI2moSeAzFic29uOiJjb250YWluZXJfdmVyc2lvbiIganNvbjoiY29udGFpbmVyX3Zlcn'
     'Npb24iUhBjb250YWluZXJWZXJzaW9uEk8KDGNvbnRhaW5lcl9pZBgXIAEoCUIsmoSeAydic29u'
-    'OiJjb250YWluZXJfaWQiIGpzb246ImNvbnRhaW5lcl9pZCJSC2NvbnRhaW5lcklkGjwKDkFyZ3'
-    'VtZW50c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAFK'
-    'BAgBEAJKBAgGEAdSB3JlcXVlc3RSCnVzZXJfZW1haWw=');
+    'OiJjb250YWluZXJfaWQiIGpzb246ImNvbnRhaW5lcl9pZCJSC2NvbnRhaW5lcklkEo4BChxkZX'
+    'Bsb3ltZW50X21vZHVsYXJfcmVzb3VyY2VzGBggAygJQkyahJ4DR2Jzb246ImRlcGxveW1lbnRf'
+    'bW9kdWxhcl9yZXNvdXJjZXMiIGpzb246ImRlcGxveW1lbnRfbW9kdWxhcl9yZXNvdXJjZXMiUh'
+    'pkZXBsb3ltZW50TW9kdWxhclJlc291cmNlcxo8Cg5Bcmd1bWVudHNFbnRyeRIQCgNrZXkYASAB'
+    'KAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBSgQIARACSgQIBhAHUgdyZXF1ZXN0Ug'
+    'p1c2VyX2VtYWls');
 
 @$core.Deprecated('Use cancelTrainingJobRequestDescriptor instead')
 const CancelTrainingJobRequest$json = {

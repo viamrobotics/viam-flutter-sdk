@@ -38,6 +38,7 @@ class ModelFramework extends $pb.ProtobufEnum {
   static const ModelFramework MODEL_FRAMEWORK_TENSORFLOW = ModelFramework._(2, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_TENSORFLOW');
   static const ModelFramework MODEL_FRAMEWORK_PYTORCH = ModelFramework._(3, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_PYTORCH');
   static const ModelFramework MODEL_FRAMEWORK_ONNX = ModelFramework._(4, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_ONNX');
+  static const ModelFramework MODEL_FRAMEWORK_REGISTRY = ModelFramework._(5, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_REGISTRY');
 
   static const $core.List<ModelFramework> values = <ModelFramework> [
     MODEL_FRAMEWORK_UNSPECIFIED,
@@ -45,6 +46,7 @@ class ModelFramework extends $pb.ProtobufEnum {
     MODEL_FRAMEWORK_TENSORFLOW,
     MODEL_FRAMEWORK_PYTORCH,
     MODEL_FRAMEWORK_ONNX,
+    MODEL_FRAMEWORK_REGISTRY,
   ];
 
   static final $core.Map<$core.int, ModelFramework> _byValue = $pb.ProtobufEnum.initByValue(values);

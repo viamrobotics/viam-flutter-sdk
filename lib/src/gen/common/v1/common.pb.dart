@@ -823,6 +823,7 @@ class Mesh extends $pb.GeneratedMessage {
   factory Mesh({
     $core.String? contentType,
     $core.List<$core.int>? mesh,
+    $core.String? originalFileSourcePathDiagnostic,
   }) {
     final $result = create();
     if (contentType != null) {
@@ -830,6 +831,9 @@ class Mesh extends $pb.GeneratedMessage {
     }
     if (mesh != null) {
       $result.mesh = mesh;
+    }
+    if (originalFileSourcePathDiagnostic != null) {
+      $result.originalFileSourcePathDiagnostic = originalFileSourcePathDiagnostic;
     }
     return $result;
   }
@@ -840,6 +844,7 @@ class Mesh extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Mesh', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'contentType')
     ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'mesh', $pb.PbFieldType.OY)
+    ..aOS(3, _omitFieldNames ? '' : 'originalFileSourcePathDiagnostic')
     ..hasRequiredFields = false
   ;
 
@@ -883,6 +888,16 @@ class Mesh extends $pb.GeneratedMessage {
   $core.bool hasMesh() => $_has(1);
   @$pb.TagNumber(2)
   void clearMesh() => clearField(2);
+
+  /// Path the mesh was loaded from, relative to the kinematics file. Informational on the wire.
+  @$pb.TagNumber(3)
+  $core.String get originalFileSourcePathDiagnostic => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set originalFileSourcePathDiagnostic($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOriginalFileSourcePathDiagnostic() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOriginalFileSourcePathDiagnostic() => clearField(3);
 }
 
 class PointCloud extends $pb.GeneratedMessage {
@@ -1299,6 +1314,142 @@ class GeoPoint extends $pb.GeneratedMessage {
   $core.bool hasLongitude() => $_has(1);
   @$pb.TagNumber(2)
   void clearLongitude() => clearField(2);
+}
+
+enum GeoPose_Orientation {
+  heading, 
+  orientationVector, 
+  notSet
+}
+
+///  GeoPose is a GPS position and orientation, optionally with altitude.
+///
+///  Orientation is expressed in the east-north-up tangent frame at location:
+///  +X east, +Y north, +Z up. Viam base axes are +X right, +Y forward, and +Z up,
+///  so the identity orientation (o_x, o_y, o_z, theta) = (0, 0, 1, 0) is level and
+///  faces north: forward is north and right is east.
+///
+///  The same rotation as an orientation vector is Viam's Tait-Bryan Euler sequence,
+///  intrinsic z-y'-x'' (yaw, then pitch, then roll), in degrees:
+///    - yaw: right-handed rotation about local up (+Z). Zero faces north. Positive
+///      yaw is counterclockwise viewed from above, so a compass heading in degrees
+///      clockwise from north is the negation of yaw.
+///    - pitch: right-handed rotation about the base's forward axis (+Y).
+///    - roll: right-handed rotation about the base's right axis (+X). With pitch 0,
+///      positive roll raises the forward axis; that angle is the elevation of
+///      forward above the local horizon.
+///
+///  Exactly one of heading or orientation_vector is set. heading is only the
+///  compass yaw of a level pose (pitch 0, roll 0). It is not added to
+///  orientation_vector.
+class GeoPose extends $pb.GeneratedMessage {
+  factory GeoPose({
+    GeoPoint? location,
+    $core.double? heading,
+    $core.double? altitude,
+    Orientation? orientationVector,
+  }) {
+    final $result = create();
+    if (location != null) {
+      $result.location = location;
+    }
+    if (heading != null) {
+      $result.heading = heading;
+    }
+    if (altitude != null) {
+      $result.altitude = altitude;
+    }
+    if (orientationVector != null) {
+      $result.orientationVector = orientationVector;
+    }
+    return $result;
+  }
+  GeoPose._() : super();
+  factory GeoPose.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GeoPose.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, GeoPose_Orientation> _GeoPose_OrientationByTag = {
+    2 : GeoPose_Orientation.heading,
+    4 : GeoPose_Orientation.orientationVector,
+    0 : GeoPose_Orientation.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GeoPose', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..oo(0, [2, 4])
+    ..aOM<GeoPoint>(1, _omitFieldNames ? '' : 'location', subBuilder: GeoPoint.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'heading', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'altitude', $pb.PbFieldType.OD)
+    ..aOM<Orientation>(4, _omitFieldNames ? '' : 'orientationVector', subBuilder: Orientation.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GeoPose clone() => GeoPose()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GeoPose copyWith(void Function(GeoPose) updates) => super.copyWith((message) => updates(message as GeoPose)) as GeoPose;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GeoPose create() => GeoPose._();
+  GeoPose createEmptyInstance() => create();
+  static $pb.PbList<GeoPose> createRepeated() => $pb.PbList<GeoPose>();
+  @$core.pragma('dart2js:noInline')
+  static GeoPose getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GeoPose>(create);
+  static GeoPose? _defaultInstance;
+
+  GeoPose_Orientation whichOrientation() => _GeoPose_OrientationByTag[$_whichOneof(0)]!;
+  void clearOrientation() => clearField($_whichOneof(0));
+
+  /// Latitude and longitude in degrees
+  @$pb.TagNumber(1)
+  GeoPoint get location => $_getN(0);
+  @$pb.TagNumber(1)
+  set location(GeoPoint v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLocation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocation() => clearField(1);
+  @$pb.TagNumber(1)
+  GeoPoint ensureLocation() => $_ensure(0);
+
+  /// Compass heading in degrees, clockwise from north. Level pose: pitch 0, roll 0.
+  @$pb.TagNumber(2)
+  $core.double get heading => $_getN(1);
+  @$pb.TagNumber(2)
+  set heading($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasHeading() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHeading() => clearField(2);
+
+  /// Optional altitude in meters
+  @$pb.TagNumber(3)
+  $core.double get altitude => $_getN(2);
+  @$pb.TagNumber(3)
+  set altitude($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAltitude() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAltitude() => clearField(3);
+
+  /// Full orientation in the east-north-up tangent frame at location.
+  /// o_x, o_y, o_z, theta in degrees, same orientation vector as Pose.
+  @$pb.TagNumber(4)
+  Orientation get orientationVector => $_getN(3);
+  @$pb.TagNumber(4)
+  set orientationVector(Orientation v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOrientationVector() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrientationVector() => clearField(4);
+  @$pb.TagNumber(4)
+  Orientation ensureOrientationVector() => $_ensure(3);
 }
 
 /// GeoGeometry contains information describing Geometry(s) that is located at a GeoPoint
@@ -1875,11 +2026,19 @@ class GetStatusResponse extends $pb.GeneratedMessage {
 class GetKinematicsRequest extends $pb.GeneratedMessage {
   factory GetKinematicsRequest({
     $core.String? name,
+    $core.bool? includeCollisionMeshes,
+    $core.bool? includeVisualMeshes,
     $49.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
+    }
+    if (includeCollisionMeshes != null) {
+      $result.includeCollisionMeshes = includeCollisionMeshes;
+    }
+    if (includeVisualMeshes != null) {
+      $result.includeVisualMeshes = includeVisualMeshes;
     }
     if (extra != null) {
       $result.extra = extra;
@@ -1892,6 +2051,8 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetKinematicsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOB(2, _omitFieldNames ? '' : 'includeCollisionMeshes')
+    ..aOB(3, _omitFieldNames ? '' : 'includeVisualMeshes')
     ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -1927,34 +2088,64 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Include collision mesh bytes in the response. Otherwise meshes carry only their path.
+  @$pb.TagNumber(2)
+  $core.bool get includeCollisionMeshes => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeCollisionMeshes($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeCollisionMeshes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeCollisionMeshes() => clearField(2);
+
+  /// Include visual mesh bytes in the response
+  @$pb.TagNumber(3)
+  $core.bool get includeVisualMeshes => $_getBF(2);
+  @$pb.TagNumber(3)
+  set includeVisualMeshes($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIncludeVisualMeshes() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIncludeVisualMeshes() => clearField(3);
+
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $49.Struct get extra => $_getN(1);
+  $49.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
   set extra($49.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(1);
+  $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $49.Struct ensureExtra() => $_ensure(1);
+  $49.Struct ensureExtra() => $_ensure(3);
 }
 
 class GetKinematicsResponse extends $pb.GeneratedMessage {
   factory GetKinematicsResponse({
+  @$core.Deprecated('This field is deprecated.')
     KinematicsFileFormat? format,
+  @$core.Deprecated('This field is deprecated.')
     $core.List<$core.int>? kinematicsData,
+  @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, Mesh>? meshesByUrdfFilepath,
+    KinematicModel? model,
   }) {
     final $result = create();
     if (format != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.format = format;
     }
     if (kinematicsData != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.kinematicsData = kinematicsData;
     }
     if (meshesByUrdfFilepath != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.meshesByUrdfFilepath.addAll(meshesByUrdfFilepath);
+    }
+    if (model != null) {
+      $result.model = model;
     }
     return $result;
   }
@@ -1966,6 +2157,7 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
     ..e<KinematicsFileFormat>(1, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: KinematicsFileFormat.KINEMATICS_FILE_FORMAT_UNSPECIFIED, valueOf: KinematicsFileFormat.valueOf, enumValues: KinematicsFileFormat.values)
     ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'kinematicsData', $pb.PbFieldType.OY)
     ..m<$core.String, Mesh>(3, _omitFieldNames ? '' : 'meshesByUrdfFilepath', entryClassName: 'GetKinematicsResponse.MeshesByUrdfFilepathEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: Mesh.create, valueDefaultOrMaker: Mesh.getDefault, packageName: const $pb.PackageName('viam.common.v1'))
+    ..aOM<KinematicModel>(4, _omitFieldNames ? '' : 'model', subBuilder: KinematicModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -1990,30 +2182,1030 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
   static GetKinematicsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetKinematicsResponse>(create);
   static GetKinematicsResponse? _defaultInstance;
 
-  /// The kinematics of the component, in either URDF format or in Viam’s kinematic parameter format (spatial vector algebra)
+  /// Deprecated: use model. The kinematics of the component, in either URDF format or in Viam’s kinematic parameter format (spatial vector algebra)
   /// https://docs.viam.com/internals/kinematic-chain-config/#kinematic-parameters
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   KinematicsFileFormat get format => $_getN(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set format(KinematicsFileFormat v) { setField(1, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasFormat() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearFormat() => clearField(1);
 
-  /// The byte contents of the file
+  /// Deprecated: use model. The byte contents of the file
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.List<$core.int> get kinematicsData => $_getN(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   set kinematicsData($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasKinematicsData() => $_has(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   void clearKinematicsData() => clearField(2);
 
-  /// Map of URDF mesh file paths to mesh data
+  /// Deprecated: use model. Map of URDF mesh file paths to mesh data
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.Map<$core.String, Mesh> get meshesByUrdfFilepath => $_getMap(2);
+
+  /// The kinematic model of the component
+  @$pb.TagNumber(4)
+  KinematicModel get model => $_getN(3);
+  @$pb.TagNumber(4)
+  set model(KinematicModel v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasModel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearModel() => clearField(4);
+  @$pb.TagNumber(4)
+  KinematicModel ensureModel() => $_ensure(3);
+}
+
+/// KinematicModel describes a component's kinematics as a tree of links and joints.
+/// Its proto JSON encoding is also the on-disk kinematics file format.
+class KinematicModel extends $pb.GeneratedMessage {
+  factory KinematicModel({
+    $core.String? name,
+    $core.Iterable<KinematicLink>? links,
+    $core.Iterable<KinematicJoint>? joints,
+    $core.Iterable<$core.String>? outputFrames,
+    KinematicProperties? properties,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (links != null) {
+      $result.links.addAll(links);
+    }
+    if (joints != null) {
+      $result.joints.addAll(joints);
+    }
+    if (outputFrames != null) {
+      $result.outputFrames.addAll(outputFrames);
+    }
+    if (properties != null) {
+      $result.properties = properties;
+    }
+    return $result;
+  }
+  KinematicModel._() : super();
+  factory KinematicModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory KinematicModel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KinematicModel', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..pc<KinematicLink>(2, _omitFieldNames ? '' : 'links', $pb.PbFieldType.PM, subBuilder: KinematicLink.create)
+    ..pc<KinematicJoint>(3, _omitFieldNames ? '' : 'joints', $pb.PbFieldType.PM, subBuilder: KinematicJoint.create)
+    ..pPS(4, _omitFieldNames ? '' : 'outputFrames')
+    ..aOM<KinematicProperties>(5, _omitFieldNames ? '' : 'properties', subBuilder: KinematicProperties.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  KinematicModel clone() => KinematicModel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  KinematicModel copyWith(void Function(KinematicModel) updates) => super.copyWith((message) => updates(message as KinematicModel)) as KinematicModel;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static KinematicModel create() => KinematicModel._();
+  KinematicModel createEmptyInstance() => create();
+  static $pb.PbList<KinematicModel> createRepeated() => $pb.PbList<KinematicModel>();
+  @$core.pragma('dart2js:noInline')
+  static KinematicModel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<KinematicModel>(create);
+  static KinematicModel? _defaultInstance;
+
+  /// Set to the resource name by the SDK when served
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<KinematicLink> get links => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<KinematicJoint> get joints => $_getList(2);
+
+  /// Frames whose poses the model reports
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get outputFrames => $_getList(3);
+
+  @$pb.TagNumber(5)
+  KinematicProperties get properties => $_getN(4);
+  @$pb.TagNumber(5)
+  set properties(KinematicProperties v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasProperties() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProperties() => clearField(5);
+  @$pb.TagNumber(5)
+  KinematicProperties ensureProperties() => $_ensure(4);
+}
+
+class KinematicLink extends $pb.GeneratedMessage {
+  factory KinematicLink({
+    $core.String? id,
+    $core.String? parent,
+    LinkPose? pose,
+    $core.Iterable<Geometry>? collision,
+    $core.Iterable<Geometry>? visual,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (parent != null) {
+      $result.parent = parent;
+    }
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    if (collision != null) {
+      $result.collision.addAll(collision);
+    }
+    if (visual != null) {
+      $result.visual.addAll(visual);
+    }
+    return $result;
+  }
+  KinematicLink._() : super();
+  factory KinematicLink.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory KinematicLink.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KinematicLink', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'parent')
+    ..aOM<LinkPose>(3, _omitFieldNames ? '' : 'pose', subBuilder: LinkPose.create)
+    ..pc<Geometry>(4, _omitFieldNames ? '' : 'collision', $pb.PbFieldType.PM, subBuilder: Geometry.create)
+    ..pc<Geometry>(5, _omitFieldNames ? '' : 'visual', $pb.PbFieldType.PM, subBuilder: Geometry.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  KinematicLink clone() => KinematicLink()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  KinematicLink copyWith(void Function(KinematicLink) updates) => super.copyWith((message) => updates(message as KinematicLink)) as KinematicLink;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static KinematicLink create() => KinematicLink._();
+  KinematicLink createEmptyInstance() => create();
+  static $pb.PbList<KinematicLink> createRepeated() => $pb.PbList<KinematicLink>();
+  @$core.pragma('dart2js:noInline')
+  static KinematicLink getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<KinematicLink>(create);
+  static KinematicLink? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  /// Parent link or joint id, empty for the root
+  @$pb.TagNumber(2)
+  $core.String get parent => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set parent($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasParent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearParent() => clearField(2);
+
+  /// Pose relative to the parent
+  @$pb.TagNumber(3)
+  LinkPose get pose => $_getN(2);
+  @$pb.TagNumber(3)
+  set pose(LinkPose v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPose() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPose() => clearField(3);
+  @$pb.TagNumber(3)
+  LinkPose ensurePose() => $_ensure(2);
+
+  /// Collision geometries, meshes must be stl or ply
+  @$pb.TagNumber(4)
+  $core.List<Geometry> get collision => $_getList(3);
+
+  /// Display geometries, not used for collision checking
+  @$pb.TagNumber(5)
+  $core.List<Geometry> get visual => $_getList(4);
+}
+
+enum LinkPose_Orientation {
+  quaternion, 
+  orientationVector, 
+  eulerAngles, 
+  axisAngles, 
+  notSet
+}
+
+/// LinkPose is a translation in mm and an orientation in degrees, identity when absent
+class LinkPose extends $pb.GeneratedMessage {
+  factory LinkPose({
+    Vector3? translation,
+    Quaternion? quaternion,
+    Orientation? orientationVector,
+    EulerAngles? eulerAngles,
+    AxisAngles? axisAngles,
+  }) {
+    final $result = create();
+    if (translation != null) {
+      $result.translation = translation;
+    }
+    if (quaternion != null) {
+      $result.quaternion = quaternion;
+    }
+    if (orientationVector != null) {
+      $result.orientationVector = orientationVector;
+    }
+    if (eulerAngles != null) {
+      $result.eulerAngles = eulerAngles;
+    }
+    if (axisAngles != null) {
+      $result.axisAngles = axisAngles;
+    }
+    return $result;
+  }
+  LinkPose._() : super();
+  factory LinkPose.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LinkPose.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, LinkPose_Orientation> _LinkPose_OrientationByTag = {
+    2 : LinkPose_Orientation.quaternion,
+    3 : LinkPose_Orientation.orientationVector,
+    4 : LinkPose_Orientation.eulerAngles,
+    5 : LinkPose_Orientation.axisAngles,
+    0 : LinkPose_Orientation.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinkPose', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..oo(0, [2, 3, 4, 5])
+    ..aOM<Vector3>(1, _omitFieldNames ? '' : 'translation', subBuilder: Vector3.create)
+    ..aOM<Quaternion>(2, _omitFieldNames ? '' : 'quaternion', subBuilder: Quaternion.create)
+    ..aOM<Orientation>(3, _omitFieldNames ? '' : 'orientationVector', subBuilder: Orientation.create)
+    ..aOM<EulerAngles>(4, _omitFieldNames ? '' : 'eulerAngles', subBuilder: EulerAngles.create)
+    ..aOM<AxisAngles>(5, _omitFieldNames ? '' : 'axisAngles', subBuilder: AxisAngles.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LinkPose clone() => LinkPose()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LinkPose copyWith(void Function(LinkPose) updates) => super.copyWith((message) => updates(message as LinkPose)) as LinkPose;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkPose create() => LinkPose._();
+  LinkPose createEmptyInstance() => create();
+  static $pb.PbList<LinkPose> createRepeated() => $pb.PbList<LinkPose>();
+  @$core.pragma('dart2js:noInline')
+  static LinkPose getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LinkPose>(create);
+  static LinkPose? _defaultInstance;
+
+  LinkPose_Orientation whichOrientation() => _LinkPose_OrientationByTag[$_whichOneof(0)]!;
+  void clearOrientation() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  Vector3 get translation => $_getN(0);
+  @$pb.TagNumber(1)
+  set translation(Vector3 v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTranslation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTranslation() => clearField(1);
+  @$pb.TagNumber(1)
+  Vector3 ensureTranslation() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  Quaternion get quaternion => $_getN(1);
+  @$pb.TagNumber(2)
+  set quaternion(Quaternion v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasQuaternion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearQuaternion() => clearField(2);
+  @$pb.TagNumber(2)
+  Quaternion ensureQuaternion() => $_ensure(1);
+
+  /// theta in degrees
+  @$pb.TagNumber(3)
+  Orientation get orientationVector => $_getN(2);
+  @$pb.TagNumber(3)
+  set orientationVector(Orientation v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOrientationVector() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrientationVector() => clearField(3);
+  @$pb.TagNumber(3)
+  Orientation ensureOrientationVector() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  EulerAngles get eulerAngles => $_getN(3);
+  @$pb.TagNumber(4)
+  set eulerAngles(EulerAngles v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEulerAngles() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEulerAngles() => clearField(4);
+  @$pb.TagNumber(4)
+  EulerAngles ensureEulerAngles() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  AxisAngles get axisAngles => $_getN(4);
+  @$pb.TagNumber(5)
+  set axisAngles(AxisAngles v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAxisAngles() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAxisAngles() => clearField(5);
+  @$pb.TagNumber(5)
+  AxisAngles ensureAxisAngles() => $_ensure(4);
+}
+
+class Quaternion extends $pb.GeneratedMessage {
+  factory Quaternion({
+    $core.double? w,
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (w != null) {
+      $result.w = w;
+    }
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
+  Quaternion._() : super();
+  factory Quaternion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Quaternion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Quaternion', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'w', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'x', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'y', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'z', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Quaternion clone() => Quaternion()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Quaternion copyWith(void Function(Quaternion) updates) => super.copyWith((message) => updates(message as Quaternion)) as Quaternion;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Quaternion create() => Quaternion._();
+  Quaternion createEmptyInstance() => create();
+  static $pb.PbList<Quaternion> createRepeated() => $pb.PbList<Quaternion>();
+  @$core.pragma('dart2js:noInline')
+  static Quaternion getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Quaternion>(create);
+  static Quaternion? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get w => $_getN(0);
+  @$pb.TagNumber(1)
+  set w($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasW() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearW() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get x => $_getN(1);
+  @$pb.TagNumber(2)
+  set x($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasX() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearX() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get y => $_getN(2);
+  @$pb.TagNumber(3)
+  set y($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasY() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearY() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get z => $_getN(3);
+  @$pb.TagNumber(4)
+  set z($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasZ() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearZ() => clearField(4);
+}
+
+/// Euler angles in degrees
+class EulerAngles extends $pb.GeneratedMessage {
+  factory EulerAngles({
+    $core.double? roll,
+    $core.double? pitch,
+    $core.double? yaw,
+  }) {
+    final $result = create();
+    if (roll != null) {
+      $result.roll = roll;
+    }
+    if (pitch != null) {
+      $result.pitch = pitch;
+    }
+    if (yaw != null) {
+      $result.yaw = yaw;
+    }
+    return $result;
+  }
+  EulerAngles._() : super();
+  factory EulerAngles.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EulerAngles.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EulerAngles', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'roll', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'pitch', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'yaw', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EulerAngles clone() => EulerAngles()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EulerAngles copyWith(void Function(EulerAngles) updates) => super.copyWith((message) => updates(message as EulerAngles)) as EulerAngles;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EulerAngles create() => EulerAngles._();
+  EulerAngles createEmptyInstance() => create();
+  static $pb.PbList<EulerAngles> createRepeated() => $pb.PbList<EulerAngles>();
+  @$core.pragma('dart2js:noInline')
+  static EulerAngles getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EulerAngles>(create);
+  static EulerAngles? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get roll => $_getN(0);
+  @$pb.TagNumber(1)
+  set roll($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRoll() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoll() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get pitch => $_getN(1);
+  @$pb.TagNumber(2)
+  set pitch($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPitch() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPitch() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get yaw => $_getN(2);
+  @$pb.TagNumber(3)
+  set yaw($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasYaw() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearYaw() => clearField(3);
+}
+
+/// Rotation axis and an angle theta in degrees
+class AxisAngles extends $pb.GeneratedMessage {
+  factory AxisAngles({
+    $core.double? rx,
+    $core.double? ry,
+    $core.double? rz,
+    $core.double? theta,
+  }) {
+    final $result = create();
+    if (rx != null) {
+      $result.rx = rx;
+    }
+    if (ry != null) {
+      $result.ry = ry;
+    }
+    if (rz != null) {
+      $result.rz = rz;
+    }
+    if (theta != null) {
+      $result.theta = theta;
+    }
+    return $result;
+  }
+  AxisAngles._() : super();
+  factory AxisAngles.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AxisAngles.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AxisAngles', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'rx', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'ry', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'rz', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'theta', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AxisAngles clone() => AxisAngles()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AxisAngles copyWith(void Function(AxisAngles) updates) => super.copyWith((message) => updates(message as AxisAngles)) as AxisAngles;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AxisAngles create() => AxisAngles._();
+  AxisAngles createEmptyInstance() => create();
+  static $pb.PbList<AxisAngles> createRepeated() => $pb.PbList<AxisAngles>();
+  @$core.pragma('dart2js:noInline')
+  static AxisAngles getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AxisAngles>(create);
+  static AxisAngles? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get rx => $_getN(0);
+  @$pb.TagNumber(1)
+  set rx($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRx() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRx() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get ry => $_getN(1);
+  @$pb.TagNumber(2)
+  set ry($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRy() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRy() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get rz => $_getN(2);
+  @$pb.TagNumber(3)
+  set rz($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRz() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRz() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get theta => $_getN(3);
+  @$pb.TagNumber(4)
+  set theta($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTheta() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTheta() => clearField(4);
+}
+
+class KinematicJoint extends $pb.GeneratedMessage {
+  factory KinematicJoint({
+    $core.String? id,
+    $core.String? parent,
+    JointType? type,
+    Vector3? axis,
+    JointLimits? limits,
+    MimicJoint? mimic,
+    Geometry? geometry,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (parent != null) {
+      $result.parent = parent;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (axis != null) {
+      $result.axis = axis;
+    }
+    if (limits != null) {
+      $result.limits = limits;
+    }
+    if (mimic != null) {
+      $result.mimic = mimic;
+    }
+    if (geometry != null) {
+      $result.geometry = geometry;
+    }
+    return $result;
+  }
+  KinematicJoint._() : super();
+  factory KinematicJoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory KinematicJoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KinematicJoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'parent')
+    ..e<JointType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: JointType.JOINT_TYPE_UNSPECIFIED, valueOf: JointType.valueOf, enumValues: JointType.values)
+    ..aOM<Vector3>(4, _omitFieldNames ? '' : 'axis', subBuilder: Vector3.create)
+    ..aOM<JointLimits>(5, _omitFieldNames ? '' : 'limits', subBuilder: JointLimits.create)
+    ..aOM<MimicJoint>(6, _omitFieldNames ? '' : 'mimic', subBuilder: MimicJoint.create)
+    ..aOM<Geometry>(7, _omitFieldNames ? '' : 'geometry', subBuilder: Geometry.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  KinematicJoint clone() => KinematicJoint()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  KinematicJoint copyWith(void Function(KinematicJoint) updates) => super.copyWith((message) => updates(message as KinematicJoint)) as KinematicJoint;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static KinematicJoint create() => KinematicJoint._();
+  KinematicJoint createEmptyInstance() => create();
+  static $pb.PbList<KinematicJoint> createRepeated() => $pb.PbList<KinematicJoint>();
+  @$core.pragma('dart2js:noInline')
+  static KinematicJoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<KinematicJoint>(create);
+  static KinematicJoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  /// Parent link id
+  @$pb.TagNumber(2)
+  $core.String get parent => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set parent($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasParent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearParent() => clearField(2);
+
+  @$pb.TagNumber(3)
+  JointType get type => $_getN(2);
+  @$pb.TagNumber(3)
+  set type(JointType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  Vector3 get axis => $_getN(3);
+  @$pb.TagNumber(4)
+  set axis(Vector3 v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAxis() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAxis() => clearField(4);
+  @$pb.TagNumber(4)
+  Vector3 ensureAxis() => $_ensure(3);
+
+  /// Effective limits the component serves
+  @$pb.TagNumber(5)
+  JointLimits get limits => $_getN(4);
+  @$pb.TagNumber(5)
+  set limits(JointLimits v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLimits() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLimits() => clearField(5);
+  @$pb.TagNumber(5)
+  JointLimits ensureLimits() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  MimicJoint get mimic => $_getN(5);
+  @$pb.TagNumber(6)
+  set mimic(MimicJoint v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMimic() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMimic() => clearField(6);
+  @$pb.TagNumber(6)
+  MimicJoint ensureMimic() => $_ensure(5);
+
+  /// Only meaningful for prismatic joints
+  @$pb.TagNumber(7)
+  Geometry get geometry => $_getN(6);
+  @$pb.TagNumber(7)
+  set geometry(Geometry v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasGeometry() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGeometry() => clearField(7);
+  @$pb.TagNumber(7)
+  Geometry ensureGeometry() => $_ensure(6);
+}
+
+/// Degrees, deg/s and deg/s^2 for revolute joints, mm, mm/s and mm/s^2 for prismatic. Absent means unbounded.
+class JointLimits extends $pb.GeneratedMessage {
+  factory JointLimits({
+    $core.double? min,
+    $core.double? max,
+    $core.double? maxVelocity,
+    $core.double? maxAcceleration,
+  }) {
+    final $result = create();
+    if (min != null) {
+      $result.min = min;
+    }
+    if (max != null) {
+      $result.max = max;
+    }
+    if (maxVelocity != null) {
+      $result.maxVelocity = maxVelocity;
+    }
+    if (maxAcceleration != null) {
+      $result.maxAcceleration = maxAcceleration;
+    }
+    return $result;
+  }
+  JointLimits._() : super();
+  factory JointLimits.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JointLimits.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointLimits', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'min', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'max', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'maxVelocity', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'maxAcceleration', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JointLimits clone() => JointLimits()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JointLimits copyWith(void Function(JointLimits) updates) => super.copyWith((message) => updates(message as JointLimits)) as JointLimits;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JointLimits create() => JointLimits._();
+  JointLimits createEmptyInstance() => create();
+  static $pb.PbList<JointLimits> createRepeated() => $pb.PbList<JointLimits>();
+  @$core.pragma('dart2js:noInline')
+  static JointLimits getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointLimits>(create);
+  static JointLimits? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get min => $_getN(0);
+  @$pb.TagNumber(1)
+  set min($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMin() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMin() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get max => $_getN(1);
+  @$pb.TagNumber(2)
+  set max($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMax() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMax() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get maxVelocity => $_getN(2);
+  @$pb.TagNumber(3)
+  set maxVelocity($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMaxVelocity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaxVelocity() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get maxAcceleration => $_getN(3);
+  @$pb.TagNumber(4)
+  set maxAcceleration($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMaxAcceleration() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMaxAcceleration() => clearField(4);
+}
+
+/// Position is multiplier * position of joint + offset
+class MimicJoint extends $pb.GeneratedMessage {
+  factory MimicJoint({
+    $core.String? joint,
+    $core.double? multiplier,
+    $core.double? offset,
+  }) {
+    final $result = create();
+    if (joint != null) {
+      $result.joint = joint;
+    }
+    if (multiplier != null) {
+      $result.multiplier = multiplier;
+    }
+    if (offset != null) {
+      $result.offset = offset;
+    }
+    return $result;
+  }
+  MimicJoint._() : super();
+  factory MimicJoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MimicJoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MimicJoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'joint')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'multiplier', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'offset', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MimicJoint clone() => MimicJoint()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MimicJoint copyWith(void Function(MimicJoint) updates) => super.copyWith((message) => updates(message as MimicJoint)) as MimicJoint;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MimicJoint create() => MimicJoint._();
+  MimicJoint createEmptyInstance() => create();
+  static $pb.PbList<MimicJoint> createRepeated() => $pb.PbList<MimicJoint>();
+  @$core.pragma('dart2js:noInline')
+  static MimicJoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MimicJoint>(create);
+  static MimicJoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get joint => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set joint($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasJoint() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJoint() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get multiplier => $_getN(1);
+  @$pb.TagNumber(2)
+  set multiplier($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMultiplier() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMultiplier() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get offset => $_getN(2);
+  @$pb.TagNumber(3)
+  set offset($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOffset() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOffset() => clearField(3);
+}
+
+/// Properties of the component as a whole
+class KinematicProperties extends $pb.GeneratedMessage {
+  factory KinematicProperties({
+    $core.double? operatingFreqHz,
+    $core.double? maxLinearTcpSpeedMmPerSec,
+  }) {
+    final $result = create();
+    if (operatingFreqHz != null) {
+      $result.operatingFreqHz = operatingFreqHz;
+    }
+    if (maxLinearTcpSpeedMmPerSec != null) {
+      $result.maxLinearTcpSpeedMmPerSec = maxLinearTcpSpeedMmPerSec;
+    }
+    return $result;
+  }
+  KinematicProperties._() : super();
+  factory KinematicProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory KinematicProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KinematicProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'operatingFreqHz', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'maxLinearTcpSpeedMmPerSec', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  KinematicProperties clone() => KinematicProperties()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  KinematicProperties copyWith(void Function(KinematicProperties) updates) => super.copyWith((message) => updates(message as KinematicProperties)) as KinematicProperties;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static KinematicProperties create() => KinematicProperties._();
+  KinematicProperties createEmptyInstance() => create();
+  static $pb.PbList<KinematicProperties> createRepeated() => $pb.PbList<KinematicProperties>();
+  @$core.pragma('dart2js:noInline')
+  static KinematicProperties getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<KinematicProperties>(create);
+  static KinematicProperties? _defaultInstance;
+
+  /// Rate the component expects to be driven at
+  @$pb.TagNumber(1)
+  $core.double get operatingFreqHz => $_getN(0);
+  @$pb.TagNumber(1)
+  set operatingFreqHz($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOperatingFreqHz() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOperatingFreqHz() => clearField(1);
+
+  /// Maximum linear speed of the tool center point
+  @$pb.TagNumber(2)
+  $core.double get maxLinearTcpSpeedMmPerSec => $_getN(1);
+  @$pb.TagNumber(2)
+  set maxLinearTcpSpeedMmPerSec($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMaxLinearTcpSpeedMmPerSec() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaxLinearTcpSpeedMmPerSec() => clearField(2);
 }
 
 class GetGeometriesRequest extends $pb.GeneratedMessage {

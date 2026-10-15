@@ -80,8 +80,8 @@ const ListOperationsResponse$json = {
 final $typed_data.Uint8List listOperationsResponseDescriptor = $convert.base64Decode(
     'ChZMaXN0T3BlcmF0aW9uc1Jlc3BvbnNlEj0KCm9wZXJhdGlvbnMYASADKAsyHS5nb29nbGUubG'
     '9uZ3J1bm5pbmcuT3BlcmF0aW9uUgpvcGVyYXRpb25zEiYKD25leHRfcGFnZV90b2tlbhgCIAEo'
-    'CVINbmV4dFBhZ2VUb2tlbhIlCgt1bnJlYWNoYWJsZRgDIAMoCUID4EEGUgt1bnJlYWNoYWJsZQ'
-    '==');
+    'CVINbmV4dFBhZ2VUb2tlbhImCgt1bnJlYWNoYWJsZRgDIAMoCUIE4kEBBlILdW5yZWFjaGFibG'
+    'U=');
 
 @$core.Deprecated('Use cancelOperationRequestDescriptor instead')
 const CancelOperationRequest$json = {

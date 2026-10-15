@@ -550,14 +550,20 @@ class Tunnel extends $pb.GeneratedMessage {
 class FrameSystemConfig extends $pb.GeneratedMessage {
   factory FrameSystemConfig({
     $9.Transform? frame,
+  @$core.Deprecated('This field is deprecated.')
     $49.Struct? kinematics,
+    $9.KinematicModel? model,
   }) {
     final $result = create();
     if (frame != null) {
       $result.frame = frame;
     }
     if (kinematics != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.kinematics = kinematics;
+    }
+    if (model != null) {
+      $result.model = model;
     }
     return $result;
   }
@@ -568,6 +574,7 @@ class FrameSystemConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FrameSystemConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOM<$9.Transform>(1, _omitFieldNames ? '' : 'frame', subBuilder: $9.Transform.create)
     ..aOM<$49.Struct>(2, _omitFieldNames ? '' : 'kinematics', subBuilder: $49.Struct.create)
+    ..aOM<$9.KinematicModel>(3, _omitFieldNames ? '' : 'model', subBuilder: $9.KinematicModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -604,16 +611,33 @@ class FrameSystemConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $9.Transform ensureFrame() => $_ensure(0);
 
+  /// Deprecated: use model
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $49.Struct get kinematics => $_getN(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   set kinematics($49.Struct v) { setField(2, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasKinematics() => $_has(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   void clearKinematics() => clearField(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $49.Struct ensureKinematics() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $9.KinematicModel get model => $_getN(2);
+  @$pb.TagNumber(3)
+  set model($9.KinematicModel v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasModel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearModel() => clearField(3);
+  @$pb.TagNumber(3)
+  $9.KinematicModel ensureModel() => $_ensure(2);
 }
 
 class FrameSystemConfigRequest extends $pb.GeneratedMessage {
