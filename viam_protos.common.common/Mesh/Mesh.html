@@ -56,6 +56,7 @@
       
       <span class="name ">Mesh</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-contentType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">contentType</span>, </span></li>
 <li><span class="parameter" id="param-mesh"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">mesh</span>, </span></li>
+<li><span class="parameter" id="param-originalFileSourcePathDiagnostic"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">originalFileSourcePathDiagnostic</span>, </span></li>
 </ol>})
     </section>
     
@@ -67,6 +68,7 @@
   <pre class="language-dart"><code class="language-dart">factory Mesh({
   $core.String? contentType,
   $core.List&lt;$core.int&gt;? mesh,
+  $core.String? originalFileSourcePathDiagnostic,
 }) {
   final $result = create();
   if (contentType != null) {
@@ -74,6 +76,9 @@
   }
   if (mesh != null) {
     $result.mesh = mesh;
+  }
+  if (originalFileSourcePathDiagnostic != null) {
+    $result.originalFileSourcePathDiagnostic = originalFileSourcePathDiagnostic;
   }
   return $result;
 }</code></pre>

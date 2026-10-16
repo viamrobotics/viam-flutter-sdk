@@ -53,6 +53,10 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>Waypoint is a route stop: either the name of a saved Location or an inline
+Position.</p>
+</section>
 
 
     <section>
@@ -87,7 +91,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="Waypoint.new" class="callable">
-          <span class="name"><a href="../viam_protos.service.navigation/Waypoint/Waypoint.html">Waypoint</a></span><span class="signature">({<span class="parameter" id="param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="param-location"><span class="type-annotation"><a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">location</span></span>})</span>
+          <span class="name"><a href="../viam_protos.service.navigation/Waypoint/Waypoint.html">Waypoint</a></span><span class="signature">({<span class="parameter" id="param-location"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">location</span>, </span><span class="parameter" id="param-position"><span class="type-annotation"><a href="../viam_protos.service.navigation/Position-class.html">Position</a>?</span> <span class="parameter-name">position</span></span>})</span>
         </dt>
         <dd>
           
@@ -140,18 +144,6 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="id" class="property">
-  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/id.html">id</a></span>
-  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-  
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">getter/setter pair</span></div>
-
-</dd>
-
         <dt id="info_" class="property">
   <span class="name"><a href="../viam_protos.service.navigation/Waypoint/info_.html">info_</a></span>
   <span class="signature">&#8594; <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/BuilderInfo-class.html">BuilderInfo</a></span>
@@ -178,7 +170,19 @@ to protobuf fields.
 
         <dt id="location" class="property">
   <span class="name"><a href="../viam_protos.service.navigation/Waypoint/location.html">location</a></span>
-  <span class="signature">&#8596; <a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="position" class="property">
+  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/position.html">position</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.service.navigation/Position-class.html">Position</a></span>
   
 
 </dt>
@@ -286,8 +290,8 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="clearId" class="callable">
-  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/clearId.html">clearId</a></span><span class="signature">(<wbr>)
+        <dt id="clearLocation" class="callable">
+  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/clearLocation.html">clearLocation</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -299,8 +303,21 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="clearLocation" class="callable">
-  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/clearLocation.html">clearLocation</a></span><span class="signature">(<wbr>)
+        <dt id="clearPosition" class="callable">
+  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/clearPosition.html">clearPosition</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearValue" class="callable">
+  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/clearValue.html">clearValue</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -395,9 +412,9 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="ensureLocation" class="callable">
-  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/ensureLocation.html">ensureLocation</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a></span>
+        <dt id="ensurePosition" class="callable">
+  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/ensurePosition.html">ensurePosition</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.service.navigation/Position-class.html">Position</a></span>
   </span>
   
 
@@ -526,8 +543,8 @@ default value if it is not set.
 
 </dd>
 
-        <dt id="hasId" class="callable">
-  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/hasId.html">hasId</a></span><span class="signature">(<wbr>)
+        <dt id="hasLocation" class="callable">
+  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/hasLocation.html">hasLocation</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   
@@ -539,8 +556,8 @@ default value if it is not set.
 
 </dd>
 
-        <dt id="hasLocation" class="callable">
-  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/hasLocation.html">hasLocation</a></span><span class="signature">(<wbr>)
+        <dt id="hasPosition" class="callable">
+  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/hasPosition.html">hasPosition</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   
@@ -775,6 +792,19 @@ default value if it is not set.
 <dd class="inherited">
   Returns a String representation of this message.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="whichValue" class="callable">
+  <span class="name"><a href="../viam_protos.service.navigation/Waypoint/whichValue.html">whichValue</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.service.navigation/Waypoint_Value.html">Waypoint_Value</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 

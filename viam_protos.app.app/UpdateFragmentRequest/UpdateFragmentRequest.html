@@ -60,6 +60,7 @@
 <li><span class="parameter" id="param-public"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">public</span>, </span></li>
 <li><span class="parameter" id="param-visibility"><span class="type-annotation"><a href="../../viam_protos.app.app/FragmentVisibility-class.html">FragmentVisibility</a>?</span> <span class="parameter-name">visibility</span>, </span></li>
 <li><span class="parameter" id="param-lastKnownUpdate"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastKnownUpdate</span>, </span></li>
+<li><span class="parameter" id="param-fragmentConfigJson"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">fragmentConfigJson</span>, </span></li>
 </ol>})
     </section>
     
@@ -75,6 +76,7 @@
   $core.bool? public,
   FragmentVisibility? visibility,
   $50.Timestamp? lastKnownUpdate,
+  $core.String? fragmentConfigJson,
 }) {
   final $result = create();
   if (id != null) {
@@ -94,6 +96,9 @@
   }
   if (lastKnownUpdate != null) {
     $result.lastKnownUpdate = lastKnownUpdate;
+  }
+  if (fragmentConfigJson != null) {
+    $result.fragmentConfigJson = fragmentConfigJson;
   }
   return $result;
 }</code></pre>

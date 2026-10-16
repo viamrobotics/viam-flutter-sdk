@@ -63,20 +63,13 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">NavigationServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$40.GetModeRequest, $40.GetModeResponse&gt;(
-      &#39;GetMode&#39;,
-      getMode_Pre,
+  $addMethod($grpc.ServiceMethod&lt;$40.AddLocationRequest, $40.AddLocationResponse&gt;(
+      &#39;AddLocation&#39;,
+      addLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetModeRequest.fromBuffer(value),
-      ($40.GetModeResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.SetModeRequest, $40.SetModeResponse&gt;(
-      &#39;SetMode&#39;,
-      setMode_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.SetModeRequest.fromBuffer(value),
-      ($40.SetModeResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.AddLocationRequest.fromBuffer(value),
+      ($40.AddLocationResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$40.GetLocationRequest, $40.GetLocationResponse&gt;(
       &#39;GetLocation&#39;,
       getLocation_Pre,
@@ -84,41 +77,188 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $40.GetLocationRequest.fromBuffer(value),
       ($40.GetLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.GetWaypointsRequest, $40.GetWaypointsResponse&gt;(
-      &#39;GetWaypoints&#39;,
-      getWaypoints_Pre,
+  $addMethod($grpc.ServiceMethod&lt;$40.ListLocationsRequest, $40.ListLocationsResponse&gt;(
+      &#39;ListLocations&#39;,
+      listLocations_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetWaypointsRequest.fromBuffer(value),
-      ($40.GetWaypointsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.AddWaypointRequest, $40.AddWaypointResponse&gt;(
-      &#39;AddWaypoint&#39;,
-      addWaypoint_Pre,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.ListLocationsRequest.fromBuffer(value),
+      ($40.ListLocationsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.UpdateLocationRequest, $40.UpdateLocationResponse&gt;(
+      &#39;UpdateLocation&#39;,
+      updateLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.AddWaypointRequest.fromBuffer(value),
-      ($40.AddWaypointResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.RemoveWaypointRequest, $40.RemoveWaypointResponse&gt;(
-      &#39;RemoveWaypoint&#39;,
-      removeWaypoint_Pre,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.UpdateLocationRequest.fromBuffer(value),
+      ($40.UpdateLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.DeleteLocationRequest, $40.DeleteLocationResponse&gt;(
+      &#39;DeleteLocation&#39;,
+      deleteLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.RemoveWaypointRequest.fromBuffer(value),
-      ($40.RemoveWaypointResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.GetObstaclesRequest, $40.GetObstaclesResponse&gt;(
-      &#39;GetObstacles&#39;,
-      getObstacles_Pre,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.DeleteLocationRequest.fromBuffer(value),
+      ($40.DeleteLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.AddRouteRequest, $40.AddRouteResponse&gt;(
+      &#39;AddRoute&#39;,
+      addRoute_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetObstaclesRequest.fromBuffer(value),
-      ($40.GetObstaclesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.GetPathsRequest, $40.GetPathsResponse&gt;(
-      &#39;GetPaths&#39;,
-      getPaths_Pre,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.AddRouteRequest.fromBuffer(value),
+      ($40.AddRouteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.GetRouteRequest, $40.GetRouteResponse&gt;(
+      &#39;GetRoute&#39;,
+      getRoute_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetPathsRequest.fromBuffer(value),
-      ($40.GetPathsResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetRouteRequest.fromBuffer(value),
+      ($40.GetRouteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.ListRoutesRequest, $40.ListRoutesResponse&gt;(
+      &#39;ListRoutes&#39;,
+      listRoutes_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.ListRoutesRequest.fromBuffer(value),
+      ($40.ListRoutesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.UpdateRouteRequest, $40.UpdateRouteResponse&gt;(
+      &#39;UpdateRoute&#39;,
+      updateRoute_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.UpdateRouteRequest.fromBuffer(value),
+      ($40.UpdateRouteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.DeleteRouteRequest, $40.DeleteRouteResponse&gt;(
+      &#39;DeleteRoute&#39;,
+      deleteRoute_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.DeleteRouteRequest.fromBuffer(value),
+      ($40.DeleteRouteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.AddZoneRequest, $40.AddZoneResponse&gt;(
+      &#39;AddZone&#39;,
+      addZone_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.AddZoneRequest.fromBuffer(value),
+      ($40.AddZoneResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.GetZoneRequest, $40.GetZoneResponse&gt;(
+      &#39;GetZone&#39;,
+      getZone_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetZoneRequest.fromBuffer(value),
+      ($40.GetZoneResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.ListZonesRequest, $40.ListZonesResponse&gt;(
+      &#39;ListZones&#39;,
+      listZones_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.ListZonesRequest.fromBuffer(value),
+      ($40.ListZonesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.UpdateZoneRequest, $40.UpdateZoneResponse&gt;(
+      &#39;UpdateZone&#39;,
+      updateZone_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.UpdateZoneRequest.fromBuffer(value),
+      ($40.UpdateZoneResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.DeleteZoneRequest, $40.DeleteZoneResponse&gt;(
+      &#39;DeleteZone&#39;,
+      deleteZone_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.DeleteZoneRequest.fromBuffer(value),
+      ($40.DeleteZoneResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.NavigateToLocationRequest, $40.NavigateToLocationResponse&gt;(
+      &#39;NavigateToLocation&#39;,
+      navigateToLocation_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.NavigateToLocationRequest.fromBuffer(value),
+      ($40.NavigateToLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.NavigateToPointRequest, $40.NavigateToPointResponse&gt;(
+      &#39;NavigateToPoint&#39;,
+      navigateToPoint_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.NavigateToPointRequest.fromBuffer(value),
+      ($40.NavigateToPointResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.NavigateRouteRequest, $40.NavigateRouteResponse&gt;(
+      &#39;NavigateRoute&#39;,
+      navigateRoute_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.NavigateRouteRequest.fromBuffer(value),
+      ($40.NavigateRouteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.PlanToPointRequest, $40.PlanToPointResponse&gt;(
+      &#39;PlanToPoint&#39;,
+      planToPoint_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.PlanToPointRequest.fromBuffer(value),
+      ($40.PlanToPointResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.PlanToLocationRequest, $40.PlanToLocationResponse&gt;(
+      &#39;PlanToLocation&#39;,
+      planToLocation_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.PlanToLocationRequest.fromBuffer(value),
+      ($40.PlanToLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.ExecutePlanRequest, $40.ExecutePlanResponse&gt;(
+      &#39;ExecutePlan&#39;,
+      executePlan_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.ExecutePlanRequest.fromBuffer(value),
+      ($40.ExecutePlanResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.GoToLocationRequest, $40.GoToLocationResponse&gt;(
+      &#39;GoToLocation&#39;,
+      goToLocation_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.GoToLocationRequest.fromBuffer(value),
+      ($40.GoToLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.GoToPointRequest, $40.GoToPointResponse&gt;(
+      &#39;GoToPoint&#39;,
+      goToPoint_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.GoToPointRequest.fromBuffer(value),
+      ($40.GoToPointResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.SuspendRequest, $40.SuspendResponse&gt;(
+      &#39;Suspend&#39;,
+      suspend_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.SuspendRequest.fromBuffer(value),
+      ($40.SuspendResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.ResumeRequest, $40.ResumeResponse&gt;(
+      &#39;Resume&#39;,
+      resume_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.ResumeRequest.fromBuffer(value),
+      ($40.ResumeResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.CancelRequest, $40.CancelResponse&gt;(
+      &#39;Cancel&#39;,
+      cancel_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.CancelRequest.fromBuffer(value),
+      ($40.CancelResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.GetPositionRequest, $40.GetPositionResponse&gt;(
+      &#39;GetPosition&#39;,
+      getPosition_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetPositionRequest.fromBuffer(value),
+      ($40.GetPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.GetNavigationStatusRequest, $40.GetNavigationStatusResponse&gt;(
+      &#39;GetNavigationStatus&#39;,
+      getNavigationStatus_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetNavigationStatusRequest.fromBuffer(value),
+      ($40.GetNavigationStatusResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$40.GetPropertiesRequest, $40.GetPropertiesResponse&gt;(
       &#39;GetProperties&#39;,
       getProperties_Pre,
@@ -126,6 +266,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $40.GetPropertiesRequest.fromBuffer(value),
       ($40.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$40.GetCostmapRequest, $40.GetCostmapResponse&gt;(
+      &#39;GetCostmap&#39;,
+      getCostmap_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetCostmapRequest.fromBuffer(value),
+      ($40.GetCostmapResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$9.DoCommandRequest, $9.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,

@@ -55,7 +55,8 @@
     <section class="multi-line-signature">
       
       <span class="name ">FrameSystemConfig</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-frame"><span class="type-annotation"><a href="../../viam_protos.common.common/Transform-class.html">Transform</a>?</span> <span class="parameter-name">frame</span>, </span></li>
-<li><span class="parameter" id="param-kinematics"><span class="type-annotation">Struct?</span> <span class="parameter-name">kinematics</span>, </span></li>
+<li><span class="parameter" id="param-kinematics"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated/Deprecated.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation">Struct?</span> <span class="parameter-name">kinematics</span>, </span></li>
+<li><span class="parameter" id="param-model"><span class="type-annotation"><a href="../../viam_protos.common.common/KinematicModel-class.html">KinematicModel</a>?</span> <span class="parameter-name">model</span>, </span></li>
 </ol>})
     </section>
     
@@ -66,14 +67,20 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory FrameSystemConfig({
   $9.Transform? frame,
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
   $49.Struct? kinematics,
+  $9.KinematicModel? model,
 }) {
   final $result = create();
   if (frame != null) {
     $result.frame = frame;
   }
   if (kinematics != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
     $result.kinematics = kinematics;
+  }
+  if (model != null) {
+    $result.model = model;
   }
   return $result;
 }</code></pre>

@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="GetKinematicsResponse.new" class="callable">
-          <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/GetKinematicsResponse.html">GetKinematicsResponse</a></span><span class="signature">({<span class="parameter" id="param-format"><span class="type-annotation"><a href="../viam_protos.common.common/KinematicsFileFormat-class.html">KinematicsFileFormat</a>?</span> <span class="parameter-name">format</span>, </span><span class="parameter" id="param-kinematicsData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">kinematicsData</span>, </span><span class="parameter" id="param-meshesByUrdfFilepath"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../viam_protos.common.common/Mesh-class.html">Mesh</a></span>&gt;</span>?</span> <span class="parameter-name">meshesByUrdfFilepath</span></span>})</span>
+          <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/GetKinematicsResponse.html">GetKinematicsResponse</a></span><span class="signature">({<span class="parameter" id="param-format"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated/Deprecated.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../viam_protos.common.common/KinematicsFileFormat-class.html">KinematicsFileFormat</a>?</span> <span class="parameter-name">format</span>, </span><span class="parameter" id="param-kinematicsData"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated/Deprecated.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">kinematicsData</span>, </span><span class="parameter" id="param-meshesByUrdfFilepath"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated/Deprecated.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../viam_protos.common.common/Mesh-class.html">Mesh</a></span>&gt;</span>?</span> <span class="parameter-name">meshesByUrdfFilepath</span>, </span><span class="parameter" id="param-model"><span class="type-annotation"><a href="../viam_protos.common.common/KinematicModel-class.html">KinematicModel</a>?</span> <span class="parameter-name">model</span></span>})</span>
         </dt>
         <dd>
           
@@ -129,13 +129,13 @@ to protobuf fields.
 </dd>
 
         <dt id="format" class="property">
-  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/format.html">format</a></span>
+  <span class="name"><a class="deprecated" href="../viam_protos.common.common/GetKinematicsResponse/format.html">format</a></span>
   <span class="signature">&#8596; <a href="../viam_protos.common.common/KinematicsFileFormat-class.html">KinematicsFileFormat</a></span>
   
 
 </dt>
 <dd>
-  The kinematics of the component, in either URDF format or in Viam’s kinematic parameter format (spatial vector algebra)
+  Deprecated: use model. The kinematics of the component, in either URDF format or in Viam’s kinematic parameter format (spatial vector algebra)
 <a href="https://docs.viam.com/internals/kinematic-chain-config/#kinematic-parameters">https://docs.viam.com/internals/kinematic-chain-config/#kinematic-parameters</a>
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
@@ -178,26 +178,38 @@ to protobuf fields.
 </dd>
 
         <dt id="kinematicsData" class="property">
-  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/kinematicsData.html">kinematicsData</a></span>
+  <span class="name"><a class="deprecated" href="../viam_protos.common.common/GetKinematicsResponse/kinematicsData.html">kinematicsData</a></span>
   <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>
   
 
 </dt>
 <dd>
-  The byte contents of the file
+  Deprecated: use model. The byte contents of the file
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
         <dt id="meshesByUrdfFilepath" class="property">
-  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/meshesByUrdfFilepath.html">meshesByUrdfFilepath</a></span>
+  <span class="name"><a class="deprecated" href="../viam_protos.common.common/GetKinematicsResponse/meshesByUrdfFilepath.html">meshesByUrdfFilepath</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../viam_protos.common.common/Mesh-class.html">Mesh</a></span>&gt;</span></span>
   
 
 </dt>
 <dd>
-  Map of URDF mesh file paths to mesh data
+  Deprecated: use model. Map of URDF mesh file paths to mesh data
   <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="model" class="property">
+  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/model.html">model</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.common.common/KinematicModel-class.html">KinematicModel</a></span>
+  
+
+</dt>
+<dd>
+  The kinematic model of the component
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -300,7 +312,7 @@ to protobuf fields.
 </dd>
 
         <dt id="clearFormat" class="callable">
-  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/clearFormat.html">clearFormat</a></span><span class="signature">(<wbr>)
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GetKinematicsResponse/clearFormat.html">clearFormat</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -313,7 +325,20 @@ to protobuf fields.
 </dd>
 
         <dt id="clearKinematicsData" class="callable">
-  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/clearKinematicsData.html">clearKinematicsData</a></span><span class="signature">(<wbr>)
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GetKinematicsResponse/clearKinematicsData.html">clearKinematicsData</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearModel" class="callable">
+  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/clearModel.html">clearModel</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -404,6 +429,19 @@ to protobuf fields.
         provided by the <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions.html">GeneratedMessageGenericExtensions</a> extension</span>
       </p>
   Returns a writable deep copy of this message.
+  
+
+</dd>
+
+        <dt id="ensureModel" class="callable">
+  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/ensureModel.html">ensureModel</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.common.common/KinematicModel-class.html">KinematicModel</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
   
 
 </dd>
@@ -527,7 +565,7 @@ default value if it is not set.
 </dd>
 
         <dt id="hasFormat" class="callable">
-  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/hasFormat.html">hasFormat</a></span><span class="signature">(<wbr>)
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GetKinematicsResponse/hasFormat.html">hasFormat</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   
@@ -540,7 +578,20 @@ default value if it is not set.
 </dd>
 
         <dt id="hasKinematicsData" class="callable">
-  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/hasKinematicsData.html">hasKinematicsData</a></span><span class="signature">(<wbr>)
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GetKinematicsResponse/hasKinematicsData.html">hasKinematicsData</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasModel" class="callable">
+  <span class="name"><a href="../viam_protos.common.common/GetKinematicsResponse/hasModel.html">hasModel</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   

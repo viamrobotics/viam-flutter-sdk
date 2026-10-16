@@ -56,6 +56,7 @@
       
       <span class="name ">UpdateMLModelMetadata</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-modelType"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelType-class.html">ModelType</a>?</span> <span class="parameter-name">modelType</span>, </span></li>
 <li><span class="parameter" id="param-modelFramework"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelFramework-class.html">ModelFramework</a>?</span> <span class="parameter-name">modelFramework</span>, </span></li>
+<li><span class="parameter" id="param-deploymentModularResources"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">deploymentModularResources</span>, </span></li>
 </ol>})
     </section>
     
@@ -67,6 +68,7 @@
   <pre class="language-dart"><code class="language-dart">factory UpdateMLModelMetadata({
   $11.ModelType? modelType,
   $11.ModelFramework? modelFramework,
+  $core.Iterable&lt;$core.String&gt;? deploymentModularResources,
 }) {
   final $result = create();
   if (modelType != null) {
@@ -74,6 +76,9 @@
   }
   if (modelFramework != null) {
     $result.modelFramework = modelFramework;
+  }
+  if (deploymentModularResources != null) {
+    $result.deploymentModularResources.addAll(deploymentModularResources);
   }
   return $result;
 }</code></pre>

@@ -469,6 +469,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $12.UpdateRobotPartRequest.fromBuffer(value),
       ($12.UpdateRobotPartResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$12.SetConfigPropertyRequest, $12.SetConfigPropertyResponse&gt;(
+      &#39;SetConfigProperty&#39;,
+      setConfigProperty_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $12.SetConfigPropertyRequest.fromBuffer(value),
+      ($12.SetConfigPropertyResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$12.NewRobotPartRequest, $12.NewRobotPartResponse&gt;(
       &#39;NewRobotPart&#39;,
       newRobotPart_Pre,
@@ -574,6 +581,27 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $12.DeleteRobotRequest.fromBuffer(value),
       ($12.DeleteRobotResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$12.AddFavoriteMachineRequest, $12.AddFavoriteMachineResponse&gt;(
+      &#39;AddFavoriteMachine&#39;,
+      addFavoriteMachine_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $12.AddFavoriteMachineRequest.fromBuffer(value),
+      ($12.AddFavoriteMachineResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$12.RemoveFavoriteMachineRequest, $12.RemoveFavoriteMachineResponse&gt;(
+      &#39;RemoveFavoriteMachine&#39;,
+      removeFavoriteMachine_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $12.RemoveFavoriteMachineRequest.fromBuffer(value),
+      ($12.RemoveFavoriteMachineResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$12.ListFavoriteMachinesRequest, $12.ListFavoriteMachinesResponse&gt;(
+      &#39;ListFavoriteMachines&#39;,
+      listFavoriteMachines_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $12.ListFavoriteMachinesRequest.fromBuffer(value),
+      ($12.ListFavoriteMachinesResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$12.ListFragmentsRequest, $12.ListFragmentsResponse&gt;(
       &#39;ListFragments&#39;,
       listFragments_Pre,

@@ -54,8 +54,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">GetLocationResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-location"><span class="type-annotation"><a href="../../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">location</span>, </span></li>
-<li><span class="parameter" id="param-compassHeading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">compassHeading</span>, </span></li>
+      <span class="name ">GetLocationResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-location"><span class="type-annotation"><a href="../../viam_protos.service.navigation/Location-class.html">Location</a>?</span> <span class="parameter-name">location</span>, </span></li>
 </ol>})
     </section>
     
@@ -65,15 +64,11 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory GetLocationResponse({
-  $9.GeoPoint? location,
-  $core.double? compassHeading,
+  Location? location,
 }) {
   final $result = create();
   if (location != null) {
     $result.location = location;
-  }
-  if (compassHeading != null) {
-    $result.compassHeading = compassHeading;
   }
   return $result;
 }</code></pre>

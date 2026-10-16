@@ -84,6 +84,14 @@
   Information about an audio stream or device.
 </dd>
 
+          <dt id="AxisAngles">
+  <span class="name "><a href="../viam_protos.common.common/AxisAngles-class.html">AxisAngles</a></span> 
+
+</dt>
+<dd>
+  Rotation axis and an angle theta in degrees
+</dd>
+
           <dt id="Capsule">
   <span class="name "><a href="../viam_protos.common.common/Capsule-class.html">Capsule</a></span> 
 
@@ -114,6 +122,14 @@
 </dt>
 <dd>
   DoCommandResponse represents a generic DoCommand output
+</dd>
+
+          <dt id="EulerAngles">
+  <span class="name "><a href="../viam_protos.common.common/EulerAngles-class.html">EulerAngles</a></span> 
+
+</dt>
+<dd>
+  Euler angles in degrees
 </dd>
 
           <dt id="GeoGeometry">
@@ -147,6 +163,14 @@ observed.
 </dt>
 <dd>
   
+</dd>
+
+          <dt id="GeoPose">
+  <span class="name "><a href="../viam_protos.common.common/GeoPose-class.html">GeoPose</a></span> 
+
+</dt>
+<dd>
+  GeoPose is a GPS position and orientation, optionally with altitude.
 </dd>
 
           <dt id="Get3DModelsRequest">
@@ -253,12 +277,69 @@ observed.
   
 </dd>
 
+          <dt id="JointLimits">
+  <span class="name "><a href="../viam_protos.common.common/JointLimits-class.html">JointLimits</a></span> 
+
+</dt>
+<dd>
+  Degrees, deg/s and deg/s^2 for revolute joints, mm, mm/s and mm/s^2 for prismatic. Absent means unbounded.
+</dd>
+
+          <dt id="JointType">
+  <span class="name "><a href="../viam_protos.common.common/JointType-class.html">JointType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="KinematicJoint">
+  <span class="name "><a href="../viam_protos.common.common/KinematicJoint-class.html">KinematicJoint</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="KinematicLink">
+  <span class="name "><a href="../viam_protos.common.common/KinematicLink-class.html">KinematicLink</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="KinematicModel">
+  <span class="name "><a href="../viam_protos.common.common/KinematicModel-class.html">KinematicModel</a></span> 
+
+</dt>
+<dd>
+  KinematicModel describes a component's kinematics as a tree of links and joints.
+Its proto JSON encoding is also the on-disk kinematics file format.
+</dd>
+
+          <dt id="KinematicProperties">
+  <span class="name "><a href="../viam_protos.common.common/KinematicProperties-class.html">KinematicProperties</a></span> 
+
+</dt>
+<dd>
+  Properties of the component as a whole
+</dd>
+
           <dt id="KinematicsFileFormat">
   <span class="name "><a href="../viam_protos.common.common/KinematicsFileFormat-class.html">KinematicsFileFormat</a></span> 
 
 </dt>
 <dd>
   
+</dd>
+
+          <dt id="LinkPose">
+  <span class="name "><a href="../viam_protos.common.common/LinkPose-class.html">LinkPose</a></span> 
+
+</dt>
+<dd>
+  LinkPose is a translation in mm and an orientation in degrees, identity when absent
 </dd>
 
           <dt id="LogEntry">
@@ -275,6 +356,14 @@ observed.
 </dt>
 <dd>
   
+</dd>
+
+          <dt id="MimicJoint">
+  <span class="name "><a href="../viam_protos.common.common/MimicJoint-class.html">MimicJoint</a></span> 
+
+</dt>
+<dd>
+  Position is multiplier * position of joint + offset
 </dd>
 
           <dt id="Orientation">
@@ -331,6 +420,14 @@ is circled, the Roll will correct itself to remain in-line.
 </dt>
 <dd>
   PoseInFrame contains a pose and the reference frame in which it was observed
+</dd>
+
+          <dt id="Quaternion">
+  <span class="name "><a href="../viam_protos.common.common/Quaternion-class.html">Quaternion</a></span> 
+
+</dt>
+<dd>
+  
 </dd>
 
           <dt id="RectangularPrism">
@@ -408,6 +505,22 @@ given reference frame and a new target reference frame.
   
 </dd>
 
+          <dt id="GeoPose_Orientation">
+  <span class="name "><a href="../viam_protos.common.common/GeoPose_Orientation.html">GeoPose_Orientation</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="LinkPose_Orientation">
+  <span class="name "><a href="../viam_protos.common.common/LinkPose_Orientation.html">LinkPose_Orientation</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
       </dl>
     </section>
 
@@ -431,6 +544,18 @@ given reference frame and a new target reference frame.
 
           <dt id="AudioInfo$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/AudioInfo$json-constant.html">AudioInfo$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="AxisAngles$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/AxisAngles$json-constant.html">AxisAngles$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -467,6 +592,18 @@ given reference frame and a new target reference frame.
 
           <dt id="DoCommandResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/DoCommandResponse$json-constant.html">DoCommandResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="EulerAngles$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/EulerAngles$json-constant.html">EulerAngles$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -515,6 +652,18 @@ given reference frame and a new target reference frame.
 
           <dt id="GeoPoint$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GeoPoint$json-constant.html">GeoPoint$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="GeoPose$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GeoPose$json-constant.html">GeoPose$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -717,8 +866,92 @@ given reference frame and a new target reference frame.
 
 </dd>
 
+          <dt id="JointLimits$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/JointLimits$json-constant.html">JointLimits$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="JointType$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/JointType$json-constant.html">JointType$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="KinematicJoint$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/KinematicJoint$json-constant.html">KinematicJoint$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="KinematicLink$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/KinematicLink$json-constant.html">KinematicLink$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="KinematicModel$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/KinematicModel$json-constant.html">KinematicModel$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="KinematicProperties$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/KinematicProperties$json-constant.html">KinematicProperties$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="KinematicsFileFormat$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/KinematicsFileFormat$json-constant.html">KinematicsFileFormat$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="LinkPose$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/LinkPose$json-constant.html">LinkPose$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -743,6 +976,18 @@ given reference frame and a new target reference frame.
 
           <dt id="Mesh$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/Mesh$json-constant.html">Mesh$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="MimicJoint$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/MimicJoint$json-constant.html">MimicJoint$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -815,6 +1060,18 @@ given reference frame and a new target reference frame.
 
           <dt id="PoseInFrame$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/PoseInFrame$json-constant.html">PoseInFrame$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="Quaternion$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/Quaternion$json-constant.html">Quaternion$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -939,6 +1196,18 @@ given reference frame and a new target reference frame.
 
 </dd>
 
+          <dt id="axisAnglesDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/axisAnglesDescriptor.html">axisAnglesDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>AxisAngles</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="capsuleDescriptor" class="property">
   <span class="name"><a href="../viam_protos.common.common/capsuleDescriptor.html">capsuleDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -971,6 +1240,18 @@ given reference frame and a new target reference frame.
 </dt>
 <dd>
   Descriptor for <code>DoCommandResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="eulerAnglesDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/eulerAnglesDescriptor.html">eulerAnglesDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>EulerAngles</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -1019,6 +1300,18 @@ given reference frame and a new target reference frame.
 </dt>
 <dd>
   Descriptor for <code>GeoPoint</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="geoPoseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/geoPoseDescriptor.html">geoPoseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>GeoPose</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -1179,6 +1472,78 @@ given reference frame and a new target reference frame.
 
 </dd>
 
+          <dt id="jointLimitsDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/jointLimitsDescriptor.html">jointLimitsDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>JointLimits</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="jointTypeDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/jointTypeDescriptor.html">jointTypeDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>JointType</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="kinematicJointDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/kinematicJointDescriptor.html">kinematicJointDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>KinematicJoint</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="kinematicLinkDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/kinematicLinkDescriptor.html">kinematicLinkDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>KinematicLink</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="kinematicModelDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/kinematicModelDescriptor.html">kinematicModelDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>KinematicModel</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="kinematicPropertiesDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/kinematicPropertiesDescriptor.html">kinematicPropertiesDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>KinematicProperties</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="kinematicsFileFormatDescriptor" class="property">
   <span class="name"><a href="../viam_protos.common.common/kinematicsFileFormatDescriptor.html">kinematicsFileFormatDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -1187,6 +1552,18 @@ given reference frame and a new target reference frame.
 </dt>
 <dd>
   Descriptor for <code>KinematicsFileFormat</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="linkPoseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/linkPoseDescriptor.html">linkPoseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>LinkPose</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -1211,6 +1588,18 @@ given reference frame and a new target reference frame.
 </dt>
 <dd>
   Descriptor for <code>Mesh</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="mimicJointDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/mimicJointDescriptor.html">mimicJointDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>MimicJoint</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -1283,6 +1672,18 @@ given reference frame and a new target reference frame.
 </dt>
 <dd>
   Descriptor for <code>PoseInFrame</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="quaternionDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/quaternionDescriptor.html">quaternionDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>Quaternion</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
