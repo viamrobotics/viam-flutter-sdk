@@ -14,6 +14,8 @@ class FakeGripper extends Gripper {
   bool isStopped = true;
   List<double> goToInputsValues = [];
   Map<String, dynamic>? extra;
+  bool? requestedIncludeCollisionMeshes;
+  bool? requestedIncludeVisualMeshes;
   Map<String, dynamic> statusResult = {'status': 'ok'};
 
   @override
@@ -57,8 +59,14 @@ class FakeGripper extends Gripper {
   }
 
   @override
-  Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
+  Future<Kinematics> getKinematics({
+    bool includeCollisionMeshes = false,
+    bool includeVisualMeshes = false,
+    Map<String, dynamic>? extra,
+  }) async {
     this.extra = extra;
+    requestedIncludeCollisionMeshes = includeCollisionMeshes;
+    requestedIncludeVisualMeshes = includeVisualMeshes;
     return Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
   }
 
@@ -248,9 +256,16 @@ void main() {
 
       test('getKinematics', () async {
         final client = GripperServiceClient(channel);
-        final resp = await client.getKinematics(GetKinematicsRequest()..name = name);
+        final resp = await client.getKinematics(
+          GetKinematicsRequest()
+            ..name = name
+            ..includeCollisionMeshes = true
+            ..includeVisualMeshes = true,
+        );
         expect(resp.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(resp.kinematicsData, [1, 2, 3]);
+        expect(gripper.requestedIncludeCollisionMeshes, true);
+        expect(gripper.requestedIncludeVisualMeshes, true);
       });
 
       test('isHoldingSomething', () async {
@@ -353,9 +368,11 @@ void main() {
 
       test('getKinematics', () async {
         final client = GripperClient(name, channel);
-        final kd = await client.getKinematics();
+        final kd = await client.getKinematics(includeCollisionMeshes: true, includeVisualMeshes: true);
         expect(kd.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(kd.raw, [1, 2, 3]);
+        expect(gripper.requestedIncludeCollisionMeshes, true);
+        expect(gripper.requestedIncludeVisualMeshes, true);
       });
 
       test('isHoldingSomething', () async {

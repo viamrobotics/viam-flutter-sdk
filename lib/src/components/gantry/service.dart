@@ -80,10 +80,12 @@ class GantryService extends GantryServiceBase {
   @override
   Future<GetKinematicsResponse> getKinematics(ServiceCall call, GetKinematicsRequest request) async {
     final gantry = _fromManager(request.name);
-    final response = await gantry.getKinematics(extra: request.extra.toMap());
-    return GetKinematicsResponse()
-      ..format = response.format
-      ..kinematicsData = response.raw;
+    final response = await gantry.getKinematics(
+      includeCollisionMeshes: request.includeCollisionMeshes,
+      includeVisualMeshes: request.includeVisualMeshes,
+      extra: request.extra.toMap(),
+    );
+    return response.toProto();
   }
 
   @override

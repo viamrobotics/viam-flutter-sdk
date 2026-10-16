@@ -16,25 +16,35 @@ class Kinematics {
   final KinematicsFileFormat format;
   final List<int> raw;
   final Map<String, Mesh> meshesByUrdfFilepath;
+  final KinematicModel? model;
 
   static const ListEquality<int> _rawEquality = ListEquality<int>();
   static const MapEquality<String, Mesh> _meshEquality = MapEquality<String, Mesh>();
 
-  const Kinematics(this.format, this.raw, {this.meshesByUrdfFilepath = const {}});
+  const Kinematics(this.format, this.raw, {this.meshesByUrdfFilepath = const {}, this.model});
 
   factory Kinematics.fromProto(GetKinematicsResponse gkResponse) {
     return Kinematics(
+      // ignore: deprecated_member_use_from_same_package
       gkResponse.format,
+      // ignore: deprecated_member_use_from_same_package
       gkResponse.kinematicsData,
+      // ignore: deprecated_member_use_from_same_package
       meshesByUrdfFilepath: gkResponse.meshesByUrdfFilepath,
+      model: gkResponse.hasModel() ? gkResponse.model : null,
     );
   }
 
   GetKinematicsResponse toProto() {
-    return GetKinematicsResponse()
+    final result = GetKinematicsResponse()
+      // ignore: deprecated_member_use_from_same_package
       ..format = format
+      // ignore: deprecated_member_use_from_same_package
       ..kinematicsData = raw
+      // ignore: deprecated_member_use_from_same_package
       ..meshesByUrdfFilepath.addAll(meshesByUrdfFilepath);
+    if (model != null) result.model = model!;
+    return result;
   }
 
   @override
@@ -44,10 +54,11 @@ class Kinematics {
           runtimeType == other.runtimeType &&
           format == other.format &&
           _rawEquality.equals(raw, other.raw) &&
-          _meshEquality.equals(meshesByUrdfFilepath, other.meshesByUrdfFilepath);
+          _meshEquality.equals(meshesByUrdfFilepath, other.meshesByUrdfFilepath) &&
+          model == other.model;
 
   @override
-  int get hashCode => Object.hash(format, _rawEquality.hash(raw), _meshEquality.hash(meshesByUrdfFilepath));
+  int get hashCode => Object.hash(format, _rawEquality.hash(raw), _meshEquality.hash(meshesByUrdfFilepath), model);
 }
 
 extension NullableStringUtils on String? {

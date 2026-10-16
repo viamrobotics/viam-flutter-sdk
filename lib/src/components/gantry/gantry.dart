@@ -71,7 +71,11 @@ abstract class Gantry extends Resource {
   /// ```
   ///
   /// For more information, see [Gantry component](https://docs.viam.com/dev/reference/apis/components/gantry/#getkinematics).
-  Future<Kinematics> getKinematics({Map<String, dynamic>? extra});
+  Future<Kinematics> getKinematics({
+    bool includeCollisionMeshes = false,
+    bool includeVisualMeshes = false,
+    Map<String, dynamic>? extra,
+  });
 
   /// Get all geometries associated with the [Gantry]
   ///

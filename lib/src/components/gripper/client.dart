@@ -78,9 +78,15 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
   }
 
   @override
-  Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
+  Future<Kinematics> getKinematics({
+    bool includeCollisionMeshes = false,
+    bool includeVisualMeshes = false,
+    Map<String, dynamic>? extra,
+  }) async {
     final request = GetKinematicsRequest()
       ..name = name
+      ..includeCollisionMeshes = includeCollisionMeshes
+      ..includeVisualMeshes = includeVisualMeshes
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getKinematics(request, options: callOptions);
     return Kinematics.fromProto(response);
