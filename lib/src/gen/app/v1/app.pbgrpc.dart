@@ -253,6 +253,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/UpdateRobotPart',
       ($12.UpdateRobotPartRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.UpdateRobotPartResponse.fromBuffer(value));
+  static final _$setConfigProperty = $grpc.ClientMethod<$12.SetConfigPropertyRequest, $12.SetConfigPropertyResponse>(
+      '/viam.app.v1.AppService/SetConfigProperty',
+      ($12.SetConfigPropertyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.SetConfigPropertyResponse.fromBuffer(value));
   static final _$newRobotPart = $grpc.ClientMethod<$12.NewRobotPartRequest, $12.NewRobotPartResponse>(
       '/viam.app.v1.AppService/NewRobotPart',
       ($12.NewRobotPartRequest value) => value.writeToBuffer(),
@@ -313,6 +317,18 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteRobot',
       ($12.DeleteRobotRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.DeleteRobotResponse.fromBuffer(value));
+  static final _$addFavoriteMachine = $grpc.ClientMethod<$12.AddFavoriteMachineRequest, $12.AddFavoriteMachineResponse>(
+      '/viam.app.v1.AppService/AddFavoriteMachine',
+      ($12.AddFavoriteMachineRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.AddFavoriteMachineResponse.fromBuffer(value));
+  static final _$removeFavoriteMachine = $grpc.ClientMethod<$12.RemoveFavoriteMachineRequest, $12.RemoveFavoriteMachineResponse>(
+      '/viam.app.v1.AppService/RemoveFavoriteMachine',
+      ($12.RemoveFavoriteMachineRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.RemoveFavoriteMachineResponse.fromBuffer(value));
+  static final _$listFavoriteMachines = $grpc.ClientMethod<$12.ListFavoriteMachinesRequest, $12.ListFavoriteMachinesResponse>(
+      '/viam.app.v1.AppService/ListFavoriteMachines',
+      ($12.ListFavoriteMachinesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.ListFavoriteMachinesResponse.fromBuffer(value));
   static final _$listFragments = $grpc.ClientMethod<$12.ListFragmentsRequest, $12.ListFragmentsResponse>(
       '/viam.app.v1.AppService/ListFragments',
       ($12.ListFragmentsRequest value) => value.writeToBuffer(),
@@ -740,6 +756,10 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateRobotPart, request, options: options);
   }
 
+  $grpc.ResponseFuture<$12.SetConfigPropertyResponse> setConfigProperty($12.SetConfigPropertyRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setConfigProperty, request, options: options);
+  }
+
   $grpc.ResponseFuture<$12.NewRobotPartResponse> newRobotPart($12.NewRobotPartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$newRobotPart, request, options: options);
   }
@@ -798,6 +818,18 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$12.DeleteRobotResponse> deleteRobot($12.DeleteRobotRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteRobot, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.AddFavoriteMachineResponse> addFavoriteMachine($12.AddFavoriteMachineRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addFavoriteMachine, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.RemoveFavoriteMachineResponse> removeFavoriteMachine($12.RemoveFavoriteMachineRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeFavoriteMachine, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.ListFavoriteMachinesResponse> listFavoriteMachines($12.ListFavoriteMachinesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listFavoriteMachines, request, options: options);
   }
 
   $grpc.ResponseFuture<$12.ListFragmentsResponse> listFragments($12.ListFragmentsRequest request, {$grpc.CallOptions? options}) {
@@ -1400,6 +1432,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.UpdateRobotPartRequest.fromBuffer(value),
         ($12.UpdateRobotPartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.SetConfigPropertyRequest, $12.SetConfigPropertyResponse>(
+        'SetConfigProperty',
+        setConfigProperty_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.SetConfigPropertyRequest.fromBuffer(value),
+        ($12.SetConfigPropertyResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$12.NewRobotPartRequest, $12.NewRobotPartResponse>(
         'NewRobotPart',
         newRobotPart_Pre,
@@ -1505,6 +1544,27 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.DeleteRobotRequest.fromBuffer(value),
         ($12.DeleteRobotResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.AddFavoriteMachineRequest, $12.AddFavoriteMachineResponse>(
+        'AddFavoriteMachine',
+        addFavoriteMachine_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.AddFavoriteMachineRequest.fromBuffer(value),
+        ($12.AddFavoriteMachineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.RemoveFavoriteMachineRequest, $12.RemoveFavoriteMachineResponse>(
+        'RemoveFavoriteMachine',
+        removeFavoriteMachine_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.RemoveFavoriteMachineRequest.fromBuffer(value),
+        ($12.RemoveFavoriteMachineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.ListFavoriteMachinesRequest, $12.ListFavoriteMachinesResponse>(
+        'ListFavoriteMachines',
+        listFavoriteMachines_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.ListFavoriteMachinesRequest.fromBuffer(value),
+        ($12.ListFavoriteMachinesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$12.ListFragmentsRequest, $12.ListFragmentsResponse>(
         'ListFragments',
         listFragments_Pre,
@@ -2068,6 +2128,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return updateRobotPart(call, await request);
   }
 
+  $async.Future<$12.SetConfigPropertyResponse> setConfigProperty_Pre($grpc.ServiceCall call, $async.Future<$12.SetConfigPropertyRequest> request) async {
+    return setConfigProperty(call, await request);
+  }
+
   $async.Future<$12.NewRobotPartResponse> newRobotPart_Pre($grpc.ServiceCall call, $async.Future<$12.NewRobotPartRequest> request) async {
     return newRobotPart(call, await request);
   }
@@ -2126,6 +2190,18 @@ abstract class AppServiceBase extends $grpc.Service {
 
   $async.Future<$12.DeleteRobotResponse> deleteRobot_Pre($grpc.ServiceCall call, $async.Future<$12.DeleteRobotRequest> request) async {
     return deleteRobot(call, await request);
+  }
+
+  $async.Future<$12.AddFavoriteMachineResponse> addFavoriteMachine_Pre($grpc.ServiceCall call, $async.Future<$12.AddFavoriteMachineRequest> request) async {
+    return addFavoriteMachine(call, await request);
+  }
+
+  $async.Future<$12.RemoveFavoriteMachineResponse> removeFavoriteMachine_Pre($grpc.ServiceCall call, $async.Future<$12.RemoveFavoriteMachineRequest> request) async {
+    return removeFavoriteMachine(call, await request);
+  }
+
+  $async.Future<$12.ListFavoriteMachinesResponse> listFavoriteMachines_Pre($grpc.ServiceCall call, $async.Future<$12.ListFavoriteMachinesRequest> request) async {
+    return listFavoriteMachines(call, await request);
   }
 
   $async.Future<$12.ListFragmentsResponse> listFragments_Pre($grpc.ServiceCall call, $async.Future<$12.ListFragmentsRequest> request) async {
@@ -2370,6 +2446,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Stream<$12.TailRobotPartLogsResponse> tailRobotPartLogs($grpc.ServiceCall call, $12.TailRobotPartLogsRequest request);
   $async.Future<$12.GetRobotPartHistoryResponse> getRobotPartHistory($grpc.ServiceCall call, $12.GetRobotPartHistoryRequest request);
   $async.Future<$12.UpdateRobotPartResponse> updateRobotPart($grpc.ServiceCall call, $12.UpdateRobotPartRequest request);
+  $async.Future<$12.SetConfigPropertyResponse> setConfigProperty($grpc.ServiceCall call, $12.SetConfigPropertyRequest request);
   $async.Future<$12.NewRobotPartResponse> newRobotPart($grpc.ServiceCall call, $12.NewRobotPartRequest request);
   $async.Future<$12.DeleteRobotPartResponse> deleteRobotPart($grpc.ServiceCall call, $12.DeleteRobotPartRequest request);
   $async.Future<$12.GetRobotPartMetadataResponse> getRobotPartMetadata($grpc.ServiceCall call, $12.GetRobotPartMetadataRequest request);
@@ -2385,6 +2462,9 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$12.NewRobotResponse> newRobot($grpc.ServiceCall call, $12.NewRobotRequest request);
   $async.Future<$12.UpdateRobotResponse> updateRobot($grpc.ServiceCall call, $12.UpdateRobotRequest request);
   $async.Future<$12.DeleteRobotResponse> deleteRobot($grpc.ServiceCall call, $12.DeleteRobotRequest request);
+  $async.Future<$12.AddFavoriteMachineResponse> addFavoriteMachine($grpc.ServiceCall call, $12.AddFavoriteMachineRequest request);
+  $async.Future<$12.RemoveFavoriteMachineResponse> removeFavoriteMachine($grpc.ServiceCall call, $12.RemoveFavoriteMachineRequest request);
+  $async.Future<$12.ListFavoriteMachinesResponse> listFavoriteMachines($grpc.ServiceCall call, $12.ListFavoriteMachinesRequest request);
   $async.Future<$12.ListFragmentsResponse> listFragments($grpc.ServiceCall call, $12.ListFragmentsRequest request);
   $async.Future<$12.GetFragmentResponse> getFragment($grpc.ServiceCall call, $12.GetFragmentRequest request);
   $async.Future<$12.CreateFragmentResponse> createFragment($grpc.ServiceCall call, $12.CreateFragmentRequest request);

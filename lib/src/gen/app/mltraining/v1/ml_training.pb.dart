@@ -636,6 +636,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     $core.Map<$core.String, $core.String>? arguments,
     $core.String? containerVersion,
     $core.String? containerId,
+    $core.Iterable<$core.String>? deploymentModularResources,
   }) {
     final $result = create();
     if (status != null) {
@@ -701,6 +702,9 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     if (containerId != null) {
       $result.containerId = containerId;
     }
+    if (deploymentModularResources != null) {
+      $result.deploymentModularResources.addAll(deploymentModularResources);
+    }
     return $result;
   }
   TrainingJobMetadata._() : super();
@@ -729,6 +733,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..m<$core.String, $core.String>(21, _omitFieldNames ? '' : 'arguments', entryClassName: 'TrainingJobMetadata.ArgumentsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.mltraining.v1'))
     ..aOS(22, _omitFieldNames ? '' : 'containerVersion')
     ..aOS(23, _omitFieldNames ? '' : 'containerId')
+    ..pPS(24, _omitFieldNames ? '' : 'deploymentModularResources')
     ..hasRequiredFields = false
   ;
 
@@ -939,6 +944,13 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   $core.bool hasContainerId() => $_has(20);
   @$pb.TagNumber(23)
   void clearContainerId() => clearField(23);
+
+  /// Colon-delimited triplets of components or services from the registry used when
+  /// model_framework is MODEL_FRAMEWORK_REGISTRY. This ties the ML model file to the
+  /// associated component or service that consumes the files and should be deployed
+  /// along with the model.
+  @$pb.TagNumber(24)
+  $core.List<$core.String> get deploymentModularResources => $_getList(21);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {

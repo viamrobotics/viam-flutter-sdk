@@ -6758,6 +6758,268 @@ class UpdateRobotPartResponse extends $pb.GeneratedMessage {
   RobotPart ensurePart() => $_ensure(0);
 }
 
+class ConfigPropertyChange extends $pb.GeneratedMessage {
+  factory ConfigPropertyChange({
+    $core.String? path,
+    $49.Value? value,
+  }) {
+    final $result = create();
+    if (path != null) {
+      $result.path = path;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
+  ConfigPropertyChange._() : super();
+  factory ConfigPropertyChange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ConfigPropertyChange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConfigPropertyChange', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'path')
+    ..aOM<$49.Value>(2, _omitFieldNames ? '' : 'value', subBuilder: $49.Value.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ConfigPropertyChange clone() => ConfigPropertyChange()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ConfigPropertyChange copyWith(void Function(ConfigPropertyChange) updates) => super.copyWith((message) => updates(message as ConfigPropertyChange)) as ConfigPropertyChange;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfigPropertyChange create() => ConfigPropertyChange._();
+  ConfigPropertyChange createEmptyInstance() => create();
+  static $pb.PbList<ConfigPropertyChange> createRepeated() => $pb.PbList<ConfigPropertyChange>();
+  @$core.pragma('dart2js:noInline')
+  static ConfigPropertyChange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConfigPropertyChange>(create);
+  static ConfigPropertyChange? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get path => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set path($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPath() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $49.Value get value => $_getN(1);
+  @$pb.TagNumber(2)
+  set value($49.Value v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+  @$pb.TagNumber(2)
+  $49.Value ensureValue() => $_ensure(1);
+}
+
+class SetConfigPropertyRequest extends $pb.GeneratedMessage {
+  factory SetConfigPropertyRequest({
+    $core.String? robotPartId,
+    $core.Iterable<ConfigPropertyChange>? propertyChanges,
+  }) {
+    final $result = create();
+    if (robotPartId != null) {
+      $result.robotPartId = robotPartId;
+    }
+    if (propertyChanges != null) {
+      $result.propertyChanges.addAll(propertyChanges);
+    }
+    return $result;
+  }
+  SetConfigPropertyRequest._() : super();
+  factory SetConfigPropertyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetConfigPropertyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetConfigPropertyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'robotPartId')
+    ..pc<ConfigPropertyChange>(2, _omitFieldNames ? '' : 'propertyChanges', $pb.PbFieldType.PM, subBuilder: ConfigPropertyChange.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetConfigPropertyRequest clone() => SetConfigPropertyRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetConfigPropertyRequest copyWith(void Function(SetConfigPropertyRequest) updates) => super.copyWith((message) => updates(message as SetConfigPropertyRequest)) as SetConfigPropertyRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetConfigPropertyRequest create() => SetConfigPropertyRequest._();
+  SetConfigPropertyRequest createEmptyInstance() => create();
+  static $pb.PbList<SetConfigPropertyRequest> createRepeated() => $pb.PbList<SetConfigPropertyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetConfigPropertyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetConfigPropertyRequest>(create);
+  static SetConfigPropertyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get robotPartId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set robotPartId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRobotPartId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRobotPartId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<ConfigPropertyChange> get propertyChanges => $_getList(1);
+}
+
+class ConfigPropertyChangeResult extends $pb.GeneratedMessage {
+  factory ConfigPropertyChangeResult({
+    $core.String? path,
+    $49.Value? value,
+    $core.bool? success,
+    $core.String? error,
+  }) {
+    final $result = create();
+    if (path != null) {
+      $result.path = path;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    if (success != null) {
+      $result.success = success;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    return $result;
+  }
+  ConfigPropertyChangeResult._() : super();
+  factory ConfigPropertyChangeResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ConfigPropertyChangeResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConfigPropertyChangeResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'path')
+    ..aOM<$49.Value>(2, _omitFieldNames ? '' : 'value', subBuilder: $49.Value.create)
+    ..aOB(3, _omitFieldNames ? '' : 'success')
+    ..aOS(4, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ConfigPropertyChangeResult clone() => ConfigPropertyChangeResult()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ConfigPropertyChangeResult copyWith(void Function(ConfigPropertyChangeResult) updates) => super.copyWith((message) => updates(message as ConfigPropertyChangeResult)) as ConfigPropertyChangeResult;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfigPropertyChangeResult create() => ConfigPropertyChangeResult._();
+  ConfigPropertyChangeResult createEmptyInstance() => create();
+  static $pb.PbList<ConfigPropertyChangeResult> createRepeated() => $pb.PbList<ConfigPropertyChangeResult>();
+  @$core.pragma('dart2js:noInline')
+  static ConfigPropertyChangeResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConfigPropertyChangeResult>(create);
+  static ConfigPropertyChangeResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get path => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set path($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPath() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $49.Value get value => $_getN(1);
+  @$pb.TagNumber(2)
+  set value($49.Value v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+  @$pb.TagNumber(2)
+  $49.Value ensureValue() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get success => $_getBF(2);
+  @$pb.TagNumber(3)
+  set success($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSuccess() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSuccess() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get error => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set error($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasError() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearError() => clearField(4);
+}
+
+class SetConfigPropertyResponse extends $pb.GeneratedMessage {
+  factory SetConfigPropertyResponse({
+    $core.Iterable<ConfigPropertyChangeResult>? propertyChanges,
+  }) {
+    final $result = create();
+    if (propertyChanges != null) {
+      $result.propertyChanges.addAll(propertyChanges);
+    }
+    return $result;
+  }
+  SetConfigPropertyResponse._() : super();
+  factory SetConfigPropertyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetConfigPropertyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetConfigPropertyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<ConfigPropertyChangeResult>(1, _omitFieldNames ? '' : 'propertyChanges', $pb.PbFieldType.PM, subBuilder: ConfigPropertyChangeResult.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetConfigPropertyResponse clone() => SetConfigPropertyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetConfigPropertyResponse copyWith(void Function(SetConfigPropertyResponse) updates) => super.copyWith((message) => updates(message as SetConfigPropertyResponse)) as SetConfigPropertyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetConfigPropertyResponse create() => SetConfigPropertyResponse._();
+  SetConfigPropertyResponse createEmptyInstance() => create();
+  static $pb.PbList<SetConfigPropertyResponse> createRepeated() => $pb.PbList<SetConfigPropertyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetConfigPropertyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetConfigPropertyResponse>(create);
+  static SetConfigPropertyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<ConfigPropertyChangeResult> get propertyChanges => $_getList(0);
+}
+
 class NewRobotPartRequest extends $pb.GeneratedMessage {
   factory NewRobotPartRequest({
     $core.String? robotId,
@@ -7358,6 +7620,7 @@ class Fragment extends $pb.GeneratedMessage {
     $50.Timestamp? lastUpdated,
     $core.String? revision,
     $core.String? publicNamespace,
+    $core.String? fragmentConfigJson,
   }) {
     final $result = create();
     if (id != null) {
@@ -7402,6 +7665,9 @@ class Fragment extends $pb.GeneratedMessage {
     if (publicNamespace != null) {
       $result.publicNamespace = publicNamespace;
     }
+    if (fragmentConfigJson != null) {
+      $result.fragmentConfigJson = fragmentConfigJson;
+    }
     return $result;
   }
   Fragment._() : super();
@@ -7423,6 +7689,7 @@ class Fragment extends $pb.GeneratedMessage {
     ..aOM<$50.Timestamp>(13, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $50.Timestamp.create)
     ..aOS(14, _omitFieldNames ? '' : 'revision')
     ..aOS(15, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(16, _omitFieldNames ? '' : 'fragmentConfigJson')
     ..hasRequiredFields = false
   ;
 
@@ -7583,6 +7850,16 @@ class Fragment extends $pb.GeneratedMessage {
   $core.bool hasPublicNamespace() => $_has(13);
   @$pb.TagNumber(15)
   void clearPublicNamespace() => clearField(15);
+
+  /// Fragment config JSON, preserving key order.
+  @$pb.TagNumber(16)
+  $core.String get fragmentConfigJson => $_getSZ(14);
+  @$pb.TagNumber(16)
+  set fragmentConfigJson($core.String v) { $_setString(14, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasFragmentConfigJson() => $_has(14);
+  @$pb.TagNumber(16)
+  void clearFragmentConfigJson() => clearField(16);
 }
 
 class FragmentHistoryEntry extends $pb.GeneratedMessage {
@@ -8670,6 +8947,7 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
     $core.bool? public,
     FragmentVisibility? visibility,
     $50.Timestamp? lastKnownUpdate,
+    $core.String? fragmentConfigJson,
   }) {
     final $result = create();
     if (id != null) {
@@ -8690,6 +8968,9 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
     if (lastKnownUpdate != null) {
       $result.lastKnownUpdate = lastKnownUpdate;
     }
+    if (fragmentConfigJson != null) {
+      $result.fragmentConfigJson = fragmentConfigJson;
+    }
     return $result;
   }
   UpdateFragmentRequest._() : super();
@@ -8703,6 +8984,7 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
     ..aOB(4, _omitFieldNames ? '' : 'public')
     ..e<FragmentVisibility>(5, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: FragmentVisibility.FRAGMENT_VISIBILITY_UNSPECIFIED, valueOf: FragmentVisibility.valueOf, enumValues: FragmentVisibility.values)
     ..aOM<$50.Timestamp>(6, _omitFieldNames ? '' : 'lastKnownUpdate', subBuilder: $50.Timestamp.create)
+    ..aOS(7, _omitFieldNames ? '' : 'fragmentConfigJson')
     ..hasRequiredFields = false
   ;
 
@@ -8784,6 +9066,16 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   void clearLastKnownUpdate() => clearField(6);
   @$pb.TagNumber(6)
   $50.Timestamp ensureLastKnownUpdate() => $_ensure(5);
+
+  /// Fragment config JSON, preserving key order. Takes precedence over config.
+  @$pb.TagNumber(7)
+  $core.String get fragmentConfigJson => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set fragmentConfigJson($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasFragmentConfigJson() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFragmentConfigJson() => clearField(7);
 }
 
 class UpdateFragmentResponse extends $pb.GeneratedMessage {
@@ -11007,6 +11299,328 @@ class DeleteRobotResponse extends $pb.GeneratedMessage {
   static DeleteRobotResponse? _defaultInstance;
 }
 
+class FavoriteMachine extends $pb.GeneratedMessage {
+  factory FavoriteMachine({
+    Robot? machine,
+    $core.String? organizationId,
+    $50.Timestamp? createdOn,
+  }) {
+    final $result = create();
+    if (machine != null) {
+      $result.machine = machine;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    return $result;
+  }
+  FavoriteMachine._() : super();
+  factory FavoriteMachine.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FavoriteMachine.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FavoriteMachine', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<Robot>(1, _omitFieldNames ? '' : 'machine', subBuilder: Robot.create)
+    ..aOS(2, _omitFieldNames ? '' : 'organizationId')
+    ..aOM<$50.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $50.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FavoriteMachine clone() => FavoriteMachine()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FavoriteMachine copyWith(void Function(FavoriteMachine) updates) => super.copyWith((message) => updates(message as FavoriteMachine)) as FavoriteMachine;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FavoriteMachine create() => FavoriteMachine._();
+  FavoriteMachine createEmptyInstance() => create();
+  static $pb.PbList<FavoriteMachine> createRepeated() => $pb.PbList<FavoriteMachine>();
+  @$core.pragma('dart2js:noInline')
+  static FavoriteMachine getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FavoriteMachine>(create);
+  static FavoriteMachine? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Robot get machine => $_getN(0);
+  @$pb.TagNumber(1)
+  set machine(Robot v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMachine() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMachine() => clearField(1);
+  @$pb.TagNumber(1)
+  Robot ensureMachine() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get organizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set organizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrganizationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $50.Timestamp get createdOn => $_getN(2);
+  @$pb.TagNumber(3)
+  set createdOn($50.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCreatedOn() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatedOn() => clearField(3);
+  @$pb.TagNumber(3)
+  $50.Timestamp ensureCreatedOn() => $_ensure(2);
+}
+
+class AddFavoriteMachineRequest extends $pb.GeneratedMessage {
+  factory AddFavoriteMachineRequest({
+    $core.String? machineId,
+  }) {
+    final $result = create();
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    return $result;
+  }
+  AddFavoriteMachineRequest._() : super();
+  factory AddFavoriteMachineRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddFavoriteMachineRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddFavoriteMachineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'machineId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddFavoriteMachineRequest clone() => AddFavoriteMachineRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddFavoriteMachineRequest copyWith(void Function(AddFavoriteMachineRequest) updates) => super.copyWith((message) => updates(message as AddFavoriteMachineRequest)) as AddFavoriteMachineRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddFavoriteMachineRequest create() => AddFavoriteMachineRequest._();
+  AddFavoriteMachineRequest createEmptyInstance() => create();
+  static $pb.PbList<AddFavoriteMachineRequest> createRepeated() => $pb.PbList<AddFavoriteMachineRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddFavoriteMachineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddFavoriteMachineRequest>(create);
+  static AddFavoriteMachineRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get machineId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set machineId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMachineId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMachineId() => clearField(1);
+}
+
+class AddFavoriteMachineResponse extends $pb.GeneratedMessage {
+  factory AddFavoriteMachineResponse() => create();
+  AddFavoriteMachineResponse._() : super();
+  factory AddFavoriteMachineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddFavoriteMachineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddFavoriteMachineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddFavoriteMachineResponse clone() => AddFavoriteMachineResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddFavoriteMachineResponse copyWith(void Function(AddFavoriteMachineResponse) updates) => super.copyWith((message) => updates(message as AddFavoriteMachineResponse)) as AddFavoriteMachineResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddFavoriteMachineResponse create() => AddFavoriteMachineResponse._();
+  AddFavoriteMachineResponse createEmptyInstance() => create();
+  static $pb.PbList<AddFavoriteMachineResponse> createRepeated() => $pb.PbList<AddFavoriteMachineResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AddFavoriteMachineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddFavoriteMachineResponse>(create);
+  static AddFavoriteMachineResponse? _defaultInstance;
+}
+
+class RemoveFavoriteMachineRequest extends $pb.GeneratedMessage {
+  factory RemoveFavoriteMachineRequest({
+    $core.String? machineId,
+  }) {
+    final $result = create();
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    return $result;
+  }
+  RemoveFavoriteMachineRequest._() : super();
+  factory RemoveFavoriteMachineRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveFavoriteMachineRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveFavoriteMachineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'machineId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveFavoriteMachineRequest clone() => RemoveFavoriteMachineRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveFavoriteMachineRequest copyWith(void Function(RemoveFavoriteMachineRequest) updates) => super.copyWith((message) => updates(message as RemoveFavoriteMachineRequest)) as RemoveFavoriteMachineRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveFavoriteMachineRequest create() => RemoveFavoriteMachineRequest._();
+  RemoveFavoriteMachineRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveFavoriteMachineRequest> createRepeated() => $pb.PbList<RemoveFavoriteMachineRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveFavoriteMachineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveFavoriteMachineRequest>(create);
+  static RemoveFavoriteMachineRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get machineId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set machineId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMachineId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMachineId() => clearField(1);
+}
+
+class RemoveFavoriteMachineResponse extends $pb.GeneratedMessage {
+  factory RemoveFavoriteMachineResponse() => create();
+  RemoveFavoriteMachineResponse._() : super();
+  factory RemoveFavoriteMachineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveFavoriteMachineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveFavoriteMachineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveFavoriteMachineResponse clone() => RemoveFavoriteMachineResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveFavoriteMachineResponse copyWith(void Function(RemoveFavoriteMachineResponse) updates) => super.copyWith((message) => updates(message as RemoveFavoriteMachineResponse)) as RemoveFavoriteMachineResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveFavoriteMachineResponse create() => RemoveFavoriteMachineResponse._();
+  RemoveFavoriteMachineResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveFavoriteMachineResponse> createRepeated() => $pb.PbList<RemoveFavoriteMachineResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveFavoriteMachineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveFavoriteMachineResponse>(create);
+  static RemoveFavoriteMachineResponse? _defaultInstance;
+}
+
+class ListFavoriteMachinesRequest extends $pb.GeneratedMessage {
+  factory ListFavoriteMachinesRequest() => create();
+  ListFavoriteMachinesRequest._() : super();
+  factory ListFavoriteMachinesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFavoriteMachinesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFavoriteMachinesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListFavoriteMachinesRequest clone() => ListFavoriteMachinesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListFavoriteMachinesRequest copyWith(void Function(ListFavoriteMachinesRequest) updates) => super.copyWith((message) => updates(message as ListFavoriteMachinesRequest)) as ListFavoriteMachinesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListFavoriteMachinesRequest create() => ListFavoriteMachinesRequest._();
+  ListFavoriteMachinesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListFavoriteMachinesRequest> createRepeated() => $pb.PbList<ListFavoriteMachinesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListFavoriteMachinesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFavoriteMachinesRequest>(create);
+  static ListFavoriteMachinesRequest? _defaultInstance;
+}
+
+class ListFavoriteMachinesResponse extends $pb.GeneratedMessage {
+  factory ListFavoriteMachinesResponse({
+    $core.Iterable<FavoriteMachine>? favorites,
+  }) {
+    final $result = create();
+    if (favorites != null) {
+      $result.favorites.addAll(favorites);
+    }
+    return $result;
+  }
+  ListFavoriteMachinesResponse._() : super();
+  factory ListFavoriteMachinesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFavoriteMachinesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFavoriteMachinesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<FavoriteMachine>(1, _omitFieldNames ? '' : 'favorites', $pb.PbFieldType.PM, subBuilder: FavoriteMachine.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListFavoriteMachinesResponse clone() => ListFavoriteMachinesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListFavoriteMachinesResponse copyWith(void Function(ListFavoriteMachinesResponse) updates) => super.copyWith((message) => updates(message as ListFavoriteMachinesResponse)) as ListFavoriteMachinesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListFavoriteMachinesResponse create() => ListFavoriteMachinesResponse._();
+  ListFavoriteMachinesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListFavoriteMachinesResponse> createRepeated() => $pb.PbList<ListFavoriteMachinesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListFavoriteMachinesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFavoriteMachinesResponse>(create);
+  static ListFavoriteMachinesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<FavoriteMachine> get favorites => $_getList(0);
+}
+
 class GetRobotMetadataRequest extends $pb.GeneratedMessage {
   factory GetRobotMetadataRequest({
     $core.String? id,
@@ -12617,6 +13231,7 @@ class MLModelMetadata extends $pb.GeneratedMessage {
     $11.ModelType? modelType,
     $11.ModelFramework? modelFramework,
     $core.Iterable<MLModelVersion>? detailedVersions,
+    $core.Iterable<$core.String>? deploymentModularResources,
   }) {
     final $result = create();
     if (versions != null) {
@@ -12632,6 +13247,9 @@ class MLModelMetadata extends $pb.GeneratedMessage {
     if (detailedVersions != null) {
       $result.detailedVersions.addAll(detailedVersions);
     }
+    if (deploymentModularResources != null) {
+      $result.deploymentModularResources.addAll(deploymentModularResources);
+    }
     return $result;
   }
   MLModelMetadata._() : super();
@@ -12643,6 +13261,7 @@ class MLModelMetadata extends $pb.GeneratedMessage {
     ..e<$11.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $11.ModelType.valueOf, enumValues: $11.ModelType.values)
     ..e<$11.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $11.ModelFramework.valueOf, enumValues: $11.ModelFramework.values)
     ..pc<MLModelVersion>(4, _omitFieldNames ? '' : 'detailedVersions', $pb.PbFieldType.PM, subBuilder: MLModelVersion.create)
+    ..pPS(5, _omitFieldNames ? '' : 'deploymentModularResources')
     ..hasRequiredFields = false
   ;
 
@@ -12692,6 +13311,13 @@ class MLModelMetadata extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<MLModelVersion> get detailedVersions => $_getList(3);
+
+  /// Colon-delimited triplets of components or services from the registry used when
+  /// model_framework is MODEL_FRAMEWORK_REGISTRY. This ties the ML model file to the
+  /// associated component or service that consumes the files and should be deployed
+  /// along with the model.
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get deploymentModularResources => $_getList(4);
 }
 
 class MLTrainingVersion extends $pb.GeneratedMessage {
@@ -12766,6 +13392,7 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
     $11.ModelFramework? modelFramework,
     $core.bool? draft,
     $core.Iterable<MLTrainingVersion>? versions,
+    $core.Iterable<$core.String>? deploymentModularResources,
   }) {
     final $result = create();
     if (modelType != null) {
@@ -12780,6 +13407,9 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
     if (versions != null) {
       $result.versions.addAll(versions);
     }
+    if (deploymentModularResources != null) {
+      $result.deploymentModularResources.addAll(deploymentModularResources);
+    }
     return $result;
   }
   MLTrainingMetadata._() : super();
@@ -12791,6 +13421,7 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
     ..e<$11.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $11.ModelFramework.valueOf, enumValues: $11.ModelFramework.values)
     ..aOB(4, _omitFieldNames ? '' : 'draft')
     ..pc<MLTrainingVersion>(5, _omitFieldNames ? '' : 'versions', $pb.PbFieldType.PM, subBuilder: MLTrainingVersion.create)
+    ..pPS(6, _omitFieldNames ? '' : 'deploymentModularResources')
     ..hasRequiredFields = false
   ;
 
@@ -12845,6 +13476,14 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   /// A list of package versions for ML training source distribution
   @$pb.TagNumber(5)
   $core.List<MLTrainingVersion> get versions => $_getList(3);
+
+  /// Colon-delimited triplets of components or services from the registry used when
+  /// model_framework is MODEL_FRAMEWORK_REGISTRY. This ties the ML model file to the
+  /// associated component or service that consumes the files and should be deployed
+  /// along with the model.
+  /// Copied onto packages published by this training script.
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get deploymentModularResources => $_getList(4);
 }
 
 /// note: current project will only support deprecation of modules;
@@ -15201,6 +15840,7 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   factory UpdateMLModelMetadata({
     $11.ModelType? modelType,
     $11.ModelFramework? modelFramework,
+    $core.Iterable<$core.String>? deploymentModularResources,
   }) {
     final $result = create();
     if (modelType != null) {
@@ -15208,6 +15848,9 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
     }
     if (modelFramework != null) {
       $result.modelFramework = modelFramework;
+    }
+    if (deploymentModularResources != null) {
+      $result.deploymentModularResources.addAll(deploymentModularResources);
     }
     return $result;
   }
@@ -15218,6 +15861,7 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMLModelMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..e<$11.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $11.ModelType.valueOf, enumValues: $11.ModelType.values)
     ..e<$11.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $11.ModelFramework.valueOf, enumValues: $11.ModelFramework.values)
+    ..pPS(3, _omitFieldNames ? '' : 'deploymentModularResources')
     ..hasRequiredFields = false
   ;
 
@@ -15259,6 +15903,13 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   $core.bool hasModelFramework() => $_has(1);
   @$pb.TagNumber(2)
   void clearModelFramework() => clearField(2);
+
+  /// Colon-delimited triplets of components or services from the registry used when
+  /// model_framework is MODEL_FRAMEWORK_REGISTRY. This ties the ML model file to the
+  /// associated component or service that consumes the files and should be deployed
+  /// along with the model.
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get deploymentModularResources => $_getList(2);
 }
 
 class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
@@ -15266,6 +15917,7 @@ class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
     $11.ModelType? modelType,
     $11.ModelFramework? modelFramework,
     $core.bool? draft,
+    $core.Iterable<$core.String>? deploymentModularResources,
   }) {
     final $result = create();
     if (modelType != null) {
@@ -15277,6 +15929,9 @@ class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
     if (draft != null) {
       $result.draft = draft;
     }
+    if (deploymentModularResources != null) {
+      $result.deploymentModularResources.addAll(deploymentModularResources);
+    }
     return $result;
   }
   UpdateMLTrainingMetadata._() : super();
@@ -15287,6 +15942,7 @@ class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
     ..e<$11.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $11.ModelType.valueOf, enumValues: $11.ModelType.values)
     ..e<$11.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $11.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $11.ModelFramework.valueOf, enumValues: $11.ModelFramework.values)
     ..aOB(3, _omitFieldNames ? '' : 'draft')
+    ..pPS(4, _omitFieldNames ? '' : 'deploymentModularResources')
     ..hasRequiredFields = false
   ;
 
@@ -15337,6 +15993,13 @@ class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
   $core.bool hasDraft() => $_has(2);
   @$pb.TagNumber(3)
   void clearDraft() => clearField(3);
+
+  /// Colon-delimited triplets of components or services from the registry used when
+  /// model_framework is MODEL_FRAMEWORK_REGISTRY. This ties the ML model file to the
+  /// associated component or service that consumes the files and should be deployed
+  /// along with the model.
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get deploymentModularResources => $_getList(3);
 }
 
 class Model extends $pb.GeneratedMessage {

@@ -29,6 +29,23 @@ final $typed_data.Uint8List kinematicsFileFormatDescriptor = $convert.base64Deco
     'lGSUVEEAASHgoaS0lORU1BVElDU19GSUxFX0ZPUk1BVF9TVkEQARIfChtLSU5FTUFUSUNTX0ZJ'
     'TEVfRk9STUFUX1VSREYQAg==');
 
+@$core.Deprecated('Use jointTypeDescriptor instead')
+const JointType$json = {
+  '1': 'JointType',
+  '2': [
+    {'1': 'JOINT_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'JOINT_TYPE_REVOLUTE', '2': 1},
+    {'1': 'JOINT_TYPE_PRISMATIC', '2': 2},
+    {'1': 'JOINT_TYPE_CONTINUOUS', '2': 3},
+  ],
+};
+
+/// Descriptor for `JointType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List jointTypeDescriptor = $convert.base64Decode(
+    'CglKb2ludFR5cGUSGgoWSk9JTlRfVFlQRV9VTlNQRUNJRklFRBAAEhcKE0pPSU5UX1RZUEVfUk'
+    'VWT0xVVEUQARIYChRKT0lOVF9UWVBFX1BSSVNNQVRJQxACEhkKFUpPSU5UX1RZUEVfQ09OVElO'
+    'VU9VUxAD');
+
 @$core.Deprecated('Use resourceNameDescriptor instead')
 const ResourceName$json = {
   '1': 'ResourceName',
@@ -180,13 +197,19 @@ const Mesh$json = {
   '2': [
     {'1': 'content_type', '3': 1, '4': 1, '5': 9, '10': 'contentType'},
     {'1': 'mesh', '3': 2, '4': 1, '5': 12, '10': 'mesh'},
+    {'1': 'original_file_source_path_diagnostic', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'originalFileSourcePathDiagnostic', '17': true},
+  ],
+  '8': [
+    {'1': '_original_file_source_path_diagnostic'},
   ],
 };
 
 /// Descriptor for `Mesh`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List meshDescriptor = $convert.base64Decode(
     'CgRNZXNoEiEKDGNvbnRlbnRfdHlwZRgBIAEoCVILY29udGVudFR5cGUSEgoEbWVzaBgCIAEoDF'
-    'IEbWVzaA==');
+    'IEbWVzaBJTCiRvcmlnaW5hbF9maWxlX3NvdXJjZV9wYXRoX2RpYWdub3N0aWMYAyABKAlIAFIg'
+    'b3JpZ2luYWxGaWxlU291cmNlUGF0aERpYWdub3N0aWOIAQFCJwolX29yaWdpbmFsX2ZpbGVfc2'
+    '91cmNlX3BhdGhfZGlhZ25vc3RpYw==');
 
 @$core.Deprecated('Use pointCloudDescriptor instead')
 const PointCloud$json = {
@@ -270,6 +293,29 @@ const GeoPoint$json = {
 final $typed_data.Uint8List geoPointDescriptor = $convert.base64Decode(
     'CghHZW9Qb2ludBIaCghsYXRpdHVkZRgBIAEoAVIIbGF0aXR1ZGUSHAoJbG9uZ2l0dWRlGAIgAS'
     'gBUglsb25naXR1ZGU=');
+
+@$core.Deprecated('Use geoPoseDescriptor instead')
+const GeoPose$json = {
+  '1': 'GeoPose',
+  '2': [
+    {'1': 'location', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'location'},
+    {'1': 'altitude', '3': 3, '4': 1, '5': 1, '9': 1, '10': 'altitude', '17': true},
+    {'1': 'heading', '3': 2, '4': 1, '5': 1, '9': 0, '10': 'heading'},
+    {'1': 'orientation_vector', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.Orientation', '9': 0, '10': 'orientationVector'},
+  ],
+  '8': [
+    {'1': 'orientation'},
+    {'1': '_altitude'},
+  ],
+};
+
+/// Descriptor for `GeoPose`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List geoPoseDescriptor = $convert.base64Decode(
+    'CgdHZW9Qb3NlEjQKCGxvY2F0aW9uGAEgASgLMhgudmlhbS5jb21tb24udjEuR2VvUG9pbnRSCG'
+    'xvY2F0aW9uEh8KCGFsdGl0dWRlGAMgASgBSAFSCGFsdGl0dWRliAEBEhoKB2hlYWRpbmcYAiAB'
+    'KAFIAFIHaGVhZGluZxJMChJvcmllbnRhdGlvbl92ZWN0b3IYBCABKAsyGy52aWFtLmNvbW1vbi'
+    '52MS5PcmllbnRhdGlvbkgAUhFvcmllbnRhdGlvblZlY3RvckINCgtvcmllbnRhdGlvbkILCglf'
+    'YWx0aXR1ZGU=');
 
 @$core.Deprecated('Use geoGeometryDescriptor instead')
 const GeoGeometry$json = {
@@ -411,22 +457,50 @@ const GetKinematicsRequest$json = {
   '1': 'GetKinematicsRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'include_collision_meshes', '3': 2, '4': 1, '5': 8, '10': 'includeCollisionMeshes'},
+    {'1': 'include_visual_meshes', '3': 3, '4': 1, '5': 8, '10': 'includeVisualMeshes'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `GetKinematicsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getKinematicsRequestDescriptor = $convert.base64Decode(
-    'ChRHZXRLaW5lbWF0aWNzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGGMgAS'
-    'gLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+    'ChRHZXRLaW5lbWF0aWNzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEjgKGGluY2x1ZGVfY2'
+    '9sbGlzaW9uX21lc2hlcxgCIAEoCFIWaW5jbHVkZUNvbGxpc2lvbk1lc2hlcxIyChVpbmNsdWRl'
+    'X3Zpc3VhbF9tZXNoZXMYAyABKAhSE2luY2x1ZGVWaXN1YWxNZXNoZXMSLQoFZXh0cmEYYyABKA'
+    'syFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
 
 @$core.Deprecated('Use getKinematicsResponseDescriptor instead')
 const GetKinematicsResponse$json = {
   '1': 'GetKinematicsResponse',
   '2': [
-    {'1': 'format', '3': 1, '4': 1, '5': 14, '6': '.viam.common.v1.KinematicsFileFormat', '10': 'format'},
-    {'1': 'kinematics_data', '3': 2, '4': 1, '5': 12, '10': 'kinematicsData'},
-    {'1': 'meshes_by_urdf_filepath', '3': 3, '4': 3, '5': 11, '6': '.viam.common.v1.GetKinematicsResponse.MeshesByUrdfFilepathEntry', '10': 'meshesByUrdfFilepath'},
+    {
+      '1': 'format',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.viam.common.v1.KinematicsFileFormat',
+      '8': {'3': true},
+      '10': 'format',
+    },
+    {
+      '1': 'kinematics_data',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '8': {'3': true},
+      '10': 'kinematicsData',
+    },
+    {
+      '1': 'meshes_by_urdf_filepath',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.viam.common.v1.GetKinematicsResponse.MeshesByUrdfFilepathEntry',
+      '8': {'3': true},
+      '10': 'meshesByUrdfFilepath',
+    },
+    {'1': 'model', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.KinematicModel', '10': 'model'},
   ],
   '3': [GetKinematicsResponse_MeshesByUrdfFilepathEntry$json],
 };
@@ -443,13 +517,207 @@ const GetKinematicsResponse_MeshesByUrdfFilepathEntry$json = {
 
 /// Descriptor for `GetKinematicsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getKinematicsResponseDescriptor = $convert.base64Decode(
-    'ChVHZXRLaW5lbWF0aWNzUmVzcG9uc2USPAoGZm9ybWF0GAEgASgOMiQudmlhbS5jb21tb24udj'
-    'EuS2luZW1hdGljc0ZpbGVGb3JtYXRSBmZvcm1hdBInCg9raW5lbWF0aWNzX2RhdGEYAiABKAxS'
-    'DmtpbmVtYXRpY3NEYXRhEnYKF21lc2hlc19ieV91cmRmX2ZpbGVwYXRoGAMgAygLMj8udmlhbS'
-    '5jb21tb24udjEuR2V0S2luZW1hdGljc1Jlc3BvbnNlLk1lc2hlc0J5VXJkZkZpbGVwYXRoRW50'
-    'cnlSFG1lc2hlc0J5VXJkZkZpbGVwYXRoGl0KGU1lc2hlc0J5VXJkZkZpbGVwYXRoRW50cnkSEA'
-    'oDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC52aWFtLmNvbW1vbi52MS5NZXNoUgV2'
-    'YWx1ZToCOAE=');
+    'ChVHZXRLaW5lbWF0aWNzUmVzcG9uc2USQAoGZm9ybWF0GAEgASgOMiQudmlhbS5jb21tb24udj'
+    'EuS2luZW1hdGljc0ZpbGVGb3JtYXRCAhgBUgZmb3JtYXQSKwoPa2luZW1hdGljc19kYXRhGAIg'
+    'ASgMQgIYAVIOa2luZW1hdGljc0RhdGESegoXbWVzaGVzX2J5X3VyZGZfZmlsZXBhdGgYAyADKA'
+    'syPy52aWFtLmNvbW1vbi52MS5HZXRLaW5lbWF0aWNzUmVzcG9uc2UuTWVzaGVzQnlVcmRmRmls'
+    'ZXBhdGhFbnRyeUICGAFSFG1lc2hlc0J5VXJkZkZpbGVwYXRoEjQKBW1vZGVsGAQgASgLMh4udm'
+    'lhbS5jb21tb24udjEuS2luZW1hdGljTW9kZWxSBW1vZGVsGl0KGU1lc2hlc0J5VXJkZkZpbGVw'
+    'YXRoRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC52aWFtLmNvbW1vbi'
+    '52MS5NZXNoUgV2YWx1ZToCOAE=');
+
+@$core.Deprecated('Use kinematicModelDescriptor instead')
+const KinematicModel$json = {
+  '1': 'KinematicModel',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'links', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.KinematicLink', '10': 'links'},
+    {'1': 'joints', '3': 3, '4': 3, '5': 11, '6': '.viam.common.v1.KinematicJoint', '10': 'joints'},
+    {'1': 'output_frames', '3': 4, '4': 3, '5': 9, '10': 'outputFrames'},
+    {'1': 'properties', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.KinematicProperties', '10': 'properties'},
+  ],
+};
+
+/// Descriptor for `KinematicModel`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List kinematicModelDescriptor = $convert.base64Decode(
+    'Cg5LaW5lbWF0aWNNb2RlbBISCgRuYW1lGAEgASgJUgRuYW1lEjMKBWxpbmtzGAIgAygLMh0udm'
+    'lhbS5jb21tb24udjEuS2luZW1hdGljTGlua1IFbGlua3MSNgoGam9pbnRzGAMgAygLMh4udmlh'
+    'bS5jb21tb24udjEuS2luZW1hdGljSm9pbnRSBmpvaW50cxIjCg1vdXRwdXRfZnJhbWVzGAQgAy'
+    'gJUgxvdXRwdXRGcmFtZXMSQwoKcHJvcGVydGllcxgFIAEoCzIjLnZpYW0uY29tbW9uLnYxLktp'
+    'bmVtYXRpY1Byb3BlcnRpZXNSCnByb3BlcnRpZXM=');
+
+@$core.Deprecated('Use kinematicLinkDescriptor instead')
+const KinematicLink$json = {
+  '1': 'KinematicLink',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'parent', '3': 2, '4': 1, '5': 9, '10': 'parent'},
+    {'1': 'pose', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.LinkPose', '10': 'pose'},
+    {'1': 'collision', '3': 4, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'collision'},
+    {'1': 'visual', '3': 5, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'visual'},
+  ],
+};
+
+/// Descriptor for `KinematicLink`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List kinematicLinkDescriptor = $convert.base64Decode(
+    'Cg1LaW5lbWF0aWNMaW5rEg4KAmlkGAEgASgJUgJpZBIWCgZwYXJlbnQYAiABKAlSBnBhcmVudB'
+    'IsCgRwb3NlGAMgASgLMhgudmlhbS5jb21tb24udjEuTGlua1Bvc2VSBHBvc2USNgoJY29sbGlz'
+    'aW9uGAQgAygLMhgudmlhbS5jb21tb24udjEuR2VvbWV0cnlSCWNvbGxpc2lvbhIwCgZ2aXN1YW'
+    'wYBSADKAsyGC52aWFtLmNvbW1vbi52MS5HZW9tZXRyeVIGdmlzdWFs');
+
+@$core.Deprecated('Use linkPoseDescriptor instead')
+const LinkPose$json = {
+  '1': 'LinkPose',
+  '2': [
+    {'1': 'translation', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Vector3', '10': 'translation'},
+    {'1': 'quaternion', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Quaternion', '9': 0, '10': 'quaternion'},
+    {'1': 'orientation_vector', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.Orientation', '9': 0, '10': 'orientationVector'},
+    {'1': 'euler_angles', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.EulerAngles', '9': 0, '10': 'eulerAngles'},
+    {'1': 'axis_angles', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.AxisAngles', '9': 0, '10': 'axisAngles'},
+  ],
+  '8': [
+    {'1': 'orientation'},
+  ],
+};
+
+/// Descriptor for `LinkPose`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkPoseDescriptor = $convert.base64Decode(
+    'CghMaW5rUG9zZRI5Cgt0cmFuc2xhdGlvbhgBIAEoCzIXLnZpYW0uY29tbW9uLnYxLlZlY3Rvcj'
+    'NSC3RyYW5zbGF0aW9uEjwKCnF1YXRlcm5pb24YAiABKAsyGi52aWFtLmNvbW1vbi52MS5RdWF0'
+    'ZXJuaW9uSABSCnF1YXRlcm5pb24STAoSb3JpZW50YXRpb25fdmVjdG9yGAMgASgLMhsudmlhbS'
+    '5jb21tb24udjEuT3JpZW50YXRpb25IAFIRb3JpZW50YXRpb25WZWN0b3ISQAoMZXVsZXJfYW5n'
+    'bGVzGAQgASgLMhsudmlhbS5jb21tb24udjEuRXVsZXJBbmdsZXNIAFILZXVsZXJBbmdsZXMSPQ'
+    'oLYXhpc19hbmdsZXMYBSABKAsyGi52aWFtLmNvbW1vbi52MS5BeGlzQW5nbGVzSABSCmF4aXNB'
+    'bmdsZXNCDQoLb3JpZW50YXRpb24=');
+
+@$core.Deprecated('Use quaternionDescriptor instead')
+const Quaternion$json = {
+  '1': 'Quaternion',
+  '2': [
+    {'1': 'w', '3': 1, '4': 1, '5': 1, '10': 'w'},
+    {'1': 'x', '3': 2, '4': 1, '5': 1, '10': 'x'},
+    {'1': 'y', '3': 3, '4': 1, '5': 1, '10': 'y'},
+    {'1': 'z', '3': 4, '4': 1, '5': 1, '10': 'z'},
+  ],
+};
+
+/// Descriptor for `Quaternion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List quaternionDescriptor = $convert.base64Decode(
+    'CgpRdWF0ZXJuaW9uEgwKAXcYASABKAFSAXcSDAoBeBgCIAEoAVIBeBIMCgF5GAMgASgBUgF5Eg'
+    'wKAXoYBCABKAFSAXo=');
+
+@$core.Deprecated('Use eulerAnglesDescriptor instead')
+const EulerAngles$json = {
+  '1': 'EulerAngles',
+  '2': [
+    {'1': 'roll', '3': 1, '4': 1, '5': 1, '10': 'roll'},
+    {'1': 'pitch', '3': 2, '4': 1, '5': 1, '10': 'pitch'},
+    {'1': 'yaw', '3': 3, '4': 1, '5': 1, '10': 'yaw'},
+  ],
+};
+
+/// Descriptor for `EulerAngles`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eulerAnglesDescriptor = $convert.base64Decode(
+    'CgtFdWxlckFuZ2xlcxISCgRyb2xsGAEgASgBUgRyb2xsEhQKBXBpdGNoGAIgASgBUgVwaXRjaB'
+    'IQCgN5YXcYAyABKAFSA3lhdw==');
+
+@$core.Deprecated('Use axisAnglesDescriptor instead')
+const AxisAngles$json = {
+  '1': 'AxisAngles',
+  '2': [
+    {'1': 'rx', '3': 1, '4': 1, '5': 1, '10': 'rx'},
+    {'1': 'ry', '3': 2, '4': 1, '5': 1, '10': 'ry'},
+    {'1': 'rz', '3': 3, '4': 1, '5': 1, '10': 'rz'},
+    {'1': 'theta', '3': 4, '4': 1, '5': 1, '10': 'theta'},
+  ],
+};
+
+/// Descriptor for `AxisAngles`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List axisAnglesDescriptor = $convert.base64Decode(
+    'CgpBeGlzQW5nbGVzEg4KAnJ4GAEgASgBUgJyeBIOCgJyeRgCIAEoAVICcnkSDgoCcnoYAyABKA'
+    'FSAnJ6EhQKBXRoZXRhGAQgASgBUgV0aGV0YQ==');
+
+@$core.Deprecated('Use kinematicJointDescriptor instead')
+const KinematicJoint$json = {
+  '1': 'KinematicJoint',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'parent', '3': 2, '4': 1, '5': 9, '10': 'parent'},
+    {'1': 'type', '3': 3, '4': 1, '5': 14, '6': '.viam.common.v1.JointType', '10': 'type'},
+    {'1': 'axis', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.Vector3', '10': 'axis'},
+    {'1': 'limits', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.JointLimits', '10': 'limits'},
+    {'1': 'mimic', '3': 6, '4': 1, '5': 11, '6': '.viam.common.v1.MimicJoint', '10': 'mimic'},
+    {'1': 'geometry', '3': 7, '4': 1, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometry'},
+  ],
+};
+
+/// Descriptor for `KinematicJoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List kinematicJointDescriptor = $convert.base64Decode(
+    'Cg5LaW5lbWF0aWNKb2ludBIOCgJpZBgBIAEoCVICaWQSFgoGcGFyZW50GAIgASgJUgZwYXJlbn'
+    'QSLQoEdHlwZRgDIAEoDjIZLnZpYW0uY29tbW9uLnYxLkpvaW50VHlwZVIEdHlwZRIrCgRheGlz'
+    'GAQgASgLMhcudmlhbS5jb21tb24udjEuVmVjdG9yM1IEYXhpcxIzCgZsaW1pdHMYBSABKAsyGy'
+    '52aWFtLmNvbW1vbi52MS5Kb2ludExpbWl0c1IGbGltaXRzEjAKBW1pbWljGAYgASgLMhoudmlh'
+    'bS5jb21tb24udjEuTWltaWNKb2ludFIFbWltaWMSNAoIZ2VvbWV0cnkYByABKAsyGC52aWFtLm'
+    'NvbW1vbi52MS5HZW9tZXRyeVIIZ2VvbWV0cnk=');
+
+@$core.Deprecated('Use jointLimitsDescriptor instead')
+const JointLimits$json = {
+  '1': 'JointLimits',
+  '2': [
+    {'1': 'min', '3': 1, '4': 1, '5': 1, '9': 0, '10': 'min', '17': true},
+    {'1': 'max', '3': 2, '4': 1, '5': 1, '9': 1, '10': 'max', '17': true},
+    {'1': 'max_velocity', '3': 3, '4': 1, '5': 1, '9': 2, '10': 'maxVelocity', '17': true},
+    {'1': 'max_acceleration', '3': 4, '4': 1, '5': 1, '9': 3, '10': 'maxAcceleration', '17': true},
+  ],
+  '8': [
+    {'1': '_min'},
+    {'1': '_max'},
+    {'1': '_max_velocity'},
+    {'1': '_max_acceleration'},
+  ],
+};
+
+/// Descriptor for `JointLimits`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jointLimitsDescriptor = $convert.base64Decode(
+    'CgtKb2ludExpbWl0cxIVCgNtaW4YASABKAFIAFIDbWluiAEBEhUKA21heBgCIAEoAUgBUgNtYX'
+    'iIAQESJgoMbWF4X3ZlbG9jaXR5GAMgASgBSAJSC21heFZlbG9jaXR5iAEBEi4KEG1heF9hY2Nl'
+    'bGVyYXRpb24YBCABKAFIA1IPbWF4QWNjZWxlcmF0aW9uiAEBQgYKBF9taW5CBgoEX21heEIPCg'
+    '1fbWF4X3ZlbG9jaXR5QhMKEV9tYXhfYWNjZWxlcmF0aW9u');
+
+@$core.Deprecated('Use mimicJointDescriptor instead')
+const MimicJoint$json = {
+  '1': 'MimicJoint',
+  '2': [
+    {'1': 'joint', '3': 1, '4': 1, '5': 9, '10': 'joint'},
+    {'1': 'multiplier', '3': 2, '4': 1, '5': 1, '10': 'multiplier'},
+    {'1': 'offset', '3': 3, '4': 1, '5': 1, '10': 'offset'},
+  ],
+};
+
+/// Descriptor for `MimicJoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mimicJointDescriptor = $convert.base64Decode(
+    'CgpNaW1pY0pvaW50EhQKBWpvaW50GAEgASgJUgVqb2ludBIeCgptdWx0aXBsaWVyGAIgASgBUg'
+    'ptdWx0aXBsaWVyEhYKBm9mZnNldBgDIAEoAVIGb2Zmc2V0');
+
+@$core.Deprecated('Use kinematicPropertiesDescriptor instead')
+const KinematicProperties$json = {
+  '1': 'KinematicProperties',
+  '2': [
+    {'1': 'operating_freq_hz', '3': 1, '4': 1, '5': 1, '9': 0, '10': 'operatingFreqHz', '17': true},
+    {'1': 'max_linear_tcp_speed_mm_per_sec', '3': 2, '4': 1, '5': 1, '9': 1, '10': 'maxLinearTcpSpeedMmPerSec', '17': true},
+  ],
+  '8': [
+    {'1': '_operating_freq_hz'},
+    {'1': '_max_linear_tcp_speed_mm_per_sec'},
+  ],
+};
+
+/// Descriptor for `KinematicProperties`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List kinematicPropertiesDescriptor = $convert.base64Decode(
+    'ChNLaW5lbWF0aWNQcm9wZXJ0aWVzEi8KEW9wZXJhdGluZ19mcmVxX2h6GAEgASgBSABSD29wZX'
+    'JhdGluZ0ZyZXFIeogBARJHCh9tYXhfbGluZWFyX3RjcF9zcGVlZF9tbV9wZXJfc2VjGAIgASgB'
+    'SAFSGW1heExpbmVhclRjcFNwZWVkTW1QZXJTZWOIAQFCFAoSX29wZXJhdGluZ19mcmVxX2h6Qi'
+    'IKIF9tYXhfbGluZWFyX3RjcF9zcGVlZF9tbV9wZXJfc2Vj');
 
 @$core.Deprecated('Use getGeometriesRequestDescriptor instead')
 const GetGeometriesRequest$json = {
