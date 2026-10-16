@@ -62,7 +62,11 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get information about the navigation service's properties, including its <a href="../../viam_protos.service.navigation/MapType-class.html">MapType</a>.</p>
+  <p>Get the <a href="../../viam_protos.service.navigation/MapType-class.html">MapType</a> the service operates on and the robot's properties. These values do not change while the
+service is running.</p>
+<pre class="language-dart"><code>// Example:
+final properties = await myNavigationService.getProperties();
+</code></pre>
 <p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#getproperties">navigation service docs</a>.</p>
 </section>
 
@@ -72,7 +76,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;NavigationProperties&gt; getProperties() async {
   final request = GetPropertiesRequest(name: name);
-  return await client.getProperties(request, options: callOptions);
+  final response = await client.getProperties(request, options: callOptions);
+  return response.properties;
 }</code></pre>
 </section>
 

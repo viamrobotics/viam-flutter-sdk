@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the removeWaypoint method from the NavigationClient class, for the Dart programming language.">
-  <title>removeWaypoint method - NavigationClient class - viam_sdk library - Dart API</title>
+  <meta name="description" content="API docs for the navigateToPoint method from the NavigationClient class, for the Dart programming language.">
+  <title>navigateToPoint method - NavigationClient class - viam_sdk library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
     <li><a href="../../viam_sdk/NavigationClient-class.html">NavigationClient</a></li>
-    <li class="self-crumb">removeWaypoint method</li>
+    <li class="self-crumb">navigateToPoint method</li>
   </ol>
-  <div class="self-name">removeWaypoint</div>
+  <div class="self-name">navigateToPoint</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,14 +49,14 @@
     data-above-sidebar="viam_sdk&#47;NavigationClient-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">removeWaypoint</span> method 
+<h1><span class="kind-method">navigateToPoint</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">removeWaypoint</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="removeWaypoint-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">id</span>, {</span></li>
-<li><span class="parameter" id="removeWaypoint-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+<span class="name ">navigateToPoint</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="navigateToPoint-param-destination"><span class="type-annotation"><a href="../../viam_sdk/NavigationPosition.html">NavigationPosition</a></span> <span class="parameter-name">destination</span>, {</span></li>
+<li><span class="parameter" id="navigateToPoint-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
 
       
@@ -64,17 +64,22 @@
     </section>
     
 <section class="desc markdown">
-  <p>Remove a <a href="../../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a> from the service's data storage by its <code>id</code>.</p>
-<p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#removewaypoint">navigation service docs</a>.</p>
+  <p>Plan an obstacle-aware path to <code>destination</code> and start driving it. Returns once the goal is accepted; track
+progress with <a href="../../viam_sdk/NavigationClient/getNavigationStatus.html">getNavigationStatus</a>.</p>
+<pre class="language-dart"><code>// Example:
+final status = await myNavigationService.navigateToPoint(NavigationPosition(pose: Pose(x: 1000, y: 0, z: 0)));
+</code></pre>
+<p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#navigatetopoint">navigation service docs</a>.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; removeWaypoint(String id, {Map&lt;String, dynamic&gt;? extra}) async {
-  final request = RemoveWaypointRequest(name: name, id: id, extra: extra?.toStruct());
-  await client.removeWaypoint(request, options: callOptions);
+  <pre class="language-dart"><code class="language-dart">Future&lt;NavigationStatus&gt; navigateToPoint(NavigationPosition destination, {Map&lt;String, dynamic&gt;? extra}) async {
+  final request = NavigateToPointRequest(name: name, destination: destination, extra: extra?.toStruct());
+  final response = await client.navigateToPoint(request, options: callOptions);
+  return response.status;
 }</code></pre>
 </section>
 
@@ -91,7 +96,7 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk</a></li>
     <li><a href="../../viam_sdk/NavigationClient-class.html">NavigationClient</a></li>
-    <li class="self-crumb">removeWaypoint method</li>
+    <li class="self-crumb">navigateToPoint method</li>
 </ol>
 
     <h5>NavigationClient class</h5>

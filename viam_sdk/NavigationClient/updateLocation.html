@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the setMode method from the NavigationClient class, for the Dart programming language.">
-  <title>setMode method - NavigationClient class - viam_sdk library - Dart API</title>
+  <meta name="description" content="API docs for the updateLocation method from the NavigationClient class, for the Dart programming language.">
+  <title>updateLocation method - NavigationClient class - viam_sdk library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
     <li><a href="../../viam_sdk/NavigationClient-class.html">NavigationClient</a></li>
-    <li class="self-crumb">setMode method</li>
+    <li class="self-crumb">updateLocation method</li>
   </ol>
-  <div class="self-name">setMode</div>
+  <div class="self-name">updateLocation</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,14 +49,16 @@
     data-above-sidebar="viam_sdk&#47;NavigationClient-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">setMode</span> method 
+<h1><span class="kind-method">updateLocation</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">setMode</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="setMode-param-mode"><span class="type-annotation">dynamic</span> <span class="parameter-name">mode</span>, {</span></li>
-<li><span class="parameter" id="setMode-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.navigation/Location-class.html">Location</a></span>&gt;</span></span>
+<span class="name ">updateLocation</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="updateLocation-param-locationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">locationName</span>, {</span></li>
+<li><span class="parameter" id="updateLocation-param-position"><span class="type-annotation"><a href="../../viam_sdk/NavigationPosition.html">NavigationPosition</a>?</span> <span class="parameter-name">position</span>, </span></li>
+<li><span class="parameter" id="updateLocation-param-newName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">newName</span>, </span></li>
+<li><span class="parameter" id="updateLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
 
       
@@ -64,17 +66,33 @@
     </section>
     
 <section class="desc markdown">
-  <p>Set the <code>Mode</code> the service is operating in.</p>
-<p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#setmode">navigation service docs</a>.</p>
+  <p>Change a saved location's <code>position</code> and/or its name. Omitted values are left unchanged. Renaming a location
+updates every route waypoint that references it.</p>
+<pre class="language-dart"><code>// Example:
+final location = await myNavigationService.updateLocation('kitchen', newName: 'galley');
+</code></pre>
+<p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#updatelocation">navigation service docs</a>.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; setMode(Mode mode, {Map&lt;String, dynamic&gt;? extra}) async {
-  final request = SetModeRequest(name: name, mode: mode, extra: extra?.toStruct());
-  await client.setMode(request, options: callOptions);
+  <pre class="language-dart"><code class="language-dart">Future&lt;Location&gt; updateLocation(
+  String locationName, {
+  NavigationPosition? position,
+  String? newName,
+  Map&lt;String, dynamic&gt;? extra,
+}) async {
+  final request = UpdateLocationRequest(
+    name: name,
+    locationName: locationName,
+    position: position,
+    newName: newName,
+    extra: extra?.toStruct(),
+  );
+  final response = await client.updateLocation(request, options: callOptions);
+  return response.location;
 }</code></pre>
 </section>
 
@@ -91,7 +109,7 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk</a></li>
     <li><a href="../../viam_sdk/NavigationClient-class.html">NavigationClient</a></li>
-    <li class="self-crumb">setMode method</li>
+    <li class="self-crumb">updateLocation method</li>
 </ol>
 
     <h5>NavigationClient class</h5>

@@ -193,15 +193,95 @@
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="addWaypoint" class="callable">
-  <span class="name"><a href="../viam_sdk/NavigationClient/addWaypoint.html">addWaypoint</a></span><span class="signature">(<wbr><span class="parameter" id="addWaypoint-param-location"><span class="type-annotation"><a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a></span> <span class="parameter-name">location</span>, {</span><span class="parameter" id="addWaypoint-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+        <dt id="addLocation" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/addLocation.html">addLocation</a></span><span class="signature">(<wbr><span class="parameter" id="addLocation-param-locationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">locationName</span>, {</span><span class="parameter" id="addLocation-param-position"><span class="type-annotation"><a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a>?</span> <span class="parameter-name">position</span>, </span><span class="parameter" id="addLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Location-class.html">Location</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Save a named <a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a> on the active map. If <code>position</code> is omitted, the robot's current position is saved.
+  
+
+</dd>
+
+        <dt id="addRoute" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/addRoute.html">addRoute</a></span><span class="signature">(<wbr><span class="parameter" id="addRoute-param-routeName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">routeName</span>, </span><span class="parameter" id="addRoute-param-waypoints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a></span>&gt;</span></span> <span class="parameter-name">waypoints</span>, {</span><span class="parameter" id="addRoute-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Route-class.html">Route</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Create a named <a href="../viam_protos.service.navigation/Route-class.html">Route</a> from an ordered list of <code>waypoints</code>. Every referenced location must already exist.
+  
+
+</dd>
+
+        <dt id="addZone" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/addZone.html">addZone</a></span><span class="signature">(<wbr><span class="parameter" id="addZone-param-zoneName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">zoneName</span>, </span><span class="parameter" id="addZone-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="addZone-param-geometry"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">geometry</span>, {</span><span class="parameter" id="addZone-param-maxSpeed"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxSpeed</span>, </span><span class="parameter" id="addZone-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Zone-class.html">Zone</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Create a keep-out or speed-limit <a href="../viam_protos.service.navigation/Zone-class.html">Zone</a> on the active map. <code>type</code> is either <code>keepout</code> or <code>speed_limit</code>, and
+<code>geometry</code> describes a circle, box, or polygon. <code>maxSpeed</code>, in meters per second, is required for a
+<code>speed_limit</code> zone.
+  
+
+</dd>
+
+        <dt id="cancel" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/cancel.html">cancel</a></span><span class="signature">(<wbr>{<span class="parameter" id="cancel-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Stop all motion and discard both the active goal and any suspended goal.
+  
+
+</dd>
+
+        <dt id="deleteLocation" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/deleteLocation.html">deleteLocation</a></span><span class="signature">(<wbr><span class="parameter" id="deleteLocation-param-locationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">locationName</span>, {</span><span class="parameter" id="deleteLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Add a <a href="../viam_sdk/GeoPoint-class.html">common_pb.GeoPoint</a> to the service's data storage of waypoints.
+  Delete a saved location. The location is also removed from every route that references it.
+  
+
+</dd>
+
+        <dt id="deleteRoute" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/deleteRoute.html">deleteRoute</a></span><span class="signature">(<wbr><span class="parameter" id="deleteRoute-param-routeName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">routeName</span>, {</span><span class="parameter" id="deleteRoute-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Delete a route. The locations it references are not affected.
+  
+
+</dd>
+
+        <dt id="deleteZone" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/deleteZone.html">deleteZone</a></span><span class="signature">(<wbr><span class="parameter" id="deleteZone-param-zoneName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">zoneName</span>, {</span><span class="parameter" id="deleteZone-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Delete a zone.
   
 
 </dd>
@@ -246,54 +326,70 @@ If no trace key is provided, a random one will be generated.
 
 </dd>
 
+        <dt id="executePlan" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/executePlan.html">executePlan</a></span><span class="signature">(<wbr><span class="parameter" id="executePlan-param-plan"><span class="type-annotation"><a href="../viam_protos.service.navigation/Plan-class.html">Plan</a></span> <span class="parameter-name">plan</span>, {</span><span class="parameter" id="executePlan-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drive a <a href="../viam_protos.service.navigation/Plan-class.html">Plan</a>, typically one from <a href="../viam_sdk/NavigationClient/planToPoint.html">planToPoint</a> or <a href="../viam_sdk/NavigationClient/planToLocation.html">planToLocation</a>. While navigating, the active path is
+available on <a href="../viam_sdk/NavigationClient/getNavigationStatus.html">getNavigationStatus</a>. Rejected if the plan's path is empty.
+  
+
+</dd>
+
+        <dt id="getCostmap" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/getCostmap.html">getCostmap</a></span><span class="signature">(<wbr>{<span class="parameter" id="getCostmap-param-layer"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">layer</span>, </span><span class="parameter" id="getCostmap-param-stride"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">stride</span>, </span><span class="parameter" id="getCostmap-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/GetCostmapResponse-class.html">GetCostmapResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get the local or global costmap as a downsampled grid, for display in UIs. <code>layer</code> is <code>auto</code>, <code>local</code>, or
+<code>global</code>, and <code>stride</code> is the downsample factor.
+  
+
+</dd>
+
         <dt id="getLocation" class="callable">
-  <span class="name"><a href="../viam_sdk/NavigationClient/getLocation.html">getLocation</a></span><span class="signature">(<wbr>{<span class="parameter" id="getLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/GetLocationResponse-class.html">GetLocationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_sdk/NavigationClient/getLocation.html">getLocation</a></span><span class="signature">(<wbr><span class="parameter" id="getLocation-param-locationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">locationName</span>, {</span><span class="parameter" id="getLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Location-class.html">Location</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Get the current location of the robot as a <a href="../viam_sdk/GeoPoint-class.html">common_pb.GeoPoint</a> along with its compass heading.
+  Get a saved <a href="../viam_protos.service.navigation/Location-class.html">Location</a> by name. This does not return the robot's current position; use <a href="../viam_sdk/NavigationClient/getPosition.html">getPosition</a> for that.
   
 
 </dd>
 
-        <dt id="getMode" class="callable">
-  <span class="name"><a href="../viam_sdk/NavigationClient/getMode.html">getMode</a></span><span class="signature">(<wbr>{<span class="parameter" id="getMode-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
+        <dt id="getNavigationStatus" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/getNavigationStatus.html">getNavigationStatus</a></span><span class="signature">(<wbr>{<span class="parameter" id="getNavigationStatus-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Get the <code>Mode</code> the service is operating in.
+  Get the full navigation state, including the robot's current position and its latest goal.
   
 
 </dd>
 
-        <dt id="getObstacles" class="callable">
-  <span class="name"><a href="../viam_sdk/NavigationClient/getObstacles.html">getObstacles</a></span><span class="signature">(<wbr>{<span class="parameter" id="getObstacles-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span></span>&gt;</span></span>
+        <dt id="getPosition" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/getPosition.html">getPosition</a></span><span class="signature">(<wbr>{<span class="parameter" id="getPosition-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Get an array of <a href="../viam_protos.common.common/GeoGeometry-class.html">common_pb.GeoGeometry</a>s representing obstacles that the service is aware of.
-  
-
-</dd>
-
-        <dt id="getPaths" class="callable">
-  <span class="name"><a href="../viam_sdk/NavigationClient/getPaths.html">getPaths</a></span><span class="signature">(<wbr>{<span class="parameter" id="getPaths-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Get an array of <a href="https://api.flutter.dev/flutter/dart-ui/Path-class.html">Path</a>s representing the paths the service is aware of.
+  Get the robot's current <a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a> on the active map. Use this for frequent position polling;
+<a href="../viam_sdk/NavigationClient/getNavigationStatus.html">getNavigationStatus</a> reports the same position alongside the rest of the navigation state.
   
 
 </dd>
@@ -306,7 +402,21 @@ If no trace key is provided, a random one will be generated.
 
 </dt>
 <dd>
-  Get information about the navigation service's properties, including its <a href="../viam_protos.service.navigation/MapType-class.html">MapType</a>.
+  Get the <a href="../viam_protos.service.navigation/MapType-class.html">MapType</a> the service operates on and the robot's properties. These values do not change while the
+service is running.
+  
+
+</dd>
+
+        <dt id="getRoute" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/getRoute.html">getRoute</a></span><span class="signature">(<wbr><span class="parameter" id="getRoute-param-routeName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">routeName</span>, {</span><span class="parameter" id="getRoute-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Route-class.html">Route</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get a <a href="../viam_protos.service.navigation/Route-class.html">Route</a> by name.
   
 
 </dd>
@@ -324,15 +434,125 @@ If no trace key is provided, a random one will be generated.
 
 </dd>
 
-        <dt id="getWaypoints" class="callable">
-  <span class="name"><a href="../viam_sdk/NavigationClient/getWaypoints.html">getWaypoints</a></span><span class="signature">(<wbr>{<span class="parameter" id="getWaypoints-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a></span>&gt;</span></span>&gt;</span></span>
+        <dt id="getZone" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/getZone.html">getZone</a></span><span class="signature">(<wbr><span class="parameter" id="getZone-param-zoneName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">zoneName</span>, {</span><span class="parameter" id="getZone-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Zone-class.html">Zone</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Get an array of <a href="../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a>s currently in the service's data storage.
+  Get a <a href="../viam_protos.service.navigation/Zone-class.html">Zone</a> by name.
+  
+
+</dd>
+
+        <dt id="goToLocation" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/goToLocation.html">goToLocation</a></span><span class="signature">(<wbr><span class="parameter" id="goToLocation-param-locationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">locationName</span>, {</span><span class="parameter" id="goToLocation-param-wait"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">wait</span>, </span><span class="parameter" id="goToLocation-param-linearMPerSec"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">linearMPerSec</span>, </span><span class="parameter" id="goToLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drive directly to a saved location with a closed-loop controller, without full path planning. Intended for
+short hops and docking. <code>wait</code> defaults to <code>true</code>; with <code>false</code>, this returns immediately while navigating.
+  
+
+</dd>
+
+        <dt id="goToPoint" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/goToPoint.html">goToPoint</a></span><span class="signature">(<wbr><span class="parameter" id="goToPoint-param-destination"><span class="type-annotation"><a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a></span> <span class="parameter-name">destination</span>, {</span><span class="parameter" id="goToPoint-param-wait"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">wait</span>, </span><span class="parameter" id="goToPoint-param-linearMPerSec"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">linearMPerSec</span>, </span><span class="parameter" id="goToPoint-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drive directly to <code>destination</code> with a closed-loop controller, without full path planning. Intended for short
+hops and docking. <code>wait</code> defaults to <code>true</code>; with <code>false</code>, this returns immediately while navigating.
+  
+
+</dd>
+
+        <dt id="listLocations" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/listLocations.html">listLocations</a></span><span class="signature">(<wbr>{<span class="parameter" id="listLocations-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Location-class.html">Location</a></span>&gt;</span></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get every <a href="../viam_protos.service.navigation/Location-class.html">Location</a> saved on the active map.
+  
+
+</dd>
+
+        <dt id="listRoutes" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/listRoutes.html">listRoutes</a></span><span class="signature">(<wbr>{<span class="parameter" id="listRoutes-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Route-class.html">Route</a></span>&gt;</span></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get every <a href="../viam_protos.service.navigation/Route-class.html">Route</a> on the active map.
+  
+
+</dd>
+
+        <dt id="listZones" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/listZones.html">listZones</a></span><span class="signature">(<wbr>{<span class="parameter" id="listZones-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="listZones-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Zone-class.html">Zone</a></span>&gt;</span></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get the <a href="../viam_protos.service.navigation/Zone-class.html">Zone</a>s on the active map, optionally filtered by <code>type</code> (<code>keepout</code> or <code>speed_limit</code>).
+  
+
+</dd>
+
+        <dt id="navigateRoute" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/navigateRoute.html">navigateRoute</a></span><span class="signature">(<wbr>{<span class="parameter" id="navigateRoute-param-routeName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">routeName</span>, </span><span class="parameter" id="navigateRoute-param-waypoints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a></span>&gt;</span>?</span> <span class="parameter-name">waypoints</span>, </span><span class="parameter" id="navigateRoute-param-startIndex"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">startIndex</span>, </span><span class="parameter" id="navigateRoute-param-startNearest"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">startNearest</span>, </span><span class="parameter" id="navigateRoute-param-loop"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">loop</span>, </span><span class="parameter" id="navigateRoute-param-wait"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">wait</span>, </span><span class="parameter" id="navigateRoute-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Drive a route one waypoint at a time using the obstacle-aware planner. Provide either <code>routeName</code>, for a saved
+route, or <code>waypoints</code>, for an inline list. <code>startNearest</code> overrides <code>startIndex</code>, and with <code>loop</code> set, a <code>wait</code>
+of <code>true</code> only returns once the robot has stopped.
+  
+
+</dd>
+
+        <dt id="navigateToLocation" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/navigateToLocation.html">navigateToLocation</a></span><span class="signature">(<wbr><span class="parameter" id="navigateToLocation-param-locationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">locationName</span>, {</span><span class="parameter" id="navigateToLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Plan an obstacle-aware path to a saved location and start driving it. Returns once the goal is accepted; track
+progress with <a href="../viam_sdk/NavigationClient/getNavigationStatus.html">getNavigationStatus</a>.
+  
+
+</dd>
+
+        <dt id="navigateToPoint" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/navigateToPoint.html">navigateToPoint</a></span><span class="signature">(<wbr><span class="parameter" id="navigateToPoint-param-destination"><span class="type-annotation"><a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a></span> <span class="parameter-name">destination</span>, {</span><span class="parameter" id="navigateToPoint-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Plan an obstacle-aware path to <code>destination</code> and start driving it. Returns once the goal is accepted; track
+progress with <a href="../viam_sdk/NavigationClient/getNavigationStatus.html">getNavigationStatus</a>.
   
 
 </dd>
@@ -350,28 +570,58 @@ If no trace key is provided, a random one will be generated.
 
 </dd>
 
-        <dt id="removeWaypoint" class="callable">
-  <span class="name"><a href="../viam_sdk/NavigationClient/removeWaypoint.html">removeWaypoint</a></span><span class="signature">(<wbr><span class="parameter" id="removeWaypoint-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">id</span>, {</span><span class="parameter" id="removeWaypoint-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+        <dt id="planToLocation" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/planToLocation.html">planToLocation</a></span><span class="signature">(<wbr><span class="parameter" id="planToLocation-param-locationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">locationName</span>, {</span><span class="parameter" id="planToLocation-param-start"><span class="type-annotation"><a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a>?</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="planToLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Plan-class.html">Plan</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Remove a <a href="../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a> from the service's data storage by its <code>id</code>.
+  Compute a <a href="../viam_protos.service.navigation/Plan-class.html">Plan</a> to a saved location without moving. Accepts the same optional <code>start</code> as <a href="../viam_sdk/NavigationClient/planToPoint.html">planToPoint</a>.
+Throws if no path exists.
   
 
 </dd>
 
-        <dt id="setMode" class="callable">
-  <span class="name"><a href="../viam_sdk/NavigationClient/setMode.html">setMode</a></span><span class="signature">(<wbr><span class="parameter" id="setMode-param-mode"><span class="type-annotation">dynamic</span> <span class="parameter-name">mode</span>, {</span><span class="parameter" id="setMode-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+        <dt id="planToPoint" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/planToPoint.html">planToPoint</a></span><span class="signature">(<wbr><span class="parameter" id="planToPoint-param-destination"><span class="type-annotation"><a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a></span> <span class="parameter-name">destination</span>, {</span><span class="parameter" id="planToPoint-param-start"><span class="type-annotation"><a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a>?</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="planToPoint-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Plan-class.html">Plan</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Set the <code>Mode</code> the service is operating in.
+  Compute a <a href="../viam_protos.service.navigation/Plan-class.html">Plan</a> from the robot, or from <code>start</code>, to <code>destination</code> without moving. Pass the result to
+<a href="../viam_sdk/NavigationClient/executePlan.html">executePlan</a> to drive it. Throws if no path exists.
+  
+
+</dd>
+
+        <dt id="resume" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/resume.html">resume</a></span><span class="signature">(<wbr>{<span class="parameter" id="resume-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Resume the suspended goal the same way it was started: planned navigation, simple go-to, or a route from its
+current waypoint.
+  
+
+</dd>
+
+        <dt id="suspend" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/suspend.html">suspend</a></span><span class="signature">(<wbr>{<span class="parameter" id="suspend-param-reason"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">reason</span>, </span><span class="parameter" id="suspend-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Stop motion but remember the current goal, including the current waypoint and loop setting for routes. A
+suspended goal must be canceled before a new one can start.
   
 
 </dd>
@@ -386,6 +636,47 @@ If no trace key is provided, a random one will be generated.
 <dd class="inherited">
   A string representation of this object.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="updateLocation" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/updateLocation.html">updateLocation</a></span><span class="signature">(<wbr><span class="parameter" id="updateLocation-param-locationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">locationName</span>, {</span><span class="parameter" id="updateLocation-param-position"><span class="type-annotation"><a href="../viam_sdk/NavigationPosition.html">NavigationPosition</a>?</span> <span class="parameter-name">position</span>, </span><span class="parameter" id="updateLocation-param-newName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">newName</span>, </span><span class="parameter" id="updateLocation-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Location-class.html">Location</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Change a saved location's <code>position</code> and/or its name. Omitted values are left unchanged. Renaming a location
+updates every route waypoint that references it.
+  
+
+</dd>
+
+        <dt id="updateRoute" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/updateRoute.html">updateRoute</a></span><span class="signature">(<wbr><span class="parameter" id="updateRoute-param-routeName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">routeName</span>, {</span><span class="parameter" id="updateRoute-param-newName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">newName</span>, </span><span class="parameter" id="updateRoute-param-waypoints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a></span>&gt;</span>?</span> <span class="parameter-name">waypoints</span>, </span><span class="parameter" id="updateRoute-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Route-class.html">Route</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Rename a route and/or replace its <code>waypoints</code>. Omitting <code>waypoints</code> leaves them unchanged; passing a list,
+including an empty one, replaces them.
+  
+
+</dd>
+
+        <dt id="updateZone" class="callable">
+  <span class="name"><a href="../viam_sdk/NavigationClient/updateZone.html">updateZone</a></span><span class="signature">(<wbr><span class="parameter" id="updateZone-param-zoneName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">zoneName</span>, {</span><span class="parameter" id="updateZone-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="updateZone-param-geometry"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">geometry</span>, </span><span class="parameter" id="updateZone-param-maxSpeed"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxSpeed</span>, </span><span class="parameter" id="updateZone-param-newName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">newName</span>, </span><span class="parameter" id="updateZone-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.navigation/Zone-class.html">Zone</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Change a zone's <code>type</code>, <code>geometry</code>, <code>maxSpeed</code>, and/or its name. Omitted values are left unchanged.
+  
 
 </dd>
 

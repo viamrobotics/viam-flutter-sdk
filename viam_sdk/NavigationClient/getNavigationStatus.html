@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the getWaypoints method from the NavigationClient class, for the Dart programming language.">
-  <title>getWaypoints method - NavigationClient class - viam_sdk library - Dart API</title>
+  <meta name="description" content="API docs for the getNavigationStatus method from the NavigationClient class, for the Dart programming language.">
+  <title>getNavigationStatus method - NavigationClient class - viam_sdk library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
     <li><a href="../../viam_sdk/NavigationClient-class.html">NavigationClient</a></li>
-    <li class="self-crumb">getWaypoints method</li>
+    <li class="self-crumb">getNavigationStatus method</li>
   </ol>
-  <div class="self-name">getWaypoints</div>
+  <div class="self-name">getNavigationStatus</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,13 +49,13 @@
     data-above-sidebar="viam_sdk&#47;NavigationClient-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">getWaypoints</span> method 
+<h1><span class="kind-method">getNavigationStatus</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a></span>&gt;</span></span>&gt;</span></span>
-<span class="name ">getWaypoints</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getWaypoints-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_sdk/NavigationStatus.html">NavigationStatus</a></span>&gt;</span></span>
+<span class="name ">getNavigationStatus</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getNavigationStatus-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
 
       
@@ -63,18 +63,21 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get an array of <a href="../../viam_protos.service.navigation/Waypoint-class.html">Waypoint</a>s currently in the service's data storage.</p>
-<p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#getwaypoints">navigation service docs</a>.</p>
+  <p>Get the full navigation state, including the robot's current position and its latest goal.</p>
+<pre class="language-dart"><code>// Example:
+final status = await myNavigationService.getNavigationStatus();
+</code></pre>
+<p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#getnavigationstatus">navigation service docs</a>.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;Waypoint&gt;&gt; getWaypoints({Map&lt;String, dynamic&gt;? extra}) async {
-  final request = GetWaypointsRequest(name: name, extra: extra?.toStruct());
-  final response = await client.getWaypoints(request, options: callOptions);
-  return response.waypoints;
+  <pre class="language-dart"><code class="language-dart">Future&lt;NavigationStatus&gt; getNavigationStatus({Map&lt;String, dynamic&gt;? extra}) async {
+  final request = GetNavigationStatusRequest(name: name, extra: extra?.toStruct());
+  final response = await client.getNavigationStatus(request, options: callOptions);
+  return response.status;
 }</code></pre>
 </section>
 
@@ -91,7 +94,7 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk</a></li>
     <li><a href="../../viam_sdk/NavigationClient-class.html">NavigationClient</a></li>
-    <li class="self-crumb">getWaypoints method</li>
+    <li class="self-crumb">getNavigationStatus method</li>
 </ol>
 
     <h5>NavigationClient class</h5>

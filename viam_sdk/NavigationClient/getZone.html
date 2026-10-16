@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the getObstacles method from the NavigationClient class, for the Dart programming language.">
-  <title>getObstacles method - NavigationClient class - viam_sdk library - Dart API</title>
+  <meta name="description" content="API docs for the getZone method from the NavigationClient class, for the Dart programming language.">
+  <title>getZone method - NavigationClient class - viam_sdk library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
     <li><a href="../../viam_sdk/NavigationClient-class.html">NavigationClient</a></li>
-    <li class="self-crumb">getObstacles method</li>
+    <li class="self-crumb">getZone method</li>
   </ol>
-  <div class="self-name">getObstacles</div>
+  <div class="self-name">getZone</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,13 +49,14 @@
     data-above-sidebar="viam_sdk&#47;NavigationClient-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">getObstacles</span> method 
+<h1><span class="kind-method">getZone</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span></span>&gt;</span></span>
-<span class="name ">getObstacles</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getObstacles-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.navigation/Zone-class.html">Zone</a></span>&gt;</span></span>
+<span class="name ">getZone</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="getZone-param-zoneName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">zoneName</span>, {</span></li>
+<li><span class="parameter" id="getZone-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
 
       
@@ -63,18 +64,21 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get an array of <a href="../../viam_protos.common.common/GeoGeometry-class.html">common_pb.GeoGeometry</a>s representing obstacles that the service is aware of.</p>
-<p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#getobstacles">navigation service docs</a>.</p>
+  <p>Get a <a href="../../viam_protos.service.navigation/Zone-class.html">Zone</a> by name.</p>
+<pre class="language-dart"><code>// Example:
+final zone = await myNavigationService.getZone('stairs');
+</code></pre>
+<p>For more information, see the <a href="https://docs.viam.com/dev/reference/apis/services/navigation/#getzone">navigation service docs</a>.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;common_pb.GeoGeometry&gt;&gt; getObstacles({Map&lt;String, dynamic&gt;? extra}) async {
-  final request = GetObstaclesRequest(name: name, extra: extra?.toStruct());
-  final response = await client.getObstacles(request, options: callOptions);
-  return response.obstacles;
+  <pre class="language-dart"><code class="language-dart">Future&lt;Zone&gt; getZone(String zoneName, {Map&lt;String, dynamic&gt;? extra}) async {
+  final request = GetZoneRequest(name: name, zoneName: zoneName, extra: extra?.toStruct());
+  final response = await client.getZone(request, options: callOptions);
+  return response.zone;
 }</code></pre>
 </section>
 
@@ -91,7 +95,7 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk</a></li>
     <li><a href="../../viam_sdk/NavigationClient-class.html">NavigationClient</a></li>
-    <li class="self-crumb">getObstacles method</li>
+    <li class="self-crumb">getZone method</li>
 </ol>
 
     <h5>NavigationClient class</h5>
