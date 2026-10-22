@@ -2862,12 +2862,21 @@ class TempStreamArmJointPositionsRequest extends $pb.GeneratedMessage {
 }
 
 class TempStreamArmJointPositionsResponse extends $pb.GeneratedMessage {
-  factory TempStreamArmJointPositionsResponse() => create();
+  factory TempStreamArmJointPositionsResponse({
+    $core.int? motionSideCurrentRunwayMs,
+  }) {
+    final $result = create();
+    if (motionSideCurrentRunwayMs != null) {
+      $result.motionSideCurrentRunwayMs = motionSideCurrentRunwayMs;
+    }
+    return $result;
+  }
   TempStreamArmJointPositionsResponse._() : super();
   factory TempStreamArmJointPositionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TempStreamArmJointPositionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TempStreamArmJointPositionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'motionSideCurrentRunwayMs', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -2891,6 +2900,17 @@ class TempStreamArmJointPositionsResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static TempStreamArmJointPositionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TempStreamArmJointPositionsResponse>(create);
   static TempStreamArmJointPositionsResponse? _defaultInstance;
+
+  /// motion_side_current_runway_ms is sent once per target, right after the service adds it. It is how much
+  /// motion, in milliseconds, the service has accepted but not yet handed to the arm at that moment.
+  @$pb.TagNumber(1)
+  $core.int get motionSideCurrentRunwayMs => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set motionSideCurrentRunwayMs($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMotionSideCurrentRunwayMs() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMotionSideCurrentRunwayMs() => clearField(1);
 }
 
 
