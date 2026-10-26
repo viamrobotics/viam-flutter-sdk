@@ -9,7 +9,7 @@ typedef EncoderProperties = GetPropertiesResponse;
 /// {@category Components}
 /// Encoder represents a physical encoder.
 ///
-/// For more information, see [Encoder component](https://docs.viam.com/dev/reference/apis/components/encoder/).
+/// For more information, see [Encoder component](https://docs.viam.com/reference/apis/components/encoder/).
 abstract class Encoder extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'encoder');
 
@@ -20,7 +20,7 @@ abstract class Encoder extends Resource {
   /// await myEncoder.resetPosition();
   /// ```
   ///
-  /// For more information, see [Encoder component](https://docs.viam.com/dev/reference/apis/components/encoder/#resetposition).
+  /// For more information, see [Encoder component](https://docs.viam.com/reference/apis/components/encoder/#resetposition).
   Future<void> resetPosition({Map<String, dynamic>? extra});
 
   /// Report the position of the encoder in ticks or degrees, and the position type.
@@ -39,7 +39,7 @@ abstract class Encoder extends Resource {
   /// var position = await myEncoder.position(PositionType.POSITION_TYPE_TICKS_COUNT);
   /// ```
   ///
-  /// For more information, see [Encoder component](https://docs.viam.com/dev/reference/apis/components/encoder/#getposition).
+  /// For more information, see [Encoder component](https://docs.viam.com/reference/apis/components/encoder/#getposition).
   Future<(double, PositionType)> position({PositionType? positionType, Map<String, dynamic>? extra});
 
   /// Report a dictionary mapping each optional property to
@@ -50,7 +50,7 @@ abstract class Encoder extends Resource {
   /// var properties = await myEncoder.properties();
   /// ```
   ///
-  /// For more information, see [Encoder component](https://docs.viam.com/dev/reference/apis/components/encoder/#getproperties).
+  /// For more information, see [Encoder component](https://docs.viam.com/reference/apis/components/encoder/#getproperties).
   Future<EncoderProperties> properties({Map<String, dynamic>? extra});
 
   /// Get all geometries associated with the [Encoder]
@@ -59,7 +59,7 @@ abstract class Encoder extends Resource {
   /// final geometries = await myEncoder.getGeometries();
   /// ```
   ///
-  /// For more information, see [Encoder component](https://docs.viam.com/dev/reference/apis/components/encoder/#getgeometries).
+  /// For more information, see [Encoder component](https://docs.viam.com/reference/apis/components/encoder/#getgeometries).
   Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra});
 
   /// Get the [common_pb.ResourceName] for this [Encoder] with the given [name].
@@ -68,7 +68,7 @@ abstract class Encoder extends Resource {
   /// var name = Encoder.getResourceName('myEncoder');
   /// ```
   ///
-  /// For more information, see [Encoder component](https://docs.viam.com/dev/reference/apis/components/encoder/#getresourcename).
+  /// For more information, see [Encoder component](https://docs.viam.com/reference/apis/components/encoder/#getresourcename).
   static common_pb.ResourceName getResourceName(String name) {
     return Encoder.subtype.getResourceName(name);
   }
@@ -79,7 +79,7 @@ abstract class Encoder extends Resource {
   /// final myEncoder = Encoder.fromRobot(myRobotClient, "my_encoder");
   /// ```
   ///
-  /// For more information, see [Encoder component](https://docs.viam.com/dev/reference/apis/components/encode/).
+  /// For more information, see [Encoder component](https://docs.viam.com/reference/apis/components/encoder/).
   static Encoder fromRobot(RobotClient robot, String name) {
     return robot.getResource(Encoder.getResourceName(name));
   }

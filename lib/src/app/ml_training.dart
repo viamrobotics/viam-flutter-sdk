@@ -4,7 +4,7 @@ import '../../protos/app/ml_training.dart';
 ///
 /// All calls must be authenticated.
 ///
-/// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+/// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
 class MLTrainingClient {
   final MLTrainingServiceClient _mlTrainingClient;
 
@@ -14,7 +14,7 @@ class MLTrainingClient {
   ///
   /// Returns the new job's ID.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<String> submitTrainingJob(
     String orgId,
     String datasetId,
@@ -38,7 +38,7 @@ class MLTrainingClient {
   ///
   /// Returns the new job's ID.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<String> submitCustomTrainingJob(
     String orgId,
     String datasetId,
@@ -62,7 +62,7 @@ class MLTrainingClient {
 
   /// Retrieves a training job by its ID.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<TrainingJobMetadata> getTrainingJob(String id) async {
     final request = GetTrainingJobRequest()..id = id;
     final response = await _mlTrainingClient.getTrainingJob(request);
@@ -72,7 +72,7 @@ class MLTrainingClient {
   /// Lists training jobs for a given orgarnization ID and training status.
   /// if [status] is not provided, all training jobs will be returned.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<List<TrainingJobMetadata>> listTrainingJobs(
     String orgId, {
     TrainingStatus status = TrainingStatus.TRAINING_STATUS_UNSPECIFIED,
@@ -86,7 +86,7 @@ class MLTrainingClient {
 
   /// Cancels a training job that has not yet completed.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<void> cancelTrainingJob(String id) async {
     final request = CancelTrainingJobRequest()..id = id;
     await _mlTrainingClient.cancelTrainingJob(request);
@@ -94,7 +94,7 @@ class MLTrainingClient {
 
   /// Removes a completed training job from the database, whether it has succeeded or failed.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<void> deleteCompletedTrainingJob(String id) async {
     final request = DeleteCompletedTrainingJobRequest()..id = id;
     await _mlTrainingClient.deleteCompletedTrainingJob(request);
@@ -105,7 +105,7 @@ class MLTrainingClient {
   ///
   /// Returns the new container's ID.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<String> registerCustomTrainingContainer(String orgId, String imageUri, {String? description}) async {
     final request = RegisterCustomTrainingContainerRequest()
       ..organizationId = orgId
@@ -119,7 +119,7 @@ class MLTrainingClient {
 
   /// Deletes a registered custom training container.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<void> deleteCustomTrainingContainer(String id) async {
     final request = DeleteCustomTrainingContainerRequest()..id = id;
     await _mlTrainingClient.deleteCustomTrainingContainer(request);
@@ -128,7 +128,7 @@ class MLTrainingClient {
   /// Lists the containers available to the given organization: the Viam-managed catalog plus the
   /// org's registered custom training containers.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<List<Container>> listContainers(String orgId) async {
     final request = ListContainersRequest()..organizationId = orgId;
     final response = await _mlTrainingClient.listContainers(request);
@@ -137,7 +137,7 @@ class MLTrainingClient {
 
   /// Retrieves a container by its ID.
   ///
-  /// For more information, see [ML Training Client API](https://docs.viam.com/appendix/apis/ml-training-client/).
+  /// For more information, see [ML Training Client API](https://docs.viam.com/reference/apis/ml-training-client/).
   Future<Container> getContainer(String id) async {
     final request = GetContainerRequest()..id = id;
     final response = await _mlTrainingClient.getContainer(request);

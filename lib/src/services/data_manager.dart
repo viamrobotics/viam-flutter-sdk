@@ -30,7 +30,7 @@ class DataManagerClient extends Resource with RPCDebugLoggerMixin implements Res
   /// await myDataManager.sync();
   /// ```
   ///
-  /// For more information, see the [data management service docs](https://docs.viam.com/dev/reference/apis/services/data/#sync).
+  /// For more information, see the [data management service docs](https://docs.viam.com/reference/apis/services/data/#sync).
   Future<void> sync({Map<String, dynamic>? extra}) async {
     final request = SyncRequest(name: name, extra: extra?.toStruct());
     await client.sync(request, options: callOptions);
@@ -51,7 +51,7 @@ class DataManagerClient extends Resource with RPCDebugLoggerMixin implements Res
   /// );
   /// ```
   ///
-  /// For more information, see the [data management service docs](https://docs.viam.com/dev/reference/apis/services/data/#uploadbinarydatatodatasets).
+  /// For more information, see the [data management service docs](https://docs.viam.com/reference/apis/services/data/#uploadbinarydatatodatasets).
   Future<void> uploadBinaryDataToDatasets(
     List<int> binaryData,
     List<String> tags,
@@ -88,7 +88,7 @@ class DataManagerClient extends Resource with RPCDebugLoggerMixin implements Res
 
   /// Get the [common_pb.ResourceName] for this [DataManagerClient] with the given [name]
   ///
-  /// For more information, see the [data management service docs](https://docs.viam.com/dev/reference/apis/services/data/#getresourcename).
+  /// For more information, see the [data management service docs](https://docs.viam.com/reference/apis/services/data/#getresourcename).
   static common_pb.ResourceName getResourceName(String name) {
     return DataManagerClient.subtype.getResourceName(name);
   }

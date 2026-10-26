@@ -83,7 +83,7 @@ class TabularDataPoint {
 ///
 /// All calls must be authenticated.
 ///
-/// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+/// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
 /// {@category App}
 class DataClient {
   final DataServiceClient _dataClient;
@@ -142,7 +142,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<TabularDataByFilterResponse> tabularDataByFilter({
     Filter? filter,
     int? limit,
@@ -188,7 +188,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<BinaryDataByFilterResponse> binaryDataByFilter({
     Filter? filter,
     int? limit,
@@ -236,7 +236,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<BinaryDataByIDsResponse> binaryDataByIds(List<String> binaryDataIds, {bool includeBinary = false}) async {
     final request = BinaryDataByIDsRequest()
       ..binaryDataIds.addAll(binaryDataIds)
@@ -265,7 +265,7 @@ class DataClient {
   ///  );
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<Map<String, dynamic>>> tabularDataBySql(String organizationId, String query) async {
     final request = TabularDataBySQLRequest()
       ..organizationId = organizationId
@@ -307,7 +307,7 @@ class DataClient {
   ///  );
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<Map<String, dynamic>>> tabularDataByMql(
     String organizationId,
     dynamic query, {
@@ -370,7 +370,7 @@ class DataClient {
   ///   print('Error exporting tabular data: $e');
   ///  }
   /// ```
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<TabularDataPoint>> exportTabularData(
     String partId,
     String resourceName,
@@ -449,7 +449,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<int> deleteTabularData(
     String organizationId,
     int olderThanDays, {
@@ -492,7 +492,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<int> deleteBinaryDataByFilter(Filter? filter, {bool includeInternalData = false}) async {
     final request = DeleteBinaryDataByFilterRequest()
       ..includeInternalData = includeInternalData
@@ -526,7 +526,7 @@ class DataClient {
   ///   print('Error deleting binary data: $e');
   ///  }
   /// ```
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<int> deleteBinaryDataByIds(List<String> binaryDataIds) async {
     final request = DeleteBinaryDataByIDsRequest()..binaryDataIds.addAll(binaryDataIds);
     final response = await _dataClient.deleteBinaryDataByIDs(request);
@@ -560,7 +560,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> addTagsToBinaryDataByIds(List<String> tags, List<String> binaryDataIds) async {
     final request = AddTagsToBinaryDataByIDsRequest()
       ..tags.addAll(tags)
@@ -595,7 +595,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> addTagsToBinaryDataByFilter(List<String> tags, Filter? filter) async {
     final request = AddTagsToBinaryDataByFilterRequest()
       ..tags.addAll(tags)
@@ -632,7 +632,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<int> removeTagsFromBinaryDataByFilter(List<String> tags, Filter? filter) async {
     final request = RemoveTagsFromBinaryDataByFilterRequest()
       ..tags.addAll(tags)
@@ -670,7 +670,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<int> removeTagsFromBinaryDataByIds(List<String> tags, List<String> binaryDataIds) async {
     final request = RemoveTagsFromBinaryDataByIDsRequest()
       ..tags.addAll(tags)
@@ -708,7 +708,7 @@ class DataClient {
   /// }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<String> addBoundingBoxToImageById(
     String label,
     String binaryDataId,
@@ -754,7 +754,7 @@ class DataClient {
   /// }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> removeBoundingBoxFromImageById(String bboxId, String binaryDataId) async {
     final request = RemoveBoundingBoxFromImageByIDRequest()
       ..bboxId = bboxId
@@ -787,7 +787,7 @@ class DataClient {
   /// }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<String>> tagsByFilter(Filter? filter) async {
     final request = TagsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.tagsByFilter(request);
@@ -819,7 +819,7 @@ class DataClient {
   /// }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<String>> boundingBoxLabelsByFilter(Filter? filter) async {
     final request = BoundingBoxLabelsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.boundingBoxLabelsByFilter(request);
@@ -849,7 +849,7 @@ class DataClient {
   /// }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<DatabaseConnection> getDatabaseConnection(String organizationId) async {
     final request = GetDatabaseConnectionRequest()..organizationId = organizationId;
     return await _dataClient.getDatabaseConnection(request);
@@ -876,7 +876,7 @@ class DataClient {
   /// }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> configureDatabaseUser(String organizationId, String password) async {
     final request = ConfigureDatabaseUserRequest()
       ..password = password
@@ -914,7 +914,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> addBinaryDataToDatasetByIds(List<String> binaryDataIds, String datasetId) async {
     final request = AddBinaryDataToDatasetByIDsRequest()
       ..binaryDataIds.addAll(binaryDataIds)
@@ -952,7 +952,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> removeBinaryDataFromDatasetByIds(List<String> binaryDataIds, String datasetId) async {
     final request = RemoveBinaryDataFromDatasetByIDsRequest()
       ..binaryDataIds.addAll(binaryDataIds)
@@ -1033,7 +1033,7 @@ class DataClient {
   ///     }
   ///  }
   /// ```
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<String> uploadImage(
     ViamImage image,
     String partId, {
@@ -1116,7 +1116,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<String> uploadFile(
     String path,
     String partId, {
@@ -1197,7 +1197,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<String> binaryDataCaptureUpload(
     List<int> binaryData,
     String partId,
@@ -1283,7 +1283,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<String> tabularDataCaptureUpload(
     List<Map<String, dynamic>> tabularData,
     String partId, {
@@ -1401,7 +1401,7 @@ class DataClient {
   /// }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<String> streamingDataCaptureUpload(
     List<int> bytes,
     String partId,
@@ -1469,7 +1469,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<String> createDataset(String orgId, String name) async {
     final request = CreateDatasetRequest()
       ..organizationId = orgId
@@ -1499,7 +1499,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> deleteDataset(String id) async {
     final request = DeleteDatasetRequest()..id = id;
     await _datasetClient.deleteDataset(request);
@@ -1526,7 +1526,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> renameDataset(String id, String name) async {
     final request = RenameDatasetRequest()
       ..id = id
@@ -1555,7 +1555,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<Dataset>> listDatasetsByOrganizationID(String orgId) async {
     final request = ListDatasetsByOrganizationIDRequest()..organizationId = orgId;
     final response = await _datasetClient.listDatasetsByOrganizationID(request);
@@ -1582,7 +1582,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<Dataset>> listDatasetsByIDs(List<String> ids) async {
     final request = ListDatasetsByIDsRequest()..ids.addAll(ids);
     final response = await _datasetClient.listDatasetsByIDs(request);
@@ -1613,7 +1613,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<({DateTime timeCaptured, DateTime timeSynced, Map<String, dynamic> payload})?> getLatestTabularData(
     String partId,
     String resourceName,
@@ -1667,7 +1667,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> createIndex(
     String organizationId,
     IndexableCollection collectionType,
@@ -1705,7 +1705,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<Index>> listIndexes(String organizationId, IndexableCollection collectionType, {String? pipelineName}) async {
     final request = ListIndexesRequest()
       ..organizationId = organizationId
@@ -1739,7 +1739,7 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<void> deleteIndex(String organizationId, IndexableCollection collectionType, String indexName, {String? pipelineName}) async {
     final request = DeleteIndexRequest()
       ..organizationId = organizationId

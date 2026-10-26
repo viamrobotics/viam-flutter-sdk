@@ -6,7 +6,7 @@ import '../../robot/client.dart';
 /// {@category Components}
 /// InputController represents a physical input controller.
 ///
-/// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/).
+/// For more information, see [InputController component](https://docs.viam.com/reference/apis/components/input-controller/).
 abstract class InputController extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'input_controller');
 
@@ -16,7 +16,7 @@ abstract class InputController extends Resource {
   /// final controls = await myInputController.getControls();
   /// ```
   ///
-  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/#getcontrols).
+  /// For more information, see [InputController component](https://docs.viam.com/reference/apis/components/input-controller/#getcontrols).
   Future<List<String>> getControls({Map<String, dynamic>? extra});
 
   /// Get events for each control on the input controller.
@@ -25,7 +25,7 @@ abstract class InputController extends Resource {
   /// final events = await myInputController.getEvents();
   /// ```
   ///
-  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/#getevents).
+  /// For more information, see [InputController component](https://docs.viam.com/reference/apis/components/input-controller/#getevents).
   Future<List<Event>> getEvents({Map<String, dynamic>? extra});
 
   /// Trigger an event on the input controller.
@@ -38,7 +38,7 @@ abstract class InputController extends Resource {
   /// await myInputController.triggerEvent(event);
   /// ```
   ///
-  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/#triggerevent).
+  /// For more information, see [InputController component](https://docs.viam.com/reference/apis/components/input-controller/#triggerevent).
   Future<void> triggerEvent(Event event, {Map<String, dynamic>? extra});
 
   /// Register a callback function to be called when control events occur.
@@ -58,7 +58,7 @@ abstract class InputController extends Resource {
   /// );
   /// ```
   ///
-  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/).
+  /// For more information, see [InputController component](https://docs.viam.com/reference/apis/components/input-controller/).
   Future<void> registerControlCallback(
     String control,
     List<String> triggers,
@@ -72,7 +72,7 @@ abstract class InputController extends Resource {
   /// final geometries = await myInputController.getGeometries();
   /// ```
   ///
-  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/#getgeometries).
+  /// For more information, see [InputController component](https://docs.viam.com/reference/apis/components/input-controller/#getgeometries).
   Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [InputController] with the given [name]
@@ -81,7 +81,7 @@ abstract class InputController extends Resource {
   /// final myInputControllerResourceName = myInputController.getResourceName("my_inputController");
   /// ```
   ///
-  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/#getresourcename).
+  /// For more information, see [InputController component](https://docs.viam.com/reference/apis/components/input-controller/#getresourcename).
   static ResourceName getResourceName(String name) {
     return InputController.subtype.getResourceName(name);
   }
@@ -92,7 +92,7 @@ abstract class InputController extends Resource {
   /// final myInputController = InputController.fromRobot(myRobotClient, "my_inputController");
   /// ```
   ///
-  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/).
+  /// For more information, see [InputController component](https://docs.viam.com/reference/apis/components/input-controller/).
   static InputController fromRobot(RobotClient robot, String name) {
     return robot.getResource(InputController.getResourceName(name));
   }

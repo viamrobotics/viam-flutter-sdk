@@ -44,7 +44,7 @@ typedef CameraProperties = GetPropertiesResponse;
 /// {@category Components}
 /// Camera represents any physical hardware that can capture frames.
 ///
-/// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/).
+/// For more information, see [Camera component](https://docs.viam.com/reference/apis/components/camera/).
 abstract class Camera extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'camera');
 
@@ -54,7 +54,7 @@ abstract class Camera extends Resource {
   /// var nextPointCloud = await myCamera.pointCloud();
   /// ```
   ///
-  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getpointcloud).
+  /// For more information, see [Camera component](https://docs.viam.com/reference/apis/components/camera/#getpointcloud).
   Future<ViamImage> pointCloud({Map<String, dynamic>? extra});
 
   /// Get the camera's intrinsic parameters and the camera's distortion parameters.
@@ -63,7 +63,7 @@ abstract class Camera extends Resource {
   /// var cameraProperties = await myCamera.properties();
   /// ```
   ///
-  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getproperties).
+  /// For more information, see [Camera component](https://docs.viam.com/reference/apis/components/camera/#getproperties).
   Future<CameraProperties> properties();
 
   /// Return a list of named images from a camera and metadata about the response.
@@ -84,7 +84,7 @@ abstract class Camera extends Resource {
   /// @param filterSourceNames - A list of source names to filter the images by.
   ///                           If empty or undefined, all images will be returned.
   /// @param extra - Extra parameters to pass to the camera.
-  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getimages).
+  /// For more information, see [Camera component](https://docs.viam.com/reference/apis/components/camera/#getimages).
   Future<GetImagesResult> getImages({List<String>? filterSourceNames, Map<String, dynamic>? extra});
 
   /// Get all geometries associated with the [Camera]
@@ -93,7 +93,7 @@ abstract class Camera extends Resource {
   /// final geometries = await myCamera.getGeometries();
   /// ```
   ///
-  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getgeometries).
+  /// For more information, see [Camera component](https://docs.viam.com/reference/apis/components/camera/#getgeometries).
   Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra});
 
   /// Get the [common_pb.ResourceName] for this [Camera] with the given [name]
@@ -102,7 +102,7 @@ abstract class Camera extends Resource {
   /// final myCameraResourceName = myCamera.getResourceName("my_camera");
   /// ```
   ///
-  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getresourcename).
+  /// For more information, see [Camera component](https://docs.viam.com/reference/apis/components/camera/#getresourcename).
   static common_pb.ResourceName getResourceName(String name) {
     return Camera.subtype.getResourceName(name);
   }
@@ -113,7 +113,7 @@ abstract class Camera extends Resource {
   /// final myCamera = Camera.fromRobot(myRobotClient, "my_camera");
   /// ```
   ///
-  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/).
+  /// For more information, see [Camera component](https://docs.viam.com/reference/apis/components/camera/).
   static Camera fromRobot(RobotClient robot, String name) {
     return robot.getResource(Camera.getResourceName(name));
   }

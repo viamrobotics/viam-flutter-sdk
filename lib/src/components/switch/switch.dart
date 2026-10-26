@@ -6,7 +6,7 @@ import '../../robot/client.dart';
 /// {@category Components}
 /// Switch represents a set of finite positions.
 ///
-/// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/).
+/// For more information, see [Switch component](https://docs.viam.com/reference/apis/components/switch/).
 
 typedef PositionsInfo = GetNumberOfPositionsResponse;
 
@@ -19,7 +19,7 @@ abstract class Switch extends Resource {
   /// await mySwitch.setPosition(2);
   /// ```
   ///
-  /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/servo/#setposition).
+  /// For more information, see [Switch component](https://docs.viam.com/reference/apis/components/servo/).
   Future<void> setPosition(int position, {Map<String, dynamic>? extra});
 
   /// Get the current position (int) of the [Switch].
@@ -28,7 +28,7 @@ abstract class Switch extends Resource {
   /// var position = await mySwitch.getPosition();
   /// ```
   ///
-  /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/#position).
+  /// For more information, see [Switch component](https://docs.viam.com/reference/apis/components/switch/).
   Future<int> getPosition({Map<String, dynamic>? extra});
 
   /// Get the number of available positions (int) and the list of labels of the [Switch].
@@ -37,7 +37,7 @@ abstract class Switch extends Resource {
   /// await mySwitch.getNumberOfPositionsWithLabels();
   /// ```
   ///
-  /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/servo/#getnumberofpositions).
+  /// For more information, see [Switch component](https://docs.viam.com/reference/apis/components/servo/).
   Future<PositionsInfo> getNumberOfPositionsWithLabels({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Switch] with the given [name].
@@ -47,7 +47,7 @@ abstract class Switch extends Resource {
   /// var name = Switch.getResourceName('my_switch');
   /// ```
   ///
-  /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/#getresourcename).
+  /// For more information, see [Switch component](https://docs.viam.com/reference/apis/components/switch/#getresourcename).
   static ResourceName getResourceName(String name) {
     return Switch.subtype.getResourceName(name);
   }
@@ -58,7 +58,7 @@ abstract class Switch extends Resource {
   /// final mySwitch = Switch.fromRobot(myRobotClient, "my_switch");
   /// ```
   ///
-  /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/).
+  /// For more information, see [Switch component](https://docs.viam.com/reference/apis/components/switch/).
   static Switch fromRobot(RobotClient robot, String name) {
     return robot.getResource(Switch.getResourceName(name));
   }

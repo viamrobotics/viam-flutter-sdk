@@ -6,7 +6,7 @@ import '../../protos/app/billing.dart';
 ///
 /// All calls must be authenticated.
 ///
-/// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+/// For more information, see [Billing Client API](https://docs.viam.com/reference/apis/billing-client/).
 class BillingClient {
   final BillingServiceClient _client;
 
@@ -14,7 +14,7 @@ class BillingClient {
 
   /// Get a detailed breakdown of current month's costs
   ///
-  /// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+  /// For more information, see [Billing Client API](https://docs.viam.com/reference/apis/billing-client/).
   Future<GetCurrentMonthUsageResponse> getCurrentMonthUsage(String orgId) async {
     final request = GetCurrentMonthUsageRequest()..orgId = orgId;
     return await _client.getCurrentMonthUsage(request);
@@ -22,7 +22,7 @@ class BillingClient {
 
   /// Org-level information (like billing email and payment details)
   ///
-  /// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+  /// For more information, see [Billing Client API](https://docs.viam.com/reference/apis/billing-client/).
   Future<GetOrgBillingInformationResponse> getOrgBillingInformation(String orgId) async {
     final request = GetOrgBillingInformationRequest()..orgId = orgId;
     return await _client.getOrgBillingInformation(request);
@@ -30,7 +30,7 @@ class BillingClient {
 
   /// Total outstanding balance and previous invoices
   ///
-  /// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+  /// For more information, see [Billing Client API](https://docs.viam.com/reference/apis/billing-client/).
   Future<GetInvoicesSummaryResponse> getInvoicesSummary(String orgId) async {
     final request = GetInvoicesSummaryRequest()..orgId = orgId;
     return await _client.getInvoicesSummary(request);
@@ -38,7 +38,7 @@ class BillingClient {
 
   /// Download a PDF invoice
   ///
-  /// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+  /// For more information, see [Billing Client API](https://docs.viam.com/reference/apis/billing-client/).
   Stream<List<int>> getInvoicePdf(String orgId, String id) {
     final request = GetInvoicePdfRequest()
       ..id = id

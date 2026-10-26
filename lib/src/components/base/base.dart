@@ -9,7 +9,7 @@ typedef BaseProperties = GetPropertiesResponse;
 /// {@category Components}
 /// Base represents a physical base of a robot.
 ///
-/// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/).
+/// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/).
 abstract class Base extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'base');
 
@@ -24,7 +24,7 @@ abstract class Base extends Resource {
   /// await myBase.moveStraight(40, 90);
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#movestraight).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#movestraight).
   Future<void> moveStraight(int distance, double velocity, {Map<String, dynamic>? extra});
 
   /// Spin the [Base] in place [angle] degrees, at the given angular [velocity], expressed in degrees per second.
@@ -37,7 +37,7 @@ abstract class Base extends Resource {
   /// await myBase.spin(10, 15);
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#spin).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#spin).
   Future<void> spin(double angle, double velocity, {Map<String, dynamic>? extra});
 
   /// Set the linear and angular velocity of the [Base].
@@ -63,7 +63,7 @@ abstract class Base extends Resource {
   /// await myBase.setPower(Vector3(), Vector3(0, 0, -0.6));
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#setpower).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#setpower).
   Future<void> setPower(common_pb.Vector3 linear, common_pb.Vector3 angular, {Map<String, dynamic>? extra});
 
   /// Set the linear and angular velocities of the base, expressed as
@@ -76,7 +76,7 @@ abstract class Base extends Resource {
   /// await myBase.setVelocity(Vector3(0, 50, 0), Vector3(0, 0, 15));
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#setvelocity).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#setvelocity).
   Future<void> setVelocity(common_pb.Vector3 linear, common_pb.Vector3 angular, {Map<String, dynamic>? extra});
 
   /// Stop the base.
@@ -85,7 +85,7 @@ abstract class Base extends Resource {
   /// await myBase.stop();
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#stop).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#stop).
   Future<void> stop({Map<String, dynamic>? extra});
 
   /// Whether the base is currently moving
@@ -94,7 +94,7 @@ abstract class Base extends Resource {
   /// bool baseIsMoving = await myBase.isMoving();
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#ismoving).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#ismoving).
   Future<bool> isMoving();
 
   /// Get all geometries associated with the [Base]
@@ -103,12 +103,12 @@ abstract class Base extends Resource {
   /// final geometries = await myBase.getGeometries();
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#getgeometries).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#getgeometries).
   Future<List<common_pb.Geometry>> getGeometries({Map<String, dynamic>? extra});
 
   /// Get the [common_pb.ResourceName] for this [Base] with the given [name]
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#getresourcename).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#getresourcename).
   static common_pb.ResourceName getResourceName(String name) {
     return Base.subtype.getResourceName(name);
   }
@@ -120,7 +120,7 @@ abstract class Base extends Resource {
   /// final myBaseResourceName = myBase.getResourceName("my_base");
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#getproperties).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/#getproperties).
   Future<BaseProperties> properties({Map<String, dynamic>? extra});
 
   /// Get the [Base] named [name] from the provided robot.
@@ -129,7 +129,7 @@ abstract class Base extends Resource {
   /// final myBase = Base.fromRobot(myRobotClient, "my_base");
   /// ```
   ///
-  /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/).
+  /// For more information, see [Base component](https://docs.viam.com/reference/apis/components/base/).
   static Base fromRobot(RobotClient robot, String name) {
     return robot.getResource(Base.getResourceName(name));
   }

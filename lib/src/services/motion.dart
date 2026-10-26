@@ -36,7 +36,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// final success = await myMotionService.move(destination, 'myArm');
   /// ```
   ///
-  /// For more information, see the [motion service docs](https://docs.viam.com/dev/reference/apis/services/motion/#move).
+  /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#move).
   Future<bool> move(
     common_pb.PoseInFrame destination,
     String componentName, {
@@ -64,7 +64,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// final executionId = await myMotionService.moveOnMap(Pose(x: 1000, y: 0, z: 0), 'myBase', 'mySlamService');
   /// ```
   ///
-  /// For more information, see the [motion service docs](https://docs.viam.com/dev/reference/apis/services/motion/#moveonmap).
+  /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#moveonmap).
   Future<String> moveOnMap(
     common_pb.Pose destination,
     String componentName,
@@ -100,7 +100,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// );
   /// ```
   ///
-  /// For more information, see the [motion service docs](https://docs.viam.com/dev/reference/apis/services/motion/#moveonglobe).
+  /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#moveonglobe).
   Future<String> moveOnGlobe(
     common_pb.GeoPoint destination,
     String componentName,
@@ -135,7 +135,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// final pose = await myMotionService.getPose('myArm', 'world');
   /// ```
   ///
-  /// For more information, see the [motion service docs](https://docs.viam.com/dev/reference/apis/services/motion/#getpose).
+  /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#getpose).
   Future<common_pb.PoseInFrame> getPose(
     String componentName,
     String destinationFrame, {
@@ -160,7 +160,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// await myMotionService.stopPlan('myBase');
   /// ```
   ///
-  /// For more information, see the [motion service docs](https://docs.viam.com/dev/reference/apis/services/motion/#stopplan).
+  /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#stopplan).
   Future<void> stopPlan(String componentName, {Map<String, dynamic>? extra}) async {
     final request = StopPlanRequest(name: name, componentName: componentName, extra: extra?.toStruct());
     await client.stopPlan(request, options: callOptions);
@@ -176,7 +176,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// final statuses = await myMotionService.listPlanStatuses(onlyActivePlans: true);
   /// ```
   ///
-  /// For more information, see the [motion service docs](https://docs.viam.com/dev/reference/apis/services/motion/#listplanstatuses).
+  /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#listplanstatuses).
   Future<List<PlanStatusWithID>> listPlanStatuses({bool? onlyActivePlans, Map<String, dynamic>? extra}) async {
     final request = ListPlanStatusesRequest(name: name, onlyActivePlans: onlyActivePlans, extra: extra?.toStruct());
     final response = await client.listPlanStatuses(request, options: callOptions);
@@ -192,7 +192,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// final plan = await myMotionService.getPlan('myBase');
   /// ```
   ///
-  /// For more information, see the [motion service docs](https://docs.viam.com/dev/reference/apis/services/motion/#getplan).
+  /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#getplan).
   Future<MotionPlan> getPlan(
     String componentName, {
     bool? lastPlanOnly,
@@ -220,7 +220,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
 
   /// Get the [common_pb.ResourceName] for this [MotionClient] with the given [name]
   ///
-  /// For more information, see the [motion service docs](https://docs.viam.com/dev/reference/apis/services/motion/#getresourcename).
+  /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#getresourcename).
   static common_pb.ResourceName getResourceName(String name) {
     return MotionClient.subtype.getResourceName(name);
   }

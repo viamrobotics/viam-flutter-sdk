@@ -41,7 +41,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final location = await myNavigationService.addLocation('kitchen');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#addlocation).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Location> addLocation(String locationName, {NavigationPosition? position, Map<String, dynamic>? extra}) async {
     final request = AddLocationRequest(name: name, locationName: locationName, position: position, extra: extra?.toStruct());
     final response = await client.addLocation(request, options: callOptions);
@@ -55,7 +55,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final location = await myNavigationService.getLocation('kitchen');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getlocation).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/#getlocation).
   Future<Location> getLocation(String locationName, {Map<String, dynamic>? extra}) async {
     final request = GetLocationRequest(name: name, locationName: locationName, extra: extra?.toStruct());
     final response = await client.getLocation(request, options: callOptions);
@@ -69,7 +69,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final locations = await myNavigationService.listLocations();
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#listlocations).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<List<Location>> listLocations({Map<String, dynamic>? extra}) async {
     final request = ListLocationsRequest(name: name, extra: extra?.toStruct());
     final response = await client.listLocations(request, options: callOptions);
@@ -84,7 +84,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final location = await myNavigationService.updateLocation('kitchen', newName: 'galley');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#updatelocation).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Location> updateLocation(
     String locationName, {
     NavigationPosition? position,
@@ -109,7 +109,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// await myNavigationService.deleteLocation('kitchen');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#deletelocation).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<void> deleteLocation(String locationName, {Map<String, dynamic>? extra}) async {
     final request = DeleteLocationRequest(name: name, locationName: locationName, extra: extra?.toStruct());
     await client.deleteLocation(request, options: callOptions);
@@ -122,7 +122,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final route = await myNavigationService.addRoute('patrol', [Waypoint(location: 'kitchen'), Waypoint(location: 'den')]);
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#addroute).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Route> addRoute(String routeName, List<Waypoint> waypoints, {Map<String, dynamic>? extra}) async {
     final request = AddRouteRequest(name: name, routeName: routeName, waypoints: waypoints, extra: extra?.toStruct());
     final response = await client.addRoute(request, options: callOptions);
@@ -136,7 +136,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final route = await myNavigationService.getRoute('patrol');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getroute).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Route> getRoute(String routeName, {Map<String, dynamic>? extra}) async {
     final request = GetRouteRequest(name: name, routeName: routeName, extra: extra?.toStruct());
     final response = await client.getRoute(request, options: callOptions);
@@ -150,7 +150,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final routes = await myNavigationService.listRoutes();
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#listroutes).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<List<Route>> listRoutes({Map<String, dynamic>? extra}) async {
     final request = ListRoutesRequest(name: name, extra: extra?.toStruct());
     final response = await client.listRoutes(request, options: callOptions);
@@ -165,7 +165,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final route = await myNavigationService.updateRoute('patrol', waypoints: [Waypoint(location: 'kitchen')]);
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#updateroute).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Route> updateRoute(
     String routeName, {
     String? newName,
@@ -190,7 +190,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// await myNavigationService.deleteRoute('patrol');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#deleteroute).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<void> deleteRoute(String routeName, {Map<String, dynamic>? extra}) async {
     final request = DeleteRouteRequest(name: name, routeName: routeName, extra: extra?.toStruct());
     await client.deleteRoute(request, options: callOptions);
@@ -205,7 +205,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final zone = await myNavigationService.addZone('stairs', 'keepout', {'type': 'circle', 'x': 0, 'y': 0, 'r': 1});
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#addzone).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Zone> addZone(
     String zoneName,
     String type,
@@ -232,7 +232,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final zone = await myNavigationService.getZone('stairs');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getzone).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Zone> getZone(String zoneName, {Map<String, dynamic>? extra}) async {
     final request = GetZoneRequest(name: name, zoneName: zoneName, extra: extra?.toStruct());
     final response = await client.getZone(request, options: callOptions);
@@ -246,7 +246,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final zones = await myNavigationService.listZones(type: 'keepout');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#listzones).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<List<Zone>> listZones({String? type, Map<String, dynamic>? extra}) async {
     final request = ListZonesRequest(name: name, type: type, extra: extra?.toStruct());
     final response = await client.listZones(request, options: callOptions);
@@ -260,7 +260,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final zone = await myNavigationService.updateZone('stairs', maxSpeed: 0.5);
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#updatezone).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Zone> updateZone(
     String zoneName, {
     String? type,
@@ -289,7 +289,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// await myNavigationService.deleteZone('stairs');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#deletezone).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<void> deleteZone(String zoneName, {Map<String, dynamic>? extra}) async {
     final request = DeleteZoneRequest(name: name, zoneName: zoneName, extra: extra?.toStruct());
     await client.deleteZone(request, options: callOptions);
@@ -303,7 +303,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.navigateToLocation('kitchen');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#navigatetolocation).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> navigateToLocation(String locationName, {Map<String, dynamic>? extra}) async {
     final request = NavigateToLocationRequest(name: name, locationName: locationName, extra: extra?.toStruct());
     final response = await client.navigateToLocation(request, options: callOptions);
@@ -318,7 +318,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.navigateToPoint(NavigationPosition(pose: Pose(x: 1000, y: 0, z: 0)));
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#navigatetopoint).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> navigateToPoint(NavigationPosition destination, {Map<String, dynamic>? extra}) async {
     final request = NavigateToPointRequest(name: name, destination: destination, extra: extra?.toStruct());
     final response = await client.navigateToPoint(request, options: callOptions);
@@ -334,7 +334,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.navigateRoute(routeName: 'patrol', loop: true);
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#navigateroute).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> navigateRoute({
     String? routeName,
     List<Waypoint>? waypoints,
@@ -366,7 +366,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final plan = await myNavigationService.planToPoint(NavigationPosition(pose: Pose(x: 1000, y: 0, z: 0)));
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#plantopoint).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Plan> planToPoint(NavigationPosition destination, {NavigationPosition? start, Map<String, dynamic>? extra}) async {
     final request = PlanToPointRequest(name: name, destination: destination, start: start, extra: extra?.toStruct());
     final response = await client.planToPoint(request, options: callOptions);
@@ -381,7 +381,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final plan = await myNavigationService.planToLocation('kitchen');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#plantolocation).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Plan> planToLocation(String locationName, {NavigationPosition? start, Map<String, dynamic>? extra}) async {
     final request = PlanToLocationRequest(name: name, locationName: locationName, start: start, extra: extra?.toStruct());
     final response = await client.planToLocation(request, options: callOptions);
@@ -396,7 +396,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.executePlan(plan);
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#executeplan).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> executePlan(Plan plan, {Map<String, dynamic>? extra}) async {
     final request = ExecutePlanRequest(name: name, plan: plan, extra: extra?.toStruct());
     final response = await client.executePlan(request, options: callOptions);
@@ -411,7 +411,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.goToLocation('dock', wait: false);
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#gotolocation).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> goToLocation(
     String locationName, {
     bool? wait,
@@ -437,7 +437,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.goToPoint(NavigationPosition(pose: Pose(x: 500, y: 0, z: 0)));
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#gotopoint).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> goToPoint(
     NavigationPosition destination, {
     bool? wait,
@@ -463,7 +463,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.suspend(reason: 'door closed');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#suspend).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> suspend({String? reason, Map<String, dynamic>? extra}) async {
     final request = SuspendRequest(name: name, reason: reason, extra: extra?.toStruct());
     final response = await client.suspend(request, options: callOptions);
@@ -478,7 +478,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.resume();
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#resume).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> resume({Map<String, dynamic>? extra}) async {
     final request = ResumeRequest(name: name, extra: extra?.toStruct());
     final response = await client.resume(request, options: callOptions);
@@ -492,7 +492,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.cancel();
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#cancel).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> cancel({Map<String, dynamic>? extra}) async {
     final request = CancelRequest(name: name, extra: extra?.toStruct());
     final response = await client.cancel(request, options: callOptions);
@@ -507,7 +507,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final position = await myNavigationService.getPosition();
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getposition).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationPosition> getPosition({Map<String, dynamic>? extra}) async {
     final request = GetPositionRequest(name: name, extra: extra?.toStruct());
     final response = await client.getPosition(request, options: callOptions);
@@ -521,7 +521,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final status = await myNavigationService.getNavigationStatus();
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getnavigationstatus).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<NavigationStatus> getNavigationStatus({Map<String, dynamic>? extra}) async {
     final request = GetNavigationStatusRequest(name: name, extra: extra?.toStruct());
     final response = await client.getNavigationStatus(request, options: callOptions);
@@ -536,7 +536,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final properties = await myNavigationService.getProperties();
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getproperties).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/#getproperties).
   Future<NavigationProperties> getProperties() async {
     final request = GetPropertiesRequest(name: name);
     final response = await client.getProperties(request, options: callOptions);
@@ -551,7 +551,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// final costmap = await myNavigationService.getCostmap(layer: 'local');
   /// ```
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getcostmap).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<GetCostmapResponse> getCostmap({String? layer, int? stride, Map<String, dynamic>? extra}) async {
     final request = GetCostmapRequest(name: name, layer: layer, stride: stride, extra: extra?.toStruct());
     return await client.getCostmap(request, options: callOptions);
@@ -568,7 +568,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
 
   /// Get the [common_pb.ResourceName] for this [NavigationClient] with the given [name]
   ///
-  /// For more information, see the [navigation service docs](https://docs.viam.com/dev/reference/apis/services/navigation/#getresourcename).
+  /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/#getresourcename).
   static common_pb.ResourceName getResourceName(String name) {
     return NavigationClient.subtype.getResourceName(name);
   }
