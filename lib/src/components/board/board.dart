@@ -47,7 +47,7 @@ abstract class Board extends Resource {
   /// var dutyCycle = await myBoard.pwm('15');
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/reference/apis/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/reference/apis/components/board/#getpwm).
   Future<double> pwm(String pin, {Map<String, dynamic>? extra});
 
   /// Set the duty cycle of the given pin of a board.

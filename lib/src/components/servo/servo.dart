@@ -24,7 +24,7 @@ abstract class Servo extends Resource {
   /// var angle = await myServo.position();
   /// ```
   ///
-  /// For more information, see [Servo component](https://docs.viam.com/reference/apis/components/servo/).
+  /// For more information, see [Servo component](https://docs.viam.com/reference/apis/components/servo/#getposition).
   Future<int> position({Map<String, dynamic>? extra});
 
   /// Stop the [Servo]. It is assumed that the servo stops immediately.
