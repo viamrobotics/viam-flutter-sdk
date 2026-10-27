@@ -18,12 +18,14 @@ class ModelType extends $pb.ProtobufEnum {
   static const ModelType MODEL_TYPE_SINGLE_LABEL_CLASSIFICATION = ModelType._(1, _omitEnumNames ? '' : 'MODEL_TYPE_SINGLE_LABEL_CLASSIFICATION');
   static const ModelType MODEL_TYPE_MULTI_LABEL_CLASSIFICATION = ModelType._(2, _omitEnumNames ? '' : 'MODEL_TYPE_MULTI_LABEL_CLASSIFICATION');
   static const ModelType MODEL_TYPE_OBJECT_DETECTION = ModelType._(3, _omitEnumNames ? '' : 'MODEL_TYPE_OBJECT_DETECTION');
+  static const ModelType MODEL_TYPE_ROBOT_POLICY = ModelType._(4, _omitEnumNames ? '' : 'MODEL_TYPE_ROBOT_POLICY');
 
   static const $core.List<ModelType> values = <ModelType> [
     MODEL_TYPE_UNSPECIFIED,
     MODEL_TYPE_SINGLE_LABEL_CLASSIFICATION,
     MODEL_TYPE_MULTI_LABEL_CLASSIFICATION,
     MODEL_TYPE_OBJECT_DETECTION,
+    MODEL_TYPE_ROBOT_POLICY,
   ];
 
   static final $core.Map<$core.int, ModelType> _byValue = $pb.ProtobufEnum.initByValue(values);

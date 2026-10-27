@@ -139,6 +139,7 @@ enum Request_Type {
   headers, 
   message, 
   rstStream, 
+  apiToken, 
   notSet
 }
 
@@ -152,6 +153,7 @@ class Request extends $pb.GeneratedMessage {
     RequestHeaders? headers,
     RequestMessage? message,
     $core.bool? rstStream,
+    $core.String? apiToken,
   }) {
     final $result = create();
     if (stream != null) {
@@ -166,6 +168,9 @@ class Request extends $pb.GeneratedMessage {
     if (rstStream != null) {
       $result.rstStream = rstStream;
     }
+    if (apiToken != null) {
+      $result.apiToken = apiToken;
+    }
     return $result;
   }
   Request._() : super();
@@ -176,14 +181,16 @@ class Request extends $pb.GeneratedMessage {
     2 : Request_Type.headers,
     3 : Request_Type.message,
     4 : Request_Type.rstStream,
+    5 : Request_Type.apiToken,
     0 : Request_Type.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 4])
+    ..oo(0, [2, 3, 4, 5])
     ..aOM<Stream>(1, _omitFieldNames ? '' : 'stream', subBuilder: Stream.create)
     ..aOM<RequestHeaders>(2, _omitFieldNames ? '' : 'headers', subBuilder: RequestHeaders.create)
     ..aOM<RequestMessage>(3, _omitFieldNames ? '' : 'message', subBuilder: RequestMessage.create)
     ..aOB(4, _omitFieldNames ? '' : 'rstStream')
+    ..aOS(5, _omitFieldNames ? '' : 'apiToken')
     ..hasRequiredFields = false
   ;
 
@@ -252,6 +259,17 @@ class Request extends $pb.GeneratedMessage {
   $core.bool hasRstStream() => $_has(3);
   @$pb.TagNumber(4)
   void clearRstStream() => clearField(4);
+
+  /// api_token lets a client authenticate with the answerer over the PeerConnection when
+  /// the signaling server could not authenticate it. In the form `<api-key-id>:<api-key>`.
+  @$pb.TagNumber(5)
+  $core.String get apiToken => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set apiToken($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasApiToken() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearApiToken() => clearField(5);
 }
 
 /// RequestHeaders describe the unary or streaming call to make.

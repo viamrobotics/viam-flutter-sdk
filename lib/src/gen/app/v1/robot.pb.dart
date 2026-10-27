@@ -1789,12 +1789,12 @@ class AuthConfig extends $pb.GeneratedMessage {
   $core.List<UserPermission> get userPermissions => $_getList(3);
 }
 
-/// A UserPermission describes a User and the permissions granted to
-/// that user.
+/// A UserPermission describes the Users a set of permissions is granted to.
 class UserPermission extends $pb.GeneratedMessage {
   factory UserPermission({
     User? user,
     $core.Iterable<Permission>? permissions,
+    $core.Iterable<User>? users,
   }) {
     final $result = create();
     if (user != null) {
@@ -1802,6 +1802,9 @@ class UserPermission extends $pb.GeneratedMessage {
     }
     if (permissions != null) {
       $result.permissions.addAll(permissions);
+    }
+    if (users != null) {
+      $result.users.addAll(users);
     }
     return $result;
   }
@@ -1812,6 +1815,7 @@ class UserPermission extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserPermission', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOM<User>(1, _omitFieldNames ? '' : 'user', subBuilder: User.create)
     ..pc<Permission>(2, _omitFieldNames ? '' : 'permissions', $pb.PbFieldType.PM, subBuilder: Permission.create)
+    ..pc<User>(3, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..hasRequiredFields = false
   ;
 
@@ -1836,8 +1840,9 @@ class UserPermission extends $pb.GeneratedMessage {
   static UserPermission getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserPermission>(create);
   static UserPermission? _defaultInstance;
 
-  /// user is the User this UserPermission applies to. A User can only be
-  /// listed in a single UserPermission for a set of UserPermissions.
+  /// user is a single User these permissions apply to. Superseded by users:
+  /// prefer users in new writers, and expect readers to ignore user when users
+  /// is set.
   @$pb.TagNumber(1)
   User get user => $_getN(0);
   @$pb.TagNumber(1)
@@ -1849,8 +1854,16 @@ class UserPermission extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   User ensureUser() => $_ensure(0);
 
+  /// permissions are the methods these Users may invoke, by resource. A User
+  /// named here with no permissions may invoke nothing.
   @$pb.TagNumber(2)
   $core.List<Permission> get permissions => $_getList(1);
+
+  /// users are the Users these permissions apply to. A User can be listed in
+  /// only one UserPermission for a set of UserPermissions, counting both users
+  /// and user.
+  @$pb.TagNumber(3)
+  $core.List<User> get users => $_getList(2);
 }
 
 /// A User describes a single user that a set of Permissions applies to.

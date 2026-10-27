@@ -832,10 +832,13 @@ const ResourceStatus$json = {
     {'1': 'revision', '3': 4, '4': 1, '5': 9, '10': 'revision'},
     {'1': 'error', '3': 5, '4': 1, '5': 9, '10': 'error'},
     {'1': 'cloud_metadata', '3': 6, '4': 1, '5': 11, '6': '.viam.robot.v1.GetCloudMetadataResponse', '9': 0, '10': 'cloudMetadata', '17': true},
+    {'1': 'reachability', '3': 7, '4': 1, '5': 14, '6': '.viam.robot.v1.ResourceStatus.Reachability', '10': 'reachability'},
+    {'1': 'remote', '3': 8, '4': 1, '5': 9, '9': 1, '10': 'remote', '17': true},
   ],
-  '4': [ResourceStatus_State$json],
+  '4': [ResourceStatus_State$json, ResourceStatus_Reachability$json],
   '8': [
     {'1': '_cloud_metadata'},
+    {'1': '_remote'},
   ],
 };
 
@@ -852,6 +855,18 @@ const ResourceStatus_State$json = {
   ],
 };
 
+@$core.Deprecated('Use resourceStatusDescriptor instead')
+const ResourceStatus_Reachability$json = {
+  '1': 'Reachability',
+  '2': [
+    {'1': 'REACHABILITY_UNSPECIFIED', '2': 0},
+    {'1': 'REACHABILITY_REACHABLE', '2': 1},
+    {'1': 'REACHABILITY_REMOTE_DISCONNECTED', '2': 2},
+    {'1': 'REACHABILITY_SHADOWED_BY_LOCAL', '2': 3},
+    {'1': 'REACHABILITY_AMBIGUOUS_REMOTE', '2': 4},
+  ],
+};
+
 /// Descriptor for `ResourceStatus`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resourceStatusDescriptor = $convert.base64Decode(
     'Cg5SZXNvdXJjZVN0YXR1cxIwCgRuYW1lGAEgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2'
@@ -859,10 +874,16 @@ final $typed_data.Uint8List resourceStatusDescriptor = $convert.base64Decode(
     'cy5TdGF0ZVIFc3RhdGUSPQoMbGFzdF91cGRhdGVkGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
     'RpbWVzdGFtcFILbGFzdFVwZGF0ZWQSGgoIcmV2aXNpb24YBCABKAlSCHJldmlzaW9uEhQKBWVy'
     'cm9yGAUgASgJUgVlcnJvchJTCg5jbG91ZF9tZXRhZGF0YRgGIAEoCzInLnZpYW0ucm9ib3Qudj'
-    'EuR2V0Q2xvdWRNZXRhZGF0YVJlc3BvbnNlSABSDWNsb3VkTWV0YWRhdGGIAQEihwEKBVN0YXRl'
-    'EhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFgoSU1RBVEVfVU5DT05GSUdVUkVEEAESFQoRU1RBVE'
-    'VfQ09ORklHVVJJTkcQAhIPCgtTVEFURV9SRUFEWRADEhIKDlNUQVRFX1JFTU9WSU5HEAQSEwoP'
-    'U1RBVEVfVU5IRUFMVEhZEAVCEQoPX2Nsb3VkX21ldGFkYXRh');
+    'EuR2V0Q2xvdWRNZXRhZGF0YVJlc3BvbnNlSABSDWNsb3VkTWV0YWRhdGGIAQESTgoMcmVhY2hh'
+    'YmlsaXR5GAcgASgOMioudmlhbS5yb2JvdC52MS5SZXNvdXJjZVN0YXR1cy5SZWFjaGFiaWxpdH'
+    'lSDHJlYWNoYWJpbGl0eRIbCgZyZW1vdGUYCCABKAlIAVIGcmVtb3RliAEBIocBCgVTdGF0ZRIV'
+    'ChFTVEFURV9VTlNQRUNJRklFRBAAEhYKElNUQVRFX1VOQ09ORklHVVJFRBABEhUKEVNUQVRFX0'
+    'NPTkZJR1VSSU5HEAISDwoLU1RBVEVfUkVBRFkQAxISCg5TVEFURV9SRU1PVklORxAEEhMKD1NU'
+    'QVRFX1VOSEVBTFRIWRAFIrUBCgxSZWFjaGFiaWxpdHkSHAoYUkVBQ0hBQklMSVRZX1VOU1BFQ0'
+    'lGSUVEEAASGgoWUkVBQ0hBQklMSVRZX1JFQUNIQUJMRRABEiQKIFJFQUNIQUJJTElUWV9SRU1P'
+    'VEVfRElTQ09OTkVDVEVEEAISIgoeUkVBQ0hBQklMSVRZX1NIQURPV0VEX0JZX0xPQ0FMEAMSIQ'
+    'odUkVBQ0hBQklMSVRZX0FNQklHVU9VU19SRU1PVEUQBEIRCg9fY2xvdWRfbWV0YWRhdGFCCQoH'
+    'X3JlbW90ZQ==');
 
 @$core.Deprecated('Use moduleStatusDescriptor instead')
 const ModuleStatus$json = {
