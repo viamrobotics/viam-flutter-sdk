@@ -80,13 +80,7 @@ final zone = await myNavigationService.addZone('stairs', 'keepout', {'type': 'ci
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;Zone&gt; addZone(
-  String zoneName,
-  String type,
-  Map&lt;String, dynamic&gt; geometry, {
-  double? maxSpeed,
-  Map&lt;String, dynamic&gt;? extra,
-}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;Zone&gt; addZone(String zoneName, String type, Map&lt;String, dynamic&gt; geometry, {double? maxSpeed, Map&lt;String, dynamic&gt;? extra}) async {
   final request = AddZoneRequest(
     name: name,
     zoneName: zoneName,

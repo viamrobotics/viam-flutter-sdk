@@ -78,12 +78,7 @@ final location = await myNavigationService.updateLocation('kitchen', newName: 'g
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;Location&gt; updateLocation(
-  String locationName, {
-  NavigationPosition? position,
-  String? newName,
-  Map&lt;String, dynamic&gt;? extra,
-}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;Location&gt; updateLocation(String locationName, {NavigationPosition? position, String? newName, Map&lt;String, dynamic&gt;? extra}) async {
   final request = UpdateLocationRequest(
     name: name,
     locationName: locationName,

@@ -102,8 +102,9 @@ Future&lt;GetImagesResult&gt; getImages({List&lt;String&gt;? filterSourceNames, 
   final response = await client.getImages(request, options: callOptions);
 
   final images = response.images.map((image) {
-    final mimeType =
-        image.hasMimeType() &amp;&amp; image.mimeType.isNotEmpty ? MimeType.fromString(image.mimeType) : MimeType.unsupported(&#39;unspecified&#39;);
+    final mimeType = image.hasMimeType() &amp;&amp; image.mimeType.isNotEmpty
+        ? MimeType.fromString(image.mimeType)
+        : MimeType.unsupported(&#39;unspecified&#39;);
     final viamImage = ViamImage(image.image, mimeType);
     return NamedImage(sourceName: image.sourceName, image: viamImage);
   }).toList();

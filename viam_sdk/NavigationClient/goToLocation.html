@@ -78,12 +78,7 @@ final status = await myNavigationService.goToLocation('dock', wait: false);
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;NavigationStatus&gt; goToLocation(
-  String locationName, {
-  bool? wait,
-  double? linearMPerSec,
-  Map&lt;String, dynamic&gt;? extra,
-}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;NavigationStatus&gt; goToLocation(String locationName, {bool? wait, double? linearMPerSec, Map&lt;String, dynamic&gt;? extra}) async {
   final request = GoToLocationRequest(
     name: name,
     locationName: locationName,

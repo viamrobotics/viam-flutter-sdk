@@ -96,11 +96,7 @@ try {
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;int&gt; deleteTabularData(
-  String organizationId,
-  int olderThanDays, {
-  DeleteTabularFilter? filter,
-}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;int&gt; deleteTabularData(String organizationId, int olderThanDays, {DeleteTabularFilter? filter}) async {
   final request = DeleteTabularDataRequest()
     ..organizationId = organizationId
     ..deleteOlderThanDays = olderThanDays;

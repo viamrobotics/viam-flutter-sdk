@@ -78,12 +78,7 @@ final route = await myNavigationService.updateRoute('patrol', waypoints: [Waypoi
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;Route&gt; updateRoute(
-  String routeName, {
-  String? newName,
-  List&lt;Waypoint&gt;? waypoints,
-  Map&lt;String, dynamic&gt;? extra,
-}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;Route&gt; updateRoute(String routeName, {String? newName, List&lt;Waypoint&gt;? waypoints, Map&lt;String, dynamic&gt;? extra}) async {
   final request = UpdateRouteRequest(
     name: name,
     routeName: routeName,
