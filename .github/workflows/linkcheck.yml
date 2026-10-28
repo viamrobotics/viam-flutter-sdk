@@ -21,8 +21,14 @@ jobs:
       - name: Setup Flutter
         run: flutter pub get
 
+      # The dartdoc bundled with Flutter 3.47 (9.0.6) crashes while precaching docs:
+      # it slices `@docImport` source ranges from dependencies' comments against the
+      # wrong string. Flutter itself carries those directives, so any package hits it.
+      # Fixed upstream after 9.0.6, so run a current dartdoc instead of `dart doc`.
       - name: Generate docs
-        run: dart doc
+        run: |
+          dart pub global activate dartdoc 9.0.11
+          dart pub global run dartdoc
 
       - name: Test HTML
         # https://github.com/wjdp/htmltest-action/
