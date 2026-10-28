@@ -43,7 +43,7 @@ If you are building for Apple platforms, you may have to update your app's `Info
 
 ## Usage
 
-You can use the Viam SDK to connect to an existing machine (to create a machine, see [Build a simple smart machine](https://docs.viam.com/use-cases/configure/) or if you don't have your own hardware, [Try Viam](https://docs.viam.com/try-viam/)).
+You can use the Viam SDK to connect to an existing machine (to create a machine, see [Build a simple smart machine](https://docs.viam.com/hardware/configure-hardware/) or if you don't have your own hardware, [Try Viam](https://docs.viam.com/try/overview/)).
 
 ```dart
 import 'package:viam_sdk/viam_sdk.dart';

@@ -10,7 +10,7 @@ Screenshots of the final product can be found [below](#screenshots).
 
 ### API Keys
 
-This example app requires the use of API Keys. You can obtain an API Key by following the [documentation](https://docs.viam.com/manage/cli/#create-an-organization-api-key).
+This example app requires the use of API Keys. You can obtain an API Key by following the [documentation](https://docs.viam.com/organization/api-keys/#create-an-api-key).
 
 You can either hardcode your API Key into a `.env` file, or you can input your API Key ID an API Key every time you use this example app. In either case, you should first rename the `.env.template` file to simply `.env`.
 

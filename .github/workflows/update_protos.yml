@@ -196,7 +196,7 @@ jobs:
             /// final currentPose = await myArm.endPosition();
             /// ```
             ///
-            /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getendposition).
+            /// For more information, see [Arm component](https://docs.viam.com/reference/apis/components/arm/#getendposition).
             Future<Pose> endPosition({Map<String, dynamic>? extra});
             ```
 
@@ -226,7 +226,7 @@ jobs:
             ```dart
             /// Get a detailed breakdown of current month's costs
             ///
-            /// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+            /// For more information, see [Billing Client API](https://docs.viam.com/reference/apis/billing-client/).
             Future<GetCurrentMonthUsageResponse> getCurrentMonthUsage(String orgId) async {
               final request = GetCurrentMonthUsageRequest()..orgId = orgId;
               return await _client.getCurrentMonthUsage(request);

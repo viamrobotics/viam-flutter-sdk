@@ -21,7 +21,7 @@ class HoldingStatus {
 /// {@category Components}
 /// Gripper represents a physical Gripper which can open and close.
 ///
-/// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/).
+/// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/).
 abstract class Gripper extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'gripper');
 
@@ -31,7 +31,7 @@ abstract class Gripper extends Resource {
   /// await myGripper.open();
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#open).
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#open).
   Future<void> open({Map<String, dynamic>? extra});
 
   /// Close the [Gripper]
@@ -40,7 +40,7 @@ abstract class Gripper extends Resource {
   /// await myGripper.grab();
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#grab).
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#grab).
   Future<void> grab({Map<String, dynamic>? extra});
 
   /// Stop all motion of the [Gripper]. It is assumed the [Gripper] stops immediately.
@@ -49,7 +49,7 @@ abstract class Gripper extends Resource {
   /// await myGripper.stop();
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#stop).
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#stop).
   Future<void> stop({Map<String, dynamic>? extra});
 
   /// Whether the [Gripper] is currently moving.
@@ -58,7 +58,7 @@ abstract class Gripper extends Resource {
   /// var isItMoving = await myGripper.isMoving();
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#ismoving).
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#ismoving).
   Future<bool> isMoving();
 
   /// Whether the [Gripper] is currently holding onto an object.
@@ -76,7 +76,7 @@ abstract class Gripper extends Resource {
   /// var kinematics = await myGripper.getKinematics();
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#getkinematics).
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#getkinematics).
   Future<Kinematics> getKinematics({
     bool includeCollisionMeshes = false,
     bool includeVisualMeshes = false,
@@ -89,7 +89,7 @@ abstract class Gripper extends Resource {
   /// final geometries = await myGripper.getGeometries();
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#getgeometries).
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#getgeometries).
   Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for the [Gripper] with the given [name]
@@ -98,7 +98,7 @@ abstract class Gripper extends Resource {
   /// final myGripperResourceName = myGripper.getResourceName("my_gripper");
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#getresourcename).
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#getresourcename).
   static ResourceName getResourceName(String name) {
     return Gripper.subtype.getResourceName(name);
   }
@@ -109,7 +109,7 @@ abstract class Gripper extends Resource {
   /// final myGripper = Gripper.fromRobot(myRobotClient, "my_gripper");
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/).
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/).
   static Gripper fromRobot(RobotClient robot, String name) {
     return robot.getResource(Gripper.getResourceName(name));
   }
