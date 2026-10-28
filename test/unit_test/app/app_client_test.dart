@@ -51,9 +51,8 @@ void main() {
               ]),
           ]),
       ];
-      when(
-        serviceClient.listMachineSummaries(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListMachineSummariesResponse()..locationSummaries.addAll(expected)));
+      when(serviceClient.listMachineSummaries(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListMachineSummariesResponse()..locationSummaries.addAll(expected)));
       final response = await appClient.listMachineSummaries('organizationId');
       expect(response, equals(expected));
     });
@@ -68,9 +67,8 @@ void main() {
         ..id = 'id'
         ..name = 'name'
         ..createdOn = Timestamp.create();
-      when(
-        serviceClient.createOrganization(any),
-      ).thenAnswer((_) => MockResponseFuture.value(CreateOrganizationResponse()..organization = expected));
+      when(serviceClient.createOrganization(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateOrganizationResponse()..organization = expected));
       final response = await appClient.createOrganization('name');
       expect(response, equals(expected));
     });
@@ -82,9 +80,8 @@ void main() {
           ..name = 'name'
           ..createdOn = Timestamp.create(),
       ];
-      when(
-        serviceClient.listOrganizations(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListOrganizationsResponse()..organizations.addAll(expected)));
+      when(serviceClient.listOrganizations(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListOrganizationsResponse()..organizations.addAll(expected)));
       final response = await appClient.listOrganizations();
       expect(response, equals(expected));
     });
@@ -108,9 +105,8 @@ void main() {
           ..orgId = 'id'
           ..orgName = 'name',
       ];
-      when(
-        serviceClient.listOrganizationsByUser(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListOrganizationsByUserResponse()..orgs.addAll(expected)));
+      when(serviceClient.listOrganizationsByUser(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListOrganizationsByUserResponse()..orgs.addAll(expected)));
       final response = await appClient.listOrganizationsByUser('userId');
       expect(response, equals(expected));
     });
@@ -120,17 +116,15 @@ void main() {
         ..id = 'id'
         ..name = 'name'
         ..createdOn = Timestamp.create();
-      when(
-        serviceClient.getOrganization(any),
-      ).thenAnswer((_) => MockResponseFuture.value(GetOrganizationResponse()..organization = expected));
+      when(serviceClient.getOrganization(any))
+          .thenAnswer((_) => MockResponseFuture.value(GetOrganizationResponse()..organization = expected));
       final response = await appClient.getOrganization('id');
       expect(response, equals(expected));
     });
 
     test('getOrganizationNamespaceAvailability', () async {
-      when(
-        serviceClient.getOrganizationNamespaceAvailability(any),
-      ).thenAnswer((_) => MockResponseFuture.value(GetOrganizationNamespaceAvailabilityResponse()..available = true));
+      when(serviceClient.getOrganizationNamespaceAvailability(any))
+          .thenAnswer((_) => MockResponseFuture.value(GetOrganizationNamespaceAvailabilityResponse()..available = true));
       final response = await appClient.getOrganizationNamespaceAvailability('publicNamespace');
       expect(response, equals(true));
     });
@@ -140,9 +134,8 @@ void main() {
         ..id = 'id'
         ..name = 'name'
         ..createdOn = Timestamp.create();
-      when(
-        serviceClient.updateOrganization(any),
-      ).thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
+      when(serviceClient.updateOrganization(any))
+          .thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
       final fragmentList = [FragmentImport()..fragmentId = 'fragmentId'];
       final fragmentImportList = FragmentImportList()..fragments.addAll(fragmentList);
       final response = await appClient.updateOrganization('organizationId', defaultFragments: fragmentImportList);
@@ -157,9 +150,8 @@ void main() {
 
     test('listOrganizationMembers', () async {
       final expected = [OrganizationMember()..userId = 'userId'];
-      when(
-        serviceClient.listOrganizationMembers(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListOrganizationMembersResponse(members: expected)));
+      when(serviceClient.listOrganizationMembers(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListOrganizationMembersResponse(members: expected)));
       final response = await appClient.listOrganizationMembers('organizationId');
       expect(response.members, equals(expected));
     });
@@ -169,9 +161,8 @@ void main() {
         ..organizationId = 'organizationId'
         ..email = 'email'
         ..createdOn = Timestamp.create();
-      when(
-        serviceClient.createOrganizationInvite(any),
-      ).thenAnswer((_) => MockResponseFuture.value(CreateOrganizationInviteResponse()..invite = expected));
+      when(serviceClient.createOrganizationInvite(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateOrganizationInviteResponse()..invite = expected));
       final response = await appClient.createOrganizationInvite('organizationId', 'email', []);
       expect(response, equals(expected));
     });
@@ -181,9 +172,8 @@ void main() {
         ..organizationId = 'organizationId'
         ..email = 'email'
         ..createdOn = Timestamp.create();
-      when(
-        serviceClient.updateOrganizationInviteAuthorizations(any),
-      ).thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationInviteAuthorizationsResponse()..invite = expected));
+      when(serviceClient.updateOrganizationInviteAuthorizations(any))
+          .thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationInviteAuthorizationsResponse()..invite = expected));
       final response = await appClient.updateOrganizationInviteAuthorizations('organizationId', 'email', [], []);
       expect(response, equals(expected));
     });
@@ -207,9 +197,8 @@ void main() {
         ..organizationId = 'organizationId'
         ..email = 'email'
         ..createdOn = Timestamp.create();
-      when(
-        serviceClient.resendOrganizationInvite(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ResendOrganizationInviteResponse()..invite = expected));
+      when(serviceClient.resendOrganizationInvite(any))
+          .thenAnswer((_) => MockResponseFuture.value(ResendOrganizationInviteResponse()..invite = expected));
       final response = await appClient.resendOrganizationInvite('organizationId', 'email', sendEmailInvite: true);
       expect(response, equals(expected));
     });
@@ -258,9 +247,8 @@ void main() {
           ..name = 'name'
           ..createdOn = Timestamp.create(),
       ];
-      when(
-        serviceClient.listLocations(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListLocationsResponse()..locations.addAll(expected)));
+      when(serviceClient.listLocations(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListLocationsResponse()..locations.addAll(expected)));
       final response = await appClient.listLocations('organizationId');
       expect(response, equals(expected));
     });
@@ -302,9 +290,8 @@ void main() {
       final expected = LocationAuth(secrets: [secret])
         ..secret = 'secret'
         ..locationId = 'locationId';
-      when(
-        serviceClient.createLocationSecret(any),
-      ).thenAnswer((_) => MockResponseFuture.value(CreateLocationSecretResponse()..auth = expected));
+      when(serviceClient.createLocationSecret(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateLocationSecretResponse()..auth = expected));
       final response = await appClient.createLocationSecret('locationId');
       expect(response, equals(expected));
     });
@@ -333,9 +320,8 @@ void main() {
           ..robotName = 'robotName'
           ..robotMainPartId = 'robotMainPartId',
       ];
-      when(
-        serviceClient.getRoverRentalRobots(any),
-      ).thenAnswer((_) => MockResponseFuture.value(GetRoverRentalRobotsResponse()..robots.addAll(expected)));
+      when(serviceClient.getRoverRentalRobots(any))
+          .thenAnswer((_) => MockResponseFuture.value(GetRoverRentalRobotsResponse()..robots.addAll(expected)));
       final response = await appClient.getRoverRentalRobots('orgId');
       expect(response, equals(expected));
     });
@@ -428,9 +414,8 @@ void main() {
           ..when = Timestamp.create()
           ..old = RobotPart(),
       ];
-      when(
-        serviceClient.getRobotPartHistory(any),
-      ).thenAnswer((_) => MockResponseFuture.value(GetRobotPartHistoryResponse(history: expected)));
+      when(serviceClient.getRobotPartHistory(any))
+          .thenAnswer((_) => MockResponseFuture.value(GetRobotPartHistoryResponse(history: expected)));
       final response = await appClient.getRobotPartHistory('id');
       expect(response, equals(expected));
     });
@@ -462,9 +447,8 @@ void main() {
           ..path = 'path'
           ..success = true,
       ];
-      when(
-        serviceClient.setConfigProperty(any),
-      ).thenAnswer((_) => MockResponseFuture.value(SetConfigPropertyResponse()..propertyChanges.addAll(expected)));
+      when(serviceClient.setConfigProperty(any))
+          .thenAnswer((_) => MockResponseFuture.value(SetConfigPropertyResponse()..propertyChanges.addAll(expected)));
       final response = await appClient.setConfigProperty('robotPartId', [ConfigPropertyChange()..path = 'path']);
       expect(response, equals(expected));
     });
@@ -513,9 +497,8 @@ void main() {
       final expected = RobotPart()
         ..id = 'id'
         ..name = 'name';
-      when(
-        serviceClient.createRobotPartSecret(any),
-      ).thenAnswer((_) => MockResponseFuture.value(CreateRobotPartSecretResponse()..part = expected));
+      when(serviceClient.createRobotPartSecret(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateRobotPartSecretResponse()..part = expected));
       final response = await appClient.createRobotPartSecret('partId');
       expect(response, equals(expected));
     });
@@ -599,9 +582,8 @@ void main() {
           ..organizationId = 'organizationId'
           ..createdOn = Timestamp.create(),
       ];
-      when(
-        serviceClient.listFavoriteMachines(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListFavoriteMachinesResponse()..favorites.addAll(expected)));
+      when(serviceClient.listFavoriteMachines(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListFavoriteMachinesResponse()..favorites.addAll(expected)));
       final response = await appClient.listFavoriteMachines();
       expect(response, equals(expected));
     });
@@ -620,9 +602,8 @@ void main() {
           ..organizationCount = 2
           ..onlyUsedByOwner = false,
       ];
-      when(
-        serviceClient.listFragments(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListFragmentsResponse()..fragments.addAll(expected)));
+      when(serviceClient.listFragments(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListFragmentsResponse()..fragments.addAll(expected)));
       final response = await appClient.listFragments('organizationId', true);
       expect(response, equals(expected));
     });
@@ -688,29 +669,31 @@ void main() {
     test('addRole', () async {
       final expected = AddRoleResponse();
       when(serviceClient.addRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      final authorization = ViamAuthorization(
-        authorizationId: AuthorizationId.robotOwner,
-        resourceType: ResourceType.robot,
-        resourceId: 'resourceId',
-        organizationId: 'organizationId',
-        identityType: IdentityType.user,
-      )
-        ..authorizationType = 'authorizationType'
-        ..identityId = 'identityId';
+      final authorization =
+          ViamAuthorization(
+              authorizationId: AuthorizationId.robotOwner,
+              resourceType: ResourceType.robot,
+              resourceId: 'resourceId',
+              organizationId: 'organizationId',
+              identityType: IdentityType.user,
+            )
+            ..authorizationType = 'authorizationType'
+            ..identityId = 'identityId';
       await appClient.addRole(authorization);
       verify(serviceClient.addRole(any)).called(1);
     });
 
     test('removeRole', () async {
-      final authorization = ViamAuthorization(
-        authorizationId: AuthorizationId.robotOwner,
-        resourceType: ResourceType.robot,
-        resourceId: 'resourceId',
-        organizationId: 'organizationId',
-        identityType: IdentityType.user,
-      )
-        ..authorizationType = 'authorizationType'
-        ..identityId = 'identityId';
+      final authorization =
+          ViamAuthorization(
+              authorizationId: AuthorizationId.robotOwner,
+              resourceType: ResourceType.robot,
+              resourceId: 'resourceId',
+              organizationId: 'organizationId',
+              identityType: IdentityType.user,
+            )
+            ..authorizationType = 'authorizationType'
+            ..identityId = 'identityId';
       final expected = RemoveRoleResponse();
       when(serviceClient.removeRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       await appClient.removeRole(authorization);
@@ -720,24 +703,26 @@ void main() {
     test('changeRole', () async {
       final expected = ChangeRoleResponse();
       when(serviceClient.changeRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      final oldAuthorization = ViamAuthorization(
-        authorizationId: AuthorizationId.robotOwner,
-        resourceType: ResourceType.robot,
-        resourceId: 'resourceId',
-        organizationId: 'organizationId',
-        identityType: IdentityType.user,
-      )
-        ..authorizationType = 'authorizationType'
-        ..identityId = 'identityId';
-      final newAuthorization = ViamAuthorization(
-        authorizationId: AuthorizationId.robotOwner,
-        resourceType: ResourceType.robot,
-        resourceId: 'resourceId2',
-        organizationId: 'organizationId2',
-        identityType: IdentityType.user,
-      )
-        ..authorizationType = 'authorizationType2'
-        ..identityId = 'identityId2';
+      final oldAuthorization =
+          ViamAuthorization(
+              authorizationId: AuthorizationId.robotOwner,
+              resourceType: ResourceType.robot,
+              resourceId: 'resourceId',
+              organizationId: 'organizationId',
+              identityType: IdentityType.user,
+            )
+            ..authorizationType = 'authorizationType'
+            ..identityId = 'identityId';
+      final newAuthorization =
+          ViamAuthorization(
+              authorizationId: AuthorizationId.robotOwner,
+              resourceType: ResourceType.robot,
+              resourceId: 'resourceId2',
+              organizationId: 'organizationId2',
+              identityType: IdentityType.user,
+            )
+            ..authorizationType = 'authorizationType2'
+            ..identityId = 'identityId2';
       await appClient.changeRole(oldAuthorization, newAuthorization);
       verify(serviceClient.changeRole(any)).called(1);
     });
@@ -753,9 +738,8 @@ void main() {
           ..organizationId = 'organizationId'
           ..identityType = 'user',
       ];
-      when(
-        serviceClient.listAuthorizations(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListAuthorizationsResponse()..authorizations.addAll(expected)));
+      when(serviceClient.listAuthorizations(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListAuthorizationsResponse()..authorizations.addAll(expected)));
       final response = await appClient.listAuthorizations('organizationId');
       expect(response, equals(expected));
     });
@@ -768,9 +752,8 @@ void main() {
           ..resourceId = 'resourceId'
           ..permissions.addAll(['control_robot']),
       ];
-      when(
-        serviceClient.checkPermissions(any),
-      ).thenAnswer((_) => MockResponseFuture.value(CheckPermissionsResponse()..authorizedPermissions.addAll(authorizedPermissions)));
+      when(serviceClient.checkPermissions(any))
+          .thenAnswer((_) => MockResponseFuture.value(CheckPermissionsResponse()..authorizedPermissions.addAll(authorizedPermissions)));
       final response = await appClient.checkPermissions(ResourceType.robot, 'resourceId', [Permission.controlRobot]);
       expect(response, equals(expected));
     });
@@ -806,9 +789,8 @@ void main() {
           ..name = 'name'
           ..type = PackageType.PACKAGE_TYPE_UNSPECIFIED,
       ];
-      when(
-        serviceClient.listRegistryItems(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListRegistryItemsResponse()..items.addAll(expected)));
+      when(serviceClient.listRegistryItems(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListRegistryItemsResponse()..items.addAll(expected)));
       final response = await appClient.listRegistryItems(
         [PackageType.PACKAGE_TYPE_UNSPECIFIED],
         [Visibility.VISIBILITY_UNSPECIFIED],
@@ -837,15 +819,9 @@ void main() {
     test('updateModule', () async {
       const expected = 'url';
       when(serviceClient.updateModule(any)).thenAnswer((_) => MockResponseFuture.value(UpdateModuleResponse()..url = expected));
-      final response = await appClient.updateModule(
-          'moduleId',
-          Visibility.VISIBILITY_UNSPECIFIED,
-          'url',
-          'description',
-          [
-            Model(),
-          ],
-          'entrypoint');
+      final response = await appClient.updateModule('moduleId', Visibility.VISIBILITY_UNSPECIFIED, 'url', 'description', [
+        Model(),
+      ], 'entrypoint');
       expect(response, equals(expected));
     });
 
@@ -883,12 +859,12 @@ void main() {
       when(serviceClient.createKey(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final authorizations = [
         ViamAuthorization(
-          authorizationId: AuthorizationId.robotOwner,
-          resourceType: ResourceType.robot,
-          resourceId: 'resourceId',
-          organizationId: 'organizationId',
-          identityType: IdentityType.user,
-        )
+            authorizationId: AuthorizationId.robotOwner,
+            resourceType: ResourceType.robot,
+            resourceId: 'resourceId',
+            organizationId: 'organizationId',
+            identityType: IdentityType.user,
+          )
           ..authorizationType = 'authorizationType'
           ..identityId = 'identityId',
       ];

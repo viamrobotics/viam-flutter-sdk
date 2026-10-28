@@ -14,7 +14,10 @@ class HoldingStatus {
   HoldingStatus(this.isHoldingSomething, this.meta);
 
   factory HoldingStatus.fromProto(IsHoldingSomethingResponse pbResponse) {
-    return HoldingStatus(pbResponse.isHoldingSomething, pbResponse.meta.toMap());
+    return HoldingStatus(
+      pbResponse.isHoldingSomething,
+      pbResponse.meta.toMap(),
+    );
   }
 }
 
@@ -23,7 +26,11 @@ class HoldingStatus {
 ///
 /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/).
 abstract class Gripper extends Resource {
-  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'gripper');
+  static const Subtype subtype = Subtype(
+    resourceNamespaceRDK,
+    resourceTypeComponent,
+    'gripper',
+  );
 
   /// Open the [Gripper].
   ///

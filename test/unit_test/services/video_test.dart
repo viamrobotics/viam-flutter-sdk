@@ -98,9 +98,8 @@ void main() {
 
     test('doCommand', () async {
       final expectedResult = {'status': 'ok'};
-      when(
-        serviceClient.doCommand(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(DoCommandResponse()..result = expectedResult.toStruct()));
+      when(serviceClient.doCommand(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(DoCommandResponse()..result = expectedResult.toStruct()));
 
       final response = await client.doCommand({'action': 'test'});
 
@@ -109,9 +108,8 @@ void main() {
 
     test('getStatus', () async {
       final expected = {'status': 'ok'};
-      when(
-        serviceClient.getStatus(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetStatusResponse()..result = expected.toStruct()));
+      when(serviceClient.getStatus(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetStatusResponse()..result = expected.toStruct()));
       final response = await client.getStatus();
       expect(response, equals(expected));
     });

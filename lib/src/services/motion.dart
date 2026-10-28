@@ -12,8 +12,14 @@ typedef MotionPlan = GetPlanResponse;
 
 /// {@category Services}
 /// A client for the `motion` service.
-class MotionClient extends Resource with RPCDebugLoggerMixin implements ResourceRPCClient {
-  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeService, 'motion');
+class MotionClient extends Resource
+    with RPCDebugLoggerMixin
+    implements ResourceRPCClient {
+  static const Subtype subtype = Subtype(
+    resourceNamespaceRDK,
+    resourceTypeService,
+    'motion',
+  );
 
   @override
   final String name;
@@ -161,8 +167,15 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   ///
   /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#stopplan).
-  Future<void> stopPlan(String componentName, {Map<String, dynamic>? extra}) async {
-    final request = StopPlanRequest(name: name, componentName: componentName, extra: extra?.toStruct());
+  Future<void> stopPlan(
+    String componentName, {
+    Map<String, dynamic>? extra,
+  }) async {
+    final request = StopPlanRequest(
+      name: name,
+      componentName: componentName,
+      extra: extra?.toStruct(),
+    );
     await client.stopPlan(request, options: callOptions);
   }
 
@@ -177,9 +190,19 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   ///
   /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#listplanstatuses).
-  Future<List<PlanStatusWithID>> listPlanStatuses({bool? onlyActivePlans, Map<String, dynamic>? extra}) async {
-    final request = ListPlanStatusesRequest(name: name, onlyActivePlans: onlyActivePlans, extra: extra?.toStruct());
-    final response = await client.listPlanStatuses(request, options: callOptions);
+  Future<List<PlanStatusWithID>> listPlanStatuses({
+    bool? onlyActivePlans,
+    Map<String, dynamic>? extra,
+  }) async {
+    final request = ListPlanStatusesRequest(
+      name: name,
+      onlyActivePlans: onlyActivePlans,
+      extra: extra?.toStruct(),
+    );
+    final response = await client.listPlanStatuses(
+      request,
+      options: callOptions,
+    );
     return response.planStatusesWithIds;
   }
 

@@ -27,9 +27,8 @@ void main() {
 
     test('submitCustomTrainingJob', () async {
       const expected = 'jobId';
-      when(
-        serviceClient.submitCustomTrainingJob(any),
-      ).thenAnswer((_) => MockResponseFuture.value(SubmitCustomTrainingJobResponse()..id = expected));
+      when(serviceClient.submitCustomTrainingJob(any))
+          .thenAnswer((_) => MockResponseFuture.value(SubmitCustomTrainingJobResponse()..id = expected));
       final response = await mlTrainingClient.submitCustomTrainingJob('orgId', 'datasetId', 'name', 'version', 'itemId');
       expect(response, equals(expected));
     });
@@ -55,9 +54,8 @@ void main() {
           ..organizationId = 'orgId'
           ..modelVersion = 'version',
       ];
-      when(
-        serviceClient.listTrainingJobs(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListTrainingJobsResponse()..jobs.addAll(expected)));
+      when(serviceClient.listTrainingJobs(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListTrainingJobsResponse()..jobs.addAll(expected)));
       final response = await mlTrainingClient.listTrainingJobs('orgId');
       expect(response, equals(expected));
     });
@@ -76,26 +74,23 @@ void main() {
 
     test('registerCustomTrainingContainer', () async {
       const expected = 'containerId';
-      when(
-        serviceClient.registerCustomTrainingContainer(any),
-      ).thenAnswer((_) => MockResponseFuture.value(RegisterCustomTrainingContainerResponse()..id = expected));
+      when(serviceClient.registerCustomTrainingContainer(any))
+          .thenAnswer((_) => MockResponseFuture.value(RegisterCustomTrainingContainerResponse()..id = expected));
       final response = await mlTrainingClient.registerCustomTrainingContainer('orgId', 'docker.io/library/image:tag', description: 'desc');
       expect(response, equals(expected));
     });
 
     test('deleteCustomTrainingContainer', () async {
-      when(
-        serviceClient.deleteCustomTrainingContainer(any),
-      ).thenAnswer((_) => MockResponseFuture.value(DeleteCustomTrainingContainerResponse()));
+      when(serviceClient.deleteCustomTrainingContainer(any))
+          .thenAnswer((_) => MockResponseFuture.value(DeleteCustomTrainingContainerResponse()));
       await mlTrainingClient.deleteCustomTrainingContainer('id');
       verify(serviceClient.deleteCustomTrainingContainer(any)).called(1);
     });
 
     test('listContainers', () async {
       final expected = [Container()..key = 'containerId'];
-      when(
-        serviceClient.listContainers(any),
-      ).thenAnswer((_) => MockResponseFuture.value(ListContainersResponse()..containers.addAll(expected)));
+      when(serviceClient.listContainers(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListContainersResponse()..containers.addAll(expected)));
       final response = await mlTrainingClient.listContainers('orgId');
       expect(response, equals(expected));
     });

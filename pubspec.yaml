@@ -4,13 +4,13 @@ version: 0.23.0
 homepage: https://github.com/viamrobotics/viam-flutter-sdk/
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.0.0"
+  sdk: ">=3.13.0 <4.0.0"
+  flutter: ">=3.41.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_webrtc: ^0.12.1+hotfix.1
+  flutter_webrtc: ^1.6.3
   grpc: ^4.0.1
   protobuf: ^3.0.0
   image: ^4.0.16
@@ -19,10 +19,9 @@ dependencies:
   flutter_joystick: ^0.2.1
   collection: ^1.17.1
   async: ^2.11.0
-  bonsoir: ^5.1.8
+  bonsoir: ^7.1.6
   bson: ^5.0.5
   uuid: ^4.0.0
-  flutter_platform_widgets: ^7.0.1
 
 dev_dependencies:
   flutter_test:

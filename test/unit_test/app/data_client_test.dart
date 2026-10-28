@@ -97,9 +97,8 @@ void main() {
       test('tabularDataByFilter_countOnly', () async {
         const count = 10;
 
-        when(
-          serviceClient.tabularDataByFilter(any),
-        ).thenAnswer((_) => MockResponseFuture.value(TabularDataByFilterResponse()..count = Int64(count)));
+        when(serviceClient.tabularDataByFilter(any))
+            .thenAnswer((_) => MockResponseFuture.value(TabularDataByFilterResponse()..count = Int64(count)));
 
         final response = await dataClient.tabularDataByFilter(countOnly: true);
         expect(response.count, equals(Int64(count)));
@@ -140,9 +139,8 @@ void main() {
       test('binaryDataByFilter_countOnly', () async {
         const count = 10;
 
-        when(
-          serviceClient.binaryDataByFilter(any),
-        ).thenAnswer((_) => MockResponseFuture.value(BinaryDataByFilterResponse()..count = Int64(count)));
+        when(serviceClient.binaryDataByFilter(any))
+            .thenAnswer((_) => MockResponseFuture.value(BinaryDataByFilterResponse()..count = Int64(count)));
 
         final response = await dataClient.binaryDataByFilter(countOnly: true);
         expect(response.count, equals(Int64(count)));
@@ -385,9 +383,8 @@ void main() {
       });
 
       test('deleteTabularData', () async {
-        when(
-          serviceClient.deleteTabularData(any),
-        ).thenAnswer((_) => MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(12)));
+        when(serviceClient.deleteTabularData(any))
+            .thenAnswer((_) => MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(12)));
 
         final response = await dataClient.deleteTabularData('some_org_id', 5);
         expect(response, equals(12));
@@ -429,18 +426,16 @@ void main() {
       });
 
       test('deleteBinaryDataByFilter', () async {
-        when(
-          serviceClient.deleteBinaryDataByFilter(any),
-        ).thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByFilterResponse()..deletedCount = Int64(12)));
+        when(serviceClient.deleteBinaryDataByFilter(any))
+            .thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByFilterResponse()..deletedCount = Int64(12)));
 
         final response = await dataClient.deleteBinaryDataByFilter(Filter(), includeInternalData: true);
         expect(response, equals(12));
       });
 
       test('deleteBinaryDataByIds', () async {
-        when(
-          serviceClient.deleteBinaryDataByIDs(any),
-        ).thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByIDsResponse()..deletedCount = Int64(12)));
+        when(serviceClient.deleteBinaryDataByIDs(any))
+            .thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByIDsResponse()..deletedCount = Int64(12)));
 
         final response = await dataClient.deleteBinaryDataByIds(['file']);
         expect(response, equals(12));
@@ -453,44 +448,39 @@ void main() {
       });
 
       test('addTagsToBinaryDataByFilter', () async {
-        when(
-          serviceClient.addTagsToBinaryDataByFilter(any),
-        ).thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByFilterResponse()));
+        when(serviceClient.addTagsToBinaryDataByFilter(any))
+            .thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByFilterResponse()));
         await dataClient.addTagsToBinaryDataByFilter(['tags'], Filter());
         verify(serviceClient.addTagsToBinaryDataByFilter(any)).called(1);
       });
 
       test('removeTagsFromBinaryDataByFilter', () async {
-        when(
-          serviceClient.removeTagsFromBinaryDataByFilter(any),
-        ).thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByFilterResponse(deletedCount: Int64(15))));
+        when(serviceClient.removeTagsFromBinaryDataByFilter(any))
+            .thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByFilterResponse(deletedCount: Int64(15))));
 
         final response = await dataClient.removeTagsFromBinaryDataByFilter(['tags'], Filter());
         expect(response, equals(15));
       });
 
       test('removeTagsFromBinaryDataByIds', () async {
-        when(
-          serviceClient.removeTagsFromBinaryDataByIDs(any),
-        ).thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByIDsResponse(deletedCount: Int64(18))));
+        when(serviceClient.removeTagsFromBinaryDataByIDs(any))
+            .thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByIDsResponse(deletedCount: Int64(18))));
 
         final response = await dataClient.removeTagsFromBinaryDataByIds(['tags'], ['file']);
         expect(response, equals(18));
       });
 
       test('addBoundingBoxToImageById', () async {
-        when(
-          serviceClient.addBoundingBoxToImageByID(any),
-        ).thenAnswer((_) => MockResponseFuture.value(AddBoundingBoxToImageByIDResponse(bboxId: 'bboxId')));
+        when(serviceClient.addBoundingBoxToImageByID(any))
+            .thenAnswer((_) => MockResponseFuture.value(AddBoundingBoxToImageByIDResponse(bboxId: 'bboxId')));
 
         final response = await dataClient.addBoundingBoxToImageById('label', 'file', 0.1, 0.2, 0.3, 0.4);
         expect(response, equals('bboxId'));
       });
 
       test('removeBoundingBoxFromImageById', () async {
-        when(
-          serviceClient.removeBoundingBoxFromImageByID(any),
-        ).thenAnswer((_) => MockResponseFuture.value(RemoveBoundingBoxFromImageByIDResponse()));
+        when(serviceClient.removeBoundingBoxFromImageByID(any))
+            .thenAnswer((_) => MockResponseFuture.value(RemoveBoundingBoxFromImageByIDResponse()));
         await dataClient.removeBoundingBoxFromImageById('bboxId', 'file');
         verify(serviceClient.removeBoundingBoxFromImageByID(any)).called(1);
       });
@@ -503,9 +493,8 @@ void main() {
       });
 
       test('boundingBoxLabelsByFilter', () async {
-        when(
-          serviceClient.boundingBoxLabelsByFilter(any),
-        ).thenAnswer((_) => MockResponseFuture.value(BoundingBoxLabelsByFilterResponse(labels: ['label'])));
+        when(serviceClient.boundingBoxLabelsByFilter(any))
+            .thenAnswer((_) => MockResponseFuture.value(BoundingBoxLabelsByFilterResponse(labels: ['label'])));
 
         final response = await dataClient.boundingBoxLabelsByFilter(Filter());
         expect(response, equals(['label']));
@@ -529,17 +518,15 @@ void main() {
       });
 
       test('addBinaryDataToDatasetByIds', () async {
-        when(
-          serviceClient.addBinaryDataToDatasetByIDs(any),
-        ).thenAnswer((_) => MockResponseFuture.value(AddBinaryDataToDatasetByIDsResponse()));
+        when(serviceClient.addBinaryDataToDatasetByIDs(any))
+            .thenAnswer((_) => MockResponseFuture.value(AddBinaryDataToDatasetByIDsResponse()));
         await dataClient.addBinaryDataToDatasetByIds(['file'], 'dataset');
         verify(serviceClient.addBinaryDataToDatasetByIDs(any)).called(1);
       });
 
       test('removeBinaryDataFromDatasetByIds', () async {
-        when(
-          serviceClient.removeBinaryDataFromDatasetByIDs(any),
-        ).thenAnswer((_) => MockResponseFuture.value(RemoveBinaryDataFromDatasetByIDsResponse()));
+        when(serviceClient.removeBinaryDataFromDatasetByIDs(any))
+            .thenAnswer((_) => MockResponseFuture.value(RemoveBinaryDataFromDatasetByIDsResponse()));
         await dataClient.removeBinaryDataFromDatasetByIds(['file'], 'dataset');
         verify(serviceClient.removeBinaryDataFromDatasetByIDs(any)).called(1);
       });
@@ -712,9 +699,8 @@ void main() {
             ..timeCreated = Timestamp(),
         ];
 
-        when(
-          datasetServiceClient.listDatasetsByOrganizationID(any),
-        ).thenAnswer((_) => MockResponseFuture.value(ListDatasetsByOrganizationIDResponse()..datasets.addAll(expected)));
+        when(datasetServiceClient.listDatasetsByOrganizationID(any))
+            .thenAnswer((_) => MockResponseFuture.value(ListDatasetsByOrganizationIDResponse()..datasets.addAll(expected)));
 
         final response = await dataClient.listDatasetsByOrganizationID('orgId');
         expect(response, equals(expected));
@@ -729,9 +715,8 @@ void main() {
             ..timeCreated = Timestamp(),
         ];
 
-        when(
-          datasetServiceClient.listDatasetsByIDs(any),
-        ).thenAnswer((_) => MockResponseFuture.value(ListDatasetsByIDsResponse()..datasets.addAll(expected)));
+        when(datasetServiceClient.listDatasetsByIDs(any))
+            .thenAnswer((_) => MockResponseFuture.value(ListDatasetsByIDsResponse()..datasets.addAll(expected)));
 
         final response = await dataClient.listDatasetsByIDs(['dataset-id']);
         expect(response, equals(expected));
