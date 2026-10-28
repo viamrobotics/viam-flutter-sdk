@@ -39,27 +39,13 @@ class ViamImpl implements Viam {
 
     _provisioningClient = ProvisioningClient(
       ProvisioningServiceClient(
-        ClientChannel(
-          '10.42.0.1',
-          port: 4772,
-          options: const ChannelOptions(
-            credentials: ChannelCredentials.insecure(),
-          ),
-        ),
+        ClientChannel('10.42.0.1', port: 4772, options: const ChannelOptions(credentials: ChannelCredentials.insecure())),
       ),
     );
   }
 
-  ViamImpl.withAccessToken(
-    String accessToken, {
-    String serviceHost = 'app.viam.com',
-    int servicePort = 443,
-  }) : _clientChannelBase = AuthenticatedChannel(
-         serviceHost,
-         servicePort,
-         accessToken,
-         servicePort == 443 ? false : true,
-       ) {
+  ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
+    : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
     _authPayload = accessToken;
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _appRobotClient = AppRobotClient(RobotServiceClient(_clientChannelBase));
@@ -72,22 +58,12 @@ class ViamImpl implements Viam {
 
     _provisioningClient = ProvisioningClient(
       ProvisioningServiceClient(
-        ClientChannel(
-          '10.42.0.1',
-          port: 4772,
-          options: const ChannelOptions(
-            credentials: ChannelCredentials.insecure(),
-          ),
-        ),
+        ClientChannel('10.42.0.1', port: 4772, options: const ChannelOptions(credentials: ChannelCredentials.insecure())),
       ),
     );
   }
 
-  static Future<ViamImpl> withApiKey(
-    String apiKeyId,
-    String apiKey, {
-    String serviceHost = 'app.viam.com',
-  }) async {
+  static Future<ViamImpl> withApiKey(String apiKeyId, String apiKey, {String serviceHost = 'app.viam.com'}) async {
     final channel = await dial(
       serviceHost,
       DialOptions()
