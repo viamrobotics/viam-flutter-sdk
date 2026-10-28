@@ -209,7 +209,14 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
   }
   dialSW.stop();
   _logger.d('STATS: dial function took ${dialSW.elapsed}');
-  return chan.timeout(opts.timeout);
+  try {
+    return await chan.timeout(opts.timeout);
+  } on TimeoutException {
+    // The timeout gives up on the dial without stopping it. Shut down whatever
+    // it still produces, or its peer connection stays open for good.
+    unawaited(chan.then((channel) => channel.shutdown(), onError: (_) {}));
+    rethrow;
+  }
 }
 
 Future<String> _searchMdns(String address) async {
@@ -353,204 +360,218 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
 
   final createPeerConnSW = Stopwatch()..start();
   final peerConnection = await createPeerConnection({'iceServers': iceServers});
-  final dataChannel = await peerConnection.createDataChannel(
-    'data',
-    RTCDataChannelInit()
-      ..binaryType = 'arraybuffer'
-      ..id = 0
-      ..negotiated = true
-      ..ordered = true,
-  );
+  // Every path that doesn't hand the peer connection to a channel closes it.
+  // An unclosed one keeps its sockets open until the app exits; on iOS, once
+  // a socket's fd reaches FD_SETSIZE, WebRTC's network thread exits and every
+  // later peer connection call blocks forever.
+  var connected = false;
+  try {
+    final dataChannel = await peerConnection.createDataChannel(
+      'data',
+      RTCDataChannelInit()
+        ..binaryType = 'arraybuffer'
+        ..id = 0
+        ..negotiated = true
+        ..ordered = true,
+    );
 
-  final negotiationChannel = await peerConnection.createDataChannel(
-    'negotiation',
-    RTCDataChannelInit()
-      ..binaryType = 'arraybuffer'
-      ..id = 1
-      ..negotiated = true
-      ..ordered = true,
-  );
-  createPeerConnSW.stop();
-  _logger.d('STATS: created peer connection and channels in ${createPeerConnSW.elapsed}');
+    final negotiationChannel = await peerConnection.createDataChannel(
+      'negotiation',
+      RTCDataChannelInit()
+        ..binaryType = 'arraybuffer'
+        ..id = 1
+        ..negotiated = true
+        ..ordered = true,
+    );
+    createPeerConnSW.stop();
+    _logger.d('STATS: created peer connection and channels in ${createPeerConnSW.elapsed}');
 
-  String? uuid;
-  final didConnect = Completer();
-  final didSetRemoteDesc = Completer();
+    String? uuid;
+    final didConnect = Completer();
+    final didSetRemoteDesc = Completer();
 
-  int updateCalls = 0; // how many times we've sent an update to the sig. server
-  int updateCallsFinished = 0; // how many update calls have finished
-  Duration totalCallUpdateDuration = const Duration();
-  Duration maxCallUpdateDuration = const Duration();
-  bool iceConnectionCompleted = false;
+    int updateCalls = 0; // how many times we've sent an update to the sig. server
+    int updateCallsFinished = 0; // how many update calls have finished
+    Duration totalCallUpdateDuration = const Duration();
+    Duration maxCallUpdateDuration = const Duration();
+    bool iceConnectionCompleted = false;
 
-  peerConnection.onIceConnectionState = (RTCIceConnectionState state) async {
-    // 'connected' ICE connection state represents when a candidate pair has
-    // been nominated, and a connection has been established. ICE candidate
-    // gathering may still be happening, but the connection should be usable.
-    if (state == RTCIceConnectionState.RTCIceConnectionStateConnected) {
-      _logger.d('STATS: WebRTC connection made in ${webrtcDialSW.elapsed}');
-    }
-    // 'completed' ICE connection state represents when the ICE agent has
-    // finished gathering all candidates.
-    if (state == RTCIceConnectionState.RTCIceConnectionStateCompleted) {
-      iceConnectionCompleted = true;
-      // If all update calls have finished, report stats now. Otherwise, rely
-      // on `onIceCandidate` callback below to report them.
-      if (updateCalls == updateCallsFinished) {
-        await _logConnectionStats(webrtcDialSW, peerConnection, updateCalls, totalCallUpdateDuration, maxCallUpdateDuration);
+    peerConnection.onIceConnectionState = (RTCIceConnectionState state) async {
+      // 'connected' ICE connection state represents when a candidate pair has
+      // been nominated, and a connection has been established. ICE candidate
+      // gathering may still be happening, but the connection should be usable.
+      if (state == RTCIceConnectionState.RTCIceConnectionStateConnected) {
+        _logger.d('STATS: WebRTC connection made in ${webrtcDialSW.elapsed}');
       }
-    }
-  };
-
-  // If trickleICE is enabled, set onIceCandidate handler
-  if (!(options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle)) {
-    final offer = await peerConnection.createOffer({});
-
-    peerConnection.onIceCandidate = (RTCIceCandidate candidate) async {
-      await didSetRemoteDesc.future;
-      if (candidate.candidate == null) {
-        return;
-      }
-
-      _logger.d('STATS: candidate ${candidate.candidate} gathered');
-
-      try {
-        final candidateProto = ICECandidate();
-        if (candidate.candidate != null) {
-          candidateProto.candidate = candidate.candidate!;
-        }
-        if (candidate.sdpMid != null) {
-          candidateProto.sdpMid = candidate.sdpMid!;
-        }
-        if (candidate.sdpMLineIndex != null) {
-          candidateProto.sdpmLineIndex = candidate.sdpMLineIndex!;
-        }
-        final callUpdateRequest = CallUpdateRequest()..candidate = candidateProto;
-        if (uuid != null) {
-          callUpdateRequest.uuid = uuid!;
-        }
-        final Stopwatch stopwatch = Stopwatch()..start();
-        final currUpdateCall = updateCalls++;
-        _logger.d('STATS: making call update $currUpdateCall to the signaling server');
-        await signalingClient.callUpdate(callUpdateRequest);
-        stopwatch.stop();
-        _logger.d('STATS: call update $currUpdateCall took ${stopwatch.elapsed}');
-        final callUpdateDuration = stopwatch.elapsed;
-        if (callUpdateDuration.compareTo(maxCallUpdateDuration) > 0) {
-          maxCallUpdateDuration = callUpdateDuration;
-        }
-        totalCallUpdateDuration += callUpdateDuration;
-        updateCallsFinished++;
-
-        // If ICE connection state has reached 'completed' and we have finished
-        // all tracked updateCalls, report stats.
-        if (iceConnectionCompleted && updateCalls == updateCallsFinished) {
+      // 'completed' ICE connection state represents when the ICE agent has
+      // finished gathering all candidates.
+      if (state == RTCIceConnectionState.RTCIceConnectionStateCompleted) {
+        iceConnectionCompleted = true;
+        // If all update calls have finished, report stats now. Otherwise, rely
+        // on `onIceCandidate` callback below to report them.
+        if (updateCalls == updateCallsFinished) {
           await _logConnectionStats(webrtcDialSW, peerConnection, updateCalls, totalCallUpdateDuration, maxCallUpdateDuration);
         }
-      } catch (error, st) {
-        _logger.e('Update ICECandidate error', error: error, stackTrace: st);
       }
     };
 
-    await peerConnection.setLocalDescription(offer);
-  }
+    // If trickleICE is enabled, set onIceCandidate handler
+    if (!(options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle)) {
+      final offer = await peerConnection.createOffer({});
 
-  negotiationChannel.onMessage = (msg) async {
-    final decodedSDPMap = json.decode(utf8.decode(base64Decode(msg.text))) as Map;
-    final sdp = RTCSessionDescription(decodedSDPMap['sdp'], decodedSDPMap['type']);
-    final offerCollision = sdp.type == 'offer' && peerConnection.signalingState != RTCSignalingState.RTCSignalingStateStable;
-    if (offerCollision) {
-      return;
-    }
-
-    await peerConnection.setRemoteDescription(sdp);
-
-    if (sdp.type == 'offer') {
-      final answer = await peerConnection.createAnswer();
-      await peerConnection.setLocalDescription(answer);
-      final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
-      final encodedBase64String = _encodeSDPJsonStringToBase64String(sdpJsonString);
-      await negotiationChannel.send(RTCDataChannelMessage(encodedBase64String));
-    }
-  };
-
-  // Call Signaling Service
-  ResponseStream<CallResponse> callStream;
-  final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
-  final encodedSdp = _encodeSDPJsonStringToBase64String(sdpJsonString);
-  try {
-    callStream = signalingClient.call(
-      CallRequest()
-        ..sdp = encodedSdp
-        ..disableTrickle = options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle,
-    );
-  } catch (error, st) {
-    _logger.e('Failed to get call stream', error: error, stackTrace: st);
-    rethrow;
-  }
-
-  bool isResponseStreamInitialized = false;
-  callStream.listen(
-    (CallResponse response) async {
-      if (response.hasInit()) {
-        if (isResponseStreamInitialized) {
+      peerConnection.onIceCandidate = (RTCIceCandidate candidate) async {
+        await didSetRemoteDesc.future;
+        if (candidate.candidate == null) {
           return;
         }
-        isResponseStreamInitialized = true;
 
-        uuid = response.uuid;
-        final sdp = utf8.decode(base64Decode(response.init.sdp));
-        final sdpMap = json.decode(sdp) as Map;
-        final remoteSdp = RTCSessionDescription(sdpMap['sdp'], sdpMap['type']);
+        _logger.d('STATS: candidate ${candidate.candidate} gathered');
 
         try {
-          await peerConnection.setRemoteDescription(remoteSdp);
-          didSetRemoteDesc.complete();
-        } catch (error, st) {
-          _logger.e('Set remote SDP error', error: error, stackTrace: st);
-          rethrow;
-        }
-      } else if (response.hasUpdate()) {
-        if (!isResponseStreamInitialized) {
-          _logger.e('Updating before initialized');
-          throw Exception('Updating before initialized');
-        }
-        if (response.uuid != uuid) {
-          _logger.e('UUID mismatch in update. Got ${response.uuid}, want $uuid');
-          throw Exception('UUID mismatch in update. Got ${response.uuid}, want $uuid');
-        }
+          final candidateProto = ICECandidate();
+          if (candidate.candidate != null) {
+            candidateProto.candidate = candidate.candidate!;
+          }
+          if (candidate.sdpMid != null) {
+            candidateProto.sdpMid = candidate.sdpMid!;
+          }
+          if (candidate.sdpMLineIndex != null) {
+            candidateProto.sdpmLineIndex = candidate.sdpMLineIndex!;
+          }
+          final callUpdateRequest = CallUpdateRequest()..candidate = candidateProto;
+          if (uuid != null) {
+            callUpdateRequest.uuid = uuid!;
+          }
+          final Stopwatch stopwatch = Stopwatch()..start();
+          final currUpdateCall = updateCalls++;
+          _logger.d('STATS: making call update $currUpdateCall to the signaling server');
+          await signalingClient.callUpdate(callUpdateRequest);
+          stopwatch.stop();
+          _logger.d('STATS: call update $currUpdateCall took ${stopwatch.elapsed}');
+          final callUpdateDuration = stopwatch.elapsed;
+          if (callUpdateDuration.compareTo(maxCallUpdateDuration) > 0) {
+            maxCallUpdateDuration = callUpdateDuration;
+          }
+          totalCallUpdateDuration += callUpdateDuration;
+          updateCallsFinished++;
 
-        final iceCandidate = RTCIceCandidate(
-          response.update.candidate.candidate,
-          response.update.candidate.sdpMid,
-          response.update.candidate.sdpmLineIndex,
-        );
-        try {
-          _logger.d('STATS: adding remote ICE candidate of ${iceCandidate.candidate}');
-          await peerConnection.addCandidate(iceCandidate);
+          // If ICE connection state has reached 'completed' and we have finished
+          // all tracked updateCalls, report stats.
+          if (iceConnectionCompleted && updateCalls == updateCallsFinished) {
+            await _logConnectionStats(webrtcDialSW, peerConnection, updateCalls, totalCallUpdateDuration, maxCallUpdateDuration);
+          }
         } catch (error, st) {
-          _logger.e('Add candidate error', error: error, stackTrace: st);
+          _logger.e('Update ICECandidate error', error: error, stackTrace: st);
         }
-      }
-    },
-    onError: (error) {
-      didConnect.completeError(error);
-    },
-  );
+      };
 
-  dataChannel.onDataChannelState = (state) {
-    if (state == RTCDataChannelState.RTCDataChannelOpen) {
-      didConnect.complete();
+      await peerConnection.setLocalDescription(offer);
     }
-  };
 
-  try {
-    await didConnect.future;
-  } catch (error, st) {
-    _logger.i('Could not connect via WebRTC, attempting direct gRPC connection', error: error, stackTrace: st);
-    return _dialDirectGrpc(address, options, sessionId);
+    negotiationChannel.onMessage = (msg) async {
+      final decodedSDPMap = json.decode(utf8.decode(base64Decode(msg.text))) as Map;
+      final sdp = RTCSessionDescription(decodedSDPMap['sdp'], decodedSDPMap['type']);
+      final offerCollision = sdp.type == 'offer' && peerConnection.signalingState != RTCSignalingState.RTCSignalingStateStable;
+      if (offerCollision) {
+        return;
+      }
+
+      await peerConnection.setRemoteDescription(sdp);
+
+      if (sdp.type == 'offer') {
+        final answer = await peerConnection.createAnswer();
+        await peerConnection.setLocalDescription(answer);
+        final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
+        final encodedBase64String = _encodeSDPJsonStringToBase64String(sdpJsonString);
+        await negotiationChannel.send(RTCDataChannelMessage(encodedBase64String));
+      }
+    };
+
+    // Call Signaling Service
+    ResponseStream<CallResponse> callStream;
+    final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
+    final encodedSdp = _encodeSDPJsonStringToBase64String(sdpJsonString);
+    try {
+      callStream = signalingClient.call(
+        CallRequest()
+          ..sdp = encodedSdp
+          ..disableTrickle = options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle,
+      );
+    } catch (error, st) {
+      _logger.e('Failed to get call stream', error: error, stackTrace: st);
+      rethrow;
+    }
+
+    bool isResponseStreamInitialized = false;
+    callStream.listen(
+      (CallResponse response) async {
+        if (response.hasInit()) {
+          if (isResponseStreamInitialized) {
+            return;
+          }
+          isResponseStreamInitialized = true;
+
+          uuid = response.uuid;
+          final sdp = utf8.decode(base64Decode(response.init.sdp));
+          final sdpMap = json.decode(sdp) as Map;
+          final remoteSdp = RTCSessionDescription(sdpMap['sdp'], sdpMap['type']);
+
+          try {
+            await peerConnection.setRemoteDescription(remoteSdp);
+            didSetRemoteDesc.complete();
+          } catch (error, st) {
+            _logger.e('Set remote SDP error', error: error, stackTrace: st);
+            rethrow;
+          }
+        } else if (response.hasUpdate()) {
+          if (!isResponseStreamInitialized) {
+            _logger.e('Updating before initialized');
+            throw Exception('Updating before initialized');
+          }
+          if (response.uuid != uuid) {
+            _logger.e('UUID mismatch in update. Got ${response.uuid}, want $uuid');
+            throw Exception('UUID mismatch in update. Got ${response.uuid}, want $uuid');
+          }
+
+          final iceCandidate = RTCIceCandidate(
+            response.update.candidate.candidate,
+            response.update.candidate.sdpMid,
+            response.update.candidate.sdpmLineIndex,
+          );
+          try {
+            _logger.d('STATS: adding remote ICE candidate of ${iceCandidate.candidate}');
+            await peerConnection.addCandidate(iceCandidate);
+          } catch (error, st) {
+            _logger.e('Add candidate error', error: error, stackTrace: st);
+          }
+        }
+      },
+      onError: (error) {
+        didConnect.completeError(error);
+      },
+    );
+
+    dataChannel.onDataChannelState = (state) {
+      if (state == RTCDataChannelState.RTCDataChannelOpen) {
+        didConnect.complete();
+      }
+    };
+
+    try {
+      // Bounded so that a dial abandoned by [dial]'s timeout still settles.
+      await didConnect.future.timeout(options.timeout);
+    } catch (error, st) {
+      _logger.i('Could not connect via WebRTC, attempting direct gRPC connection', error: error, stackTrace: st);
+      return await _dialDirectGrpc(address, options, sessionId);
+    }
+    connected = true;
+    return WebRtcClientChannel(peerConnection, dataChannel, sessionId);
+  } finally {
+    if (!connected) {
+      await peerConnection.close();
+      await signalingChannel.terminate();
+    }
   }
-  return WebRtcClientChannel(peerConnection, dataChannel, sessionId);
 }
 
 String _convertSDPtoJsonString(RTCSessionDescription? sdp) {

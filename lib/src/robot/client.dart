@@ -108,11 +108,17 @@ class RobotClient {
     client._address = url;
     client._options = options;
     client._channel = await dialInitial(url, options.dialOptions, () => client._sessionsClient.sessionId());
-    client._sessionsClient = SessionsClient(client._channel, options.enableSessions, url);
-    client._sessionsClient.start();
-    client._client = rpb.RobotServiceClient(client._channel);
-    client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
-    await client.refresh();
+    try {
+      client._sessionsClient = SessionsClient(client._channel, options.enableSessions, url);
+      client._sessionsClient.start();
+      client._client = rpb.RobotServiceClient(client._channel);
+      client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
+      await client.refresh();
+    } catch (_) {
+      // The caller never gets this client, so it can't close the connection.
+      await client.close();
+      rethrow;
+    }
     client._startCheckConnectionTask();
     return client;
   }
@@ -207,11 +213,15 @@ class RobotClient {
 
   Future<void> _reconnect(int reconnectInterval) async {
     _logger.d('Attempting to reconnect to the robot at $_address');
+    // A channel's peer connection keeps its sockets open until the channel is
+    // shut down, so close the lost channel and every failed attempt's channel.
+    await _channel.shutdown();
 
     while (!_connected) {
       _sessionsClient.stop();
+      ClientChannelBase? channel;
       try {
-        final channel = await dial(_address, _options.dialOptions, _sessionsClient.sessionId);
+        channel = await dial(_address, _options.dialOptions, _sessionsClient.sessionId);
         final client = rpb.RobotServiceClient(channel);
         await client.resourceNames(rpb.ResourceNamesRequest());
 
@@ -224,7 +234,7 @@ class RobotClient {
         _logger.i('Successfully reconnected to robot');
         _startCheckConnectionTask();
       } catch (e) {
-        await _channel.shutdown();
+        await channel?.shutdown();
         await _sessionsClient.reset();
         if (!_shouldAttemptReconnection) {
           _logger.i('Failed to reconnect. No more attempts to reconnect will be made.');
