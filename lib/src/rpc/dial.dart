@@ -78,16 +78,13 @@ class DialOptions {
 /// {@category Viam SDK}
 /// The credentials used for connecting to the robot
 class Credentials {
-  /// The type of credential, e.g. 'robot-secret', 'api-key'
+  /// The type of credential, e.g. 'api-key'
   final String type;
 
   /// The payload of the credential
   final String payload;
 
   const Credentials(this.type, this.payload);
-
-  /// Convenience initializer for creating credentials of type 'robot-secret' with the provided payload.
-  const Credentials.robotSecret(this.payload) : type = 'robot-secret';
 
   /// Convenience initializer for creating credentials of type 'api-key' with the provided key as payload.
   const Credentials.apiKey(this.payload) : type = 'api-key';
@@ -234,7 +231,11 @@ Future<String> _searchMdns(String address) async {
     } else if (event.type == BonsoirDiscoveryEventType.discoveryServiceResolved) {
       final service = event.service! as ResolvedBonsoirService;
       if (service.name == targetName && service.host != null) {
-        localAddress = '${service.host!}:${service.port}';
+        // mDNS resolves to a fully qualified host, which carries a trailing dot
+        // (e.g. 'my-robot.local.'). Drop it: a trailing dot is not legal in TLS SNI,
+        // and servers that enforce that reject the handshake outright.
+        final host = service.host!.endsWith('.') ? service.host!.substring(0, service.host!.length - 1) : service.host!;
+        localAddress = '$host:${service.port}';
       }
     }
   });
@@ -679,11 +680,16 @@ class _HostAndPort {
 }
 
 _HostAndPort _hostAndPort(String address, bool insecure) {
-  String host = address.replaceAll(r'^https?\:\/\/', '');
+  String host = address.replaceAll(RegExp(r'^https?:\/\/'), '');
   int port = insecure ? 80 : 443;
   if (host.contains(':') && host.split(':').length == 2) {
     port = int.parse(host.split(':')[1]);
     host = host.split(':')[0];
+  }
+  // A trailing dot is valid in DNS but not in TLS SNI, and servers that enforce that
+  // (Go's crypto/tls answers with a decode_error alert) fail the handshake because of it.
+  if (host.endsWith('.')) {
+    host = host.substring(0, host.length - 1);
   }
   return _HostAndPort(host, port);
 }

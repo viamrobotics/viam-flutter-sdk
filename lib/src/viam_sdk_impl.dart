@@ -19,6 +19,8 @@ import './viam_sdk.dart';
 
 class ViamImpl implements Viam {
   final ClientChannelBase _clientChannelBase;
+  late String _authPayload;
+  String? _authEntity;
   late AppClient _appClient;
   late AppRobotClient _appRobotClient;
   late BillingClient _billingClient;
@@ -44,6 +46,7 @@ class ViamImpl implements Viam {
 
   ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
       : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
+    _authPayload = accessToken;
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _appRobotClient = AppRobotClient(RobotServiceClient(_clientChannelBase));
     _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
@@ -70,7 +73,10 @@ class ViamImpl implements Viam {
         ..webRtcOptions = (DialWebRtcOptions()..disable = true),
       () => '',
     );
-    return ViamImpl._withChannel(channel);
+    final client = ViamImpl._withChannel(channel);
+    client._authPayload = apiKey;
+    client._authEntity = apiKeyId;
+    return client;
   }
 
   @override
@@ -102,6 +108,13 @@ class ViamImpl implements Viam {
   Future<RobotClient> getRobotClient(Robot robot) async {
     final parts = await appClient.listRobotParts(robot.id);
     final part = parts.firstWhere((element) => element.mainPart);
-    return RobotClient.atAddress(part.fqdn, RobotClientOptions.withRobotSecret(part.secret));
+    RobotClientOptions opts;
+    if (_authEntity != null) {
+      opts = RobotClientOptions.withApiKey(_authEntity!, _authPayload);
+    } else {
+      print('---------------------------- USING ACCESS TOKEN BABYYYYY');
+      opts = RobotClientOptions.withAccessToken(_authPayload);
+    }
+    return RobotClient.atAddress(part.fqdn, opts);
   }
 }

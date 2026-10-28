@@ -1,7 +1,5 @@
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:grpc/grpc.dart';
 import 'package:logger/logger.dart';
 
@@ -74,11 +72,15 @@ extension NullableStringUtils on String? {
 extension ValueUtils on Value {
   dynamic toPrimitive() {
     if (hasBoolValue()) return boolValue;
-    if (hasListValue()) return listValue.values.map((e) => e.toPrimitive()).toList();
+    if (hasListValue()) {
+      return listValue.values.map((e) => e.toPrimitive()).toList();
+    }
     if (hasNullValue()) return null;
     if (hasNumberValue()) return numberValue;
     if (hasStringValue()) return stringValue;
-    if (hasStructValue()) return structValue.fields.map((key, value) => MapEntry(key, value.toPrimitive()));
+    if (hasStructValue()) {
+      return structValue.fields.map((key, value) => MapEntry(key, value.toPrimitive()));
+    }
 
     _logger.e('Value does not contain valid type');
     throw const GrpcError.invalidArgument('value does not contain valid type');
@@ -172,16 +174,4 @@ String getVersionMetadata() {
   const String apiTag = 'v0.1.598';
 
   return 'flutter;$sdkVersion;$apiTag';
-}
-
-/// Show an error dialog with one action: OK, which simply dismisses the dialog
-Future<void> showErrorDialog(BuildContext context, {String title = 'An Error Occurred', String? error}) async {
-  return showAdaptiveDialog(
-    context: context,
-    builder: (context) => AlertDialog.adaptive(
-      title: Text(title),
-      content: error == null ? null : Text(error),
-      actions: [PlatformDialogAction(onPressed: Navigator.of(context).pop, child: Text('OK'))],
-    ),
-  );
 }
