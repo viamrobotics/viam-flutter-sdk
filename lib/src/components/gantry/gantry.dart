@@ -8,11 +8,7 @@ import '../../utils.dart';
 ///
 /// For more information, see [Gantry component](https://docs.viam.com/reference/apis/components/gantry/).
 abstract class Gantry extends Resource {
-  static const Subtype subtype = Subtype(
-    resourceNamespaceRDK,
-    resourceTypeComponent,
-    'gantry',
-  );
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'gantry');
 
   /// Get the position of the axes in millimeters.
   ///
@@ -30,11 +26,7 @@ abstract class Gantry extends Resource {
   /// ```
   ///
   /// For more information, see [Gantry component](https://docs.viam.com/reference/apis/components/gantry/#movetoposition).
-  Future<void> moveToPosition(
-    List<double> positions,
-    List<double> speeds, {
-    Map<String, dynamic>? extra,
-  });
+  Future<void> moveToPosition(List<double> positions, List<double> speeds, {Map<String, dynamic>? extra});
 
   /// Run the homing sequence and return true if completed successfully.
   ///
@@ -79,11 +71,7 @@ abstract class Gantry extends Resource {
   /// ```
   ///
   /// For more information, see [Gantry component](https://docs.viam.com/reference/apis/components/gantry/#getkinematics).
-  Future<Kinematics> getKinematics({
-    bool includeCollisionMeshes = false,
-    bool includeVisualMeshes = false,
-    Map<String, dynamic>? extra,
-  });
+  Future<Kinematics> getKinematics({bool includeCollisionMeshes = false, bool includeVisualMeshes = false, Map<String, dynamic>? extra});
 
   /// Get all geometries associated with the [Gantry]
   ///

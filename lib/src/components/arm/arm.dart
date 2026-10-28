@@ -4,8 +4,7 @@ import 'dart:math';
 import 'package:flutter/services.dart';
 
 import '../../../viam_sdk.dart';
-import '../../gen/common/v1/common.pb.dart'
-    hide GetPropertiesRequest, GetPropertiesResponse;
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/arm/v1/arm.pb.dart';
 import '../../utils.dart';
 
@@ -17,11 +16,7 @@ typedef ArmProperties = GetPropertiesResponse;
 ///
 /// For more information, see [Arm component](https://docs.viam.com/reference/apis/components/arm/).
 abstract class Arm extends Resource {
-  static const Subtype subtype = Subtype(
-    resourceNamespaceRDK,
-    resourceTypeComponent,
-    'arm',
-  );
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'arm');
 
   /// Get the current [Pose] of the end of the arm.
   ///
@@ -56,10 +51,7 @@ abstract class Arm extends Resource {
   /// ```
   ///
   /// For more information, see [Arm component](https://docs.viam.com/reference/apis/components/arm/#movetojointpositions).
-  Future<void> moveToJointPositions(
-    List<double> positions, {
-    Map<String, dynamic>? extra,
-  });
+  Future<void> moveToJointPositions(List<double> positions, {Map<String, dynamic>? extra});
 
   /// Get the [List] of current joint angles of each arm joint
   ///
@@ -104,11 +96,7 @@ abstract class Arm extends Resource {
   /// ```
   ///
   /// For more information, see [Arm component](https://docs.viam.com/reference/apis/components/arm/#getkinematics).
-  Future<Kinematics> getKinematics({
-    bool includeCollisionMeshes = false,
-    bool includeVisualMeshes = false,
-    Map<String, dynamic>? extra,
-  });
+  Future<Kinematics> getKinematics({bool includeCollisionMeshes = false, bool includeVisualMeshes = false, Map<String, dynamic>? extra});
 
   /// Get all geometries associated with the [Arm]
   ///
@@ -136,11 +124,7 @@ abstract class Arm extends Resource {
   /// ```
   ///
   /// For more information, see [Arm component](https://docs.viam.com/reference/apis/components/arm/#setmanualmode).
-  Future<void> setManualMode(
-    bool manualMode, {
-    Duration enabledFor = Duration.zero,
-    Map<String, dynamic>? extra,
-  });
+  Future<void> setManualMode(bool manualMode, {Duration enabledFor = Duration.zero, Map<String, dynamic>? extra});
 
   /// Whether the arm is currently in manual mode.
   ///

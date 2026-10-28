@@ -20,14 +20,8 @@ typedef NavigationStatus = Status;
 
 /// {@category Services}
 /// A client for the `navigation` service.
-class NavigationClient extends Resource
-    with RPCDebugLoggerMixin
-    implements ResourceRPCClient {
-  static const Subtype subtype = Subtype(
-    resourceNamespaceRDK,
-    resourceTypeService,
-    'navigation',
-  );
+class NavigationClient extends Resource with RPCDebugLoggerMixin implements ResourceRPCClient {
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeService, 'navigation');
 
   @override
   final String name;
@@ -48,17 +42,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Location> addLocation(
-    String locationName, {
-    NavigationPosition? position,
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = AddLocationRequest(
-      name: name,
-      locationName: locationName,
-      position: position,
-      extra: extra?.toStruct(),
-    );
+  Future<Location> addLocation(String locationName, {NavigationPosition? position, Map<String, dynamic>? extra}) async {
+    final request = AddLocationRequest(name: name, locationName: locationName, position: position, extra: extra?.toStruct());
     final response = await client.addLocation(request, options: callOptions);
     return response.location;
   }
@@ -71,15 +56,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/#getlocation).
-  Future<Location> getLocation(
-    String locationName, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = GetLocationRequest(
-      name: name,
-      locationName: locationName,
-      extra: extra?.toStruct(),
-    );
+  Future<Location> getLocation(String locationName, {Map<String, dynamic>? extra}) async {
+    final request = GetLocationRequest(name: name, locationName: locationName, extra: extra?.toStruct());
     final response = await client.getLocation(request, options: callOptions);
     return response.location;
   }
@@ -107,12 +85,7 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Location> updateLocation(
-    String locationName, {
-    NavigationPosition? position,
-    String? newName,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<Location> updateLocation(String locationName, {NavigationPosition? position, String? newName, Map<String, dynamic>? extra}) async {
     final request = UpdateLocationRequest(
       name: name,
       locationName: locationName,
@@ -132,15 +105,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<void> deleteLocation(
-    String locationName, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = DeleteLocationRequest(
-      name: name,
-      locationName: locationName,
-      extra: extra?.toStruct(),
-    );
+  Future<void> deleteLocation(String locationName, {Map<String, dynamic>? extra}) async {
+    final request = DeleteLocationRequest(name: name, locationName: locationName, extra: extra?.toStruct());
     await client.deleteLocation(request, options: callOptions);
   }
 
@@ -152,17 +118,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Route> addRoute(
-    String routeName,
-    List<Waypoint> waypoints, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = AddRouteRequest(
-      name: name,
-      routeName: routeName,
-      waypoints: waypoints,
-      extra: extra?.toStruct(),
-    );
+  Future<Route> addRoute(String routeName, List<Waypoint> waypoints, {Map<String, dynamic>? extra}) async {
+    final request = AddRouteRequest(name: name, routeName: routeName, waypoints: waypoints, extra: extra?.toStruct());
     final response = await client.addRoute(request, options: callOptions);
     return response.route;
   }
@@ -175,15 +132,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Route> getRoute(
-    String routeName, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = GetRouteRequest(
-      name: name,
-      routeName: routeName,
-      extra: extra?.toStruct(),
-    );
+  Future<Route> getRoute(String routeName, {Map<String, dynamic>? extra}) async {
+    final request = GetRouteRequest(name: name, routeName: routeName, extra: extra?.toStruct());
     final response = await client.getRoute(request, options: callOptions);
     return response.route;
   }
@@ -211,12 +161,7 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Route> updateRoute(
-    String routeName, {
-    String? newName,
-    List<Waypoint>? waypoints,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<Route> updateRoute(String routeName, {String? newName, List<Waypoint>? waypoints, Map<String, dynamic>? extra}) async {
     final request = UpdateRouteRequest(
       name: name,
       routeName: routeName,
@@ -236,15 +181,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<void> deleteRoute(
-    String routeName, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = DeleteRouteRequest(
-      name: name,
-      routeName: routeName,
-      extra: extra?.toStruct(),
-    );
+  Future<void> deleteRoute(String routeName, {Map<String, dynamic>? extra}) async {
+    final request = DeleteRouteRequest(name: name, routeName: routeName, extra: extra?.toStruct());
     await client.deleteRoute(request, options: callOptions);
   }
 
@@ -258,13 +196,7 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Zone> addZone(
-    String zoneName,
-    String type,
-    Map<String, dynamic> geometry, {
-    double? maxSpeed,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<Zone> addZone(String zoneName, String type, Map<String, dynamic> geometry, {double? maxSpeed, Map<String, dynamic>? extra}) async {
     final request = AddZoneRequest(
       name: name,
       zoneName: zoneName,
@@ -286,11 +218,7 @@ class NavigationClient extends Resource
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
   Future<Zone> getZone(String zoneName, {Map<String, dynamic>? extra}) async {
-    final request = GetZoneRequest(
-      name: name,
-      zoneName: zoneName,
-      extra: extra?.toStruct(),
-    );
+    final request = GetZoneRequest(name: name, zoneName: zoneName, extra: extra?.toStruct());
     final response = await client.getZone(request, options: callOptions);
     return response.zone;
   }
@@ -303,15 +231,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<List<Zone>> listZones({
-    String? type,
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = ListZonesRequest(
-      name: name,
-      type: type,
-      extra: extra?.toStruct(),
-    );
+  Future<List<Zone>> listZones({String? type, Map<String, dynamic>? extra}) async {
+    final request = ListZonesRequest(name: name, type: type, extra: extra?.toStruct());
     final response = await client.listZones(request, options: callOptions);
     return response.zones;
   }
@@ -353,15 +274,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<void> deleteZone(
-    String zoneName, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = DeleteZoneRequest(
-      name: name,
-      zoneName: zoneName,
-      extra: extra?.toStruct(),
-    );
+  Future<void> deleteZone(String zoneName, {Map<String, dynamic>? extra}) async {
+    final request = DeleteZoneRequest(name: name, zoneName: zoneName, extra: extra?.toStruct());
     await client.deleteZone(request, options: callOptions);
   }
 
@@ -374,19 +288,9 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<NavigationStatus> navigateToLocation(
-    String locationName, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = NavigateToLocationRequest(
-      name: name,
-      locationName: locationName,
-      extra: extra?.toStruct(),
-    );
-    final response = await client.navigateToLocation(
-      request,
-      options: callOptions,
-    );
+  Future<NavigationStatus> navigateToLocation(String locationName, {Map<String, dynamic>? extra}) async {
+    final request = NavigateToLocationRequest(name: name, locationName: locationName, extra: extra?.toStruct());
+    final response = await client.navigateToLocation(request, options: callOptions);
     return response.status;
   }
 
@@ -399,19 +303,9 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<NavigationStatus> navigateToPoint(
-    NavigationPosition destination, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = NavigateToPointRequest(
-      name: name,
-      destination: destination,
-      extra: extra?.toStruct(),
-    );
-    final response = await client.navigateToPoint(
-      request,
-      options: callOptions,
-    );
+  Future<NavigationStatus> navigateToPoint(NavigationPosition destination, {Map<String, dynamic>? extra}) async {
+    final request = NavigateToPointRequest(name: name, destination: destination, extra: extra?.toStruct());
+    final response = await client.navigateToPoint(request, options: callOptions);
     return response.status;
   }
 
@@ -457,17 +351,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Plan> planToPoint(
-    NavigationPosition destination, {
-    NavigationPosition? start,
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = PlanToPointRequest(
-      name: name,
-      destination: destination,
-      start: start,
-      extra: extra?.toStruct(),
-    );
+  Future<Plan> planToPoint(NavigationPosition destination, {NavigationPosition? start, Map<String, dynamic>? extra}) async {
+    final request = PlanToPointRequest(name: name, destination: destination, start: start, extra: extra?.toStruct());
     final response = await client.planToPoint(request, options: callOptions);
     return response.plan;
   }
@@ -481,17 +366,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Plan> planToLocation(
-    String locationName, {
-    NavigationPosition? start,
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = PlanToLocationRequest(
-      name: name,
-      locationName: locationName,
-      start: start,
-      extra: extra?.toStruct(),
-    );
+  Future<Plan> planToLocation(String locationName, {NavigationPosition? start, Map<String, dynamic>? extra}) async {
+    final request = PlanToLocationRequest(name: name, locationName: locationName, start: start, extra: extra?.toStruct());
     final response = await client.planToLocation(request, options: callOptions);
     return response.plan;
   }
@@ -505,15 +381,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<NavigationStatus> executePlan(
-    Plan plan, {
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = ExecutePlanRequest(
-      name: name,
-      plan: plan,
-      extra: extra?.toStruct(),
-    );
+  Future<NavigationStatus> executePlan(Plan plan, {Map<String, dynamic>? extra}) async {
+    final request = ExecutePlanRequest(name: name, plan: plan, extra: extra?.toStruct());
     final response = await client.executePlan(request, options: callOptions);
     return response.status;
   }
@@ -527,12 +396,7 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<NavigationStatus> goToLocation(
-    String locationName, {
-    bool? wait,
-    double? linearMPerSec,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<NavigationStatus> goToLocation(String locationName, {bool? wait, double? linearMPerSec, Map<String, dynamic>? extra}) async {
     final request = GoToLocationRequest(
       name: name,
       locationName: locationName,
@@ -579,15 +443,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<NavigationStatus> suspend({
-    String? reason,
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = SuspendRequest(
-      name: name,
-      reason: reason,
-      extra: extra?.toStruct(),
-    );
+  Future<NavigationStatus> suspend({String? reason, Map<String, dynamic>? extra}) async {
+    final request = SuspendRequest(name: name, reason: reason, extra: extra?.toStruct());
     final response = await client.suspend(request, options: callOptions);
     return response.status;
   }
@@ -644,17 +501,9 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<NavigationStatus> getNavigationStatus({
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = GetNavigationStatusRequest(
-      name: name,
-      extra: extra?.toStruct(),
-    );
-    final response = await client.getNavigationStatus(
-      request,
-      options: callOptions,
-    );
+  Future<NavigationStatus> getNavigationStatus({Map<String, dynamic>? extra}) async {
+    final request = GetNavigationStatusRequest(name: name, extra: extra?.toStruct());
+    final response = await client.getNavigationStatus(request, options: callOptions);
     return response.status;
   }
 
@@ -682,17 +531,8 @@ class NavigationClient extends Resource
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<GetCostmapResponse> getCostmap({
-    String? layer,
-    int? stride,
-    Map<String, dynamic>? extra,
-  }) async {
-    final request = GetCostmapRequest(
-      name: name,
-      layer: layer,
-      stride: stride,
-      extra: extra?.toStruct(),
-    );
+  Future<GetCostmapResponse> getCostmap({String? layer, int? stride, Map<String, dynamic>? extra}) async {
+    final request = GetCostmapRequest(name: name, layer: layer, stride: stride, extra: extra?.toStruct());
     return await client.getCostmap(request, options: callOptions);
   }
 

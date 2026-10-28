@@ -92,12 +92,7 @@ class DataClient {
 
   DataClient(this._dataClient, this._dataSyncClient, this._datasetClient);
 
-  DataRequest _makeDataRequest(
-    Filter? filter,
-    int? limit,
-    String? last,
-    Order? sortOrder,
-  ) {
+  DataRequest _makeDataRequest(Filter? filter, int? limit, String? last, Order? sortOrder) {
     final dataRequest = DataRequest();
     dataRequest.filter = filter ?? Filter();
     if (limit != null) {
@@ -242,10 +237,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<BinaryDataByIDsResponse> binaryDataByIds(
-    List<String> binaryDataIds, {
-    bool includeBinary = false,
-  }) async {
+  Future<BinaryDataByIDsResponse> binaryDataByIds(List<String> binaryDataIds, {bool includeBinary = false}) async {
     final request = BinaryDataByIDsRequest()
       ..binaryDataIds.addAll(binaryDataIds)
       ..includeBinary = includeBinary;
@@ -274,17 +266,12 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<List<Map<String, dynamic>>> tabularDataBySql(
-    String organizationId,
-    String query,
-  ) async {
+  Future<List<Map<String, dynamic>>> tabularDataBySql(String organizationId, String query) async {
     final request = TabularDataBySQLRequest()
       ..organizationId = organizationId
       ..sqlQuery = query;
     final response = await _dataClient.tabularDataBySQL(request);
-    return response.rawData
-        .map((e) => BsonCodec.deserialize(BsonBinary.from(e)))
-        .toList();
+    return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
 
   /// Obtain unified tabular data and metadata, queried with MQL. The query should be of type List<Map<String, dynamic>>.
@@ -343,9 +330,7 @@ class DataClient {
       request.queryPrefixName = queryPrefixName;
     }
     final response = await _dataClient.tabularDataByMQL(request);
-    return response.rawData
-        .map((e) => BsonCodec.deserialize(BsonBinary.from(e)))
-        .toList();
+    return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
 
   /// Obtain unified tabular data and metadata from the specified data source.
@@ -465,11 +450,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<int> deleteTabularData(
-    String organizationId,
-    int olderThanDays, {
-    DeleteTabularFilter? filter,
-  }) async {
+  Future<int> deleteTabularData(String organizationId, int olderThanDays, {DeleteTabularFilter? filter}) async {
     final request = DeleteTabularDataRequest()
       ..organizationId = organizationId
       ..deleteOlderThanDays = olderThanDays;
@@ -508,10 +489,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<int> deleteBinaryDataByFilter(
-    Filter? filter, {
-    bool includeInternalData = false,
-  }) async {
+  Future<int> deleteBinaryDataByFilter(Filter? filter, {bool includeInternalData = false}) async {
     final request = DeleteBinaryDataByFilterRequest()
       ..includeInternalData = includeInternalData
       ..filter = filter ?? Filter();
@@ -546,8 +524,7 @@ class DataClient {
   /// ```
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<int> deleteBinaryDataByIds(List<String> binaryDataIds) async {
-    final request = DeleteBinaryDataByIDsRequest()
-      ..binaryDataIds.addAll(binaryDataIds);
+    final request = DeleteBinaryDataByIDsRequest()..binaryDataIds.addAll(binaryDataIds);
     final response = await _dataClient.deleteBinaryDataByIDs(request);
     return response.deletedCount.toInt();
   }
@@ -580,10 +557,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<void> addTagsToBinaryDataByIds(
-    List<String> tags,
-    List<String> binaryDataIds,
-  ) async {
+  Future<void> addTagsToBinaryDataByIds(List<String> tags, List<String> binaryDataIds) async {
     final request = AddTagsToBinaryDataByIDsRequest()
       ..tags.addAll(tags)
       ..binaryDataIds.addAll(binaryDataIds);
@@ -618,10 +592,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<void> addTagsToBinaryDataByFilter(
-    List<String> tags,
-    Filter? filter,
-  ) async {
+  Future<void> addTagsToBinaryDataByFilter(List<String> tags, Filter? filter) async {
     final request = AddTagsToBinaryDataByFilterRequest()
       ..tags.addAll(tags)
       ..filter = filter ?? Filter();
@@ -658,16 +629,11 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<int> removeTagsFromBinaryDataByFilter(
-    List<String> tags,
-    Filter? filter,
-  ) async {
+  Future<int> removeTagsFromBinaryDataByFilter(List<String> tags, Filter? filter) async {
     final request = RemoveTagsFromBinaryDataByFilterRequest()
       ..tags.addAll(tags)
       ..filter = filter ?? Filter();
-    final response = await _dataClient.removeTagsFromBinaryDataByFilter(
-      request,
-    );
+    final response = await _dataClient.removeTagsFromBinaryDataByFilter(request);
     return response.deletedCount.toInt();
   }
 
@@ -701,10 +667,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<int> removeTagsFromBinaryDataByIds(
-    List<String> tags,
-    List<String> binaryDataIds,
-  ) async {
+  Future<int> removeTagsFromBinaryDataByIds(List<String> tags, List<String> binaryDataIds) async {
     final request = RemoveTagsFromBinaryDataByIDsRequest()
       ..tags.addAll(tags)
       ..binaryDataIds.addAll(binaryDataIds);
@@ -788,10 +751,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<void> removeBoundingBoxFromImageById(
-    String bboxId,
-    String binaryDataId,
-  ) async {
+  Future<void> removeBoundingBoxFromImageById(String bboxId, String binaryDataId) async {
     final request = RemoveBoundingBoxFromImageByIDRequest()
       ..bboxId = bboxId
       ..binaryDataId = binaryDataId;
@@ -857,8 +817,7 @@ class DataClient {
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<String>> boundingBoxLabelsByFilter(Filter? filter) async {
-    final request = BoundingBoxLabelsByFilterRequest()
-      ..filter = filter ?? Filter();
+    final request = BoundingBoxLabelsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.boundingBoxLabelsByFilter(request);
     return response.labels;
   }
@@ -887,11 +846,8 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<DatabaseConnection> getDatabaseConnection(
-    String organizationId,
-  ) async {
-    final request = GetDatabaseConnectionRequest()
-      ..organizationId = organizationId;
+  Future<DatabaseConnection> getDatabaseConnection(String organizationId) async {
+    final request = GetDatabaseConnectionRequest()..organizationId = organizationId;
     return await _dataClient.getDatabaseConnection(request);
   }
 
@@ -917,10 +873,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<void> configureDatabaseUser(
-    String organizationId,
-    String password,
-  ) async {
+  Future<void> configureDatabaseUser(String organizationId, String password) async {
     final request = ConfigureDatabaseUserRequest()
       ..password = password
       ..organizationId = organizationId;
@@ -958,10 +911,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<void> addBinaryDataToDatasetByIds(
-    List<String> binaryDataIds,
-    String datasetId,
-  ) async {
+  Future<void> addBinaryDataToDatasetByIds(List<String> binaryDataIds, String datasetId) async {
     final request = AddBinaryDataToDatasetByIDsRequest()
       ..binaryDataIds.addAll(binaryDataIds)
       ..datasetId = datasetId;
@@ -999,10 +949,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<void> removeBinaryDataFromDatasetByIds(
-    List<String> binaryDataIds,
-    String datasetId,
-  ) async {
+  Future<void> removeBinaryDataFromDatasetByIds(List<String> binaryDataIds, String datasetId) async {
     final request = RemoveBinaryDataFromDatasetByIDsRequest()
       ..binaryDataIds.addAll(binaryDataIds)
       ..datasetId = datasetId;
@@ -1104,19 +1051,13 @@ class DataClient {
     if (componentType != null) metadata.componentType = componentType;
     if (componentName != null) metadata.componentName = componentName;
     if (methodName != null) metadata.methodName = methodName;
-    if (methodParameters != null)
-      metadata.methodParameters.addAll(methodParameters);
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
     final metadataRequest = FileUploadRequest()..metadata = metadata;
 
     // Make requests that are at most 2MB large (max gRPC request size is 4MB)
-    final dataRequests = image.raw
-        .slices(2 * 1024 * 1024)
-        .map((e) => FileUploadRequest()..fileContents = (FileData()..data = e));
+    final dataRequests = image.raw.slices(2 * 1024 * 1024).map((e) => FileUploadRequest()..fileContents = (FileData()..data = e));
 
-    final requestStream = Stream.fromIterable([
-      metadataRequest,
-      ...dataRequests,
-    ]);
+    final requestStream = Stream.fromIterable([metadataRequest, ...dataRequests]);
     final response = await _dataSyncClient.fileUpload(requestStream);
     return response.binaryDataId;
   }
@@ -1202,21 +1143,15 @@ class DataClient {
     if (componentType != null) metadata.componentType = componentType;
     if (componentName != null) metadata.componentName = componentName;
     if (methodName != null) metadata.methodName = methodName;
-    if (methodParameters != null)
-      metadata.methodParameters.addAll(methodParameters);
-    final metadataStream = Stream.value(
-      FileUploadRequest()..metadata = metadata,
-    );
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
+    final metadataStream = Stream.value(FileUploadRequest()..metadata = metadata);
 
     final file = File(path);
     final reader = ChunkedStreamReader(file.openRead());
     try {
       final fileDataStream = reader
           .readStream(file.lengthSync())
-          .map(
-            (event) =>
-                FileUploadRequest()..fileContents = (FileData()..data = event),
-          );
+          .map((event) => FileUploadRequest()..fileContents = (FileData()..data = event));
       final requestStream = StreamGroup.merge([metadataStream, fileDataStream]);
       final response = await _dataSyncClient.fileUpload(requestStream);
       return response.binaryDataId;
@@ -1274,9 +1209,7 @@ class DataClient {
   }) async {
     final sensorMetadata = SensorMetadata();
     if (dataRequestTimes != null) {
-      sensorMetadata.timeRequested = Timestamp.fromDateTime(
-        dataRequestTimes.$1,
-      );
+      sensorMetadata.timeRequested = Timestamp.fromDateTime(dataRequestTimes.$1);
       sensorMetadata.timeReceived = Timestamp.fromDateTime(dataRequestTimes.$2);
     }
 
@@ -1288,8 +1221,7 @@ class DataClient {
       ..type = DataType.DATA_TYPE_BINARY_SENSOR
       ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
-    if (methodParameters != null)
-      metadata.methodParameters.addAll(methodParameters);
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
       metadata.fileExtension = '';
     } else if (fileExtension[0] == '.') {
@@ -1359,8 +1291,7 @@ class DataClient {
     List<(DateTime, DateTime)>? dataRequestTimes,
     Iterable<String> tags = const [],
   }) async {
-    if (dataRequestTimes != null &&
-        dataRequestTimes.length != tabularData.length) {
+    if (dataRequestTimes != null && dataRequestTimes.length != tabularData.length) {
       throw Exception('dataRequestTimes and tabularData lengths must be equal');
     }
     final sensorContents = <SensorData>[];
@@ -1368,12 +1299,8 @@ class DataClient {
       final s = data.toStruct();
       final sensorMetadata = SensorMetadata();
       if (dataRequestTimes != null) {
-        sensorMetadata.timeRequested = Timestamp.fromDateTime(
-          dataRequestTimes[idx].$1,
-        );
-        sensorMetadata.timeReceived = Timestamp.fromDateTime(
-          dataRequestTimes[idx].$2,
-        );
+        sensorMetadata.timeRequested = Timestamp.fromDateTime(dataRequestTimes[idx].$1);
+        sensorMetadata.timeReceived = Timestamp.fromDateTime(dataRequestTimes[idx].$2);
       }
       final sensorData = SensorData()
         ..struct = s
@@ -1388,8 +1315,7 @@ class DataClient {
       ..methodName = methodName ?? ''
       ..type = DataType.DATA_TYPE_TABULAR_SENSOR
       ..tags.addAll(tags);
-    if (methodParameters != null)
-      metadata.methodParameters.addAll(methodParameters);
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
 
     final request = DataCaptureUploadRequest()
       ..metadata = metadata
@@ -1493,8 +1419,7 @@ class DataClient {
       ..type = DataType.DATA_TYPE_BINARY_SENSOR
       ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
-    if (methodParameters != null)
-      uploadMetadata.methodParameters.addAll(methodParameters);
+    if (methodParameters != null) uploadMetadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
       uploadMetadata.fileExtension = '';
     } else if (fileExtension[0] == '.') {
@@ -1505,9 +1430,7 @@ class DataClient {
 
     final sensorMetadata = SensorMetadata();
     if (dataRequestTimes != null) {
-      sensorMetadata.timeRequested = Timestamp.fromDateTime(
-        dataRequestTimes.$1,
-      );
+      sensorMetadata.timeRequested = Timestamp.fromDateTime(dataRequestTimes.$1);
       sensorMetadata.timeReceived = Timestamp.fromDateTime(dataRequestTimes.$2);
     }
 
@@ -1515,16 +1438,10 @@ class DataClient {
       ..sensorMetadata = sensorMetadata
       ..uploadMetadata = uploadMetadata;
 
-    final metadataStream = Stream.value(
-      StreamingDataCaptureUploadRequest()..metadata = metadata,
-    );
-    final bytesStream = Stream.value(
-      StreamingDataCaptureUploadRequest()..data = bytes,
-    );
+    final metadataStream = Stream.value(StreamingDataCaptureUploadRequest()..metadata = metadata);
+    final bytesStream = Stream.value(StreamingDataCaptureUploadRequest()..data = bytes);
     final requestStream = StreamGroup.merge([metadataStream, bytesStream]);
-    final response = await _dataSyncClient.streamingDataCaptureUpload(
-      requestStream,
-    );
+    final response = await _dataSyncClient.streamingDataCaptureUpload(requestStream);
     return response.binaryDataId;
   }
 
@@ -1637,8 +1554,7 @@ class DataClient {
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
   Future<List<Dataset>> listDatasetsByOrganizationID(String orgId) async {
-    final request = ListDatasetsByOrganizationIDRequest()
-      ..organizationId = orgId;
+    final request = ListDatasetsByOrganizationIDRequest()..organizationId = orgId;
     final response = await _datasetClient.listDatasetsByOrganizationID(request);
     return response.datasets;
   }
@@ -1695,14 +1611,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<
-    ({
-      DateTime timeCaptured,
-      DateTime timeSynced,
-      Map<String, dynamic> payload,
-    })?
-  >
-  getLatestTabularData(
+  Future<({DateTime timeCaptured, DateTime timeSynced, Map<String, dynamic> payload})?> getLatestTabularData(
     String partId,
     String resourceName,
     String resourceSubtype,
@@ -1720,9 +1629,7 @@ class DataClient {
 
     final response = await _dataClient.getLatestTabularData(request);
 
-    if (!response.hasPayload() ||
-        !response.hasTimeCaptured() ||
-        !response.hasTimeSynced()) {
+    if (!response.hasPayload() || !response.hasTimeCaptured() || !response.hasTimeSynced()) {
       return null;
     }
 
@@ -1796,11 +1703,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<List<Index>> listIndexes(
-    String organizationId,
-    IndexableCollection collectionType, {
-    String? pipelineName,
-  }) async {
+  Future<List<Index>> listIndexes(String organizationId, IndexableCollection collectionType, {String? pipelineName}) async {
     final request = ListIndexesRequest()
       ..organizationId = organizationId
       ..collectionType = collectionType;
@@ -1834,12 +1737,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/reference/apis/data-client/).
-  Future<void> deleteIndex(
-    String organizationId,
-    IndexableCollection collectionType,
-    String indexName, {
-    String? pipelineName,
-  }) async {
+  Future<void> deleteIndex(String organizationId, IndexableCollection collectionType, String indexName, {String? pipelineName}) async {
     final request = DeleteIndexRequest()
       ..organizationId = organizationId
       ..collectionType = collectionType
@@ -1863,12 +1761,10 @@ extension FilterUtils on Filter {
   void setDateTimeCaptureInterval({DateTime? start, DateTime? end}) {
     final interval = CaptureInterval();
     if (start != null) {
-      interval.start = Timestamp()
-        ..seconds = Int64((start.millisecondsSinceEpoch / 1000).floor());
+      interval.start = Timestamp()..seconds = Int64((start.millisecondsSinceEpoch / 1000).floor());
     }
     if (end != null) {
-      interval.end = Timestamp()
-        ..seconds = Int64((end.millisecondsSinceEpoch / 1000).floor());
+      interval.end = Timestamp()..seconds = Int64((end.millisecondsSinceEpoch / 1000).floor());
     }
     this.interval = interval;
   }
