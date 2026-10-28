@@ -19,8 +19,6 @@ jobs:
     if: github.repository_owner == 'viamrobotics'
     environment: release
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/cirruslabs/flutter:latest
     outputs:
       version: ${{ steps.which_version.outputs.version }}
     steps:
@@ -36,7 +34,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - run: git config --global --add safe.directory /__w/viam-flutter-sdk/viam-flutter-sdk
+      - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - uses: subosito/flutter-action@v2
 
       - name: Setup Flutter
         run: flutter pub get

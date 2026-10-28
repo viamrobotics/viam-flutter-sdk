@@ -14,11 +14,11 @@ jobs:
   generate-docs:
     if: github.repository_owner == 'viamrobotics'
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/cirruslabs/flutter:latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
 
       - name: Setup Flutter
         run: flutter pub get
