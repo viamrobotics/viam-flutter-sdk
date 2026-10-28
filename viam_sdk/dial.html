@@ -121,7 +121,14 @@
   }
   dialSW.stop();
   _logger.d(&#39;STATS: dial function took ${dialSW.elapsed}&#39;);
-  return chan.timeout(opts.timeout);
+  try {
+    return await chan.timeout(opts.timeout);
+  } on TimeoutException {
+    &#47;&#47; The timeout gives up on the dial without stopping it. Shut down whatever
+    &#47;&#47; it still produces, or its peer connection stays open for good.
+    unawaited(chan.then((channel) =&gt; channel.shutdown(), onError: (_) {}));
+    rethrow;
+  }
 }</code></pre>
 </section>
 
