@@ -1,5 +1,17 @@
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
 include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
     dangling_library_doc_comments: false
+
+formatter:
+  page_width: 140

@@ -31,18 +31,16 @@ void main() {
   group('Discovery RPC Client Tests', () {
     test('discoverResources', () async {
       final expected = [ComponentConfig()];
-      when(
-        serviceClient.discoverResources(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
+      when(serviceClient.discoverResources(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
       final response = await client.discoverResources();
       expect(response, equals(expected));
     });
 
     test('getStatus', () async {
       final expected = {'status': 'ok'};
-      when(
-        serviceClient.getStatus(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetStatusResponse()..result = expected.toStruct()));
+      when(serviceClient.getStatus(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetStatusResponse()..result = expected.toStruct()));
       final response = await client.getStatus();
       expect(response, equals(expected));
     });

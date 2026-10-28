@@ -114,7 +114,11 @@ class ArmService extends ArmServiceBase {
   @override
   Future<SetManualModeResponse> setManualMode(ServiceCall call, SetManualModeRequest request) async {
     final arm = _armFromManager(request.name);
-    await arm.setManualMode(request.manualMode, enabledFor: Duration(seconds: request.enabledFor), extra: request.extra.toMap());
+    await arm.setManualMode(
+      request.manualMode,
+      enabledFor: Duration(seconds: request.enabledFor),
+      extra: request.extra.toMap(),
+    );
     return SetManualModeResponse();
   }
 
@@ -133,7 +137,9 @@ class ArmService extends ArmServiceBase {
 
   @override
   Stream<MoveThroughJointPositionsStreamedResponse> moveThroughJointPositionsStreamed(
-      ServiceCall call, Stream<MoveThroughJointPositionsStreamedRequest> request) {
+    ServiceCall call,
+    Stream<MoveThroughJointPositionsStreamedRequest> request,
+  ) {
     // TODO: implement moveThroughJointPositionsStreamed
     throw UnimplementedError();
   }

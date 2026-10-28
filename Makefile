@@ -6,7 +6,7 @@ else
 	SED := sed -i
 endif
 
-.PHONY: buf setup format test analyze
+.PHONY: buf setup resolve format test analyze
 
 buf:
 	rm -rf lib/src/gen
@@ -35,8 +35,17 @@ buf:
 setup:
 	dart pub global activate cider
 
-format:
-	dart format --line-length=140 --set-exit-if-changed $$(find . -name "*.dart" -not -path "./lib/src/gen/*" -not -path "**.mocks.dart" -not -path "**/.dart_tool/*")
+# Every package has to be resolved before formatting. `dart format` takes the page
+# width and the trailing comma behaviour from each package's analysis_options.yaml,
+# and resolving the `package:flutter_lints/flutter.yaml` include in those files needs
+# that package's .dart_tool. Without it the formatter quietly falls back to its own
+# defaults and disagrees with editors, with CI and with other checkouts.
+resolve:
+	flutter pub get
+	for d in example/*/; do flutter pub get --directory="$$d"; done
+
+format: resolve
+	dart format --set-exit-if-changed $$(find . -name "*.dart" -not -path "./lib/src/gen/*" -not -path "**.mocks.dart" -not -path "**/.dart_tool/*")
 
 build_mocks:
 	dart run build_runner build

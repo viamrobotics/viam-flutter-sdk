@@ -30,35 +30,29 @@ void main() {
 
   group('DataManager RPC Client Tests', () {
     test('sync', () async {
-      when(
-        serviceClient.sync(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(SyncResponse()));
+      when(serviceClient.sync(any, options: anyNamed('options'))).thenAnswer((_) => MockResponseFuture.value(SyncResponse()));
       await client.sync();
       final request = verify(serviceClient.sync(captureAny, options: anyNamed('options'))).captured.single as SyncRequest;
       expect(request.name, equals('data_manager'));
     });
 
     test('sync with extra', () async {
-      when(
-        serviceClient.sync(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(SyncResponse()));
+      when(serviceClient.sync(any, options: anyNamed('options'))).thenAnswer((_) => MockResponseFuture.value(SyncResponse()));
       await client.sync(extra: {'foo': 'bar'});
       final request = verify(serviceClient.sync(captureAny, options: anyNamed('options'))).captured.single as SyncRequest;
       expect(request.extra, equals({'foo': 'bar'}.toStruct()));
     });
 
     test('uploadBinaryDataToDatasets', () async {
-      when(
-        serviceClient.uploadBinaryDataToDatasets(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(UploadBinaryDataToDatasetsResponse()));
-      await client.uploadBinaryDataToDatasets(
-        [1, 2, 3],
-        ['tag1', 'tag2'],
-        ['datasetId1', 'datasetId2'],
-        data_sync.MimeType.MIME_TYPE_IMAGE_JPEG,
-      );
-      final request = verify(serviceClient.uploadBinaryDataToDatasets(captureAny, options: anyNamed('options'))).captured.single
-          as UploadBinaryDataToDatasetsRequest;
+      when(serviceClient.uploadBinaryDataToDatasets(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(UploadBinaryDataToDatasetsResponse()));
+      await client.uploadBinaryDataToDatasets([1, 2, 3], ['tag1', 'tag2'], [
+        'datasetId1',
+        'datasetId2',
+      ], data_sync.MimeType.MIME_TYPE_IMAGE_JPEG);
+      final request =
+          verify(serviceClient.uploadBinaryDataToDatasets(captureAny, options: anyNamed('options'))).captured.single
+              as UploadBinaryDataToDatasetsRequest;
       expect(request.name, equals('data_manager'));
       expect(request.binaryData, equals([1, 2, 3]));
       expect(request.tags, equals(['tag1', 'tag2']));
@@ -68,18 +62,16 @@ void main() {
 
     test('doCommand', () async {
       final expected = {'command': 'test'};
-      when(
-        serviceClient.doCommand(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(common_gen.DoCommandResponse()..result = expected.toStruct()));
+      when(serviceClient.doCommand(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(common_gen.DoCommandResponse()..result = expected.toStruct()));
       final response = await client.doCommand(expected);
       expect(response, equals(expected));
     });
 
     test('getStatus', () async {
       final expected = {'status': 'ok'};
-      when(
-        serviceClient.getStatus(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(common_gen.GetStatusResponse()..result = expected.toStruct()));
+      when(serviceClient.getStatus(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(common_gen.GetStatusResponse()..result = expected.toStruct()));
       final response = await client.getStatus();
       expect(response, equals(expected));
     });

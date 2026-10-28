@@ -57,11 +57,7 @@ class AudioOutService extends AudioOutServiceBase {
       }
     }
 
-    return audioOut.playStream(
-      audioInfo: init.audioInfo,
-      audioStream: chunks(),
-      extra: init.hasExtra() ? init.extra.toMap() : null,
-    );
+    return audioOut.playStream(audioInfo: init.audioInfo, audioStream: chunks(), extra: init.hasExtra() ? init.extra.toMap() : null);
   }
 
   @override

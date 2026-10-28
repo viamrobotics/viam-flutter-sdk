@@ -30,9 +30,7 @@ void main() {
 
   group('Motion RPC Client Tests', () {
     test('move', () async {
-      when(
-        serviceClient.move(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(MoveResponse(success: true)));
+      when(serviceClient.move(any, options: anyNamed('options'))).thenAnswer((_) => MockResponseFuture.value(MoveResponse(success: true)));
       final destination = common_pb.PoseInFrame(referenceFrame: 'world', pose: common_pb.Pose(x: 100, z: 100, oZ: 1));
       final response = await client.move(destination, 'myArm');
       expect(response, isTrue);
@@ -43,9 +41,8 @@ void main() {
     });
 
     test('moveOnMap', () async {
-      when(
-        serviceClient.moveOnMap(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(MoveOnMapResponse(executionId: 'exec-1')));
+      when(serviceClient.moveOnMap(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(MoveOnMapResponse(executionId: 'exec-1')));
       final response = await client.moveOnMap(common_pb.Pose(x: 1000), 'myBase', 'mySlam');
       expect(response, equals('exec-1'));
       final request = verify(serviceClient.moveOnMap(captureAny, options: anyNamed('options'))).captured.single as MoveOnMapRequest;
@@ -54,9 +51,8 @@ void main() {
     });
 
     test('moveOnGlobe', () async {
-      when(
-        serviceClient.moveOnGlobe(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(MoveOnGlobeResponse(executionId: 'exec-2')));
+      when(serviceClient.moveOnGlobe(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(MoveOnGlobeResponse(executionId: 'exec-2')));
       final response = await client.moveOnGlobe(
         common_pb.GeoPoint(latitude: 40.7, longitude: -73.9),
         'myBase',
@@ -71,9 +67,8 @@ void main() {
     });
 
     test('moveOnGlobe without heading', () async {
-      when(
-        serviceClient.moveOnGlobe(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(MoveOnGlobeResponse(executionId: 'exec-3')));
+      when(serviceClient.moveOnGlobe(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(MoveOnGlobeResponse(executionId: 'exec-3')));
       await client.moveOnGlobe(common_pb.GeoPoint(latitude: 40.7, longitude: -73.9), 'myBase', 'myMovementSensor');
       final request = verify(serviceClient.moveOnGlobe(captureAny, options: anyNamed('options'))).captured.single as MoveOnGlobeRequest;
       expect(request.hasHeading(), isFalse);
@@ -81,9 +76,8 @@ void main() {
 
     test('getPose', () async {
       final expected = common_pb.PoseInFrame(referenceFrame: 'world', pose: common_pb.Pose(x: 1, y: 2, z: 3));
-      when(
-        serviceClient.getPose(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetPoseResponse(pose: expected)));
+      when(serviceClient.getPose(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetPoseResponse(pose: expected)));
       final response = await client.getPose('myArm', 'world');
       expect(response, equals(expected));
       final request = verify(serviceClient.getPose(captureAny, options: anyNamed('options'))).captured.single as GetPoseRequest;
@@ -92,9 +86,7 @@ void main() {
     });
 
     test('stopPlan', () async {
-      when(
-        serviceClient.stopPlan(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(StopPlanResponse()));
+      when(serviceClient.stopPlan(any, options: anyNamed('options'))).thenAnswer((_) => MockResponseFuture.value(StopPlanResponse()));
       await client.stopPlan('myBase');
       final request = verify(serviceClient.stopPlan(captureAny, options: anyNamed('options'))).captured.single as StopPlanRequest;
       expect(request.componentName, equals('myBase'));
@@ -109,9 +101,8 @@ void main() {
           status: PlanStatus(state: PlanState.PLAN_STATE_IN_PROGRESS),
         ),
       ];
-      when(
-        serviceClient.listPlanStatuses(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(ListPlanStatusesResponse(planStatusesWithIds: expected)));
+      when(serviceClient.listPlanStatuses(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(ListPlanStatusesResponse(planStatusesWithIds: expected)));
       final response = await client.listPlanStatuses(onlyActivePlans: true);
       expect(response, equals(expected));
       final request =
@@ -137,9 +128,8 @@ void main() {
 
     test('doCommand', () async {
       final expected = {'command': 'test'};
-      when(
-        serviceClient.doCommand(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(common_gen.DoCommandResponse()..result = expected.toStruct()));
+      when(serviceClient.doCommand(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(common_gen.DoCommandResponse()..result = expected.toStruct()));
       final response = await client.doCommand(expected);
       expect(response, equals(expected));
     });

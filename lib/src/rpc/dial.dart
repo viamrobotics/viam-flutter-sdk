@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:bonsoir/bonsoir.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
@@ -78,16 +79,13 @@ class DialOptions {
 /// {@category Viam SDK}
 /// The credentials used for connecting to the robot
 class Credentials {
-  /// The type of credential, e.g. 'robot-secret', 'api-key'
+  /// The type of credential, e.g. 'api-key'
   final String type;
 
   /// The payload of the credential
   final String payload;
 
   const Credentials(this.type, this.payload);
-
-  /// Convenience initializer for creating credentials of type 'robot-secret' with the provided payload.
-  const Credentials.robotSecret(this.payload) : type = 'robot-secret';
 
   /// Convenience initializer for creating credentials of type 'api-key' with the provided key as payload.
   const Credentials.apiKey(this.payload) : type = 'api-key';
@@ -225,16 +223,27 @@ Future<String> _searchMdns(String address) async {
 
   const type = '_rpc._tcp';
   final discovery = BonsoirDiscovery(type: type);
-  await discovery.ready;
+  await discovery.initialize();
 
   String? localAddress;
   discovery.eventStream!.listen((event) {
-    if (event.type == BonsoirDiscoveryEventType.discoveryServiceFound) {
-      unawaited(event.service!.resolve(discovery.serviceResolver));
-    } else if (event.type == BonsoirDiscoveryEventType.discoveryServiceResolved) {
-      final service = event.service! as ResolvedBonsoirService;
-      if (service.name == targetName && service.host != null) {
-        localAddress = '${service.host!}:${service.port}';
+    if (event is BonsoirDiscoveryServiceFoundEvent) {
+      unawaited(event.service.resolve(discovery.serviceResolver));
+    } else if (event is BonsoirDiscoveryServiceResolveFailedEvent) {
+      _logger.d('Could not resolve an mDNS service while searching for $targetName');
+    } else if (event is BonsoirDiscoveryServiceResolvedEvent) {
+      final service = event.service;
+      if (service.name != targetName) {
+        return;
+      }
+      // A service advertises every address it answers on, in no particular order:
+      // link-local IPv6, VPN addresses and the LAN address among them, and only one of
+      // them is usually reachable. Prefer the first IPv4 address, since an IPv6 literal
+      // would also break the host/port split in `_hostAndPort`. Without one, fall back to
+      // the mDNS hostname so the resolver can try each address itself.
+      final host = service.hostAddresses.firstWhereOrNull((candidate) => !candidate.contains(':')) ?? service.hostname;
+      if (host != null) {
+        localAddress = '$host:${service.port}';
       }
     }
   });
@@ -561,6 +570,13 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
       // Bounded so that a dial abandoned by [dial]'s timeout still settles.
       await didConnect.future.timeout(options.timeout);
     } catch (error, st) {
+      if (options._usingMdns) {
+        // The signaling server for this attempt is the mDNS address, so a direct gRPC dial
+        // to the cloud address is not a useful fallback. Let `dial` catch this instead: it
+        // restores the caller's WebRTC options and retries against the cloud signaler.
+        _logger.i('Could not connect via WebRTC over mDNS, falling back to cloud signaling', error: error, stackTrace: st);
+        rethrow;
+      }
       _logger.i('Could not connect via WebRTC, attempting direct gRPC connection', error: error, stackTrace: st);
       return await _dialDirectGrpc(address, options, sessionId);
     }
@@ -652,12 +668,12 @@ class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
   final String Function()? _sessionId;
 
   AuthenticatedChannel(String host, int port, this.accessToken, bool insecure, [this._sessionId])
-      : super(host: host, port: port, transportSecure: !insecure);
+    : super(host: host, port: port, transportSecure: !insecure);
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
     if ((SessionsClient.heartbeatMonitoredMethods[method.path] ?? false) && _sessionId != null) {
-      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId!()}));
+      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId()}));
     }
 
     options = options.mergedWith(CallOptions(metadata: {'Authorization': 'Bearer $accessToken'}));
@@ -679,11 +695,16 @@ class _HostAndPort {
 }
 
 _HostAndPort _hostAndPort(String address, bool insecure) {
-  String host = address.replaceAll(r'^https?\:\/\/', '');
+  String host = address.replaceAll(RegExp(r'^https?:\/\/'), '');
   int port = insecure ? 80 : 443;
   if (host.contains(':') && host.split(':').length == 2) {
     port = int.parse(host.split(':')[1]);
     host = host.split(':')[0];
+  }
+  // A trailing dot is valid in DNS but not in TLS SNI, and servers that enforce that
+  // (Go's crypto/tls answers with a decode_error alert) fail the handshake because of it.
+  if (host.endsWith('.')) {
+    host = host.substring(0, host.length - 1);
   }
   return _HostAndPort(host, port);
 }

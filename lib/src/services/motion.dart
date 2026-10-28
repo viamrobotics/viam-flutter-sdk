@@ -193,12 +193,7 @@ class MotionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   ///
   /// For more information, see the [motion service docs](https://docs.viam.com/reference/apis/services/motion/#getplan).
-  Future<MotionPlan> getPlan(
-    String componentName, {
-    bool? lastPlanOnly,
-    String? executionId,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<MotionPlan> getPlan(String componentName, {bool? lastPlanOnly, String? executionId, Map<String, dynamic>? extra}) async {
     final request = GetPlanRequest(
       name: name,
       componentName: componentName,

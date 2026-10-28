@@ -89,12 +89,12 @@ class ViamAuthorization {
   });
 
   proto.Authorization get toProto => proto.Authorization(
-        authorizationType: authorizationType,
-        authorizationId: authorizationId.toString(),
-        resourceType: resourceType.name,
-        resourceId: resourceId,
-        identityId: identityId,
-        organizationId: organizationId,
-        identityType: identityType.toString(),
-      );
+    authorizationType: authorizationType,
+    authorizationId: authorizationId.toString(),
+    resourceType: resourceType.name,
+    resourceId: resourceId,
+    identityId: identityId,
+    organizationId: organizationId,
+    identityType: identityType.toString(),
+  );
 }

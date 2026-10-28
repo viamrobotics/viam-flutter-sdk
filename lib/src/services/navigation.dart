@@ -85,12 +85,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Location> updateLocation(
-    String locationName, {
-    NavigationPosition? position,
-    String? newName,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<Location> updateLocation(String locationName, {NavigationPosition? position, String? newName, Map<String, dynamic>? extra}) async {
     final request = UpdateLocationRequest(
       name: name,
       locationName: locationName,
@@ -166,12 +161,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Route> updateRoute(
-    String routeName, {
-    String? newName,
-    List<Waypoint>? waypoints,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<Route> updateRoute(String routeName, {String? newName, List<Waypoint>? waypoints, Map<String, dynamic>? extra}) async {
     final request = UpdateRouteRequest(
       name: name,
       routeName: routeName,
@@ -206,13 +196,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<Zone> addZone(
-    String zoneName,
-    String type,
-    Map<String, dynamic> geometry, {
-    double? maxSpeed,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<Zone> addZone(String zoneName, String type, Map<String, dynamic> geometry, {double? maxSpeed, Map<String, dynamic>? extra}) async {
     final request = AddZoneRequest(
       name: name,
       zoneName: zoneName,
@@ -412,12 +396,7 @@ class NavigationClient extends Resource with RPCDebugLoggerMixin implements Reso
   /// ```
   ///
   /// For more information, see the [navigation service docs](https://docs.viam.com/reference/apis/services/navigation/).
-  Future<NavigationStatus> goToLocation(
-    String locationName, {
-    bool? wait,
-    double? linearMPerSec,
-    Map<String, dynamic>? extra,
-  }) async {
+  Future<NavigationStatus> goToLocation(String locationName, {bool? wait, double? linearMPerSec, Map<String, dynamic>? extra}) async {
     final request = GoToLocationRequest(
       name: name,
       locationName: locationName,

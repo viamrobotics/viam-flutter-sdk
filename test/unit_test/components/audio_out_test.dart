@@ -119,10 +119,7 @@ void main() {
         Uint8List.fromList([7, 8, 9]),
       ];
 
-      final result = await audioOut.playStream(
-        audioInfo: audioInfo,
-        audioStream: Stream.fromIterable(chunks),
-      );
+      final result = await audioOut.playStream(audioInfo: audioInfo, audioStream: Stream.fromIterable(chunks));
 
       expect(result, isA<PlayStreamResponse>());
       expect(audioOut.streamedAudioInfo, audioInfo);
@@ -324,11 +321,7 @@ void main() {
         final extra = {'k': 'v'};
 
         final client = AudioOutClient(name, channel);
-        final result = await client.playStream(
-          audioInfo: audioInfo,
-          audioStream: Stream.fromIterable(chunks),
-          extra: extra,
-        );
+        final result = await client.playStream(audioInfo: audioInfo, audioStream: Stream.fromIterable(chunks), extra: extra);
 
         expect(result, isA<PlayStreamResponse>());
         expect(audioOut.streamedAudioInfo?.codec, AudioCodec.opus);

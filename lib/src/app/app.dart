@@ -174,12 +174,13 @@ class AppClient {
       protoRemoveAuthorizations.add(authorization.toProto);
     }
 
-    final request = UpdateOrganizationInviteAuthorizationsRequest(
-      addAuthorizations: protoAddAuthorizations,
-      removeAuthorizations: protoRemoveAuthorizations,
-    )
-      ..organizationId = organizationId
-      ..email = email;
+    final request =
+        UpdateOrganizationInviteAuthorizationsRequest(
+            addAuthorizations: protoAddAuthorizations,
+            removeAuthorizations: protoRemoveAuthorizations,
+          )
+          ..organizationId = organizationId
+          ..email = email;
     final UpdateOrganizationInviteAuthorizationsResponse response = await _client.updateOrganizationInviteAuthorizations(request);
     return response.invite;
   }

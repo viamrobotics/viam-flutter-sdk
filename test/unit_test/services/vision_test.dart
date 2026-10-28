@@ -31,36 +31,32 @@ void main() {
   group('Vision RPC Client Tests', () {
     test('getDetectionsFromCamera', () async {
       final expected = [Detection(xMin: Int64(1), xMax: Int64(2), yMin: Int64(3), yMax: Int64(4), confidence: 0.95, className: 'test')];
-      when(
-        serviceClient.getDetectionsFromCamera(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetDetectionsFromCameraResponse(detections: expected)));
+      when(serviceClient.getDetectionsFromCamera(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetDetectionsFromCameraResponse(detections: expected)));
       final response = await client.detectionsFromCamera('cameraName');
       expect(response, equals(expected));
     });
 
     test('getDetections', () async {
       final expected = [Detection(xMin: Int64(1), xMax: Int64(2), yMin: Int64(3), yMax: Int64(4), confidence: 0.95, className: 'test')];
-      when(
-        serviceClient.getDetections(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetDetectionsResponse(detections: expected)));
+      when(serviceClient.getDetections(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetDetectionsResponse(detections: expected)));
       final response = await client.detections(ViamImage([1, 2, 3], const MimeType.unsupported('fake')));
       expect(response, equals(expected));
     });
 
     test('getClassificationsFromCamera', () async {
       final expected = [Classification(className: 'test-classification', confidence: 0.44)];
-      when(
-        serviceClient.getClassificationsFromCamera(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetClassificationsFromCameraResponse(classifications: expected)));
+      when(serviceClient.getClassificationsFromCamera(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetClassificationsFromCameraResponse(classifications: expected)));
       final response = await client.classificationsFromCamera('cameraName', 2);
       expect(response, equals(expected));
     });
 
     test('getClassifications', () async {
       final expected = [Classification(className: 'test-classification', confidence: 0.44)];
-      when(
-        serviceClient.getClassifications(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetClassificationsResponse(classifications: expected)));
+      when(serviceClient.getClassifications(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetClassificationsResponse(classifications: expected)));
       final response = await client.classifications(ViamImage([1, 2, 3], const MimeType.unsupported('fake')), 2);
       expect(response, equals(expected));
     });
@@ -74,11 +70,10 @@ void main() {
 
     test('getDetections3D', () async {
       final expected = [
-        Detection3D(transforms: [common_pb.Transform(referenceFrame: 'world')])
+        Detection3D(transforms: [common_pb.Transform(referenceFrame: 'world')]),
       ];
-      when(
-        serviceClient.getDetections3D(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetDetections3DResponse(detections3d: expected)));
+      when(serviceClient.getDetections3D(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetDetections3DResponse(detections3d: expected)));
       final response = await client.detections3D('cameraName');
       expect(response, equals(expected));
     });
@@ -93,18 +88,16 @@ void main() {
           ),
         ),
       ];
-      when(
-        serviceClient.getObjectPointClouds(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetObjectPointCloudsResponse(objects: expected, mimeType: MimeType.pcd.name)));
+      when(serviceClient.getObjectPointClouds(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetObjectPointCloudsResponse(objects: expected, mimeType: MimeType.pcd.name)));
       final response = await client.objectPointClouds('cameraName');
       expect(response, equals(expected));
     });
 
     test('getStatus', () async {
       final expected = {'status': 'ok'};
-      when(
-        serviceClient.getStatus(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(common_pb.GetStatusResponse()..result = expected.toStruct()));
+      when(serviceClient.getStatus(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(common_pb.GetStatusResponse()..result = expected.toStruct()));
       final response = await client.getStatus();
       expect(response, equals(expected));
     });

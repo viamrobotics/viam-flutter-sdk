@@ -19,7 +19,6 @@ linter:
     - throw_in_finally
     - unawaited_futures
     - unnecessary_statements
-    - unnecessary_await_in_return
     - prefer_final_locals
     - directives_ordering
     - prefer_relative_imports
@@ -34,3 +33,6 @@ analyzer:
     - "**.pbjson.dart"
     - "**.pbgrpc.dart"
     - build/**
+
+formatter:
+  page_width: 140

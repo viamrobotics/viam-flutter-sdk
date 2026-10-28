@@ -29,18 +29,16 @@ void main() {
   group('Generic Service RPC Client Tests', () {
     test('doCommand', () async {
       final expected = {'foo': 'bar'};
-      when(
-        serviceClient.doCommand(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(DoCommandResponse(result: expected.toStruct())));
+      when(serviceClient.doCommand(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(DoCommandResponse(result: expected.toStruct())));
       final response = await client.doCommand(expected);
       expect(response, equals(expected));
     });
 
     test('getStatus', () async {
       final expected = {'status': 'ok'};
-      when(
-        serviceClient.getStatus(any, options: anyNamed('options')),
-      ).thenAnswer((_) => MockResponseFuture.value(GetStatusResponse(result: expected.toStruct())));
+      when(serviceClient.getStatus(any, options: anyNamed('options')))
+          .thenAnswer((_) => MockResponseFuture.value(GetStatusResponse(result: expected.toStruct())));
       final response = await client.getStatus();
       expect(response, equals(expected));
     });

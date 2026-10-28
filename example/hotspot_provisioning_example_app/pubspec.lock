@@ -29,50 +29,50 @@ packages:
     dependency: transitive
     description:
       name: bonsoir
-      sha256: "2e2cf3be580deccad9a48dcaddddf90de092e74b7de2015ef58fb24e11d66496"
+      sha256: "5a16185a921039a6cc6544e5f6539c989e8d8a7dc3b219a3bcbd583b1cb302f7"
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.11"
+    version: "7.1.6"
   bonsoir_android:
     dependency: transitive
     description:
       name: bonsoir_android
-      sha256: "9a65b6e50c5718c3f1a7ed6ff57ab9ed8ae990ff9c36d2b1ab3d1b90f28f7d1b"
+      sha256: "543689dae95e8d4df3576afadd1f8a343e0c2760ae44e5095959d870cfbcb7d3"
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.6"
+    version: "7.1.4"
   bonsoir_darwin:
     dependency: transitive
     description:
       name: bonsoir_darwin
-      sha256: "2d25c70f0d09260be1c2ab583b80dd89cbbfd59997579dadf789c5af00c7b2e4"
+      sha256: "5fceef2e607db0b63fc7a51fe3c0e4da66ec77e2896acc697bb531cf48b8df0a"
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.3"
+    version: "7.1.2"
   bonsoir_linux:
     dependency: transitive
     description:
       name: bonsoir_linux
-      sha256: f2639aded6e15943a9822de98a663a1056f37cbfd0a74d72c9eaa941965945c2
+      sha256: b3ead464c679651940ba378d38720574b1bfdf9a5b0e8cb2d4480416e1e1b5a5
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.3"
+    version: "7.1.1"
   bonsoir_platform_interface:
     dependency: transitive
     description:
       name: bonsoir_platform_interface
-      sha256: "08bb8b35d0198168b3bce87dbc718e4e510336cff1d97e43762e030c01636d45"
+      sha256: c08af1733b6ec3bb109e08855f91da6fee52fe57cb6033be2fd6648a74f94de0
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.3"
+    version: "7.0.1"
   bonsoir_windows:
     dependency: transitive
     description:
       name: bonsoir_windows
-      sha256: d4a0ca479d4f3679487a61f3174fb9fe1651e323c778b02dfa630490366be65d
+      sha256: "22ca4c5dcba2b95fcedb723132a5d65930df3d69634f169eb327c366c9f89151"
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.5"
+    version: "7.3.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -133,18 +133,18 @@ packages:
     dependency: transitive
     description:
       name: dart_webrtc
-      sha256: "5b76fd85ac95d6f5dee3e7d7de8d4b51bfbec1dc73804647c6aebb52d6297116"
+      sha256: "078e3c431500147e5cc52b3c6ea41ed538f30c7720cc2467d2186c9251e62716"
       url: "https://pub.dev"
     source: hosted
-    version: "1.5.3+hotfix.2"
+    version: "1.8.2"
   dbus:
     dependency: transitive
     description:
       name: dbus
-      sha256: "79e0c23480ff85dc68de79e2cd6334add97e48f7f4865d17686dd6ea81a47e8c"
+      sha256: f7db8504e715b835f5ebe5fe74604ccd961d504c73389a5d8e81bafc2e2f3612
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.11"
+    version: "0.8.0"
   decimal:
     dependency: transitive
     description:
@@ -220,10 +220,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_webrtc
-      sha256: b832dc76c0d1577f14aaf35e9c38d4ed7667cbc89c492b7bf4505d8d5f62e08b
+      sha256: b98ef03376401e54ff87fc78907b38e562b15ca8424aba589c263eddc3c1ecf9
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.12+hotfix.1"
+    version: "1.6.3"
   google_identity_services_web:
     dependency: transitive
     description:
@@ -288,14 +288,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.20.2"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      sha256: "53385261521cc4a0c4658fd0ad07a7d14591cf8fc33abbceae306ddb974888dc"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.7.2"
   leak_tracker:
     dependency: transitive
     description:
@@ -348,10 +340,10 @@ packages:
     dependency: transitive
     description:
       name: matcher
-      sha256: dc0b7dc7651697ea4ff3e69ef44b0407ea32c487a39fff6a4004fa585e901861
+      sha256: "31bd099b47c10cd1aeb55146a2d46ce0277630ecef3f7dae54ad7873f36696cd"
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.19"
+    version: "0.12.20"
   material_color_utilities:
     dependency: transitive
     description:
@@ -364,10 +356,10 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: "23f08335362185a5ea2ad3a4e597f1375e78bce8a040df5c600c8d3552ef2394"
+      sha256: "307249ce4ff29d58a18e97f6345f539382eb9c9c29ecda628900f31de0443dd9"
       url: "https://pub.dev"
     source: hosted
-    version: "1.17.0"
+    version: "1.19.0"
   nested:
     dependency: transitive
     description:
@@ -492,10 +484,10 @@ packages:
     dependency: transitive
     description:
       name: petitparser
-      sha256: "07c8f0b1913bcde1ff0d26e57ace2f3012ccbf2b204e070290dad3bb22797646"
+      sha256: "2f1564aadb14215e478563b5406cb80729d022158c01dc50c96013c2f7eb4790"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.0"
+    version: "7.1.0"
   platform:
     dependency: transitive
     description:
@@ -633,10 +625,10 @@ packages:
     dependency: transitive
     description:
       name: test_api
-      sha256: "8161c84903fd860b26bfdefb7963b3f0b68fee7adea0f59ef805ecca346f0c7a"
+      sha256: "2a122cbe059f8b610d3a5415f42e255b6c17b1f21eee1d960f31080237fb4f11"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.10"
+    version: "0.7.12"
   typed_data:
     dependency: transitive
     description:
@@ -657,10 +649,10 @@ packages:
     dependency: transitive
     description:
       name: vector_math
-      sha256: d530bd74fea330e6e364cda7a85019c434070188383e1cd8d9777ee586914c5b
+      sha256: fa49e1674cb84acb900141714e6c6e1f9ae099827c24d141430ff6819db4e1bc
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.0"
+    version: "2.4.4"
   viam_flutter_hotspot_provisioning_widget:
     dependency: "direct main"
     description:
@@ -675,7 +667,7 @@ packages:
       path: "../.."
       relative: true
     source: path
-    version: "0.18.0"
+    version: "0.23.0"
   vm_service:
     dependency: transitive
     description:
@@ -696,10 +688,10 @@ packages:
     dependency: transitive
     description:
       name: webrtc_interface
-      sha256: "86fe3afc81a08481dfb25cf14a5a94e27062ecef25544783f352c914e0bbc1ca"
+      sha256: c6f100eac5057d9a817a60473126f9828c796d42884d498af4f339c97b21014f
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.2+hotfix.2"
+    version: "1.5.1"
   xdg_directories:
     dependency: transitive
     description:
@@ -712,10 +704,10 @@ packages:
     dependency: transitive
     description:
       name: xml
-      sha256: b015a8ad1c488f66851d762d3090a21c600e479dc75e68328c52774040cf9226
+      sha256: "971043b3a0d3da28727e40ed3e0b5d18b742fa5a68665cca88e74b7876d5e025"
       url: "https://pub.dev"
     source: hosted
-    version: "6.5.0"
+    version: "6.6.1"
 sdks:
-  dart: ">=3.9.0-0 <4.0.0"
-  flutter: ">=3.27.0"
+  dart: ">=3.13.0 <4.0.0"
+  flutter: ">=3.44.0"
