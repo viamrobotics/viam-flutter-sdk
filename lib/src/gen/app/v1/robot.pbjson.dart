@@ -391,16 +391,17 @@ final $typed_data.Uint8List authConfigDescriptor = $convert.base64Decode(
 const UserPermission$json = {
   '1': 'UserPermission',
   '2': [
-    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.User', '10': 'user'},
+    {'1': 'users', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.User', '10': 'users'},
     {'1': 'permissions', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.Permission', '10': 'permissions'},
+    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.User', '10': 'user'},
   ],
 };
 
 /// Descriptor for `UserPermission`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userPermissionDescriptor = $convert.base64Decode(
-    'Cg5Vc2VyUGVybWlzc2lvbhIlCgR1c2VyGAEgASgLMhEudmlhbS5hcHAudjEuVXNlclIEdXNlch'
-    'I5CgtwZXJtaXNzaW9ucxgCIAMoCzIXLnZpYW0uYXBwLnYxLlBlcm1pc3Npb25SC3Blcm1pc3Np'
-    'b25z');
+    'Cg5Vc2VyUGVybWlzc2lvbhInCgV1c2VycxgDIAMoCzIRLnZpYW0uYXBwLnYxLlVzZXJSBXVzZX'
+    'JzEjkKC3Blcm1pc3Npb25zGAIgAygLMhcudmlhbS5hcHAudjEuUGVybWlzc2lvblILcGVybWlz'
+    'c2lvbnMSJQoEdXNlchgBIAEoCzIRLnZpYW0uYXBwLnYxLlVzZXJSBHVzZXI=');
 
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {

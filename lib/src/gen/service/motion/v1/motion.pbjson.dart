@@ -755,9 +755,17 @@ final $typed_data.Uint8List tempStreamArmJointPositionsRequestDescriptor = $conv
 @$core.Deprecated('Use tempStreamArmJointPositionsResponseDescriptor instead')
 const TempStreamArmJointPositionsResponse$json = {
   '1': 'TempStreamArmJointPositionsResponse',
+  '2': [
+    {'1': 'motion_side_current_runway_ms', '3': 1, '4': 1, '5': 5, '9': 0, '10': 'motionSideCurrentRunwayMs', '17': true},
+  ],
+  '8': [
+    {'1': '_motion_side_current_runway_ms'},
+  ],
 };
 
 /// Descriptor for `TempStreamArmJointPositionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tempStreamArmJointPositionsResponseDescriptor = $convert.base64Decode(
-    'CiNUZW1wU3RyZWFtQXJtSm9pbnRQb3NpdGlvbnNSZXNwb25zZQ==');
+    'CiNUZW1wU3RyZWFtQXJtSm9pbnRQb3NpdGlvbnNSZXNwb25zZRJFCh1tb3Rpb25fc2lkZV9jdX'
+    'JyZW50X3J1bndheV9tcxgBIAEoBUgAUhltb3Rpb25TaWRlQ3VycmVudFJ1bndheU1ziAEBQiAK'
+    'Hl9tb3Rpb25fc2lkZV9jdXJyZW50X3J1bndheV9tcw==');
 
