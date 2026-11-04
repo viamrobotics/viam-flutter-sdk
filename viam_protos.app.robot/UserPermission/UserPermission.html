@@ -56,6 +56,7 @@
       
       <span class="name ">UserPermission</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-user"><span class="type-annotation"><a href="../../viam_protos.app.robot/User-class.html">User</a>?</span> <span class="parameter-name">user</span>, </span></li>
 <li><span class="parameter" id="param-permissions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/Permission-class.html">Permission</a></span>&gt;</span>?</span> <span class="parameter-name">permissions</span>, </span></li>
+<li><span class="parameter" id="param-users"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/User-class.html">User</a></span>&gt;</span>?</span> <span class="parameter-name">users</span>, </span></li>
 </ol>})
     </section>
     
@@ -67,6 +68,7 @@
   <pre class="language-dart"><code class="language-dart">factory UserPermission({
   User? user,
   $core.Iterable&lt;Permission&gt;? permissions,
+  $core.Iterable&lt;User&gt;? users,
 }) {
   final $result = create();
   if (user != null) {
@@ -74,6 +76,9 @@
   }
   if (permissions != null) {
     $result.permissions.addAll(permissions);
+  }
+  if (users != null) {
+    $result.users.addAll(users);
   }
   return $result;
 }</code></pre>
