@@ -3152,6 +3152,8 @@ class ResourceStatus extends $pb.GeneratedMessage {
     $core.String? revision,
     $core.String? error,
     GetCloudMetadataResponse? cloudMetadata,
+    ResourceStatus_Reachability? reachability,
+    $core.String? remote,
   }) {
     final $result = create();
     if (name != null) {
@@ -3172,6 +3174,12 @@ class ResourceStatus extends $pb.GeneratedMessage {
     if (cloudMetadata != null) {
       $result.cloudMetadata = cloudMetadata;
     }
+    if (reachability != null) {
+      $result.reachability = reachability;
+    }
+    if (remote != null) {
+      $result.remote = remote;
+    }
     return $result;
   }
   ResourceStatus._() : super();
@@ -3185,6 +3193,8 @@ class ResourceStatus extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'revision')
     ..aOS(5, _omitFieldNames ? '' : 'error')
     ..aOM<GetCloudMetadataResponse>(6, _omitFieldNames ? '' : 'cloudMetadata', subBuilder: GetCloudMetadataResponse.create)
+    ..e<ResourceStatus_Reachability>(7, _omitFieldNames ? '' : 'reachability', $pb.PbFieldType.OE, defaultOrMaker: ResourceStatus_Reachability.REACHABILITY_UNSPECIFIED, valueOf: ResourceStatus_Reachability.valueOf, enumValues: ResourceStatus_Reachability.values)
+    ..aOS(8, _omitFieldNames ? '' : 'remote')
     ..hasRequiredFields = false
   ;
 
@@ -3275,6 +3285,27 @@ class ResourceStatus extends $pb.GeneratedMessage {
   void clearCloudMetadata() => clearField(6);
   @$pb.TagNumber(6)
   GetCloudMetadataResponse ensureCloudMetadata() => $_ensure(5);
+
+  /// whether calls to this resource by name can be routed through this machine.
+  @$pb.TagNumber(7)
+  ResourceStatus_Reachability get reachability => $_getN(6);
+  @$pb.TagNumber(7)
+  set reachability(ResourceStatus_Reachability v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasReachability() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReachability() => clearField(7);
+
+  /// name of the remote, as configured on this machine, that this resource is reached through;
+  /// for a resource on a remote's remote, this is the first hop. Unset for local resources.
+  @$pb.TagNumber(8)
+  $core.String get remote => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set remote($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasRemote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRemote() => clearField(8);
 }
 
 class ModuleStatus extends $pb.GeneratedMessage {

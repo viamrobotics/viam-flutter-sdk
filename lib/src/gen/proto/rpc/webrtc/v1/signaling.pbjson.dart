@@ -114,12 +114,14 @@ const CallResponseInitStage$json = {
   '1': 'CallResponseInitStage',
   '2': [
     {'1': 'sdp', '3': 1, '4': 1, '5': 9, '10': 'sdp'},
+    {'1': 'must_auth_against_answerer', '3': 2, '4': 1, '5': 8, '10': 'mustAuthAgainstAnswerer'},
   ],
 };
 
 /// Descriptor for `CallResponseInitStage`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List callResponseInitStageDescriptor = $convert.base64Decode(
-    'ChVDYWxsUmVzcG9uc2VJbml0U3RhZ2USEAoDc2RwGAEgASgJUgNzZHA=');
+    'ChVDYWxsUmVzcG9uc2VJbml0U3RhZ2USEAoDc2RwGAEgASgJUgNzZHASOwoabXVzdF9hdXRoX2'
+    'FnYWluc3RfYW5zd2VyZXIYAiABKAhSF211c3RBdXRoQWdhaW5zdEFuc3dlcmVy');
 
 @$core.Deprecated('Use callResponseUpdateStageDescriptor instead')
 const CallResponseUpdateStage$json = {
@@ -223,6 +225,7 @@ const AnswerRequestInitStage$json = {
     {'1': 'deadline', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'deadline', '17': true},
     {'1': 'caller_auth_entity', '3': 4, '4': 1, '5': 9, '10': 'callerAuthEntity'},
     {'1': 'caller_auth_metadata', '3': 5, '4': 3, '5': 11, '6': '.proto.rpc.webrtc.v1.AnswerRequestInitStage.CallerAuthMetadataEntry', '10': 'callerAuthMetadata'},
+    {'1': 'must_auth_caller', '3': 6, '4': 1, '5': 8, '10': 'mustAuthCaller'},
   ],
   '3': [AnswerRequestInitStage_CallerAuthMetadataEntry$json],
   '8': [
@@ -248,8 +251,9 @@ final $typed_data.Uint8List answerRequestInitStageDescriptor = $convert.base64De
     'IIZGVhZGxpbmWIAQESLAoSY2FsbGVyX2F1dGhfZW50aXR5GAQgASgJUhBjYWxsZXJBdXRoRW50'
     'aXR5EnUKFGNhbGxlcl9hdXRoX21ldGFkYXRhGAUgAygLMkMucHJvdG8ucnBjLndlYnJ0Yy52MS'
     '5BbnN3ZXJSZXF1ZXN0SW5pdFN0YWdlLkNhbGxlckF1dGhNZXRhZGF0YUVudHJ5UhJjYWxsZXJB'
-    'dXRoTWV0YWRhdGEaRQoXQ2FsbGVyQXV0aE1ldGFkYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZX'
-    'kSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4AUILCglfZGVhZGxpbmU=');
+    'dXRoTWV0YWRhdGESKAoQbXVzdF9hdXRoX2NhbGxlchgGIAEoCFIObXVzdEF1dGhDYWxsZXIaRQ'
+    'oXQ2FsbGVyQXV0aE1ldGFkYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiAB'
+    'KAlSBXZhbHVlOgI4AUILCglfZGVhZGxpbmU=');
 
 @$core.Deprecated('Use answerRequestUpdateStageDescriptor instead')
 const AnswerRequestUpdateStage$json = {
@@ -327,12 +331,14 @@ const AnswerResponseInitStage$json = {
   '1': 'AnswerResponseInitStage',
   '2': [
     {'1': 'sdp', '3': 1, '4': 1, '5': 9, '10': 'sdp'},
+    {'1': 'can_auth_callers', '3': 2, '4': 1, '5': 8, '10': 'canAuthCallers'},
   ],
 };
 
 /// Descriptor for `AnswerResponseInitStage`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List answerResponseInitStageDescriptor = $convert.base64Decode(
-    'ChdBbnN3ZXJSZXNwb25zZUluaXRTdGFnZRIQCgNzZHAYASABKAlSA3NkcA==');
+    'ChdBbnN3ZXJSZXNwb25zZUluaXRTdGFnZRIQCgNzZHAYASABKAlSA3NkcBIoChBjYW5fYXV0aF'
+    '9jYWxsZXJzGAIgASgIUg5jYW5BdXRoQ2FsbGVycw==');
 
 @$core.Deprecated('Use answerResponseUpdateStageDescriptor instead')
 const AnswerResponseUpdateStage$json = {

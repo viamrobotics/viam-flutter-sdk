@@ -59,6 +59,7 @@ class UsageCostType extends $pb.ProtobufEnum {
   static const UsageCostType USAGE_COST_TYPE_PIPELINE_SINK_CLOUD_STORAGE = UsageCostType._(25, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PIPELINE_SINK_CLOUD_STORAGE');
   static const UsageCostType USAGE_COST_TYPE_PIPELINE_SINK_COMPUTE = UsageCostType._(26, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PIPELINE_SINK_COMPUTE');
   static const UsageCostType USAGE_COST_TYPE_PREMIUM_MODULE = UsageCostType._(27, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PREMIUM_MODULE');
+  static const UsageCostType USAGE_COST_TYPE_SIMULATION_COMPUTE = UsageCostType._(28, _omitEnumNames ? '' : 'USAGE_COST_TYPE_SIMULATION_COMPUTE');
 
   static const $core.List<UsageCostType> values = <UsageCostType> [
     USAGE_COST_TYPE_UNSPECIFIED,
@@ -89,6 +90,7 @@ class UsageCostType extends $pb.ProtobufEnum {
     USAGE_COST_TYPE_PIPELINE_SINK_CLOUD_STORAGE,
     USAGE_COST_TYPE_PIPELINE_SINK_COMPUTE,
     USAGE_COST_TYPE_PREMIUM_MODULE,
+    USAGE_COST_TYPE_SIMULATION_COMPUTE,
   ];
 
   static final $core.Map<$core.int, UsageCostType> _byValue = $pb.ProtobufEnum.initByValue(values);
