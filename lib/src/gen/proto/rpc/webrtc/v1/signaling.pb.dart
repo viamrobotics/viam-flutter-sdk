@@ -186,10 +186,14 @@ class CallRequest extends $pb.GeneratedMessage {
 class CallResponseInitStage extends $pb.GeneratedMessage {
   factory CallResponseInitStage({
     $core.String? sdp,
+    $core.bool? mustAuthAgainstAnswerer,
   }) {
     final $result = create();
     if (sdp != null) {
       $result.sdp = sdp;
+    }
+    if (mustAuthAgainstAnswerer != null) {
+      $result.mustAuthAgainstAnswerer = mustAuthAgainstAnswerer;
     }
     return $result;
   }
@@ -199,6 +203,7 @@ class CallResponseInitStage extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CallResponseInitStage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sdp')
+    ..aOB(2, _omitFieldNames ? '' : 'mustAuthAgainstAnswerer')
     ..hasRequiredFields = false
   ;
 
@@ -231,6 +236,17 @@ class CallResponseInitStage extends $pb.GeneratedMessage {
   $core.bool hasSdp() => $_has(0);
   @$pb.TagNumber(1)
   void clearSdp() => clearField(1);
+
+  /// must_auth_against_answerer tells the caller that the signaling server could not
+  /// authenticate it, so it must authenticate with the answerer over the PeerConnection.
+  @$pb.TagNumber(2)
+  $core.bool get mustAuthAgainstAnswerer => $_getBF(1);
+  @$pb.TagNumber(2)
+  set mustAuthAgainstAnswerer($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMustAuthAgainstAnswerer() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMustAuthAgainstAnswerer() => clearField(2);
 }
 
 /// CallResponseUpdateStage is multiply used to trickle in ICE candidates from
@@ -675,6 +691,7 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
     $6.Timestamp? deadline,
     $core.String? callerAuthEntity,
     $core.Map<$core.String, $core.String>? callerAuthMetadata,
+    $core.bool? mustAuthCaller,
   }) {
     final $result = create();
     if (sdp != null) {
@@ -692,6 +709,9 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
     if (callerAuthMetadata != null) {
       $result.callerAuthMetadata.addAll(callerAuthMetadata);
     }
+    if (mustAuthCaller != null) {
+      $result.mustAuthCaller = mustAuthCaller;
+    }
     return $result;
   }
   AnswerRequestInitStage._() : super();
@@ -704,6 +724,7 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
     ..aOM<$6.Timestamp>(3, _omitFieldNames ? '' : 'deadline', subBuilder: $6.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'callerAuthEntity')
     ..m<$core.String, $core.String>(5, _omitFieldNames ? '' : 'callerAuthMetadata', entryClassName: 'AnswerRequestInitStage.CallerAuthMetadataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('proto.rpc.webrtc.v1'))
+    ..aOB(6, _omitFieldNames ? '' : 'mustAuthCaller')
     ..hasRequiredFields = false
   ;
 
@@ -776,6 +797,18 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
   /// from the caller's auth token by the signaling server.
   @$pb.TagNumber(5)
   $core.Map<$core.String, $core.String> get callerAuthMetadata => $_getMap(4);
+
+  /// a warning from the signaling server that the signaling server
+  /// could not auth the caller. if this flag is true, the answerer
+  /// must auth the caller itself
+  @$pb.TagNumber(6)
+  $core.bool get mustAuthCaller => $_getBF(5);
+  @$pb.TagNumber(6)
+  set mustAuthCaller($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMustAuthCaller() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMustAuthCaller() => clearField(6);
 }
 
 /// AnswerRequestUpdateStage is multiply used to trickle in ICE candidates to
@@ -1112,10 +1145,14 @@ class AnswerRequest extends $pb.GeneratedMessage {
 class AnswerResponseInitStage extends $pb.GeneratedMessage {
   factory AnswerResponseInitStage({
     $core.String? sdp,
+    $core.bool? canAuthCallers,
   }) {
     final $result = create();
     if (sdp != null) {
       $result.sdp = sdp;
+    }
+    if (canAuthCallers != null) {
+      $result.canAuthCallers = canAuthCallers;
     }
     return $result;
   }
@@ -1125,6 +1162,7 @@ class AnswerResponseInitStage extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnswerResponseInitStage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sdp')
+    ..aOB(2, _omitFieldNames ? '' : 'canAuthCallers')
     ..hasRequiredFields = false
   ;
 
@@ -1157,6 +1195,17 @@ class AnswerResponseInitStage extends $pb.GeneratedMessage {
   $core.bool hasSdp() => $_has(0);
   @$pb.TagNumber(1)
   void clearSdp() => clearField(1);
+
+  /// can_auth_callers tells the signaling server that this answerer can authenticate
+  /// callers itself, so it may receive callers the signaling server could not authenticate.
+  @$pb.TagNumber(2)
+  $core.bool get canAuthCallers => $_getBF(1);
+  @$pb.TagNumber(2)
+  set canAuthCallers($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCanAuthCallers() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanAuthCallers() => clearField(2);
 }
 
 /// AnswerResponseUpdateStage is multiply used to trickle in ICE candidates to

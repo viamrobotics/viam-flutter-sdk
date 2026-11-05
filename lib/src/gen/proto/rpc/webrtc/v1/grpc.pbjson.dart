@@ -46,6 +46,7 @@ const Request$json = {
     {'1': 'headers', '3': 2, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.RequestHeaders', '9': 0, '10': 'headers'},
     {'1': 'message', '3': 3, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.RequestMessage', '9': 0, '10': 'message'},
     {'1': 'rst_stream', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'rstStream'},
+    {'1': 'api_token', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'apiToken'},
   ],
   '8': [
     {'1': 'type'},
@@ -58,7 +59,7 @@ final $typed_data.Uint8List requestDescriptor = $convert.base64Decode(
     'ZzdHJlYW0SPwoHaGVhZGVycxgCIAEoCzIjLnByb3RvLnJwYy53ZWJydGMudjEuUmVxdWVzdEhl'
     'YWRlcnNIAFIHaGVhZGVycxI/CgdtZXNzYWdlGAMgASgLMiMucHJvdG8ucnBjLndlYnJ0Yy52MS'
     '5SZXF1ZXN0TWVzc2FnZUgAUgdtZXNzYWdlEh8KCnJzdF9zdHJlYW0YBCABKAhIAFIJcnN0U3Ry'
-    'ZWFtQgYKBHR5cGU=');
+    'ZWFtEh0KCWFwaV90b2tlbhgFIAEoCUgAUghhcGlUb2tlbkIGCgR0eXBl');
 
 @$core.Deprecated('Use requestHeadersDescriptor instead')
 const RequestHeaders$json = {

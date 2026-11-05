@@ -21,6 +21,7 @@ const ModelType$json = {
     {'1': 'MODEL_TYPE_SINGLE_LABEL_CLASSIFICATION', '2': 1},
     {'1': 'MODEL_TYPE_MULTI_LABEL_CLASSIFICATION', '2': 2},
     {'1': 'MODEL_TYPE_OBJECT_DETECTION', '2': 3},
+    {'1': 'MODEL_TYPE_ROBOT_POLICY', '2': 4},
   ],
 };
 
@@ -28,7 +29,8 @@ const ModelType$json = {
 final $typed_data.Uint8List modelTypeDescriptor = $convert.base64Decode(
     'CglNb2RlbFR5cGUSGgoWTU9ERUxfVFlQRV9VTlNQRUNJRklFRBAAEioKJk1PREVMX1RZUEVfU0'
     'lOR0xFX0xBQkVMX0NMQVNTSUZJQ0FUSU9OEAESKQolTU9ERUxfVFlQRV9NVUxUSV9MQUJFTF9D'
-    'TEFTU0lGSUNBVElPThACEh8KG01PREVMX1RZUEVfT0JKRUNUX0RFVEVDVElPThAD');
+    'TEFTU0lGSUNBVElPThACEh8KG01PREVMX1RZUEVfT0JKRUNUX0RFVEVDVElPThADEhsKF01PRE'
+    'VMX1RZUEVfUk9CT1RfUE9MSUNZEAQ=');
 
 @$core.Deprecated('Use modelFrameworkDescriptor instead')
 const ModelFramework$json = {

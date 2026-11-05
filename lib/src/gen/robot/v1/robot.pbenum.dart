@@ -70,6 +70,29 @@ class ResourceStatus_State extends $pb.ProtobufEnum {
   const ResourceStatus_State._($core.int v, $core.String n) : super(v, n);
 }
 
+/// whether calls to the resource by name can be routed through this machine.
+/// Independent of state, which for an unreachable resource is its last known state.
+class ResourceStatus_Reachability extends $pb.ProtobufEnum {
+  static const ResourceStatus_Reachability REACHABILITY_UNSPECIFIED = ResourceStatus_Reachability._(0, _omitEnumNames ? '' : 'REACHABILITY_UNSPECIFIED');
+  static const ResourceStatus_Reachability REACHABILITY_REACHABLE = ResourceStatus_Reachability._(1, _omitEnumNames ? '' : 'REACHABILITY_REACHABLE');
+  static const ResourceStatus_Reachability REACHABILITY_REMOTE_DISCONNECTED = ResourceStatus_Reachability._(2, _omitEnumNames ? '' : 'REACHABILITY_REMOTE_DISCONNECTED');
+  static const ResourceStatus_Reachability REACHABILITY_SHADOWED_BY_LOCAL = ResourceStatus_Reachability._(3, _omitEnumNames ? '' : 'REACHABILITY_SHADOWED_BY_LOCAL');
+  static const ResourceStatus_Reachability REACHABILITY_AMBIGUOUS_REMOTE = ResourceStatus_Reachability._(4, _omitEnumNames ? '' : 'REACHABILITY_AMBIGUOUS_REMOTE');
+
+  static const $core.List<ResourceStatus_Reachability> values = <ResourceStatus_Reachability> [
+    REACHABILITY_UNSPECIFIED,
+    REACHABILITY_REACHABLE,
+    REACHABILITY_REMOTE_DISCONNECTED,
+    REACHABILITY_SHADOWED_BY_LOCAL,
+    REACHABILITY_AMBIGUOUS_REMOTE,
+  ];
+
+  static final $core.Map<$core.int, ResourceStatus_Reachability> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ResourceStatus_Reachability? valueOf($core.int value) => _byValue[value];
+
+  const ResourceStatus_Reachability._($core.int v, $core.String n) : super(v, n);
+}
+
 class ModuleStatus_State extends $pb.ProtobufEnum {
   static const ModuleStatus_State STATE_UNSPECIFIED = ModuleStatus_State._(0, _omitEnumNames ? '' : 'STATE_UNSPECIFIED');
   static const ModuleStatus_State STATE_PENDING = ModuleStatus_State._(1, _omitEnumNames ? '' : 'STATE_PENDING');
