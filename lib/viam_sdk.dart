@@ -37,6 +37,8 @@ export 'src/components/motor/client.dart';
 export 'src/components/motor/motor.dart';
 export 'src/components/movement_sensor/client.dart';
 export 'src/components/movement_sensor/movement_sensor.dart';
+export 'src/components/pose_tracker/client.dart';
+export 'src/components/pose_tracker/pose_tracker.dart';
 export 'src/components/power_sensor/client.dart';
 export 'src/components/power_sensor/power_sensor.dart';
 export 'src/components/sensor/client.dart';

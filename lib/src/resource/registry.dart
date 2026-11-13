@@ -45,6 +45,7 @@ class Registry {
     registerSubtype(ResourceRegistration(InputController.subtype, (name, channel) => InputControllerClient(name, channel)));
     registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
     registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
+    registerSubtype(ResourceRegistration(PoseTracker.subtype, (name, channel) => PoseTrackerClient(name, channel)));
     registerSubtype(ResourceRegistration(PowerSensor.subtype, (name, channel) => PowerSensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
