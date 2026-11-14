@@ -779,6 +779,7 @@ const GetMachineStatusResponse$json = {
     {'1': 'job_statuses', '3': 4, '4': 3, '5': 11, '6': '.viam.robot.v1.JobStatus', '10': 'jobStatuses'},
     {'1': 'modules', '3': 5, '4': 3, '5': 11, '6': '.viam.robot.v1.ModuleStatus', '10': 'modules'},
     {'1': 'packages', '3': 6, '4': 3, '5': 11, '6': '.viam.robot.v1.PackageStatus', '10': 'packages'},
+    {'1': 'maintenance_status', '3': 7, '4': 1, '5': 11, '6': '.viam.robot.v1.MaintenanceStatus', '10': 'maintenanceStatus'},
   ],
   '4': [GetMachineStatusResponse_State$json],
 };
@@ -801,9 +802,24 @@ final $typed_data.Uint8List getMachineStatusResponseDescriptor = $convert.base64
     '90LnYxLkdldE1hY2hpbmVTdGF0dXNSZXNwb25zZS5TdGF0ZVIFc3RhdGUSOwoMam9iX3N0YXR1'
     'c2VzGAQgAygLMhgudmlhbS5yb2JvdC52MS5Kb2JTdGF0dXNSC2pvYlN0YXR1c2VzEjUKB21vZH'
     'VsZXMYBSADKAsyGy52aWFtLnJvYm90LnYxLk1vZHVsZVN0YXR1c1IHbW9kdWxlcxI4CghwYWNr'
-    'YWdlcxgGIAMoCzIcLnZpYW0ucm9ib3QudjEuUGFja2FnZVN0YXR1c1IIcGFja2FnZXMiSQoFU3'
-    'RhdGUSFQoRU1RBVEVfVU5TUEVDSUZJRUQQABIWChJTVEFURV9JTklUSUFMSVpJTkcQARIRCg1T'
-    'VEFURV9SVU5OSU5HEAI=');
+    'YWdlcxgGIAMoCzIcLnZpYW0ucm9ib3QudjEuUGFja2FnZVN0YXR1c1IIcGFja2FnZXMSTwoSbW'
+    'FpbnRlbmFuY2Vfc3RhdHVzGAcgASgLMiAudmlhbS5yb2JvdC52MS5NYWludGVuYW5jZVN0YXR1'
+    'c1IRbWFpbnRlbmFuY2VTdGF0dXMiSQoFU3RhdGUSFQoRU1RBVEVfVU5TUEVDSUZJRUQQABIWCh'
+    'JTVEFURV9JTklUSUFMSVpJTkcQARIRCg1TVEFURV9SVU5OSU5HEAI=');
+
+@$core.Deprecated('Use maintenanceStatusDescriptor instead')
+const MaintenanceStatus$json = {
+  '1': 'MaintenanceStatus',
+  '2': [
+    {'1': 'allowed', '3': 1, '4': 1, '5': 8, '10': 'allowed'},
+    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `MaintenanceStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List maintenanceStatusDescriptor = $convert.base64Decode(
+    'ChFNYWludGVuYW5jZVN0YXR1cxIYCgdhbGxvd2VkGAEgASgIUgdhbGxvd2VkEhYKBnJlYXNvbh'
+    'gCIAEoCVIGcmVhc29u');
 
 @$core.Deprecated('Use jobStatusDescriptor instead')
 const JobStatus$json = {

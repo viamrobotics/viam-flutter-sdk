@@ -865,6 +865,7 @@ const MaintenanceConfig$json = {
   '2': [
     {'1': 'sensor_name', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'sensorName'},
     {'1': 'maintenance_allowed_key', '3': 2, '4': 1, '5': 9, '10': 'maintenanceAllowedKey'},
+    {'1': 'follow_part', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.FollowPartRef', '10': 'followPart'},
   ],
 };
 
@@ -872,5 +873,20 @@ const MaintenanceConfig$json = {
 final $typed_data.Uint8List maintenanceConfigDescriptor = $convert.base64Decode(
     'ChFNYWludGVuYW5jZUNvbmZpZxI9CgtzZW5zb3JfbmFtZRgBIAEoCzIcLnZpYW0uY29tbW9uLn'
     'YxLlJlc291cmNlTmFtZVIKc2Vuc29yTmFtZRI2ChdtYWludGVuYW5jZV9hbGxvd2VkX2tleRgC'
-    'IAEoCVIVbWFpbnRlbmFuY2VBbGxvd2VkS2V5');
+    'IAEoCVIVbWFpbnRlbmFuY2VBbGxvd2VkS2V5EjsKC2ZvbGxvd19wYXJ0GAMgASgLMhoudmlhbS'
+    '5hcHAudjEuRm9sbG93UGFydFJlZlIKZm9sbG93UGFydA==');
+
+@$core.Deprecated('Use followPartRefDescriptor instead')
+const FollowPartRef$json = {
+  '1': 'FollowPartRef',
+  '2': [
+    {'1': 'address', '3': 1, '4': 1, '5': 9, '10': 'address'},
+    {'1': 'auth', '3': 2, '4': 1, '5': 11, '6': '.viam.app.v1.RemoteAuth', '10': 'auth'},
+  ],
+};
+
+/// Descriptor for `FollowPartRef`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List followPartRefDescriptor = $convert.base64Decode(
+    'Cg1Gb2xsb3dQYXJ0UmVmEhgKB2FkZHJlc3MYASABKAlSB2FkZHJlc3MSKwoEYXV0aBgCIAEoCz'
+    'IXLnZpYW0uYXBwLnYxLlJlbW90ZUF1dGhSBGF1dGg=');
 
