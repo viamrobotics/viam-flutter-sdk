@@ -2988,6 +2988,7 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     $core.Iterable<JobStatus>? jobStatuses,
     $core.Iterable<ModuleStatus>? modules,
     $core.Iterable<PackageStatus>? packages,
+    MaintenanceStatus? maintenanceStatus,
   }) {
     final $result = create();
     if (resources != null) {
@@ -3008,6 +3009,9 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     if (packages != null) {
       $result.packages.addAll(packages);
     }
+    if (maintenanceStatus != null) {
+      $result.maintenanceStatus = maintenanceStatus;
+    }
     return $result;
   }
   GetMachineStatusResponse._() : super();
@@ -3021,6 +3025,7 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     ..pc<JobStatus>(4, _omitFieldNames ? '' : 'jobStatuses', $pb.PbFieldType.PM, subBuilder: JobStatus.create)
     ..pc<ModuleStatus>(5, _omitFieldNames ? '' : 'modules', $pb.PbFieldType.PM, subBuilder: ModuleStatus.create)
     ..pc<PackageStatus>(6, _omitFieldNames ? '' : 'packages', $pb.PbFieldType.PM, subBuilder: PackageStatus.create)
+    ..aOM<MaintenanceStatus>(7, _omitFieldNames ? '' : 'maintenanceStatus', subBuilder: MaintenanceStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -3076,6 +3081,81 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<PackageStatus> get packages => $_getList(5);
+
+  @$pb.TagNumber(7)
+  MaintenanceStatus get maintenanceStatus => $_getN(6);
+  @$pb.TagNumber(7)
+  set maintenanceStatus(MaintenanceStatus v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasMaintenanceStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMaintenanceStatus() => clearField(7);
+  @$pb.TagNumber(7)
+  MaintenanceStatus ensureMaintenanceStatus() => $_ensure(6);
+}
+
+class MaintenanceStatus extends $pb.GeneratedMessage {
+  factory MaintenanceStatus({
+    $core.bool? allowed,
+    $core.String? reason,
+  }) {
+    final $result = create();
+    if (allowed != null) {
+      $result.allowed = allowed;
+    }
+    if (reason != null) {
+      $result.reason = reason;
+    }
+    return $result;
+  }
+  MaintenanceStatus._() : super();
+  factory MaintenanceStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MaintenanceStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MaintenanceStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'allowed')
+    ..aOS(2, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MaintenanceStatus clone() => MaintenanceStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MaintenanceStatus copyWith(void Function(MaintenanceStatus) updates) => super.copyWith((message) => updates(message as MaintenanceStatus)) as MaintenanceStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MaintenanceStatus create() => MaintenanceStatus._();
+  MaintenanceStatus createEmptyInstance() => create();
+  static $pb.PbList<MaintenanceStatus> createRepeated() => $pb.PbList<MaintenanceStatus>();
+  @$core.pragma('dart2js:noInline')
+  static MaintenanceStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MaintenanceStatus>(create);
+  static MaintenanceStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get allowed => $_getBF(0);
+  @$pb.TagNumber(1)
+  set allowed($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAllowed() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAllowed() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reason => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reason($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasReason() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReason() => clearField(2);
 }
 
 class JobStatus extends $pb.GeneratedMessage {
