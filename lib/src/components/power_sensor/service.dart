@@ -1,6 +1,6 @@
 import 'package:grpc/grpc.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/powersensor/v1/powersensor.pbgrpc.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
@@ -52,6 +52,19 @@ class PowerSensorService extends PowerSensorServiceBase {
     final powerSensor = _fromManager(request.name);
     final power = await powerSensor.power(extra: request.extra.toMap());
     return GetPowerResponse()..watts = power;
+  }
+
+  @override
+  Future<GetBatteryPercentResponse> getBatteryPercent(ServiceCall call, GetBatteryPercentRequest request) async {
+    final powerSensor = _fromManager(request.name);
+    final percent = await powerSensor.batteryPercent(extra: request.extra.toMap());
+    return GetBatteryPercentResponse()..percent = percent;
+  }
+
+  @override
+  Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
+    final powerSensor = _fromManager(request.name);
+    return powerSensor.properties(extra: request.extra.toMap());
   }
 
   @override
