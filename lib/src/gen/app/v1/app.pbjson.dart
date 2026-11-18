@@ -4055,6 +4055,7 @@ const Model$json = {
     {'1': 'markdown_documentation', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'markdownDocumentation', '17': true},
     {'1': 'description', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'description', '17': true},
     {'1': 'supported_hardware', '3': 5, '4': 3, '5': 9, '10': 'supportedHardware'},
+    {'1': 'apis', '3': 6, '4': 3, '5': 9, '10': 'apis'},
   ],
   '8': [
     {'1': '_markdown_documentation'},
@@ -4067,8 +4068,8 @@ final $typed_data.Uint8List modelDescriptor = $convert.base64Decode(
     'CgVNb2RlbBIQCgNhcGkYASABKAlSA2FwaRIUCgVtb2RlbBgCIAEoCVIFbW9kZWwSOgoWbWFya2'
     'Rvd25fZG9jdW1lbnRhdGlvbhgDIAEoCUgAUhVtYXJrZG93bkRvY3VtZW50YXRpb26IAQESJQoL'
     'ZGVzY3JpcHRpb24YBCABKAlIAVILZGVzY3JpcHRpb26IAQESLQoSc3VwcG9ydGVkX2hhcmR3YX'
-    'JlGAUgAygJUhFzdXBwb3J0ZWRIYXJkd2FyZUIZChdfbWFya2Rvd25fZG9jdW1lbnRhdGlvbkIO'
-    'CgxfZGVzY3JpcHRpb24=');
+    'JlGAUgAygJUhFzdXBwb3J0ZWRIYXJkd2FyZRISCgRhcGlzGAYgAygJUgRhcGlzQhkKF19tYXJr'
+    'ZG93bl9kb2N1bWVudGF0aW9uQg4KDF9kZXNjcmlwdGlvbg==');
 
 @$core.Deprecated('Use moduleFileInfoDescriptor instead')
 const ModuleFileInfo$json = {
