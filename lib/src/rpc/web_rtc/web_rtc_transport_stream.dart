@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:collection/collection.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
@@ -20,7 +21,8 @@ class WebRtcTransportStream extends GrpcTransportStream {
   bool headersSent = false;
   bool _terminated = false;
   bool _failureReported = false;
-  final List<int> receivedPacketMessageData = <int>[];
+  // Packets are kept as the byte arrays they arrive in and joined once, at the end of the message.
+  final BytesBuilder _receivedPacketMessageData = BytesBuilder(copy: false);
 
   final StreamController<List<int>> _outgoingMessages = StreamController<List<int>>();
   final StreamController<GrpcMessage> _incomingMessages = StreamController();
@@ -52,7 +54,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
         webRtcClientChannel.dataChannel.send(RTCDataChannelMessage.fromBinary(reset.writeToBuffer())).ignore();
       } catch (_) {}
     }
-    webRtcClientChannel.removeOnMessageListener(onMessage);
+    webRtcClientChannel.removeStreamListener(headersRequest.stream.id);
     await Future.wait([_incomingMessages.close(), _outgoingMessages.close()]);
   }
 
@@ -145,13 +147,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
     );
   }
 
-  void onMessage(RTCDataChannelMessage data) {
-    final response = grpc.Response.fromBuffer(data.binary);
-
-    if (response.stream.id != headersRequest.stream.id) {
-      return;
-    }
-
+  void onResponse(grpc.Response response) {
     final headers = response.headers;
     final trailers = response.trailers;
     final message = response.message;
@@ -163,10 +159,9 @@ class WebRtcTransportStream extends GrpcTransportStream {
         _addGrpcMessage(GrpcMetadata(headers.metadata.md.map((key, value) => MapEntry(key, value.values.firstOrNull ?? ''))));
         break;
       case grpc.Response_Type.message:
-        receivedPacketMessageData.addAll(message.packetMessage.data);
+        _receivedPacketMessageData.add(message.packetMessage.data);
         if (message.packetMessage.eom) {
-          _addGrpcMessage(GrpcData(List.unmodifiable(receivedPacketMessageData), isCompressed: false));
-          receivedPacketMessageData.clear();
+          _addGrpcMessage(GrpcData(_receivedPacketMessageData.takeBytes(), isCompressed: false));
         }
         break;
       case grpc.Response_Type.trailers:
@@ -179,7 +174,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
   }
 
   void _listenToDataChannel() {
-    webRtcClientChannel.addOnMessageListener(onMessage);
+    webRtcClientChannel.addStreamListener(headersRequest.stream.id, onResponse);
   }
 
   void _addGrpcMessage(GrpcMessage msg) {
