@@ -14,6 +14,7 @@ import '../resource/manager.dart';
 import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../rpc/web_rtc/web_rtc_client.dart';
+import '../utils.dart';
 import 'sessions_client.dart';
 
 /// {@category Viam SDK}
@@ -332,6 +333,44 @@ class RobotClient {
     }
     final request = rpb.RestartModuleRequest(moduleId: moduleId, moduleName: moduleName);
     await _client.restartModule(request);
+  }
+
+  /// Get the configuration of the machine's frame system: each frame's transform to its parent and,
+  /// for components that have one, the kinematic model.
+  ///
+  /// [supplementalTransforms] adds frames that are not part of the machine's config for this call.
+  ///
+  /// ```
+  /// var frameSystem = await machine.frameSystemConfig();
+  /// ```
+  Future<List<FrameSystemConfig>> frameSystemConfig({List<Transform>? supplementalTransforms}) async {
+    final request = rpb.FrameSystemConfigRequest(supplementalTransforms: supplementalTransforms);
+    final response = await _client.frameSystemConfig(request);
+    return response.frameSystemConfigs;
+  }
+
+  /// Get the pose of [componentName] in [destinationFrame], which defaults to the world frame.
+  ///
+  /// [supplementalTransforms] adds frames that are not part of the machine's config for this call.
+  ///
+  /// ```
+  /// var poseInWorld = await machine.getPose('my_arm');
+  /// var poseInCamera = await machine.getPose('my_arm', destinationFrame: 'my_camera');
+  /// ```
+  Future<PoseInFrame> getPose(
+    String componentName, {
+    String destinationFrame = 'world',
+    List<Transform>? supplementalTransforms,
+    Map<String, dynamic>? extra,
+  }) async {
+    final request = rpb.GetPoseRequest(
+      componentName: componentName,
+      destinationFrame: destinationFrame,
+      supplementalTransforms: supplementalTransforms,
+      extra: extra?.toStruct(),
+    );
+    final response = await _client.getPose(request);
+    return response.pose;
   }
 
   /// GetMachineStatus returns status of the machine and its resources.
