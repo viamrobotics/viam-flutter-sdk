@@ -222,6 +222,56 @@ void main() {
     });
   });
 
+  group('receiving', () {
+    grpc.Response packet(List<int> data, {required bool eom, int id = _streamId}) => grpc.Response()
+      ..stream = _stream(id)
+      ..message = (grpc.ResponseMessage()
+        ..packetMessage = (grpc.PacketMessage()
+          ..data = data
+          ..eom = eom));
+
+    test('a message split across packets is delivered once, joined in order', () async {
+      makeStream();
+
+      dataChannel.receive(packet([1, 2, 3], eom: false));
+      dataChannel.receive(packet([4, 5], eom: false));
+      await pumpEventQueue();
+      expect(incoming, isEmpty);
+
+      dataChannel.receive(packet([6], eom: true));
+      await pumpEventQueue();
+
+      expect(incoming, hasLength(1));
+      expect((incoming.single as GrpcData).data, [1, 2, 3, 4, 5, 6]);
+    });
+
+    test('each message starts from an empty buffer', () async {
+      makeStream();
+
+      dataChannel.receive(packet([1, 2], eom: true));
+      dataChannel.receive(packet([3], eom: false));
+      dataChannel.receive(packet([4], eom: true));
+      await pumpEventQueue();
+
+      expect(incoming.map((message) => (message as GrpcData).data), [
+        [1, 2],
+        [3, 4],
+      ]);
+    });
+
+    test('responses for another stream are not delivered', () async {
+      makeStream();
+
+      dataChannel.receive(_headers(_streamId + 1));
+      dataChannel.receive(packet([9], eom: true, id: _streamId + 1));
+      dataChannel.receive(_trailers(_streamId + 1));
+      await pumpEventQueue();
+
+      expect(incoming, isEmpty);
+      expect(incomingDone, isFalse);
+    });
+  });
+
   group('terminate', () {
     test('on an open stream sends a reset and no end of stream', () async {
       final stream = makeStream();
@@ -319,7 +369,7 @@ void main() {
       await pumpEventQueue();
 
       expect(incoming, isEmpty);
-      expect(channel.onMessageListeners, isEmpty);
+      expect(channel.streamListeners, isEmpty);
     });
   });
 
