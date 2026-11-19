@@ -16009,6 +16009,7 @@ class Model extends $pb.GeneratedMessage {
     $core.String? markdownDocumentation,
     $core.String? description,
     $core.Iterable<$core.String>? supportedHardware,
+    $core.Iterable<$core.String>? apis,
   }) {
     final $result = create();
     if (api != null) {
@@ -16026,6 +16027,9 @@ class Model extends $pb.GeneratedMessage {
     if (supportedHardware != null) {
       $result.supportedHardware.addAll(supportedHardware);
     }
+    if (apis != null) {
+      $result.apis.addAll(apis);
+    }
     return $result;
   }
   Model._() : super();
@@ -16038,6 +16042,7 @@ class Model extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'markdownDocumentation')
     ..aOS(4, _omitFieldNames ? '' : 'description')
     ..pPS(5, _omitFieldNames ? '' : 'supportedHardware')
+    ..pPS(6, _omitFieldNames ? '' : 'apis')
     ..hasRequiredFields = false
   ;
 
@@ -16105,6 +16110,11 @@ class Model extends $pb.GeneratedMessage {
   /// A list of supported hardware names
   @$pb.TagNumber(5)
   $core.List<$core.String> get supportedHardware => $_getList(4);
+
+  /// The full set of co-equal APIs this model serves. The `api` field is always one of these and is
+  /// retained for tooling that predates `apis`; new code should read `apis`.
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get apis => $_getList(5);
 }
 
 class ModuleFileInfo extends $pb.GeneratedMessage {
