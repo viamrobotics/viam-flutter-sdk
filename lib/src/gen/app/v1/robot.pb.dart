@@ -4266,6 +4266,7 @@ class MaintenanceConfig extends $pb.GeneratedMessage {
   factory MaintenanceConfig({
     $9.ResourceName? sensorName,
     $core.String? maintenanceAllowedKey,
+    FollowPartRef? followPart,
   }) {
     final $result = create();
     if (sensorName != null) {
@@ -4273,6 +4274,9 @@ class MaintenanceConfig extends $pb.GeneratedMessage {
     }
     if (maintenanceAllowedKey != null) {
       $result.maintenanceAllowedKey = maintenanceAllowedKey;
+    }
+    if (followPart != null) {
+      $result.followPart = followPart;
     }
     return $result;
   }
@@ -4283,6 +4287,7 @@ class MaintenanceConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MaintenanceConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOM<$9.ResourceName>(1, _omitFieldNames ? '' : 'sensorName', subBuilder: $9.ResourceName.create)
     ..aOS(2, _omitFieldNames ? '' : 'maintenanceAllowedKey')
+    ..aOM<FollowPartRef>(3, _omitFieldNames ? '' : 'followPart', subBuilder: FollowPartRef.create)
     ..hasRequiredFields = false
   ;
 
@@ -4326,6 +4331,83 @@ class MaintenanceConfig extends $pb.GeneratedMessage {
   $core.bool hasMaintenanceAllowedKey() => $_has(1);
   @$pb.TagNumber(2)
   void clearMaintenanceAllowedKey() => clearField(2);
+
+  @$pb.TagNumber(3)
+  FollowPartRef get followPart => $_getN(2);
+  @$pb.TagNumber(3)
+  set followPart(FollowPartRef v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFollowPart() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFollowPart() => clearField(3);
+  @$pb.TagNumber(3)
+  FollowPartRef ensureFollowPart() => $_ensure(2);
+}
+
+class FollowPartRef extends $pb.GeneratedMessage {
+  factory FollowPartRef({
+    $core.String? address,
+    RemoteAuth? auth,
+  }) {
+    final $result = create();
+    if (address != null) {
+      $result.address = address;
+    }
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    return $result;
+  }
+  FollowPartRef._() : super();
+  factory FollowPartRef.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FollowPartRef.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FollowPartRef', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'address')
+    ..aOM<RemoteAuth>(2, _omitFieldNames ? '' : 'auth', subBuilder: RemoteAuth.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FollowPartRef clone() => FollowPartRef()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FollowPartRef copyWith(void Function(FollowPartRef) updates) => super.copyWith((message) => updates(message as FollowPartRef)) as FollowPartRef;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FollowPartRef create() => FollowPartRef._();
+  FollowPartRef createEmptyInstance() => create();
+  static $pb.PbList<FollowPartRef> createRepeated() => $pb.PbList<FollowPartRef>();
+  @$core.pragma('dart2js:noInline')
+  static FollowPartRef getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FollowPartRef>(create);
+  static FollowPartRef? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get address => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set address($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  RemoteAuth get auth => $_getN(1);
+  @$pb.TagNumber(2)
+  set auth(RemoteAuth v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAuth() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAuth() => clearField(2);
+  @$pb.TagNumber(2)
+  RemoteAuth ensureAuth() => $_ensure(1);
 }
 
 
