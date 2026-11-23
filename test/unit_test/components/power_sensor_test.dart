@@ -6,7 +6,7 @@ import 'package:grpc/src/server/server.dart';
 import 'package:viam_sdk/src/components/power_sensor/client.dart';
 import 'package:viam_sdk/src/components/power_sensor/power_sensor.dart';
 import 'package:viam_sdk/src/components/power_sensor/service.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import 'package:viam_sdk/src/gen/component/powersensor/v1/powersensor.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -16,6 +16,8 @@ class FakePowerSensor extends PowerSensor {
   double volts = 0;
   double amperes = 0;
   double watts = 0;
+  double percent = 0;
+  bool isBatteryPercentSupported = false;
   Map<String, dynamic> sensorReadings = {'voltage': 0.0, 'is_ac': false, 'current': 0.0, 'power': 0.0};
   Map<String, dynamic>? extra;
   Map<String, dynamic> statusResult = {'status': 'ok'};
@@ -62,6 +64,18 @@ class FakePowerSensor extends PowerSensor {
     this.extra = extra;
     return sensorReadings;
   }
+
+  @override
+  Future<double> batteryPercent({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return percent;
+  }
+
+  @override
+  Future<PowerSensorProperties> properties({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return PowerSensorProperties()..isBatteryPercentSupported = isBatteryPercentSupported;
+  }
 }
 
 void main() {
@@ -93,6 +107,16 @@ void main() {
     test('readings', () async {
       final result = await powersensor.readings();
       expect(result, powersensor.sensorReadings);
+    });
+
+    test('batteryPercent', () async {
+      final result = await powersensor.batteryPercent();
+      expect(result, powersensor.percent);
+    });
+
+    test('properties', () async {
+      final result = await powersensor.properties();
+      expect(result.isBatteryPercentSupported, powersensor.isBatteryPercentSupported);
     });
 
     test('doCommand', () async {
@@ -152,6 +176,16 @@ void main() {
         final result = await client.getPower(GetPowerRequest()..name = name);
         expect(result.watts, powerSensor.watts);
       });
+      test('batteryPercent', () async {
+        final client = PowerSensorServiceClient(channel);
+        final result = await client.getBatteryPercent(GetBatteryPercentRequest()..name = name);
+        expect(result.percent, powerSensor.percent);
+      });
+      test('properties', () async {
+        final client = PowerSensorServiceClient(channel);
+        final result = await client.getProperties(GetPropertiesRequest()..name = name);
+        expect(result.isBatteryPercentSupported, powerSensor.isBatteryPercentSupported);
+      });
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
 
@@ -207,6 +241,16 @@ void main() {
         final expectedValues = [powerSensor.volts, powerSensor.isAc, powerSensor.amperes, powerSensor.watts];
         expect(result.keys, expectedKeys);
         expect(result.values, expectedValues);
+      });
+      test('batteryPercent', () async {
+        final client = PowerSensorClient(name, channel);
+        final result = await client.batteryPercent();
+        expect(result, powerSensor.percent);
+      });
+      test('properties', () async {
+        final client = PowerSensorClient(name, channel);
+        final result = await client.properties();
+        expect(result.isBatteryPercentSupported, powerSensor.isBatteryPercentSupported);
       });
       test('doCommand', () async {
         final client = PowerSensorClient(name, channel);

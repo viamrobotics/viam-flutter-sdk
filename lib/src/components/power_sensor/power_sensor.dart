@@ -1,4 +1,4 @@
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/powersensor/v1/powersensor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
@@ -8,6 +8,9 @@ typedef Voltage = GetVoltageResponse;
 
 /// {@category Viam SDK}
 typedef Current = GetCurrentResponse;
+
+/// {@category Viam SDK}
+typedef PowerSensorProperties = GetPropertiesResponse;
 
 /// {@category Components}
 /// PowerSensor reports information about voltage, current, and power.
@@ -59,6 +62,25 @@ abstract class PowerSensor extends Resource {
   ///
   /// For more information, see [Power Sensor component](https://docs.viam.com/reference/apis/components/power-sensor/#getpower).
   Future<double> power({Map<String, dynamic>? extra});
+
+  /// Get the remaining battery charge, as a percentage from 0 to 100.
+  ///
+  /// ```
+  /// var batteryPercent = await myPowerSensor.batteryPercent();
+  /// ```
+  ///
+  /// For more information, see [Power Sensor component](https://docs.viam.com/reference/apis/components/power-sensor/#getbatterypercent).
+  Future<double> batteryPercent({Map<String, dynamic>? extra});
+
+  /// Get the [PowerSensorProperties] of this [PowerSensor], such as whether [batteryPercent] is supported.
+  ///
+  /// ```
+  /// var properties = await myPowerSensor.properties();
+  /// bool batterySupported = properties.isBatteryPercentSupported;
+  /// ```
+  ///
+  /// For more information, see [Power Sensor component](https://docs.viam.com/reference/apis/components/power-sensor/#getproperties).
+  Future<PowerSensorProperties> properties({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [PowerSensor] with the given [name].
   ///

@@ -1,6 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/powersensor/v1/powersensor.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
@@ -53,6 +53,23 @@ class PowerSensorClient extends PowerSensor with RPCDebugLoggerMixin implements 
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getPower(request, options: callOptions);
     return response.watts;
+  }
+
+  @override
+  Future<double> batteryPercent({Map<String, dynamic>? extra}) async {
+    final request = GetBatteryPercentRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getBatteryPercent(request, options: callOptions);
+    return response.percent;
+  }
+
+  @override
+  Future<PowerSensorProperties> properties({Map<String, dynamic>? extra}) async {
+    final request = GetPropertiesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    return await client.getProperties(request, options: callOptions);
   }
 
   @override
