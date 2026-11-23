@@ -60,6 +60,7 @@
 <li><span class="parameter" id="param-jobStatuses"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/JobStatus-class.html">JobStatus</a></span>&gt;</span>?</span> <span class="parameter-name">jobStatuses</span>, </span></li>
 <li><span class="parameter" id="param-modules"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/ModuleStatus-class.html">ModuleStatus</a></span>&gt;</span>?</span> <span class="parameter-name">modules</span>, </span></li>
 <li><span class="parameter" id="param-packages"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/PackageStatus-class.html">PackageStatus</a></span>&gt;</span>?</span> <span class="parameter-name">packages</span>, </span></li>
+<li><span class="parameter" id="param-maintenanceStatus"><span class="type-annotation"><a href="../../viam_protos.robot.robot/MaintenanceStatus-class.html">MaintenanceStatus</a>?</span> <span class="parameter-name">maintenanceStatus</span>, </span></li>
 </ol>})
     </section>
     
@@ -75,6 +76,7 @@
   $core.Iterable&lt;JobStatus&gt;? jobStatuses,
   $core.Iterable&lt;ModuleStatus&gt;? modules,
   $core.Iterable&lt;PackageStatus&gt;? packages,
+  MaintenanceStatus? maintenanceStatus,
 }) {
   final $result = create();
   if (resources != null) {
@@ -94,6 +96,9 @@
   }
   if (packages != null) {
     $result.packages.addAll(packages);
+  }
+  if (maintenanceStatus != null) {
+    $result.maintenanceStatus = maintenanceStatus;
   }
   return $result;
 }</code></pre>

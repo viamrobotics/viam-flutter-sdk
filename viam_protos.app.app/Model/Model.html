@@ -59,6 +59,7 @@
 <li><span class="parameter" id="param-markdownDocumentation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">markdownDocumentation</span>, </span></li>
 <li><span class="parameter" id="param-description"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">description</span>, </span></li>
 <li><span class="parameter" id="param-supportedHardware"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">supportedHardware</span>, </span></li>
+<li><span class="parameter" id="param-apis"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">apis</span>, </span></li>
 </ol>})
     </section>
     
@@ -73,6 +74,7 @@
   $core.String? markdownDocumentation,
   $core.String? description,
   $core.Iterable&lt;$core.String&gt;? supportedHardware,
+  $core.Iterable&lt;$core.String&gt;? apis,
 }) {
   final $result = create();
   if (api != null) {
@@ -89,6 +91,9 @@
   }
   if (supportedHardware != null) {
     $result.supportedHardware.addAll(supportedHardware);
+  }
+  if (apis != null) {
+    $result.apis.addAll(apis);
   }
   return $result;
 }</code></pre>

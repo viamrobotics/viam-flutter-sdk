@@ -84,6 +84,20 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $30.GetPowerRequest.fromBuffer(value),
       ($30.GetPowerResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$30.GetBatteryPercentRequest, $30.GetBatteryPercentResponse&gt;(
+      &#39;GetBatteryPercent&#39;,
+      getBatteryPercent_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $30.GetBatteryPercentRequest.fromBuffer(value),
+      ($30.GetBatteryPercentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$30.GetPropertiesRequest, $30.GetPropertiesResponse&gt;(
+      &#39;GetProperties&#39;,
+      getProperties_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $30.GetPropertiesRequest.fromBuffer(value),
+      ($30.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$9.GetReadingsRequest, $9.GetReadingsResponse&gt;(
       &#39;GetReadings&#39;,
       getReadings_Pre,

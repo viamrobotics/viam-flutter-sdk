@@ -56,6 +56,7 @@
       
       <span class="name ">MaintenanceConfig</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="param-sensorName"><span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">sensorName</span>, </span></li>
 <li><span class="parameter" id="param-maintenanceAllowedKey"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">maintenanceAllowedKey</span>, </span></li>
+<li><span class="parameter" id="param-followPart"><span class="type-annotation"><a href="../../viam_protos.app.robot/FollowPartRef-class.html">FollowPartRef</a>?</span> <span class="parameter-name">followPart</span>, </span></li>
 </ol>})
     </section>
     
@@ -67,6 +68,7 @@
   <pre class="language-dart"><code class="language-dart">factory MaintenanceConfig({
   $9.ResourceName? sensorName,
   $core.String? maintenanceAllowedKey,
+  FollowPartRef? followPart,
 }) {
   final $result = create();
   if (sensorName != null) {
@@ -74,6 +76,9 @@
   }
   if (maintenanceAllowedKey != null) {
     $result.maintenanceAllowedKey = maintenanceAllowedKey;
+  }
+  if (followPart != null) {
+    $result.followPart = followPart;
   }
   return $result;
 }</code></pre>
