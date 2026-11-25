@@ -13,7 +13,6 @@ import '../resource/base.dart';
 import '../resource/manager.dart';
 import '../resource/registry.dart';
 import '../rpc/dial.dart';
-import '../rpc/web_rtc/web_rtc_client.dart';
 import '../utils.dart';
 import 'sessions_client.dart';
 
@@ -113,7 +112,7 @@ class RobotClient {
       client._sessionsClient = SessionsClient(client._channel, options.enableSessions, url);
       client._sessionsClient.start();
       client._client = rpb.RobotServiceClient(client._channel);
-      client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
+      client._streamManager = StreamManager(client._channel);
       await client.refresh();
     } catch (_) {
       // The caller never gets this client, so it can't close the connection.
@@ -227,7 +226,7 @@ class RobotClient {
         await client.resourceNames(rpb.ResourceNamesRequest());
 
         _channel = channel;
-        _streamManager.channel = _channel as WebRtcClientChannel;
+        _streamManager.channel = _channel;
         _client = client;
         _sessionsClient = SessionsClient(_channel, _options.enableSessions, _address);
         await refresh();
