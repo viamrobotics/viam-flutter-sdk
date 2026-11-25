@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
 import '../../gen/stream/v1/stream.pbgrpc.dart';
@@ -11,7 +12,7 @@ Logger _logger = Logger();
 class StreamManager {
   final Map<String, MediaStream> _streams = {};
   final Map<String, StreamClient> _clients = {};
-  WebRtcClientChannel _channel;
+  ClientChannelBase _channel;
   // ignore: cancel_subscriptions
   StreamSubscription? _errorHandler;
 
@@ -26,17 +27,21 @@ class StreamManager {
 
   StreamServiceClient get _client => StreamServiceClient(_channel);
 
-  set channel(WebRtcClientChannel channel) {
+  /// Media tracks only arrive over WebRTC. On any other channel, such as the direct gRPC connection a
+  /// dial falls back to, the manager stays usable but no stream will ever produce a track.
+  set channel(ClientChannelBase channel) {
     _errorHandler?.cancel();
     _channel = channel;
-    _channel.rtcPeerConnection.onTrack = (event) {
+    if (channel is! WebRtcClientChannel) return;
+
+    channel.rtcPeerConnection.onTrack = (event) {
       _errorHandler?.cancel(); // Cancel the error handler -- clearly we're connected if we're receiving this event
       for (final stream in event.streams) {
         _addStream(stream);
       }
     };
 
-    _channel.rtcPeerConnection.onConnectionState = (state) {
+    channel.rtcPeerConnection.onConnectionState = (state) {
       _errorHandler?.cancel();
       if (state == RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
           state == RTCPeerConnectionState.RTCPeerConnectionStateDisconnected) {
