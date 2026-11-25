@@ -17,7 +17,9 @@ class FakePowerSensor extends PowerSensor {
   double amperes = 0;
   double watts = 0;
   double percent = 0;
+  bool isCharging = false;
   bool isBatteryPercentSupported = false;
+  bool isChargingSupported = false;
   Map<String, dynamic> sensorReadings = {'voltage': 0.0, 'is_ac': false, 'current': 0.0, 'power': 0.0};
   Map<String, dynamic>? extra;
   Map<String, dynamic> statusResult = {'status': 'ok'};
@@ -66,15 +68,19 @@ class FakePowerSensor extends PowerSensor {
   }
 
   @override
-  Future<double> batteryPercent({Map<String, dynamic>? extra}) async {
+  Future<BatteryStatus> batteryPercent({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return percent;
+    return BatteryStatus()
+      ..percent = percent
+      ..isCharging = isCharging;
   }
 
   @override
   Future<PowerSensorProperties> properties({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return PowerSensorProperties()..isBatteryPercentSupported = isBatteryPercentSupported;
+    return PowerSensorProperties()
+      ..isBatteryPercentSupported = isBatteryPercentSupported
+      ..isChargingSupported = isChargingSupported;
   }
 }
 
@@ -111,12 +117,14 @@ void main() {
 
     test('batteryPercent', () async {
       final result = await powersensor.batteryPercent();
-      expect(result, powersensor.percent);
+      expect(result.percent, powersensor.percent);
+      expect(result.isCharging, powersensor.isCharging);
     });
 
     test('properties', () async {
       final result = await powersensor.properties();
       expect(result.isBatteryPercentSupported, powersensor.isBatteryPercentSupported);
+      expect(result.isChargingSupported, powersensor.isChargingSupported);
     });
 
     test('doCommand', () async {
@@ -180,11 +188,13 @@ void main() {
         final client = PowerSensorServiceClient(channel);
         final result = await client.getBatteryPercent(GetBatteryPercentRequest()..name = name);
         expect(result.percent, powerSensor.percent);
+        expect(result.isCharging, powerSensor.isCharging);
       });
       test('properties', () async {
         final client = PowerSensorServiceClient(channel);
         final result = await client.getProperties(GetPropertiesRequest()..name = name);
         expect(result.isBatteryPercentSupported, powerSensor.isBatteryPercentSupported);
+        expect(result.isChargingSupported, powerSensor.isChargingSupported);
       });
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
@@ -245,12 +255,14 @@ void main() {
       test('batteryPercent', () async {
         final client = PowerSensorClient(name, channel);
         final result = await client.batteryPercent();
-        expect(result, powerSensor.percent);
+        expect(result.percent, powerSensor.percent);
+        expect(result.isCharging, powerSensor.isCharging);
       });
       test('properties', () async {
         final client = PowerSensorClient(name, channel);
         final result = await client.properties();
         expect(result.isBatteryPercentSupported, powerSensor.isBatteryPercentSupported);
+        expect(result.isChargingSupported, powerSensor.isChargingSupported);
       });
       test('doCommand', () async {
         final client = PowerSensorClient(name, channel);

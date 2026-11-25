@@ -1,6 +1,6 @@
 import 'package:grpc/grpc.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/gripper/v1/gripper.pbgrpc.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
@@ -102,5 +102,25 @@ class GripperService extends GripperServiceBase {
     final gripper = _fromManager(request.name);
     final result = await gripper.getStatus();
     return GetStatusResponse()..result = result.toStruct();
+  }
+
+  @override
+  Future<SetPercentOpenResponse> setPercentOpen(ServiceCall call, SetPercentOpenRequest request) async {
+    final gripper = _fromManager(request.name);
+    await gripper.setPercentOpen(request.percentOpen, extra: request.extra.toMap());
+    return SetPercentOpenResponse();
+  }
+
+  @override
+  Future<GetPercentOpenResponse> getPercentOpen(ServiceCall call, GetPercentOpenRequest request) async {
+    final gripper = _fromManager(request.name);
+    final percentOpen = await gripper.getPercentOpen(extra: request.extra.toMap());
+    return GetPercentOpenResponse()..percentOpen = percentOpen;
+  }
+
+  @override
+  Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
+    final gripper = _fromManager(request.name);
+    return gripper.properties(extra: request.extra.toMap());
   }
 }

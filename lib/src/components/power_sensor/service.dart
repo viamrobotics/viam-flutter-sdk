@@ -57,8 +57,7 @@ class PowerSensorService extends PowerSensorServiceBase {
   @override
   Future<GetBatteryPercentResponse> getBatteryPercent(ServiceCall call, GetBatteryPercentRequest request) async {
     final powerSensor = _fromManager(request.name);
-    final percent = await powerSensor.batteryPercent(extra: request.extra.toMap());
-    return GetBatteryPercentResponse()..percent = percent;
+    return powerSensor.batteryPercent(extra: request.extra.toMap());
   }
 
   @override

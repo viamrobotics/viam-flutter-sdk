@@ -10,6 +10,9 @@ typedef Voltage = GetVoltageResponse;
 typedef Current = GetCurrentResponse;
 
 /// {@category Viam SDK}
+typedef BatteryStatus = GetBatteryPercentResponse;
+
+/// {@category Viam SDK}
 typedef PowerSensorProperties = GetPropertiesResponse;
 
 /// {@category Components}
@@ -63,20 +66,25 @@ abstract class PowerSensor extends Resource {
   /// For more information, see [Power Sensor component](https://docs.viam.com/reference/apis/components/power-sensor/#getpower).
   Future<double> power({Map<String, dynamic>? extra});
 
-  /// Get the remaining battery charge, as a percentage from 0 to 100.
+  /// Get the remaining battery charge, as a percentage from 0 to 100, and whether the battery is charging.
+  /// [BatteryStatus.isCharging] is only meaningful when [PowerSensorProperties.isChargingSupported] is true.
   ///
   /// ```
-  /// var batteryPercent = await myPowerSensor.batteryPercent();
+  /// var batteryStatus = await myPowerSensor.batteryPercent();
+  /// double percent = batteryStatus.percent;
+  /// bool isCharging = batteryStatus.isCharging;
   /// ```
   ///
   /// For more information, see [Power Sensor component](https://docs.viam.com/reference/apis/components/power-sensor/#getbatterypercent).
-  Future<double> batteryPercent({Map<String, dynamic>? extra});
+  Future<BatteryStatus> batteryPercent({Map<String, dynamic>? extra});
 
-  /// Get the [PowerSensorProperties] of this [PowerSensor], such as whether [batteryPercent] is supported.
+  /// Get the [PowerSensorProperties] of this [PowerSensor], such as whether [batteryPercent] and its
+  /// charging status are supported.
   ///
   /// ```
   /// var properties = await myPowerSensor.properties();
   /// bool batterySupported = properties.isBatteryPercentSupported;
+  /// bool chargingSupported = properties.isChargingSupported;
   /// ```
   ///
   /// For more information, see [Power Sensor component](https://docs.viam.com/reference/apis/components/power-sensor/#getproperties).

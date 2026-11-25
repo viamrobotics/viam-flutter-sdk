@@ -56,12 +56,11 @@ class PowerSensorClient extends PowerSensor with RPCDebugLoggerMixin implements 
   }
 
   @override
-  Future<double> batteryPercent({Map<String, dynamic>? extra}) async {
+  Future<BatteryStatus> batteryPercent({Map<String, dynamic>? extra}) async {
     final request = GetBatteryPercentRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getBatteryPercent(request, options: callOptions);
-    return response.percent;
+    return await client.getBatteryPercent(request, options: callOptions);
   }
 
   @override
