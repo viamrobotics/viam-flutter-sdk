@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/gripper/service.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import 'package:viam_sdk/src/gen/component/gripper/v1/gripper.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -17,6 +17,8 @@ class FakeGripper extends Gripper {
   bool? requestedIncludeCollisionMeshes;
   bool? requestedIncludeVisualMeshes;
   Map<String, dynamic> statusResult = {'status': 'ok'};
+  double percentOpen = 0;
+  bool percentOpenSupported = false;
 
   @override
   String name;
@@ -94,6 +96,24 @@ class FakeGripper extends Gripper {
   Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return geometries;
+  }
+
+  @override
+  Future<void> setPercentOpen(double percentOpen, {Map<String, dynamic>? extra}) async {
+    this.percentOpen = percentOpen;
+    this.extra = extra;
+  }
+
+  @override
+  Future<double> getPercentOpen({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return percentOpen;
+  }
+
+  @override
+  Future<GripperProperties> properties({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return GripperProperties()..percentOpenSupported = percentOpenSupported;
   }
 }
 
@@ -182,6 +202,22 @@ void main() {
       final values = [0.5, 1.0, 1.5];
       await gripper.goToInputs(values);
       expect(gripper.goToInputsValues, values);
+    });
+
+    test('setPercentOpen', () async {
+      await gripper.setPercentOpen(0.5);
+      expect(gripper.percentOpen, 0.5);
+    });
+
+    test('getPercentOpen', () async {
+      gripper.percentOpen = 0.75;
+      expect(await gripper.getPercentOpen(), 0.75);
+    });
+
+    test('properties', () async {
+      gripper.percentOpenSupported = true;
+      final result = await gripper.properties();
+      expect(result.percentOpenSupported, true);
     });
   });
 
@@ -316,6 +352,30 @@ void main() {
         expect(response.geometries, gripper.geometries);
       });
 
+      test('setPercentOpen', () async {
+        final client = GripperServiceClient(channel);
+        await client.setPercentOpen(
+          SetPercentOpenRequest()
+            ..name = name
+            ..percentOpen = 0.5,
+        );
+        expect(gripper.percentOpen, 0.5);
+      });
+
+      test('getPercentOpen', () async {
+        gripper.percentOpen = 0.75;
+        final client = GripperServiceClient(channel);
+        final resp = await client.getPercentOpen(GetPercentOpenRequest()..name = name);
+        expect(resp.percentOpen, 0.75);
+      });
+
+      test('getProperties', () async {
+        gripper.percentOpenSupported = true;
+        final client = GripperServiceClient(channel);
+        final resp = await client.getProperties(GetPropertiesRequest()..name = name);
+        expect(resp.percentOpenSupported, true);
+      });
+
       test('extra', () async {
         expect(gripper.extra, null);
 
@@ -412,6 +472,25 @@ void main() {
         final client = GripperClient(name, channel);
         final geometries = await client.getGeometries();
         expect(geometries, gripper.geometries);
+      });
+
+      test('setPercentOpen', () async {
+        final client = GripperClient(name, channel);
+        await client.setPercentOpen(0.5);
+        expect(gripper.percentOpen, 0.5);
+      });
+
+      test('getPercentOpen', () async {
+        gripper.percentOpen = 0.75;
+        final client = GripperClient(name, channel);
+        expect(await client.getPercentOpen(), 0.75);
+      });
+
+      test('properties', () async {
+        gripper.percentOpenSupported = true;
+        final client = GripperClient(name, channel);
+        final result = await client.properties();
+        expect(result.percentOpenSupported, true);
       });
 
       test('extra', () async {

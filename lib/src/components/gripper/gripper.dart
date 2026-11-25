@@ -1,8 +1,11 @@
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/gripper/v1/gripper.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 import '../../utils.dart';
+
+/// {@category Viam SDK}
+typedef GripperProperties = GetPropertiesResponse;
 
 /// {@category Viam SDK}
 /// HoldingStatus represents whether the gripper is currently holding onto
@@ -69,6 +72,33 @@ abstract class Gripper extends Resource {
 
   /// Move the [Gripper] to the specified joint [values].
   Future<void> goToInputs(List<double> values, {Map<String, dynamic>? extra});
+
+  /// Set the opening of the [Gripper], from 0.0 (fully closed) to 1.0 (fully open).
+  ///
+  /// ```
+  /// await myGripper.setPercentOpen(0.5);
+  /// ```
+  ///
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#setpercentopen).
+  Future<void> setPercentOpen(double percentOpen, {Map<String, dynamic>? extra});
+
+  /// Get the measured opening of the [Gripper], from 0.0 (fully closed) to 1.0 (fully open).
+  ///
+  /// ```
+  /// final percentOpen = await myGripper.getPercentOpen();
+  /// ```
+  ///
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#getpercentopen).
+  Future<double> getPercentOpen({Map<String, dynamic>? extra});
+
+  /// Report which optional features this [Gripper] supports.
+  ///
+  /// ```
+  /// final properties = await myGripper.properties();
+  /// ```
+  ///
+  /// For more information, see [Gripper component](https://docs.viam.com/reference/apis/components/gripper/#getproperties).
+  Future<GripperProperties> properties({Map<String, dynamic>? extra});
 
   /// Get the kinematics data associated with the [Gripper]
   ///

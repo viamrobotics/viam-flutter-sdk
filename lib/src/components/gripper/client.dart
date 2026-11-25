@@ -1,6 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' hide GetPropertiesRequest, GetPropertiesResponse;
 import '../../gen/component/gripper/v1/gripper.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
@@ -117,5 +117,31 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
       ..values.addAll(values)
       ..extra = extra?.toStruct() ?? Struct();
     await client.goToInputs(request, options: callOptions);
+  }
+
+  @override
+  Future<void> setPercentOpen(double percentOpen, {Map<String, dynamic>? extra}) async {
+    final request = SetPercentOpenRequest()
+      ..name = name
+      ..percentOpen = percentOpen
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.setPercentOpen(request, options: callOptions);
+  }
+
+  @override
+  Future<double> getPercentOpen({Map<String, dynamic>? extra}) async {
+    final request = GetPercentOpenRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getPercentOpen(request, options: callOptions);
+    return response.percentOpen;
+  }
+
+  @override
+  Future<GripperProperties> properties({Map<String, dynamic>? extra}) async {
+    final request = GetPropertiesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    return await client.getProperties(request, options: callOptions);
   }
 }
