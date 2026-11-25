@@ -681,6 +681,9 @@ const AgentInfo$json = {
     {'1': 'git_revision', '3': 5, '4': 1, '5': 9, '10': 'gitRevision'},
     {'1': 'platform', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'platform', '17': true},
     {'1': 'platform_tags', '3': 7, '4': 3, '5': 9, '10': 'platformTags'},
+    {'1': 'module_versions', '3': 8, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleVersionInfo', '10': 'moduleVersions'},
+    {'1': 'viam_server_uptime', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'viamServerUptime'},
+    {'1': 'reconfigure_blocked', '3': 10, '4': 1, '5': 8, '10': 'reconfigureBlocked'},
   ],
   '8': [
     {'1': '_platform'},
@@ -692,7 +695,34 @@ final $typed_data.Uint8List agentInfoDescriptor = $convert.base64Decode(
     'CglBZ2VudEluZm8SEgoEaG9zdBgBIAEoCVIEaG9zdBIOCgJvcxgCIAEoCVICb3MSEAoDaXBzGA'
     'MgAygJUgNpcHMSGAoHdmVyc2lvbhgEIAEoCVIHdmVyc2lvbhIhCgxnaXRfcmV2aXNpb24YBSAB'
     'KAlSC2dpdFJldmlzaW9uEh8KCHBsYXRmb3JtGAYgASgJSABSCHBsYXRmb3JtiAEBEiMKDXBsYX'
-    'Rmb3JtX3RhZ3MYByADKAlSDHBsYXRmb3JtVGFnc0ILCglfcGxhdGZvcm0=');
+    'Rmb3JtX3RhZ3MYByADKAlSDHBsYXRmb3JtVGFncxJHCg9tb2R1bGVfdmVyc2lvbnMYCCADKAsy'
+    'Hi52aWFtLmFwcC52MS5Nb2R1bGVWZXJzaW9uSW5mb1IObW9kdWxlVmVyc2lvbnMSRwoSdmlhbV'
+    '9zZXJ2ZXJfdXB0aW1lGAkgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUhB2aWFtU2Vy'
+    'dmVyVXB0aW1lEi8KE3JlY29uZmlndXJlX2Jsb2NrZWQYCiABKAhSEnJlY29uZmlndXJlQmxvY2'
+    'tlZEILCglfcGxhdGZvcm0=');
+
+@$core.Deprecated('Use moduleVersionInfoDescriptor instead')
+const ModuleVersionInfo$json = {
+  '1': 'ModuleVersionInfo',
+  '2': [
+    {'1': 'module_id', '3': 1, '4': 1, '5': 9, '10': 'moduleId'},
+    {'1': 'module_name', '3': 8, '4': 1, '5': 9, '10': 'moduleName'},
+    {'1': 'running_version', '3': 2, '4': 1, '5': 9, '10': 'runningVersion'},
+    {'1': 'running_for', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'runningFor'},
+    {'1': 'state', '3': 4, '4': 1, '5': 14, '6': '.viam.robot.v1.ModuleStatus.State', '10': 'state'},
+    {'1': 'consecutive_failures', '3': 6, '4': 1, '5': 13, '10': 'consecutiveFailures'},
+    {'1': 'ready_count', '3': 7, '4': 1, '5': 13, '10': 'readyCount'},
+  ],
+};
+
+/// Descriptor for `ModuleVersionInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moduleVersionInfoDescriptor = $convert.base64Decode(
+    'ChFNb2R1bGVWZXJzaW9uSW5mbxIbCgltb2R1bGVfaWQYASABKAlSCG1vZHVsZUlkEh8KC21vZH'
+    'VsZV9uYW1lGAggASgJUgptb2R1bGVOYW1lEicKD3J1bm5pbmdfdmVyc2lvbhgCIAEoCVIOcnVu'
+    'bmluZ1ZlcnNpb24SOgoLcnVubmluZ19mb3IYAyABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYX'
+    'Rpb25SCnJ1bm5pbmdGb3ISNwoFc3RhdGUYBCABKA4yIS52aWFtLnJvYm90LnYxLk1vZHVsZVN0'
+    'YXR1cy5TdGF0ZVIFc3RhdGUSMQoUY29uc2VjdXRpdmVfZmFpbHVyZXMYBiABKA1SE2NvbnNlY3'
+    'V0aXZlRmFpbHVyZXMSHwoLcmVhZHlfY291bnQYByABKA1SCnJlYWR5Q291bnQ=');
 
 @$core.Deprecated('Use configRequestDescriptor instead')
 const ConfigRequest$json = {

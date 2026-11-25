@@ -473,10 +473,14 @@ class GetBatteryPercentRequest extends $pb.GeneratedMessage {
 class GetBatteryPercentResponse extends $pb.GeneratedMessage {
   factory GetBatteryPercentResponse({
     $core.double? percent,
+    $core.bool? isCharging,
   }) {
     final $result = create();
     if (percent != null) {
       $result.percent = percent;
+    }
+    if (isCharging != null) {
+      $result.isCharging = isCharging;
     }
     return $result;
   }
@@ -486,6 +490,7 @@ class GetBatteryPercentResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBatteryPercentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.powersensor.v1'), createEmptyInstance: create)
     ..a<$core.double>(1, _omitFieldNames ? '' : 'percent', $pb.PbFieldType.OD)
+    ..aOB(2, _omitFieldNames ? '' : 'isCharging')
     ..hasRequiredFields = false
   ;
 
@@ -519,6 +524,16 @@ class GetBatteryPercentResponse extends $pb.GeneratedMessage {
   $core.bool hasPercent() => $_has(0);
   @$pb.TagNumber(1)
   void clearPercent() => clearField(1);
+
+  /// Whether the battery is charging. Only meaningful when GetProperties reports is_charging_supported.
+  @$pb.TagNumber(2)
+  $core.bool get isCharging => $_getBF(1);
+  @$pb.TagNumber(2)
+  set isCharging($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIsCharging() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIsCharging() => clearField(2);
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
@@ -592,10 +607,14 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 class GetPropertiesResponse extends $pb.GeneratedMessage {
   factory GetPropertiesResponse({
     $core.bool? isBatteryPercentSupported,
+    $core.bool? isChargingSupported,
   }) {
     final $result = create();
     if (isBatteryPercentSupported != null) {
       $result.isBatteryPercentSupported = isBatteryPercentSupported;
+    }
+    if (isChargingSupported != null) {
+      $result.isChargingSupported = isChargingSupported;
     }
     return $result;
   }
@@ -605,6 +624,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.powersensor.v1'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isBatteryPercentSupported')
+    ..aOB(2, _omitFieldNames ? '' : 'isChargingSupported')
     ..hasRequiredFields = false
   ;
 
@@ -638,6 +658,16 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   $core.bool hasIsBatteryPercentSupported() => $_has(0);
   @$pb.TagNumber(1)
   void clearIsBatteryPercentSupported() => clearField(1);
+
+  /// Whether GetBatteryPercent reports a meaningful is_charging
+  @$pb.TagNumber(2)
+  $core.bool get isChargingSupported => $_getBF(1);
+  @$pb.TagNumber(2)
+  set isChargingSupported($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIsChargingSupported() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIsChargingSupported() => clearField(2);
 }
 
 

@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $9;
-import '../../../component/arm/v1/arm.pb.dart' as $16;
+import '../../../component/arm/v1/arm.pb.dart' as $17;
 import '../../../google/protobuf/struct.pb.dart' as $49;
 import '../../../google/protobuf/timestamp.pb.dart' as $50;
 import 'motion.pbenum.dart';
@@ -2538,7 +2538,7 @@ class TempStreamOptions extends $pb.GeneratedMessage {
     $core.int? armSideTargetRunwayMs,
     $core.int? sendToArmIntervalMs,
     $core.int? diagnosticsWindowSecs,
-    $16.MoveOptions? moveOptions,
+    $17.MoveOptions? moveOptions,
   }) {
     final $result = create();
     if (armSideTargetRunwayMs != null) {
@@ -2563,7 +2563,7 @@ class TempStreamOptions extends $pb.GeneratedMessage {
     ..a<$core.int>(1, _omitFieldNames ? '' : 'armSideTargetRunwayMs', $pb.PbFieldType.O3)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'sendToArmIntervalMs', $pb.PbFieldType.O3)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'diagnosticsWindowSecs', $pb.PbFieldType.O3)
-    ..aOM<$16.MoveOptions>(4, _omitFieldNames ? '' : 'moveOptions', subBuilder: $16.MoveOptions.create)
+    ..aOM<$17.MoveOptions>(4, _omitFieldNames ? '' : 'moveOptions', subBuilder: $17.MoveOptions.create)
     ..hasRequiredFields = false
   ;
 
@@ -2620,15 +2620,15 @@ class TempStreamOptions extends $pb.GeneratedMessage {
 
   /// Kinematic limits for the session's trajectory.
   @$pb.TagNumber(4)
-  $16.MoveOptions get moveOptions => $_getN(3);
+  $17.MoveOptions get moveOptions => $_getN(3);
   @$pb.TagNumber(4)
-  set moveOptions($16.MoveOptions v) { setField(4, v); }
+  set moveOptions($17.MoveOptions v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMoveOptions() => $_has(3);
   @$pb.TagNumber(4)
   void clearMoveOptions() => clearField(4);
   @$pb.TagNumber(4)
-  $16.MoveOptions ensureMoveOptions() => $_ensure(3);
+  $17.MoveOptions ensureMoveOptions() => $_ensure(3);
 }
 
 class TempStreamArmJointPositionsRequest_Init extends $pb.GeneratedMessage {
@@ -2718,7 +2718,7 @@ class TempStreamArmJointPositionsRequest_Init extends $pb.GeneratedMessage {
 
 class TempStreamArmJointPositionsRequest_Targets extends $pb.GeneratedMessage {
   factory TempStreamArmJointPositionsRequest_Targets({
-    $core.Iterable<$16.JointPositions>? positions,
+    $core.Iterable<$17.JointPositions>? positions,
   }) {
     final $result = create();
     if (positions != null) {
@@ -2731,7 +2731,7 @@ class TempStreamArmJointPositionsRequest_Targets extends $pb.GeneratedMessage {
   factory TempStreamArmJointPositionsRequest_Targets.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TempStreamArmJointPositionsRequest.Targets', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..pc<$16.JointPositions>(1, _omitFieldNames ? '' : 'positions', $pb.PbFieldType.PM, subBuilder: $16.JointPositions.create)
+    ..pc<$17.JointPositions>(1, _omitFieldNames ? '' : 'positions', $pb.PbFieldType.PM, subBuilder: $17.JointPositions.create)
     ..hasRequiredFields = false
   ;
 
@@ -2758,7 +2758,7 @@ class TempStreamArmJointPositionsRequest_Targets extends $pb.GeneratedMessage {
 
   /// Target joint positions to append to the session, in order.
   @$pb.TagNumber(1)
-  $core.List<$16.JointPositions> get positions => $_getList(0);
+  $core.List<$17.JointPositions> get positions => $_getList(0);
 }
 
 enum TempStreamArmJointPositionsRequest_Message {

@@ -15,116 +15,116 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'robot.pb.dart' as $34;
+import 'robot.pb.dart' as $15;
 
 export 'robot.pb.dart';
 
 @$pb.GrpcServiceName('viam.robot.v1.RobotService')
 class RobotServiceClient extends $grpc.Client {
-  static final _$getOperations = $grpc.ClientMethod<$34.GetOperationsRequest, $34.GetOperationsResponse>(
+  static final _$getOperations = $grpc.ClientMethod<$15.GetOperationsRequest, $15.GetOperationsResponse>(
       '/viam.robot.v1.RobotService/GetOperations',
-      ($34.GetOperationsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.GetOperationsResponse.fromBuffer(value));
-  static final _$getSessions = $grpc.ClientMethod<$34.GetSessionsRequest, $34.GetSessionsResponse>(
+      ($15.GetOperationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetOperationsResponse.fromBuffer(value));
+  static final _$getSessions = $grpc.ClientMethod<$15.GetSessionsRequest, $15.GetSessionsResponse>(
       '/viam.robot.v1.RobotService/GetSessions',
-      ($34.GetSessionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.GetSessionsResponse.fromBuffer(value));
-  static final _$resourceNames = $grpc.ClientMethod<$34.ResourceNamesRequest, $34.ResourceNamesResponse>(
+      ($15.GetSessionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetSessionsResponse.fromBuffer(value));
+  static final _$resourceNames = $grpc.ClientMethod<$15.ResourceNamesRequest, $15.ResourceNamesResponse>(
       '/viam.robot.v1.RobotService/ResourceNames',
-      ($34.ResourceNamesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.ResourceNamesResponse.fromBuffer(value));
-  static final _$resourceRPCSubtypes = $grpc.ClientMethod<$34.ResourceRPCSubtypesRequest, $34.ResourceRPCSubtypesResponse>(
+      ($15.ResourceNamesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.ResourceNamesResponse.fromBuffer(value));
+  static final _$resourceRPCSubtypes = $grpc.ClientMethod<$15.ResourceRPCSubtypesRequest, $15.ResourceRPCSubtypesResponse>(
       '/viam.robot.v1.RobotService/ResourceRPCSubtypes',
-      ($34.ResourceRPCSubtypesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.ResourceRPCSubtypesResponse.fromBuffer(value));
-  static final _$cancelOperation = $grpc.ClientMethod<$34.CancelOperationRequest, $34.CancelOperationResponse>(
+      ($15.ResourceRPCSubtypesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.ResourceRPCSubtypesResponse.fromBuffer(value));
+  static final _$cancelOperation = $grpc.ClientMethod<$15.CancelOperationRequest, $15.CancelOperationResponse>(
       '/viam.robot.v1.RobotService/CancelOperation',
-      ($34.CancelOperationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.CancelOperationResponse.fromBuffer(value));
-  static final _$blockForOperation = $grpc.ClientMethod<$34.BlockForOperationRequest, $34.BlockForOperationResponse>(
+      ($15.CancelOperationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.CancelOperationResponse.fromBuffer(value));
+  static final _$blockForOperation = $grpc.ClientMethod<$15.BlockForOperationRequest, $15.BlockForOperationResponse>(
       '/viam.robot.v1.RobotService/BlockForOperation',
-      ($34.BlockForOperationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.BlockForOperationResponse.fromBuffer(value));
-  static final _$getModelsFromModules = $grpc.ClientMethod<$34.GetModelsFromModulesRequest, $34.GetModelsFromModulesResponse>(
+      ($15.BlockForOperationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.BlockForOperationResponse.fromBuffer(value));
+  static final _$getModelsFromModules = $grpc.ClientMethod<$15.GetModelsFromModulesRequest, $15.GetModelsFromModulesResponse>(
       '/viam.robot.v1.RobotService/GetModelsFromModules',
-      ($34.GetModelsFromModulesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.GetModelsFromModulesResponse.fromBuffer(value));
-  static final _$getStatus = $grpc.ClientMethod<$34.GetStatusRequest, $34.GetStatusResponse>(
+      ($15.GetModelsFromModulesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetModelsFromModulesResponse.fromBuffer(value));
+  static final _$getStatus = $grpc.ClientMethod<$15.GetStatusRequest, $15.GetStatusResponse>(
       '/viam.robot.v1.RobotService/GetStatus',
-      ($34.GetStatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.GetStatusResponse.fromBuffer(value));
-  static final _$streamStatus = $grpc.ClientMethod<$34.StreamStatusRequest, $34.StreamStatusResponse>(
+      ($15.GetStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetStatusResponse.fromBuffer(value));
+  static final _$streamStatus = $grpc.ClientMethod<$15.StreamStatusRequest, $15.StreamStatusResponse>(
       '/viam.robot.v1.RobotService/StreamStatus',
-      ($34.StreamStatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.StreamStatusResponse.fromBuffer(value));
-  static final _$stopAll = $grpc.ClientMethod<$34.StopAllRequest, $34.StopAllResponse>(
+      ($15.StreamStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.StreamStatusResponse.fromBuffer(value));
+  static final _$stopAll = $grpc.ClientMethod<$15.StopAllRequest, $15.StopAllResponse>(
       '/viam.robot.v1.RobotService/StopAll',
-      ($34.StopAllRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.StopAllResponse.fromBuffer(value));
-  static final _$startSession = $grpc.ClientMethod<$34.StartSessionRequest, $34.StartSessionResponse>(
+      ($15.StopAllRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.StopAllResponse.fromBuffer(value));
+  static final _$startSession = $grpc.ClientMethod<$15.StartSessionRequest, $15.StartSessionResponse>(
       '/viam.robot.v1.RobotService/StartSession',
-      ($34.StartSessionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.StartSessionResponse.fromBuffer(value));
-  static final _$sendSessionHeartbeat = $grpc.ClientMethod<$34.SendSessionHeartbeatRequest, $34.SendSessionHeartbeatResponse>(
+      ($15.StartSessionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.StartSessionResponse.fromBuffer(value));
+  static final _$sendSessionHeartbeat = $grpc.ClientMethod<$15.SendSessionHeartbeatRequest, $15.SendSessionHeartbeatResponse>(
       '/viam.robot.v1.RobotService/SendSessionHeartbeat',
-      ($34.SendSessionHeartbeatRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.SendSessionHeartbeatResponse.fromBuffer(value));
-  static final _$log = $grpc.ClientMethod<$34.LogRequest, $34.LogResponse>(
+      ($15.SendSessionHeartbeatRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.SendSessionHeartbeatResponse.fromBuffer(value));
+  static final _$log = $grpc.ClientMethod<$15.LogRequest, $15.LogResponse>(
       '/viam.robot.v1.RobotService/Log',
-      ($34.LogRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.LogResponse.fromBuffer(value));
-  static final _$getCloudMetadata = $grpc.ClientMethod<$34.GetCloudMetadataRequest, $34.GetCloudMetadataResponse>(
+      ($15.LogRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.LogResponse.fromBuffer(value));
+  static final _$getCloudMetadata = $grpc.ClientMethod<$15.GetCloudMetadataRequest, $15.GetCloudMetadataResponse>(
       '/viam.robot.v1.RobotService/GetCloudMetadata',
-      ($34.GetCloudMetadataRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.GetCloudMetadataResponse.fromBuffer(value));
-  static final _$restartModule = $grpc.ClientMethod<$34.RestartModuleRequest, $34.RestartModuleResponse>(
+      ($15.GetCloudMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetCloudMetadataResponse.fromBuffer(value));
+  static final _$restartModule = $grpc.ClientMethod<$15.RestartModuleRequest, $15.RestartModuleResponse>(
       '/viam.robot.v1.RobotService/RestartModule',
-      ($34.RestartModuleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.RestartModuleResponse.fromBuffer(value));
-  static final _$shutdown = $grpc.ClientMethod<$34.ShutdownRequest, $34.ShutdownResponse>(
+      ($15.RestartModuleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.RestartModuleResponse.fromBuffer(value));
+  static final _$shutdown = $grpc.ClientMethod<$15.ShutdownRequest, $15.ShutdownResponse>(
       '/viam.robot.v1.RobotService/Shutdown',
-      ($34.ShutdownRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.ShutdownResponse.fromBuffer(value));
-  static final _$getMachineStatus = $grpc.ClientMethod<$34.GetMachineStatusRequest, $34.GetMachineStatusResponse>(
+      ($15.ShutdownRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.ShutdownResponse.fromBuffer(value));
+  static final _$getMachineStatus = $grpc.ClientMethod<$15.GetMachineStatusRequest, $15.GetMachineStatusResponse>(
       '/viam.robot.v1.RobotService/GetMachineStatus',
-      ($34.GetMachineStatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.GetMachineStatusResponse.fromBuffer(value));
-  static final _$getVersion = $grpc.ClientMethod<$34.GetVersionRequest, $34.GetVersionResponse>(
+      ($15.GetMachineStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetMachineStatusResponse.fromBuffer(value));
+  static final _$getVersion = $grpc.ClientMethod<$15.GetVersionRequest, $15.GetVersionResponse>(
       '/viam.robot.v1.RobotService/GetVersion',
-      ($34.GetVersionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.GetVersionResponse.fromBuffer(value));
-  static final _$tunnel = $grpc.ClientMethod<$34.TunnelRequest, $34.TunnelResponse>(
+      ($15.GetVersionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetVersionResponse.fromBuffer(value));
+  static final _$tunnel = $grpc.ClientMethod<$15.TunnelRequest, $15.TunnelResponse>(
       '/viam.robot.v1.RobotService/Tunnel',
-      ($34.TunnelRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.TunnelResponse.fromBuffer(value));
-  static final _$listTunnels = $grpc.ClientMethod<$34.ListTunnelsRequest, $34.ListTunnelsResponse>(
+      ($15.TunnelRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.TunnelResponse.fromBuffer(value));
+  static final _$listTunnels = $grpc.ClientMethod<$15.ListTunnelsRequest, $15.ListTunnelsResponse>(
       '/viam.robot.v1.RobotService/ListTunnels',
-      ($34.ListTunnelsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.ListTunnelsResponse.fromBuffer(value));
-  static final _$frameSystemConfig = $grpc.ClientMethod<$34.FrameSystemConfigRequest, $34.FrameSystemConfigResponse>(
+      ($15.ListTunnelsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.ListTunnelsResponse.fromBuffer(value));
+  static final _$frameSystemConfig = $grpc.ClientMethod<$15.FrameSystemConfigRequest, $15.FrameSystemConfigResponse>(
       '/viam.robot.v1.RobotService/FrameSystemConfig',
-      ($34.FrameSystemConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.FrameSystemConfigResponse.fromBuffer(value));
-  static final _$getPose = $grpc.ClientMethod<$34.GetPoseRequest, $34.GetPoseResponse>(
+      ($15.FrameSystemConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.FrameSystemConfigResponse.fromBuffer(value));
+  static final _$getPose = $grpc.ClientMethod<$15.GetPoseRequest, $15.GetPoseResponse>(
       '/viam.robot.v1.RobotService/GetPose',
-      ($34.GetPoseRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.GetPoseResponse.fromBuffer(value));
-  static final _$transformPose = $grpc.ClientMethod<$34.TransformPoseRequest, $34.TransformPoseResponse>(
+      ($15.GetPoseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetPoseResponse.fromBuffer(value));
+  static final _$transformPose = $grpc.ClientMethod<$15.TransformPoseRequest, $15.TransformPoseResponse>(
       '/viam.robot.v1.RobotService/TransformPose',
-      ($34.TransformPoseRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.TransformPoseResponse.fromBuffer(value));
-  static final _$transformPCD = $grpc.ClientMethod<$34.TransformPCDRequest, $34.TransformPCDResponse>(
+      ($15.TransformPoseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.TransformPoseResponse.fromBuffer(value));
+  static final _$transformPCD = $grpc.ClientMethod<$15.TransformPCDRequest, $15.TransformPCDResponse>(
       '/viam.robot.v1.RobotService/TransformPCD',
-      ($34.TransformPCDRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.TransformPCDResponse.fromBuffer(value));
-  static final _$sendTraces = $grpc.ClientMethod<$34.SendTracesRequest, $34.SendTracesResponse>(
+      ($15.TransformPCDRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.TransformPCDResponse.fromBuffer(value));
+  static final _$sendTraces = $grpc.ClientMethod<$15.SendTracesRequest, $15.SendTracesResponse>(
       '/viam.robot.v1.RobotService/SendTraces',
-      ($34.SendTracesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.SendTracesResponse.fromBuffer(value));
-  static final _$uploadDataFromPath = $grpc.ClientMethod<$34.UploadDataFromPathRequest, $34.UploadDataFromPathResponse>(
+      ($15.SendTracesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.SendTracesResponse.fromBuffer(value));
+  static final _$uploadDataFromPath = $grpc.ClientMethod<$15.UploadDataFromPathRequest, $15.UploadDataFromPathResponse>(
       '/viam.robot.v1.RobotService/UploadDataFromPath',
-      ($34.UploadDataFromPathRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.UploadDataFromPathResponse.fromBuffer(value));
+      ($15.UploadDataFromPathRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.UploadDataFromPathResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -132,107 +132,107 @@ class RobotServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$34.GetOperationsResponse> getOperations($34.GetOperationsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetOperationsResponse> getOperations($15.GetOperationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOperations, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.GetSessionsResponse> getSessions($34.GetSessionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetSessionsResponse> getSessions($15.GetSessionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getSessions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.ResourceNamesResponse> resourceNames($34.ResourceNamesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.ResourceNamesResponse> resourceNames($15.ResourceNamesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$resourceNames, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.ResourceRPCSubtypesResponse> resourceRPCSubtypes($34.ResourceRPCSubtypesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.ResourceRPCSubtypesResponse> resourceRPCSubtypes($15.ResourceRPCSubtypesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$resourceRPCSubtypes, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.CancelOperationResponse> cancelOperation($34.CancelOperationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.CancelOperationResponse> cancelOperation($15.CancelOperationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$cancelOperation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.BlockForOperationResponse> blockForOperation($34.BlockForOperationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.BlockForOperationResponse> blockForOperation($15.BlockForOperationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$blockForOperation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.GetModelsFromModulesResponse> getModelsFromModules($34.GetModelsFromModulesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetModelsFromModulesResponse> getModelsFromModules($15.GetModelsFromModulesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getModelsFromModules, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.GetStatusResponse> getStatus($34.GetStatusRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetStatusResponse> getStatus($15.GetStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getStatus, request, options: options);
   }
 
-  $grpc.ResponseStream<$34.StreamStatusResponse> streamStatus($34.StreamStatusRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$15.StreamStatusResponse> streamStatus($15.StreamStatusRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$streamStatus, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$34.StopAllResponse> stopAll($34.StopAllRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.StopAllResponse> stopAll($15.StopAllRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stopAll, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.StartSessionResponse> startSession($34.StartSessionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.StartSessionResponse> startSession($15.StartSessionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$startSession, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.SendSessionHeartbeatResponse> sendSessionHeartbeat($34.SendSessionHeartbeatRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.SendSessionHeartbeatResponse> sendSessionHeartbeat($15.SendSessionHeartbeatRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sendSessionHeartbeat, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.LogResponse> log($34.LogRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.LogResponse> log($15.LogRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$log, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.GetCloudMetadataResponse> getCloudMetadata($34.GetCloudMetadataRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetCloudMetadataResponse> getCloudMetadata($15.GetCloudMetadataRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getCloudMetadata, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.RestartModuleResponse> restartModule($34.RestartModuleRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.RestartModuleResponse> restartModule($15.RestartModuleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$restartModule, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.ShutdownResponse> shutdown($34.ShutdownRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.ShutdownResponse> shutdown($15.ShutdownRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$shutdown, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.GetMachineStatusResponse> getMachineStatus($34.GetMachineStatusRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetMachineStatusResponse> getMachineStatus($15.GetMachineStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMachineStatus, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.GetVersionResponse> getVersion($34.GetVersionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetVersionResponse> getVersion($15.GetVersionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getVersion, request, options: options);
   }
 
-  $grpc.ResponseStream<$34.TunnelResponse> tunnel($async.Stream<$34.TunnelRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$15.TunnelResponse> tunnel($async.Stream<$15.TunnelRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$tunnel, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.ListTunnelsResponse> listTunnels($34.ListTunnelsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.ListTunnelsResponse> listTunnels($15.ListTunnelsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listTunnels, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.FrameSystemConfigResponse> frameSystemConfig($34.FrameSystemConfigRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.FrameSystemConfigResponse> frameSystemConfig($15.FrameSystemConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$frameSystemConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.GetPoseResponse> getPose($34.GetPoseRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetPoseResponse> getPose($15.GetPoseRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPose, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.TransformPoseResponse> transformPose($34.TransformPoseRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.TransformPoseResponse> transformPose($15.TransformPoseRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$transformPose, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.TransformPCDResponse> transformPCD($34.TransformPCDRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.TransformPCDResponse> transformPCD($15.TransformPCDRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$transformPCD, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.SendTracesResponse> sendTraces($34.SendTracesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.SendTracesResponse> sendTraces($15.SendTracesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sendTraces, request, options: options);
   }
 
-  $grpc.ResponseFuture<$34.UploadDataFromPathResponse> uploadDataFromPath($34.UploadDataFromPathRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.UploadDataFromPathResponse> uploadDataFromPath($15.UploadDataFromPathRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$uploadDataFromPath, request, options: options);
   }
 }
@@ -242,314 +242,314 @@ abstract class RobotServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.robot.v1.RobotService';
 
   RobotServiceBase() {
-    $addMethod($grpc.ServiceMethod<$34.GetOperationsRequest, $34.GetOperationsResponse>(
+    $addMethod($grpc.ServiceMethod<$15.GetOperationsRequest, $15.GetOperationsResponse>(
         'GetOperations',
         getOperations_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.GetOperationsRequest.fromBuffer(value),
-        ($34.GetOperationsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.GetSessionsRequest, $34.GetSessionsResponse>(
+        ($core.List<$core.int> value) => $15.GetOperationsRequest.fromBuffer(value),
+        ($15.GetOperationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetSessionsRequest, $15.GetSessionsResponse>(
         'GetSessions',
         getSessions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.GetSessionsRequest.fromBuffer(value),
-        ($34.GetSessionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.ResourceNamesRequest, $34.ResourceNamesResponse>(
+        ($core.List<$core.int> value) => $15.GetSessionsRequest.fromBuffer(value),
+        ($15.GetSessionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.ResourceNamesRequest, $15.ResourceNamesResponse>(
         'ResourceNames',
         resourceNames_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.ResourceNamesRequest.fromBuffer(value),
-        ($34.ResourceNamesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.ResourceRPCSubtypesRequest, $34.ResourceRPCSubtypesResponse>(
+        ($core.List<$core.int> value) => $15.ResourceNamesRequest.fromBuffer(value),
+        ($15.ResourceNamesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.ResourceRPCSubtypesRequest, $15.ResourceRPCSubtypesResponse>(
         'ResourceRPCSubtypes',
         resourceRPCSubtypes_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.ResourceRPCSubtypesRequest.fromBuffer(value),
-        ($34.ResourceRPCSubtypesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.CancelOperationRequest, $34.CancelOperationResponse>(
+        ($core.List<$core.int> value) => $15.ResourceRPCSubtypesRequest.fromBuffer(value),
+        ($15.ResourceRPCSubtypesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.CancelOperationRequest, $15.CancelOperationResponse>(
         'CancelOperation',
         cancelOperation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.CancelOperationRequest.fromBuffer(value),
-        ($34.CancelOperationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.BlockForOperationRequest, $34.BlockForOperationResponse>(
+        ($core.List<$core.int> value) => $15.CancelOperationRequest.fromBuffer(value),
+        ($15.CancelOperationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.BlockForOperationRequest, $15.BlockForOperationResponse>(
         'BlockForOperation',
         blockForOperation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.BlockForOperationRequest.fromBuffer(value),
-        ($34.BlockForOperationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.GetModelsFromModulesRequest, $34.GetModelsFromModulesResponse>(
+        ($core.List<$core.int> value) => $15.BlockForOperationRequest.fromBuffer(value),
+        ($15.BlockForOperationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetModelsFromModulesRequest, $15.GetModelsFromModulesResponse>(
         'GetModelsFromModules',
         getModelsFromModules_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.GetModelsFromModulesRequest.fromBuffer(value),
-        ($34.GetModelsFromModulesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.GetStatusRequest, $34.GetStatusResponse>(
+        ($core.List<$core.int> value) => $15.GetModelsFromModulesRequest.fromBuffer(value),
+        ($15.GetModelsFromModulesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetStatusRequest, $15.GetStatusResponse>(
         'GetStatus',
         getStatus_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.GetStatusRequest.fromBuffer(value),
-        ($34.GetStatusResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.StreamStatusRequest, $34.StreamStatusResponse>(
+        ($core.List<$core.int> value) => $15.GetStatusRequest.fromBuffer(value),
+        ($15.GetStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.StreamStatusRequest, $15.StreamStatusResponse>(
         'StreamStatus',
         streamStatus_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $34.StreamStatusRequest.fromBuffer(value),
-        ($34.StreamStatusResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.StopAllRequest, $34.StopAllResponse>(
+        ($core.List<$core.int> value) => $15.StreamStatusRequest.fromBuffer(value),
+        ($15.StreamStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.StopAllRequest, $15.StopAllResponse>(
         'StopAll',
         stopAll_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.StopAllRequest.fromBuffer(value),
-        ($34.StopAllResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.StartSessionRequest, $34.StartSessionResponse>(
+        ($core.List<$core.int> value) => $15.StopAllRequest.fromBuffer(value),
+        ($15.StopAllResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.StartSessionRequest, $15.StartSessionResponse>(
         'StartSession',
         startSession_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.StartSessionRequest.fromBuffer(value),
-        ($34.StartSessionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.SendSessionHeartbeatRequest, $34.SendSessionHeartbeatResponse>(
+        ($core.List<$core.int> value) => $15.StartSessionRequest.fromBuffer(value),
+        ($15.StartSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.SendSessionHeartbeatRequest, $15.SendSessionHeartbeatResponse>(
         'SendSessionHeartbeat',
         sendSessionHeartbeat_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.SendSessionHeartbeatRequest.fromBuffer(value),
-        ($34.SendSessionHeartbeatResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.LogRequest, $34.LogResponse>(
+        ($core.List<$core.int> value) => $15.SendSessionHeartbeatRequest.fromBuffer(value),
+        ($15.SendSessionHeartbeatResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.LogRequest, $15.LogResponse>(
         'Log',
         log_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.LogRequest.fromBuffer(value),
-        ($34.LogResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.GetCloudMetadataRequest, $34.GetCloudMetadataResponse>(
+        ($core.List<$core.int> value) => $15.LogRequest.fromBuffer(value),
+        ($15.LogResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetCloudMetadataRequest, $15.GetCloudMetadataResponse>(
         'GetCloudMetadata',
         getCloudMetadata_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.GetCloudMetadataRequest.fromBuffer(value),
-        ($34.GetCloudMetadataResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.RestartModuleRequest, $34.RestartModuleResponse>(
+        ($core.List<$core.int> value) => $15.GetCloudMetadataRequest.fromBuffer(value),
+        ($15.GetCloudMetadataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.RestartModuleRequest, $15.RestartModuleResponse>(
         'RestartModule',
         restartModule_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.RestartModuleRequest.fromBuffer(value),
-        ($34.RestartModuleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.ShutdownRequest, $34.ShutdownResponse>(
+        ($core.List<$core.int> value) => $15.RestartModuleRequest.fromBuffer(value),
+        ($15.RestartModuleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.ShutdownRequest, $15.ShutdownResponse>(
         'Shutdown',
         shutdown_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.ShutdownRequest.fromBuffer(value),
-        ($34.ShutdownResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.GetMachineStatusRequest, $34.GetMachineStatusResponse>(
+        ($core.List<$core.int> value) => $15.ShutdownRequest.fromBuffer(value),
+        ($15.ShutdownResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetMachineStatusRequest, $15.GetMachineStatusResponse>(
         'GetMachineStatus',
         getMachineStatus_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.GetMachineStatusRequest.fromBuffer(value),
-        ($34.GetMachineStatusResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.GetVersionRequest, $34.GetVersionResponse>(
+        ($core.List<$core.int> value) => $15.GetMachineStatusRequest.fromBuffer(value),
+        ($15.GetMachineStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetVersionRequest, $15.GetVersionResponse>(
         'GetVersion',
         getVersion_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.GetVersionRequest.fromBuffer(value),
-        ($34.GetVersionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.TunnelRequest, $34.TunnelResponse>(
+        ($core.List<$core.int> value) => $15.GetVersionRequest.fromBuffer(value),
+        ($15.GetVersionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.TunnelRequest, $15.TunnelResponse>(
         'Tunnel',
         tunnel,
         true,
         true,
-        ($core.List<$core.int> value) => $34.TunnelRequest.fromBuffer(value),
-        ($34.TunnelResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.ListTunnelsRequest, $34.ListTunnelsResponse>(
+        ($core.List<$core.int> value) => $15.TunnelRequest.fromBuffer(value),
+        ($15.TunnelResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.ListTunnelsRequest, $15.ListTunnelsResponse>(
         'ListTunnels',
         listTunnels_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.ListTunnelsRequest.fromBuffer(value),
-        ($34.ListTunnelsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.FrameSystemConfigRequest, $34.FrameSystemConfigResponse>(
+        ($core.List<$core.int> value) => $15.ListTunnelsRequest.fromBuffer(value),
+        ($15.ListTunnelsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.FrameSystemConfigRequest, $15.FrameSystemConfigResponse>(
         'FrameSystemConfig',
         frameSystemConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.FrameSystemConfigRequest.fromBuffer(value),
-        ($34.FrameSystemConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.GetPoseRequest, $34.GetPoseResponse>(
+        ($core.List<$core.int> value) => $15.FrameSystemConfigRequest.fromBuffer(value),
+        ($15.FrameSystemConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetPoseRequest, $15.GetPoseResponse>(
         'GetPose',
         getPose_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.GetPoseRequest.fromBuffer(value),
-        ($34.GetPoseResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.TransformPoseRequest, $34.TransformPoseResponse>(
+        ($core.List<$core.int> value) => $15.GetPoseRequest.fromBuffer(value),
+        ($15.GetPoseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.TransformPoseRequest, $15.TransformPoseResponse>(
         'TransformPose',
         transformPose_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.TransformPoseRequest.fromBuffer(value),
-        ($34.TransformPoseResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.TransformPCDRequest, $34.TransformPCDResponse>(
+        ($core.List<$core.int> value) => $15.TransformPoseRequest.fromBuffer(value),
+        ($15.TransformPoseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.TransformPCDRequest, $15.TransformPCDResponse>(
         'TransformPCD',
         transformPCD_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.TransformPCDRequest.fromBuffer(value),
-        ($34.TransformPCDResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.SendTracesRequest, $34.SendTracesResponse>(
+        ($core.List<$core.int> value) => $15.TransformPCDRequest.fromBuffer(value),
+        ($15.TransformPCDResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.SendTracesRequest, $15.SendTracesResponse>(
         'SendTraces',
         sendTraces_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.SendTracesRequest.fromBuffer(value),
-        ($34.SendTracesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.UploadDataFromPathRequest, $34.UploadDataFromPathResponse>(
+        ($core.List<$core.int> value) => $15.SendTracesRequest.fromBuffer(value),
+        ($15.SendTracesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.UploadDataFromPathRequest, $15.UploadDataFromPathResponse>(
         'UploadDataFromPath',
         uploadDataFromPath_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.UploadDataFromPathRequest.fromBuffer(value),
-        ($34.UploadDataFromPathResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $15.UploadDataFromPathRequest.fromBuffer(value),
+        ($15.UploadDataFromPathResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$34.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$34.GetOperationsRequest> request) async {
+  $async.Future<$15.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$15.GetOperationsRequest> request) async {
     return getOperations(call, await request);
   }
 
-  $async.Future<$34.GetSessionsResponse> getSessions_Pre($grpc.ServiceCall call, $async.Future<$34.GetSessionsRequest> request) async {
+  $async.Future<$15.GetSessionsResponse> getSessions_Pre($grpc.ServiceCall call, $async.Future<$15.GetSessionsRequest> request) async {
     return getSessions(call, await request);
   }
 
-  $async.Future<$34.ResourceNamesResponse> resourceNames_Pre($grpc.ServiceCall call, $async.Future<$34.ResourceNamesRequest> request) async {
+  $async.Future<$15.ResourceNamesResponse> resourceNames_Pre($grpc.ServiceCall call, $async.Future<$15.ResourceNamesRequest> request) async {
     return resourceNames(call, await request);
   }
 
-  $async.Future<$34.ResourceRPCSubtypesResponse> resourceRPCSubtypes_Pre($grpc.ServiceCall call, $async.Future<$34.ResourceRPCSubtypesRequest> request) async {
+  $async.Future<$15.ResourceRPCSubtypesResponse> resourceRPCSubtypes_Pre($grpc.ServiceCall call, $async.Future<$15.ResourceRPCSubtypesRequest> request) async {
     return resourceRPCSubtypes(call, await request);
   }
 
-  $async.Future<$34.CancelOperationResponse> cancelOperation_Pre($grpc.ServiceCall call, $async.Future<$34.CancelOperationRequest> request) async {
+  $async.Future<$15.CancelOperationResponse> cancelOperation_Pre($grpc.ServiceCall call, $async.Future<$15.CancelOperationRequest> request) async {
     return cancelOperation(call, await request);
   }
 
-  $async.Future<$34.BlockForOperationResponse> blockForOperation_Pre($grpc.ServiceCall call, $async.Future<$34.BlockForOperationRequest> request) async {
+  $async.Future<$15.BlockForOperationResponse> blockForOperation_Pre($grpc.ServiceCall call, $async.Future<$15.BlockForOperationRequest> request) async {
     return blockForOperation(call, await request);
   }
 
-  $async.Future<$34.GetModelsFromModulesResponse> getModelsFromModules_Pre($grpc.ServiceCall call, $async.Future<$34.GetModelsFromModulesRequest> request) async {
+  $async.Future<$15.GetModelsFromModulesResponse> getModelsFromModules_Pre($grpc.ServiceCall call, $async.Future<$15.GetModelsFromModulesRequest> request) async {
     return getModelsFromModules(call, await request);
   }
 
-  $async.Future<$34.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$34.GetStatusRequest> request) async {
+  $async.Future<$15.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$15.GetStatusRequest> request) async {
     return getStatus(call, await request);
   }
 
-  $async.Stream<$34.StreamStatusResponse> streamStatus_Pre($grpc.ServiceCall call, $async.Future<$34.StreamStatusRequest> request) async* {
+  $async.Stream<$15.StreamStatusResponse> streamStatus_Pre($grpc.ServiceCall call, $async.Future<$15.StreamStatusRequest> request) async* {
     yield* streamStatus(call, await request);
   }
 
-  $async.Future<$34.StopAllResponse> stopAll_Pre($grpc.ServiceCall call, $async.Future<$34.StopAllRequest> request) async {
+  $async.Future<$15.StopAllResponse> stopAll_Pre($grpc.ServiceCall call, $async.Future<$15.StopAllRequest> request) async {
     return stopAll(call, await request);
   }
 
-  $async.Future<$34.StartSessionResponse> startSession_Pre($grpc.ServiceCall call, $async.Future<$34.StartSessionRequest> request) async {
+  $async.Future<$15.StartSessionResponse> startSession_Pre($grpc.ServiceCall call, $async.Future<$15.StartSessionRequest> request) async {
     return startSession(call, await request);
   }
 
-  $async.Future<$34.SendSessionHeartbeatResponse> sendSessionHeartbeat_Pre($grpc.ServiceCall call, $async.Future<$34.SendSessionHeartbeatRequest> request) async {
+  $async.Future<$15.SendSessionHeartbeatResponse> sendSessionHeartbeat_Pre($grpc.ServiceCall call, $async.Future<$15.SendSessionHeartbeatRequest> request) async {
     return sendSessionHeartbeat(call, await request);
   }
 
-  $async.Future<$34.LogResponse> log_Pre($grpc.ServiceCall call, $async.Future<$34.LogRequest> request) async {
+  $async.Future<$15.LogResponse> log_Pre($grpc.ServiceCall call, $async.Future<$15.LogRequest> request) async {
     return log(call, await request);
   }
 
-  $async.Future<$34.GetCloudMetadataResponse> getCloudMetadata_Pre($grpc.ServiceCall call, $async.Future<$34.GetCloudMetadataRequest> request) async {
+  $async.Future<$15.GetCloudMetadataResponse> getCloudMetadata_Pre($grpc.ServiceCall call, $async.Future<$15.GetCloudMetadataRequest> request) async {
     return getCloudMetadata(call, await request);
   }
 
-  $async.Future<$34.RestartModuleResponse> restartModule_Pre($grpc.ServiceCall call, $async.Future<$34.RestartModuleRequest> request) async {
+  $async.Future<$15.RestartModuleResponse> restartModule_Pre($grpc.ServiceCall call, $async.Future<$15.RestartModuleRequest> request) async {
     return restartModule(call, await request);
   }
 
-  $async.Future<$34.ShutdownResponse> shutdown_Pre($grpc.ServiceCall call, $async.Future<$34.ShutdownRequest> request) async {
+  $async.Future<$15.ShutdownResponse> shutdown_Pre($grpc.ServiceCall call, $async.Future<$15.ShutdownRequest> request) async {
     return shutdown(call, await request);
   }
 
-  $async.Future<$34.GetMachineStatusResponse> getMachineStatus_Pre($grpc.ServiceCall call, $async.Future<$34.GetMachineStatusRequest> request) async {
+  $async.Future<$15.GetMachineStatusResponse> getMachineStatus_Pre($grpc.ServiceCall call, $async.Future<$15.GetMachineStatusRequest> request) async {
     return getMachineStatus(call, await request);
   }
 
-  $async.Future<$34.GetVersionResponse> getVersion_Pre($grpc.ServiceCall call, $async.Future<$34.GetVersionRequest> request) async {
+  $async.Future<$15.GetVersionResponse> getVersion_Pre($grpc.ServiceCall call, $async.Future<$15.GetVersionRequest> request) async {
     return getVersion(call, await request);
   }
 
-  $async.Future<$34.ListTunnelsResponse> listTunnels_Pre($grpc.ServiceCall call, $async.Future<$34.ListTunnelsRequest> request) async {
+  $async.Future<$15.ListTunnelsResponse> listTunnels_Pre($grpc.ServiceCall call, $async.Future<$15.ListTunnelsRequest> request) async {
     return listTunnels(call, await request);
   }
 
-  $async.Future<$34.FrameSystemConfigResponse> frameSystemConfig_Pre($grpc.ServiceCall call, $async.Future<$34.FrameSystemConfigRequest> request) async {
+  $async.Future<$15.FrameSystemConfigResponse> frameSystemConfig_Pre($grpc.ServiceCall call, $async.Future<$15.FrameSystemConfigRequest> request) async {
     return frameSystemConfig(call, await request);
   }
 
-  $async.Future<$34.GetPoseResponse> getPose_Pre($grpc.ServiceCall call, $async.Future<$34.GetPoseRequest> request) async {
+  $async.Future<$15.GetPoseResponse> getPose_Pre($grpc.ServiceCall call, $async.Future<$15.GetPoseRequest> request) async {
     return getPose(call, await request);
   }
 
-  $async.Future<$34.TransformPoseResponse> transformPose_Pre($grpc.ServiceCall call, $async.Future<$34.TransformPoseRequest> request) async {
+  $async.Future<$15.TransformPoseResponse> transformPose_Pre($grpc.ServiceCall call, $async.Future<$15.TransformPoseRequest> request) async {
     return transformPose(call, await request);
   }
 
-  $async.Future<$34.TransformPCDResponse> transformPCD_Pre($grpc.ServiceCall call, $async.Future<$34.TransformPCDRequest> request) async {
+  $async.Future<$15.TransformPCDResponse> transformPCD_Pre($grpc.ServiceCall call, $async.Future<$15.TransformPCDRequest> request) async {
     return transformPCD(call, await request);
   }
 
-  $async.Future<$34.SendTracesResponse> sendTraces_Pre($grpc.ServiceCall call, $async.Future<$34.SendTracesRequest> request) async {
+  $async.Future<$15.SendTracesResponse> sendTraces_Pre($grpc.ServiceCall call, $async.Future<$15.SendTracesRequest> request) async {
     return sendTraces(call, await request);
   }
 
-  $async.Future<$34.UploadDataFromPathResponse> uploadDataFromPath_Pre($grpc.ServiceCall call, $async.Future<$34.UploadDataFromPathRequest> request) async {
+  $async.Future<$15.UploadDataFromPathResponse> uploadDataFromPath_Pre($grpc.ServiceCall call, $async.Future<$15.UploadDataFromPathRequest> request) async {
     return uploadDataFromPath(call, await request);
   }
 
-  $async.Future<$34.GetOperationsResponse> getOperations($grpc.ServiceCall call, $34.GetOperationsRequest request);
-  $async.Future<$34.GetSessionsResponse> getSessions($grpc.ServiceCall call, $34.GetSessionsRequest request);
-  $async.Future<$34.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $34.ResourceNamesRequest request);
-  $async.Future<$34.ResourceRPCSubtypesResponse> resourceRPCSubtypes($grpc.ServiceCall call, $34.ResourceRPCSubtypesRequest request);
-  $async.Future<$34.CancelOperationResponse> cancelOperation($grpc.ServiceCall call, $34.CancelOperationRequest request);
-  $async.Future<$34.BlockForOperationResponse> blockForOperation($grpc.ServiceCall call, $34.BlockForOperationRequest request);
-  $async.Future<$34.GetModelsFromModulesResponse> getModelsFromModules($grpc.ServiceCall call, $34.GetModelsFromModulesRequest request);
-  $async.Future<$34.GetStatusResponse> getStatus($grpc.ServiceCall call, $34.GetStatusRequest request);
-  $async.Stream<$34.StreamStatusResponse> streamStatus($grpc.ServiceCall call, $34.StreamStatusRequest request);
-  $async.Future<$34.StopAllResponse> stopAll($grpc.ServiceCall call, $34.StopAllRequest request);
-  $async.Future<$34.StartSessionResponse> startSession($grpc.ServiceCall call, $34.StartSessionRequest request);
-  $async.Future<$34.SendSessionHeartbeatResponse> sendSessionHeartbeat($grpc.ServiceCall call, $34.SendSessionHeartbeatRequest request);
-  $async.Future<$34.LogResponse> log($grpc.ServiceCall call, $34.LogRequest request);
-  $async.Future<$34.GetCloudMetadataResponse> getCloudMetadata($grpc.ServiceCall call, $34.GetCloudMetadataRequest request);
-  $async.Future<$34.RestartModuleResponse> restartModule($grpc.ServiceCall call, $34.RestartModuleRequest request);
-  $async.Future<$34.ShutdownResponse> shutdown($grpc.ServiceCall call, $34.ShutdownRequest request);
-  $async.Future<$34.GetMachineStatusResponse> getMachineStatus($grpc.ServiceCall call, $34.GetMachineStatusRequest request);
-  $async.Future<$34.GetVersionResponse> getVersion($grpc.ServiceCall call, $34.GetVersionRequest request);
-  $async.Stream<$34.TunnelResponse> tunnel($grpc.ServiceCall call, $async.Stream<$34.TunnelRequest> request);
-  $async.Future<$34.ListTunnelsResponse> listTunnels($grpc.ServiceCall call, $34.ListTunnelsRequest request);
-  $async.Future<$34.FrameSystemConfigResponse> frameSystemConfig($grpc.ServiceCall call, $34.FrameSystemConfigRequest request);
-  $async.Future<$34.GetPoseResponse> getPose($grpc.ServiceCall call, $34.GetPoseRequest request);
-  $async.Future<$34.TransformPoseResponse> transformPose($grpc.ServiceCall call, $34.TransformPoseRequest request);
-  $async.Future<$34.TransformPCDResponse> transformPCD($grpc.ServiceCall call, $34.TransformPCDRequest request);
-  $async.Future<$34.SendTracesResponse> sendTraces($grpc.ServiceCall call, $34.SendTracesRequest request);
-  $async.Future<$34.UploadDataFromPathResponse> uploadDataFromPath($grpc.ServiceCall call, $34.UploadDataFromPathRequest request);
+  $async.Future<$15.GetOperationsResponse> getOperations($grpc.ServiceCall call, $15.GetOperationsRequest request);
+  $async.Future<$15.GetSessionsResponse> getSessions($grpc.ServiceCall call, $15.GetSessionsRequest request);
+  $async.Future<$15.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $15.ResourceNamesRequest request);
+  $async.Future<$15.ResourceRPCSubtypesResponse> resourceRPCSubtypes($grpc.ServiceCall call, $15.ResourceRPCSubtypesRequest request);
+  $async.Future<$15.CancelOperationResponse> cancelOperation($grpc.ServiceCall call, $15.CancelOperationRequest request);
+  $async.Future<$15.BlockForOperationResponse> blockForOperation($grpc.ServiceCall call, $15.BlockForOperationRequest request);
+  $async.Future<$15.GetModelsFromModulesResponse> getModelsFromModules($grpc.ServiceCall call, $15.GetModelsFromModulesRequest request);
+  $async.Future<$15.GetStatusResponse> getStatus($grpc.ServiceCall call, $15.GetStatusRequest request);
+  $async.Stream<$15.StreamStatusResponse> streamStatus($grpc.ServiceCall call, $15.StreamStatusRequest request);
+  $async.Future<$15.StopAllResponse> stopAll($grpc.ServiceCall call, $15.StopAllRequest request);
+  $async.Future<$15.StartSessionResponse> startSession($grpc.ServiceCall call, $15.StartSessionRequest request);
+  $async.Future<$15.SendSessionHeartbeatResponse> sendSessionHeartbeat($grpc.ServiceCall call, $15.SendSessionHeartbeatRequest request);
+  $async.Future<$15.LogResponse> log($grpc.ServiceCall call, $15.LogRequest request);
+  $async.Future<$15.GetCloudMetadataResponse> getCloudMetadata($grpc.ServiceCall call, $15.GetCloudMetadataRequest request);
+  $async.Future<$15.RestartModuleResponse> restartModule($grpc.ServiceCall call, $15.RestartModuleRequest request);
+  $async.Future<$15.ShutdownResponse> shutdown($grpc.ServiceCall call, $15.ShutdownRequest request);
+  $async.Future<$15.GetMachineStatusResponse> getMachineStatus($grpc.ServiceCall call, $15.GetMachineStatusRequest request);
+  $async.Future<$15.GetVersionResponse> getVersion($grpc.ServiceCall call, $15.GetVersionRequest request);
+  $async.Stream<$15.TunnelResponse> tunnel($grpc.ServiceCall call, $async.Stream<$15.TunnelRequest> request);
+  $async.Future<$15.ListTunnelsResponse> listTunnels($grpc.ServiceCall call, $15.ListTunnelsRequest request);
+  $async.Future<$15.FrameSystemConfigResponse> frameSystemConfig($grpc.ServiceCall call, $15.FrameSystemConfigRequest request);
+  $async.Future<$15.GetPoseResponse> getPose($grpc.ServiceCall call, $15.GetPoseRequest request);
+  $async.Future<$15.TransformPoseResponse> transformPose($grpc.ServiceCall call, $15.TransformPoseRequest request);
+  $async.Future<$15.TransformPCDResponse> transformPCD($grpc.ServiceCall call, $15.TransformPCDRequest request);
+  $async.Future<$15.SendTracesResponse> sendTraces($grpc.ServiceCall call, $15.SendTracesRequest request);
+  $async.Future<$15.UploadDataFromPathResponse> uploadDataFromPath($grpc.ServiceCall call, $15.UploadDataFromPathRequest request);
 }
