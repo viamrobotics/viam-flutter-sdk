@@ -765,6 +765,73 @@ class Capsule extends $pb.GeneratedMessage {
   void clearLengthMm() => clearField(2);
 }
 
+/// Cylinder is a solid right circular cylinder, flat end caps included, whose axis is the local Z
+/// axis of the geometry's center pose.
+class Cylinder extends $pb.GeneratedMessage {
+  factory Cylinder({
+    $core.double? radiusMm,
+    $core.double? lengthMm,
+  }) {
+    final $result = create();
+    if (radiusMm != null) {
+      $result.radiusMm = radiusMm;
+    }
+    if (lengthMm != null) {
+      $result.lengthMm = lengthMm;
+    }
+    return $result;
+  }
+  Cylinder._() : super();
+  factory Cylinder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Cylinder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Cylinder', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'radiusMm', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'lengthMm', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Cylinder clone() => Cylinder()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Cylinder copyWith(void Function(Cylinder) updates) => super.copyWith((message) => updates(message as Cylinder)) as Cylinder;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Cylinder create() => Cylinder._();
+  Cylinder createEmptyInstance() => create();
+  static $pb.PbList<Cylinder> createRepeated() => $pb.PbList<Cylinder>();
+  @$core.pragma('dart2js:noInline')
+  static Cylinder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Cylinder>(create);
+  static Cylinder? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get radiusMm => $_getN(0);
+  @$pb.TagNumber(1)
+  set radiusMm($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRadiusMm() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRadiusMm() => clearField(1);
+
+  /// Full end-to-end length along the cylinder's axis.
+  @$pb.TagNumber(2)
+  $core.double get lengthMm => $_getN(1);
+  @$pb.TagNumber(2)
+  set lengthMm($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLengthMm() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLengthMm() => clearField(2);
+}
+
 /// RectangularPrism contains a Vector3 field corresponding to the X, Y, Z dimensions of the prism in mms
 /// These dimensions are with respect to the referenceframe in which the RectangularPrism is defined
 class RectangularPrism extends $pb.GeneratedMessage {
@@ -956,6 +1023,7 @@ enum Geometry_GeometryType {
   capsule, 
   mesh, 
   pointcloud, 
+  cylinder, 
   notSet
 }
 
@@ -969,6 +1037,7 @@ class Geometry extends $pb.GeneratedMessage {
     Capsule? capsule,
     Mesh? mesh,
     PointCloud? pointcloud,
+    Cylinder? cylinder,
   }) {
     final $result = create();
     if (center != null) {
@@ -992,6 +1061,9 @@ class Geometry extends $pb.GeneratedMessage {
     if (pointcloud != null) {
       $result.pointcloud = pointcloud;
     }
+    if (cylinder != null) {
+      $result.cylinder = cylinder;
+    }
     return $result;
   }
   Geometry._() : super();
@@ -1004,10 +1076,11 @@ class Geometry extends $pb.GeneratedMessage {
     5 : Geometry_GeometryType.capsule,
     6 : Geometry_GeometryType.mesh,
     7 : Geometry_GeometryType.pointcloud,
+    8 : Geometry_GeometryType.cylinder,
     0 : Geometry_GeometryType.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Geometry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 5, 6, 7])
+    ..oo(0, [2, 3, 5, 6, 7, 8])
     ..aOM<Pose>(1, _omitFieldNames ? '' : 'center', subBuilder: Pose.create)
     ..aOM<Sphere>(2, _omitFieldNames ? '' : 'sphere', subBuilder: Sphere.create)
     ..aOM<RectangularPrism>(3, _omitFieldNames ? '' : 'box', subBuilder: RectangularPrism.create)
@@ -1015,6 +1088,7 @@ class Geometry extends $pb.GeneratedMessage {
     ..aOM<Capsule>(5, _omitFieldNames ? '' : 'capsule', subBuilder: Capsule.create)
     ..aOM<Mesh>(6, _omitFieldNames ? '' : 'mesh', subBuilder: Mesh.create)
     ..aOM<PointCloud>(7, _omitFieldNames ? '' : 'pointcloud', subBuilder: PointCloud.create)
+    ..aOM<Cylinder>(8, _omitFieldNames ? '' : 'cylinder', subBuilder: Cylinder.create)
     ..hasRequiredFields = false
   ;
 
@@ -1118,6 +1192,17 @@ class Geometry extends $pb.GeneratedMessage {
   void clearPointcloud() => clearField(7);
   @$pb.TagNumber(7)
   PointCloud ensurePointcloud() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  Cylinder get cylinder => $_getN(7);
+  @$pb.TagNumber(8)
+  set cylinder(Cylinder v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCylinder() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCylinder() => clearField(8);
+  @$pb.TagNumber(8)
+  Cylinder ensureCylinder() => $_ensure(7);
 }
 
 /// GeometriesinFrame contains the dimensions of a given geometry, pose of its center point, and the reference frame by which it was

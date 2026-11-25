@@ -114,12 +114,14 @@ const GetBatteryPercentResponse$json = {
   '1': 'GetBatteryPercentResponse',
   '2': [
     {'1': 'percent', '3': 1, '4': 1, '5': 1, '10': 'percent'},
+    {'1': 'is_charging', '3': 2, '4': 1, '5': 8, '10': 'isCharging'},
   ],
 };
 
 /// Descriptor for `GetBatteryPercentResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getBatteryPercentResponseDescriptor = $convert.base64Decode(
-    'ChlHZXRCYXR0ZXJ5UGVyY2VudFJlc3BvbnNlEhgKB3BlcmNlbnQYASABKAFSB3BlcmNlbnQ=');
+    'ChlHZXRCYXR0ZXJ5UGVyY2VudFJlc3BvbnNlEhgKB3BlcmNlbnQYASABKAFSB3BlcmNlbnQSHw'
+    'oLaXNfY2hhcmdpbmcYAiABKAhSCmlzQ2hhcmdpbmc=');
 
 @$core.Deprecated('Use getPropertiesRequestDescriptor instead')
 const GetPropertiesRequest$json = {
@@ -140,11 +142,13 @@ const GetPropertiesResponse$json = {
   '1': 'GetPropertiesResponse',
   '2': [
     {'1': 'is_battery_percent_supported', '3': 1, '4': 1, '5': 8, '10': 'isBatteryPercentSupported'},
+    {'1': 'is_charging_supported', '3': 2, '4': 1, '5': 8, '10': 'isChargingSupported'},
   ],
 };
 
 /// Descriptor for `GetPropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
     'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USPwocaXNfYmF0dGVyeV9wZXJjZW50X3N1cHBvcnRlZB'
-    'gBIAEoCFIZaXNCYXR0ZXJ5UGVyY2VudFN1cHBvcnRlZA==');
+    'gBIAEoCFIZaXNCYXR0ZXJ5UGVyY2VudFN1cHBvcnRlZBIyChVpc19jaGFyZ2luZ19zdXBwb3J0'
+    'ZWQYAiABKAhSE2lzQ2hhcmdpbmdTdXBwb3J0ZWQ=');
 

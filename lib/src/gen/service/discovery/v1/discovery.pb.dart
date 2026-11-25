@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../app/v1/robot.pb.dart' as $15;
+import '../../../app/v1/robot.pb.dart' as $16;
 import '../../../google/protobuf/struct.pb.dart' as $49;
 
 class DiscoverResourcesRequest extends $pb.GeneratedMessage {
@@ -86,7 +86,7 @@ class DiscoverResourcesRequest extends $pb.GeneratedMessage {
 
 class DiscoverResourcesResponse extends $pb.GeneratedMessage {
   factory DiscoverResourcesResponse({
-    $core.Iterable<$15.ComponentConfig>? discoveries,
+    $core.Iterable<$16.ComponentConfig>? discoveries,
   }) {
     final $result = create();
     if (discoveries != null) {
@@ -99,7 +99,7 @@ class DiscoverResourcesResponse extends $pb.GeneratedMessage {
   factory DiscoverResourcesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DiscoverResourcesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.discovery.v1'), createEmptyInstance: create)
-    ..pc<$15.ComponentConfig>(1, _omitFieldNames ? '' : 'discoveries', $pb.PbFieldType.PM, subBuilder: $15.ComponentConfig.create)
+    ..pc<$16.ComponentConfig>(1, _omitFieldNames ? '' : 'discoveries', $pb.PbFieldType.PM, subBuilder: $16.ComponentConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -126,7 +126,7 @@ class DiscoverResourcesResponse extends $pb.GeneratedMessage {
 
   /// list of ComponentConfigs that describe the components found by a discover service.
   @$pb.TagNumber(1)
-  $core.List<$15.ComponentConfig> get discoveries => $_getList(0);
+  $core.List<$16.ComponentConfig> get discoveries => $_getList(0);
 }
 
 

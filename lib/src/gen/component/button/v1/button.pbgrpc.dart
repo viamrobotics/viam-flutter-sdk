@@ -16,16 +16,16 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $9;
-import 'button.pb.dart' as $21;
+import 'button.pb.dart' as $22;
 
 export 'button.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.button.v1.ButtonService')
 class ButtonServiceClient extends $grpc.Client {
-  static final _$push = $grpc.ClientMethod<$21.PushRequest, $21.PushResponse>(
+  static final _$push = $grpc.ClientMethod<$22.PushRequest, $22.PushResponse>(
       '/viam.component.button.v1.ButtonService/Push',
-      ($21.PushRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $21.PushResponse.fromBuffer(value));
+      ($22.PushRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $22.PushResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.component.button.v1.ButtonService/DoCommand',
       ($9.DoCommandRequest value) => value.writeToBuffer(),
@@ -41,7 +41,7 @@ class ButtonServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$21.PushResponse> push($21.PushRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$22.PushResponse> push($22.PushRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$push, request, options: options);
   }
 
@@ -59,13 +59,13 @@ abstract class ButtonServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.button.v1.ButtonService';
 
   ButtonServiceBase() {
-    $addMethod($grpc.ServiceMethod<$21.PushRequest, $21.PushResponse>(
+    $addMethod($grpc.ServiceMethod<$22.PushRequest, $22.PushResponse>(
         'Push',
         push_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $21.PushRequest.fromBuffer(value),
-        ($21.PushResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $22.PushRequest.fromBuffer(value),
+        ($22.PushResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -82,7 +82,7 @@ abstract class ButtonServiceBase extends $grpc.Service {
         ($9.GetStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$21.PushResponse> push_Pre($grpc.ServiceCall call, $async.Future<$21.PushRequest> request) async {
+  $async.Future<$22.PushResponse> push_Pre($grpc.ServiceCall call, $async.Future<$22.PushRequest> request) async {
     return push(call, await request);
   }
 
@@ -94,7 +94,7 @@ abstract class ButtonServiceBase extends $grpc.Service {
     return getStatus(call, await request);
   }
 
-  $async.Future<$21.PushResponse> push($grpc.ServiceCall call, $21.PushRequest request);
+  $async.Future<$22.PushResponse> push($grpc.ServiceCall call, $22.PushRequest request);
   $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
   $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
 }

@@ -15,7 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $9;
-import '../../../component/camera/v1/camera.pb.dart' as $22;
+import '../../../component/camera/v1/camera.pb.dart' as $23;
 import '../../../google/protobuf/struct.pb.dart' as $49;
 
 class GetDetectionsRequest extends $pb.GeneratedMessage {
@@ -1482,7 +1482,7 @@ class CaptureAllFromCameraRequest extends $pb.GeneratedMessage {
 
 class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
   factory CaptureAllFromCameraResponse({
-    $22.Image? image,
+    $23.Image? image,
     $core.Iterable<Detection>? detections,
     $core.Iterable<Classification>? classifications,
     $core.Iterable<$9.PointCloudObject>? objects,
@@ -1515,7 +1515,7 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
   factory CaptureAllFromCameraResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureAllFromCameraResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.vision.v1'), createEmptyInstance: create)
-    ..aOM<$22.Image>(1, _omitFieldNames ? '' : 'image', subBuilder: $22.Image.create)
+    ..aOM<$23.Image>(1, _omitFieldNames ? '' : 'image', subBuilder: $23.Image.create)
     ..pc<Detection>(2, _omitFieldNames ? '' : 'detections', $pb.PbFieldType.PM, subBuilder: Detection.create)
     ..pc<Classification>(3, _omitFieldNames ? '' : 'classifications', $pb.PbFieldType.PM, subBuilder: Classification.create)
     ..pc<$9.PointCloudObject>(4, _omitFieldNames ? '' : 'objects', $pb.PbFieldType.PM, subBuilder: $9.PointCloudObject.create)
@@ -1546,15 +1546,15 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
   static CaptureAllFromCameraResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $22.Image get image => $_getN(0);
+  $23.Image get image => $_getN(0);
   @$pb.TagNumber(1)
-  set image($22.Image v) { setField(1, v); }
+  set image($23.Image v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasImage() => $_has(0);
   @$pb.TagNumber(1)
   void clearImage() => clearField(1);
   @$pb.TagNumber(1)
-  $22.Image ensureImage() => $_ensure(0);
+  $23.Image ensureImage() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<Detection> get detections => $_getList(1);

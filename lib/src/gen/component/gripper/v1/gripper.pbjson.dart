@@ -190,3 +190,82 @@ const GoToInputsResponse$json = {
 final $typed_data.Uint8List goToInputsResponseDescriptor = $convert.base64Decode(
     'ChJHb1RvSW5wdXRzUmVzcG9uc2U=');
 
+@$core.Deprecated('Use setPercentOpenRequestDescriptor instead')
+const SetPercentOpenRequest$json = {
+  '1': 'SetPercentOpenRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'percent_open', '3': 2, '4': 1, '5': 1, '10': 'percentOpen'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `SetPercentOpenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setPercentOpenRequestDescriptor = $convert.base64Decode(
+    'ChVTZXRQZXJjZW50T3BlblJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIhCgxwZXJjZW50X2'
+    '9wZW4YAiABKAFSC3BlcmNlbnRPcGVuEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVm'
+    'LlN0cnVjdFIFZXh0cmE=');
+
+@$core.Deprecated('Use setPercentOpenResponseDescriptor instead')
+const SetPercentOpenResponse$json = {
+  '1': 'SetPercentOpenResponse',
+};
+
+/// Descriptor for `SetPercentOpenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setPercentOpenResponseDescriptor = $convert.base64Decode(
+    'ChZTZXRQZXJjZW50T3BlblJlc3BvbnNl');
+
+@$core.Deprecated('Use getPercentOpenRequestDescriptor instead')
+const GetPercentOpenRequest$json = {
+  '1': 'GetPercentOpenRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetPercentOpenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPercentOpenRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRQZXJjZW50T3BlblJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRItCgVleHRyYRhjIA'
+    'EoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
+
+@$core.Deprecated('Use getPercentOpenResponseDescriptor instead')
+const GetPercentOpenResponse$json = {
+  '1': 'GetPercentOpenResponse',
+  '2': [
+    {'1': 'percent_open', '3': 1, '4': 1, '5': 1, '10': 'percentOpen'},
+  ],
+};
+
+/// Descriptor for `GetPercentOpenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPercentOpenResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRQZXJjZW50T3BlblJlc3BvbnNlEiEKDHBlcmNlbnRfb3BlbhgBIAEoAVILcGVyY2VudE'
+    '9wZW4=');
+
+@$core.Deprecated('Use getPropertiesRequestDescriptor instead')
+const GetPropertiesRequest$json = {
+  '1': 'GetPropertiesRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRQcm9wZXJ0aWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGGMgAS'
+    'gLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+
+@$core.Deprecated('Use getPropertiesResponseDescriptor instead')
+const GetPropertiesResponse$json = {
+  '1': 'GetPropertiesResponse',
+  '2': [
+    {'1': 'percent_open_supported', '3': 1, '4': 1, '5': 8, '10': 'percentOpenSupported'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USNAoWcGVyY2VudF9vcGVuX3N1cHBvcnRlZBgBIAEoCF'
+    'IUcGVyY2VudE9wZW5TdXBwb3J0ZWQ=');
+

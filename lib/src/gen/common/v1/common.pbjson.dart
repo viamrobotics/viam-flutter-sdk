@@ -178,6 +178,20 @@ final $typed_data.Uint8List capsuleDescriptor = $convert.base64Decode(
     'CgdDYXBzdWxlEhsKCXJhZGl1c19tbRgBIAEoAVIIcmFkaXVzTW0SGwoJbGVuZ3RoX21tGAIgAS'
     'gBUghsZW5ndGhNbQ==');
 
+@$core.Deprecated('Use cylinderDescriptor instead')
+const Cylinder$json = {
+  '1': 'Cylinder',
+  '2': [
+    {'1': 'radius_mm', '3': 1, '4': 1, '5': 1, '10': 'radiusMm'},
+    {'1': 'length_mm', '3': 2, '4': 1, '5': 1, '10': 'lengthMm'},
+  ],
+};
+
+/// Descriptor for `Cylinder`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cylinderDescriptor = $convert.base64Decode(
+    'CghDeWxpbmRlchIbCglyYWRpdXNfbW0YASABKAFSCHJhZGl1c01tEhsKCWxlbmd0aF9tbRgCIA'
+    'EoAVIIbGVuZ3RoTW0=');
+
 @$core.Deprecated('Use rectangularPrismDescriptor instead')
 const RectangularPrism$json = {
   '1': 'RectangularPrism',
@@ -233,6 +247,7 @@ const Geometry$json = {
     {'1': 'capsule', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.Capsule', '9': 0, '10': 'capsule'},
     {'1': 'mesh', '3': 6, '4': 1, '5': 11, '6': '.viam.common.v1.Mesh', '9': 0, '10': 'mesh'},
     {'1': 'pointcloud', '3': 7, '4': 1, '5': 11, '6': '.viam.common.v1.PointCloud', '9': 0, '10': 'pointcloud'},
+    {'1': 'cylinder', '3': 8, '4': 1, '5': 11, '6': '.viam.common.v1.Cylinder', '9': 0, '10': 'cylinder'},
     {'1': 'label', '3': 4, '4': 1, '5': 9, '10': 'label'},
   ],
   '8': [
@@ -247,8 +262,9 @@ final $typed_data.Uint8List geometryDescriptor = $convert.base64Decode(
     'b3gYAyABKAsyIC52aWFtLmNvbW1vbi52MS5SZWN0YW5ndWxhclByaXNtSABSA2JveBIzCgdjYX'
     'BzdWxlGAUgASgLMhcudmlhbS5jb21tb24udjEuQ2Fwc3VsZUgAUgdjYXBzdWxlEioKBG1lc2gY'
     'BiABKAsyFC52aWFtLmNvbW1vbi52MS5NZXNoSABSBG1lc2gSPAoKcG9pbnRjbG91ZBgHIAEoCz'
-    'IaLnZpYW0uY29tbW9uLnYxLlBvaW50Q2xvdWRIAFIKcG9pbnRjbG91ZBIUCgVsYWJlbBgEIAEo'
-    'CVIFbGFiZWxCDwoNZ2VvbWV0cnlfdHlwZQ==');
+    'IaLnZpYW0uY29tbW9uLnYxLlBvaW50Q2xvdWRIAFIKcG9pbnRjbG91ZBI2CghjeWxpbmRlchgI'
+    'IAEoCzIYLnZpYW0uY29tbW9uLnYxLkN5bGluZGVySABSCGN5bGluZGVyEhQKBWxhYmVsGAQgAS'
+    'gJUgVsYWJlbEIPCg1nZW9tZXRyeV90eXBl');
 
 @$core.Deprecated('Use geometriesInFrameDescriptor instead')
 const GeometriesInFrame$json = {

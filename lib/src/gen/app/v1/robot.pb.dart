@@ -16,6 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../common/v1/common.pb.dart' as $9;
 import '../../google/protobuf/duration.pb.dart' as $48;
 import '../../google/protobuf/struct.pb.dart' as $49;
+import '../../robot/v1/robot.pbenum.dart' as $15;
 import 'robot.pbenum.dart';
 
 export 'robot.pbenum.dart';
@@ -3389,6 +3390,9 @@ class AgentInfo extends $pb.GeneratedMessage {
     $core.String? gitRevision,
     $core.String? platform,
     $core.Iterable<$core.String>? platformTags,
+    $core.Iterable<ModuleVersionInfo>? moduleVersions,
+    $48.Duration? viamServerUptime,
+    $core.bool? reconfigureBlocked,
   }) {
     final $result = create();
     if (host != null) {
@@ -3412,6 +3416,15 @@ class AgentInfo extends $pb.GeneratedMessage {
     if (platformTags != null) {
       $result.platformTags.addAll(platformTags);
     }
+    if (moduleVersions != null) {
+      $result.moduleVersions.addAll(moduleVersions);
+    }
+    if (viamServerUptime != null) {
+      $result.viamServerUptime = viamServerUptime;
+    }
+    if (reconfigureBlocked != null) {
+      $result.reconfigureBlocked = reconfigureBlocked;
+    }
     return $result;
   }
   AgentInfo._() : super();
@@ -3426,6 +3439,9 @@ class AgentInfo extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'gitRevision')
     ..aOS(6, _omitFieldNames ? '' : 'platform')
     ..pPS(7, _omitFieldNames ? '' : 'platformTags')
+    ..pc<ModuleVersionInfo>(8, _omitFieldNames ? '' : 'moduleVersions', $pb.PbFieldType.PM, subBuilder: ModuleVersionInfo.create)
+    ..aOM<$48.Duration>(9, _omitFieldNames ? '' : 'viamServerUptime', subBuilder: $48.Duration.create)
+    ..aOB(10, _omitFieldNames ? '' : 'reconfigureBlocked')
     ..hasRequiredFields = false
   ;
 
@@ -3504,6 +3520,179 @@ class AgentInfo extends $pb.GeneratedMessage {
   /// Optional tags to further constrain which artifact is returned for modules.
   @$pb.TagNumber(7)
   $core.List<$core.String> get platformTags => $_getList(6);
+
+  /// modules in the applied config (registry and local) with their running version and status
+  @$pb.TagNumber(8)
+  $core.List<ModuleVersionInfo> get moduleVersions => $_getList(7);
+
+  /// how long this viam-server process has been running, measured with a monotonic clock;
+  /// app anchors it to the time the request is received
+  @$pb.TagNumber(9)
+  $48.Duration get viamServerUptime => $_getN(8);
+  @$pb.TagNumber(9)
+  set viamServerUptime($48.Duration v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasViamServerUptime() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearViamServerUptime() => clearField(9);
+  @$pb.TagNumber(9)
+  $48.Duration ensureViamServerUptime() => $_ensure(8);
+
+  /// true while a pending reconfigure is being held back by the maintenance sensor;
+  /// false once that reconfigure is applied (or when nothing is pending)
+  @$pb.TagNumber(10)
+  $core.bool get reconfigureBlocked => $_getBF(9);
+  @$pb.TagNumber(10)
+  set reconfigureBlocked($core.bool v) { $_setBool(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasReconfigureBlocked() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearReconfigureBlocked() => clearField(10);
+}
+
+class ModuleVersionInfo extends $pb.GeneratedMessage {
+  factory ModuleVersionInfo({
+    $core.String? moduleId,
+    $core.String? runningVersion,
+    $48.Duration? runningFor,
+    $15.ModuleStatus_State? state,
+    $core.int? consecutiveFailures,
+    $core.int? readyCount,
+    $core.String? moduleName,
+  }) {
+    final $result = create();
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (runningVersion != null) {
+      $result.runningVersion = runningVersion;
+    }
+    if (runningFor != null) {
+      $result.runningFor = runningFor;
+    }
+    if (state != null) {
+      $result.state = state;
+    }
+    if (consecutiveFailures != null) {
+      $result.consecutiveFailures = consecutiveFailures;
+    }
+    if (readyCount != null) {
+      $result.readyCount = readyCount;
+    }
+    if (moduleName != null) {
+      $result.moduleName = moduleName;
+    }
+    return $result;
+  }
+  ModuleVersionInfo._() : super();
+  factory ModuleVersionInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ModuleVersionInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ModuleVersionInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(2, _omitFieldNames ? '' : 'runningVersion')
+    ..aOM<$48.Duration>(3, _omitFieldNames ? '' : 'runningFor', subBuilder: $48.Duration.create)
+    ..e<$15.ModuleStatus_State>(4, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: $15.ModuleStatus_State.STATE_UNSPECIFIED, valueOf: $15.ModuleStatus_State.valueOf, enumValues: $15.ModuleStatus_State.values)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'consecutiveFailures', $pb.PbFieldType.OU3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'readyCount', $pb.PbFieldType.OU3)
+    ..aOS(8, _omitFieldNames ? '' : 'moduleName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ModuleVersionInfo clone() => ModuleVersionInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ModuleVersionInfo copyWith(void Function(ModuleVersionInfo) updates) => super.copyWith((message) => updates(message as ModuleVersionInfo)) as ModuleVersionInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ModuleVersionInfo create() => ModuleVersionInfo._();
+  ModuleVersionInfo createEmptyInstance() => create();
+  static $pb.PbList<ModuleVersionInfo> createRepeated() => $pb.PbList<ModuleVersionInfo>();
+  @$core.pragma('dart2js:noInline')
+  static ModuleVersionInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModuleVersionInfo>(create);
+  static ModuleVersionInfo? _defaultInstance;
+
+  /// registry module ID, e.g. "viam:realsense" (empty for local modules)
+  @$pb.TagNumber(1)
+  $core.String get moduleId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set moduleId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasModuleId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModuleId() => clearField(1);
+
+  /// version currently running ("local" for local modules; empty if not running or unknown)
+  @$pb.TagNumber(2)
+  $core.String get runningVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set runningVersion($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRunningVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRunningVersion() => clearField(2);
+
+  /// how long the running version has been ready, measured with a monotonic clock; app anchors it
+  /// to the time the request is received (unset if not running)
+  @$pb.TagNumber(3)
+  $48.Duration get runningFor => $_getN(2);
+  @$pb.TagNumber(3)
+  set runningFor($48.Duration v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRunningFor() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRunningFor() => clearField(3);
+  @$pb.TagNumber(3)
+  $48.Duration ensureRunningFor() => $_ensure(2);
+
+  /// current lifecycle state of the module process
+  @$pb.TagNumber(4)
+  $15.ModuleStatus_State get state => $_getN(3);
+  @$pb.TagNumber(4)
+  set state($15.ModuleStatus_State v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearState() => clearField(4);
+
+  /// failures since the module was last ready
+  @$pb.TagNumber(6)
+  $core.int get consecutiveFailures => $_getIZ(4);
+  @$pb.TagNumber(6)
+  set consecutiveFailures($core.int v) { $_setUnsignedInt32(4, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasConsecutiveFailures() => $_has(4);
+  @$pb.TagNumber(6)
+  void clearConsecutiveFailures() => clearField(6);
+
+  /// times the module has become ready since viam-server started, including the first start;
+  /// only goes up, and resets when viam-server restarts
+  @$pb.TagNumber(7)
+  $core.int get readyCount => $_getIZ(5);
+  @$pb.TagNumber(7)
+  set readyCount($core.int v) { $_setUnsignedInt32(5, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasReadyCount() => $_has(5);
+  @$pb.TagNumber(7)
+  void clearReadyCount() => clearField(7);
+
+  /// module name from the machine config; unique within the part
+  @$pb.TagNumber(8)
+  $core.String get moduleName => $_getSZ(6);
+  @$pb.TagNumber(8)
+  set moduleName($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasModuleName() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearModuleName() => clearField(8);
 }
 
 class ConfigRequest extends $pb.GeneratedMessage {

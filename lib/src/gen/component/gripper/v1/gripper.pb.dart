@@ -798,6 +798,361 @@ class GoToInputsResponse extends $pb.GeneratedMessage {
   static GoToInputsResponse? _defaultInstance;
 }
 
+class SetPercentOpenRequest extends $pb.GeneratedMessage {
+  factory SetPercentOpenRequest({
+    $core.String? name,
+    $core.double? percentOpen,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (percentOpen != null) {
+      $result.percentOpen = percentOpen;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  SetPercentOpenRequest._() : super();
+  factory SetPercentOpenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetPercentOpenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPercentOpenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'percentOpen', $pb.PbFieldType.OD)
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetPercentOpenRequest clone() => SetPercentOpenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetPercentOpenRequest copyWith(void Function(SetPercentOpenRequest) updates) => super.copyWith((message) => updates(message as SetPercentOpenRequest)) as SetPercentOpenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetPercentOpenRequest create() => SetPercentOpenRequest._();
+  SetPercentOpenRequest createEmptyInstance() => create();
+  static $pb.PbList<SetPercentOpenRequest> createRepeated() => $pb.PbList<SetPercentOpenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetPercentOpenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPercentOpenRequest>(create);
+  static SetPercentOpenRequest? _defaultInstance;
+
+  /// Name of a gripper
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// The opening to move to, from 0.0 (fully closed) to 1.0 (fully open)
+  @$pb.TagNumber(2)
+  $core.double get percentOpen => $_getN(1);
+  @$pb.TagNumber(2)
+  set percentOpen($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPercentOpen() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPercentOpen() => clearField(2);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(2);
+}
+
+class SetPercentOpenResponse extends $pb.GeneratedMessage {
+  factory SetPercentOpenResponse() => create();
+  SetPercentOpenResponse._() : super();
+  factory SetPercentOpenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetPercentOpenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPercentOpenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetPercentOpenResponse clone() => SetPercentOpenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetPercentOpenResponse copyWith(void Function(SetPercentOpenResponse) updates) => super.copyWith((message) => updates(message as SetPercentOpenResponse)) as SetPercentOpenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetPercentOpenResponse create() => SetPercentOpenResponse._();
+  SetPercentOpenResponse createEmptyInstance() => create();
+  static $pb.PbList<SetPercentOpenResponse> createRepeated() => $pb.PbList<SetPercentOpenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetPercentOpenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPercentOpenResponse>(create);
+  static SetPercentOpenResponse? _defaultInstance;
+}
+
+class GetPercentOpenRequest extends $pb.GeneratedMessage {
+  factory GetPercentOpenRequest({
+    $core.String? name,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GetPercentOpenRequest._() : super();
+  factory GetPercentOpenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPercentOpenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPercentOpenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPercentOpenRequest clone() => GetPercentOpenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPercentOpenRequest copyWith(void Function(GetPercentOpenRequest) updates) => super.copyWith((message) => updates(message as GetPercentOpenRequest)) as GetPercentOpenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPercentOpenRequest create() => GetPercentOpenRequest._();
+  GetPercentOpenRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPercentOpenRequest> createRepeated() => $pb.PbList<GetPercentOpenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPercentOpenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPercentOpenRequest>(create);
+  static GetPercentOpenRequest? _defaultInstance;
+
+  /// Name of a gripper
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(1);
+}
+
+class GetPercentOpenResponse extends $pb.GeneratedMessage {
+  factory GetPercentOpenResponse({
+    $core.double? percentOpen,
+  }) {
+    final $result = create();
+    if (percentOpen != null) {
+      $result.percentOpen = percentOpen;
+    }
+    return $result;
+  }
+  GetPercentOpenResponse._() : super();
+  factory GetPercentOpenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPercentOpenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPercentOpenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'percentOpen', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPercentOpenResponse clone() => GetPercentOpenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPercentOpenResponse copyWith(void Function(GetPercentOpenResponse) updates) => super.copyWith((message) => updates(message as GetPercentOpenResponse)) as GetPercentOpenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPercentOpenResponse create() => GetPercentOpenResponse._();
+  GetPercentOpenResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPercentOpenResponse> createRepeated() => $pb.PbList<GetPercentOpenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPercentOpenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPercentOpenResponse>(create);
+  static GetPercentOpenResponse? _defaultInstance;
+
+  /// The measured opening, from 0.0 (fully closed) to 1.0 (fully open)
+  @$pb.TagNumber(1)
+  $core.double get percentOpen => $_getN(0);
+  @$pb.TagNumber(1)
+  set percentOpen($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPercentOpen() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPercentOpen() => clearField(1);
+}
+
+class GetPropertiesRequest extends $pb.GeneratedMessage {
+  factory GetPropertiesRequest({
+    $core.String? name,
+    $49.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GetPropertiesRequest._() : super();
+  factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$49.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $49.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPropertiesRequest clone() => GetPropertiesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPropertiesRequest copyWith(void Function(GetPropertiesRequest) updates) => super.copyWith((message) => updates(message as GetPropertiesRequest)) as GetPropertiesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesRequest create() => GetPropertiesRequest._();
+  GetPropertiesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPropertiesRequest> createRepeated() => $pb.PbList<GetPropertiesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
+  static GetPropertiesRequest? _defaultInstance;
+
+  /// Name of a gripper
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $49.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($49.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $49.Struct ensureExtra() => $_ensure(1);
+}
+
+class GetPropertiesResponse extends $pb.GeneratedMessage {
+  factory GetPropertiesResponse({
+    $core.bool? percentOpenSupported,
+  }) {
+    final $result = create();
+    if (percentOpenSupported != null) {
+      $result.percentOpenSupported = percentOpenSupported;
+    }
+    return $result;
+  }
+  GetPropertiesResponse._() : super();
+  factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'percentOpenSupported')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPropertiesResponse clone() => GetPropertiesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPropertiesResponse copyWith(void Function(GetPropertiesResponse) updates) => super.copyWith((message) => updates(message as GetPropertiesResponse)) as GetPropertiesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesResponse create() => GetPropertiesResponse._();
+  GetPropertiesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPropertiesResponse> createRepeated() => $pb.PbList<GetPropertiesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesResponse>(create);
+  static GetPropertiesResponse? _defaultInstance;
+
+  /// True if the gripper supports SetPercentOpen and GetPercentOpen. False for any gripper that
+  /// cannot measure its opening, such as vacuum and suction grippers; SetPercentOpen on these
+  /// falls back to Grab or Open.
+  @$pb.TagNumber(1)
+  $core.bool get percentOpenSupported => $_getBF(0);
+  @$pb.TagNumber(1)
+  set percentOpenSupported($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPercentOpenSupported() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPercentOpenSupported() => clearField(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

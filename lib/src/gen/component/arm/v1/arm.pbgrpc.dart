@@ -16,44 +16,44 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $9;
-import 'arm.pb.dart' as $16;
+import 'arm.pb.dart' as $17;
 
 export 'arm.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.arm.v1.ArmService')
 class ArmServiceClient extends $grpc.Client {
-  static final _$getEndPosition = $grpc.ClientMethod<$16.GetEndPositionRequest, $16.GetEndPositionResponse>(
+  static final _$getEndPosition = $grpc.ClientMethod<$17.GetEndPositionRequest, $17.GetEndPositionResponse>(
       '/viam.component.arm.v1.ArmService/GetEndPosition',
-      ($16.GetEndPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.GetEndPositionResponse.fromBuffer(value));
-  static final _$moveToPosition = $grpc.ClientMethod<$16.MoveToPositionRequest, $16.MoveToPositionResponse>(
+      ($17.GetEndPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.GetEndPositionResponse.fromBuffer(value));
+  static final _$moveToPosition = $grpc.ClientMethod<$17.MoveToPositionRequest, $17.MoveToPositionResponse>(
       '/viam.component.arm.v1.ArmService/MoveToPosition',
-      ($16.MoveToPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.MoveToPositionResponse.fromBuffer(value));
-  static final _$getJointPositions = $grpc.ClientMethod<$16.GetJointPositionsRequest, $16.GetJointPositionsResponse>(
+      ($17.MoveToPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.MoveToPositionResponse.fromBuffer(value));
+  static final _$getJointPositions = $grpc.ClientMethod<$17.GetJointPositionsRequest, $17.GetJointPositionsResponse>(
       '/viam.component.arm.v1.ArmService/GetJointPositions',
-      ($16.GetJointPositionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.GetJointPositionsResponse.fromBuffer(value));
-  static final _$moveToJointPositions = $grpc.ClientMethod<$16.MoveToJointPositionsRequest, $16.MoveToJointPositionsResponse>(
+      ($17.GetJointPositionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.GetJointPositionsResponse.fromBuffer(value));
+  static final _$moveToJointPositions = $grpc.ClientMethod<$17.MoveToJointPositionsRequest, $17.MoveToJointPositionsResponse>(
       '/viam.component.arm.v1.ArmService/MoveToJointPositions',
-      ($16.MoveToJointPositionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.MoveToJointPositionsResponse.fromBuffer(value));
-  static final _$moveThroughJointPositions = $grpc.ClientMethod<$16.MoveThroughJointPositionsRequest, $16.MoveThroughJointPositionsResponse>(
+      ($17.MoveToJointPositionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.MoveToJointPositionsResponse.fromBuffer(value));
+  static final _$moveThroughJointPositions = $grpc.ClientMethod<$17.MoveThroughJointPositionsRequest, $17.MoveThroughJointPositionsResponse>(
       '/viam.component.arm.v1.ArmService/MoveThroughJointPositions',
-      ($16.MoveThroughJointPositionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.MoveThroughJointPositionsResponse.fromBuffer(value));
-  static final _$moveThroughJointPositionsStreamed = $grpc.ClientMethod<$16.MoveThroughJointPositionsStreamedRequest, $16.MoveThroughJointPositionsStreamedResponse>(
+      ($17.MoveThroughJointPositionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.MoveThroughJointPositionsResponse.fromBuffer(value));
+  static final _$moveThroughJointPositionsStreamed = $grpc.ClientMethod<$17.MoveThroughJointPositionsStreamedRequest, $17.MoveThroughJointPositionsStreamedResponse>(
       '/viam.component.arm.v1.ArmService/MoveThroughJointPositionsStreamed',
-      ($16.MoveThroughJointPositionsStreamedRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.MoveThroughJointPositionsStreamedResponse.fromBuffer(value));
-  static final _$stop = $grpc.ClientMethod<$16.StopRequest, $16.StopResponse>(
+      ($17.MoveThroughJointPositionsStreamedRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.MoveThroughJointPositionsStreamedResponse.fromBuffer(value));
+  static final _$stop = $grpc.ClientMethod<$17.StopRequest, $17.StopResponse>(
       '/viam.component.arm.v1.ArmService/Stop',
-      ($16.StopRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.StopResponse.fromBuffer(value));
-  static final _$isMoving = $grpc.ClientMethod<$16.IsMovingRequest, $16.IsMovingResponse>(
+      ($17.StopRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.StopResponse.fromBuffer(value));
+  static final _$isMoving = $grpc.ClientMethod<$17.IsMovingRequest, $17.IsMovingResponse>(
       '/viam.component.arm.v1.ArmService/IsMoving',
-      ($16.IsMovingRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.IsMovingResponse.fromBuffer(value));
+      ($17.IsMovingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.IsMovingResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
       '/viam.component.arm.v1.ArmService/DoCommand',
       ($9.DoCommandRequest value) => value.writeToBuffer(),
@@ -74,18 +74,18 @@ class ArmServiceClient extends $grpc.Client {
       '/viam.component.arm.v1.ArmService/Get3DModels',
       ($9.Get3DModelsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $9.Get3DModelsResponse.fromBuffer(value));
-  static final _$setManualMode = $grpc.ClientMethod<$16.SetManualModeRequest, $16.SetManualModeResponse>(
+  static final _$setManualMode = $grpc.ClientMethod<$17.SetManualModeRequest, $17.SetManualModeResponse>(
       '/viam.component.arm.v1.ArmService/SetManualMode',
-      ($16.SetManualModeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.SetManualModeResponse.fromBuffer(value));
-  static final _$getManualMode = $grpc.ClientMethod<$16.GetManualModeRequest, $16.GetManualModeResponse>(
+      ($17.SetManualModeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.SetManualModeResponse.fromBuffer(value));
+  static final _$getManualMode = $grpc.ClientMethod<$17.GetManualModeRequest, $17.GetManualModeResponse>(
       '/viam.component.arm.v1.ArmService/GetManualMode',
-      ($16.GetManualModeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.GetManualModeResponse.fromBuffer(value));
-  static final _$getProperties = $grpc.ClientMethod<$16.GetPropertiesRequest, $16.GetPropertiesResponse>(
+      ($17.GetManualModeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.GetManualModeResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$17.GetPropertiesRequest, $17.GetPropertiesResponse>(
       '/viam.component.arm.v1.ArmService/GetProperties',
-      ($16.GetPropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $16.GetPropertiesResponse.fromBuffer(value));
+      ($17.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $17.GetPropertiesResponse.fromBuffer(value));
 
   ArmServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -93,35 +93,35 @@ class ArmServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$16.GetEndPositionResponse> getEndPosition($16.GetEndPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.GetEndPositionResponse> getEndPosition($17.GetEndPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getEndPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.MoveToPositionResponse> moveToPosition($16.MoveToPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.MoveToPositionResponse> moveToPosition($17.MoveToPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveToPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.GetJointPositionsResponse> getJointPositions($16.GetJointPositionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.GetJointPositionsResponse> getJointPositions($17.GetJointPositionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getJointPositions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.MoveToJointPositionsResponse> moveToJointPositions($16.MoveToJointPositionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.MoveToJointPositionsResponse> moveToJointPositions($17.MoveToJointPositionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveToJointPositions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.MoveThroughJointPositionsResponse> moveThroughJointPositions($16.MoveThroughJointPositionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.MoveThroughJointPositionsResponse> moveThroughJointPositions($17.MoveThroughJointPositionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveThroughJointPositions, request, options: options);
   }
 
-  $grpc.ResponseStream<$16.MoveThroughJointPositionsStreamedResponse> moveThroughJointPositionsStreamed($async.Stream<$16.MoveThroughJointPositionsStreamedRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$17.MoveThroughJointPositionsStreamedResponse> moveThroughJointPositionsStreamed($async.Stream<$17.MoveThroughJointPositionsStreamedRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$moveThroughJointPositionsStreamed, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.StopResponse> stop($16.StopRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.StopResponse> stop($17.StopRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stop, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.IsMovingResponse> isMoving($16.IsMovingRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.IsMovingResponse> isMoving($17.IsMovingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$isMoving, request, options: options);
   }
 
@@ -145,15 +145,15 @@ class ArmServiceClient extends $grpc.Client {
     return $createUnaryCall(_$get3DModels, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.SetManualModeResponse> setManualMode($16.SetManualModeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.SetManualModeResponse> setManualMode($17.SetManualModeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setManualMode, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.GetManualModeResponse> getManualMode($16.GetManualModeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.GetManualModeResponse> getManualMode($17.GetManualModeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getManualMode, request, options: options);
   }
 
-  $grpc.ResponseFuture<$16.GetPropertiesResponse> getProperties($16.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.GetPropertiesResponse> getProperties($17.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 }
@@ -163,62 +163,62 @@ abstract class ArmServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.arm.v1.ArmService';
 
   ArmServiceBase() {
-    $addMethod($grpc.ServiceMethod<$16.GetEndPositionRequest, $16.GetEndPositionResponse>(
+    $addMethod($grpc.ServiceMethod<$17.GetEndPositionRequest, $17.GetEndPositionResponse>(
         'GetEndPosition',
         getEndPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.GetEndPositionRequest.fromBuffer(value),
-        ($16.GetEndPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.MoveToPositionRequest, $16.MoveToPositionResponse>(
+        ($core.List<$core.int> value) => $17.GetEndPositionRequest.fromBuffer(value),
+        ($17.GetEndPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.MoveToPositionRequest, $17.MoveToPositionResponse>(
         'MoveToPosition',
         moveToPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.MoveToPositionRequest.fromBuffer(value),
-        ($16.MoveToPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.GetJointPositionsRequest, $16.GetJointPositionsResponse>(
+        ($core.List<$core.int> value) => $17.MoveToPositionRequest.fromBuffer(value),
+        ($17.MoveToPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.GetJointPositionsRequest, $17.GetJointPositionsResponse>(
         'GetJointPositions',
         getJointPositions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.GetJointPositionsRequest.fromBuffer(value),
-        ($16.GetJointPositionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.MoveToJointPositionsRequest, $16.MoveToJointPositionsResponse>(
+        ($core.List<$core.int> value) => $17.GetJointPositionsRequest.fromBuffer(value),
+        ($17.GetJointPositionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.MoveToJointPositionsRequest, $17.MoveToJointPositionsResponse>(
         'MoveToJointPositions',
         moveToJointPositions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.MoveToJointPositionsRequest.fromBuffer(value),
-        ($16.MoveToJointPositionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.MoveThroughJointPositionsRequest, $16.MoveThroughJointPositionsResponse>(
+        ($core.List<$core.int> value) => $17.MoveToJointPositionsRequest.fromBuffer(value),
+        ($17.MoveToJointPositionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.MoveThroughJointPositionsRequest, $17.MoveThroughJointPositionsResponse>(
         'MoveThroughJointPositions',
         moveThroughJointPositions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.MoveThroughJointPositionsRequest.fromBuffer(value),
-        ($16.MoveThroughJointPositionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.MoveThroughJointPositionsStreamedRequest, $16.MoveThroughJointPositionsStreamedResponse>(
+        ($core.List<$core.int> value) => $17.MoveThroughJointPositionsRequest.fromBuffer(value),
+        ($17.MoveThroughJointPositionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.MoveThroughJointPositionsStreamedRequest, $17.MoveThroughJointPositionsStreamedResponse>(
         'MoveThroughJointPositionsStreamed',
         moveThroughJointPositionsStreamed,
         true,
         true,
-        ($core.List<$core.int> value) => $16.MoveThroughJointPositionsStreamedRequest.fromBuffer(value),
-        ($16.MoveThroughJointPositionsStreamedResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.StopRequest, $16.StopResponse>(
+        ($core.List<$core.int> value) => $17.MoveThroughJointPositionsStreamedRequest.fromBuffer(value),
+        ($17.MoveThroughJointPositionsStreamedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.StopRequest, $17.StopResponse>(
         'Stop',
         stop_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.StopRequest.fromBuffer(value),
-        ($16.StopResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.IsMovingRequest, $16.IsMovingResponse>(
+        ($core.List<$core.int> value) => $17.StopRequest.fromBuffer(value),
+        ($17.StopResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.IsMovingRequest, $17.IsMovingResponse>(
         'IsMoving',
         isMoving_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.IsMovingRequest.fromBuffer(value),
-        ($16.IsMovingResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $17.IsMovingRequest.fromBuffer(value),
+        ($17.IsMovingResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.DoCommandRequest, $9.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -254,54 +254,54 @@ abstract class ArmServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $9.Get3DModelsRequest.fromBuffer(value),
         ($9.Get3DModelsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.SetManualModeRequest, $16.SetManualModeResponse>(
+    $addMethod($grpc.ServiceMethod<$17.SetManualModeRequest, $17.SetManualModeResponse>(
         'SetManualMode',
         setManualMode_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.SetManualModeRequest.fromBuffer(value),
-        ($16.SetManualModeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.GetManualModeRequest, $16.GetManualModeResponse>(
+        ($core.List<$core.int> value) => $17.SetManualModeRequest.fromBuffer(value),
+        ($17.SetManualModeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.GetManualModeRequest, $17.GetManualModeResponse>(
         'GetManualMode',
         getManualMode_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.GetManualModeRequest.fromBuffer(value),
-        ($16.GetManualModeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$16.GetPropertiesRequest, $16.GetPropertiesResponse>(
+        ($core.List<$core.int> value) => $17.GetManualModeRequest.fromBuffer(value),
+        ($17.GetManualModeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$17.GetPropertiesRequest, $17.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $16.GetPropertiesRequest.fromBuffer(value),
-        ($16.GetPropertiesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $17.GetPropertiesRequest.fromBuffer(value),
+        ($17.GetPropertiesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$16.GetEndPositionResponse> getEndPosition_Pre($grpc.ServiceCall call, $async.Future<$16.GetEndPositionRequest> request) async {
+  $async.Future<$17.GetEndPositionResponse> getEndPosition_Pre($grpc.ServiceCall call, $async.Future<$17.GetEndPositionRequest> request) async {
     return getEndPosition(call, await request);
   }
 
-  $async.Future<$16.MoveToPositionResponse> moveToPosition_Pre($grpc.ServiceCall call, $async.Future<$16.MoveToPositionRequest> request) async {
+  $async.Future<$17.MoveToPositionResponse> moveToPosition_Pre($grpc.ServiceCall call, $async.Future<$17.MoveToPositionRequest> request) async {
     return moveToPosition(call, await request);
   }
 
-  $async.Future<$16.GetJointPositionsResponse> getJointPositions_Pre($grpc.ServiceCall call, $async.Future<$16.GetJointPositionsRequest> request) async {
+  $async.Future<$17.GetJointPositionsResponse> getJointPositions_Pre($grpc.ServiceCall call, $async.Future<$17.GetJointPositionsRequest> request) async {
     return getJointPositions(call, await request);
   }
 
-  $async.Future<$16.MoveToJointPositionsResponse> moveToJointPositions_Pre($grpc.ServiceCall call, $async.Future<$16.MoveToJointPositionsRequest> request) async {
+  $async.Future<$17.MoveToJointPositionsResponse> moveToJointPositions_Pre($grpc.ServiceCall call, $async.Future<$17.MoveToJointPositionsRequest> request) async {
     return moveToJointPositions(call, await request);
   }
 
-  $async.Future<$16.MoveThroughJointPositionsResponse> moveThroughJointPositions_Pre($grpc.ServiceCall call, $async.Future<$16.MoveThroughJointPositionsRequest> request) async {
+  $async.Future<$17.MoveThroughJointPositionsResponse> moveThroughJointPositions_Pre($grpc.ServiceCall call, $async.Future<$17.MoveThroughJointPositionsRequest> request) async {
     return moveThroughJointPositions(call, await request);
   }
 
-  $async.Future<$16.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$16.StopRequest> request) async {
+  $async.Future<$17.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$17.StopRequest> request) async {
     return stop(call, await request);
   }
 
-  $async.Future<$16.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$16.IsMovingRequest> request) async {
+  $async.Future<$17.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$17.IsMovingRequest> request) async {
     return isMoving(call, await request);
   }
 
@@ -325,32 +325,32 @@ abstract class ArmServiceBase extends $grpc.Service {
     return get3DModels(call, await request);
   }
 
-  $async.Future<$16.SetManualModeResponse> setManualMode_Pre($grpc.ServiceCall call, $async.Future<$16.SetManualModeRequest> request) async {
+  $async.Future<$17.SetManualModeResponse> setManualMode_Pre($grpc.ServiceCall call, $async.Future<$17.SetManualModeRequest> request) async {
     return setManualMode(call, await request);
   }
 
-  $async.Future<$16.GetManualModeResponse> getManualMode_Pre($grpc.ServiceCall call, $async.Future<$16.GetManualModeRequest> request) async {
+  $async.Future<$17.GetManualModeResponse> getManualMode_Pre($grpc.ServiceCall call, $async.Future<$17.GetManualModeRequest> request) async {
     return getManualMode(call, await request);
   }
 
-  $async.Future<$16.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$16.GetPropertiesRequest> request) async {
+  $async.Future<$17.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$17.GetPropertiesRequest> request) async {
     return getProperties(call, await request);
   }
 
-  $async.Future<$16.GetEndPositionResponse> getEndPosition($grpc.ServiceCall call, $16.GetEndPositionRequest request);
-  $async.Future<$16.MoveToPositionResponse> moveToPosition($grpc.ServiceCall call, $16.MoveToPositionRequest request);
-  $async.Future<$16.GetJointPositionsResponse> getJointPositions($grpc.ServiceCall call, $16.GetJointPositionsRequest request);
-  $async.Future<$16.MoveToJointPositionsResponse> moveToJointPositions($grpc.ServiceCall call, $16.MoveToJointPositionsRequest request);
-  $async.Future<$16.MoveThroughJointPositionsResponse> moveThroughJointPositions($grpc.ServiceCall call, $16.MoveThroughJointPositionsRequest request);
-  $async.Stream<$16.MoveThroughJointPositionsStreamedResponse> moveThroughJointPositionsStreamed($grpc.ServiceCall call, $async.Stream<$16.MoveThroughJointPositionsStreamedRequest> request);
-  $async.Future<$16.StopResponse> stop($grpc.ServiceCall call, $16.StopRequest request);
-  $async.Future<$16.IsMovingResponse> isMoving($grpc.ServiceCall call, $16.IsMovingRequest request);
+  $async.Future<$17.GetEndPositionResponse> getEndPosition($grpc.ServiceCall call, $17.GetEndPositionRequest request);
+  $async.Future<$17.MoveToPositionResponse> moveToPosition($grpc.ServiceCall call, $17.MoveToPositionRequest request);
+  $async.Future<$17.GetJointPositionsResponse> getJointPositions($grpc.ServiceCall call, $17.GetJointPositionsRequest request);
+  $async.Future<$17.MoveToJointPositionsResponse> moveToJointPositions($grpc.ServiceCall call, $17.MoveToJointPositionsRequest request);
+  $async.Future<$17.MoveThroughJointPositionsResponse> moveThroughJointPositions($grpc.ServiceCall call, $17.MoveThroughJointPositionsRequest request);
+  $async.Stream<$17.MoveThroughJointPositionsStreamedResponse> moveThroughJointPositionsStreamed($grpc.ServiceCall call, $async.Stream<$17.MoveThroughJointPositionsStreamedRequest> request);
+  $async.Future<$17.StopResponse> stop($grpc.ServiceCall call, $17.StopRequest request);
+  $async.Future<$17.IsMovingResponse> isMoving($grpc.ServiceCall call, $17.IsMovingRequest request);
   $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
   $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
   $async.Future<$9.GetKinematicsResponse> getKinematics($grpc.ServiceCall call, $9.GetKinematicsRequest request);
   $async.Future<$9.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $9.GetGeometriesRequest request);
   $async.Future<$9.Get3DModelsResponse> get3DModels($grpc.ServiceCall call, $9.Get3DModelsRequest request);
-  $async.Future<$16.SetManualModeResponse> setManualMode($grpc.ServiceCall call, $16.SetManualModeRequest request);
-  $async.Future<$16.GetManualModeResponse> getManualMode($grpc.ServiceCall call, $16.GetManualModeRequest request);
-  $async.Future<$16.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $16.GetPropertiesRequest request);
+  $async.Future<$17.SetManualModeResponse> setManualMode($grpc.ServiceCall call, $17.SetManualModeRequest request);
+  $async.Future<$17.GetManualModeResponse> getManualMode($grpc.ServiceCall call, $17.GetManualModeRequest request);
+  $async.Future<$17.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $17.GetPropertiesRequest request);
 }

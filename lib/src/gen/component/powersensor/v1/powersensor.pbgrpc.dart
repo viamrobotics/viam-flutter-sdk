@@ -16,32 +16,32 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $9;
-import 'powersensor.pb.dart' as $30;
+import 'powersensor.pb.dart' as $31;
 
 export 'powersensor.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.powersensor.v1.PowerSensorService')
 class PowerSensorServiceClient extends $grpc.Client {
-  static final _$getVoltage = $grpc.ClientMethod<$30.GetVoltageRequest, $30.GetVoltageResponse>(
+  static final _$getVoltage = $grpc.ClientMethod<$31.GetVoltageRequest, $31.GetVoltageResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetVoltage',
-      ($30.GetVoltageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.GetVoltageResponse.fromBuffer(value));
-  static final _$getCurrent = $grpc.ClientMethod<$30.GetCurrentRequest, $30.GetCurrentResponse>(
+      ($31.GetVoltageRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetVoltageResponse.fromBuffer(value));
+  static final _$getCurrent = $grpc.ClientMethod<$31.GetCurrentRequest, $31.GetCurrentResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetCurrent',
-      ($30.GetCurrentRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.GetCurrentResponse.fromBuffer(value));
-  static final _$getPower = $grpc.ClientMethod<$30.GetPowerRequest, $30.GetPowerResponse>(
+      ($31.GetCurrentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetCurrentResponse.fromBuffer(value));
+  static final _$getPower = $grpc.ClientMethod<$31.GetPowerRequest, $31.GetPowerResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetPower',
-      ($30.GetPowerRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.GetPowerResponse.fromBuffer(value));
-  static final _$getBatteryPercent = $grpc.ClientMethod<$30.GetBatteryPercentRequest, $30.GetBatteryPercentResponse>(
+      ($31.GetPowerRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetPowerResponse.fromBuffer(value));
+  static final _$getBatteryPercent = $grpc.ClientMethod<$31.GetBatteryPercentRequest, $31.GetBatteryPercentResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetBatteryPercent',
-      ($30.GetBatteryPercentRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.GetBatteryPercentResponse.fromBuffer(value));
-  static final _$getProperties = $grpc.ClientMethod<$30.GetPropertiesRequest, $30.GetPropertiesResponse>(
+      ($31.GetBatteryPercentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetBatteryPercentResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$31.GetPropertiesRequest, $31.GetPropertiesResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetProperties',
-      ($30.GetPropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.GetPropertiesResponse.fromBuffer(value));
+      ($31.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetPropertiesResponse.fromBuffer(value));
   static final _$getReadings = $grpc.ClientMethod<$9.GetReadingsRequest, $9.GetReadingsResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/GetReadings',
       ($9.GetReadingsRequest value) => value.writeToBuffer(),
@@ -61,23 +61,23 @@ class PowerSensorServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$30.GetVoltageResponse> getVoltage($30.GetVoltageRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$31.GetVoltageResponse> getVoltage($31.GetVoltageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getVoltage, request, options: options);
   }
 
-  $grpc.ResponseFuture<$30.GetCurrentResponse> getCurrent($30.GetCurrentRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$31.GetCurrentResponse> getCurrent($31.GetCurrentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getCurrent, request, options: options);
   }
 
-  $grpc.ResponseFuture<$30.GetPowerResponse> getPower($30.GetPowerRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$31.GetPowerResponse> getPower($31.GetPowerRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPower, request, options: options);
   }
 
-  $grpc.ResponseFuture<$30.GetBatteryPercentResponse> getBatteryPercent($30.GetBatteryPercentRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$31.GetBatteryPercentResponse> getBatteryPercent($31.GetBatteryPercentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getBatteryPercent, request, options: options);
   }
 
-  $grpc.ResponseFuture<$30.GetPropertiesResponse> getProperties($30.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$31.GetPropertiesResponse> getProperties($31.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 
@@ -99,41 +99,41 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.powersensor.v1.PowerSensorService';
 
   PowerSensorServiceBase() {
-    $addMethod($grpc.ServiceMethod<$30.GetVoltageRequest, $30.GetVoltageResponse>(
+    $addMethod($grpc.ServiceMethod<$31.GetVoltageRequest, $31.GetVoltageResponse>(
         'GetVoltage',
         getVoltage_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $30.GetVoltageRequest.fromBuffer(value),
-        ($30.GetVoltageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$30.GetCurrentRequest, $30.GetCurrentResponse>(
+        ($core.List<$core.int> value) => $31.GetVoltageRequest.fromBuffer(value),
+        ($31.GetVoltageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$31.GetCurrentRequest, $31.GetCurrentResponse>(
         'GetCurrent',
         getCurrent_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $30.GetCurrentRequest.fromBuffer(value),
-        ($30.GetCurrentResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$30.GetPowerRequest, $30.GetPowerResponse>(
+        ($core.List<$core.int> value) => $31.GetCurrentRequest.fromBuffer(value),
+        ($31.GetCurrentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$31.GetPowerRequest, $31.GetPowerResponse>(
         'GetPower',
         getPower_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $30.GetPowerRequest.fromBuffer(value),
-        ($30.GetPowerResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$30.GetBatteryPercentRequest, $30.GetBatteryPercentResponse>(
+        ($core.List<$core.int> value) => $31.GetPowerRequest.fromBuffer(value),
+        ($31.GetPowerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$31.GetBatteryPercentRequest, $31.GetBatteryPercentResponse>(
         'GetBatteryPercent',
         getBatteryPercent_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $30.GetBatteryPercentRequest.fromBuffer(value),
-        ($30.GetBatteryPercentResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$30.GetPropertiesRequest, $30.GetPropertiesResponse>(
+        ($core.List<$core.int> value) => $31.GetBatteryPercentRequest.fromBuffer(value),
+        ($31.GetBatteryPercentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$31.GetPropertiesRequest, $31.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $30.GetPropertiesRequest.fromBuffer(value),
-        ($30.GetPropertiesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $31.GetPropertiesRequest.fromBuffer(value),
+        ($31.GetPropertiesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.GetReadingsRequest, $9.GetReadingsResponse>(
         'GetReadings',
         getReadings_Pre,
@@ -157,23 +157,23 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
         ($9.GetStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$30.GetVoltageResponse> getVoltage_Pre($grpc.ServiceCall call, $async.Future<$30.GetVoltageRequest> request) async {
+  $async.Future<$31.GetVoltageResponse> getVoltage_Pre($grpc.ServiceCall call, $async.Future<$31.GetVoltageRequest> request) async {
     return getVoltage(call, await request);
   }
 
-  $async.Future<$30.GetCurrentResponse> getCurrent_Pre($grpc.ServiceCall call, $async.Future<$30.GetCurrentRequest> request) async {
+  $async.Future<$31.GetCurrentResponse> getCurrent_Pre($grpc.ServiceCall call, $async.Future<$31.GetCurrentRequest> request) async {
     return getCurrent(call, await request);
   }
 
-  $async.Future<$30.GetPowerResponse> getPower_Pre($grpc.ServiceCall call, $async.Future<$30.GetPowerRequest> request) async {
+  $async.Future<$31.GetPowerResponse> getPower_Pre($grpc.ServiceCall call, $async.Future<$31.GetPowerRequest> request) async {
     return getPower(call, await request);
   }
 
-  $async.Future<$30.GetBatteryPercentResponse> getBatteryPercent_Pre($grpc.ServiceCall call, $async.Future<$30.GetBatteryPercentRequest> request) async {
+  $async.Future<$31.GetBatteryPercentResponse> getBatteryPercent_Pre($grpc.ServiceCall call, $async.Future<$31.GetBatteryPercentRequest> request) async {
     return getBatteryPercent(call, await request);
   }
 
-  $async.Future<$30.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$30.GetPropertiesRequest> request) async {
+  $async.Future<$31.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$31.GetPropertiesRequest> request) async {
     return getProperties(call, await request);
   }
 
@@ -189,11 +189,11 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
     return getStatus(call, await request);
   }
 
-  $async.Future<$30.GetVoltageResponse> getVoltage($grpc.ServiceCall call, $30.GetVoltageRequest request);
-  $async.Future<$30.GetCurrentResponse> getCurrent($grpc.ServiceCall call, $30.GetCurrentRequest request);
-  $async.Future<$30.GetPowerResponse> getPower($grpc.ServiceCall call, $30.GetPowerRequest request);
-  $async.Future<$30.GetBatteryPercentResponse> getBatteryPercent($grpc.ServiceCall call, $30.GetBatteryPercentRequest request);
-  $async.Future<$30.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $30.GetPropertiesRequest request);
+  $async.Future<$31.GetVoltageResponse> getVoltage($grpc.ServiceCall call, $31.GetVoltageRequest request);
+  $async.Future<$31.GetCurrentResponse> getCurrent($grpc.ServiceCall call, $31.GetCurrentRequest request);
+  $async.Future<$31.GetPowerResponse> getPower($grpc.ServiceCall call, $31.GetPowerRequest request);
+  $async.Future<$31.GetBatteryPercentResponse> getBatteryPercent($grpc.ServiceCall call, $31.GetBatteryPercentRequest request);
+  $async.Future<$31.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $31.GetPropertiesRequest request);
   $async.Future<$9.GetReadingsResponse> getReadings($grpc.ServiceCall call, $9.GetReadingsRequest request);
   $async.Future<$9.DoCommandResponse> doCommand($grpc.ServiceCall call, $9.DoCommandRequest request);
   $async.Future<$9.GetStatusResponse> getStatus($grpc.ServiceCall call, $9.GetStatusRequest request);
