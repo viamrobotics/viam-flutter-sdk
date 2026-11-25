@@ -1,14 +1,21 @@
 # Changelog
 
-## [v0.24.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.24.0) (2026-11-04)
+## [v0.25.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.25.0) (2026-11-25)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.23.0...v0.24.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.24.0...v0.25.0)
 
 **Merged pull requests:**
 
+- Route WebRTC responses by stream id and reassemble large messages without per-byte copies [\#591](https://github.com/viamrobotics/viam-flutter-sdk/pull/591) ([clintpurser](https://github.com/clintpurser))
+- Add frameSystemConfig and getPose to RobotClient [\#590](https://github.com/viamrobotics/viam-flutter-sdk/pull/590) ([clintpurser](https://github.com/clintpurser))
+- Fix WebRTC client streaming: end of stream and cancel [\#588](https://github.com/viamrobotics/viam-flutter-sdk/pull/588) ([clintpurser](https://github.com/clintpurser))
+- Add pose tracker component [\#587](https://github.com/viamrobotics/viam-flutter-sdk/pull/587) ([clintpurser](https://github.com/clintpurser))
+- Automated Protos Update [\#586](https://github.com/viamrobotics/viam-flutter-sdk/pull/586) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.24.0 [\#585](https://github.com/viamrobotics/viam-flutter-sdk/pull/585) ([github-actions[bot]](https://github.com/apps/github-actions))
 - \[APP-18444\] remove robot secret [\#584](https://github.com/viamrobotics/viam-flutter-sdk/pull/584) ([njooma](https://github.com/njooma))
 - Close the peer connections a dial doesn't hand back [\#583](https://github.com/viamrobotics/viam-flutter-sdk/pull/583) ([qwertey6](https://github.com/qwertey6))
 - Update stale docs.viam.com links to canonical URLs [\#582](https://github.com/viamrobotics/viam-flutter-sdk/pull/582) ([jeremyrose-viam](https://github.com/jeremyrose-viam))
+- Automated Protos Update [\#581](https://github.com/viamrobotics/viam-flutter-sdk/pull/581) ([github-actions[bot]](https://github.com/apps/github-actions))
 - v0.23.0 [\#580](https://github.com/viamrobotics/viam-flutter-sdk/pull/580) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add start, end, and pageLimit to getRobotPartHistory [\#578](https://github.com/viamrobotics/viam-flutter-sdk/pull/578) ([jckras](https://github.com/jckras))
 - Automated Protos Update: Dart wrappers [\#577](https://github.com/viamrobotics/viam-flutter-sdk/pull/577) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -258,6 +265,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.24.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.24.0) (2026-11-04)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.23.0...v0.24.0)
 
 ## [v0.23.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.23.0) (2026-10-19)
 
