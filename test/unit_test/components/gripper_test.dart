@@ -354,9 +354,11 @@ void main() {
 
       test('setPercentOpen', () async {
         final client = GripperServiceClient(channel);
-        await client.setPercentOpen(SetPercentOpenRequest()
-          ..name = name
-          ..percentOpen = 0.5);
+        await client.setPercentOpen(
+          SetPercentOpenRequest()
+            ..name = name
+            ..percentOpen = 0.5,
+        );
         expect(gripper.percentOpen, 0.5);
       });
 
